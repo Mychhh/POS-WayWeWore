@@ -1,0 +1,12 @@
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\bin\Debug\WWWPOS.exe.config
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\bin\Debug\WWWPOS.exe
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\bin\Debug\WWWPOS.pdb
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\obj\Debug\WWWPOS.csproj.AssemblyReference.cache
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\obj\Debug\WWWPOS.csproj.SuggestedBindingRedirects.cache
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\obj\Debug\WWWPOS.Form1.resources
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\obj\Debug\WWWPOS.Form2.resources
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\obj\Debug\WWWPOS.Properties.Resources.resources
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\obj\Debug\WWWPOS.csproj.GenerateResource.cache
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\obj\Debug\WWWPOS.csproj.CoreCompileInputs.cache
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\obj\Debug\WWWPOS.exe
+C:\Users\Hotdog\source\repos\WWWPOS\WWWPOS\obj\Debug\WWWPOS.pdb
