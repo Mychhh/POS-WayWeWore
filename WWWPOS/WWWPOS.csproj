@@ -67,6 +67,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SideBarControl\UserControlDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserControlDashboard.Designer.cs">
+      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\UserControlSales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserControlSales.Designer.cs">
+      <DependentUpon>UserControlSales.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +98,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SideBarControl\UserControlDashboard.resx">
+      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserControlSales.resx">
+      <DependentUpon>UserControlSales.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

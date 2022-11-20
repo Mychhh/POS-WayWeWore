@@ -16,5 +16,15 @@ namespace WWWPOS
         {
             InitializeComponent();
         }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            //Removes the Login Page
+            this.Hide();
+
+            //Show the Form2
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+        }
     }
 }

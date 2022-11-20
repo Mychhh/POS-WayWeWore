@@ -54,9 +54,10 @@
             this.panel1.Controls.Add(this.Tagline);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.panel1.Location = new System.Drawing.Point(619, 59);
+            this.panel1.Location = new System.Drawing.Point(825, 73);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(406, 600);
+            this.panel1.Size = new System.Drawing.Size(541, 738);
             this.panel1.TabIndex = 4;
             // 
             // btn_Login
@@ -66,12 +67,14 @@
             this.btn_Login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Login.ForeColor = System.Drawing.Color.White;
-            this.btn_Login.Location = new System.Drawing.Point(120, 434);
+            this.btn_Login.Location = new System.Drawing.Point(160, 534);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(197, 42);
+            this.btn_Login.Size = new System.Drawing.Size(263, 52);
             this.btn_Login.TabIndex = 6;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = false;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // txtBox_Password
             // 
@@ -79,19 +82,20 @@
             this.txtBox_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBox_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_Password.Location = new System.Drawing.Point(89, 376);
+            this.txtBox_Password.Location = new System.Drawing.Point(119, 463);
+            this.txtBox_Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBox_Password.Name = "txtBox_Password";
-            this.txtBox_Password.Size = new System.Drawing.Size(253, 22);
+            this.txtBox_Password.Size = new System.Drawing.Size(337, 27);
             this.txtBox_Password.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(126, 346);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(168, 426);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 27);
+            this.label2.Size = new System.Drawing.Size(241, 33);
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -102,19 +106,20 @@
             this.txtBox_UserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_UserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBox_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_UserName.Location = new System.Drawing.Point(89, 313);
+            this.txtBox_UserName.Location = new System.Drawing.Point(119, 385);
+            this.txtBox_UserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBox_UserName.Name = "txtBox_UserName";
-            this.txtBox_UserName.Size = new System.Drawing.Size(253, 22);
+            this.txtBox_UserName.Size = new System.Drawing.Size(337, 27);
             this.txtBox_UserName.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(126, 283);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(168, 348);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 27);
+            this.label1.Size = new System.Drawing.Size(241, 33);
             this.label1.TabIndex = 2;
             this.label1.Text = "Username";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -123,10 +128,10 @@
             // 
             this.Tagline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tagline.ForeColor = System.Drawing.Color.White;
-            this.Tagline.Location = new System.Drawing.Point(37, 193);
-            this.Tagline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Tagline.Location = new System.Drawing.Point(49, 238);
+            this.Tagline.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Tagline.Name = "Tagline";
-            this.Tagline.Size = new System.Drawing.Size(351, 73);
+            this.Tagline.Size = new System.Drawing.Size(468, 90);
             this.Tagline.TabIndex = 1;
             this.Tagline.Text = "Tagline Lorem Ipsum dolor Sit amet Contol sit lea adaodjdjd Blahbahblah Ndwbofosi" +
     "do fso dcosldvicab";
@@ -136,10 +141,10 @@
             // 
             this.panel2.BackgroundImage = global::WWWPOS.Properties.Resources.Logo;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(144, 59);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Location = new System.Drawing.Point(191, 73);
+            this.panel2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(145, 129);
+            this.panel2.Size = new System.Drawing.Size(193, 159);
             this.panel2.TabIndex = 0;
             // 
             // panel3
@@ -147,21 +152,22 @@
             this.panel3.BackgroundImage = global::WWWPOS.Properties.Resources.header;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Location = new System.Drawing.Point(42, 293);
+            this.panel3.Location = new System.Drawing.Point(56, 361);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(531, 205);
+            this.panel3.Size = new System.Drawing.Size(707, 251);
             this.panel3.TabIndex = 5;
             // 
             // LoginPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1066, 718);
+            this.ClientSize = new System.Drawing.Size(1421, 884);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginPage";
             this.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.ShowIcon = false;
