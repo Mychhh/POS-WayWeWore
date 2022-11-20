@@ -79,6 +79,12 @@
     <Compile Include="SideBarControl\UserControlDashboard.Designer.cs">
       <DependentUpon>UserControlDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\UserControlInventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserControlInventory.Designer.cs">
+      <DependentUpon>UserControlInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\UserControlPurchase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControlDashboard.resx">
       <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserControlInventory.resx">
+      <DependentUpon>UserControlInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControlPurchase.resx">
       <DependentUpon>UserControlPurchase.cs</DependentUpon>
