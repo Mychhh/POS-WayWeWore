@@ -85,6 +85,12 @@
     <Compile Include="SideBarControl\UserControlSales.Designer.cs">
       <DependentUpon>UserControlSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\UserControUserList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserControUserList.Designer.cs">
+      <DependentUpon>UserControUserList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControlSales.resx">
       <DependentUpon>UserControlSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserControUserList.resx">
+      <DependentUpon>UserControUserList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
