@@ -17,6 +17,7 @@ namespace WWWPOS
         SideBarControl.UserControlSales UC_Sales = new SideBarControl.UserControlSales();
         SideBarControl.UserControlPurchase UC_Purchase = new SideBarControl.UserControlPurchase();
         SideBarControl.UserControUserList UC_UserList = new SideBarControl.UserControUserList();
+        SideBarControl.UserControlArchive UC_Archive = new SideBarControl.UserControlArchive();
 
         public Form2()
         {
@@ -56,6 +57,13 @@ namespace WWWPOS
             panel_Main.Controls.Clear();
             panel_Main.Controls.Add(UC_UserList);
             UC_UserList.Dock = DockStyle.Fill;
+        }
+
+        private void btn_Archive_Click(object sender, EventArgs e)
+        {
+            panel_Main.Controls.Clear();
+            panel_Main.Controls.Add(UC_Archive);
+            UC_Archive.Dock = DockStyle.Fill;
         }
     }
 }
