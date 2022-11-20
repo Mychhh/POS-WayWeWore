@@ -65,5 +65,6 @@ namespace WWWPOS
             panel_Main.Controls.Add(UC_Archive);
             UC_Archive.Dock = DockStyle.Fill;
         }
+
     }
 }
