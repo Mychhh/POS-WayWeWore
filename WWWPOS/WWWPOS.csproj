@@ -67,6 +67,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SideBarControl\Inventory\UserControlCreate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Inventory\UserControlCreate.Designer.cs">
+      <DependentUpon>UserControlCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Inventory\UserControlRead.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Inventory\UserControlRead.Designer.cs">
+      <DependentUpon>UserControlRead.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\UserControlArchive.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +134,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SideBarControl\Inventory\UserControlCreate.resx">
+      <DependentUpon>UserControlCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Inventory\UserControlRead.resx">
+      <DependentUpon>UserControlRead.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControlArchive.resx">
       <DependentUpon>UserControlArchive.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\header.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
