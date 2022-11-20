@@ -13,8 +13,9 @@ namespace WWWPOS
     public partial class Form2 : Form
     {
         //Initialized User Control
-        SideBarControl.UserControlDashboard UCD_Dashboard = new SideBarControl.UserControlDashboard();
-        SideBarControl.UserControlSales UCD_Sales = new SideBarControl.UserControlSales();
+        SideBarControl.UserControlDashboard UC_Dashboard = new SideBarControl.UserControlDashboard();
+        SideBarControl.UserControlSales UC_Sales = new SideBarControl.UserControlSales();
+        SideBarControl.UserControlPurchase UC_Purchase = new SideBarControl.UserControlPurchase();
 
         public Form2()
         {
@@ -24,22 +25,29 @@ namespace WWWPOS
         private void Form2_Load(object sender, EventArgs e)
         {
             //panel_Main.Controls.Clear();
-            panel_Main.Controls.Add(UCD_Dashboard);
-            UCD_Dashboard.Dock = DockStyle.Fill;
+            panel_Main.Controls.Add(UC_Dashboard);
+            UC_Dashboard.Dock = DockStyle.Fill;
         }
 
         private void btn_Dashboard_Click(object sender, EventArgs e)
         {
             panel_Main.Controls.Clear();
-            panel_Main.Controls.Add(UCD_Dashboard);
-            UCD_Dashboard.Dock = DockStyle.Fill;
+            panel_Main.Controls.Add(UC_Dashboard);
+            UC_Dashboard.Dock = DockStyle.Fill;
         }
 
         private void btn_Sales_Click(object sender, EventArgs e)
         {
             panel_Main.Controls.Clear();
-            panel_Main.Controls.Add(UCD_Sales);
-            UCD_Sales.Dock = DockStyle.Fill;
+            panel_Main.Controls.Add(UC_Sales);
+            UC_Sales.Dock = DockStyle.Fill;
+        }
+
+        private void btn_Purchase_Click(object sender, EventArgs e)
+        {
+            panel_Main.Controls.Clear();
+            panel_Main.Controls.Add(UC_Purchase);
+            UC_Purchase.Dock = DockStyle.Fill;
         }
     }
 }

@@ -25,3 +25,4 @@ C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.Form3.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.Form2.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControlDashboard.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControlSales.resources
+C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControlPurchase.resources
