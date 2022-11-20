@@ -29,25 +29,21 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_UserList = new System.Windows.Forms.Button();
+            this.btn_Purchase = new System.Windows.Forms.Button();
             this.btn_Dashboard = new System.Windows.Forms.Button();
             this.btn_Sales = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.lbl_AdminName = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.lbl_ProductArchive = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.lbl_UserList = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_Inventory = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel_Main = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.btn_Purchase = new System.Windows.Forms.Button();
+            this.btn_Archive = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +51,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.btn_Archive);
+            this.panel1.Controls.Add(this.btn_UserList);
             this.panel1.Controls.Add(this.btn_Purchase);
             this.panel1.Controls.Add(this.btn_Dashboard);
             this.panel1.Controls.Add(this.btn_Sales);
@@ -62,8 +60,6 @@
             this.panel1.Controls.Add(this.lbl_AdminName);
             this.panel1.Controls.Add(this.panel14);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Location = new System.Drawing.Point(-3, -95);
@@ -71,6 +67,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 1024);
             this.panel1.TabIndex = 30;
+            // 
+            // btn_UserList
+            // 
+            this.btn_UserList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.btn_UserList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_UserList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_UserList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_UserList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_UserList.Location = new System.Drawing.Point(20, 601);
+            this.btn_UserList.Name = "btn_UserList";
+            this.btn_UserList.Size = new System.Drawing.Size(336, 55);
+            this.btn_UserList.TabIndex = 51;
+            this.btn_UserList.Text = "User list";
+            this.btn_UserList.UseVisualStyleBackColor = false;
+            this.btn_UserList.Click += new System.EventHandler(this.btn_UserList_Click);
+            // 
+            // btn_Purchase
+            // 
+            this.btn_Purchase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.btn_Purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Purchase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Purchase.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Purchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Purchase.Location = new System.Drawing.Point(20, 450);
+            this.btn_Purchase.Name = "btn_Purchase";
+            this.btn_Purchase.Size = new System.Drawing.Size(336, 55);
+            this.btn_Purchase.TabIndex = 50;
+            this.btn_Purchase.Text = "Purchase";
+            this.btn_Purchase.UseVisualStyleBackColor = false;
+            this.btn_Purchase.Click += new System.EventHandler(this.btn_Purchase_Click);
             // 
             // btn_Dashboard
             // 
@@ -144,48 +170,6 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Admin Name";
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel7.Controls.Add(this.lbl_ProductArchive);
-            this.panel7.Location = new System.Drawing.Point(20, 674);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(336, 55);
-            this.panel7.TabIndex = 5;
-            // 
-            // lbl_ProductArchive
-            // 
-            this.lbl_ProductArchive.AutoSize = true;
-            this.lbl_ProductArchive.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductArchive.Location = new System.Drawing.Point(59, 14);
-            this.lbl_ProductArchive.Name = "lbl_ProductArchive";
-            this.lbl_ProductArchive.Size = new System.Drawing.Size(181, 29);
-            this.lbl_ProductArchive.TabIndex = 42;
-            this.lbl_ProductArchive.Text = "Product Archive";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel6.Controls.Add(this.lbl_UserList);
-            this.panel6.Location = new System.Drawing.Point(20, 599);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(336, 55);
-            this.panel6.TabIndex = 4;
-            // 
-            // lbl_UserList
-            // 
-            this.lbl_UserList.AutoSize = true;
-            this.lbl_UserList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_UserList.Location = new System.Drawing.Point(59, 13);
-            this.lbl_UserList.Name = "lbl_UserList";
-            this.lbl_UserList.Size = new System.Drawing.Size(107, 29);
-            this.lbl_UserList.TabIndex = 41;
-            this.lbl_UserList.Text = "User List";
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
@@ -234,20 +218,20 @@
             this.panel8.Size = new System.Drawing.Size(528, 138);
             this.panel8.TabIndex = 46;
             // 
-            // btn_Purchase
+            // btn_Archive
             // 
-            this.btn_Purchase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
-            this.btn_Purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_Purchase.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Purchase.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Purchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Purchase.Location = new System.Drawing.Point(20, 450);
-            this.btn_Purchase.Name = "btn_Purchase";
-            this.btn_Purchase.Size = new System.Drawing.Size(336, 55);
-            this.btn_Purchase.TabIndex = 50;
-            this.btn_Purchase.Text = "Purchase";
-            this.btn_Purchase.UseVisualStyleBackColor = false;
-            this.btn_Purchase.Click += new System.EventHandler(this.btn_Purchase_Click);
+            this.btn_Archive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.btn_Archive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Archive.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Archive.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Archive.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Archive.Location = new System.Drawing.Point(20, 678);
+            this.btn_Archive.Name = "btn_Archive";
+            this.btn_Archive.Size = new System.Drawing.Size(336, 55);
+            this.btn_Archive.TabIndex = 52;
+            this.btn_Archive.Text = "Archive";
+            this.btn_Archive.UseVisualStyleBackColor = false;
+            this.btn_Archive.Click += new System.EventHandler(this.btn_Archive_Click);
             // 
             // Form2
             // 
@@ -268,10 +252,6 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
@@ -282,11 +262,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label lbl_ProductArchive;
-        private System.Windows.Forms.Label lbl_UserList;
         private System.Windows.Forms.Label lbl_Inventory;
         private System.Windows.Forms.Label lbl_AdminName;
         private System.Windows.Forms.Panel panel14;
@@ -297,5 +273,7 @@
         private System.Windows.Forms.Button btn_Dashboard;
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Purchase;
+        private System.Windows.Forms.Button btn_UserList;
+        private System.Windows.Forms.Button btn_Archive;
     }
 }
