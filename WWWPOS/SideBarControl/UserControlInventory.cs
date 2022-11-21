@@ -15,6 +15,7 @@ namespace WWWPOS.SideBarControl
         //Initialized Inventory UserControl
         Inventory.UserControlRead UC_Read =  new Inventory.UserControlRead();
         Inventory.UserControlCreate UC_Create = new Inventory.UserControlCreate();
+        Inventory.UserControlViewUpdate UC_ViewUpdate = new Inventory.UserControlViewUpdate();
 
         public UserControlInventory()
         {
@@ -34,5 +35,18 @@ namespace WWWPOS.SideBarControl
             panel_Inventory.Controls.Add(UC_Create);
             UC_Create.Dock = DockStyle.Fill;
         }
+
+        private void btn_UpdateProduct_Click(object sender, EventArgs e)
+        {
+            panel_Inventory.Controls.Clear();
+            panel_Inventory.Controls.Add(UC_ViewUpdate);
+            UC_ViewUpdate.Dock = DockStyle.Fill;
+        }
+
+        private void btn_DeleteProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
