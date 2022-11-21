@@ -79,6 +79,18 @@
     <Compile Include="SideBarControl\Inventory\UserControlRead.Designer.cs">
       <DependentUpon>UserControlRead.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Inventory\UserControlUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Inventory\UserControlUpdate.Designer.cs">
+      <DependentUpon>UserControlUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Inventory\UserControlViewUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Inventory\UserControlViewUpdate.Designer.cs">
+      <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\UserControlArchive.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlRead.resx">
       <DependentUpon>UserControlRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Inventory\UserControlUpdate.resx">
+      <DependentUpon>UserControlUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Inventory\UserControlViewUpdate.resx">
+      <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControlArchive.resx">
       <DependentUpon>UserControlArchive.cs</DependentUpon>

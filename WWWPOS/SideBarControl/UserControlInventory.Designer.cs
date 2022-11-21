@@ -77,6 +77,7 @@
             this.btn_UpdateProduct.TabIndex = 3;
             this.btn_UpdateProduct.Text = "Edit Product";
             this.btn_UpdateProduct.UseVisualStyleBackColor = false;
+            this.btn_UpdateProduct.Click += new System.EventHandler(this.btn_UpdateProduct_Click);
             // 
             // btn_DeleteProduct
             // 
@@ -91,6 +92,7 @@
             this.btn_DeleteProduct.TabIndex = 1;
             this.btn_DeleteProduct.Text = "Delete Product";
             this.btn_DeleteProduct.UseVisualStyleBackColor = false;
+            this.btn_DeleteProduct.Click += new System.EventHandler(this.btn_DeleteProduct_Click);
             // 
             // lbl_Inventory
             // 
