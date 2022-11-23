@@ -20,11 +20,10 @@ namespace WWWPOS
         private void btn_Login_Click(object sender, EventArgs e)
         {
             //Removes the Login Page
-            this.Hide();
 
             //Show the Form2
             Form2 f2 = new Form2();
-            f2.ShowDialog();
+            f2.Show();
         }
 
         private void btn_Client_Click(object sender, EventArgs e)
@@ -32,6 +31,13 @@ namespace WWWPOS
             this.Hide();
             Client client = new Client();
             client.ShowDialog();
+        }
+
+        private void btn_SignUp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisterForm register = new RegisterForm();
+            register.ShowDialog();
         }
     }
 }
