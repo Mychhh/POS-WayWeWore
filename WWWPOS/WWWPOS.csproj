@@ -77,9 +77,7 @@
     <Compile Include="ClientControl\UserControl_ViewCart.Designer.cs">
       <DependentUpon>UserControl_ViewCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client_Order_Checkout.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Client_Order_Checkout.cs" />
     <Compile Include="Client_Order_Checkout.Designer.cs">
       <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
     </Compile>
