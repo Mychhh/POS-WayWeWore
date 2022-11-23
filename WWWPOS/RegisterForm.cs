@@ -43,7 +43,7 @@ namespace WWWPOS
                 {
                     int phoneNumber = (int)Convert.ToInt64(txt_Phone.Text);
                     string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=waywewore;";
-                    string iquery = "INSERT INTO account(`Full_Name`, `Email`, `Password`,`Phone`,`Address`) VALUES ('" + txt_FullName.Text + "', '" + txt_Email.Text + "', '" + txt_Password.Text + "', '" + phoneNumber + "', '" + txt_Address.Text + "')";
+                    string iquery = "INSERT INTO account(`Full_Name`, `Email`, `Password`,`Phone`,`Address`, `User_Type`) VALUES ('" + txt_FullName.Text + "', '" + txt_Email.Text + "', '" + txt_Password.Text + "', '" + phoneNumber + "', '" + txt_Address.Text + "','Client')";
 
 
                     MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -66,8 +66,8 @@ namespace WWWPOS
                     if (dialogResult == DialogResult.OK)
                     {
                         this.Hide();
-                        Form form = new Form();
-                        form.ShowDialog();
+                        LoginPage loginPage = new LoginPage();
+                        loginPage.ShowDialog();
                     }
                 }
                 connection.Close();
