@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_SignUp = new System.Windows.Forms.Button();
             this.btn_Client = new System.Windows.Forms.Button();
             this.btn_Login = new System.Windows.Forms.Button();
             this.txtBox_Password = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBox_UserName = new System.Windows.Forms.TextBox();
+            this.txtBox_Email = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Tagline = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_SignUp = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.panel1.Controls.Add(this.btn_Login);
             this.panel1.Controls.Add(this.txtBox_Password);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtBox_UserName);
+            this.panel1.Controls.Add(this.txtBox_Email);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.Tagline);
             this.panel1.Controls.Add(this.panel2);
@@ -62,6 +62,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(406, 600);
             this.panel1.TabIndex = 4;
+            // 
+            // btn_SignUp
+            // 
+            this.btn_SignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.btn_SignUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_SignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SignUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_SignUp.ForeColor = System.Drawing.Color.White;
+            this.btn_SignUp.Location = new System.Drawing.Point(236, 422);
+            this.btn_SignUp.Name = "btn_SignUp";
+            this.btn_SignUp.Size = new System.Drawing.Size(106, 31);
+            this.btn_SignUp.TabIndex = 8;
+            this.btn_SignUp.Text = "Sign up";
+            this.btn_SignUp.UseVisualStyleBackColor = false;
+            this.btn_SignUp.Click += new System.EventHandler(this.btn_SignUp_Click);
             // 
             // btn_Client
             // 
@@ -100,8 +115,9 @@
             this.txtBox_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBox_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Password.Location = new System.Drawing.Point(89, 376);
+            this.txtBox_Password.Multiline = true;
             this.txtBox_Password.Name = "txtBox_Password";
-            this.txtBox_Password.Size = new System.Drawing.Size(253, 22);
+            this.txtBox_Password.Size = new System.Drawing.Size(253, 25);
             this.txtBox_Password.TabIndex = 5;
             // 
             // label2
@@ -116,16 +132,17 @@
             this.label2.Text = "Password";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtBox_UserName
+            // txtBox_Email
             // 
-            this.txtBox_UserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
-            this.txtBox_UserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_UserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBox_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_UserName.Location = new System.Drawing.Point(89, 313);
-            this.txtBox_UserName.Name = "txtBox_UserName";
-            this.txtBox_UserName.Size = new System.Drawing.Size(253, 22);
-            this.txtBox_UserName.TabIndex = 3;
+            this.txtBox_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.txtBox_Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBox_Email.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBox_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_Email.Location = new System.Drawing.Point(89, 313);
+            this.txtBox_Email.Multiline = true;
+            this.txtBox_Email.Name = "txtBox_Email";
+            this.txtBox_Email.Size = new System.Drawing.Size(253, 25);
+            this.txtBox_Email.TabIndex = 3;
             // 
             // label1
             // 
@@ -136,7 +153,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 27);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Username";
+            this.label1.Text = "Email";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Tagline
@@ -172,21 +189,6 @@
             this.panel3.Size = new System.Drawing.Size(531, 205);
             this.panel3.TabIndex = 5;
             // 
-            // btn_SignUp
-            // 
-            this.btn_SignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
-            this.btn_SignUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_SignUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_SignUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_SignUp.ForeColor = System.Drawing.Color.White;
-            this.btn_SignUp.Location = new System.Drawing.Point(236, 422);
-            this.btn_SignUp.Name = "btn_SignUp";
-            this.btn_SignUp.Size = new System.Drawing.Size(106, 31);
-            this.btn_SignUp.TabIndex = 8;
-            this.btn_SignUp.Text = "Sign up";
-            this.btn_SignUp.UseVisualStyleBackColor = false;
-            this.btn_SignUp.Click += new System.EventHandler(this.btn_SignUp_Click);
-            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,7 +216,7 @@
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.TextBox txtBox_Password;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBox_UserName;
+        private System.Windows.Forms.TextBox txtBox_Email;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Tagline;
         private System.Windows.Forms.Panel panel2;
