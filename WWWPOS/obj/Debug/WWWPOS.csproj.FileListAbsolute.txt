@@ -33,3 +33,32 @@ C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Invento
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlCreate.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlUpdate.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlViewUpdate.resources
+D:\WayWeWore\WWWPOS\bin\Debug\WWWPOS.exe.config
+D:\WayWeWore\WWWPOS\bin\Debug\WWWPOS.exe
+D:\WayWeWore\WWWPOS\bin\Debug\WWWPOS.pdb
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.csproj.AssemblyReference.cache
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.csproj.SuggestedBindingRedirects.cache
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.LoginPage.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.Form3.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.Form2.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.Properties.Resources.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlCreate.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlRead.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlUpdate.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlViewUpdate.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControlArchive.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControlDashboard.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControlInventory.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControlPurchase.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControlSales.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControUserList.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.csproj.GenerateResource.cache
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.csproj.CoreCompileInputs.cache
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.exe
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.pdb
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.Client.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_AllProducts.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_ShortProducts.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_TShirtProducts.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_ViewCart.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.Client_Order_Checkout.resources

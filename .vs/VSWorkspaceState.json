@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WWWPOS"
+    "\\WWWPOS",
+    "\\WWWPOS\\ClientControl"
   ],
-  "SelectedNode": "\\WWWPOS\\Form2.cs",
+  "SelectedNode": "\\WWWPOS\\ClientControl\\UserControl_AllProducts.Designer.cs",
   "PreviewInSolutionExplorer": false
 }

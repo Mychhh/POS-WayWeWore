@@ -26,5 +26,12 @@ namespace WWWPOS
             Form2 f2 = new Form2();
             f2.ShowDialog();
         }
+
+        private void btn_Client_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Client client = new Client();
+            client.ShowDialog();
+        }
     }
 }
