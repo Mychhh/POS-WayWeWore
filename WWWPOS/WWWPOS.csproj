@@ -47,6 +47,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client.Designer.cs">
+      <DependentUpon>Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientControl\UserControl_AllProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl\UserControl_AllProducts.Designer.cs">
+      <DependentUpon>UserControl_AllProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientControl\UserControl_ShortProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl\UserControl_ShortProducts.Designer.cs">
+      <DependentUpon>UserControl_ShortProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientControl\UserControl_TShirtProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl\UserControl_TShirtProducts.Designer.cs">
+      <DependentUpon>UserControl_TShirtProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientControl\UserControl_ViewCart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl\UserControl_ViewCart.Designer.cs">
+      <DependentUpon>UserControl_ViewCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Order_Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client_Order_Checkout.Designer.cs">
+      <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +163,24 @@
     <Compile Include="SideBarControl\UserControUserList.Designer.cs">
       <DependentUpon>UserControUserList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientControl\UserControl_AllProducts.resx">
+      <DependentUpon>UserControl_AllProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientControl\UserControl_ShortProducts.resx">
+      <DependentUpon>UserControl_ShortProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientControl\UserControl_TShirtProducts.resx">
+      <DependentUpon>UserControl_TShirtProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientControl\UserControl_ViewCart.resx">
+      <DependentUpon>UserControl_ViewCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client_Order_Checkout.resx">
+      <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
