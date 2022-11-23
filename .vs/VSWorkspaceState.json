@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\WWWPOS",
-    "\\WWWPOS\\ClientControl"
+    "\\WWWPOS\\SideBarControl",
+    "\\WWWPOS\\SideBarControl\\Inventory"
   ],
-  "SelectedNode": "\\WWWPOS\\ClientControl\\UserControl_AllProducts.Designer.cs",
+  "SelectedNode": "\\WWWPOS\\SideBarControl\\Inventory\\UserControlViewUpdate.cs",
   "PreviewInSolutionExplorer": false
 }

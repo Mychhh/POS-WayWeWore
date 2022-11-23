@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WWWPOS.ClientControl
 {
-    public partial class UserControl_ShortProducts : UserControl
+    public partial class UserControl_Shorts : UserControl
     {
-        public UserControl_ShortProducts()
+        public UserControl_Shorts()
         {
             InitializeComponent();
         }
