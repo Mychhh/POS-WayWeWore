@@ -65,8 +65,11 @@ namespace WWWPOS
                     dialogResult = MessageBox.Show("Account Successfully Created!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
                     if (dialogResult == DialogResult.OK)
                     {
+
                         this.Hide();
-                        Form form = new Form();
+                        
+                        //Initialized Form1 with an ObjectName of LoginPage
+                        LoginPage form = new LoginPage();
                         form.ShowDialog();
                     }
                 }
