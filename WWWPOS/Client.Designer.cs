@@ -28,17 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Short = new System.Windows.Forms.Button();
             this.btn_TShirt = new System.Windows.Forms.Button();
             this.btn_ViewCart = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.userSearch = new System.Windows.Forms.TextBox();
             this.clientPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,12 +62,13 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(235, 157);
+            this.button1.Location = new System.Drawing.Point(155, 157);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 37);
+            this.button1.Size = new System.Drawing.Size(169, 37);
             this.button1.TabIndex = 2;
             this.button1.Text = "All Products";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_Short
             // 
@@ -71,9 +77,9 @@
             this.btn_Short.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Short.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_Short.ForeColor = System.Drawing.Color.White;
-            this.btn_Short.Location = new System.Drawing.Point(385, 157);
+            this.btn_Short.Location = new System.Drawing.Point(343, 157);
             this.btn_Short.Name = "btn_Short";
-            this.btn_Short.Size = new System.Drawing.Size(117, 37);
+            this.btn_Short.Size = new System.Drawing.Size(169, 37);
             this.btn_Short.TabIndex = 3;
             this.btn_Short.Text = "Short";
             this.btn_Short.UseVisualStyleBackColor = false;
@@ -86,9 +92,9 @@
             this.btn_TShirt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TShirt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_TShirt.ForeColor = System.Drawing.Color.White;
-            this.btn_TShirt.Location = new System.Drawing.Point(539, 157);
+            this.btn_TShirt.Location = new System.Drawing.Point(535, 157);
             this.btn_TShirt.Name = "btn_TShirt";
-            this.btn_TShirt.Size = new System.Drawing.Size(117, 37);
+            this.btn_TShirt.Size = new System.Drawing.Size(169, 37);
             this.btn_TShirt.TabIndex = 4;
             this.btn_TShirt.Text = "T-Shirt";
             this.btn_TShirt.UseVisualStyleBackColor = false;
@@ -96,14 +102,14 @@
             // 
             // btn_ViewCart
             // 
-            this.btn_ViewCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_ViewCart.BackColor = System.Drawing.Color.White;
             this.btn_ViewCart.FlatAppearance.BorderSize = 0;
             this.btn_ViewCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ViewCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_ViewCart.ForeColor = System.Drawing.Color.White;
-            this.btn_ViewCart.Location = new System.Drawing.Point(684, 157);
+            this.btn_ViewCart.ForeColor = System.Drawing.Color.Black;
+            this.btn_ViewCart.Location = new System.Drawing.Point(723, 157);
             this.btn_ViewCart.Name = "btn_ViewCart";
-            this.btn_ViewCart.Size = new System.Drawing.Size(117, 37);
+            this.btn_ViewCart.Size = new System.Drawing.Size(169, 37);
             this.btn_ViewCart.TabIndex = 5;
             this.btn_ViewCart.Text = "View Cart";
             this.btn_ViewCart.UseVisualStyleBackColor = false;
@@ -112,21 +118,34 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.userSearch);
-            this.panel2.Location = new System.Drawing.Point(167, 213);
+            this.panel2.Location = new System.Drawing.Point(95, 210);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(10, 40, 10, 40);
-            this.panel2.Size = new System.Drawing.Size(737, 32);
+            this.panel2.Padding = new System.Windows.Forms.Padding(10, 60, 10, 60);
+            this.panel2.Size = new System.Drawing.Size(848, 40);
             this.panel2.TabIndex = 6;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(800, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 32);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
             // 
             // userSearch
             // 
             this.userSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.userSearch.Location = new System.Drawing.Point(10, 6);
+            this.userSearch.Location = new System.Drawing.Point(10, 10);
             this.userSearch.Name = "userSearch";
             this.userSearch.Size = new System.Drawing.Size(663, 19);
             this.userSearch.TabIndex = 0;
             this.userSearch.Text = "Search products";
+            this.userSearch.Enter += new System.EventHandler(this.userSearch_Enter);
+            this.userSearch.Leave += new System.EventHandler(this.userSearch_Leave);
             // 
             // clientPanel
             // 
@@ -147,12 +166,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(723, 157);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(47, 37);
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1040, 640);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.clientPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_ViewCart);
@@ -170,7 +201,9 @@
             this.Load += new System.EventHandler(this.Client_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,5 +219,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox userSearch;
         private System.Windows.Forms.Panel clientPanel;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

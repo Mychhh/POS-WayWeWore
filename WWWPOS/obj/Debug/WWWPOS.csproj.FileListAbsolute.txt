@@ -58,7 +58,7 @@ D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.exe
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.pdb
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.Client.resources
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_AllProducts.resources
-D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_ShortProducts.resources
-D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_TShirtProducts.resources
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_ViewCart.resources
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.Client_Order_Checkout.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_Shorts.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_TShirtProducts.resources
