@@ -133,6 +133,6 @@
         private System.Windows.Forms.Button btn_DeleteProduct;
         private System.Windows.Forms.Label lbl_Inventory;
         private System.Windows.Forms.Button btn_AddProduct;
-        private System.Windows.Forms.Panel panel_Inventory;
+        public System.Windows.Forms.Panel panel_Inventory;
     }
 }
