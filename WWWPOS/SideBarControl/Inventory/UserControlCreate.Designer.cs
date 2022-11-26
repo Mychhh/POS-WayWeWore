@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panell_5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_Save = new System.Windows.Forms.Button();
@@ -46,14 +46,14 @@
             this.txtBox_Stocks = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // panel5
+            // panell_5
             // 
-            this.panel5.BackgroundImage = global::WWWPOS.Properties.Resources.Images;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Location = new System.Drawing.Point(48, 59);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(406, 278);
-            this.panel5.TabIndex = 5;
+            this.panell_5.BackgroundImage = global::WWWPOS.Properties.Resources.Images;
+            this.panell_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panell_5.Location = new System.Drawing.Point(48, 59);
+            this.panell_5.Name = "panell_5";
+            this.panell_5.Size = new System.Drawing.Size(406, 278);
+            this.panell_5.TabIndex = 5;
             // 
             // label1
             // 
@@ -231,7 +231,7 @@
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panell_5);
             this.Name = "UserControlCreate";
             this.Size = new System.Drawing.Size(932, 517);
             this.ResumeLayout(false);
@@ -241,7 +241,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panell_5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_Save;
