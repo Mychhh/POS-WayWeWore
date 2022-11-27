@@ -115,3 +115,4 @@ C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserCont
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.Client_Order_Checkout.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.RegisterForm.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.csproj.CopyComplete
+C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlDelete.resources
