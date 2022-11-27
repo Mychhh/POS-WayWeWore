@@ -19,7 +19,7 @@ namespace WWWPOS.SideBarControl.Inventory
             InitializeComponent();
         }
 
-        private void btn_Edit_Click(object sender, EventArgs e)
+        private void btn_Update_Click(object sender, EventArgs e)
         {
             UserControlInventory UCI = new UserControlInventory();
             UserControlUpdate UC_Update = new UserControlUpdate();
