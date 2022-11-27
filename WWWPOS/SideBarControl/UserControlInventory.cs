@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 using WWWPOS.SideBarControl.Inventory;
+using System.Runtime.CompilerServices;
+using System.Windows.Media;
 
 namespace WWWPOS.SideBarControl
 {
@@ -41,6 +43,15 @@ namespace WWWPOS.SideBarControl
             panel_Inventory.Controls.Clear();
             panel_Inventory.Controls.Add(UC_ViewUpdate);
             UC_ViewUpdate.Dock = DockStyle.Fill;
+
+            //UserControlUpdate UC_Update = new UserControlUpdate();
+
+            //UC_Update.remove();
+
+            //UC_Update.Hide();
+            //UC_Update.Visible = false;
+
+            //Console.WriteLine("I am here");
         }
         
         private void btn_DeleteProduct_Click_1(object sender, EventArgs e)

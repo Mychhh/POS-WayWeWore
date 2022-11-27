@@ -22,7 +22,7 @@ namespace WWWPOS.SideBarControl.Inventory
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_ViewAllProduct_Click_1(object sender, EventArgs e)
         {
             UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
 
@@ -30,5 +30,23 @@ namespace WWWPOS.SideBarControl.Inventory
             Controls.Add(UC_ViewUpdate);
             UC_ViewUpdate.Dock = DockStyle.Fill;
         }
+
+        //public void remove()
+        //{
+        //    UserControlInventory UC_Inventory = new UserControlInventory();
+
+        //    UC_Inventory.panel_Inventory.Controls.Clear();
+        //    Controls.Clear();
+        //}
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            UserControlRead UC_Read = new UserControlRead();
+
+            Controls.Clear();
+            Controls.Add(UC_Read);
+            UC_Read.Dock = DockStyle.Fill;
+        }
+
     }
 }

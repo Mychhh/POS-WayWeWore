@@ -209,6 +209,7 @@
             // 
             // panel_Main
             // 
+            this.panel_Main.BackColor = System.Drawing.Color.SaddleBrown;
             this.panel_Main.Location = new System.Drawing.Point(419, 204);
             this.panel_Main.Name = "panel_Main";
             this.panel_Main.Size = new System.Drawing.Size(976, 655);

@@ -21,17 +21,11 @@ namespace WWWPOS.SideBarControl.Inventory
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            UserControlInventory UCI = new UserControlInventory();
             UserControlUpdate UC_Update = new UserControlUpdate();
-
-            //UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
-            //UCI.panel_Inventory.Controls.Remove(UC_ViewUpdate);
 
             Controls.Clear();
             Controls.Add(UC_Update);
             UC_Update.Dock = DockStyle.Fill;
-
-            Console.WriteLine("I am here");
         }
     }
 }
