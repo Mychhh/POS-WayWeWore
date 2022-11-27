@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_DeleteProduct = new System.Windows.Forms.Button();
             this.btn_AddProduct = new System.Windows.Forms.Button();
             this.btn_UpdateProduct = new System.Windows.Forms.Button();
             this.lbl_Inventory = new System.Windows.Forms.Label();
             this.panel_Inventory = new System.Windows.Forms.Panel();
-            this.btn_DeleteProduct = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +48,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(932, 82);
             this.panel1.TabIndex = 19;
+            // 
+            // btn_DeleteProduct
+            // 
+            this.btn_DeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_DeleteProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteProduct.ForeColor = System.Drawing.Color.White;
+            this.btn_DeleteProduct.Location = new System.Drawing.Point(751, 18);
+            this.btn_DeleteProduct.Name = "btn_DeleteProduct";
+            this.btn_DeleteProduct.Size = new System.Drawing.Size(162, 46);
+            this.btn_DeleteProduct.TabIndex = 5;
+            this.btn_DeleteProduct.Text = "Delete Product";
+            this.btn_DeleteProduct.UseVisualStyleBackColor = false;
+            this.btn_DeleteProduct.Click += new System.EventHandler(this.btn_DeleteProduct_Click_1);
             // 
             // btn_AddProduct
             // 
@@ -95,21 +110,6 @@
             this.panel_Inventory.Name = "panel_Inventory";
             this.panel_Inventory.Size = new System.Drawing.Size(932, 517);
             this.panel_Inventory.TabIndex = 20;
-            // 
-            // btn_DeleteProduct
-            // 
-            this.btn_DeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            this.btn_DeleteProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_DeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_DeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DeleteProduct.ForeColor = System.Drawing.Color.White;
-            this.btn_DeleteProduct.Location = new System.Drawing.Point(751, 18);
-            this.btn_DeleteProduct.Name = "btn_DeleteProduct";
-            this.btn_DeleteProduct.Size = new System.Drawing.Size(162, 46);
-            this.btn_DeleteProduct.TabIndex = 5;
-            this.btn_DeleteProduct.Text = "Delete Product";
-            this.btn_DeleteProduct.UseVisualStyleBackColor = false;
-            this.btn_DeleteProduct.Click += new System.EventHandler(this.btn_DeleteProduct_Click_1);
             // 
             // UserControlInventory
             // 
