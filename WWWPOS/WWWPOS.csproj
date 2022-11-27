@@ -151,6 +151,12 @@
     <Compile Include="SideBarControl\Inventory\UserControlCreate.Designer.cs">
       <DependentUpon>UserControlCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Inventory\UserControlDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Inventory\UserControlDelete.Designer.cs">
+      <DependentUpon>UserControlDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\Inventory\UserControlRead.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlCreate.resx">
       <DependentUpon>UserControlCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Inventory\UserControlDelete.resx">
+      <DependentUpon>UserControlDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlRead.resx">
       <DependentUpon>UserControlRead.cs</DependentUpon>

@@ -13,8 +13,6 @@ namespace WWWPOS.SideBarControl.Inventory
 {
     public partial class UserControlViewUpdate : UserControl
     {
-        //UserControlInventory UCI = new UserControlInventory();
-        //UserControlUpdate UC_Update =  new UserControlUpdate();
 
         public UserControlViewUpdate()
         {
@@ -25,19 +23,19 @@ namespace WWWPOS.SideBarControl.Inventory
         {
             UserControlInventory UCI = new UserControlInventory();
             UserControlUpdate UC_Update = new UserControlUpdate();
-            //UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
 
-            //typeof(UserControlInventory).GetMethod("panel_Inventory", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(new UserControlInventory(), null);
-
-            this.Hide();
+            UCI.panel_Inventory.Controls.Remove(this);
             UCI.panel_Inventory.Controls.Clear();
             UCI.panel_Inventory.Controls.Add(UC_Update);
             UC_Update.Dock = DockStyle.Fill;
-            //UCI.panel_Inventory.Controls.Remove(UC_ViewUpdate);
+
+            //if (!UCI.panel_Inventory.Controls.Contains(UC_Update))
+            //{
+
+            //    UCI.panel_Inventory.Controls.Add(UC_Update);
+            //}
 
             Console.WriteLine("I am here");
-
-            //Console.WriteLine("I am here");
         }
     }
 }
