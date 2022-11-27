@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using WWWPOS.SideBarControl.Inventory;
 
 namespace WWWPOS.SideBarControl
 {
@@ -26,15 +27,6 @@ namespace WWWPOS.SideBarControl
 
         private void UserControlInventory_Load(object sender, EventArgs e)
         {
-            //panel_Inventory.Controls.Clear();
-            //panel_Inventory.Controls.Add(UC_Read);
-            //UC_Read.Show();
-            //UC_Read.Dock = DockStyle.Fill;
-
-            //if (!UC_Read.Visible)
-            //{
-            //    UC_Read.Show();
-            //}
         }
 
         private void btn_AddProduct_Click(object sender, EventArgs e)
@@ -55,6 +47,7 @@ namespace WWWPOS.SideBarControl
                 UC_ViewUpdate.Show();
             }
         }
+        
         private void btn_DeleteProduct_Click_1(object sender, EventArgs e)
         {
             panel_Inventory.Controls.Clear();

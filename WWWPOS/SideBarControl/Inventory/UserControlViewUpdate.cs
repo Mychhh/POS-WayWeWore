@@ -24,16 +24,12 @@ namespace WWWPOS.SideBarControl.Inventory
             UserControlInventory UCI = new UserControlInventory();
             UserControlUpdate UC_Update = new UserControlUpdate();
 
-            UCI.panel_Inventory.Controls.Remove(this);
-            UCI.panel_Inventory.Controls.Clear();
-            UCI.panel_Inventory.Controls.Add(UC_Update);
+            //UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+            //UCI.panel_Inventory.Controls.Remove(UC_ViewUpdate);
+
+            Controls.Clear();
+            Controls.Add(UC_Update);
             UC_Update.Dock = DockStyle.Fill;
-
-            //if (!UCI.panel_Inventory.Controls.Contains(UC_Update))
-            //{
-
-            //    UCI.panel_Inventory.Controls.Add(UC_Update);
-            //}
 
             Console.WriteLine("I am here");
         }
