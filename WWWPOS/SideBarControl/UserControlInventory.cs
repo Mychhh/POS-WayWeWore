@@ -41,11 +41,6 @@ namespace WWWPOS.SideBarControl
             panel_Inventory.Controls.Clear();
             panel_Inventory.Controls.Add(UC_ViewUpdate);
             UC_ViewUpdate.Dock = DockStyle.Fill;
-
-            if (!UC_ViewUpdate.Visible)
-            {
-                UC_ViewUpdate.Show();
-            }
         }
         
         private void btn_DeleteProduct_Click_1(object sender, EventArgs e)

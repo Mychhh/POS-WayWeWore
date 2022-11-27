@@ -226,11 +226,13 @@
             this.button1.TabIndex = 41;
             this.button1.Text = "View all product";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UserControlUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBox_Stocks);
             this.Controls.Add(this.txtBox_Price);

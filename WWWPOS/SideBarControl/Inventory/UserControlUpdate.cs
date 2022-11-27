@@ -21,5 +21,14 @@ namespace WWWPOS.SideBarControl.Inventory
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+
+            Controls.Clear();
+            Controls.Add(UC_ViewUpdate);
+            UC_ViewUpdate.Dock = DockStyle.Fill;
+        }
     }
 }
