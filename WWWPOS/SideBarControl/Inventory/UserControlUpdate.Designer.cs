@@ -44,7 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_ViewAllProduct = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtBox_Stocks
@@ -179,6 +179,7 @@
             this.btn_Save.TabIndex = 28;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = false;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // label7
             // 
@@ -212,26 +213,28 @@
             this.panel5.Size = new System.Drawing.Size(406, 278);
             this.panel5.TabIndex = 25;
             // 
-            // button1
+            // btn_ViewAllProduct
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(56, 444);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(384, 40);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "View all product";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_ViewAllProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.btn_ViewAllProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_ViewAllProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ViewAllProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ViewAllProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ViewAllProduct.ForeColor = System.Drawing.Color.Black;
+            this.btn_ViewAllProduct.Location = new System.Drawing.Point(48, 444);
+            this.btn_ViewAllProduct.Name = "btn_ViewAllProduct";
+            this.btn_ViewAllProduct.Size = new System.Drawing.Size(406, 40);
+            this.btn_ViewAllProduct.TabIndex = 41;
+            this.btn_ViewAllProduct.Text = "View all product";
+            this.btn_ViewAllProduct.UseVisualStyleBackColor = false;
+            this.btn_ViewAllProduct.Click += new System.EventHandler(this.btn_ViewAllProduct_Click_1);
             // 
             // UserControlUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.btn_ViewAllProduct);
             this.Controls.Add(this.txtBox_Stocks);
             this.Controls.Add(this.txtBox_Price);
             this.Controls.Add(this.label6);
@@ -274,6 +277,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_ViewAllProduct;
     }
 }

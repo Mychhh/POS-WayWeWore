@@ -21,7 +21,6 @@ C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.csproj.GenerateResourc
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.csproj.CoreCompileInputs.cache
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.exe
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.pdb
-C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.Form3.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.Form2.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControlDashboard.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControlSales.resources
@@ -85,8 +84,11 @@ D:\WayWeWore\WWWPOS\bin\Debug\System.Memory.xml
 D:\WayWeWore\WWWPOS\bin\Debug\System.Numerics.Vectors.xml
 D:\WayWeWore\WWWPOS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.csproj.CopyComplete
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> origin
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\bin\Debug\Google.Protobuf.dll
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\bin\Debug\K4os.Compression.LZ4.dll
@@ -118,5 +120,8 @@ C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.Client_Order_Checkout.
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.RegisterForm.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.csproj.CopyComplete
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlDelete.resources
+<<<<<<< HEAD
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlDelete.resources
 >>>>>>> Stashed changes
+=======
+>>>>>>> origin

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.Reflection;
 
 namespace WWWPOS.SideBarControl.Inventory
 {
@@ -18,8 +19,13 @@ namespace WWWPOS.SideBarControl.Inventory
             InitializeComponent();
         }
 
-        private void btn_Edit_Click(object sender, EventArgs e)
+        private void btn_Update_Click(object sender, EventArgs e)
         {
+            UserControlUpdate UC_Update = new UserControlUpdate();
+
+            Controls.Clear();
+            Controls.Add(UC_Update);
+            UC_Update.Dock = DockStyle.Fill;
         }
     }
 }

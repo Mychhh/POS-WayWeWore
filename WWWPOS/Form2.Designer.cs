@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Inventory = new System.Windows.Forms.Button();
             this.btn_Archive = new System.Windows.Forms.Button();
             this.btn_UserList = new System.Windows.Forms.Button();
             this.btn_Purchase = new System.Windows.Forms.Button();
@@ -36,12 +37,11 @@
             this.btn_Sales = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.lbl_AdminName = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel_Main = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.btn_Inventory = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 1024);
             this.panel1.TabIndex = 30;
+            // 
+            // btn_Inventory
+            // 
+            this.btn_Inventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.btn_Inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Inventory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Inventory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Inventory.Location = new System.Drawing.Point(20, 521);
+            this.btn_Inventory.Name = "btn_Inventory";
+            this.btn_Inventory.Size = new System.Drawing.Size(336, 55);
+            this.btn_Inventory.TabIndex = 53;
+            this.btn_Inventory.Text = "Inventory";
+            this.btn_Inventory.UseVisualStyleBackColor = false;
+            this.btn_Inventory.Click += new System.EventHandler(this.btn_Inventory_Click);
             // 
             // btn_Archive
             // 
@@ -162,6 +177,16 @@
             this.lbl_AdminName.TabIndex = 40;
             this.lbl_AdminName.Text = "Admin Name";
             // 
+            // panel14
+            // 
+            this.panel14.BackgroundImage = global::WWWPOS.Properties.Resources.Logo;
+            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel14.Location = new System.Drawing.Point(20, 123);
+            this.panel14.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(169, 152);
+            this.panel14.TabIndex = 6;
+            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
@@ -184,6 +209,7 @@
             // 
             // panel_Main
             // 
+            this.panel_Main.BackColor = System.Drawing.Color.SaddleBrown;
             this.panel_Main.Location = new System.Drawing.Point(419, 204);
             this.panel_Main.Name = "panel_Main";
             this.panel_Main.Size = new System.Drawing.Size(976, 655);
@@ -199,31 +225,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(528, 138);
             this.panel8.TabIndex = 46;
-            // 
-            // panel14
-            // 
-            this.panel14.BackgroundImage = global::WWWPOS.Properties.Resources.Logo;
-            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel14.Location = new System.Drawing.Point(20, 123);
-            this.panel14.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(169, 152);
-            this.panel14.TabIndex = 6;
-            // 
-            // btn_Inventory
-            // 
-            this.btn_Inventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
-            this.btn_Inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_Inventory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Inventory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Inventory.Location = new System.Drawing.Point(20, 521);
-            this.btn_Inventory.Name = "btn_Inventory";
-            this.btn_Inventory.Size = new System.Drawing.Size(336, 55);
-            this.btn_Inventory.TabIndex = 53;
-            this.btn_Inventory.Text = "Inventory";
-            this.btn_Inventory.UseVisualStyleBackColor = false;
-            this.btn_Inventory.Click += new System.EventHandler(this.btn_Inventory_Click);
             // 
             // Form2
             // 
@@ -257,12 +258,12 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel_Main;
         private System.Windows.Forms.Button btn_Dashboard;
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Purchase;
         private System.Windows.Forms.Button btn_UserList;
         private System.Windows.Forms.Button btn_Archive;
         private System.Windows.Forms.Button btn_Inventory;
+        public System.Windows.Forms.Panel panel_Main;
     }
 }

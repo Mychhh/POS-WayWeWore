@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WWWPOS
+namespace WWWPOS.SideBarControl.Inventory
 {
-    public partial class Form3 : Form
+    public partial class UserControlDelete : UserControl
     {
-        public Form3()
+        public UserControlDelete()
         {
             InitializeComponent();
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            panel7.Hide();
         }
     }
 }
