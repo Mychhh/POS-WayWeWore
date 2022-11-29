@@ -47,6 +47,5 @@ namespace WWWPOS.SideBarControl.Inventory
             Controls.Add(UC_Read);
             UC_Read.Dock = DockStyle.Fill;
         }
-
     }
 }

@@ -106,7 +106,7 @@
             // 
             // panel_Inventory
             // 
-            this.panel_Inventory.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel_Inventory.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_Inventory.Location = new System.Drawing.Point(25, 117);
             this.panel_Inventory.Name = "panel_Inventory";
             this.panel_Inventory.Size = new System.Drawing.Size(932, 517);
