@@ -313,5 +313,8 @@
   <ItemGroup>
     <None Include="Resources\Images.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MenuControl\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,5 +24,10 @@ namespace WWWPOS
             PanelControl.Controls.Add(viewCart);
             viewCart.Dock = DockStyle.Fill;
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

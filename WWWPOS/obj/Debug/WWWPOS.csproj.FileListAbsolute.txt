@@ -87,7 +87,6 @@ D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.csproj.CopyComplete
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
-=======
 >>>>>>> origin
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\bin\Debug\Google.Protobuf.dll
@@ -120,8 +119,5 @@ C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.Client_Order_Checkout.
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.RegisterForm.resources
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.csproj.CopyComplete
 C:\Users\Hotdog\source\POS SYSTEM\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlDelete.resources
-<<<<<<< HEAD
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlDelete.resources
 >>>>>>> Stashed changes
-=======
->>>>>>> origin
