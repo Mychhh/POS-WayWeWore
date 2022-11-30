@@ -16,5 +16,12 @@ namespace WWWPOS.SideBarControl.Archive
         {
             InitializeComponent();
         }
+
+        private void UserControlArchiveProduct_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

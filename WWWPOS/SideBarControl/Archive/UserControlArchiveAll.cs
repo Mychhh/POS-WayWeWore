@@ -16,5 +16,6 @@ namespace WWWPOS.SideBarControl.Archive
         {
             InitializeComponent();
         }
+
     }
 }

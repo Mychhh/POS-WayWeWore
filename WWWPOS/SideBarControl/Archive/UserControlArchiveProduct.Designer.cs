@@ -33,8 +33,8 @@
             this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -57,8 +57,8 @@
             this.ProductID,
             this.ProductName,
             this.ProductType,
-            this.Size,
-            this.Color,
+            this.ProductSize,
+            this.ProductColor,
             this.Price});
             this.dataGridView2.Location = new System.Drawing.Point(5, 37);
             this.dataGridView2.Name = "dataGridView2";
@@ -85,17 +85,17 @@
             this.ProductType.MinimumWidth = 6;
             this.ProductType.Name = "ProductType";
             // 
-            // Size
+            // ProductSize
             // 
-            this.Size.HeaderText = "Size";
-            this.Size.MinimumWidth = 6;
-            this.Size.Name = "Size";
+            this.ProductSize.HeaderText = "Size";
+            this.ProductSize.MinimumWidth = 6;
+            this.ProductSize.Name = "ProductSize";
             // 
-            // Color
+            // ProductColor
             // 
-            this.Color.HeaderText = "Color";
-            this.Color.MinimumWidth = 6;
-            this.Color.Name = "Color";
+            this.ProductColor.HeaderText = "Color";
+            this.ProductColor.MinimumWidth = 6;
+            this.ProductColor.Name = "ProductColor";
             // 
             // Price
             // 
@@ -111,6 +111,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Name = "UserControlArchiveProduct";
             this.Size = new System.Drawing.Size(932, 517);
+            this.Load += new System.EventHandler(this.UserControlArchiveProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -124,8 +125,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductColor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }

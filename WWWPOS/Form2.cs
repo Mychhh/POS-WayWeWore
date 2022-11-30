@@ -77,10 +77,6 @@ namespace WWWPOS
             UC_Archive.panel_Archive.Controls.Add(UC_All);
             UC_All.Dock = DockStyle.Fill;
 
-            if (!UC_All.Visible)
-            {
-                UC_All.Show();
-            }
         }
 
         private void btn_Inventory_Click(object sender, EventArgs e)
