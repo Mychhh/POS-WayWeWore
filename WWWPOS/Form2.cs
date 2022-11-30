@@ -66,7 +66,6 @@ namespace WWWPOS
 
         private void btn_Archive_Click(object sender, EventArgs e)
         {
-
             //Main Panel
             panel_Main.Controls.Clear();
             panel_Main.Controls.Add(UC_Archive);
@@ -76,7 +75,6 @@ namespace WWWPOS
             UC_Archive.panel_Archive.Controls.Clear();
             UC_Archive.panel_Archive.Controls.Add(UC_All);
             UC_All.Dock = DockStyle.Fill;
-
         }
 
         private void btn_Inventory_Click(object sender, EventArgs e)
@@ -96,5 +94,6 @@ namespace WWWPOS
                 UC_Read.Show();
             }
         }
+
     }
 }

@@ -53,40 +53,45 @@
             this.UserType.HeaderText = "User type";
             this.UserType.MinimumWidth = 6;
             this.UserType.Name = "UserType";
+            this.UserType.Width = 145;
             // 
             // Address
             // 
             this.Address.HeaderText = "Address";
             this.Address.MinimumWidth = 6;
             this.Address.Name = "Address";
+            this.Address.Width = 146;
             // 
             // CellPhoneNumber
             // 
             this.CellPhoneNumber.HeaderText = "Number";
             this.CellPhoneNumber.MinimumWidth = 6;
             this.CellPhoneNumber.Name = "CellPhoneNumber";
+            this.CellPhoneNumber.Width = 145;
             // 
             // Name
             // 
             this.Name.HeaderText = "Name";
             this.Name.MinimumWidth = 6;
             this.Name.Name = "Name";
+            this.Name.Width = 146;
             // 
             // Email
             // 
             this.Email.HeaderText = "Email";
             this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
+            this.Email.Width = 145;
             // 
             // UserID
             // 
             this.UserID.HeaderText = "User ID";
             this.UserID.MinimumWidth = 6;
             this.UserID.Name = "UserID";
+            this.UserID.Width = 146;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeight = 29;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UserID,
@@ -107,40 +112,48 @@
             this.Price.HeaderText = "Price";
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
+            this.Price.Width = 145;
             // 
             // ProductColor
             // 
             this.ProductColor.HeaderText = "Color";
             this.ProductColor.MinimumWidth = 6;
             this.ProductColor.Name = "ProductColor";
+            this.ProductColor.Width = 146;
             // 
             // ProductSize
             // 
             this.ProductSize.HeaderText = "Size";
             this.ProductSize.MinimumWidth = 6;
             this.ProductSize.Name = "ProductSize";
+            this.ProductSize.Width = 145;
             // 
             // ProductType
             // 
             this.ProductType.HeaderText = "Product Type";
             this.ProductType.MinimumWidth = 6;
             this.ProductType.Name = "ProductType";
+            this.ProductType.Width = 146;
             // 
             // ProductName
             // 
             this.ProductName.HeaderText = "Product Name";
             this.ProductName.MinimumWidth = 6;
             this.ProductName.Name = "ProductName";
+            this.ProductName.Width = 145;
             // 
             // ProductID
             // 
             this.ProductID.HeaderText = "Product ID";
             this.ProductID.MinimumWidth = 6;
             this.ProductID.Name = "ProductID";
+            this.ProductID.Width = 146;
             // 
             // dataGridView2
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeight = 29;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductID,
