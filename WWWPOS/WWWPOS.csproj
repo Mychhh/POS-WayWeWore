@@ -145,6 +145,24 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveAll.Designer.cs">
+      <DependentUpon>UserControlArchiveAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveProduct.Designer.cs">
+      <DependentUpon>UserControlArchiveProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveUser.Designer.cs">
+      <DependentUpon>UserControlArchiveUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\Inventory\UserControlCreate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -247,6 +265,15 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveAll.resx">
+      <DependentUpon>UserControlArchiveAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveProduct.resx">
+      <DependentUpon>UserControlArchiveProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveUser.resx">
+      <DependentUpon>UserControlArchiveUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlCreate.resx">
       <DependentUpon>UserControlCreate.cs</DependentUpon>

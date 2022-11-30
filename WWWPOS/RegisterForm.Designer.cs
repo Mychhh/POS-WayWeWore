@@ -95,7 +95,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(15, 390);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 20);
+            this.label6.Size = new System.Drawing.Size(85, 25);
             this.label6.TabIndex = 11;
             this.label6.Text = "Address";
             // 
@@ -132,7 +132,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(15, 458);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 20);
+            this.label5.Size = new System.Drawing.Size(162, 25);
             this.label5.TabIndex = 8;
             this.label5.Text = "Create Password";
             // 
@@ -153,9 +153,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(14, 328);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 20);
+            this.label4.Size = new System.Drawing.Size(175, 25);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Phone";
+            this.label4.Text = "Cellphone Number";
             // 
             // txt_Email
             // 
@@ -174,7 +174,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(15, 206);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
+            this.label3.Size = new System.Drawing.Size(60, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Email";
             // 
@@ -205,7 +205,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(14, 267);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
+            this.label2.Size = new System.Drawing.Size(100, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Full Name";
             // 
@@ -216,7 +216,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(191, 162);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 31);
+            this.label1.Size = new System.Drawing.Size(140, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sign up";
             // 
@@ -227,14 +227,14 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(1015, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 24);
+            this.label7.Size = new System.Drawing.Size(31, 29);
             this.label7.TabIndex = 8;
             this.label7.Text = "X";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // RegisterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1040, 640);

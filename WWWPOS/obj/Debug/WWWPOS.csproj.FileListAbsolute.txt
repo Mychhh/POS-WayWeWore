@@ -174,3 +174,6 @@ C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.csproj.CoreC
 C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.csproj.CopyComplete
 C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.exe
 C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.pdb
+C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Archive.UserControlArchiveAll.resources
+C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Archive.UserControlArchiveProduct.resources
+C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Archive.UserControlArchiveUser.resources
