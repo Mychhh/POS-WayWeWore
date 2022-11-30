@@ -21,8 +21,8 @@ namespace WWWPOS
         SideBarControl.UserControlInventory UC_Inventory = new SideBarControl.UserControlInventory();
 
         SideBarControl.Inventory.UserControlRead UC_Read = new SideBarControl.Inventory.UserControlRead();
-        SideBarControl.Archive.UserControlArchiveAll UC_All = new SideBarControl.Archive.UserControlArchiveAll();
-
+        SideBarControl.Archive.UserControlArchiveAll UC_AllArchive = new SideBarControl.Archive.UserControlArchiveAll();
+        SideBarControl.UserList.UserControlUserListAllUser UC_AllUser = new SideBarControl.UserList.UserControlUserListAllUser();
         public Form2()
         {
             InitializeComponent();
@@ -59,9 +59,15 @@ namespace WWWPOS
 
         private void btn_UserList_Click(object sender, EventArgs e)
         {
+            //Main Panel
             panel_Main.Controls.Clear();
             panel_Main.Controls.Add(UC_UserList);
             UC_UserList.Dock = DockStyle.Fill;
+
+            //ArchivePanel
+            UC_UserList.panel_UserList.Controls.Clear();
+            UC_UserList.panel_UserList.Controls.Add(UC_AllUser);
+            UC_AllUser.Dock = DockStyle.Fill;
         }
 
         private void btn_Archive_Click(object sender, EventArgs e)
@@ -73,8 +79,8 @@ namespace WWWPOS
 
             //ArchivePanel
             UC_Archive.panel_Archive.Controls.Clear();
-            UC_Archive.panel_Archive.Controls.Add(UC_All);
-            UC_All.Dock = DockStyle.Fill;
+            UC_Archive.panel_Archive.Controls.Add(UC_AllArchive);
+            UC_AllArchive.Dock = DockStyle.Fill;
         }
 
         private void btn_Inventory_Click(object sender, EventArgs e)

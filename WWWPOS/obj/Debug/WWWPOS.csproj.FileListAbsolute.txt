@@ -177,3 +177,7 @@ C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.pdb
 C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Archive.UserControlArchiveAll.resources
 C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Archive.UserControlArchiveProduct.resources
 C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Archive.UserControlArchiveUser.resources
+C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserList.UserControlUserListAdmin.resources
+C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserList.UserControlUserListAllUser.resources
+C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserList.UserControlUserListCustomer.resources
+C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserList.UserControlUserListAddUser.resources
