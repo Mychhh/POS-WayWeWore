@@ -145,6 +145,24 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveAll.Designer.cs">
+      <DependentUpon>UserControlArchiveAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveProduct.Designer.cs">
+      <DependentUpon>UserControlArchiveProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveUser.Designer.cs">
+      <DependentUpon>UserControlArchiveUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\Inventory\UserControlCreate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,6 +229,30 @@
     <Compile Include="SideBarControl\UserControUserList.Designer.cs">
       <DependentUpon>UserControUserList.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAddUser.Designer.cs">
+      <DependentUpon>UserControlUserListAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAdmin.Designer.cs">
+      <DependentUpon>UserControlUserListAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAllUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAllUser.Designer.cs">
+      <DependentUpon>UserControlUserListAllUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListCustomer.Designer.cs">
+      <DependentUpon>UserControlUserListCustomer.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +290,15 @@
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveAll.resx">
+      <DependentUpon>UserControlArchiveAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveProduct.resx">
+      <DependentUpon>UserControlArchiveProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveUser.resx">
+      <DependentUpon>UserControlArchiveUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlCreate.resx">
       <DependentUpon>UserControlCreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +331,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControUserList.resx">
       <DependentUpon>UserControUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserList\UserControlUserListAddUser.resx">
+      <DependentUpon>UserControlUserListAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserList\UserControlUserListAdmin.resx">
+      <DependentUpon>UserControlUserListAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserList\UserControlUserListAllUser.resx">
+      <DependentUpon>UserControlUserListAllUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserList\UserControlUserListCustomer.resx">
+      <DependentUpon>UserControlUserListCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

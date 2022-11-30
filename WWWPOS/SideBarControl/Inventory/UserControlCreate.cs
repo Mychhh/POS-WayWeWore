@@ -16,5 +16,15 @@ namespace WWWPOS.SideBarControl.Inventory
         {
             InitializeComponent();
         }
+
+        private void btn_AddProduct_Click(object sender, EventArgs e)
+        {
+            UserControlRead UC_Read = new UserControlRead();
+
+            Controls.Clear();
+            Controls.Add(UC_Read);
+            UC_Read.Dock = DockStyle.Fill;
+        }
+
     }
 }

@@ -640,7 +640,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(932, 517);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(932, 507);
             this.flowLayoutPanel1.TabIndex = 39;
             // 
             // panel7
@@ -1022,6 +1022,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UserControlViewUpdate";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.Size = new System.Drawing.Size(932, 517);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
