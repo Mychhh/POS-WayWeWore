@@ -106,6 +106,7 @@
             // 
             // panel_UserList
             // 
+            this.panel_UserList.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_UserList.Location = new System.Drawing.Point(25, 117);
             this.panel_UserList.Name = "panel_UserList";
             this.panel_UserList.Size = new System.Drawing.Size(932, 517);
@@ -115,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel_UserList);
             this.Controls.Add(this.panel1);
             this.Name = "UserControUserList";
