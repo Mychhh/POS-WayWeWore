@@ -89,6 +89,7 @@
             // 
             // panel_Archive
             // 
+            this.panel_Archive.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_Archive.Location = new System.Drawing.Point(25, 117);
             this.panel_Archive.Name = "panel_Archive";
             this.panel_Archive.Size = new System.Drawing.Size(932, 517);
@@ -98,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel_Archive);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(10);
