@@ -193,6 +193,24 @@
     <Compile Include="SideBarControl\Inventory\UserControlViewUpdate.Designer.cs">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseAllProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseAllProduct.Designer.cs">
+      <DependentUpon>UserControlPurchaseAllProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseShort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseShort.Designer.cs">
+      <DependentUpon>UserControlPurchaseShort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseTshirt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseTshirt.Designer.cs">
+      <DependentUpon>UserControlPurchaseTshirt.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\UserControlArchive.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -313,6 +331,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlViewUpdate.resx">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Purchase\UserControlPurchaseAllProduct.resx">
+      <DependentUpon>UserControlPurchaseAllProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Purchase\UserControlPurchaseShort.resx">
+      <DependentUpon>UserControlPurchaseShort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Purchase\UserControlPurchaseTshirt.resx">
+      <DependentUpon>UserControlPurchaseTshirt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControlArchive.resx">
       <DependentUpon>UserControlArchive.cs</DependentUpon>

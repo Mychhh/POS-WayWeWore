@@ -162,7 +162,7 @@
             this.ProductSize,
             this.ProductColor,
             this.Price});
-            this.dataGridView2.Location = new System.Drawing.Point(2, 290);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 292);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;

@@ -84,10 +84,8 @@
             this.comboBox_Size.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Size.FormattingEnabled = true;
             this.comboBox_Size.Items.AddRange(new object[] {
-            "Small",
-            "Medium",
-            "Large",
-            "Extra Large"});
+            "Admin",
+            "Client"});
             this.comboBox_Size.Location = new System.Drawing.Point(489, 97);
             this.comboBox_Size.Name = "comboBox_Size";
             this.comboBox_Size.Size = new System.Drawing.Size(384, 30);
