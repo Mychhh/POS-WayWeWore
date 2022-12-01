@@ -181,3 +181,7 @@ C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarContr
 C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserList.UserControlUserListAllUser.resources
 C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserList.UserControlUserListCustomer.resources
 C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserList.UserControlUserListAddUser.resources
+C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Purchase.UserControlPurchaseAllProducts.resources
+C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Purchase.UserControlPurchaseAllProduct.resources
+C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Purchase.UserControlPurchaseShort.resources
+C:\Users\Hotdog\source\POSWWW\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Purchase.UserControlPurchaseTshirt.resources

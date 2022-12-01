@@ -98,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.panel_Archive);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(10);
