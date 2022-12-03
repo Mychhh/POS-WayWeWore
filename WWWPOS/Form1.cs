@@ -69,6 +69,11 @@ namespace WWWPOS
             client.ShowDialog();
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void btn_SignUp_Click(object sender, EventArgs e)
         {
             this.Hide();

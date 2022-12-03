@@ -16,5 +16,24 @@ namespace WWWPOS.SideBarControl
         {
             InitializeComponent();
         }
+
+        private void btn_Tshirt_Click(object sender, EventArgs e)
+        {
+            Purchase.UserControlPurchaseTshirt UC_PurchaseTshirt = new Purchase.UserControlPurchaseTshirt();
+
+            panel_Purchase.Controls.Clear();
+            panel_Purchase.Controls.Add(UC_PurchaseTshirt);
+            UC_PurchaseTshirt.Dock = DockStyle.Fill;
+        }
+
+        private void btn_Short_Click(object sender, EventArgs e)
+        {
+            Purchase.UserControlPurchaseShort UC_PurchaseShort = new Purchase.UserControlPurchaseShort();
+
+            panel_Purchase.Controls.Clear();
+            panel_Purchase.Controls.Add(UC_PurchaseShort);
+            UC_PurchaseShort.Dock = DockStyle.Fill;
+
+        }
     }
 }

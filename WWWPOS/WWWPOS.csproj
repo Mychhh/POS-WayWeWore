@@ -137,6 +137,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form3DontModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3DontModify.Designer.cs">
+      <DependentUpon>Form3DontModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterForm.cs">
@@ -144,6 +150,24 @@
     </Compile>
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveAll.Designer.cs">
+      <DependentUpon>UserControlArchiveAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveProduct.Designer.cs">
+      <DependentUpon>UserControlArchiveProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Archive\UserControlArchiveUser.Designer.cs">
+      <DependentUpon>UserControlArchiveUser.cs</DependentUpon>
     </Compile>
     <Compile Include="SideBarControl\Inventory\UserControlCreate.cs">
       <SubType>UserControl</SubType>
@@ -174,6 +198,24 @@
     </Compile>
     <Compile Include="SideBarControl\Inventory\UserControlViewUpdate.Designer.cs">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseAllProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseAllProduct.Designer.cs">
+      <DependentUpon>UserControlPurchaseAllProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseShort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseShort.Designer.cs">
+      <DependentUpon>UserControlPurchaseShort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseTshirt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Purchase\UserControlPurchaseTshirt.Designer.cs">
+      <DependentUpon>UserControlPurchaseTshirt.cs</DependentUpon>
     </Compile>
     <Compile Include="SideBarControl\UserControlArchive.cs">
       <SubType>UserControl</SubType>
@@ -211,6 +253,30 @@
     <Compile Include="SideBarControl\UserControUserList.Designer.cs">
       <DependentUpon>UserControUserList.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAddUser.Designer.cs">
+      <DependentUpon>UserControlUserListAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAdmin.Designer.cs">
+      <DependentUpon>UserControlUserListAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAllUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListAllUser.Designer.cs">
+      <DependentUpon>UserControlUserListAllUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserList\UserControlUserListCustomer.Designer.cs">
+      <DependentUpon>UserControlUserListCustomer.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +301,9 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form3DontModify.resx">
+      <DependentUpon>Form3DontModify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -247,6 +316,15 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveAll.resx">
+      <DependentUpon>UserControlArchiveAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveProduct.resx">
+      <DependentUpon>UserControlArchiveProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveUser.resx">
+      <DependentUpon>UserControlArchiveUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlCreate.resx">
       <DependentUpon>UserControlCreate.cs</DependentUpon>
@@ -262,6 +340,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlViewUpdate.resx">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Purchase\UserControlPurchaseAllProduct.resx">
+      <DependentUpon>UserControlPurchaseAllProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Purchase\UserControlPurchaseShort.resx">
+      <DependentUpon>UserControlPurchaseShort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Purchase\UserControlPurchaseTshirt.resx">
+      <DependentUpon>UserControlPurchaseTshirt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControlArchive.resx">
       <DependentUpon>UserControlArchive.cs</DependentUpon>
@@ -280,6 +367,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControUserList.resx">
       <DependentUpon>UserControUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserList\UserControlUserListAddUser.resx">
+      <DependentUpon>UserControlUserListAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserList\UserControlUserListAdmin.resx">
+      <DependentUpon>UserControlUserListAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserList\UserControlUserListAllUser.resx">
+      <DependentUpon>UserControlUserListAllUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserList\UserControlUserListCustomer.resx">
+      <DependentUpon>UserControlUserListCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -312,6 +411,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MenuControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

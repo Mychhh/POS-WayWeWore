@@ -35,15 +35,13 @@
             this.btn_TShirt = new System.Windows.Forms.Button();
             this.btn_ViewCart = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.userSearch = new System.Windows.Forms.TextBox();
             this.clientPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_Menu = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -107,6 +105,8 @@
             this.btn_ViewCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ViewCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_ViewCart.ForeColor = System.Drawing.Color.Black;
+            this.btn_ViewCart.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewCart.Image")));
+            this.btn_ViewCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ViewCart.Location = new System.Drawing.Point(723, 157);
             this.btn_ViewCart.Name = "btn_ViewCart";
             this.btn_ViewCart.Size = new System.Drawing.Size(169, 37);
@@ -118,23 +118,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.userSearch);
             this.panel2.Location = new System.Drawing.Point(95, 210);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10, 60, 10, 60);
             this.panel2.Size = new System.Drawing.Size(848, 40);
             this.panel2.TabIndex = 6;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(800, 5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 32);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
             // 
             // userSearch
             // 
@@ -166,16 +156,30 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // label1
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(723, 157);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 37);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(800, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 32);
+            this.label1.TabIndex = 1;
+            // 
+            // btn_Menu
+            // 
+            this.btn_Menu.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Menu.FlatAppearance.BorderSize = 0;
+            this.btn_Menu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Menu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 2.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Menu.ForeColor = System.Drawing.Color.Blue;
+            this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
+            this.btn_Menu.Location = new System.Drawing.Point(1001, 3);
+            this.btn_Menu.Name = "btn_Menu";
+            this.btn_Menu.Size = new System.Drawing.Size(27, 32);
+            this.btn_Menu.TabIndex = 50;
+            this.btn_Menu.UseVisualStyleBackColor = false;
             // 
             // Client
             // 
@@ -183,7 +187,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1040, 640);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btn_Menu);
             this.Controls.Add(this.clientPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_ViewCart);
@@ -201,9 +205,7 @@
             this.Load += new System.EventHandler(this.Client_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -219,7 +221,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox userSearch;
         private System.Windows.Forms.Panel clientPanel;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_Menu;
     }
 }
