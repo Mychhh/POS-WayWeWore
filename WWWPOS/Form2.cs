@@ -23,7 +23,7 @@ namespace WWWPOS
         SideBarControl.Inventory.UserControlRead UC_Read = new SideBarControl.Inventory.UserControlRead();
         SideBarControl.Archive.UserControlArchiveAll UC_AllArchive = new SideBarControl.Archive.UserControlArchiveAll();
         SideBarControl.UserList.UserControlUserListAllUser UC_AllUser = new SideBarControl.UserList.UserControlUserListAllUser();
-        SideBarControl.Purchase.UserControlPurchaseAllProduct UC_AllPurchase = new SideBarControl.Purchase.UserControlPurchaseAllProduct();
+        SideBarControl.Purchase.UserControlAllProduct UC_AllPurchase = new SideBarControl.Purchase.UserControlAllProduct();
 
         public Form2()
         {

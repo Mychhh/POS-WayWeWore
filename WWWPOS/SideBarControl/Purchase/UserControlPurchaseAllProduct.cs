@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WWWPOS.SideBarControl.Purchase
 {
-    public partial class UserControlPurchaseAllProduct : UserControl
+    public partial class UserControlAllProduct : UserControl
     {
-        public UserControlPurchaseAllProduct()
+        public UserControlAllProduct()
         {
             InitializeComponent();
         }
