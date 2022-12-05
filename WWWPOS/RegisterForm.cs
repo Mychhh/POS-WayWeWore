@@ -17,10 +17,8 @@ namespace WWWPOS
         {
             InitializeComponent();
         }
-        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=");
-        MySqlCommand command;
-        MySqlDataReader mdr;
-
+  
+        DataBase data = new DataBase();
         private void btn_Login_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_FullName.Text) || string.IsNullOrEmpty(txt_Address.Text) || string.IsNullOrEmpty(txt_Password.Text) || string.IsNullOrEmpty(txt_Phone.Text))
@@ -30,58 +28,38 @@ namespace WWWPOS
 
             else
             {
-                connection.Open();
-                string selectQuery = "SELECT * FROM waywewore.account WHERE Email = '" + txt_Email.Text + "';";
-                command = new MySqlCommand(selectQuery, connection);
-                mdr = command.ExecuteReader();
-                if (mdr.Read())
+                int phoneNumber = Int32.Parse(txt_Phone.Text);
+                string user_Type = "Client";
+                data.insertAccount(txt_Email.Text, txt_FullName.Text, txt_Address.Text, txt_Password.Text, phoneNumber, user_Type);
+
+                if(DataBase.message == "Success")
                 {
-                    MessageBox.Show("Email Already Register!", "Info", MessageBoxButtons.OK ,MessageBoxIcon.Error);
-
+                   this.Hide();
+                   LoginPage loginPage = new LoginPage();
+                   loginPage.ShowDialog();
                 }
-                else
-                {
-                    int phoneNumber = (int)Convert.ToInt64(txt_Phone.Text);
-                    string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=waywewore;";
-                    string iquery = "INSERT INTO account(`Full_Name`, `Email`, `Password`,`Phone`,`Address`, `User_Type`) VALUES ('" + txt_FullName.Text + "', '" + txt_Email.Text + "', '" + txt_Password.Text + "', '" + phoneNumber + "', '" + txt_Address.Text + "','Client')";
-
-
-                    MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-                    MySqlCommand commandDatabase = new MySqlCommand(iquery, databaseConnection);
-                    commandDatabase.CommandTimeout = 60;
-
-                    try
-                    {
-                        databaseConnection.Open();
-                        MySqlDataReader myReader = commandDatabase.ExecuteReader();
-                        databaseConnection.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        // Show any error message.
-                        MessageBox.Show(ex.Message);
-                    }
-                    DialogResult dialogResult;
-                    dialogResult = MessageBox.Show("Account Successfully Created!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-                    if (dialogResult == DialogResult.OK)
-                    {
-                        this.Hide();
-                        LoginPage loginPage = new LoginPage();
-                        loginPage.ShowDialog();
-                    }
-                }
-                connection.Close();
             }
-        }
-
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void label7_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btn_show_hide_pass_Click(object sender, EventArgs e)
+        {
+            if (txt_Password.UseSystemPasswordChar)
+            {
+                txt_Password.UseSystemPasswordChar = false;
+                btn_show_hide_pass.Image = WWWPOS.Properties.Resources.hidePass;
+            }
+            else if (!txt_Password.UseSystemPasswordChar)
+            {
+                txt_Password.UseSystemPasswordChar = true;
+                btn_show_hide_pass.Image = WWWPOS.Properties.Resources.showPass;
+
+
+            }
         }
     }
 }

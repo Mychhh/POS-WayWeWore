@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_show_hide_pass = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -51,6 +52,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
+            this.panel1.Controls.Add(this.btn_show_hide_pass);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
@@ -67,6 +69,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(406, 600);
             this.panel1.TabIndex = 4;
+            // 
+            // btn_show_hide_pass
+            // 
+            this.btn_show_hide_pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(196)))), ((int)(((byte)(116)))));
+            this.btn_show_hide_pass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_show_hide_pass.FlatAppearance.BorderSize = 0;
+            this.btn_show_hide_pass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_show_hide_pass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_show_hide_pass.Image = global::WWWPOS.Properties.Resources.showPass;
+            this.btn_show_hide_pass.Location = new System.Drawing.Point(339, 356);
+            this.btn_show_hide_pass.Name = "btn_show_hide_pass";
+            this.btn_show_hide_pass.Size = new System.Drawing.Size(33, 22);
+            this.btn_show_hide_pass.TabIndex = 12;
+            this.btn_show_hide_pass.UseVisualStyleBackColor = false;
+            this.btn_show_hide_pass.Click += new System.EventHandler(this.btn_show_hide_pass_Click);
             // 
             // label3
             // 
@@ -140,6 +157,7 @@
             this.txtBox_Password.Name = "txtBox_Password";
             this.txtBox_Password.Size = new System.Drawing.Size(314, 22);
             this.txtBox_Password.TabIndex = 5;
+            this.txtBox_Password.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -260,6 +278,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_show_hide_pass;
     }
 }
 

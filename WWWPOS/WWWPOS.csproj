@@ -125,6 +125,7 @@
     <Compile Include="Client_Order_Checkout.Designer.cs">
       <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +143,12 @@
     </Compile>
     <Compile Include="Form3DontModify.Designer.cs">
       <DependentUpon>Form3DontModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuControl\UserControl_Menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuControl\UserControl_Menu.Designer.cs">
+      <DependentUpon>UserControl_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,6 +205,24 @@
     </Compile>
     <Compile Include="SideBarControl\Inventory\UserControlViewUpdate.Designer.cs">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Products\UserControl_AdminViewProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Products\UserControl_AdminViewProducts.Designer.cs">
+      <DependentUpon>UserControl_AdminViewProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Products\UserControl_Delete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Products\UserControl_Delete.Designer.cs">
+      <DependentUpon>UserControl_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Products\UserControl_Update.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Products\UserControl_Update.Designer.cs">
+      <DependentUpon>UserControl_Update.cs</DependentUpon>
     </Compile>
     <Compile Include="SideBarControl\Purchase\UserControlPurchaseAllProduct.cs">
       <SubType>UserControl</SubType>
@@ -277,6 +302,11 @@
     <Compile Include="SideBarControl\UserList\UserControlUserListCustomer.Designer.cs">
       <DependentUpon>UserControlUserListCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="wayweworeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wayweworeDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3DontModify.resx">
       <DependentUpon>Form3DontModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuControl\UserControl_Menu.resx">
+      <DependentUpon>UserControl_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -340,6 +373,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlViewUpdate.resx">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Products\UserControl_AdminViewProducts.resx">
+      <DependentUpon>UserControl_AdminViewProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Products\UserControl_Delete.resx">
+      <DependentUpon>UserControl_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Products\UserControl_Update.resx">
+      <DependentUpon>UserControl_Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Purchase\UserControlPurchaseAllProduct.resx">
       <DependentUpon>UserControlPurchaseAllProduct.cs</DependentUpon>
@@ -390,6 +432,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="wayweworeDataSet.xsc">
+      <DependentUpon>wayweworeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="wayweworeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>wayweworeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="wayweworeDataSet.xss">
+      <DependentUpon>wayweworeDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -413,7 +466,22 @@
     <None Include="Resources\Images.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MenuControl\" />
+    <None Include="Resources\showPass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hidePass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

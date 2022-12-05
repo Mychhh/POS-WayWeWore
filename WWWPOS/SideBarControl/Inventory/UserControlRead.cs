@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.SideBarControl.Products;
 
 namespace WWWPOS.SideBarControl.Inventory
 {
@@ -16,5 +17,13 @@ namespace WWWPOS.SideBarControl.Inventory
         {
             InitializeComponent();
         }
+
+        private void UserControlRead_Load(object sender, EventArgs e)
+        {
+            loadData LD = new loadData();
+            LD.selectProduct(tableLayoutPanel, "panelView");
+
+        }
     }
 }
+

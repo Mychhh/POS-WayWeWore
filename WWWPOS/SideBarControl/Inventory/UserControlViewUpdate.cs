@@ -19,13 +19,11 @@ namespace WWWPOS.SideBarControl.Inventory
             InitializeComponent();
         }
 
-        private void btn_Update_Click(object sender, EventArgs e)
+        private void UserControlViewUpdate_Load(object sender, EventArgs e)
         {
-            UserControlUpdate UC_Update = new UserControlUpdate();
+            loadData LD = new loadData();
+            LD.selectProduct(tableLayoutPanel, "panelEdit");
 
-            Controls.Clear();
-            Controls.Add(UC_Update);
-            UC_Update.Dock = DockStyle.Fill;
         }
     }
 }
