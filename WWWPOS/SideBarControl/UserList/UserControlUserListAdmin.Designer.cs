@@ -28,76 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.dataGrid_Admin = new System.Windows.Forms.DataGridView();
+            this.Admin = new System.Windows.Forms.Label();
+            this.wayweworeDataSet = new WWWPOS.wayweworeDataSet();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accountTableAdapter = new WWWPOS.wayweworeDataSetTableAdapters.accountTableAdapter();
+            this.accountIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.registeratDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Admin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // dataGrid_Admin
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 29);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Admin";
+            this.dataGrid_Admin.AutoGenerateColumns = false;
+            this.dataGrid_Admin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_Admin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.accountIdDataGridViewTextBoxColumn,
+            this.fullNameDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.userTypeDataGridViewTextBoxColumn,
+            this.registeratDataGridViewTextBoxColumn});
+            this.dataGrid_Admin.DataSource = this.accountBindingSource;
+            this.dataGrid_Admin.Location = new System.Drawing.Point(20, 34);
+            this.dataGrid_Admin.Name = "dataGrid_Admin";
+            this.dataGrid_Admin.Size = new System.Drawing.Size(656, 331);
+            this.dataGrid_Admin.TabIndex = 5;
             // 
-            // dataGridView1
+            // Admin
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeight = 29;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.UserID,
-            this.Name,
-            this.UserType});
-            this.dataGridView1.Location = new System.Drawing.Point(5, 37);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(926, 479);
-            this.dataGridView1.TabIndex = 33;
+            this.Admin.AutoSize = true;
+            this.Admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin.Location = new System.Drawing.Point(16, 7);
+            this.Admin.Name = "Admin";
+            this.Admin.Size = new System.Drawing.Size(70, 24);
+            this.Admin.TabIndex = 4;
+            this.Admin.Text = "Admin";
             // 
-            // UserID
+            // wayweworeDataSet
             // 
-            this.UserID.HeaderText = "User ID";
-            this.UserID.MinimumWidth = 6;
-            this.UserID.Name = "UserID";
+            this.wayweworeDataSet.DataSetName = "wayweworeDataSet";
+            this.wayweworeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Name
+            // accountBindingSource
             // 
-            this.Name.HeaderText = "Name";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
+            this.accountBindingSource.DataMember = "account";
+            this.accountBindingSource.DataSource = this.wayweworeDataSet;
             // 
-            // UserType
+            // accountTableAdapter
             // 
-            this.UserType.HeaderText = "User type";
-            this.UserType.MinimumWidth = 6;
-            this.UserType.Name = "UserType";
+            this.accountTableAdapter.ClearBeforeFill = true;
+            // 
+            // accountIdDataGridViewTextBoxColumn
+            // 
+            this.accountIdDataGridViewTextBoxColumn.DataPropertyName = "Account_Id";
+            this.accountIdDataGridViewTextBoxColumn.HeaderText = "Account_Id";
+            this.accountIdDataGridViewTextBoxColumn.Name = "accountIdDataGridViewTextBoxColumn";
+            this.accountIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "Full_Name";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full_Name";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // userTypeDataGridViewTextBoxColumn
+            // 
+            this.userTypeDataGridViewTextBoxColumn.DataPropertyName = "User_Type";
+            this.userTypeDataGridViewTextBoxColumn.HeaderText = "User_Type";
+            this.userTypeDataGridViewTextBoxColumn.Name = "userTypeDataGridViewTextBoxColumn";
+            // 
+            // registeratDataGridViewTextBoxColumn
+            // 
+            this.registeratDataGridViewTextBoxColumn.DataPropertyName = "Register_at";
+            this.registeratDataGridViewTextBoxColumn.HeaderText = "Register_at";
+            this.registeratDataGridViewTextBoxColumn.Name = "registeratDataGridViewTextBoxColumn";
             // 
             // UserControlUserListAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Size = new System.Drawing.Size(932, 517);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.Add(this.dataGrid_Admin);
+            this.Controls.Add(this.Admin);
+            this.Name = "UserControlUserListAdmin";
+            this.Size = new System.Drawing.Size(732, 429);
+            this.Load += new System.EventHandler(this.UserControlUserListAdmin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Admin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserType;
+        private System.Windows.Forms.DataGridView dataGrid_Admin;
+        private System.Windows.Forms.Label Admin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accountIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn registeratDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource accountBindingSource;
+        private wayweworeDataSet wayweworeDataSet;
+        private wayweworeDataSetTableAdapters.accountTableAdapter accountTableAdapter;
     }
 }

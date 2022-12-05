@@ -17,9 +17,10 @@ namespace WWWPOS.SideBarControl.Inventory
             InitializeComponent();
         }
 
-        private void btn_Delete_Click(object sender, EventArgs e)
+        private void UserControlDelete_Load(object sender, EventArgs e)
         {
-            panel7.Hide();
+            loadData LD = new loadData();
+            LD.selectProduct(tableLayoutPanel, "panelDelete");
         }
     }
 }

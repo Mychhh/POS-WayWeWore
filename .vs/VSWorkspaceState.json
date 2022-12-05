@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\WWWPOS",
-    "\\WWWPOS\\SideBarControl",
-    "\\WWWPOS\\SideBarControl\\Inventory"
+    ""
   ],
-  "SelectedNode": "\\WWWPOS\\Client.cs",
+  "SelectedNode": "\\WWWPOS.sln",
   "PreviewInSolutionExplorer": false
 }

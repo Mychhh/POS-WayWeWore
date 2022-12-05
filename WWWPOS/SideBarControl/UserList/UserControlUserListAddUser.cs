@@ -12,8 +12,6 @@ namespace WWWPOS.SideBarControl.UserList
 {
     public partial class UserControlUserListAddUser : UserControl
     {
-
-
         public UserControlUserListAddUser()
         {
             InitializeComponent();
@@ -21,13 +19,21 @@ namespace WWWPOS.SideBarControl.UserList
 
         private void btn_AddProduct_Click(object sender, EventArgs e)
         {
-            UserList.UserControlUserListAllUser UC_ALlUser = new UserControlUserListAllUser();
+            DataBase DB = new DataBase();
 
-            //Main Panel
-            Controls.Clear();
-            Controls.Add(UC_ALlUser);
-            UC_ALlUser.Dock = DockStyle.Fill;
+            int phoneNumber = Int32.Parse(txt_Number.Text);
+            DB.insertAccount(txt_Email.Text, txt_Name.Text, txt_Address.Text, txt_Password.Text, phoneNumber, cmb_UserType.Text );
 
+
+            if (DataBase.message == "Success")
+            {
+                UserList.UserControlUserListAllUser UC_ALlUser = new UserControlUserListAllUser();
+
+                //Main Panel
+                Controls.Clear();
+                Controls.Add(UC_ALlUser);
+                UC_ALlUser.Dock = DockStyle.Fill;
+            }
         }
     }
 }

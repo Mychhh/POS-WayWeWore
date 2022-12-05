@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace WWWPOS
 {
@@ -17,9 +16,7 @@ namespace WWWPOS
         {
             InitializeComponent();
         }
-        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=");
-        MySqlCommand command;
-        MySqlDataReader mdr ,mdru;
+        DataBase DB = new DataBase();
         private void btn_Login_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBox_Email.Text) || string.IsNullOrEmpty(txtBox_Password.Text))
@@ -29,35 +26,7 @@ namespace WWWPOS
 
             else
             {
-                connection.Open();
-                string selectQuery = "SELECT * FROM waywewore.account WHERE Email = '" + txtBox_Email.Text + "' AND Password = '" + txtBox_Password.Text + "';";
-                command = new MySqlCommand(selectQuery, connection);
-                mdr = command.ExecuteReader();
-
-                if (mdr.Read())
-                {
-                    String userType = mdr.GetString("User_Type");
-                    if(userType == "Client")
-                    {
-                        this.Hide();
-                        Client clientView = new Client(); ;
-                        clientView.Show();
-                    }
-                    else if(userType == "Admin")
-                    {
-                        this.Hide();
-                        Form2 f2 = new Form2();
-                        f2.ShowDialog();
-                    }
-                     
-                }
-                else
-                {
-
-                    MessageBox.Show("Incorrect Login Information! Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                connection.Close();
+                DB.Login(txtBox_Email.Text, txtBox_Password.Text);
             }
            
         }
@@ -79,6 +48,23 @@ namespace WWWPOS
             this.Hide();
             RegisterForm register = new RegisterForm();
             register.ShowDialog();
+        }
+
+        private void btn_show_hide_pass_Click(object sender, EventArgs e)
+        {
+            if (txtBox_Password.UseSystemPasswordChar)
+            {
+                txtBox_Password.UseSystemPasswordChar = false;
+                btn_show_hide_pass.Image = WWWPOS.Properties.Resources.hidePass;
+            }
+            else if (!txtBox_Password.UseSystemPasswordChar)
+            {
+                txtBox_Password.UseSystemPasswordChar = true;
+                btn_show_hide_pass.Image = WWWPOS.Properties.Resources.showPass;
+
+
+            }
+
         }
     }
 }

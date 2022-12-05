@@ -35,11 +35,12 @@
             this.btn_TShirt = new System.Windows.Forms.Button();
             this.btn_ViewCart = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.userSearch = new System.Windows.Forms.TextBox();
             this.clientPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_Menu = new System.Windows.Forms.Button();
+            this.panel_Menu = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -126,6 +127,14 @@
             this.panel2.Size = new System.Drawing.Size(848, 40);
             this.panel2.TabIndex = 6;
             // 
+            // label1
+            // 
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(800, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 32);
+            this.label1.TabIndex = 1;
+            // 
             // userSearch
             // 
             this.userSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -156,18 +165,11 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(800, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 32);
-            this.label1.TabIndex = 1;
-            // 
             // btn_Menu
             // 
             this.btn_Menu.BackColor = System.Drawing.Color.Transparent;
             this.btn_Menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Menu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Menu.FlatAppearance.BorderSize = 0;
             this.btn_Menu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_Menu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -180,6 +182,16 @@
             this.btn_Menu.Size = new System.Drawing.Size(27, 32);
             this.btn_Menu.TabIndex = 50;
             this.btn_Menu.UseVisualStyleBackColor = false;
+            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
+            // 
+            // panel_Menu
+            // 
+            this.panel_Menu.BackColor = System.Drawing.Color.Transparent;
+            this.panel_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel_Menu.Location = new System.Drawing.Point(896, 38);
+            this.panel_Menu.Name = "panel_Menu";
+            this.panel_Menu.Size = new System.Drawing.Size(131, 99);
+            this.panel_Menu.TabIndex = 52;
             // 
             // Client
             // 
@@ -187,6 +199,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1040, 640);
+            this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.btn_Menu);
             this.Controls.Add(this.clientPanel);
             this.Controls.Add(this.panel2);
@@ -223,5 +236,6 @@
         private System.Windows.Forms.Panel clientPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Menu;
+        private System.Windows.Forms.Panel panel_Menu;
     }
 }

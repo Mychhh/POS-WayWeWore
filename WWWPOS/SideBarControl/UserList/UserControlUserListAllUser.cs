@@ -16,5 +16,12 @@ namespace WWWPOS.SideBarControl.UserList
         {
             InitializeComponent();
         }
+
+        private void UserControlUserListAllUser_Load(object sender, EventArgs e)
+        {
+            loadData LD = new loadData();
+            LD.customerData(dataGridCustomer);
+            LD.adminData(dataGridAdmin);
+        }
     }
 }
