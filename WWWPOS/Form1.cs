@@ -17,6 +17,7 @@ namespace WWWPOS
             InitializeComponent();
         }
         DataBase DB = new DataBase();
+
         private void btn_Login_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBox_Email.Text) || string.IsNullOrEmpty(txtBox_Password.Text))
