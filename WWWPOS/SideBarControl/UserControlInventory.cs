@@ -22,13 +22,9 @@ namespace WWWPOS.SideBarControl
             InitializeComponent();
         }
 
-        private void UserControlInventory_Load(object sender, EventArgs e)
-        {
-        }
-
         private void btn_AddProduct_Click(object sender, EventArgs e)
         {
-            Inventory.UserControlCreate UC_Create = new Inventory.UserControlCreate();
+            UserControlCreate UC_Create = new UserControlCreate();
 
             panel_Inventory.Controls.Clear();
             panel_Inventory.Controls.Add(UC_Create);
@@ -37,18 +33,15 @@ namespace WWWPOS.SideBarControl
 
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
         {
-
-            Inventory.UserControlViewUpdate UC_ViewUpdate = new Inventory.UserControlViewUpdate();
+            UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
             panel_Inventory.Controls.Clear();
             panel_Inventory.Controls.Add(UC_ViewUpdate);
             UC_ViewUpdate.Dock = DockStyle.Fill;
-
         }
         
         private void btn_DeleteProduct_Click_1(object sender, EventArgs e)
         {
-
-            Inventory.UserControlDelete UC_Delete = new Inventory.UserControlDelete();
+            UserControlDelete UC_Delete = new UserControlDelete();
             panel_Inventory.Controls.Clear();
             panel_Inventory.Controls.Add(UC_Delete);
             UC_Delete.Dock = DockStyle.Fill;

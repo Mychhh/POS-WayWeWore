@@ -56,5 +56,6 @@ namespace WWWPOS.SideBarControl.Products
             get => product_Image.Image;
             set => product_Image.Image = value;
         }
+
     }
 }
