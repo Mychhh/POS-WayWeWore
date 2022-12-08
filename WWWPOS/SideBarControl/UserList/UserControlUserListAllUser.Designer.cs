@@ -32,38 +32,45 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlUserListAllUser));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Admin = new System.Windows.Forms.Label();
-            this.dataGridAdmin = new System.Windows.Forms.DataGridView();
-            this.dataGridCustomer = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.wayweworeDataSet = new WWWPOS.wayweworeDataSet();
-            this.wayweworeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accountTableAdapter = new WWWPOS.wayweworeDataSetTableAdapters.accountTableAdapter();
-            this.accountIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registeratDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wayweworeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wayweworeDataSet = new WWWPOS.wayweworeDataSet();
             this.accountBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.accountIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registeratDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.accountTableAdapter = new WWWPOS.wayweworeDataSetTableAdapters.accountTableAdapter();
+            this.dataGridAdmin = new System.Windows.Forms.DataGridView();
+            this.Account_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Full_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Register_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit_User = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete_User = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridCustomer = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // Admin
@@ -76,75 +83,25 @@
             this.Admin.TabIndex = 0;
             this.Admin.Text = "Admin";
             // 
-            // dataGridAdmin
+            // accountBindingSource
             // 
-            this.dataGridAdmin.AutoGenerateColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.accountIdDataGridViewTextBoxColumn,
-            this.fullNameDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.userTypeDataGridViewTextBoxColumn,
-            this.registeratDataGridViewTextBoxColumn});
-            this.dataGridAdmin.DataSource = this.accountBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridAdmin.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridAdmin.Location = new System.Drawing.Point(20, 31);
-            this.dataGridAdmin.Name = "dataGridAdmin";
-            this.dataGridAdmin.Size = new System.Drawing.Size(656, 146);
-            this.dataGridAdmin.TabIndex = 1;
+            this.accountBindingSource.DataMember = "account";
+            this.accountBindingSource.DataSource = this.wayweworeDataSetBindingSource;
             // 
-            // dataGridCustomer
+            // wayweworeDataSetBindingSource
             // 
-            this.dataGridCustomer.AutoGenerateColumns = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.accountIdDataGridViewTextBoxColumn1,
-            this.fullNameDataGridViewTextBoxColumn1,
-            this.emailDataGridViewTextBoxColumn1,
-            this.passwordDataGridViewTextBoxColumn1,
-            this.phoneDataGridViewTextBoxColumn1,
-            this.addressDataGridViewTextBoxColumn1,
-            this.userTypeDataGridViewTextBoxColumn1,
-            this.registeratDataGridViewTextBoxColumn1});
-            this.dataGridCustomer.DataSource = this.accountBindingSource1;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridCustomer.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridCustomer.Location = new System.Drawing.Point(20, 217);
-            this.dataGridCustomer.Name = "dataGridCustomer";
-            this.dataGridCustomer.Size = new System.Drawing.Size(656, 146);
-            this.dataGridCustomer.TabIndex = 3;
+            this.wayweworeDataSetBindingSource.DataSource = this.wayweworeDataSet;
+            this.wayweworeDataSetBindingSource.Position = 0;
+            // 
+            // wayweworeDataSet
+            // 
+            this.wayweworeDataSet.DataSetName = "wayweworeDataSet";
+            this.wayweworeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // accountBindingSource1
+            // 
+            this.accountBindingSource1.DataMember = "account";
+            this.accountBindingSource1.DataSource = this.wayweworeDataSetBindingSource;
             // 
             // label1
             // 
@@ -156,146 +113,237 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Customer";
             // 
-            // wayweworeDataSet
-            // 
-            this.wayweworeDataSet.DataSetName = "wayweworeDataSet";
-            this.wayweworeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // wayweworeDataSetBindingSource
-            // 
-            this.wayweworeDataSetBindingSource.DataSource = this.wayweworeDataSet;
-            this.wayweworeDataSetBindingSource.Position = 0;
-            // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataMember = "account";
-            this.accountBindingSource.DataSource = this.wayweworeDataSetBindingSource;
-            // 
             // accountTableAdapter
             // 
             this.accountTableAdapter.ClearBeforeFill = true;
             // 
-            // accountIdDataGridViewTextBoxColumn
+            // dataGridAdmin
             // 
-            this.accountIdDataGridViewTextBoxColumn.DataPropertyName = "Account_Id";
-            this.accountIdDataGridViewTextBoxColumn.HeaderText = "Account_Id";
-            this.accountIdDataGridViewTextBoxColumn.Name = "accountIdDataGridViewTextBoxColumn";
-            this.accountIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridAdmin.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridAdmin.ColumnHeadersHeight = 35;
+            this.dataGridAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Account_ID,
+            this.Full_Name,
+            this.Email,
+            this.Password,
+            this.Phone,
+            this.Column1,
+            this.User_Type,
+            this.Register_at,
+            this.edit_User,
+            this.delete_User});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridAdmin.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridAdmin.EnableHeadersVisualStyles = false;
+            this.dataGridAdmin.Location = new System.Drawing.Point(20, 31);
+            this.dataGridAdmin.Name = "dataGridAdmin";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridAdmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridAdmin.RowHeadersVisible = false;
+            this.dataGridAdmin.Size = new System.Drawing.Size(656, 156);
+            this.dataGridAdmin.TabIndex = 8;
+            this.dataGridAdmin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAdmin_CellContentClick);
+            this.dataGridAdmin.SelectionChanged += new System.EventHandler(this.dataGridAdmin_SelectionChanged);
             // 
-            // fullNameDataGridViewTextBoxColumn
+            // Account_ID
             // 
-            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "Full_Name";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full_Name";
-            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.Account_ID.HeaderText = "Account_ID";
+            this.Account_ID.Name = "Account_ID";
             // 
-            // emailDataGridViewTextBoxColumn
+            // Full_Name
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.Full_Name.HeaderText = "Name";
+            this.Full_Name.Name = "Full_Name";
             // 
-            // passwordDataGridViewTextBoxColumn
+            // Email
             // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
             // 
-            // phoneDataGridViewTextBoxColumn
+            // Password
             // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
             // 
-            // addressDataGridViewTextBoxColumn
+            // Phone
             // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
             // 
-            // userTypeDataGridViewTextBoxColumn
+            // Column1
             // 
-            this.userTypeDataGridViewTextBoxColumn.DataPropertyName = "User_Type";
-            this.userTypeDataGridViewTextBoxColumn.HeaderText = "User_Type";
-            this.userTypeDataGridViewTextBoxColumn.Name = "userTypeDataGridViewTextBoxColumn";
+            this.Column1.HeaderText = "Address";
+            this.Column1.Name = "Column1";
             // 
-            // registeratDataGridViewTextBoxColumn
+            // User_Type
             // 
-            this.registeratDataGridViewTextBoxColumn.DataPropertyName = "Register_at";
-            this.registeratDataGridViewTextBoxColumn.HeaderText = "Register_at";
-            this.registeratDataGridViewTextBoxColumn.Name = "registeratDataGridViewTextBoxColumn";
+            this.User_Type.HeaderText = "User_Type";
+            this.User_Type.Name = "User_Type";
             // 
-            // accountBindingSource1
+            // Register_at
             // 
-            this.accountBindingSource1.DataMember = "account";
-            this.accountBindingSource1.DataSource = this.wayweworeDataSetBindingSource;
+            this.Register_at.HeaderText = "Register_at";
+            this.Register_at.Name = "Register_at";
             // 
-            // accountIdDataGridViewTextBoxColumn1
+            // edit_User
             // 
-            this.accountIdDataGridViewTextBoxColumn1.DataPropertyName = "Account_Id";
-            this.accountIdDataGridViewTextBoxColumn1.HeaderText = "Account_Id";
-            this.accountIdDataGridViewTextBoxColumn1.Name = "accountIdDataGridViewTextBoxColumn1";
-            this.accountIdDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.edit_User.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.edit_User.HeaderText = "";
+            this.edit_User.Image = ((System.Drawing.Image)(resources.GetObject("edit_User.Image")));
+            this.edit_User.Name = "edit_User";
+            this.edit_User.Width = 5;
             // 
-            // fullNameDataGridViewTextBoxColumn1
+            // delete_User
             // 
-            this.fullNameDataGridViewTextBoxColumn1.DataPropertyName = "Full_Name";
-            this.fullNameDataGridViewTextBoxColumn1.HeaderText = "Full_Name";
-            this.fullNameDataGridViewTextBoxColumn1.Name = "fullNameDataGridViewTextBoxColumn1";
+            this.delete_User.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.delete_User.HeaderText = "";
+            this.delete_User.Image = ((System.Drawing.Image)(resources.GetObject("delete_User.Image")));
+            this.delete_User.Name = "delete_User";
+            this.delete_User.Width = 5;
             // 
-            // emailDataGridViewTextBoxColumn1
+            // dataGridCustomer
             // 
-            this.emailDataGridViewTextBoxColumn1.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn1.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn1.Name = "emailDataGridViewTextBoxColumn1";
+            this.dataGridCustomer.AllowUserToAddRows = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridCustomer.ColumnHeadersHeight = 35;
+            this.dataGridCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewImageColumn1,
+            this.dataGridViewImageColumn2});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridCustomer.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridCustomer.EnableHeadersVisualStyles = false;
+            this.dataGridCustomer.Location = new System.Drawing.Point(20, 217);
+            this.dataGridCustomer.Name = "dataGridCustomer";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCustomer.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridCustomer.RowHeadersVisible = false;
+            this.dataGridCustomer.Size = new System.Drawing.Size(656, 156);
+            this.dataGridCustomer.TabIndex = 9;
+            this.dataGridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCustomer_CellContentClick);
+            this.dataGridCustomer.SelectionChanged += new System.EventHandler(this.dataGridCustomer_SelectionChanged);
             // 
-            // passwordDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn1
             // 
-            this.passwordDataGridViewTextBoxColumn1.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn1.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn1.Name = "passwordDataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Account_ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // phoneDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn2
             // 
-            this.phoneDataGridViewTextBoxColumn1.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn1.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn1.Name = "phoneDataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // addressDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn3
             // 
-            this.addressDataGridViewTextBoxColumn1.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn1.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn1.Name = "addressDataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // userTypeDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn4
             // 
-            this.userTypeDataGridViewTextBoxColumn1.DataPropertyName = "User_Type";
-            this.userTypeDataGridViewTextBoxColumn1.HeaderText = "User_Type";
-            this.userTypeDataGridViewTextBoxColumn1.Name = "userTypeDataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // registeratDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn5
             // 
-            this.registeratDataGridViewTextBoxColumn1.DataPropertyName = "Register_at";
-            this.registeratDataGridViewTextBoxColumn1.HeaderText = "Register_at";
-            this.registeratDataGridViewTextBoxColumn1.Name = "registeratDataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Phone";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "User_Type";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Register_at";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 5;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 5;
             // 
             // UserControlUserListAllUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.dataGridCustomer);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridAdmin);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Admin);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UserControlUserListAllUser";
             this.Size = new System.Drawing.Size(732, 461);
             this.Load += new System.EventHandler(this.UserControlUserListAllUser_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,29 +352,33 @@
         #endregion
 
         private System.Windows.Forms.Label Admin;
-        private System.Windows.Forms.DataGridView dataGridAdmin;
-        private System.Windows.Forms.DataGridView dataGridCustomer;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn accountIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn registeratDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource accountBindingSource;
         private System.Windows.Forms.BindingSource wayweworeDataSetBindingSource;
         private wayweworeDataSet wayweworeDataSet;
         private wayweworeDataSetTableAdapters.accountTableAdapter accountTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn accountIdDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userTypeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn registeratDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource accountBindingSource1;
+        private System.Windows.Forms.DataGridView dataGridAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Account_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Full_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn User_Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Register_at;
+        private System.Windows.Forms.DataGridViewImageColumn edit_User;
+        private System.Windows.Forms.DataGridViewImageColumn delete_User;
+        private System.Windows.Forms.DataGridView dataGridCustomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }

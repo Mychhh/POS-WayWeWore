@@ -150,7 +150,9 @@
     <Compile Include="MenuControl\UserControl_Menu.Designer.cs">
       <DependentUpon>UserControl_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modal\Update_Delete.cs" />
+    <Compile Include="Modal\Update_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modal\Update_Delete.Designer.cs">
       <DependentUpon>Update_Delete.cs</DependentUpon>
     </Compile>
