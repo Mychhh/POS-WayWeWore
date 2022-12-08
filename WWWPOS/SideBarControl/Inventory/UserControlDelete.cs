@@ -22,5 +22,10 @@ namespace WWWPOS.SideBarControl.Inventory
             loadData LD = new loadData();
             LD.selectProduct(tableLayoutPanel, "panelDelete");
         }
+
+        private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
