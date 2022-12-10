@@ -39,6 +39,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.product_Image = new System.Windows.Forms.PictureBox();
+            this.product_ID = new System.Windows.Forms.Label();
+            this.product_Name = new System.Windows.Forms.Label();
+            this.product_Type = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.product_Image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,11 +182,41 @@
             this.product_Image.TabIndex = 46;
             this.product_Image.TabStop = false;
             // 
+            // product_ID
+            // 
+            this.product_ID.AutoSize = true;
+            this.product_ID.Location = new System.Drawing.Point(13, 362);
+            this.product_ID.Name = "product_ID";
+            this.product_ID.Size = new System.Drawing.Size(35, 13);
+            this.product_ID.TabIndex = 48;
+            this.product_ID.Text = "label1";
+            // 
+            // product_Name
+            // 
+            this.product_Name.AutoSize = true;
+            this.product_Name.Location = new System.Drawing.Point(13, 339);
+            this.product_Name.Name = "product_Name";
+            this.product_Name.Size = new System.Drawing.Size(35, 13);
+            this.product_Name.TabIndex = 49;
+            this.product_Name.Text = "label4";
+            // 
+            // product_Type
+            // 
+            this.product_Type.AutoSize = true;
+            this.product_Type.Location = new System.Drawing.Point(13, 386);
+            this.product_Type.Name = "product_Type";
+            this.product_Type.Size = new System.Drawing.Size(35, 13);
+            this.product_Type.TabIndex = 50;
+            this.product_Type.Text = "label1";
+            // 
             // UserControl_Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.Controls.Add(this.product_Type);
+            this.Controls.Add(this.product_Name);
+            this.Controls.Add(this.product_ID);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.product_Image);
             this.Controls.Add(this.product_Description);
@@ -196,7 +229,7 @@
             this.Controls.Add(this.product_Stock);
             this.Controls.Add(this.label14);
             this.Name = "UserControl_Update";
-            this.Size = new System.Drawing.Size(220, 343);
+            this.Size = new System.Drawing.Size(220, 341);
             ((System.ComponentModel.ISupportInitialize)(this.product_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,15 +239,18 @@
         #endregion
 
         private System.Windows.Forms.PictureBox product_Image;
-        private System.Windows.Forms.Label product_Description;
-        private System.Windows.Forms.Label product_Size;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label product_Color;
         private System.Windows.Forms.Label product_Price;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label product_Stock;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btn_Edit;
+        public System.Windows.Forms.Label product_Description;
+        public System.Windows.Forms.Label product_Size;
+        public System.Windows.Forms.Label product_Stock;
+        private System.Windows.Forms.Label product_ID;
+        private System.Windows.Forms.Label product_Name;
+        private System.Windows.Forms.Label product_Type;
     }
 }

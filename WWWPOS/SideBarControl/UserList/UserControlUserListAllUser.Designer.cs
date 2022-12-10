@@ -50,7 +50,8 @@
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.User_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Register_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit_User = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete_User = new System.Windows.Forms.DataGridViewImageColumn();
@@ -63,6 +64,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
@@ -137,7 +139,8 @@
             this.Password,
             this.Phone,
             this.Column1,
-            this.User_Type,
+            this.userStatus,
+            this.userType,
             this.Register_at,
             this.edit_User,
             this.delete_User});
@@ -196,10 +199,15 @@
             this.Column1.HeaderText = "Address";
             this.Column1.Name = "Column1";
             // 
-            // User_Type
+            // userStatus
             // 
-            this.User_Type.HeaderText = "User_Type";
-            this.User_Type.Name = "User_Type";
+            this.userStatus.HeaderText = "User_Status";
+            this.userStatus.Name = "userStatus";
+            // 
+            // userType
+            // 
+            this.userType.HeaderText = "User_Type";
+            this.userType.Name = "userType";
             // 
             // Register_at
             // 
@@ -244,6 +252,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
             this.dataGridViewImageColumn1,
             this.dataGridViewImageColumn2});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -303,13 +312,18 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "User_Type";
+            this.dataGridViewTextBoxColumn7.HeaderText = "User_Status";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewTextBoxColumn8
             // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Register_at";
+            this.dataGridViewTextBoxColumn8.HeaderText = "User_Type";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Register_at";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
             // dataGridViewImageColumn1
             // 
@@ -365,7 +379,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn User_Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userType;
         private System.Windows.Forms.DataGridViewTextBoxColumn Register_at;
         private System.Windows.Forms.DataGridViewImageColumn edit_User;
         private System.Windows.Forms.DataGridViewImageColumn delete_User;
@@ -378,6 +393,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
