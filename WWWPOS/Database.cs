@@ -16,11 +16,12 @@ namespace WWWPOS
     internal class DataBase
     {
         public static string user_ID, message;
-        protected  SqlConnection connection = new SqlConnection("Data Source=MIKO\\SQLEXPRESS;Initial Catalog=waywewore;Integrated Security=True");
+        public static readonly string sqlServerLink = "Data Source = DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security = True";
+        protected  SqlConnection connection = new SqlConnection(sqlServerLink);
         protected SqlCommand command;
         protected SqlDataReader mdr;
 
-        //Signup / add user
+        //Signup and Add user
         public void insertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
         {
             connection.Open();
@@ -31,18 +32,15 @@ namespace WWWPOS
             if (mdr.Read())
             {
                 MessageBox.Show("Email Already Register!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             else
             {
-
                 string iquery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "nDel" + "','" + user_Type + "')";
                 SqlCommand commandDatabase = new SqlCommand(iquery, connection);
                 commandDatabase.CommandTimeout = 60;
 
                 try
                 {
-                    connection.Open();
                     SqlDataReader myReader = commandDatabase.ExecuteReader();
                     connection.Close();
                 }
@@ -59,9 +57,9 @@ namespace WWWPOS
                    
                 }
             }
-            connection.Close();
         }
-        //login user
+        
+        //Login User
         public void Login(string email, string password)
         {
             connection.Open();
@@ -97,7 +95,8 @@ namespace WWWPOS
 
             connection.Close();
         }
-        //Update 
+        
+        //Update User
         public void updateUser(string account_ID, string user_Name, string email, string password, int phone, string user_Type, string address, Panel panel_UserList)
         {
             connection.Open();
@@ -113,6 +112,7 @@ namespace WWWPOS
                 Update_Delete.ActiveForm.Hide();
             }
         }
+        
         public void setStatusUser(string user_Status, string account_ID)
         {
            
@@ -150,7 +150,6 @@ namespace WWWPOS
 
             try
             {
-                connection.Open();
                 SqlDataReader myReader = commandDatabase.ExecuteReader();
                 connection.Close();
             }
@@ -185,6 +184,7 @@ namespace WWWPOS
 
             connection.Close();
         }
+        
         // User Deleted
         public void userArchive(DataGridView dataCustomer, string user_Status)
         {
