@@ -123,6 +123,9 @@
   <metadata name="wayweworeDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="wayweworeDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="accountTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>349, 17</value>
   </metadata>
@@ -144,7 +147,10 @@
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="User_Type.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="userStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="userType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Register_at.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -157,7 +163,7 @@
   <data name="edit_User.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAApRJREFUOE+N0dtLFHEUB/AN33rxNfoPgh4KitTyUhuLCUKSlxJbk5SIlahQiyIk
+        DAAACwwBP0AiyAAAApRJREFUOE+N0dtLFHEUB/AN33rxNfoPgh4KitTyUhuLCUKSlxJbk5SIlahQiyIk
         9UFN110n07W0EhFZbVHDWsW8hJKR5npj8wbWaknt7M6su7Ozc/mdfrMz6HpDv5yXGc5nzvn9RgUHjD8A
         li9QZoGv88AL8ruDYcEFvSNw6wVoDZD3Gobtst8PIwSkBxZzoS8ZbpdKWGsIaOvY7lnghP3wihNqrVCS
         D2Nx0JIBOc+4FKP7AuFOa2Kt9r0xnrm0Bvcb5WmQXwgTMagn3qXRO6MJXGS8aW/8bQFKzJBpVPCNKr7w
@@ -177,7 +183,7 @@
   <data name="delete_User.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAq5JREFUOE91k11PE1EQhr33B2miv6OxJhhBEcVEwueFMRCDBCVecGEMXwoUKqVA
+        DAAACwwBP0AiyAAAAq5JREFUOE91k11PE1EQhr33B2miv6OxJhhBEcVEwueFMRCDBCVecGEMXwoUKqVA
         QSglNECkRATLdyElWKClxUO33ZYu2+1uu7vjHHZb2k18817MnpknmTNz9hb8R5msitY/AE6j/NZxIhIX
         Vg/j+hFACZyVISFAToGUCJ9XMt0ejpd0niQzq/74+wk/wiEmvRFgz1nhBkZy6gAsmzDhg7ZFMA9wba4k
         LypaNierf1khGOWX9qIfHP7v65Gjc06HkVw5BdchnCWhwQkmi/TOdRlgsloWNbdJqj6trewTXsyxV1IM

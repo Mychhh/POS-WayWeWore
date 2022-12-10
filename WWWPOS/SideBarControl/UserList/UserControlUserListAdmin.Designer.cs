@@ -42,7 +42,8 @@
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.User_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Register_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit_User = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete_User = new System.Windows.Forms.DataGridViewImageColumn();
@@ -95,7 +96,8 @@
             this.Password,
             this.Phone,
             this.Column1,
-            this.User_Type,
+            this.Column2,
+            this.UserType,
             this.Register_at,
             this.edit_User,
             this.delete_User});
@@ -138,10 +140,15 @@
             this.Column1.HeaderText = "Address";
             this.Column1.Name = "Column1";
             // 
-            // User_Type
+            // Column2
             // 
-            this.User_Type.HeaderText = "User_Type";
-            this.User_Type.Name = "User_Type";
+            this.Column2.HeaderText = "User_Status";
+            this.Column2.Name = "Column2";
+            // 
+            // UserType
+            // 
+            this.UserType.HeaderText = "User_Type";
+            this.UserType.Name = "UserType";
             // 
             // Register_at
             // 
@@ -193,7 +200,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn User_Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserType;
         private System.Windows.Forms.DataGridViewTextBoxColumn Register_at;
         private System.Windows.Forms.DataGridViewImageColumn edit_User;
         private System.Windows.Forms.DataGridViewImageColumn delete_User;

@@ -19,7 +19,7 @@ namespace WWWPOS.SideBarControl.UserList
         }
 
         public static string user_ID, user_Name, user_Email, user_Password, user_Phone, user_Address, user_Type;
-        Update_Delete UP = new Update_Delete();
+
         private void dataGridCustomer_SelectionChanged(object sender, EventArgs e)
         {
             int row = dataGridCustomer.CurrentRow.Index;
@@ -30,8 +30,10 @@ namespace WWWPOS.SideBarControl.UserList
             user_Password = dataGridCustomer[3, row].Value.ToString();
             user_Phone = dataGridCustomer[4, row].Value.ToString();
             user_Address = dataGridCustomer[5, row].Value.ToString();
-            user_Type = dataGridCustomer[6, row].Value.ToString();
+            user_Type = dataGridCustomer[7, row].Value.ToString();
+
         }
+
         private void dataGridCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dataGridCustomer.Columns[e.ColumnIndex].Name;
@@ -51,9 +53,11 @@ namespace WWWPOS.SideBarControl.UserList
             else if (colName == "delete_User")
             {
                 DataBase DB = new DataBase();
-                DB.deleteUser(user_ID);
+                DB.setStatusUser("DEL", user_ID);
             }
         }
+
+        Update_Delete UP = new Update_Delete();
         private void dataGridAdmin_SelectionChanged(object sender, EventArgs e)
         {
             int row = dataGridAdmin.CurrentRow.Index;
@@ -63,7 +67,7 @@ namespace WWWPOS.SideBarControl.UserList
             user_Password = dataGridAdmin[3, row].Value.ToString();
             user_Phone = dataGridAdmin[4, row].Value.ToString();
             user_Address = dataGridAdmin[5, row].Value.ToString();
-            user_Type = dataGridAdmin[6, row].Value.ToString();
+            user_Type = dataGridAdmin[7, row].Value.ToString();
         }
         private void dataGridAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -84,7 +88,7 @@ namespace WWWPOS.SideBarControl.UserList
             else if (colName == "delete_User")
             {
                 DataBase DB = new DataBase();
-                DB.deleteUser(user_ID);
+                DB.setStatusUser("DEL", user_ID);
             }
         }
        

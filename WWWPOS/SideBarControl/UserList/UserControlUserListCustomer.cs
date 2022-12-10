@@ -30,7 +30,7 @@ namespace WWWPOS.SideBarControl.UserList
             user_Password = dataGridCustomer[3, row].Value.ToString();
             user_Phone = dataGridCustomer[4, row].Value.ToString();
             user_Address = dataGridCustomer[5, row].Value.ToString();
-            user_Type = dataGridCustomer[6, row].Value.ToString();
+            user_Type = dataGridCustomer[7, row].Value.ToString();
         }
 
        
@@ -54,7 +54,7 @@ namespace WWWPOS.SideBarControl.UserList
             else if(colName == "delete_User")
             {
                 DataBase DB = new DataBase();
-                DB.deleteUser(user_ID);
+                DB.setStatusUser("DEL", user_ID);
             }
 
 
