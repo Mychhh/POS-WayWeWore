@@ -203,11 +203,9 @@ D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Products.UserControlAdminPro
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Products.UserControl_AdminViewProducts.resources
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Products.UserControl_Update.resources
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Products.UserControl_Delete.resources
-<<<<<<< HEAD
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Purchase.UserControlAllProduct.resources
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserList.UserControlUserListUpdateDelete.resources
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.Modal.Update_Delete.resources
-=======
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\bin\Debug\WWWPOS.exe.config
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\bin\Debug\WWWPOS.exe
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\bin\Debug\WWWPOS.pdb
@@ -277,3 +275,4 @@ C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.csproj
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.exe
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.pdb
 >>>>>>> 52cdd1b (modified)
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.Modal.Update_Delete.resources

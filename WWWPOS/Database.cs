@@ -37,16 +37,8 @@ namespace WWWPOS
             }
             else
             {
-
-<<<<<<< HEAD
-                string iquery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "nDel" + "','" + user_Type + "')";
-
-                SqlConnection databaseConnection = new SqlConnection("Data Source=MIKO\\SQLEXPRESS;Initial Catalog=waywewore;Integrated Security=True");
-                SqlCommand commandDatabase = new SqlCommand(iquery, databaseConnection);
-=======
                 string iquery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address,User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"+ user_Type + "')";
                 SqlCommand commandDatabase = new SqlCommand(iquery, connection);
->>>>>>> 52cdd1b (modified)
                 commandDatabase.CommandTimeout = 60;
 
                 try
@@ -106,7 +98,6 @@ namespace WWWPOS
 
             connection.Close();
         }
-<<<<<<< HEAD
         //Update 
         public void updateUser(string account_ID, string user_Name, string email, string password, int phone, string user_Type, string address, Panel panel_UserList)
         {
@@ -136,8 +127,6 @@ namespace WWWPOS
             dialogResult = MessageBox.Show("Delete Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
         }
-=======
->>>>>>> 52cdd1b (modified)
 
         //Add Products
         public void addProdducts(string product_Name, string product_Color, double product_Price, int product_Stock, string category ,string product_Size, string product_image, string Product_Description)
@@ -146,19 +135,14 @@ namespace WWWPOS
             int user_ID = Int32.Parse(id);
 
             connection.Open();
-<<<<<<< HEAD
             string iquery = "INSERT INTO Products(Account_ID, Category, Product_Name, Color, Price ,Stocks, Product_images, Product_Size, Product_Description, Product_Status) VALUES ('" + user_ID + "' , '" + category + "', '" + product_Name + "', '" + product_Color + "', '" + product_Price + "', '" + product_Stock + "','"+ product_image + "','"+ product_Size + "','" + Product_Description + "','nDel')";
-=======
-            string iquery = "INSERT INTO Products(Account_ID, Category, Product_Name, Color, Price ,Stocks, Product_images, Product_Size, Product_Description) VALUES ('" + user_ID + "' , '" + category + "', '" + product_Name + "', '" + product_Color + "', '" + product_Price + "', '" + product_Stock + "','"+ product_image + "','"+ product_Size + "','" + Product_Description + "')";
-            SqlCommand commandDatabase = new SqlCommand(iquery, connection);
->>>>>>> 52cdd1b (modified)
-
-            commandDatabase.CommandTimeout = 60;
+            command = new SqlCommand(iquery, connection);
+            command.CommandTimeout = 60;
 
             try
             {
                 connection.Open();
-                SqlDataReader myReader = commandDatabase.ExecuteReader();
+                SqlDataReader myReader = command.ExecuteReader();
                 connection.Close();
             }
             catch (Exception ex)
@@ -177,15 +161,10 @@ namespace WWWPOS
 
     class loadData : DataBase
     {
-<<<<<<< HEAD
-        SqlConnection connection = new SqlConnection("Data Source=MIKO\\SQLEXPRESS;Initial Catalog=waywewore;Integrated Security=True");
-        SqlCommand command;
-        SqlDataReader mdr;
         public void userRecords(DataGridView dataCustomer, string user_Type, string user_Status)
-=======
         public void adminData(DataGridView dataAdmin)
->>>>>>> 52cdd1b (modified)
-        {
+
+       {
             int i = 0;
             connection.Open();
             command = new SqlCommand("select * from account WHERE User_Type = '"+user_Type+"' AND User_Status = '"+ user_Status+ "'", connection);
