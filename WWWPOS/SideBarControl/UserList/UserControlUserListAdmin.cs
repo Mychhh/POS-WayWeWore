@@ -34,7 +34,8 @@ namespace WWWPOS.SideBarControl.UserList
             user_Password = dataGrid_Admin[3, row].Value.ToString();
             user_Phone = dataGrid_Admin[4, row].Value.ToString();
             user_Address = dataGrid_Admin[5, row].Value.ToString();
-            user_Type = dataGrid_Admin[6, row].Value.ToString();
+            user_Type = dataGrid_Admin[7, row].Value.ToString();
+           
         }
         private void dataGrid_Admin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -55,7 +56,7 @@ namespace WWWPOS.SideBarControl.UserList
             else if (colName == "delete_User")
             {
                 DataBase DB = new DataBase();
-                DB.deleteUser(user_ID);
+                DB.setStatusUser("DEL", user_ID);
             }
         }
     }

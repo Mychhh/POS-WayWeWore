@@ -182,6 +182,12 @@
     <Compile Include="SideBarControl\Archive\UserControlArchiveUser.Designer.cs">
       <DependentUpon>UserControlArchiveUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Inventory\Form_UpdateProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Inventory\Form_UpdateProducts.Designer.cs">
+      <DependentUpon>Form_UpdateProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\Inventory\UserControlCreate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,12 +205,6 @@
     </Compile>
     <Compile Include="SideBarControl\Inventory\UserControlRead.Designer.cs">
       <DependentUpon>UserControlRead.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SideBarControl\Inventory\UserControlUpdate.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SideBarControl\Inventory\UserControlUpdate.Designer.cs">
-      <DependentUpon>UserControlUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="SideBarControl\Inventory\UserControlViewUpdate.cs">
       <SubType>UserControl</SubType>
@@ -368,6 +368,9 @@
     <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveUser.resx">
       <DependentUpon>UserControlArchiveUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Inventory\Form_UpdateProducts.resx">
+      <DependentUpon>Form_UpdateProducts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlCreate.resx">
       <DependentUpon>UserControlCreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,9 +379,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlRead.resx">
       <DependentUpon>UserControlRead.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SideBarControl\Inventory\UserControlUpdate.resx">
-      <DependentUpon>UserControlUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlViewUpdate.resx">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
@@ -504,6 +504,8 @@
   <ItemGroup>
     <None Include="Resources\pen %282%29.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

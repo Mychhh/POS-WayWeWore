@@ -16,16 +16,13 @@ namespace WWWPOS
     internal class DataBase
     {
         public static string user_ID, message;
-
-        readonly static string connectionString = "Data Source = DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
-        protected SqlConnection connection = new SqlConnection(connectionString);
+        protected  SqlConnection connection = new SqlConnection("Data Source=MIKO\\SQLEXPRESS;Initial Catalog=waywewore;Integrated Security=True");
         protected SqlCommand command;
         protected SqlDataReader mdr;
 
         //Signup / add user
         public void insertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
         {
-            //opens the DB connection
             connection.Open();
             string selectQuery = "SELECT Email FROM account WHERE Email = '" + email + "';";
             command = new SqlCommand(selectQuery, connection);
@@ -34,10 +31,12 @@ namespace WWWPOS
             if (mdr.Read())
             {
                 MessageBox.Show("Email Already Register!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             else
             {
-                string iquery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address,User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"+ user_Type + "')";
+
+                string iquery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "nDel" + "','" + user_Type + "')";
                 SqlCommand commandDatabase = new SqlCommand(iquery, connection);
                 commandDatabase.CommandTimeout = 60;
 
@@ -74,7 +73,7 @@ namespace WWWPOS
             if (mdr.Read())
             {
                 user_ID = mdr["Account_Id"].ToString();
-                string userType = mdr["User_Type"].ToString();
+                String userType = mdr["User_Type"].ToString();
 
                 if (userType == "Client")
                 {
@@ -114,9 +113,9 @@ namespace WWWPOS
                 Update_Delete.ActiveForm.Hide();
             }
         }
-        public void deleteUser(string account_ID)
+        public void setStatusUser(string user_Status, string account_ID)
         {
-            string user_Status = "Del";    
+           
             connection.Open();
             string selectQuery = "Update account Set User_Status = '" + user_Status + "' WHERE Account_Id ='" + account_ID + "';";
             command = new SqlCommand(selectQuery, connection);
@@ -124,25 +123,35 @@ namespace WWWPOS
             connection.Close();
 
             DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Delete Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            if(user_Status == "DEL")
+            {
+                dialogResult = MessageBox.Show("Delete Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+
+            }
+           else
+            {
+                dialogResult = MessageBox.Show("Restore Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+
+            }
 
         }
 
         //Add Products
         public void addProdducts(string product_Name, string product_Color, double product_Price, int product_Stock, string category ,string product_Size, string product_image, string Product_Description)
         {
+            
             string id = DataBase.user_ID;
             int user_ID = Int32.Parse(id);
 
             connection.Open();
             string iquery = "INSERT INTO Products(Account_ID, Category, Product_Name, Color, Price ,Stocks, Product_images, Product_Size, Product_Description, Product_Status) VALUES ('" + user_ID + "' , '" + category + "', '" + product_Name + "', '" + product_Color + "', '" + product_Price + "', '" + product_Stock + "','"+ product_image + "','"+ product_Size + "','" + Product_Description + "','nDel')";
-            command = new SqlCommand(iquery, connection);
-            command.CommandTimeout = 60;
+            SqlCommand commandDatabase = new SqlCommand(iquery, connection);
+            commandDatabase.CommandTimeout = 60;
 
             try
             {
                 connection.Open();
-                SqlDataReader myReader = command.ExecuteReader();
+                SqlDataReader myReader = commandDatabase.ExecuteReader();
                 connection.Close();
             }
             catch (Exception ex)
@@ -151,7 +160,7 @@ namespace WWWPOS
                 MessageBox.Show(ex.Message);
             }
             DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Product added Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            dialogResult = MessageBox.Show("Product add Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
             if (dialogResult == DialogResult.OK)
             {
                 message = "Success";
@@ -159,20 +168,34 @@ namespace WWWPOS
         }
     }
 
-    class loadData : DataBase
+    class loadData: DataBase
     {
+        //User not Delete
         public void userRecords(DataGridView dataCustomer, string user_Type, string user_Status)
-        public void adminData(DataGridView dataAdmin)
-
-       {
-            int i = 0;
+        {
+          
             connection.Open();
             command = new SqlCommand("select * from account WHERE User_Type = '"+user_Type+"' AND User_Status = '"+ user_Status+ "'", connection);
             mdr = command.ExecuteReader();
 
             while (mdr.Read())
             {
-                dataCustomer.Rows.Add(mdr[0].ToString(), mdr[1].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[6].ToString(), mdr[7].ToString());
+                dataCustomer.Rows.Add(mdr[0].ToString(), mdr[1].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[7].ToString(), mdr[6].ToString(), mdr[8].ToString());
+            }
+
+            connection.Close();
+        }
+        // User Deleted
+        public void userArchive(DataGridView dataCustomer, string user_Status)
+        {
+           
+            connection.Open();
+            command = new SqlCommand("select * from account WHERE User_Status = '" + user_Status + "'", connection);
+            mdr = command.ExecuteReader();
+
+            while (mdr.Read())
+            {
+                dataCustomer.Rows.Add(mdr[0].ToString(), mdr[1].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[7].ToString(), mdr[6].ToString(), mdr[8].ToString());
             }
 
             connection.Close();
@@ -194,6 +217,8 @@ namespace WWWPOS
                 {
                     int id = int.Parse(mdr[0] + "");
                     string description = "" + mdr[9];
+                    string name = "" + mdr[3];
+                    string type = "" + mdr[2];
                     double price = Double.Parse(mdr[5] + "");
                     int stock = int.Parse(mdr[6] + "");
                     string color = "" + mdr[4];
@@ -208,7 +233,7 @@ namespace WWWPOS
                     }
                     else if(productPanel == "panelEdit")
                     {
-                        UserControl_Update obj = new UserControl_Update(id, price, stock, color, size, description, image);
+                        UserControl_Update obj = new UserControl_Update(id, name, type, price, stock, color, size, description, image);
                         tableLayoutPanel.Controls.Add(obj, y, x);
                     }
                     else
