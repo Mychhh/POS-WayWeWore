@@ -120,7 +120,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "UserControlInventory";
             this.Size = new System.Drawing.Size(976, 655);
-            this.Load += new System.EventHandler(this.UserControlInventory_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

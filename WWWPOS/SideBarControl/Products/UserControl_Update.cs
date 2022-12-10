@@ -56,5 +56,10 @@ namespace WWWPOS.SideBarControl.Products
             get => product_Image.Image;
             set => product_Image.Image = value;
         }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(ID);
+        }
     }
 }

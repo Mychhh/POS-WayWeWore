@@ -167,6 +167,7 @@
             this.btn_Edit.Size = new System.Drawing.Size(47, 49);
             this.btn_Edit.TabIndex = 47;
             this.btn_Edit.UseVisualStyleBackColor = false;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // product_Image
             // 
