@@ -16,7 +16,8 @@ namespace WWWPOS.SideBarControl
 {
     public partial class UserControlInventory : UserControl
     {
-        
+
+        SideBarControl.Inventory.UserControlRead UC_Read = new SideBarControl.Inventory.UserControlRead();
         public UserControlInventory()
         {
             InitializeComponent();
@@ -47,5 +48,11 @@ namespace WWWPOS.SideBarControl
             UC_Delete.Dock = DockStyle.Fill;
         }
 
+        private void UserControlInventory_Load(object sender, EventArgs e)
+        {
+            panel_Inventory.Controls.Clear();
+            panel_Inventory.Controls.Add(UC_Read);
+            UC_Read.Dock = DockStyle.Fill;
+        }
     }
 }

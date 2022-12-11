@@ -44,9 +44,10 @@
             this.panel1.Controls.Add(this.btn_AddProduct);
             this.panel1.Controls.Add(this.btn_UpdateProduct);
             this.panel1.Controls.Add(this.lbl_Inventory);
-            this.panel1.Location = new System.Drawing.Point(25, 19);
+            this.panel1.Location = new System.Drawing.Point(19, 15);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(932, 82);
+            this.panel1.Size = new System.Drawing.Size(699, 67);
             this.panel1.TabIndex = 19;
             // 
             // btn_DeleteProduct
@@ -56,9 +57,10 @@
             this.btn_DeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_DeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteProduct.ForeColor = System.Drawing.Color.White;
-            this.btn_DeleteProduct.Location = new System.Drawing.Point(751, 18);
+            this.btn_DeleteProduct.Location = new System.Drawing.Point(563, 15);
+            this.btn_DeleteProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_DeleteProduct.Name = "btn_DeleteProduct";
-            this.btn_DeleteProduct.Size = new System.Drawing.Size(162, 46);
+            this.btn_DeleteProduct.Size = new System.Drawing.Size(122, 37);
             this.btn_DeleteProduct.TabIndex = 5;
             this.btn_DeleteProduct.Text = "Delete Product";
             this.btn_DeleteProduct.UseVisualStyleBackColor = false;
@@ -71,9 +73,10 @@
             this.btn_AddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_AddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddProduct.ForeColor = System.Drawing.Color.White;
-            this.btn_AddProduct.Location = new System.Drawing.Point(437, 18);
+            this.btn_AddProduct.Location = new System.Drawing.Point(328, 15);
+            this.btn_AddProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_AddProduct.Name = "btn_AddProduct";
-            this.btn_AddProduct.Size = new System.Drawing.Size(141, 46);
+            this.btn_AddProduct.Size = new System.Drawing.Size(106, 37);
             this.btn_AddProduct.TabIndex = 4;
             this.btn_AddProduct.Text = "Add Product";
             this.btn_AddProduct.UseVisualStyleBackColor = false;
@@ -86,9 +89,10 @@
             this.btn_UpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_UpdateProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_UpdateProduct.ForeColor = System.Drawing.Color.White;
-            this.btn_UpdateProduct.Location = new System.Drawing.Point(595, 18);
+            this.btn_UpdateProduct.Location = new System.Drawing.Point(446, 15);
+            this.btn_UpdateProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_UpdateProduct.Name = "btn_UpdateProduct";
-            this.btn_UpdateProduct.Size = new System.Drawing.Size(141, 46);
+            this.btn_UpdateProduct.Size = new System.Drawing.Size(106, 37);
             this.btn_UpdateProduct.TabIndex = 3;
             this.btn_UpdateProduct.Text = "Edit Product";
             this.btn_UpdateProduct.UseVisualStyleBackColor = false;
@@ -98,28 +102,32 @@
             // 
             this.lbl_Inventory.AutoSize = true;
             this.lbl_Inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Inventory.Location = new System.Drawing.Point(16, 28);
+            this.lbl_Inventory.Location = new System.Drawing.Point(12, 23);
+            this.lbl_Inventory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Inventory.Name = "lbl_Inventory";
-            this.lbl_Inventory.Size = new System.Drawing.Size(118, 29);
+            this.lbl_Inventory.Size = new System.Drawing.Size(95, 24);
             this.lbl_Inventory.TabIndex = 1;
             this.lbl_Inventory.Text = "Inventory";
             // 
             // panel_Inventory
             // 
             this.panel_Inventory.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_Inventory.Location = new System.Drawing.Point(25, 117);
+            this.panel_Inventory.Location = new System.Drawing.Point(19, 95);
+            this.panel_Inventory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_Inventory.Name = "panel_Inventory";
-            this.panel_Inventory.Size = new System.Drawing.Size(932, 517);
+            this.panel_Inventory.Size = new System.Drawing.Size(699, 420);
             this.panel_Inventory.TabIndex = 20;
             // 
             // UserControlInventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel_Inventory);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControlInventory";
-            this.Size = new System.Drawing.Size(976, 655);
+            this.Size = new System.Drawing.Size(732, 532);
+            this.Load += new System.EventHandler(this.UserControlInventory_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -24,7 +24,46 @@ namespace WWWPOS.SideBarControl.Inventory
 
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
         {
+            DataBase DB = new DataBase();
+
+            int productID = Int32.Parse(txtBox_productID.Text);
+            double productPrice = Double.Parse(txtBox_Price.Text);
+            int productStock = Int32.Parse(txtBox_Stocks.Text);
+
+          DB.updateProducts(productID, comboBox_ProductType.Text, txtBox_ProductName.Text, txtBox_Color.Text, productPrice, productStock, comboBox_Size.Text, rtb_Description.Text);
 
         }
+
+        public static string imageURL = null;
+        private void btn_Browse_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    imageURL = ofd.FileName;
+                    product_Image.Image = Image.FromFile(ofd.FileName);
+                }
+            }
+
+        }
+
+        private void rtb_Description_Enter(object sender, EventArgs e)
+        {
+            if (rtb_Description.Text == "Description")
+            {
+                rtb_Description.Text = "";
+            }
+
+        }
+
+        private void rtb_Description_Leave(object sender, EventArgs e)
+        {
+            if (rtb_Description.Text == "")
+            {
+                rtb_Description.Text = "Description";
+            }
+        }
+
     }
 }

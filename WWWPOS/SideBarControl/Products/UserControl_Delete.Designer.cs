@@ -39,6 +39,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.product_Image = new System.Windows.Forms.PictureBox();
+            this.product_ID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.product_Image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,6 +168,7 @@
             this.btn_Edit.Size = new System.Drawing.Size(47, 49);
             this.btn_Edit.TabIndex = 58;
             this.btn_Edit.UseVisualStyleBackColor = false;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // product_Image
             // 
@@ -178,11 +180,22 @@
             this.product_Image.TabIndex = 57;
             this.product_Image.TabStop = false;
             // 
+            // product_ID
+            // 
+            this.product_ID.AutoSize = true;
+            this.product_ID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.product_ID.Location = new System.Drawing.Point(9, 352);
+            this.product_ID.Name = "product_ID";
+            this.product_ID.Size = new System.Drawing.Size(35, 13);
+            this.product_ID.TabIndex = 59;
+            this.product_ID.Text = "label1";
+            // 
             // UserControl_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.Controls.Add(this.product_ID);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.product_Image);
             this.Controls.Add(this.product_Description);
@@ -195,7 +208,7 @@
             this.Controls.Add(this.product_Stock);
             this.Controls.Add(this.label14);
             this.Name = "UserControl_Delete";
-            this.Size = new System.Drawing.Size(220, 343);
+            this.Size = new System.Drawing.Size(220, 339);
             ((System.ComponentModel.ISupportInitialize)(this.product_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,5 +228,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label product_Stock;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label product_ID;
     }
 }
