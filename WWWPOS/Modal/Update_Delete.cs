@@ -26,8 +26,11 @@ namespace WWWPOS.Modal
         {
            
             DataBase DB = new DataBase();
+
             int phoneNumber = Int32.Parse(txt_Number.Text);
-            DB.updateUser(txt_AccountID.Text, txt_Name.Text, txt_Email.Text, txt_Password.Text, phoneNumber, txt_UserType.Text, txt_Address.Text, userControl.panel_UserList);
+            int accountID = Int32.Parse(txt_AccountID.Text);
+
+            DB.updateUser(accountID, txt_Name.Text, txt_Email.Text, txt_Password.Text, phoneNumber, txt_UserType.Text, txt_Address.Text, userControl.panel_UserList);
         }
     }
 }

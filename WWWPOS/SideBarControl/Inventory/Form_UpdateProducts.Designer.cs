@@ -76,6 +76,7 @@
             this.btn_Browse.TabIndex = 61;
             this.btn_Browse.Text = "Browse";
             this.btn_Browse.UseVisualStyleBackColor = false;
+            this.btn_Browse.Click += new System.EventHandler(this.btn_Browse_Click);
             // 
             // rtb_Description
             // 
@@ -84,6 +85,8 @@
             this.rtb_Description.Size = new System.Drawing.Size(304, 108);
             this.rtb_Description.TabIndex = 60;
             this.rtb_Description.Text = "Description";
+            this.rtb_Description.Enter += new System.EventHandler(this.rtb_Description_Enter);
+            this.rtb_Description.Leave += new System.EventHandler(this.rtb_Description_Leave);
             // 
             // txtBox_Stocks
             // 

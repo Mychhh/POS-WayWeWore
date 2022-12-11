@@ -25,7 +25,10 @@ namespace WWWPOS.SideBarControl.Products
 
 
         }
-        public int ID { get; set; }
+        public int ID {
+            get => int.Parse(product_ID.Text);
+            set => product_ID.Text = value + "";
+        }
         public string Descriptions
         {
             get => product_Description.Text;
@@ -55,6 +58,13 @@ namespace WWWPOS.SideBarControl.Products
         {
             get => product_Image.Image;
             set => product_Image.Image = value;
+        }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            DataBase DB = new DataBase();
+            DB.setStatusProducts("DEL", Int32.Parse(product_ID.Text));
+           
         }
     }
 }

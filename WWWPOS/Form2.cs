@@ -105,6 +105,7 @@ namespace WWWPOS
             UC_Inventory.panel_Inventory.Controls.Add(UC_Read);
             UC_Read.Dock = DockStyle.Fill;
 
+
             if (!UC_Read.Visible)
             {
                 UC_Read.Show();
