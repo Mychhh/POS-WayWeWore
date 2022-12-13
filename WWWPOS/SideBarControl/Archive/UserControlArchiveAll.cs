@@ -20,8 +20,8 @@ namespace WWWPOS.SideBarControl.Archive
         private void UserControlArchiveAll_Load(object sender, EventArgs e)
         {
             loadData LD = new loadData();
-            LD.userArchive(dataGrid_ArchiveUserAll, "DEL");
-            LD.ProductArchive(dataGrid_ArchiveProductALL, "DEL");
+            LD.userArchive(dataGrid_ArchiveUserAll, "Inactive");
+            LD.ProductArchive(dataGrid_ArchiveProductALL, "Inactive");
         }
         private void dataGrid_ArchiveUserAll_SelectionChanged(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace WWWPOS.SideBarControl.Archive
             if (colName == "restore")
             {
                 DataBase DB = new DataBase();
-                DB.SetStatusUser("nDEL", Int32.Parse(user_ID));
+                DB.SetStatusUser("Active", Int32.Parse(user_ID));
             }
         }
 
@@ -53,7 +53,7 @@ namespace WWWPOS.SideBarControl.Archive
             if (colName == "restore")
             {
                 DataBase DB = new DataBase();
-                DB.SetStatusProducts("nDEL", Int32.Parse(product_ID));
+                DB.SetStatusProducts("Active", Int32.Parse(product_ID));
             }
         }
     }

@@ -20,7 +20,7 @@ namespace WWWPOS.SideBarControl.Archive
         private void UserControlArchiveProduct_Load(object sender, EventArgs e)
         {
             loadData LD = new loadData();
-            LD.ProductArchive(dataGrid_ArchiveProduct, "DEL");
+            LD.ProductArchive(dataGrid_ArchiveProduct, "Inactive");
 
         }
         public static string user_ID;
@@ -37,7 +37,7 @@ namespace WWWPOS.SideBarControl.Archive
             if (colName == "restore")
             {
                 DataBase DB = new DataBase();
-                DB.SetStatusProducts("nDEL", Int32.Parse(user_ID));
+                DB.SetStatusProducts("Active", Int32.Parse(user_ID));
             }
         }
     }

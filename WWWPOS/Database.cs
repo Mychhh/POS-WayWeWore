@@ -22,6 +22,8 @@ namespace WWWPOS
         protected SqlCommand command;
         protected SqlDataReader mdr;
 
+        //About User
+
         //Signup and Add user
         public void InsertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
         {
@@ -37,7 +39,7 @@ namespace WWWPOS
             }
             else
             {
-                string iquery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "nDel" + "','" + user_Type + "')";
+                string iquery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
                 SqlCommand commandDatabase = new SqlCommand(iquery, connection);
                 commandDatabase.CommandTimeout = 60;
 
@@ -125,7 +127,7 @@ namespace WWWPOS
             connection.Close();
 
             DialogResult dialogResult;
-            if(user_Status == "DEL")
+            if(user_Status == "Inactive")
             {
                 dialogResult = MessageBox.Show("Delete Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
@@ -138,6 +140,8 @@ namespace WWWPOS
 
         }
 
+        //About Products
+
         //Add Products
         public void AddProdducts(string product_Name, string product_Color, double product_Price, int product_Stock, string category ,string product_Size, string product_image, string Product_Description)
         {
@@ -146,7 +150,7 @@ namespace WWWPOS
             int user_ID = Int32.Parse(id);
 
             connection.Open();
-            string iquery = "INSERT INTO Products(Account_ID, Category, Product_Name, Color, Price ,Stocks, Product_images, Product_Size, Product_Description, Product_Status) VALUES ('" + user_ID + "' , '" + category + "', '" + product_Name + "', '" + product_Color + "', '" + product_Price + "', '" + product_Stock + "','"+ product_image + "','"+ product_Size + "','" + Product_Description + "','nDel')";
+            string iquery = "INSERT INTO Products(Account_ID, Category, Product_Name, Color, Price ,Stocks, Product_images, Product_Size, Product_Description, Product_Status) VALUES ('" + user_ID + "' , '" + category + "', '" + product_Name + "', '" + product_Color + "', '" + product_Price + "', '" + product_Stock + "','"+ product_image + "','"+ product_Size + "','" + Product_Description + "','Active')";
             SqlCommand commandDatabase = new SqlCommand(iquery, connection);
             commandDatabase.CommandTimeout = 60;
 
@@ -196,7 +200,8 @@ namespace WWWPOS
             connection.Close();
 
             DialogResult dialogResult;
-            if (product_Status == "DEL")
+
+            if (product_Status == "Inactive")
             {
                 dialogResult = MessageBox.Show("Delete Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
@@ -210,7 +215,7 @@ namespace WWWPOS
         }
     }
 
-    class loadData: DataBase
+    class loadData : DataBase
     {
         //User not Delete
         public void userRecords(DataGridView dataCustomer, string user_Type, string user_Status)
@@ -250,7 +255,7 @@ namespace WWWPOS
             {
                 connection.Open();
 
-                string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'nDel';";
+                string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
                 command = new SqlCommand(selectQuery, connection);
                 mdr = command.ExecuteReader();
 
@@ -277,16 +282,16 @@ namespace WWWPOS
                     else if(productPanel == "panelEdit")
                     {
                         UserControl_Update obj = new UserControl_Update(id, name, type, price, stock, color, size, description, image);
-                        tableLayoutPanel.Controls.Add(obj, y, x);
+                        tableLayoutPanel.Controls.Add(obj, y, x);   
                     }
                     else
                     {
-
                         UserControl_Delete obj = new UserControl_Delete(id, price, stock, color, size, description, image);
                         tableLayoutPanel.Controls.Add(obj, y, x);
                     }
                     
                     y++;
+
                     if (y >= 4)
                     {
                         y = 0;
