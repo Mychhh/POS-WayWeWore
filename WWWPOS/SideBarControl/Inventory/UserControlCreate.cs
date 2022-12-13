@@ -52,7 +52,7 @@ namespace WWWPOS.SideBarControl.Inventory
             int product_Stock = Int32.Parse(txtBox_Stocks.Text);
 
 
-            DB.addProdducts(txtBox_ProductName.Text, txtBox_Color.Text, product_Price, product_Stock, comboBox_ProductType.Text, comboBox_Size.Text, imageURL, rtb_Description.Text);
+            DB.AddProdducts(txtBox_ProductName.Text, txtBox_Color.Text, product_Price, product_Stock, comboBox_ProductType.Text, comboBox_Size.Text, imageURL, rtb_Description.Text);
 
             string message = DataBase.message;
 

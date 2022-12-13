@@ -22,7 +22,7 @@ namespace WWWPOS.SideBarControl.UserList
         private void UserControlUserListAdmin_Load(object sender, EventArgs e)
         {
             loadData LD = new loadData();
-            LD.userRecords(dataGrid_Admin, "Admin", "nDEL");
+            LD.userRecords(dataGrid_Admin, "Admin", "Active");
         }
 
         private void dataGrid_Admin_SelectionChanged(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace WWWPOS.SideBarControl.UserList
             else if (colName == "delete_User")
             {
                 DataBase DB = new DataBase();
-                DB.setStatusUser("DEL", Int32.Parse(user_ID));
+                DB.SetStatusUser("Inactive", Int32.Parse(user_ID));
             }
         }
     }

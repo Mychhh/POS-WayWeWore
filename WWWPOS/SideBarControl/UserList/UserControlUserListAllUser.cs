@@ -53,7 +53,7 @@ namespace WWWPOS.SideBarControl.UserList
             else if (colName == "delete_User")
             {
                 DataBase DB = new DataBase();
-                DB.setStatusUser("DEL", Int32.Parse(user_ID));
+                DB.SetStatusUser("Inactive", Int32.Parse(user_ID));
             }
         }
 
@@ -69,6 +69,7 @@ namespace WWWPOS.SideBarControl.UserList
             user_Address = dataGridAdmin[5, row].Value.ToString();
             user_Type = dataGridAdmin[7, row].Value.ToString();
         }
+
         private void dataGridAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dataGridAdmin.Columns[e.ColumnIndex].Name;
@@ -88,19 +89,16 @@ namespace WWWPOS.SideBarControl.UserList
             else if (colName == "delete_User")
             {
                 DataBase DB = new DataBase();
-                DB.setStatusUser("DEL", Int32.Parse(user_ID));
+                DB.SetStatusUser("Inactive", Int32.Parse(user_ID));
             }
         }
        
-
-       
-
-        
+        //All User
         private void UserControlUserListAllUser_Load(object sender, EventArgs e)
         {
             loadData LD = new loadData();
-            LD.userRecords(dataGridAdmin,"Admin","nDEL");
-            LD.userRecords(dataGridCustomer, "Client", "nDEL");
+            LD.userRecords(dataGridAdmin,"Admin","Active");
+            LD.userRecords(dataGridCustomer, "Client", "Active");
         }
 
     }
