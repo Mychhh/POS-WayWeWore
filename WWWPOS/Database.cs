@@ -23,12 +23,13 @@ namespace WWWPOS
         protected SqlDataReader mdr;
 
         //Signup and Add user
-        public void insertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
+        public void InsertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
         {
             connection.Open();
             string selectQuery = "SELECT Email FROM account WHERE Email = '" + email + "';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
+
 
             if (mdr.Read())
             {
@@ -43,7 +44,7 @@ namespace WWWPOS
                 try
                 {
                     SqlDataReader myReader = commandDatabase.ExecuteReader();
-                    connection.Close();
+                     connection.Close();
                 }
                 catch (Exception ex)
                 {
@@ -90,14 +91,14 @@ namespace WWWPOS
             }
             else
             {
-
                 MessageBox.Show("Incorrect Login Information! Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             connection.Close();
         }
+
         //Update account
-        public void updateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address, Panel panel_UserList)
+        public void UpdateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address, Panel panel_UserList)
         {
             connection.Open();
             string selectQuery = "UPDATE account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + password + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
@@ -112,8 +113,9 @@ namespace WWWPOS
                 Update_Delete.ActiveForm.Close();
             }
         }
+        
         //Delete and restore account
-        public void setStatusUser(string user_Status, int account_ID)
+        public void SetStatusUser(string user_Status, int account_ID)
         {
            
             connection.Open();
@@ -137,7 +139,7 @@ namespace WWWPOS
         }
 
         //Add Products
-        public void addProdducts(string product_Name, string product_Color, double product_Price, int product_Stock, string category ,string product_Size, string product_image, string Product_Description)
+        public void AddProdducts(string product_Name, string product_Color, double product_Price, int product_Stock, string category ,string product_Size, string product_image, string Product_Description)
         {
             
             string id = DataBase.user_ID;
@@ -167,7 +169,7 @@ namespace WWWPOS
         }
 
         //Update Products
-        public void updateProducts(int productID, string category, string name, string color, double price, int stock, string size, string description)
+        public void UpdateProducts(int productID, string category, string name, string color, double price, int stock, string size, string description)
         {
             connection.Open();
             string selectQuery = "UPDATE Products SET Category='" + category + "',Product_Name='" + name + "',Color='" + color + "',Price='" + price + "',Stocks='" + stock + "',Product_Size='" + size + "',Product_Description='" + description + "' WHERE Product_ID ='" + productID + "';";
@@ -184,7 +186,7 @@ namespace WWWPOS
         }
 
         //Delete and restore products
-        public void setStatusProducts(string product_Status, int product_ID)
+        public void SetStatusProducts(string product_Status, int product_ID)
         {
 
             connection.Open();
@@ -304,7 +306,7 @@ namespace WWWPOS
             }
         }
         // Product Deleted
-        public void productArchive(DataGridView dataProduct, string product_Status)
+        public void ProductArchive(DataGridView dataProduct, string product_Status)
         {
 
             connection.Open();

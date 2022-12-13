@@ -35,7 +35,7 @@ namespace WWWPOS.SideBarControl.Archive
             if (colName == "restore")
             {
                 DataBase DB = new DataBase();
-                DB.setStatusUser("nDEL", Int32.Parse(user_ID));
+                DB.SetStatusUser("nDEL", Int32.Parse(user_ID));
             }
         }
 

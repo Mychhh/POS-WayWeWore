@@ -22,17 +22,17 @@ namespace WWWPOS.SideBarControl.UserList
             DataBase DB = new DataBase();
 
             int phoneNumber = Int32.Parse(txt_Number.Text);
-            DB.insertAccount(txt_Email.Text, txt_Name.Text, txt_Address.Text, txt_Password.Text, phoneNumber, cmb_UserType.Text );
 
+            DB.InsertAccount(txt_Email.Text, txt_Name.Text, txt_Address.Text, txt_Password.Text, phoneNumber, cmb_UserType.Text );
 
             if (DataBase.message == "Success")
             {
-                UserList.UserControlUserListAllUser UC_ALlUser = new UserControlUserListAllUser();
+                UserList.UserControlUserListAllUser UC_AllUser = new UserControlUserListAllUser();
 
                 //Main Panel
                 Controls.Clear();
-                Controls.Add(UC_ALlUser);
-                UC_ALlUser.Dock = DockStyle.Fill;
+                Controls.Add(UC_AllUser);
+                UC_AllUser.Dock = DockStyle.Fill;
             }
         }
     }

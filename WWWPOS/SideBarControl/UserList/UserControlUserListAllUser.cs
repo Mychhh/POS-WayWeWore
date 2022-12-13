@@ -53,7 +53,7 @@ namespace WWWPOS.SideBarControl.UserList
             else if (colName == "delete_User")
             {
                 DataBase DB = new DataBase();
-                DB.setStatusUser("DEL", Int32.Parse(user_ID));
+                DB.SetStatusUser("DEL", Int32.Parse(user_ID));
             }
         }
 
@@ -88,7 +88,7 @@ namespace WWWPOS.SideBarControl.UserList
             else if (colName == "delete_User")
             {
                 DataBase DB = new DataBase();
-                DB.setStatusUser("DEL", Int32.Parse(user_ID));
+                DB.SetStatusUser("DEL", Int32.Parse(user_ID));
             }
         }
        
