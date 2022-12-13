@@ -19,9 +19,26 @@ namespace WWWPOS.SideBarControl.Archive
 
         private void UserControlArchiveProduct_Load(object sender, EventArgs e)
         {
+            loadData LD = new loadData();
+            LD.productArchive(dataGrid_ArchiveProduct, "DEL");
 
         }
+        public static string user_ID;
+        private void dataGrid_ArchiveProduct_SelectionChanged(object sender, EventArgs e)
+        {
+            int row = dataGrid_ArchiveProduct.CurrentRow.Index;
+            user_ID = dataGrid_ArchiveProduct[0, row].Value.ToString();
+        }
 
+        private void dataGrid_ArchiveProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dataGrid_ArchiveProduct.Columns[e.ColumnIndex].Name;
 
+            if (colName == "restore")
+            {
+                DataBase DB = new DataBase();
+                DB.setStatusProducts("nDEL", Int32.Parse(user_ID));
+            }
+        }
     }
 }

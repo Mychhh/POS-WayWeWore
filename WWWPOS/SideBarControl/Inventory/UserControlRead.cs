@@ -18,6 +18,7 @@ namespace WWWPOS.SideBarControl.Inventory
             InitializeComponent();
         }
 
+       
         private void UserControlRead_Load(object sender, EventArgs e)
         {
             loadData LD = new loadData();
