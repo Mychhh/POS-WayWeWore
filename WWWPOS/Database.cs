@@ -9,6 +9,7 @@ using System.Drawing;
 using WWWPOS.Modal;
 using System.Data;
 using WWWPOS.SideBarControl.Products;
+using WWWPOS.SideBarControl.Inventory;
 
 namespace WWWPOS
 {
@@ -16,8 +17,8 @@ namespace WWWPOS
     internal class DataBase
     {
         public static string user_ID, message;
-        public static readonly string sqlServerLink = "Data Source = DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security = True";
-        protected  SqlConnection connection = new SqlConnection(sqlServerLink);
+        public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
+        protected  SqlConnection connection = new SqlConnection(SQLServerLink);
         protected SqlCommand command;
         protected SqlDataReader mdr;
 
@@ -95,12 +96,11 @@ namespace WWWPOS
 
             connection.Close();
         }
-        
-        //Update User
-        public void updateUser(string account_ID, string user_Name, string email, string password, int phone, string user_Type, string address, Panel panel_UserList)
+        //Update account
+        public void updateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address, Panel panel_UserList)
         {
             connection.Open();
-            string selectQuery = "Update account Set Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + password + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
+            string selectQuery = "UPDATE account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + password + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
@@ -109,15 +109,15 @@ namespace WWWPOS
             dialogResult = MessageBox.Show("Update Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
             if (dialogResult == DialogResult.OK)
             {
-                Update_Delete.ActiveForm.Hide();
+                Update_Delete.ActiveForm.Close();
             }
         }
-        
-        public void setStatusUser(string user_Status, string account_ID)
+        //Delete and restore account
+        public void setStatusUser(string user_Status, int account_ID)
         {
            
             connection.Open();
-            string selectQuery = "Update account Set User_Status = '" + user_Status + "' WHERE Account_Id ='" + account_ID + "';";
+            string selectQuery = "UPDATE account SET User_Status = '" + user_Status + "' WHERE Account_Id ='" + account_ID + "';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
@@ -165,6 +165,47 @@ namespace WWWPOS
                 message = "Success";
             }
         }
+
+        //Update Products
+        public void updateProducts(int productID, string category, string name, string color, double price, int stock, string size, string description)
+        {
+            connection.Open();
+            string selectQuery = "UPDATE Products SET Category='" + category + "',Product_Name='" + name + "',Color='" + color + "',Price='" + price + "',Stocks='" + stock + "',Product_Size='" + size + "',Product_Description='" + description + "' WHERE Product_ID ='" + productID + "';";
+            command = new SqlCommand(selectQuery, connection);
+            mdr = command.ExecuteReader();
+            connection.Close();
+
+            DialogResult dialogResult;
+            dialogResult = MessageBox.Show("Update Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            if (dialogResult == DialogResult.OK)
+            {
+                Form_UpdateProducts.ActiveForm.Close();
+            }
+        }
+
+        //Delete and restore products
+        public void setStatusProducts(string product_Status, int product_ID)
+        {
+
+            connection.Open();
+            string selectQuery = "UPDATE Products SET Product_Status = '" + product_Status + "' WHERE Product_ID ='" + product_ID + "';";
+            command = new SqlCommand(selectQuery, connection);
+            mdr = command.ExecuteReader();
+            connection.Close();
+
+            DialogResult dialogResult;
+            if (product_Status == "DEL")
+            {
+                dialogResult = MessageBox.Show("Delete Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+
+            }
+            else
+            {
+                dialogResult = MessageBox.Show("Restore Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+
+            }
+
+        }
     }
 
     class loadData: DataBase
@@ -174,7 +215,7 @@ namespace WWWPOS
         {
           
             connection.Open();
-            command = new SqlCommand("select * from account WHERE User_Type = '"+user_Type+"' AND User_Status = '"+ user_Status+ "'", connection);
+            command = new SqlCommand("SELECT * FROM account WHERE User_Type = '"+user_Type+"' AND User_Status = '"+ user_Status+ "'", connection);
             mdr = command.ExecuteReader();
 
             while (mdr.Read())
@@ -190,7 +231,7 @@ namespace WWWPOS
         {
            
             connection.Open();
-            command = new SqlCommand("select * from account WHERE User_Status = '" + user_Status + "'", connection);
+            command = new SqlCommand("SELECT * FROM account WHERE User_Status = '" + user_Status + "'", connection);
             mdr = command.ExecuteReader();
 
             while (mdr.Read())
@@ -262,5 +303,19 @@ namespace WWWPOS
                 MessageBox.Show(ex.Message);
             }
         }
+        // Product Deleted
+        public void productArchive(DataGridView dataProduct, string product_Status)
+        {
+
+            connection.Open();
+            command = new SqlCommand("SELECT * FROM Products WHERE Product_Status = '" + product_Status + "'", connection);
+            mdr = command.ExecuteReader();
+
+            while (mdr.Read())
+            {
+                dataProduct.Rows.Add(mdr[0].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[6].ToString(), mdr[8].ToString(), mdr[9].ToString(), mdr[10].ToString(), mdr[11].ToString());
+            }
+        }
+
     }
 }
