@@ -16,7 +16,8 @@ namespace WWWPOS
     internal class DataBase
     {
         public static string user_ID, message;
-        protected  SqlConnection connection = new SqlConnection("Data Source=MIKO\\SQLEXPRESS;Initial Catalog=waywewore;Integrated Security=True");
+        public const string ConnectionString = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
+        protected  SqlConnection connection = new SqlConnection(ConnectionString);
         protected SqlCommand command;
         protected SqlDataReader mdr;
 
