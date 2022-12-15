@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace WWWPOS.SideBarControl.Inventory
 {
-    public partial class Form_UpdateProducts : Form
+    public partial class UserControlUpdate : UserControl
     {
-        public Form_UpdateProducts()
+        public UserControlUpdate()
         {
             InitializeComponent();
-        }
-
-        private void btn_Exit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
@@ -30,7 +25,7 @@ namespace WWWPOS.SideBarControl.Inventory
             double productPrice = Double.Parse(txtBox_Price.Text);
             int productStock = Int32.Parse(txtBox_Stocks.Text);
 
-          DB.updateProducts(productID, comboBox_ProductType.Text, txtBox_ProductName.Text, txtBox_Color.Text, productPrice, productStock, comboBox_Size.Text, rtb_Description.Text);
+            DB.updateProducts(productID, comboBox_ProductType.Text, txtBox_ProductName.Text, txtBox_Color.Text, productPrice, productStock, comboBox_Size.Text, rtb_Description.Text);
 
         }
 
@@ -45,7 +40,6 @@ namespace WWWPOS.SideBarControl.Inventory
                     product_Image.Image = Image.FromFile(ofd.FileName);
                 }
             }
-
         }
 
         private void rtb_Description_Enter(object sender, EventArgs e)
@@ -64,6 +58,5 @@ namespace WWWPOS.SideBarControl.Inventory
                 rtb_Description.Text = "Description";
             }
         }
-
     }
 }

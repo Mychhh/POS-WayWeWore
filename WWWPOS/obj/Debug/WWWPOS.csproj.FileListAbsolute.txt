@@ -207,3 +207,4 @@ D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Purchase.UserControlAllProdu
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserList.UserControlUserListUpdateDelete.resources
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.Modal.Update_Delete.resources
 D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.Form_UpdateProducts.resources
+D:\WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserList.UserControl_UpdateForm.resources

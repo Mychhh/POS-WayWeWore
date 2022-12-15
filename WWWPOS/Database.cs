@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Drawing;
-using WWWPOS.Modal;
 using System.Data;
 using WWWPOS.SideBarControl.Products;
 using WWWPOS.SideBarControl.Inventory;
@@ -97,7 +96,7 @@ namespace WWWPOS
             connection.Close();
         }
         //Update account
-        public void updateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address, Panel panel_UserList)
+        public void updateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address)
         {
             connection.Open();
             string selectQuery = "UPDATE account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + password + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
@@ -109,7 +108,7 @@ namespace WWWPOS
             dialogResult = MessageBox.Show("Update Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
             if (dialogResult == DialogResult.OK)
             {
-                Update_Delete.ActiveForm.Close();
+                message = "Success";
             }
         }
         //Delete and restore account
@@ -179,7 +178,7 @@ namespace WWWPOS
             dialogResult = MessageBox.Show("Update Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
             if (dialogResult == DialogResult.OK)
             {
-                Form_UpdateProducts.ActiveForm.Close();
+                //dito lagay code pag sucess updated un products pabalik sa edit products view
             }
         }
 

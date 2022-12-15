@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WWWPOS.Modal;
 
 namespace WWWPOS.SideBarControl.UserList
 {
@@ -18,7 +17,7 @@ namespace WWWPOS.SideBarControl.UserList
             InitializeComponent();
         }
         public static string user_ID, user_Name, user_Email, user_Password, user_Phone, user_Address, user_Type;
-        Update_Delete UP = new Update_Delete();
+        UserControl_UpdateForm UP = new UserControl_UpdateForm();
         private void UserControlUserListAdmin_Load(object sender, EventArgs e)
         {
             loadData LD = new loadData();
@@ -49,7 +48,10 @@ namespace WWWPOS.SideBarControl.UserList
                 UP.txt_Number.Text = user_Phone;
                 UP.txt_Address.Text = user_Address;
                 UP.txt_UserType.Text = user_Type;
-                UP.ShowDialog();
+
+                Controls.Clear();
+                Controls.Add(UP);
+                UP.Dock = DockStyle.Fill;
 
 
             }
