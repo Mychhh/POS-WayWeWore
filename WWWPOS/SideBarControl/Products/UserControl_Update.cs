@@ -75,7 +75,9 @@ namespace WWWPOS.SideBarControl.Products
       
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-            Form_UpdateProducts update_Form = new Form_UpdateProducts();
+            UserControlUpdate update_Form = new UserControlUpdate();
+            UserControlInventory uci = new UserControlInventory();
+
             update_Form.product_Image.Image = product_Image.Image;
             update_Form.rtb_Description.Text  = product_Description.Text;
             update_Form.txtBox_productID.Text = product_ID.Text;
@@ -85,7 +87,11 @@ namespace WWWPOS.SideBarControl.Products
             update_Form.txtBox_Color.Text = product_Color.Text;
             update_Form.txtBox_Price.Text = product_Price.Text;
             update_Form.txtBox_Stocks.Text = product_Stock.Text;
-            update_Form.Show();
+
+            Controls.Clear();
+            Controls.Add(update_Form);
+            update_Form.Dock = DockStyle.Fill;
+
 
         }
     }
