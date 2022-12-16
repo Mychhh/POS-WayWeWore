@@ -30,7 +30,7 @@ namespace WWWPOS
             {
                 int phoneNumber = Int32.Parse(txt_Phone.Text);
                 string user_Type = "Client";
-                data.insertAccount(txt_Email.Text, txt_FullName.Text, txt_Address.Text, txt_Password.Text, phoneNumber, user_Type);
+                data.InsertAccount(txt_Email.Text, txt_FullName.Text, txt_Address.Text, txt_Password.Text, phoneNumber, user_Type);
 
                 if(DataBase.message == "Success")
                 {
@@ -57,8 +57,6 @@ namespace WWWPOS
             {
                 txt_Password.UseSystemPasswordChar = true;
                 btn_show_hide_pass.Image = WWWPOS.Properties.Resources.showPass;
-
-
             }
         }
     }

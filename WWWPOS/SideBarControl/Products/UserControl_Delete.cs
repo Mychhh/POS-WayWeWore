@@ -63,7 +63,7 @@ namespace WWWPOS.SideBarControl.Products
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             DataBase DB = new DataBase();
-            DB.setStatusProducts("DEL", Int32.Parse(product_ID.Text));
+            DB.SetStatusProducts("DEL", Int32.Parse(product_ID.Text));
            
         }
     }
