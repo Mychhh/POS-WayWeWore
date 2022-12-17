@@ -16,7 +16,7 @@ namespace WWWPOS
     internal class DataBase
     {
         public static string user_ID, message;
-        public const string SQLServerLink = "Data Source=MIKO\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
+        public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
         protected SqlCommand command;
         protected SqlDataReader mdr;
@@ -99,7 +99,7 @@ namespace WWWPOS
         }
 
         //Update account
-        public void UpdateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address, Panel panel_UserList)
+        public void UpdateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address)
         {
             connection.Open();
             string selectQuery = "UPDATE account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + password + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
