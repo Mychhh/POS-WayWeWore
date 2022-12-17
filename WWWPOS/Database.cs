@@ -31,21 +31,23 @@ namespace WWWPOS
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
 
-
             if (mdr.Read())
             {
                 MessageBox.Show("Email Already Register!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                connection.Close();
             }
             else
             {
-                string iquery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
-                SqlCommand commandDatabase = new SqlCommand(iquery, connection);
+                connection.Close();
+                connection.Open();
+                string insertQuery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
+                SqlCommand commandDatabase = new SqlCommand(insertQuery, connection);
                 commandDatabase.CommandTimeout = 60;
 
                 try
                 {
                     SqlDataReader myReader = commandDatabase.ExecuteReader();
-                     connection.Close();
+                    connection.Close();
                 }
                 catch (Exception ex)
                 {
