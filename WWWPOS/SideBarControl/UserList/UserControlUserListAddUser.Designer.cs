@@ -50,92 +50,90 @@
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.panel8.BackgroundImage = global::WWWPOS.Properties.Resources.header;
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel8.Location = new System.Drawing.Point(13, 135);
+            this.panel8.Location = new System.Drawing.Point(17, 166);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(309, 112);
+            this.panel8.Size = new System.Drawing.Size(412, 138);
             this.panel8.TabIndex = 60;
             // 
             // txt_Name
             // 
             this.txt_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Name.Location = new System.Drawing.Point(344, 181);
-            this.txt_Name.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Name.Location = new System.Drawing.Point(459, 223);
+            this.txt_Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Size = new System.Drawing.Size(289, 24);
+            this.txt_Name.Size = new System.Drawing.Size(384, 28);
             this.txt_Name.TabIndex = 59;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 24);
+            this.label1.Size = new System.Drawing.Size(172, 29);
             this.label1.TabIndex = 58;
             this.label1.Text = "Add new user";
             // 
             // txt_Number
             // 
             this.txt_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Number.Location = new System.Drawing.Point(344, 229);
-            this.txt_Number.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Number.Location = new System.Drawing.Point(459, 282);
+            this.txt_Number.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Number.Name = "txt_Number";
-            this.txt_Number.Size = new System.Drawing.Size(289, 24);
+            this.txt_Number.Size = new System.Drawing.Size(384, 28);
             this.txt_Number.TabIndex = 57;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(341, 17);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(455, 21);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 18);
+            this.label8.Size = new System.Drawing.Size(87, 22);
             this.label8.TabIndex = 56;
             this.label8.Text = "User type";
             // 
             // txt_Address
             // 
             this.txt_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Address.Location = new System.Drawing.Point(344, 276);
-            this.txt_Address.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Address.Location = new System.Drawing.Point(459, 340);
+            this.txt_Address.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Address.Name = "txt_Address";
-            this.txt_Address.Size = new System.Drawing.Size(289, 24);
+            this.txt_Address.Size = new System.Drawing.Size(384, 28);
             this.txt_Address.TabIndex = 55;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(341, 255);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(455, 314);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 18);
+            this.label5.Size = new System.Drawing.Size(76, 22);
             this.label5.TabIndex = 54;
             this.label5.Text = "Address";
             // 
             // cmb_UserType
             // 
+            this.cmb_UserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_UserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_UserType.FormattingEnabled = true;
             this.cmb_UserType.Items.AddRange(new object[] {
             "Admin",
             "Client"});
-            this.cmb_UserType.Location = new System.Drawing.Point(344, 38);
-            this.cmb_UserType.Margin = new System.Windows.Forms.Padding(2);
+            this.cmb_UserType.Location = new System.Drawing.Point(459, 47);
+            this.cmb_UserType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_UserType.Name = "cmb_UserType";
-            this.cmb_UserType.Size = new System.Drawing.Size(289, 25);
+            this.cmb_UserType.Size = new System.Drawing.Size(384, 30);
             this.cmb_UserType.TabIndex = 53;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(341, 208);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(455, 256);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 18);
+            this.label4.Size = new System.Drawing.Size(73, 22);
             this.label4.TabIndex = 52;
             this.label4.Text = "Number";
             // 
@@ -143,30 +141,28 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(341, 161);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(455, 198);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 18);
+            this.label3.Size = new System.Drawing.Size(57, 22);
             this.label3.TabIndex = 51;
             this.label3.Text = "Name";
             // 
             // txt_Email
             // 
             this.txt_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Email.Location = new System.Drawing.Point(344, 85);
-            this.txt_Email.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Email.Location = new System.Drawing.Point(459, 105);
+            this.txt_Email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(289, 24);
+            this.txt_Email.Size = new System.Drawing.Size(384, 28);
             this.txt_Email.TabIndex = 50;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(341, 65);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(455, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 18);
+            this.label2.Size = new System.Drawing.Size(54, 22);
             this.label2.TabIndex = 49;
             this.label2.Text = "Email";
             // 
@@ -178,10 +174,10 @@
             this.btn_AddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddProduct.ForeColor = System.Drawing.Color.White;
-            this.btn_AddProduct.Location = new System.Drawing.Point(344, 317);
-            this.btn_AddProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_AddProduct.Location = new System.Drawing.Point(459, 390);
+            this.btn_AddProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddProduct.Name = "btn_AddProduct";
-            this.btn_AddProduct.Size = new System.Drawing.Size(288, 32);
+            this.btn_AddProduct.Size = new System.Drawing.Size(384, 39);
             this.btn_AddProduct.TabIndex = 48;
             this.btn_AddProduct.Text = "Add User";
             this.btn_AddProduct.UseVisualStyleBackColor = false;
@@ -190,26 +186,25 @@
             // txt_Password
             // 
             this.txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Password.Location = new System.Drawing.Point(344, 135);
-            this.txt_Password.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Password.Location = new System.Drawing.Point(459, 166);
+            this.txt_Password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.Size = new System.Drawing.Size(289, 24);
+            this.txt_Password.Size = new System.Drawing.Size(384, 28);
             this.txt_Password.TabIndex = 62;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(341, 115);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(455, 142);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 18);
+            this.label6.Size = new System.Drawing.Size(89, 22);
             this.label6.TabIndex = 61;
             this.label6.Text = "Password";
             // 
             // UserControlUserListAddUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.label6);
@@ -226,8 +221,9 @@
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_AddProduct);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UserControlUserListAddUser";
-            this.Size = new System.Drawing.Size(660, 387);
+            this.Size = new System.Drawing.Size(880, 476);
             this.ResumeLayout(false);
             this.PerformLayout();
 
