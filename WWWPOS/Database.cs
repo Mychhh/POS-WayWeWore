@@ -38,7 +38,8 @@ namespace WWWPOS
             }
             else
             {
-                connection.Close();
+                connection.Close(); //closes the first connection used by checking if the email is already registered
+
                 connection.Open();
                 string insertQuery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
                 SqlCommand commandDatabase = new SqlCommand(insertQuery, connection);
@@ -59,7 +60,6 @@ namespace WWWPOS
                 if (dialogResult == DialogResult.OK)
                 {
                     message = "Success";
-                   
                 }
             }
         }
@@ -120,7 +120,6 @@ namespace WWWPOS
         //Delete and restore account
         public void SetStatusUser(string user_Status, int account_ID)
         {
-           
             connection.Open();
             string selectQuery = "UPDATE account SET User_Status = '" + user_Status + "' WHERE Account_Id ='" + account_ID + "';";
             command = new SqlCommand(selectQuery, connection);
@@ -138,7 +137,6 @@ namespace WWWPOS
                 dialogResult = MessageBox.Show("Restore Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
-
         }
 
         //About Products
@@ -250,6 +248,21 @@ namespace WWWPOS
             connection.Close();
         }
 
+        // Product Deleted
+        public void ProductArchive(DataGridView dataProduct, string product_Status)
+        {
+
+            connection.Open();
+            command = new SqlCommand("SELECT * FROM Products WHERE Product_Status = '" + product_Status + "'", connection);
+            mdr = command.ExecuteReader();
+
+            while (mdr.Read())
+            {
+                dataProduct.Rows.Add(mdr[0].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[6].ToString(), mdr[8].ToString(), mdr[9].ToString(), mdr[10].ToString(), mdr[11].ToString());
+            }
+        }
+
+        //Updating the product
         public void selectProduct(TableLayoutPanel tableLayoutPanel, string productPanel)
         {
             try
@@ -275,22 +288,22 @@ namespace WWWPOS
 
                     Image image = Image.FromFile(@"" + mdr[7]);
 
-                    if(productPanel == "panelView")
+                    if (productPanel == "panelView")
                     {
                         UserControl_AdminViewProducts obj = new UserControl_AdminViewProducts(id, price, stock, color, size, description, image);
                         tableLayoutPanel.Controls.Add(obj, y, x);
                     }
-                    else if(productPanel == "panelEdit")
+                    else if (productPanel == "panelEdit")
                     {
                         UserControl_Update obj = new UserControl_Update(id, name, type, price, stock, color, size, description, image);
-                        tableLayoutPanel.Controls.Add(obj, y, x);   
+                        tableLayoutPanel.Controls.Add(obj, y, x);
                     }
                     else
                     {
                         UserControl_Delete obj = new UserControl_Delete(id, price, stock, color, size, description, image);
                         tableLayoutPanel.Controls.Add(obj, y, x);
                     }
-                    
+
                     y++;
 
                     if (y >= 4)
@@ -309,19 +322,6 @@ namespace WWWPOS
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-        }
-        // Product Deleted
-        public void ProductArchive(DataGridView dataProduct, string product_Status)
-        {
-
-            connection.Open();
-            command = new SqlCommand("SELECT * FROM Products WHERE Product_Status = '" + product_Status + "'", connection);
-            mdr = command.ExecuteReader();
-
-            while (mdr.Read())
-            {
-                dataProduct.Rows.Add(mdr[0].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[6].ToString(), mdr[8].ToString(), mdr[9].ToString(), mdr[10].ToString(), mdr[11].ToString());
             }
         }
 

@@ -16,6 +16,7 @@ namespace WWWPOS.SideBarControl.UserList
         {
             InitializeComponent();
         }
+
         UserControl_UpdateForm UP = new UserControl_UpdateForm();
 
         public static string user_ID, user_Name, user_Email, user_Password, user_Phone, user_Address, user_Type;
@@ -85,7 +86,6 @@ namespace WWWPOS.SideBarControl.UserList
                 UP.txt_Number.Text = user_Phone;
                 UP.txt_Address.Text = user_Address;
                 UP.txt_UserType.Text = user_Type;
-
 
                 Controls.Clear();
                 Controls.Add(UP);
