@@ -32,7 +32,6 @@ namespace WWWPOS.SideBarControl.UserList
             user_Phone = dataGridCustomer[4, row].Value.ToString();
             user_Address = dataGridCustomer[5, row].Value.ToString();
             user_Type = dataGridCustomer[7, row].Value.ToString();
-
         }
 
         private void dataGridCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -51,7 +50,6 @@ namespace WWWPOS.SideBarControl.UserList
                 Controls.Clear();
                 Controls.Add(UP);
                 UP.Dock = DockStyle.Fill;
-
 
             }
             else if (colName == "delete_User")
@@ -90,8 +88,6 @@ namespace WWWPOS.SideBarControl.UserList
                 Controls.Clear();
                 Controls.Add(UP);
                 UP.Dock = DockStyle.Fill;
-
-
             }
             else if (colName == "delete_User")
             {

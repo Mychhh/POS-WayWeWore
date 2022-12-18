@@ -70,9 +70,10 @@ namespace WWWPOS.SideBarControl.Products
             get => product_Image.Image;
             set => product_Image.Image = value;
         }
-      
+
         private void btn_Edit_Click(object sender, EventArgs e)
         {
+            UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
             UserControlUpdate UC_Update = new UserControlUpdate();
             UserControlInventory UC_Inventory = new UserControlInventory();
 
@@ -89,7 +90,6 @@ namespace WWWPOS.SideBarControl.Products
             UC_Inventory.panel_Inventory.Controls.Clear();
             UC_Inventory.panel_Inventory.Controls.Add(UC_Update);
             UC_Update.Dock = DockStyle.Fill;
-
         }
     }
 }

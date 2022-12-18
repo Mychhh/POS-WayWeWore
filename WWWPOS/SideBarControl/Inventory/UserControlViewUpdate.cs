@@ -23,7 +23,7 @@ namespace WWWPOS.SideBarControl.Inventory
         {
             loadData LD = new loadData();
             LD.selectProduct(tableLayoutPanel, "panelEdit");
-
         }
+
     }
 }

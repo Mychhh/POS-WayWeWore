@@ -99,7 +99,7 @@ namespace WWWPOS
         private void btn_Inventory_Click(object sender, EventArgs e)
         {
             SideBarControl.UserControlInventory UC_Inventory = new SideBarControl.UserControlInventory();
-            UserControlRead UC_Read = new SideBarControl.Inventory.UserControlRead();
+            UserControlRead UC_Read = new UserControlRead();
 
             //Main Panel
             panel_Main.Controls.Clear();

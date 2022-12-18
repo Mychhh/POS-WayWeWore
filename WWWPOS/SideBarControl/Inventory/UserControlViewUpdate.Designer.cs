@@ -37,23 +37,24 @@
             this.tableLayoutPanel.ColumnCount = 3;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.99916F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.00083F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 242F));
-            this.tableLayoutPanel.Location = new System.Drawing.Point(3, 8);
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 325F));
+            this.tableLayoutPanel.Location = new System.Drawing.Point(4, 10);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 1;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(697, 380);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(929, 468);
             this.tableLayoutPanel.TabIndex = 1;
             // 
             // UserControlViewUpdate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserControlViewUpdate";
-            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.Size = new System.Drawing.Size(702, 407);
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.Size = new System.Drawing.Size(936, 501);
             this.Load += new System.EventHandler(this.UserControlViewUpdate_Load);
             this.ResumeLayout(false);
 
@@ -61,6 +62,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
     }
 }

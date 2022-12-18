@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Data;
 using WWWPOS.SideBarControl.Products;
 using WWWPOS.SideBarControl.Inventory;
+using WWWPOS.SideBarControl;
 
 namespace WWWPOS
 {
@@ -181,7 +182,7 @@ namespace WWWPOS
             connection.Close();
 
             DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Update Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
             if (dialogResult == DialogResult.OK)
             {
                 //dito lagay code pag sucess updated un products pabalik sa edit products view
@@ -212,6 +213,7 @@ namespace WWWPOS
             }
 
         }
+
     }
 
     class loadData : DataBase
@@ -324,6 +326,5 @@ namespace WWWPOS
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }
