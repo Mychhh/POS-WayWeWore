@@ -11,6 +11,7 @@ using WWWPOS.SideBarControl.Products;
 using WWWPOS.SideBarControl.Inventory;
 using WWWPOS.SideBarControl;
 using WWWPOS.SideBarControl.UserList;
+using System.Windows.Controls.Primitives;
 
 namespace WWWPOS
 {
@@ -316,6 +317,65 @@ namespace WWWPOS
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        //Fetching All Stocks
+        public string AllStocks(string products)
+        {
+            try
+            {
+                connection.Open();
+
+                string selectQuery = "SELECT Stocks FROM Products WHERE Product_Status = 'Active';";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                int stocks = 0;
+
+                while (mdr.Read())
+                {
+                    stocks += int.Parse(mdr[0] + "");
+                }
+
+                products = stocks.ToString();
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return products;
+        }
+
+        //Fetching All User
+        public string AllUser(string users)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = "SELECT COUNT(*) FROM account WHERE User_Status = 'Active';";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                int numberOfUsers = 0;
+
+                while (mdr.Read())
+                {
+                    numberOfUsers = int.Parse(mdr[0] + "");
+                }
+
+                users = numberOfUsers.ToString();
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return users;
         }
     }
 }
