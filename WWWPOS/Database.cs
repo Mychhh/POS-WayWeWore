@@ -132,12 +132,12 @@ namespace WWWPOS
             DialogResult dialogResult;
             if(user_Status == "Inactive")
             {
-                dialogResult = MessageBox.Show("Delete Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
            else
             {
-                dialogResult = MessageBox.Show("Restore Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
         }

@@ -16,8 +16,10 @@ namespace WWWPOS.SideBarControl.UserList
         {
             InitializeComponent();
         }
+
         public static string user_ID, user_Name, user_Email, user_Password, user_Phone, user_Address, user_Type;
         UserControl_UpdateForm UP = new UserControl_UpdateForm();
+
         private void UserControlUserListAdmin_Load(object sender, EventArgs e)
         {
             loadData LD = new loadData();
@@ -27,6 +29,7 @@ namespace WWWPOS.SideBarControl.UserList
         private void dataGrid_Admin_SelectionChanged(object sender, EventArgs e)
         {
             int row = dataGrid_Admin.CurrentRow.Index;
+
             user_ID = dataGrid_Admin[0, row].Value.ToString();
             user_Name = dataGrid_Admin[1, row].Value.ToString();
             user_Email = dataGrid_Admin[2, row].Value.ToString();
@@ -34,11 +37,12 @@ namespace WWWPOS.SideBarControl.UserList
             user_Phone = dataGrid_Admin[4, row].Value.ToString();
             user_Address = dataGrid_Admin[5, row].Value.ToString();
             user_Type = dataGrid_Admin[7, row].Value.ToString();
-           
         }
+
         private void dataGrid_Admin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dataGrid_Admin.Columns[e.ColumnIndex].Name;
+
             if (colName == "edit_Admin")
             {
                 UP.txt_AccountID.Text = user_ID;
