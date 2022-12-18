@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.SideBarControl.UserList;
 
 namespace WWWPOS.SideBarControl.Archive
 {
@@ -23,10 +24,18 @@ namespace WWWPOS.SideBarControl.Archive
             LD.userArchive(dataGrid_ArchiveUserAll, "Inactive");
             LD.ProductArchive(dataGrid_ArchiveProductALL, "Inactive");
         }
+        //User
         private void dataGrid_ArchiveUserAll_SelectionChanged(object sender, EventArgs e)
         {
             int row = dataGrid_ArchiveUserAll.CurrentRow.Index;
             user_ID = dataGrid_ArchiveUserAll[0, row].Value.ToString();
+        }
+
+        //Product
+        private void dataGrid_ArchiveProductALL_SelectionChanged(object sender, EventArgs e)
+        {
+            int row = dataGrid_ArchiveProductALL.CurrentRow.Index;
+            product_ID = dataGrid_ArchiveProductALL[0, row].Value.ToString();
         }
 
         private void dataGrid_ArchiveUserAll_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -37,13 +46,13 @@ namespace WWWPOS.SideBarControl.Archive
             {
                 DataBase DB = new DataBase();
                 DB.SetStatusUser("Active", Int32.Parse(user_ID));
-            }
-        }
 
-        private void dataGrid_ArchiveProductALL_SelectionChanged(object sender, EventArgs e)
-        {
-            int row = dataGrid_ArchiveProductALL.CurrentRow.Index;
-            product_ID = dataGrid_ArchiveProductALL[0, row].Value.ToString();
+                UserControlArchiveAll UC_ArchiveAll = new UserControlArchiveAll();
+
+                Controls.Clear();
+                Controls.Add(UC_ArchiveAll);
+                UC_ArchiveAll.Dock = DockStyle.Fill;
+            }
         }
 
         private void dataGrid_ArchiveProductALL_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -56,5 +65,6 @@ namespace WWWPOS.SideBarControl.Archive
                 DB.SetStatusProducts("Active", Int32.Parse(product_ID));
             }
         }
+
     }
 }

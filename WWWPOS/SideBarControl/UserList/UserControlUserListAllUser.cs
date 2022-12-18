@@ -34,7 +34,7 @@ namespace WWWPOS.SideBarControl.UserList
             user_Type = dataGridCustomer[7, row].Value.ToString();
         }
 
-       
+        //Admin
         private void dataGridAdmin_SelectionChanged(object sender, EventArgs e)
         {
             int row = dataGridAdmin.CurrentRow.Index;
@@ -48,6 +48,7 @@ namespace WWWPOS.SideBarControl.UserList
             user_Type = dataGridAdmin[7, row].Value.ToString();
         }
 
+        //Client
         private void dataGridCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             UserControl_UpdateForm UP = new UserControl_UpdateForm();
