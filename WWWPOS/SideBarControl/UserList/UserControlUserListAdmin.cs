@@ -39,7 +39,7 @@ namespace WWWPOS.SideBarControl.UserList
         private void dataGrid_Admin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dataGrid_Admin.Columns[e.ColumnIndex].Name;
-            if (colName == "edit_User")
+            if (colName == "edit_Admin")
             {
                 UP.txt_AccountID.Text = user_ID;
                 UP.txt_Name.Text = user_Name;
@@ -52,13 +52,17 @@ namespace WWWPOS.SideBarControl.UserList
                 Controls.Clear();
                 Controls.Add(UP);
                 UP.Dock = DockStyle.Fill;
-
-
             }
-            else if (colName == "delete_User")
+            else if (colName == "delete_Admin")
             {
                 DataBase DB = new DataBase();
                 DB.SetStatusUser("Inactive", Int32.Parse(user_ID));
+
+                UserControlUserListAdmin UC_UserListAdmin = new UserControlUserListAdmin();
+
+                Controls.Clear();
+                Controls.Add(UC_UserListAdmin);
+                UC_UserListAdmin.Dock = DockStyle.Fill;
             }
         }
     }
