@@ -10,6 +10,7 @@ using System.Data;
 using WWWPOS.SideBarControl.Products;
 using WWWPOS.SideBarControl.Inventory;
 using WWWPOS.SideBarControl;
+using WWWPOS.SideBarControl.UserList;
 
 namespace WWWPOS
 {
@@ -111,11 +112,12 @@ namespace WWWPOS
             connection.Close();
     
             DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Update Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
             if (dialogResult == DialogResult.OK)
             {
                 message = "Success";
             }
+
         }
         
         //Delete and restore account

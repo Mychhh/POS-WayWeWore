@@ -17,7 +17,7 @@ namespace WWWPOS.SideBarControl.UserList
             InitializeComponent();
         }
 
-        UserControl_UpdateForm UP = new UserControl_UpdateForm();
+        //UserControl_UpdateForm UP = new UserControl_UpdateForm();
 
         public static string user_ID, user_Name, user_Email, user_Password, user_Phone, user_Address, user_Type;
 
@@ -34,35 +34,11 @@ namespace WWWPOS.SideBarControl.UserList
             user_Type = dataGridCustomer[7, row].Value.ToString();
         }
 
-        private void dataGridCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string colName = dataGridCustomer.Columns[e.ColumnIndex].Name;
-            if (colName == "edit_User")
-            {
-                UP.txt_AccountID.Text = user_ID;
-                UP.txt_Name.Text = user_Name;
-                UP.txt_Email.Text = user_Email;
-                UP.txt_Password.Text = user_Password;
-                UP.txt_Number.Text = user_Phone;
-                UP.txt_Address.Text = user_Address;
-                UP.txt_UserType.Text = user_Type;
-
-                Controls.Clear();
-                Controls.Add(UP);
-                UP.Dock = DockStyle.Fill;
-
-            }
-            else if (colName == "delete_User")
-            {
-                DataBase DB = new DataBase();
-                DB.SetStatusUser("Inactive", Int32.Parse(user_ID));
-            }
-        }
-
        
         private void dataGridAdmin_SelectionChanged(object sender, EventArgs e)
         {
             int row = dataGridAdmin.CurrentRow.Index;
+
             user_ID = dataGridAdmin[0, row].Value.ToString();
             user_Name = dataGridAdmin[1, row].Value.ToString();
             user_Email = dataGridAdmin[2, row].Value.ToString();
@@ -72,10 +48,13 @@ namespace WWWPOS.SideBarControl.UserList
             user_Type = dataGridAdmin[7, row].Value.ToString();
         }
 
-        private void dataGridAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string colName = dataGridAdmin.Columns[e.ColumnIndex].Name;
-            if (colName == "edit_User")
+            UserControl_UpdateForm UP = new UserControl_UpdateForm();
+
+            string colName = dataGridCustomer.Columns[e.ColumnIndex].Name;
+
+            if (colName == "edit_Client")
             {
                 UP.txt_AccountID.Text = user_ID;
                 UP.txt_Name.Text = user_Name;
@@ -89,10 +68,49 @@ namespace WWWPOS.SideBarControl.UserList
                 Controls.Add(UP);
                 UP.Dock = DockStyle.Fill;
             }
-            else if (colName == "delete_User")
+            else if (colName == "delete_Client")
             {
                 DataBase DB = new DataBase();
                 DB.SetStatusUser("Inactive", Int32.Parse(user_ID));
+
+                UserControlUserListAllUser UC_ListAllUser = new UserControlUserListAllUser();
+
+                Controls.Clear();
+                Controls.Add(UC_ListAllUser);
+                UC_ListAllUser.Dock = DockStyle.Fill;
+            }
+        }
+
+        //Admin User
+        private void dataGridAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            UserControl_UpdateForm UP = new UserControl_UpdateForm();
+
+            string colName = dataGridAdmin.Columns[e.ColumnIndex].Name;
+            if (colName == "edit_Admin")
+            {
+                UP.txt_AccountID.Text = user_ID;
+                UP.txt_Name.Text = user_Name;
+                UP.txt_Email.Text = user_Email;
+                UP.txt_Password.Text = user_Password;
+                UP.txt_Number.Text = user_Phone;
+                UP.txt_Address.Text = user_Address;
+                UP.txt_UserType.Text = user_Type;
+
+                Controls.Clear();
+                Controls.Add(UP);
+                UP.Dock = DockStyle.Fill;
+            }
+            else if (colName == "delete_Admin")
+            {
+                DataBase DB = new DataBase();
+                DB.SetStatusUser("Inactive", Int32.Parse(user_ID));
+
+                UserControlUserListAllUser UC_ListAllUser = new UserControlUserListAllUser();
+
+                Controls.Clear();
+                Controls.Add(UC_ListAllUser);
+                UC_ListAllUser.Dock = DockStyle.Fill;
             }
         }
        

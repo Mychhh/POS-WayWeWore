@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlUserListAllUser));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlUserListAllUser));
             this.Admin = new System.Windows.Forms.Label();
             this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wayweworeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.accountTableAdapter = new WWWPOS.wayweworeDataSetTableAdapters.accountTableAdapter();
             this.dataGridAdmin = new System.Windows.Forms.DataGridView();
+            this.dataGridCustomer = new System.Windows.Forms.DataGridView();
             this.Account_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Full_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,9 +50,8 @@
             this.userStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Register_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit_User = new System.Windows.Forms.DataGridViewImageColumn();
-            this.delete_User = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridCustomer = new System.Windows.Forms.DataGridView();
+            this.edit_Admin = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete_Admin = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,8 +61,8 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.edit_Client = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete_Client = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSet)).BeginInit();
@@ -138,8 +138,8 @@
             this.userStatus,
             this.userType,
             this.Register_at,
-            this.edit_User,
-            this.delete_User});
+            this.edit_Admin,
+            this.delete_Admin});
             this.dataGridAdmin.EnableHeadersVisualStyles = false;
             this.dataGridAdmin.Location = new System.Drawing.Point(20, 31);
             this.dataGridAdmin.Name = "dataGridAdmin";
@@ -149,6 +149,41 @@
             this.dataGridAdmin.TabIndex = 8;
             this.dataGridAdmin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAdmin_CellContentClick);
             this.dataGridAdmin.SelectionChanged += new System.EventHandler(this.dataGridAdmin_SelectionChanged);
+            // 
+            // dataGridCustomer
+            // 
+            this.dataGridCustomer.AllowUserToAddRows = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridCustomer.ColumnHeadersHeight = 35;
+            this.dataGridCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.edit_Client,
+            this.delete_Client});
+            this.dataGridCustomer.EnableHeadersVisualStyles = false;
+            this.dataGridCustomer.Location = new System.Drawing.Point(20, 217);
+            this.dataGridCustomer.Name = "dataGridCustomer";
+            this.dataGridCustomer.RowHeadersVisible = false;
+            this.dataGridCustomer.RowHeadersWidth = 51;
+            this.dataGridCustomer.Size = new System.Drawing.Size(656, 156);
+            this.dataGridCustomer.TabIndex = 9;
+            this.dataGridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCustomer_CellContentClick);
+            this.dataGridCustomer.SelectionChanged += new System.EventHandler(this.dataGridCustomer_SelectionChanged);
             // 
             // Account_ID
             // 
@@ -213,58 +248,23 @@
             this.Register_at.Name = "Register_at";
             this.Register_at.Width = 125;
             // 
-            // edit_User
+            // edit_Admin
             // 
-            this.edit_User.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.edit_User.HeaderText = "";
-            this.edit_User.Image = ((System.Drawing.Image)(resources.GetObject("edit_User.Image")));
-            this.edit_User.MinimumWidth = 6;
-            this.edit_User.Name = "edit_User";
-            this.edit_User.Width = 6;
+            this.edit_Admin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.edit_Admin.HeaderText = "Edit";
+            this.edit_Admin.Image = ((System.Drawing.Image)(resources.GetObject("edit_Admin.Image")));
+            this.edit_Admin.MinimumWidth = 6;
+            this.edit_Admin.Name = "edit_Admin";
+            this.edit_Admin.Width = 38;
             // 
-            // delete_User
+            // delete_Admin
             // 
-            this.delete_User.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.delete_User.HeaderText = "";
-            this.delete_User.Image = ((System.Drawing.Image)(resources.GetObject("delete_User.Image")));
-            this.delete_User.MinimumWidth = 6;
-            this.delete_User.Name = "delete_User";
-            this.delete_User.Width = 6;
-            // 
-            // dataGridCustomer
-            // 
-            this.dataGridCustomer.AllowUserToAddRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridCustomer.ColumnHeadersHeight = 35;
-            this.dataGridCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewImageColumn1,
-            this.dataGridViewImageColumn2});
-            this.dataGridCustomer.EnableHeadersVisualStyles = false;
-            this.dataGridCustomer.Location = new System.Drawing.Point(20, 217);
-            this.dataGridCustomer.Name = "dataGridCustomer";
-            this.dataGridCustomer.RowHeadersVisible = false;
-            this.dataGridCustomer.RowHeadersWidth = 51;
-            this.dataGridCustomer.Size = new System.Drawing.Size(656, 156);
-            this.dataGridCustomer.TabIndex = 9;
-            this.dataGridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCustomer_CellContentClick);
-            this.dataGridCustomer.SelectionChanged += new System.EventHandler(this.dataGridCustomer_SelectionChanged);
+            this.delete_Admin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.delete_Admin.HeaderText = "Delete";
+            this.delete_Admin.Image = ((System.Drawing.Image)(resources.GetObject("delete_Admin.Image")));
+            this.delete_Admin.MinimumWidth = 6;
+            this.delete_Admin.Name = "delete_Admin";
+            this.delete_Admin.Width = 55;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -329,23 +329,23 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 125;
             // 
-            // dataGridViewImageColumn1
+            // edit_Client
             // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 6;
+            this.edit_Client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.edit_Client.HeaderText = "Edit";
+            this.edit_Client.Image = ((System.Drawing.Image)(resources.GetObject("edit_Client.Image")));
+            this.edit_Client.MinimumWidth = 6;
+            this.edit_Client.Name = "edit_Client";
+            this.edit_Client.Width = 38;
             // 
-            // dataGridViewImageColumn2
+            // delete_Client
             // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 6;
+            this.delete_Client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.delete_Client.HeaderText = "Delete";
+            this.delete_Client.Image = ((System.Drawing.Image)(resources.GetObject("delete_Client.Image")));
+            this.delete_Client.MinimumWidth = 6;
+            this.delete_Client.Name = "delete_Client";
+            this.delete_Client.Width = 55;
             // 
             // UserControlUserListAllUser
             // 
@@ -379,6 +379,7 @@
         private wayweworeDataSetTableAdapters.accountTableAdapter accountTableAdapter;
         private System.Windows.Forms.BindingSource accountBindingSource1;
         private System.Windows.Forms.DataGridView dataGridAdmin;
+        private System.Windows.Forms.DataGridView dataGridCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Account_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Full_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
@@ -388,9 +389,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn userStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn userType;
         private System.Windows.Forms.DataGridViewTextBoxColumn Register_at;
-        private System.Windows.Forms.DataGridViewImageColumn edit_User;
-        private System.Windows.Forms.DataGridViewImageColumn delete_User;
-        private System.Windows.Forms.DataGridView dataGridCustomer;
+        private System.Windows.Forms.DataGridViewImageColumn edit_Admin;
+        private System.Windows.Forms.DataGridViewImageColumn delete_Admin;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -400,7 +400,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn edit_Client;
+        private System.Windows.Forms.DataGridViewImageColumn delete_Client;
     }
 }
