@@ -9,6 +9,9 @@ using System.Drawing;
 using System.Data;
 using WWWPOS.SideBarControl.Products;
 using WWWPOS.SideBarControl.Inventory;
+using WWWPOS.SideBarControl;
+using WWWPOS.SideBarControl.UserList;
+using System.Windows.Controls.Primitives;
 
 namespace WWWPOS
 {
@@ -16,7 +19,7 @@ namespace WWWPOS
     internal class DataBase
     {
         public static string user_ID, message;
-        public const string SQLServerLink = "Data Source=MIKO\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
+        public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
         protected SqlCommand command;
         protected SqlDataReader mdr;
@@ -31,21 +34,24 @@ namespace WWWPOS
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
 
-
             if (mdr.Read())
             {
                 MessageBox.Show("Email Already Register!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                connection.Close();
             }
             else
             {
-                string iquery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
-                SqlCommand commandDatabase = new SqlCommand(iquery, connection);
+                connection.Close(); //closes the first connection used by checking if the email is already registered
+
+                connection.Open();
+                string insertQuery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
+                SqlCommand commandDatabase = new SqlCommand(insertQuery, connection);
                 commandDatabase.CommandTimeout = 60;
 
                 try
                 {
                     SqlDataReader myReader = commandDatabase.ExecuteReader();
-                     connection.Close();
+                    connection.Close();
                 }
                 catch (Exception ex)
                 {
@@ -57,7 +63,6 @@ namespace WWWPOS
                 if (dialogResult == DialogResult.OK)
                 {
                     message = "Success";
-                   
                 }
             }
         }
@@ -99,7 +104,7 @@ namespace WWWPOS
         }
 
         //Update account
-        public void UpdateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address, Panel panel_UserList)
+        public void UpdateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address)
         {
             connection.Open();
             string selectQuery = "UPDATE account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + password + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
@@ -108,17 +113,17 @@ namespace WWWPOS
             connection.Close();
     
             DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Update Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
             if (dialogResult == DialogResult.OK)
             {
                 message = "Success";
             }
+
         }
         
         //Delete and restore account
         public void SetStatusUser(string user_Status, int account_ID)
         {
-           
             connection.Open();
             string selectQuery = "UPDATE account SET User_Status = '" + user_Status + "' WHERE Account_Id ='" + account_ID + "';";
             command = new SqlCommand(selectQuery, connection);
@@ -128,15 +133,14 @@ namespace WWWPOS
             DialogResult dialogResult;
             if(user_Status == "Inactive")
             {
-                dialogResult = MessageBox.Show("Delete Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
            else
             {
-                dialogResult = MessageBox.Show("Restore Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
-
         }
 
         //About Products
@@ -164,7 +168,7 @@ namespace WWWPOS
                 MessageBox.Show(ex.Message);
             }
             DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Product add Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            dialogResult = MessageBox.Show("Product added Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
             if (dialogResult == DialogResult.OK)
             {
                 message = "Success";
@@ -181,7 +185,7 @@ namespace WWWPOS
             connection.Close();
 
             DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Update Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
             if (dialogResult == DialogResult.OK)
             {
                 //dito lagay code pag sucess updated un products pabalik sa edit products view
@@ -202,16 +206,17 @@ namespace WWWPOS
 
             if (product_Status == "Inactive")
             {
-                dialogResult = MessageBox.Show("Delete Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
             else
             {
-                dialogResult = MessageBox.Show("Restore Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
 
         }
+
     }
 
     class loadData : DataBase
@@ -248,67 +253,6 @@ namespace WWWPOS
             connection.Close();
         }
 
-        public void selectProduct(TableLayoutPanel tableLayoutPanel, string productPanel)
-        {
-            try
-            {
-                connection.Open();
-
-                string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
-                command = new SqlCommand(selectQuery, connection);
-                mdr = command.ExecuteReader();
-
-                int x = 0, y = 0;
-
-                while (mdr.Read())
-                {
-                    int id = int.Parse(mdr[0] + "");
-                    string description = "" + mdr[9];
-                    string name = "" + mdr[3];
-                    string type = "" + mdr[2];
-                    double price = Double.Parse(mdr[5] + "");
-                    int stock = int.Parse(mdr[6] + "");
-                    string color = "" + mdr[4];
-                    string size = "" + mdr[8];
-
-                    Image image = Image.FromFile(@"" + mdr[7]);
-
-                    if(productPanel == "panelView")
-                    {
-                        UserControl_AdminViewProducts obj = new UserControl_AdminViewProducts(id, price, stock, color, size, description, image);
-                        tableLayoutPanel.Controls.Add(obj, y, x);
-                    }
-                    else if(productPanel == "panelEdit")
-                    {
-                        UserControl_Update obj = new UserControl_Update(id, name, type, price, stock, color, size, description, image);
-                        tableLayoutPanel.Controls.Add(obj, y, x);   
-                    }
-                    else
-                    {
-                        UserControl_Delete obj = new UserControl_Delete(id, price, stock, color, size, description, image);
-                        tableLayoutPanel.Controls.Add(obj, y, x);
-                    }
-                    
-                    y++;
-
-                    if (y >= 4)
-                    {
-                        y = 0;
-                        x++;
-                    }
-
-
-                }
-                mdr.Close();
-                command.Clone();
-                connection.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
         // Product Deleted
         public void ProductArchive(DataGridView dataProduct, string product_Status)
         {
@@ -323,5 +267,115 @@ namespace WWWPOS
             }
         }
 
+        //Updating the product
+        public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
+        {
+            try
+            {
+                connection.Open();
+
+                string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                while (mdr.Read())
+                {
+                    int id = int.Parse(mdr[0] + "");
+                    string description = "" + mdr[9];
+                    string name = "" + mdr[3];
+                    string type = "" + mdr[2];
+                    double price = Double.Parse(mdr[5] + "");
+                    int stock = int.Parse(mdr[6] + "");
+                    string color = "" + mdr[4];
+                    string size = "" + mdr[8];
+
+                    Image image = Image.FromFile(@"" + mdr[7]);
+
+                    if (productPanel == "panelView")
+                    {
+                        UserControl_AdminViewProducts obj = new UserControl_AdminViewProducts(id, price, stock, color, size, description, image);
+                        flowLayoutPanel.Controls.Add(obj);
+                    }
+                    else if (productPanel == "panelEdit")
+                    {
+                        UserControl_Update obj = new UserControl_Update(id, name, type, price, stock, color, size, description, image);
+                        flowLayoutPanel.Controls.Add(obj);
+                    }
+                    else
+                    {
+                        UserControl_Delete obj = new UserControl_Delete(id, price, stock, color, size, description, image);
+                        flowLayoutPanel.Controls.Add(obj);
+                    }
+
+                }
+                mdr.Close();
+                command.Clone();
+                connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Fetching All Stocks
+        public string AllStocks(string products)
+        {
+            try
+            {
+                connection.Open();
+
+                string selectQuery = "SELECT Stocks FROM Products WHERE Product_Status = 'Active';";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                int stocks = 0;
+
+                while (mdr.Read())
+                {
+                    stocks += int.Parse(mdr[0] + "");
+                }
+
+                products = stocks.ToString();
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return products;
+        }
+
+        //Fetching All User
+        public string AllUser(string users)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = "SELECT COUNT(*) FROM account WHERE User_Status = 'Active';";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                int numberOfUsers = 0;
+
+                while (mdr.Read())
+                {
+                    numberOfUsers = int.Parse(mdr[0] + "");
+                }
+
+                users = numberOfUsers.ToString();
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return users;
+        }
     }
 }

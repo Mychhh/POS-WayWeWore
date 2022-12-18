@@ -32,10 +32,16 @@ namespace WWWPOS.SideBarControl.Archive
         {
             string colName = dataGrid_ArchiveUser.Columns[e.ColumnIndex].Name;
 
-            if (colName == "restore")
+            if (colName == "restoreUser")
             {
                 DataBase DB = new DataBase();
                 DB.SetStatusUser("Active", Int32.Parse(user_ID));
+
+                UserControlArchiveUser UC_ArchiveUser = new UserControlArchiveUser();
+
+                Controls.Clear();
+                Controls.Add(UC_ArchiveUser);
+                UC_ArchiveUser.Dock = DockStyle.Fill;
             }
         }
 

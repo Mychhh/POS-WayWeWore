@@ -19,6 +19,13 @@ namespace WWWPOS.SideBarControl.UserList
 
         public static string user_ID, user_Name, user_Email, user_Password, user_Phone, user_Address, user_Type;
         UserControl_UpdateForm UP = new UserControl_UpdateForm();
+
+        private void UserControlUserListCustomer_Load(object sender, EventArgs e)
+        {
+            loadData LD = new loadData();
+            LD.userRecords(dataGridCustomer, "Client", "Active");
+        }
+
         private void dataGridCustomer_SelectionChanged(object sender, EventArgs e)
         {
             int row = dataGridCustomer.CurrentRow.Index;
@@ -32,12 +39,11 @@ namespace WWWPOS.SideBarControl.UserList
             user_Type = dataGridCustomer[7, row].Value.ToString();
         }
 
-       
         private void dataGridCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dataGridCustomer.Columns[e.ColumnIndex].Name;
 
-            if(colName == "edit_User")
+            if(colName == "edit_Client")
             {
                 UP.txt_AccountID.Text = user_ID;
                 UP.txt_Name.Text = user_Name;
@@ -50,22 +56,22 @@ namespace WWWPOS.SideBarControl.UserList
                 Controls.Clear();
                 Controls.Add(UP);
                 UP.Dock = DockStyle.Fill;
-
-
             }
-            else if(colName == "delete_User")
+            else if(colName == "delete_Client")
             {
                 DataBase DB = new DataBase();
                 DB.SetStatusUser("Inactive", Int32.Parse(user_ID));
+
+                UserControlUserListCustomer UC_UserListCustomer = new UserControlUserListCustomer();
+
+                Controls.Clear();
+                Controls.Add(UC_UserListCustomer);
+                UC_UserListCustomer.Dock = DockStyle.Fill;
+
             }
 
 
         }
 
-        private void UserControlUserListCustomer_Load(object sender, EventArgs e)
-        {
-            loadData LD = new loadData();
-            LD.userRecords(dataGridCustomer, "Client", "nDEL");
-        }
     }
 }

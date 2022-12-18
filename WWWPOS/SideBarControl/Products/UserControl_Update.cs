@@ -25,8 +25,6 @@ namespace WWWPOS.SideBarControl.Products
             productsSize = productSize;
             Descriptions = productDescription;
             Pic = image;
-
-
         }
         public int ID { 
             get => int.Parse(product_ID.Text);
@@ -72,27 +70,26 @@ namespace WWWPOS.SideBarControl.Products
             get => product_Image.Image;
             set => product_Image.Image = value;
         }
-      
+
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-            UserControlUpdate update_Form = new UserControlUpdate();
-            UserControlInventory uci = new UserControlInventory();
+            UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+            UserControlUpdate UC_Update = new UserControlUpdate();
+            UserControlInventory UC_Inventory = new UserControlInventory();
 
-            update_Form.product_Image.Image = product_Image.Image;
-            update_Form.rtb_Description.Text  = product_Description.Text;
-            update_Form.txtBox_productID.Text = product_ID.Text;
-            update_Form.txtBox_ProductName.Text = product_Name.Text;
-            update_Form.comboBox_ProductType.Text = product_Type.Text;
-            update_Form.comboBox_Size.Text = product_Size.Text;
-            update_Form.txtBox_Color.Text = product_Color.Text;
-            update_Form.txtBox_Price.Text = product_Price.Text;
-            update_Form.txtBox_Stocks.Text = product_Stock.Text;
+            UC_Update.product_Image.Image = product_Image.Image;
+            UC_Update.rtb_Description.Text  = product_Description.Text;
+            UC_Update.txtBox_productID.Text = product_ID.Text;
+            UC_Update.txtBox_ProductName.Text = product_Name.Text;
+            UC_Update.comboBox_ProductType.Text = product_Type.Text;
+            UC_Update.comboBox_Size.Text = product_Size.Text;
+            UC_Update.txtBox_Color.Text = product_Color.Text;
+            UC_Update.txtBox_Price.Text = product_Price.Text;
+            UC_Update.txtBox_Stocks.Text = product_Stock.Text;
 
-            Controls.Clear();
-            Controls.Add(update_Form);
-            update_Form.Dock = DockStyle.Fill;
-
-
+            UC_Inventory.panel_Inventory.Controls.Clear();
+            UC_Inventory.panel_Inventory.Controls.Add(UC_Update);
+            UC_Update.Dock = DockStyle.Fill;
         }
     }
 }

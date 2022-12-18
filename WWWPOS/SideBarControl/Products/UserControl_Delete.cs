@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.SideBarControl.Inventory;
 
 namespace WWWPOS.SideBarControl.Products
 {
@@ -22,8 +23,6 @@ namespace WWWPOS.SideBarControl.Products
             productsSize = productSize;
             Descriptions = productDescription;
             Pic = image;
-
-
         }
         public int ID {
             get => int.Parse(product_ID.Text);
@@ -63,8 +62,8 @@ namespace WWWPOS.SideBarControl.Products
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             DataBase DB = new DataBase();
-            DB.SetStatusProducts("DEL", Int32.Parse(product_ID.Text));
-           
+            DB.SetStatusProducts("Inactive", Int32.Parse(product_ID.Text));
+            this.Dispose(true);
         }
     }
 }

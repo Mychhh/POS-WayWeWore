@@ -34,10 +34,16 @@ namespace WWWPOS.SideBarControl.Archive
         {
             string colName = dataGrid_ArchiveProduct.Columns[e.ColumnIndex].Name;
 
-            if (colName == "restore")
+            if (colName == "restoreProduct")
             {
                 DataBase DB = new DataBase();
                 DB.SetStatusProducts("Active", Int32.Parse(user_ID));
+
+                UserControlArchiveProduct userControlArchiveProduct = new UserControlArchiveProduct();
+
+                Controls.Clear();
+                Controls.Add(userControlArchiveProduct);
+                userControlArchiveProduct.Dock = DockStyle.Fill;
             }
         }
     }

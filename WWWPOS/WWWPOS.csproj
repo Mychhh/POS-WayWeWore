@@ -498,5 +498,8 @@
   <ItemGroup>
     <None Include="Resources\restore.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addproductpos.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
