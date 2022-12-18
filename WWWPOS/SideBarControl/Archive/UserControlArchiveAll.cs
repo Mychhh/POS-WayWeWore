@@ -17,6 +17,16 @@ namespace WWWPOS.SideBarControl.Archive
         {
             InitializeComponent();
         }
+        //method for refresh
+        public void ArchiveRefreshOnRestore()
+        {
+            UserControlArchiveAll UC_ArchiveAll = new UserControlArchiveAll();
+
+            Controls.Clear();
+            Controls.Add(UC_ArchiveAll);
+            UC_ArchiveAll.Dock = DockStyle.Fill;
+        }
+
         public static string user_ID, product_ID;
         private void UserControlArchiveAll_Load(object sender, EventArgs e)
         {
@@ -38,31 +48,31 @@ namespace WWWPOS.SideBarControl.Archive
             product_ID = dataGrid_ArchiveProductALL[0, row].Value.ToString();
         }
 
+        //User Restore
         private void dataGrid_ArchiveUserAll_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dataGrid_ArchiveUserAll.Columns[e.ColumnIndex].Name;
 
-            if (colName == "restore")
+            if (colName == "restoreUser")
             {
                 DataBase DB = new DataBase();
                 DB.SetStatusUser("Active", Int32.Parse(user_ID));
 
-                UserControlArchiveAll UC_ArchiveAll = new UserControlArchiveAll();
-
-                Controls.Clear();
-                Controls.Add(UC_ArchiveAll);
-                UC_ArchiveAll.Dock = DockStyle.Fill;
+                ArchiveRefreshOnRestore();
             }
         }
 
+        //Product Restore
         private void dataGrid_ArchiveProductALL_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dataGrid_ArchiveProductALL.Columns[e.ColumnIndex].Name;
 
-            if (colName == "restore")
+            if (colName == "restoreProduct")
             {
                 DataBase DB = new DataBase();
                 DB.SetStatusProducts("Active", Int32.Parse(product_ID));
+
+                ArchiveRefreshOnRestore();
             }
         }
 
