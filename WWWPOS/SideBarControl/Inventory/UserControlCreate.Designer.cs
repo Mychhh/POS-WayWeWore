@@ -204,7 +204,7 @@
             // rtb_Description
             // 
             this.rtb_Description.Location = new System.Drawing.Point(48, 304);
-            this.rtb_Description.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtb_Description.Margin = new System.Windows.Forms.Padding(4);
             this.rtb_Description.Name = "rtb_Description";
             this.rtb_Description.Size = new System.Drawing.Size(404, 132);
             this.rtb_Description.TabIndex = 25;
@@ -220,7 +220,7 @@
             this.btn_Browse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Browse.ForeColor = System.Drawing.Color.White;
             this.btn_Browse.Location = new System.Drawing.Point(353, 268);
-            this.btn_Browse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Browse.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Browse.Name = "btn_Browse";
             this.btn_Browse.Size = new System.Drawing.Size(100, 28);
             this.btn_Browse.TabIndex = 26;
@@ -231,13 +231,12 @@
             // product_Image
             // 
             this.product_Image.BackColor = System.Drawing.Color.LightGray;
-            this.product_Image.BackgroundImage = global::WWWPOS.Properties.Resources.image;
-            this.product_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.product_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.product_Image.Location = new System.Drawing.Point(48, 43);
-            this.product_Image.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.product_Image.Margin = new System.Windows.Forms.Padding(4);
             this.product_Image.Name = "product_Image";
             this.product_Image.Size = new System.Drawing.Size(405, 210);
-            this.product_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.product_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.product_Image.TabIndex = 28;
             this.product_Image.TabStop = false;
             // 

@@ -165,7 +165,7 @@ namespace WWWPOS
                 MessageBox.Show(ex.Message);
             }
             DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Product add Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            dialogResult = MessageBox.Show("Product added Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
             if (dialogResult == DialogResult.OK)
             {
                 message = "Success";
