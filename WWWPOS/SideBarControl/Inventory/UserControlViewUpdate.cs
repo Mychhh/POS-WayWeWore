@@ -22,7 +22,7 @@ namespace WWWPOS.SideBarControl.Inventory
         private void UserControlViewUpdate_Load(object sender, EventArgs e)
         {
             loadData LD = new loadData();
-            LD.selectProduct(tableLayoutPanel, "panelEdit");
+            LD.selectProduct(flowLayoutPanel, "panelEdit");
         }
 
     }

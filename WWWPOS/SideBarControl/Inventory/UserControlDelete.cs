@@ -20,7 +20,7 @@ namespace WWWPOS.SideBarControl.Inventory
         private void UserControlDelete_Load(object sender, EventArgs e)
         {
             loadData LD = new loadData();
-            LD.selectProduct(tableLayoutPanel, "panelDelete");
+            LD.selectProduct(flowLayoutPanel, "panelDelete");
         }
 
     }

@@ -128,7 +128,7 @@
             // 
             this.product_Stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(174)))), ((int)(((byte)(242)))));
             this.product_Stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product_Stock.Location = new System.Drawing.Point(233, 238);
+            this.product_Stock.Location = new System.Drawing.Point(233, 233);
             this.product_Stock.Name = "product_Stock";
             this.product_Stock.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.product_Stock.Size = new System.Drawing.Size(47, 26);
@@ -155,9 +155,8 @@
             this.btn_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Edit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Edit.Image = global::WWWPOS.Properties.Resources.del;
             this.btn_Edit.Location = new System.Drawing.Point(217, 271);
-            this.btn_Edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Edit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(63, 60);
             this.btn_Edit.TabIndex = 58;
@@ -169,7 +168,7 @@
             // 
             this.product_Image.Image = global::WWWPOS.Properties.Resources.image;
             this.product_Image.Location = new System.Drawing.Point(16, 18);
-            this.product_Image.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.product_Image.Margin = new System.Windows.Forms.Padding(4);
             this.product_Image.Name = "product_Image";
             this.product_Image.Size = new System.Drawing.Size(264, 212);
             this.product_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -204,9 +203,9 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.product_Stock);
             this.Controls.Add(this.label14);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControl_Delete";
-            this.Size = new System.Drawing.Size(293, 417);
+            this.Size = new System.Drawing.Size(293, 420);
             ((System.ComponentModel.ISupportInitialize)(this.product_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

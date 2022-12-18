@@ -203,12 +203,12 @@ namespace WWWPOS
 
             if (product_Status == "Inactive")
             {
-                dialogResult = MessageBox.Show("Delete Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
             else
             {
-                dialogResult = MessageBox.Show("Restore Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
 
@@ -265,7 +265,7 @@ namespace WWWPOS
         }
 
         //Updating the product
-        public void selectProduct(TableLayoutPanel tableLayoutPanel, string productPanel)
+        public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
         {
             try
             {
@@ -274,8 +274,6 @@ namespace WWWPOS
                 string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
                 command = new SqlCommand(selectQuery, connection);
                 mdr = command.ExecuteReader();
-
-                int x = 0, y = 0;
 
                 while (mdr.Read())
                 {
@@ -293,27 +291,18 @@ namespace WWWPOS
                     if (productPanel == "panelView")
                     {
                         UserControl_AdminViewProducts obj = new UserControl_AdminViewProducts(id, price, stock, color, size, description, image);
-                        tableLayoutPanel.Controls.Add(obj, y, x);
+                        flowLayoutPanel.Controls.Add(obj);
                     }
                     else if (productPanel == "panelEdit")
                     {
                         UserControl_Update obj = new UserControl_Update(id, name, type, price, stock, color, size, description, image);
-                        tableLayoutPanel.Controls.Add(obj, y, x);
+                        flowLayoutPanel.Controls.Add(obj);
                     }
                     else
                     {
                         UserControl_Delete obj = new UserControl_Delete(id, price, stock, color, size, description, image);
-                        tableLayoutPanel.Controls.Add(obj, y, x);
+                        flowLayoutPanel.Controls.Add(obj);
                     }
-
-                    y++;
-
-                    if (y >= 4)
-                    {
-                        y = 0;
-                        x++;
-                    }
-
 
                 }
                 mdr.Close();
