@@ -91,9 +91,9 @@ namespace WWWPOS.SideBarControl.Products
 
             //----User Control----//
 
-            Controls.Clear();
-            Controls.Add(UC_Update);
-            UC_Update.Dock = DockStyle.Fill;
+            //Controls.Clear();
+            //Controls.Add(UC_Update);
+            //UC_Update.Dock = DockStyle.Fill;
 
             //UC_ViewUpdate.Controls.Clear();
             //UC_ViewUpdate.Controls.Add(UC_Update);
@@ -105,19 +105,19 @@ namespace WWWPOS.SideBarControl.Products
 
             //----User Control Forms----//
 
-            //UserControlUpdateForm UC_UpdateForm = new UserControlUpdateForm();
+            UserControlUpdateForm UC_UpdateForm = new UserControlUpdateForm();
 
-            //UC_UpdateForm.product_Image.Image = product_Image.Image;
-            //UC_UpdateForm.rtb_Description.Text = product_Description.Text;
-            //UC_UpdateForm.txtBox_productID.Text = product_ID.Text;
-            //UC_UpdateForm.txtBox_ProductName.Text = product_Name.Text;
-            //UC_UpdateForm.comboBox_ProductType.Text = product_Type.Text;
-            //UC_UpdateForm.comboBox_Size.Text = product_Size.Text;
-            //UC_UpdateForm.txtBox_Color.Text = product_Color.Text;
-            //UC_UpdateForm.txtBox_Price.Text = product_Price.Text;
-            //UC_UpdateForm.txtBox_Stocks.Text = product_Stock.Text;
+            UC_UpdateForm.product_Image.Image = product_Image.Image;
+            UC_UpdateForm.rtb_Description.Text = product_Description.Text;
+            UC_UpdateForm.txtBox_productID.Text = product_ID.Text;
+            UC_UpdateForm.txtBox_ProductName.Text = product_Name.Text;
+            UC_UpdateForm.comboBox_ProductType.Text = product_Type.Text;
+            UC_UpdateForm.comboBox_Size.Text = product_Size.Text;
+            UC_UpdateForm.txtBox_Color.Text = product_Color.Text;
+            UC_UpdateForm.txtBox_Price.Text = product_Price.Text;
+            UC_UpdateForm.txtBox_Stocks.Text = product_Stock.Text;
 
-            //UC_UpdateForm.ShowDialog();
+            UC_UpdateForm.ShowDialog();
         }
     }
 }

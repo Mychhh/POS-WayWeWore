@@ -53,6 +53,7 @@
             // 
             // txtBox_productID
             // 
+            this.txtBox_productID.Enabled = false;
             this.txtBox_productID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_productID.Location = new System.Drawing.Point(472, 67);
             this.txtBox_productID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -73,7 +74,6 @@
             // product_Image
             // 
             this.product_Image.BackColor = System.Drawing.Color.LightGray;
-            this.product_Image.BackgroundImage = global::WWWPOS.Properties.Resources.image;
             this.product_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.product_Image.Location = new System.Drawing.Point(34, 63);
             this.product_Image.Margin = new System.Windows.Forms.Padding(4);
