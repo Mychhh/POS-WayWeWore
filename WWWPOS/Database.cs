@@ -291,6 +291,7 @@ namespace WWWPOS
 
                     Image image = Image.FromFile(@"" + mdr[7]);
 
+
                     if (productPanel == "panelView")
                     {
                         UserControl_AdminViewProducts obj = new UserControl_AdminViewProducts(id, price, stock, color, size, description, image);

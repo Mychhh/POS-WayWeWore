@@ -73,8 +73,10 @@ namespace WWWPOS.SideBarControl.Products
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-            UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+
             UserControlUpdate UC_Update = new UserControlUpdate();
+
+            UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
             UserControlInventory UC_Inventory = new UserControlInventory();
 
             UC_Update.product_Image.Image = product_Image.Image;
@@ -87,9 +89,35 @@ namespace WWWPOS.SideBarControl.Products
             UC_Update.txtBox_Price.Text = product_Price.Text;
             UC_Update.txtBox_Stocks.Text = product_Stock.Text;
 
-            UC_Inventory.panel_Inventory.Controls.Clear();
-            UC_Inventory.panel_Inventory.Controls.Add(UC_Update);
+            //----User Control----//
+
+            Controls.Clear();
+            Controls.Add(UC_Update);
             UC_Update.Dock = DockStyle.Fill;
+
+            //UC_ViewUpdate.Controls.Clear();
+            //UC_ViewUpdate.Controls.Add(UC_Update);
+            //UC_Update.Dock = DockStyle.Fill;
+
+            //UC_Inventory.panel_Inventory.Controls.Clear();
+            //UC_Inventory.panel_Inventory.Controls.Add(UC_Update);
+            //UC_Update.Dock = DockStyle.Fill;
+
+            //----User Control Forms----//
+
+            //UserControlUpdateForm UC_UpdateForm = new UserControlUpdateForm();
+
+            //UC_UpdateForm.product_Image.Image = product_Image.Image;
+            //UC_UpdateForm.rtb_Description.Text = product_Description.Text;
+            //UC_UpdateForm.txtBox_productID.Text = product_ID.Text;
+            //UC_UpdateForm.txtBox_ProductName.Text = product_Name.Text;
+            //UC_UpdateForm.comboBox_ProductType.Text = product_Type.Text;
+            //UC_UpdateForm.comboBox_Size.Text = product_Size.Text;
+            //UC_UpdateForm.txtBox_Color.Text = product_Color.Text;
+            //UC_UpdateForm.txtBox_Price.Text = product_Price.Text;
+            //UC_UpdateForm.txtBox_Stocks.Text = product_Stock.Text;
+
+            //UC_UpdateForm.ShowDialog();
         }
     }
 }

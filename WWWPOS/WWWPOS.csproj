@@ -194,6 +194,12 @@
     <Compile Include="SideBarControl\Inventory\UserControlUpdate.Designer.cs">
       <DependentUpon>UserControlUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Inventory\UserControlUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Inventory\UserControlUpdateForm.Designer.cs">
+      <DependentUpon>UserControlUpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\Inventory\UserControlViewUpdate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -367,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlUpdate.resx">
       <DependentUpon>UserControlUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Inventory\UserControlUpdateForm.resx">
+      <DependentUpon>UserControlUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlViewUpdate.resx">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
