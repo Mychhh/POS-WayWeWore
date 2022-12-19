@@ -38,6 +38,9 @@ namespace WWWPOS.SideBarControl
             panel_Inventory.Controls.Clear();
             panel_Inventory.Controls.Add(UC_ViewUpdate);
             UC_ViewUpdate.Dock = DockStyle.Fill;
+
+            loadData LD = new loadData();
+            LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
         }
         
         private void btn_DeleteProduct_Click_1(object sender, EventArgs e)
@@ -46,6 +49,9 @@ namespace WWWPOS.SideBarControl
             panel_Inventory.Controls.Clear();
             panel_Inventory.Controls.Add(UC_Delete);
             UC_Delete.Dock = DockStyle.Fill;
+
+            loadData LD = new loadData();
+            LD.selectProduct(UC_Delete.flowLayoutPanel, "panelDelete");
         }
 
         private void UserControlInventory_Load(object sender, EventArgs e)

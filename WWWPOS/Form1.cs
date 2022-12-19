@@ -24,7 +24,6 @@ namespace WWWPOS
             {
                 MessageBox.Show("Please input Email and Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
             else
             {
                 DB.Login(txtBox_Email.Text, txtBox_Password.Text);
@@ -35,7 +34,7 @@ namespace WWWPOS
         private void btn_Client_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Client client = new Client();
+            ClientForm client = new ClientForm();
             client.ShowDialog();
         }
 

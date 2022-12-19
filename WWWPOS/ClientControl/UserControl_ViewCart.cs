@@ -21,10 +21,8 @@ namespace WWWPOS.ClientControl
         private void btn_BrowseProduct_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Client client = new Client();
+            ClientForm client = new ClientForm();
             client.ShowDialog();
-     
-
         }
     }
 }

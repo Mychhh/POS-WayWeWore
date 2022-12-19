@@ -31,7 +31,6 @@ namespace WWWPOS.SideBarControl.Inventory
             int productStock = Int32.Parse(txtBox_Stocks.Text);
 
             DB.UpdateProducts(productID, comboBox_ProductType.Text, txtBox_ProductName.Text, txtBox_Color.Text, productPrice, productStock, comboBox_Size.Text, rtb_Description.Text);
-
             this.Close();
         }
     }

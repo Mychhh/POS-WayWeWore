@@ -89,23 +89,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs">
-      <SubType>Form</SubType>
+    <Compile Include="ClientControl\Products\Product.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Client.Designer.cs">
-      <DependentUpon>Client.cs</DependentUpon>
+    <Compile Include="ClientControl\Products\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientControl\UserControl_AllProducts.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ClientControl\UserControl_AllProducts.Designer.cs">
       <DependentUpon>UserControl_AllProducts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClientControl\UserControl_Shorts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ClientControl\UserControl_Shorts.Designer.cs">
-      <DependentUpon>UserControl_Shorts.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientControl\UserControl_TShirtProducts.cs">
       <SubType>UserControl</SubType>
@@ -119,6 +113,12 @@
     <Compile Include="ClientControl\UserControl_ViewCart.Designer.cs">
       <DependentUpon>UserControl_ViewCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client_Order_Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +126,12 @@
       <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="ErrorMessage\ClientMaximumQty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorMessage\ClientMaximumQty.Designer.cs">
+      <DependentUpon>ClientMaximumQty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,14 +319,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>wayweworeDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Client.resx">
-      <DependentUpon>Client.cs</DependentUpon>
+    <EmbeddedResource Include="ClientControl\Products\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\UserControl_AllProducts.resx">
       <DependentUpon>UserControl_AllProducts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClientControl\UserControl_Shorts.resx">
-      <DependentUpon>UserControl_Shorts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\UserControl_TShirtProducts.resx">
       <DependentUpon>UserControl_TShirtProducts.cs</DependentUpon>
@@ -328,8 +331,14 @@
     <EmbeddedResource Include="ClientControl\UserControl_ViewCart.resx">
       <DependentUpon>UserControl_ViewCart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client_Order_Checkout.resx">
       <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMessage\ClientMaximumQty.resx">
+      <DependentUpon>ClientMaximumQty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -510,5 +519,6 @@
   <ItemGroup>
     <None Include="Resources\addproductpos.PNG" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
