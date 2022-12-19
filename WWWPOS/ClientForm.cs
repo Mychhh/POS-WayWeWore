@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WWWPOS
 {
-    public partial class ClientPage : Form
+    public partial class ClientForm : Form
     {
-        public ClientPage()
+        public ClientForm()
         {
             InitializeComponent();
         }

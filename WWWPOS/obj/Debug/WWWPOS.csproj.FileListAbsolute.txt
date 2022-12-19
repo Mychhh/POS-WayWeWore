@@ -282,3 +282,4 @@ C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBa
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.Products.Product.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientPage.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ErrorMessage.ClientMaximumQty.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientForm.resources

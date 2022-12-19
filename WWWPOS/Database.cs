@@ -86,7 +86,7 @@ namespace WWWPOS
                 if (userType == "Client")
                 {
                     WWWPOS.LoginPage.ActiveForm.Hide();
-                    Client clientView = new Client(); ;
+                    ClientForm clientView = new ClientForm(); ;
                     clientView.Show();
                 }
                 else if (userType == "Admin")

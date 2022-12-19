@@ -19,7 +19,7 @@ namespace WWWPOS
             //Application.Run(new LoginPage());
 
             //Application.Run(new Form2());
-            Application.Run(new ClientPage());
+            Application.Run(new ClientForm());
         }
     }
 }
