@@ -33,14 +33,14 @@
             this.btn_AllProducts = new System.Windows.Forms.Button();
             this.btn_Short = new System.Windows.Forms.Button();
             this.btn_TShirt = new System.Windows.Forms.Button();
-            this.btn_ViewCart = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.userSearch = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_Menu = new System.Windows.Forms.Button();
+            this.txtBox_userSearch = new System.Windows.Forms.TextBox();
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_Menu = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_ViewCart = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -98,64 +98,44 @@
             this.btn_TShirt.UseVisualStyleBackColor = false;
             this.btn_TShirt.Click += new System.EventHandler(this.btn_TShirt_Click);
             // 
-            // btn_ViewCart
-            // 
-            this.btn_ViewCart.BackColor = System.Drawing.Color.White;
-            this.btn_ViewCart.FlatAppearance.BorderSize = 0;
-            this.btn_ViewCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ViewCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_ViewCart.ForeColor = System.Drawing.Color.Black;
-            this.btn_ViewCart.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewCart.Image")));
-            this.btn_ViewCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ViewCart.Location = new System.Drawing.Point(723, 156);
-            this.btn_ViewCart.Name = "btn_ViewCart";
-            this.btn_ViewCart.Size = new System.Drawing.Size(170, 38);
-            this.btn_ViewCart.TabIndex = 5;
-            this.btn_ViewCart.Text = "View Cart";
-            this.btn_ViewCart.UseVisualStyleBackColor = false;
-            this.btn_ViewCart.Click += new System.EventHandler(this.btn_ViewCart_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.userSearch);
+            this.panel2.Controls.Add(this.txtBox_userSearch);
             this.panel2.Location = new System.Drawing.Point(94, 205);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10, 59, 10, 59);
             this.panel2.Size = new System.Drawing.Size(848, 41);
             this.panel2.TabIndex = 6;
             // 
-            // label1
+            // txtBox_userSearch
             // 
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(800, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 31);
-            this.label1.TabIndex = 1;
+            this.txtBox_userSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBox_userSearch.Location = new System.Drawing.Point(10, 9);
+            this.txtBox_userSearch.Name = "txtBox_userSearch";
+            this.txtBox_userSearch.Size = new System.Drawing.Size(788, 23);
+            this.txtBox_userSearch.TabIndex = 0;
+            this.txtBox_userSearch.Text = "Search products";
+            this.txtBox_userSearch.Enter += new System.EventHandler(this.userSearch_Enter);
+            this.txtBox_userSearch.Leave += new System.EventHandler(this.userSearch_Leave);
             // 
-            // userSearch
+            // panel_Menu
             // 
-            this.userSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.userSearch.Location = new System.Drawing.Point(10, 9);
-            this.userSearch.Name = "userSearch";
-            this.userSearch.Size = new System.Drawing.Size(788, 23);
-            this.userSearch.TabIndex = 0;
-            this.userSearch.Text = "Search products";
-            this.userSearch.Enter += new System.EventHandler(this.userSearch_Enter);
-            this.userSearch.Leave += new System.EventHandler(this.userSearch_Leave);
+            this.panel_Menu.BackColor = System.Drawing.Color.Transparent;
+            this.panel_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel_Menu.Location = new System.Drawing.Point(855, 6);
+            this.panel_Menu.Name = "panel_Menu";
+            this.panel_Menu.Size = new System.Drawing.Size(130, 98);
+            this.panel_Menu.TabIndex = 52;
             // 
-            // pictureBox1
+            // flowLayoutPanel
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            this.pictureBox1.BackgroundImage = global::WWWPOS.Properties.Resources.header;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(379, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(343, 90);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(12, 258);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(1016, 370);
+            this.flowLayoutPanel.TabIndex = 53;
             // 
             // btn_Menu
             // 
@@ -176,22 +156,42 @@
             this.btn_Menu.UseVisualStyleBackColor = false;
             this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
             // 
-            // panel_Menu
+            // label1
             // 
-            this.panel_Menu.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_Menu.Location = new System.Drawing.Point(855, 6);
-            this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(130, 98);
-            this.panel_Menu.TabIndex = 52;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(800, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 31);
+            this.label1.TabIndex = 1;
             // 
-            // flowLayoutPanel
+            // btn_ViewCart
             // 
-            this.flowLayoutPanel.AutoScroll = true;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(12, 258);
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(1016, 370);
-            this.flowLayoutPanel.TabIndex = 53;
+            this.btn_ViewCart.BackColor = System.Drawing.Color.White;
+            this.btn_ViewCart.FlatAppearance.BorderSize = 0;
+            this.btn_ViewCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ViewCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btn_ViewCart.ForeColor = System.Drawing.Color.Black;
+            this.btn_ViewCart.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewCart.Image")));
+            this.btn_ViewCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ViewCart.Location = new System.Drawing.Point(723, 156);
+            this.btn_ViewCart.Name = "btn_ViewCart";
+            this.btn_ViewCart.Size = new System.Drawing.Size(170, 38);
+            this.btn_ViewCart.TabIndex = 5;
+            this.btn_ViewCart.Text = "View Cart";
+            this.btn_ViewCart.UseVisualStyleBackColor = false;
+            this.btn_ViewCart.Click += new System.EventHandler(this.btn_ViewCart_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.pictureBox1.BackgroundImage = global::WWWPOS.Properties.Resources.header;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(379, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(343, 90);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Client
             // 
@@ -232,7 +232,7 @@
         private System.Windows.Forms.Button btn_TShirt;
         private System.Windows.Forms.Button btn_ViewCart;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox userSearch;
+        private System.Windows.Forms.TextBox txtBox_userSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Menu;
         private System.Windows.Forms.Panel panel_Menu;

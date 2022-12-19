@@ -43,5 +43,11 @@ namespace WWWPOS
             ld.LoadAllShortProducts(flowLayoutPanel);
         }
 
+        private void btn_ViewCart_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Client_Order_Checkout client = new Client_Order_Checkout();
+            client.ShowDialog();
+        }
     }
 }

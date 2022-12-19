@@ -73,5 +73,18 @@ namespace WWWPOS.ClientControl.Products
                 maxQty.ShowDialog();
             }
         }
+
+        private void btn_Minus_Click(object sender, EventArgs e)
+        {
+            if (Int32.Parse(lbl_ProductQty.Text) > 1)
+            {
+                lbl_ProductQty.Text = Convert.ToString(Int32.Parse(lbl_ProductQty.Text) - 1);
+            }
+            else
+            {
+                ErrorMessage.ClientMaximumQty maxQty = new ErrorMessage.ClientMaximumQty("Quantity is equals to One");
+                maxQty.ShowDialog();
+            }
+        }
     }
 }

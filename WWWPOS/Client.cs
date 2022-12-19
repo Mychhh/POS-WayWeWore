@@ -25,6 +25,7 @@ namespace WWWPOS
         {
             loadData ld = new loadData();
             ld.LoadAllAvailableProducts(flowLayoutPanel);
+
         }
 
         private void btn_Short_Click(object sender, EventArgs e)
@@ -38,19 +39,17 @@ namespace WWWPOS
 
         private void btn_ViewCart_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Client_Order_Checkout client = new Client_Order_Checkout();
-            client.ShowDialog();
+            
         }
               
         private void userSearch_Enter(object sender, EventArgs e)
         {
-            userSearch.Text = "";
+            txtBox_userSearch.Text = "";
         }
 
         private void userSearch_Leave(object sender, EventArgs e)
         {
-            userSearch.Text = "Search products";
+            txtBox_userSearch.Text = "Search products";
         }
 
         private void btn_Menu_Click(object sender, EventArgs e)

@@ -48,6 +48,7 @@
             // btn_Buy
             // 
             this.btn_Buy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.btn_Buy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Buy.FlatAppearance.BorderSize = 0;
             this.btn_Buy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -62,6 +63,7 @@
             // btn_AddToCart
             // 
             this.btn_AddToCart.BackColor = System.Drawing.Color.White;
+            this.btn_AddToCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AddToCart.FlatAppearance.BorderSize = 0;
             this.btn_AddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,6 +113,7 @@
             // btn_Minus
             // 
             this.btn_Minus.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Minus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Minus.FlatAppearance.BorderSize = 0;
             this.btn_Minus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,6 +123,7 @@
             this.btn_Minus.TabIndex = 24;
             this.btn_Minus.Text = "-";
             this.btn_Minus.UseVisualStyleBackColor = false;
+            this.btn_Minus.Click += new System.EventHandler(this.btn_Minus_Click);
             // 
             // lbl_ProductDescription
             // 
@@ -138,6 +142,7 @@
             // btn_Plus
             // 
             this.btn_Plus.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Plus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Plus.FlatAppearance.BorderSize = 0;
             this.btn_Plus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,6 +180,7 @@
             // 
             // cmb_ProductSize
             // 
+            this.cmb_ProductSize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmb_ProductSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_ProductSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_ProductSize.FormattingEnabled = true;
@@ -202,6 +208,7 @@
             // 
             // cmb_Color
             // 
+            this.cmb_Color.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmb_Color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Color.FormattingEnabled = true;
