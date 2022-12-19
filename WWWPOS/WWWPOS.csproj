@@ -89,12 +89,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Client.Designer.cs">
-      <DependentUpon>Client.cs</DependentUpon>
-    </Compile>
     <Compile Include="ClientControl\Products\Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -325,9 +319,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>wayweworeDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Client.resx">
-      <DependentUpon>Client.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\Products\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>

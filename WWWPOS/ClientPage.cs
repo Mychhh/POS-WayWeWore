@@ -49,5 +49,27 @@ namespace WWWPOS
             Client_Order_Checkout client = new Client_Order_Checkout();
             client.ShowDialog();
         }
+
+        private void btn_Menu_Click(object sender, EventArgs e)
+        {
+            MenuControl.UserControl_Menu UC_Menu = new MenuControl.UserControl_Menu();
+
+            panel_Menu.Controls.Clear();
+            panel_Menu.Controls.Add(UC_Menu);
+            UC_Menu.Dock = DockStyle.Fill;
+
+            if (!UC_Menu.Visible)
+            {
+                UC_Menu.Show();
+                panel_Menu.Size = new Size(214, 140);
+                panel_Menu.Location = new Point(813, 41);
+            }
+            else if (UC_Menu.Visible)
+            {
+                UC_Menu.Hide();
+                panel_Menu.Size = new Size(0, 0);
+                panel_Menu.Location = new Point(859, 41);
+            }
+        }
     }
 }

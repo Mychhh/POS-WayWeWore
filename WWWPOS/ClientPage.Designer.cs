@@ -145,6 +145,7 @@
             this.btn_Menu.Size = new System.Drawing.Size(27, 31);
             this.btn_Menu.TabIndex = 61;
             this.btn_Menu.UseVisualStyleBackColor = false;
+            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
             // 
             // btn_ViewCart
             // 
