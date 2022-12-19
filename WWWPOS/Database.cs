@@ -12,6 +12,8 @@ using WWWPOS.SideBarControl.Inventory;
 using WWWPOS.SideBarControl;
 using WWWPOS.SideBarControl.UserList;
 using System.Windows.Controls.Primitives;
+using System.Windows.Media;
+using WWWPOS.ClientControl.Products;
 
 namespace WWWPOS
 {
@@ -221,6 +223,7 @@ namespace WWWPOS
 
     class loadData : DataBase
     {
+        //-----Admin Side-----//    
         //User not Delete
         public void userRecords(DataGridView dataCustomer, string user_Type, string user_Status)
         {
@@ -377,5 +380,102 @@ namespace WWWPOS
 
             return users;
         }
+
+        //-----Client Side-----//
+        
+        //Load All available product
+        public void LoadAllAvailableProducts(FlowLayoutPanel flowLayoutPanel)
+        {
+            try
+            {
+                connection.Open();
+
+                string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                while (mdr.Read())
+                {
+                    Image image = Image.FromFile(@"" + mdr[7]);
+                    double price = Double.Parse(mdr[5] + "");
+                    int stocks = int.Parse(mdr[6] + "");
+                    string description = "" + mdr[9];
+                    string size = "" + mdr[8];
+                    string color = "" + mdr[4];
+                    string category = "" + mdr[2];
+
+                    ClientControl.Products.Product productAvailable = new ClientControl.Products.Product(image, price, stocks, description, size, color, category);
+                    flowLayoutPanel.Controls.Add(productAvailable);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Load All available Tshirt
+        public void LoadAllTshirtProducts(FlowLayoutPanel flowLayoutPanel)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active' AND Category = 'T-Shirts';";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                while (mdr.Read())
+                {
+                    Image image = Image.FromFile(@"" + mdr[7]);
+                    double price = Double.Parse(mdr[5] + "");
+                    int stocks = int.Parse(mdr[6] + "");
+                    string description = "" + mdr[9];
+                    string size = "" + mdr[8];
+                    string color = "" + mdr[4];
+                    string category = "" + mdr[2];
+
+                    ClientControl.Products.Product productAvailable = new ClientControl.Products.Product(image, price, stocks, description, size, color, category);
+                    flowLayoutPanel.Controls.Add(productAvailable);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Load All available Short
+        public void LoadAllShortProducts(FlowLayoutPanel flowLayoutPanel)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active' AND Category = 'Shorts';";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                while (mdr.Read())
+                {
+                    Image image = Image.FromFile(@"" + mdr[7]);
+                    double price = Double.Parse(mdr[5] + "");
+                    int stocks = int.Parse(mdr[6] + "");
+                    string description = "" + mdr[9];
+                    string size = "" + mdr[8];
+                    string color = "" + mdr[4];
+                    string category = "" + mdr[2];
+
+                    ClientControl.Products.Product productAvailable = new ClientControl.Products.Product(image, price, stocks, description, size, color, category);
+                    flowLayoutPanel.Controls.Add(productAvailable);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

@@ -13,7 +13,6 @@ namespace WWWPOS
     public partial class Client : Form
     {
         ClientControl.UserControl_AllProducts allProducts = new ClientControl.UserControl_AllProducts();
-        ClientControl.UserControl_Shorts shortProducts = new ClientControl.UserControl_Shorts();
         ClientControl.UserControl_TShirtProducts tShirtProducts = new ClientControl.UserControl_TShirtProducts();
 
         MenuControl.UserControl_Menu UC_Menu = new MenuControl.UserControl_Menu();
@@ -24,23 +23,16 @@ namespace WWWPOS
 
         private void Client_Load(object sender, EventArgs e)
         {
-            clientPanel.Controls.Add(allProducts);
-            allProducts.Dock = DockStyle.Fill;
-
-            
+            loadData ld = new loadData();
+            ld.LoadAllAvailableProducts(flowLayoutPanel);
         }
 
         private void btn_Short_Click(object sender, EventArgs e)
         {
-            clientPanel.Controls.Clear();
-            clientPanel.Controls.Add(shortProducts);
-            shortProducts.Dock = DockStyle.Fill;
         }
 
         private void btn_TShirt_Click(object sender, EventArgs e)
         {
-            clientPanel.Controls.Clear();
-            clientPanel.Controls.Add(tShirtProducts);
            tShirtProducts.Dock = DockStyle.Fill;
         }
 
@@ -50,15 +42,7 @@ namespace WWWPOS
             Client_Order_Checkout client = new Client_Order_Checkout();
             client.ShowDialog();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            clientPanel.Controls.Clear();
-            clientPanel.Controls.Add(allProducts);
-            allProducts.Dock = DockStyle.Fill;
-
-        }
-      
+              
         private void userSearch_Enter(object sender, EventArgs e)
         {
             userSearch.Text = "";
@@ -88,5 +72,6 @@ namespace WWWPOS
                 panel_Menu.Location = new Point(859, 41);
             }
         }
+
     }
 }

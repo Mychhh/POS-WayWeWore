@@ -279,3 +279,5 @@ C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.pdb
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlUpdate.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserList.UserControl_UpdateForm.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Inventory.UserControlUpdateForm.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.Products.Product.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientPage.resources

@@ -95,17 +95,17 @@
     <Compile Include="Client.Designer.cs">
       <DependentUpon>Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientControl\Products\Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl\Products\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientControl\UserControl_AllProducts.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ClientControl\UserControl_AllProducts.Designer.cs">
       <DependentUpon>UserControl_AllProducts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClientControl\UserControl_Shorts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ClientControl\UserControl_Shorts.Designer.cs">
-      <DependentUpon>UserControl_Shorts.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientControl\UserControl_TShirtProducts.cs">
       <SubType>UserControl</SubType>
@@ -118,6 +118,12 @@
     </Compile>
     <Compile Include="ClientControl\UserControl_ViewCart.Designer.cs">
       <DependentUpon>UserControl_ViewCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientPage.Designer.cs">
+      <DependentUpon>ClientPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Client_Order_Checkout.cs">
       <SubType>Form</SubType>
@@ -316,17 +322,20 @@
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientControl\Products\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\UserControl_AllProducts.resx">
       <DependentUpon>UserControl_AllProducts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClientControl\UserControl_Shorts.resx">
-      <DependentUpon>UserControl_Shorts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\UserControl_TShirtProducts.resx">
       <DependentUpon>UserControl_TShirtProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\UserControl_ViewCart.resx">
       <DependentUpon>UserControl_ViewCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientPage.resx">
+      <DependentUpon>ClientPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client_Order_Checkout.resx">
       <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
@@ -509,6 +518,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addproductpos.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ErrorMessage\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
