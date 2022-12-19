@@ -69,7 +69,8 @@ namespace WWWPOS.ClientControl.Products
             }
             else
             {
-                //show error message
+                ErrorMessage.ClientMaximumQty maxQty = new ErrorMessage.ClientMaximumQty("You reached the maximum Quantity");
+                maxQty.ShowDialog();
             }
         }
     }

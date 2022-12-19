@@ -132,6 +132,12 @@
       <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="ErrorMessage\ClientMaximumQty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorMessage\ClientMaximumQty.Designer.cs">
+      <DependentUpon>ClientMaximumQty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,6 +346,9 @@
     <EmbeddedResource Include="Client_Order_Checkout.resx">
       <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMessage\ClientMaximumQty.resx">
+      <DependentUpon>ClientMaximumQty.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -519,8 +528,6 @@
   <ItemGroup>
     <None Include="Resources\addproductpos.PNG" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ErrorMessage\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
