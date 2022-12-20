@@ -46,7 +46,7 @@ namespace WWWPOS
         private void btn_SignUp_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RegisterForm register = new RegisterForm();
+            Form_RegisterPage register = new Form_RegisterPage();
             register.ShowDialog();
         }
 

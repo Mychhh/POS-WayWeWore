@@ -52,7 +52,7 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(13, 49, 13, 49);
-            this.panel2.Size = new System.Drawing.Size(175, 40);
+            this.panel2.Size = new System.Drawing.Size(181, 40);
             this.panel2.TabIndex = 8;
             // 
             // label16

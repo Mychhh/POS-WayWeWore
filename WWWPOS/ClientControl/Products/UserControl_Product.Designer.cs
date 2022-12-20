@@ -73,6 +73,7 @@
             this.btn_AddToCart.TabIndex = 31;
             this.btn_AddToCart.Text = "Add Cart";
             this.btn_AddToCart.UseVisualStyleBackColor = false;
+            this.btn_AddToCart.Click += new System.EventHandler(this.btn_AddToCart_Click);
             // 
             // lbl_ProductStocks
             // 
@@ -238,7 +239,7 @@
             this.lbl_Category.Text = "Category";
             this.lbl_Category.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Product
+            // UserControl_Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -258,7 +259,7 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lbl_ProductPrice);
             this.Margin = new System.Windows.Forms.Padding(10);
-            this.Name = "Product";
+            this.Name = "UserControl_Product";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(303, 473);
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProductPicture)).EndInit();

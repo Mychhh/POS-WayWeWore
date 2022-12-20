@@ -289,3 +289,6 @@ C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.Client
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_ClientCart.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.UserControl_ClientViewProduct.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.Form_ClientLandingPage.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.Form_AdminHome.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.Form_RegisterPage.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.Products.UserControl_ProductCart.resources

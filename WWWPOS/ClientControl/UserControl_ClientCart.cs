@@ -22,8 +22,8 @@ namespace WWWPOS.ClientControl
             Form_ClientLandingPage clientForm = new Form_ClientLandingPage();
             UserControl_ClientViewProduct UC_ClientViewProduct = new UserControl_ClientViewProduct();
 
-            clientForm.panel_MainClient.Controls.Clear();
-            clientForm.panel_MainClient.Controls.Add(UC_ClientViewProduct);
+            Controls.Clear();
+            Controls.Add(UC_ClientViewProduct);
             UC_ClientViewProduct.Dock = DockStyle.Fill;
         }
     }

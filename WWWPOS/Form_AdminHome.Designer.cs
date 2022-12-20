@@ -1,6 +1,6 @@
 ﻿namespace WWWPOS
 {
-    partial class Form2
+    partial class Form_AdminHome
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_AdminHome));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Inventory = new System.Windows.Forms.Button();
             this.btn_Archive = new System.Windows.Forms.Button();

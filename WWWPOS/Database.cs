@@ -92,7 +92,7 @@ namespace WWWPOS
                 else if (userType == "Admin")
                 {
                     WWWPOS.LoginPage.ActiveForm.Hide();
-                    Form2 f2 = new Form2();
+                    Form_AdminHome f2 = new Form_AdminHome();
                     f2.ShowDialog();
                 }
 
@@ -217,6 +217,38 @@ namespace WWWPOS
 
             }
 
+        }
+
+
+        //Client Side
+
+        //Add to cart
+        public void AddToCart( int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, Image productImg, string productSize, string productDescription)
+        {
+            string userID = DataBase.user_ID;
+            int user_ID = Int32.Parse(userID);
+
+            connection.Open();
+            string iquery = "INSERT INTO Cart (Account_ID, Product_ID, Category, Product_Name, Color, Price , Quantity, Product_images, Product_Size, Product_Description, Product_Status) VALUES ('" + user_ID + "' , '" + product_ID + "' , '" + category + "', '" + productName + "', '" + productColor + "', '" + productPrice + "', '" + productQuantity + "','" + productImg + "','" + productSize + "','" + productDescription + "','Active')";
+            SqlCommand commandDatabase = new SqlCommand(iquery, connection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                SqlDataReader myReader = commandDatabase.ExecuteReader();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
+            DialogResult dialogResult;
+            dialogResult = MessageBox.Show("Product added Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            if (dialogResult == DialogResult.OK)
+            {
+                message = "Success";
+            }
         }
 
     }
@@ -396,6 +428,7 @@ namespace WWWPOS
 
                 while (mdr.Read())
                 {
+                    int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
@@ -404,7 +437,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    UserControl_Product productAvailable = new UserControl_Product(image, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(id, image, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
@@ -427,6 +460,7 @@ namespace WWWPOS
 
                 while (mdr.Read())
                 {
+                    int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
@@ -435,7 +469,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    ClientControl.Products.UserControl_Product productAvailable = new ClientControl.Products.UserControl_Product(image, price, stocks, description, size, color, category);
+                    ClientControl.Products.UserControl_Product productAvailable = new ClientControl.Products.UserControl_Product(id, image, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
@@ -458,6 +492,7 @@ namespace WWWPOS
 
                 while (mdr.Read())
                 {
+                    int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
@@ -466,7 +501,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    ClientControl.Products.UserControl_Product productAvailable = new ClientControl.Products.UserControl_Product(image, price, stocks, description, size, color, category);
+                    ClientControl.Products.UserControl_Product productAvailable = new ClientControl.Products.UserControl_Product(id, image, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 

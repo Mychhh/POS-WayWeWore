@@ -11,12 +11,12 @@ using WWWPOS.SideBarControl.Inventory;
 
 namespace WWWPOS
 {
-    public partial class Form2 : Form
+    public partial class Form_AdminHome : Form
     {
 
         MenuControl.UserControl_Menu UC_Menu = new MenuControl.UserControl_Menu();
 
-        public Form2()
+        public Form_AdminHome()
         {
             InitializeComponent();
         }

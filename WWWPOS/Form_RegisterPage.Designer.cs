@@ -1,6 +1,6 @@
 ﻿namespace WWWPOS
 {
-    partial class RegisterForm
+    partial class Form_RegisterPage
     {
         /// <summary>
         /// Required designer variable.
