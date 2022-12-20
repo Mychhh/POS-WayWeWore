@@ -11,9 +11,9 @@ using WWWPOS.ClientControl;
 
 namespace WWWPOS
 {
-    public partial class ClientForm : Form
+    public partial class Form_ClientLandingPage : Form
     {
-        public ClientForm()
+        public Form_ClientLandingPage()
         {
             InitializeComponent();
         }

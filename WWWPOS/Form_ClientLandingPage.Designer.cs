@@ -1,6 +1,6 @@
 ﻿namespace WWWPOS
 {
-    partial class ClientForm
+    partial class Form_ClientLandingPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ClientLandingPage));
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_MainClient = new System.Windows.Forms.Panel();

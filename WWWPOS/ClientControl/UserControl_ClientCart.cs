@@ -19,7 +19,7 @@ namespace WWWPOS.ClientControl
 
         private void btn_BrowseProduct_Click(object sender, EventArgs e)
         {
-            ClientForm clientForm = new ClientForm();
+            Form_ClientLandingPage clientForm = new Form_ClientLandingPage();
             UserControl_ClientViewProduct UC_ClientViewProduct = new UserControl_ClientViewProduct();
 
             clientForm.panel_MainClient.Controls.Clear();

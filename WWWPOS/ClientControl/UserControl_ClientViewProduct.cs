@@ -49,7 +49,7 @@ namespace WWWPOS.ClientControl
         //OnClick View Cart
         private void btn_ViewCart_Click_1(object sender, EventArgs e)
         {
-            ClientForm clientForm = new ClientForm();
+            Form_ClientLandingPage clientForm = new Form_ClientLandingPage();
             UserControl_ClientCart UC_ClientCart = new UserControl_ClientCart();
 
             clientForm.panel_MainClient.Controls.Clear();

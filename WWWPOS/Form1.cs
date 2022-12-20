@@ -34,7 +34,7 @@ namespace WWWPOS
         private void btn_Client_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ClientForm client = new ClientForm();
+            Form_ClientLandingPage client = new Form_ClientLandingPage();
             client.ShowDialog();
         }
 
