@@ -52,8 +52,8 @@ namespace WWWPOS.ClientControl
             Form_ClientLandingPage clientForm = new Form_ClientLandingPage();
             UserControl_ClientCart UC_ClientCart = new UserControl_ClientCart();
 
-            clientForm.panel_MainClient.Controls.Clear();
-            clientForm.panel_MainClient.Controls.Add(UC_ClientCart);
+            Controls.Clear();
+            Controls.Add(UC_ClientCart);
             UC_ClientCart.Dock = DockStyle.Fill;
         }
 

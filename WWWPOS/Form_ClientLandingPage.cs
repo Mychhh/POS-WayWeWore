@@ -17,7 +17,6 @@ namespace WWWPOS
         {
             InitializeComponent();
         }
-
         private void ClientPage_Load(object sender, EventArgs e)
         {
             UserControl_ClientViewProduct UC_ClientViewProduct = new UserControl_ClientViewProduct();
