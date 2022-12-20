@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using WWWPOS.ErrorMessage;
 
 namespace WWWPOS.ClientControl.Products
 {
@@ -45,7 +47,6 @@ namespace WWWPOS.ClientControl.Products
         {
             get => int.Parse(lbl_ProductQty.Text);
         }
-        
         public string ProductDescriptions
         {
             get => lbl_ProductDescription.Text;
@@ -96,8 +97,12 @@ namespace WWWPOS.ClientControl.Products
 
         private void btn_AddToCart_Click(object sender, EventArgs e)
         {
-            DataBase DB = new DataBase();
-            DB.AddToCart(productID, ProductCategory, ProductName, ProductColor, ProductPrice, ProductQuantity, ProductImage, ProductSize, ProductDescriptions );
+            string imageURL = picBox_ProductPicture.ImageLocation;
+            Console.WriteLine(imageURL);
+            MessageDialogue msg = new MessageDialogue(imageURL);
+            msg.ShowDialog();
+            //DataBase DB = new DataBase();
+            //DB.AddToCart(productID, ProductCategory, ProductName, ProductColor, ProductPrice, ProductQuantity, "sheesh", ProductSize, ProductDescriptions);
         }
     }
 }

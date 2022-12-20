@@ -224,7 +224,7 @@ namespace WWWPOS
         //Client Side
 
         //Add to cart
-        public void AddToCart( int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, Image productImg, string productSize, string productDescription)
+        public void AddToCart( int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, string productImg, string productSize, string productDescription)
         {
             string userID = DataBase.user_ID;
             int user_ID = Int32.Parse(userID);
@@ -509,5 +509,41 @@ namespace WWWPOS
             }
         }
 
+        //Load Users Cart
+        public void LoadCart(FlowLayoutPanel flowLayoutPanel)
+        {
+            string userid = DataBase.user_ID;
+            int user_ID = Int32.Parse(userid);
+
+            try
+            {
+                connection.Open();
+
+                string selectQuery = "SELECT * FROM Cart WHERE Account_ID = '" + user_ID + "';";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                while (mdr.Read())
+                {
+                    int id = int.Parse(mdr[0] + "");
+                    Image image = Image.FromFile(@"" + mdr[8]);
+                    double price = Double.Parse(mdr[6] + "");
+                    int quantity = int.Parse(mdr[6] + "");
+                    string description = "" + mdr[10];
+                    string size = "" + mdr[9];
+                    string color = "" + mdr[5];
+                    string category = "" + mdr[3];
+
+                    UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(user_ID, id, image, price, quantity, description, size, color, category);
+                    flowLayoutPanel.Controls.Add(UC_ProductCart);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
     }
 }

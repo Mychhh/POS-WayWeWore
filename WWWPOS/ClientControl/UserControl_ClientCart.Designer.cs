@@ -192,6 +192,7 @@
             this.Name = "UserControl_ClientCart";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1421, 631);
+            this.Load += new System.EventHandler(this.UserControl_ClientCart_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);

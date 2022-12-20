@@ -26,5 +26,11 @@ namespace WWWPOS.ClientControl
             Controls.Add(UC_ClientViewProduct);
             UC_ClientViewProduct.Dock = DockStyle.Fill;
         }
+
+        private void UserControl_ClientCart_Load(object sender, EventArgs e)
+        {
+            loadData Data = new loadData();
+            Data.LoadCart(flowLayoutPanel_ProductCart);
+        }
     }
 }
