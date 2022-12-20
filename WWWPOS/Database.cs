@@ -14,6 +14,7 @@ using WWWPOS.SideBarControl.UserList;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using WWWPOS.ClientControl.Products;
+using WWWPOS.ErrorMessage;
 
 namespace WWWPOS
 {
@@ -237,17 +238,13 @@ namespace WWWPOS
             {
                 SqlDataReader myReader = commandDatabase.ExecuteReader();
                 connection.Close();
+                MessageDialogue messageDialogue = new MessageDialogue("Added to Cart");
+                messageDialogue.ShowDialog();
             }
             catch (Exception ex)
             {
                 // Show any error message.
                 MessageBox.Show(ex.Message);
-            }
-            DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Product added Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-            if (dialogResult == DialogResult.OK)
-            {
-                message = "Success";
             }
         }
 
