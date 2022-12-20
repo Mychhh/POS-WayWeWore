@@ -404,7 +404,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    ClientControl.Products.Product productAvailable = new ClientControl.Products.Product(image, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(image, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
@@ -435,7 +435,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    ClientControl.Products.Product productAvailable = new ClientControl.Products.Product(image, price, stocks, description, size, color, category);
+                    ClientControl.Products.UserControl_Product productAvailable = new ClientControl.Products.UserControl_Product(image, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
@@ -466,7 +466,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    ClientControl.Products.Product productAvailable = new ClientControl.Products.Product(image, price, stocks, description, size, color, category);
+                    ClientControl.Products.UserControl_Product productAvailable = new ClientControl.Products.UserControl_Product(image, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 

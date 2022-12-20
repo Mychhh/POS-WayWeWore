@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WWWPOS.ClientControl.Products
 {
-    public partial class Product : UserControl
+    public partial class UserControl_Product : UserControl
     {
-        public Product(Image image, double price, int stocks, string description, string size, string color, string category)
+        public UserControl_Product(Image image, double price, int stocks, string description, string size, string color, string category)
         {
             InitializeComponent();
             ProductImage = image;

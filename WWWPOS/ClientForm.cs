@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ClientControl;
 
 namespace WWWPOS
 {
@@ -19,35 +20,11 @@ namespace WWWPOS
 
         private void ClientPage_Load(object sender, EventArgs e)
         {
-            flowLayoutPanel.Controls.Clear();
-            loadData ld = new loadData();
-            ld.LoadAllAvailableProducts(flowLayoutPanel);
-        }
+            UserControl_ClientViewProduct UC_ClientViewProduct = new UserControl_ClientViewProduct();
 
-        private void btn_AllProducts_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel.Controls.Clear();
-            loadData ld = new loadData();
-            ld.LoadAllAvailableProducts(flowLayoutPanel);
-        }
-        private void btn_TShirt_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel.Controls.Clear();
-            loadData ld = new loadData();
-            ld.LoadAllTshirtProducts(flowLayoutPanel);
-        }
-        private void btn_Short_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel.Controls.Clear();
-            loadData ld = new loadData();
-            ld.LoadAllShortProducts(flowLayoutPanel);
-        }
-
-        private void btn_ViewCart_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Client_Order_Checkout client = new Client_Order_Checkout();
-            client.ShowDialog();
+            this.panel_MainClient.Controls.Clear();
+            this.panel_MainClient.Controls.Add(UC_ClientViewProduct);
+            UC_ClientViewProduct.Dock = DockStyle.Fill;
         }
 
         private void btn_Menu_Click(object sender, EventArgs e)

@@ -89,29 +89,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientControl\Products\Product.cs">
+    <Compile Include="ClientControl\UserControl_ClientViewProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ClientControl\Products\Product.Designer.cs">
-      <DependentUpon>Product.cs</DependentUpon>
+    <Compile Include="ClientControl\UserControl_ClientViewProduct.Designer.cs">
+      <DependentUpon>UserControl_ClientViewProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientControl\UserControl_AllProducts.cs">
+    <Compile Include="ClientControl\UserControl_ClientCart.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ClientControl\UserControl_AllProducts.Designer.cs">
-      <DependentUpon>UserControl_AllProducts.cs</DependentUpon>
+    <Compile Include="ClientControl\UserControl_ClientCart.Designer.cs">
+      <DependentUpon>UserControl_ClientCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientControl\UserControl_TShirtProducts.cs">
+    <Compile Include="ClientControl\Products\UserControl_Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ClientControl\UserControl_TShirtProducts.Designer.cs">
-      <DependentUpon>UserControl_TShirtProducts.cs</DependentUpon>
+    <Compile Include="ClientControl\Products\UserControl_Product.Designer.cs">
+      <DependentUpon>UserControl_Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientControl\UserControl_ViewCart.cs">
+    <Compile Include="ClientControl\Products\UserControl_ProductOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ClientControl\UserControl_ViewCart.Designer.cs">
-      <DependentUpon>UserControl_ViewCart.cs</DependentUpon>
+    <Compile Include="ClientControl\Products\UserControl_ProductOrder.Designer.cs">
+      <DependentUpon>UserControl_ProductOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientForm.cs">
       <SubType>Form</SubType>
@@ -319,17 +319,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>wayweworeDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ClientControl\Products\Product.resx">
-      <DependentUpon>Product.cs</DependentUpon>
+    <EmbeddedResource Include="ClientControl\UserControl_ClientViewProduct.resx">
+      <DependentUpon>UserControl_ClientViewProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientControl\UserControl_AllProducts.resx">
-      <DependentUpon>UserControl_AllProducts.cs</DependentUpon>
+    <EmbeddedResource Include="ClientControl\UserControl_ClientCart.resx">
+      <DependentUpon>UserControl_ClientCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientControl\UserControl_TShirtProducts.resx">
-      <DependentUpon>UserControl_TShirtProducts.cs</DependentUpon>
+    <EmbeddedResource Include="ClientControl\Products\UserControl_Product.resx">
+      <DependentUpon>UserControl_Product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientControl\UserControl_ViewCart.resx">
-      <DependentUpon>UserControl_ViewCart.cs</DependentUpon>
+    <EmbeddedResource Include="ClientControl\Products\UserControl_ProductOrder.resx">
+      <DependentUpon>UserControl_ProductOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace WWWPOS.ClientControl.Products
 {
-    partial class Product
+    partial class UserControl_Product
     {
         /// <summary> 
         /// Required designer variable.

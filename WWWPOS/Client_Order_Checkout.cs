@@ -12,7 +12,7 @@ namespace WWWPOS
 {
     public partial class Client_Order_Checkout : Form
     {
-        ClientControl.UserControl_ViewCart viewCart = new ClientControl.UserControl_ViewCart();
+        //ClientControl.UserControl_ViewCart viewCart = new ClientControl.UserControl_ViewCart();
 
         MenuControl.UserControl_Menu UC_Menu = new MenuControl.UserControl_Menu();
         public Client_Order_Checkout()
@@ -22,9 +22,9 @@ namespace WWWPOS
 
         private void Client_Order_Checkout_Load(object sender, EventArgs e)
         {
-            PanelControl.Controls.Clear();
-            PanelControl.Controls.Add(viewCart);
-            viewCart.Dock = DockStyle.Fill;
+            //PanelControl.Controls.Clear();
+            //PanelControl.Controls.Add(viewCart);
+            //viewCart.Dock = DockStyle.Fill;
         }
 
         private void label5_Click(object sender, EventArgs e)
