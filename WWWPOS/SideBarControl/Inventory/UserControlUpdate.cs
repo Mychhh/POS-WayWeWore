@@ -19,6 +19,13 @@ namespace WWWPOS.SideBarControl.Inventory
 
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
         {
+            UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+            UC_ViewUpdate.flowLayoutPanel.Controls.Clear();
+
+            loadData LD = new loadData();
+            LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
+
+
             DataBase DB = new DataBase();
 
             int productID = Int32.Parse(txtBox_productID.Text);

@@ -4,18 +4,21 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using WWWPOS.ErrorMessage;
 
 namespace WWWPOS.ClientControl.Products
 {
-    public partial class Product : UserControl
+    public partial class UserControl_Product : UserControl
     {
-        public Product(Image image, double price, int stocks, string description, string size, string color, string category)
+        public UserControl_Product(int id, Image image, double price, int stocks, string description, string size, string color, string category)
         {
             InitializeComponent();
+            productID = id;
             ProductImage = image;
             ProductPrice = price;
             ProductStocks = stocks;
@@ -24,6 +27,7 @@ namespace WWWPOS.ClientControl.Products
             ProductColor = color;
             ProductCategory = category;
         }
+        public int productID { get; set; }
         public Image ProductImage
         {
             get => picBox_ProductPicture.Image;
@@ -38,6 +42,10 @@ namespace WWWPOS.ClientControl.Products
         {
             get => int.Parse(lbl_ProductStocks.Text);
             set => lbl_ProductStocks.Text = value + "";
+        }
+        public int ProductQuantity
+        {
+            get => int.Parse(lbl_ProductQty.Text);
         }
         public string ProductDescriptions
         {
@@ -69,7 +77,7 @@ namespace WWWPOS.ClientControl.Products
             }
             else
             {
-                ErrorMessage.ClientMaximumQty maxQty = new ErrorMessage.ClientMaximumQty("You reached the maximum Quantity");
+                ErrorMessage.MessageDialogue maxQty = new ErrorMessage.MessageDialogue("You reached the maximum Quantity");
                 maxQty.ShowDialog();
             }
         }
@@ -82,9 +90,19 @@ namespace WWWPOS.ClientControl.Products
             }
             else
             {
-                ErrorMessage.ClientMaximumQty maxQty = new ErrorMessage.ClientMaximumQty("Quantity is equals to One");
+                ErrorMessage.MessageDialogue maxQty = new ErrorMessage.MessageDialogue("Quantity is equals to One");
                 maxQty.ShowDialog();
             }
+        }
+
+        private void btn_AddToCart_Click(object sender, EventArgs e)
+        {
+            string imageURL = picBox_ProductPicture.ImageLocation;
+            Console.WriteLine(imageURL);
+            MessageDialogue msg = new MessageDialogue(imageURL);
+            msg.ShowDialog();
+            //DataBase DB = new DataBase();
+            //DB.AddToCart(productID, ProductCategory, ProductName, ProductColor, ProductPrice, ProductQuantity, "sheesh", ProductSize, ProductDescriptions);
         }
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WWWPOS.ClientControl
+namespace WWWPOS.ClientControl.Products
 {
-    public partial class UserControl_TShirtProducts : UserControl
+    public partial class UserControl_ProductOrder : UserControl
     {
-        public UserControl_TShirtProducts()
+        public UserControl_ProductOrder()
         {
             InitializeComponent();
         }

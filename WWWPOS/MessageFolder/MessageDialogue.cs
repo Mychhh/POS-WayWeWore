@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WWWPOS.ErrorMessage
 {
-    public partial class ClientMaximumQty : Form
+    public partial class MessageDialogue : Form
     {
-        public ClientMaximumQty(string errorMessage)
+        public MessageDialogue(string errorMessage)
         {
             InitializeComponent();
             ErrorMessage  = errorMessage;

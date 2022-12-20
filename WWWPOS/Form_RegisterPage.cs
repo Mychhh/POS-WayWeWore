@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace WWWPOS
 {
-    public partial class RegisterForm : Form
+    public partial class Form_RegisterPage : Form
     {
-        public RegisterForm()
+        public Form_RegisterPage()
         {
             InitializeComponent();
         }

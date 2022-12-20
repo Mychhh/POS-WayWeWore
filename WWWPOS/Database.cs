@@ -14,6 +14,7 @@ using WWWPOS.SideBarControl.UserList;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using WWWPOS.ClientControl.Products;
+using WWWPOS.ErrorMessage;
 
 namespace WWWPOS
 {
@@ -86,13 +87,13 @@ namespace WWWPOS
                 if (userType == "Client")
                 {
                     WWWPOS.LoginPage.ActiveForm.Hide();
-                    ClientForm clientView = new ClientForm(); ;
+                    Form_ClientLandingPage clientView = new Form_ClientLandingPage(); ;
                     clientView.Show();
                 }
                 else if (userType == "Admin")
                 {
                     WWWPOS.LoginPage.ActiveForm.Hide();
-                    Form2 f2 = new Form2();
+                    Form_AdminHome f2 = new Form_AdminHome();
                     f2.ShowDialog();
                 }
 
@@ -217,6 +218,34 @@ namespace WWWPOS
 
             }
 
+        }
+
+
+        //Client Side
+
+        //Add to cart
+        public void AddToCart( int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, string productImg, string productSize, string productDescription)
+        {
+            string userID = DataBase.user_ID;
+            int user_ID = Int32.Parse(userID);
+
+            connection.Open();
+            string iquery = "INSERT INTO Cart (Account_ID, Product_ID, Category, Product_Name, Color, Price , Quantity, Product_images, Product_Size, Product_Description, Product_Status) VALUES ('" + user_ID + "' , '" + product_ID + "' , '" + category + "', '" + productName + "', '" + productColor + "', '" + productPrice + "', '" + productQuantity + "','" + productImg + "','" + productSize + "','" + productDescription + "','Active')";
+            SqlCommand commandDatabase = new SqlCommand(iquery, connection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                SqlDataReader myReader = commandDatabase.ExecuteReader();
+                connection.Close();
+                MessageDialogue messageDialogue = new MessageDialogue("Added to Cart");
+                messageDialogue.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }
@@ -396,6 +425,7 @@ namespace WWWPOS
 
                 while (mdr.Read())
                 {
+                    int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
@@ -404,7 +434,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    ClientControl.Products.Product productAvailable = new ClientControl.Products.Product(image, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(id, image, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
@@ -427,6 +457,7 @@ namespace WWWPOS
 
                 while (mdr.Read())
                 {
+                    int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
@@ -435,7 +466,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    ClientControl.Products.Product productAvailable = new ClientControl.Products.Product(image, price, stocks, description, size, color, category);
+                    ClientControl.Products.UserControl_Product productAvailable = new ClientControl.Products.UserControl_Product(id, image, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
@@ -458,6 +489,7 @@ namespace WWWPOS
 
                 while (mdr.Read())
                 {
+                    int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
@@ -466,7 +498,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    ClientControl.Products.Product productAvailable = new ClientControl.Products.Product(image, price, stocks, description, size, color, category);
+                    ClientControl.Products.UserControl_Product productAvailable = new ClientControl.Products.UserControl_Product(id, image, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
@@ -477,5 +509,41 @@ namespace WWWPOS
             }
         }
 
+        //Load Users Cart
+        public void LoadCart(FlowLayoutPanel flowLayoutPanel)
+        {
+            string userid = DataBase.user_ID;
+            int user_ID = Int32.Parse(userid);
+
+            try
+            {
+                connection.Open();
+
+                string selectQuery = "SELECT * FROM Cart WHERE Account_ID = '" + user_ID + "';";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                while (mdr.Read())
+                {
+                    int id = int.Parse(mdr[0] + "");
+                    Image image = Image.FromFile(@"" + mdr[8]);
+                    double price = Double.Parse(mdr[6] + "");
+                    int quantity = int.Parse(mdr[6] + "");
+                    string description = "" + mdr[10];
+                    string size = "" + mdr[9];
+                    string color = "" + mdr[5];
+                    string category = "" + mdr[3];
+
+                    UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(user_ID, id, image, price, quantity, description, size, color, category);
+                    flowLayoutPanel.Controls.Add(UC_ProductCart);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
     }
 }

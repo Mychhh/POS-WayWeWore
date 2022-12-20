@@ -1,6 +1,6 @@
 ﻿namespace WWWPOS.ErrorMessage
 {
-    partial class ClientMaximumQty
+    partial class MessageDialogue
     {
         /// <summary>
         /// Required designer variable.

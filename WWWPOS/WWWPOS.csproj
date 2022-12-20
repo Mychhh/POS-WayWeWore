@@ -89,35 +89,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientControl\Products\Product.cs">
+    <Compile Include="ClientControl\Products\UserControl_ProductCart.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ClientControl\Products\Product.Designer.cs">
-      <DependentUpon>Product.cs</DependentUpon>
+    <Compile Include="ClientControl\Products\UserControl_ProductCart.Designer.cs">
+      <DependentUpon>UserControl_ProductCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientControl\UserControl_AllProducts.cs">
+    <Compile Include="ClientControl\UserControl_ClientViewProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ClientControl\UserControl_AllProducts.Designer.cs">
-      <DependentUpon>UserControl_AllProducts.cs</DependentUpon>
+    <Compile Include="ClientControl\UserControl_ClientViewProduct.Designer.cs">
+      <DependentUpon>UserControl_ClientViewProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientControl\UserControl_TShirtProducts.cs">
+    <Compile Include="ClientControl\UserControl_ClientCart.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ClientControl\UserControl_TShirtProducts.Designer.cs">
-      <DependentUpon>UserControl_TShirtProducts.cs</DependentUpon>
+    <Compile Include="ClientControl\UserControl_ClientCart.Designer.cs">
+      <DependentUpon>UserControl_ClientCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientControl\UserControl_ViewCart.cs">
+    <Compile Include="ClientControl\Products\UserControl_Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ClientControl\UserControl_ViewCart.Designer.cs">
-      <DependentUpon>UserControl_ViewCart.cs</DependentUpon>
+    <Compile Include="ClientControl\Products\UserControl_Product.Designer.cs">
+      <DependentUpon>UserControl_Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientForm.cs">
+    <Compile Include="ClientControl\Products\UserControl_ProductOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl\Products\UserControl_ProductOrder.Designer.cs">
+      <DependentUpon>UserControl_ProductOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ClientLandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientForm.Designer.cs">
-      <DependentUpon>ClientForm.cs</DependentUpon>
+    <Compile Include="Form_ClientLandingPage.Designer.cs">
+      <DependentUpon>Form_ClientLandingPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Client_Order_Checkout.cs">
       <SubType>Form</SubType>
@@ -126,23 +132,23 @@
       <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
-    <Compile Include="ErrorMessage\ClientMaximumQty.cs">
+    <Compile Include="MessageFolder\MessageDialogue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ErrorMessage\ClientMaximumQty.Designer.cs">
-      <DependentUpon>ClientMaximumQty.cs</DependentUpon>
+    <Compile Include="MessageFolder\MessageDialogue.Designer.cs">
+      <DependentUpon>MessageDialogue.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Form_LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form_LoginPage.Designer.cs">
+      <DependentUpon>Form_LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Form_AdminHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Form_AdminHome.Designer.cs">
+      <DependentUpon>Form_AdminHome.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuControl\UserControl_Menu.cs">
       <SubType>UserControl</SubType>
@@ -152,11 +158,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterForm.cs">
+    <Compile Include="Form_RegisterPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterForm.Designer.cs">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
+    <Compile Include="Form_RegisterPage.Designer.cs">
+      <DependentUpon>Form_RegisterPage.cs</DependentUpon>
     </Compile>
     <Compile Include="SideBarControl\Archive\UserControlArchiveAll.cs">
       <SubType>UserControl</SubType>
@@ -319,32 +325,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>wayweworeDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ClientControl\Products\Product.resx">
-      <DependentUpon>Product.cs</DependentUpon>
+    <EmbeddedResource Include="ClientControl\Products\UserControl_ProductCart.resx">
+      <DependentUpon>UserControl_ProductCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientControl\UserControl_AllProducts.resx">
-      <DependentUpon>UserControl_AllProducts.cs</DependentUpon>
+    <EmbeddedResource Include="ClientControl\UserControl_ClientViewProduct.resx">
+      <DependentUpon>UserControl_ClientViewProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientControl\UserControl_TShirtProducts.resx">
-      <DependentUpon>UserControl_TShirtProducts.cs</DependentUpon>
+    <EmbeddedResource Include="ClientControl\UserControl_ClientCart.resx">
+      <DependentUpon>UserControl_ClientCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientControl\UserControl_ViewCart.resx">
-      <DependentUpon>UserControl_ViewCart.cs</DependentUpon>
+    <EmbeddedResource Include="ClientControl\Products\UserControl_Product.resx">
+      <DependentUpon>UserControl_Product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientForm.resx">
-      <DependentUpon>ClientForm.cs</DependentUpon>
+    <EmbeddedResource Include="ClientControl\Products\UserControl_ProductOrder.resx">
+      <DependentUpon>UserControl_ProductOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ClientLandingPage.resx">
+      <DependentUpon>Form_ClientLandingPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client_Order_Checkout.resx">
       <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ErrorMessage\ClientMaximumQty.resx">
-      <DependentUpon>ClientMaximumQty.cs</DependentUpon>
+    <EmbeddedResource Include="MessageFolder\MessageDialogue.resx">
+      <DependentUpon>MessageDialogue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Form_LoginPage.resx">
+      <DependentUpon>Form_LoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Form_AdminHome.resx">
+      <DependentUpon>Form_AdminHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuControl\UserControl_Menu.resx">
       <DependentUpon>UserControl_Menu.cs</DependentUpon>
@@ -359,8 +368,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RegisterForm.resx">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form_RegisterPage.resx">
+      <DependentUpon>Form_RegisterPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveAll.resx">
       <DependentUpon>UserControlArchiveAll.cs</DependentUpon>

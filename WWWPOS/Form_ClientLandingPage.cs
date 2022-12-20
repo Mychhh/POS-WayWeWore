@@ -7,33 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ClientControl;
 
 namespace WWWPOS
 {
-    public partial class Client_Order_Checkout : Form
+    public partial class Form_ClientLandingPage : Form
     {
-        //ClientControl.UserControl_ViewCart viewCart = new ClientControl.UserControl_ViewCart();
-
-        MenuControl.UserControl_Menu UC_Menu = new MenuControl.UserControl_Menu();
-        public Client_Order_Checkout()
+        public Form_ClientLandingPage()
         {
             InitializeComponent();
         }
-
-        private void Client_Order_Checkout_Load(object sender, EventArgs e)
+        private void ClientPage_Load(object sender, EventArgs e)
         {
-            //PanelControl.Controls.Clear();
-            //PanelControl.Controls.Add(viewCart);
-            //viewCart.Dock = DockStyle.Fill;
-        }
+            UserControl_ClientViewProduct UC_ClientViewProduct = new UserControl_ClientViewProduct();
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-            Close();
+            this.panel_MainClient.Controls.Clear();
+            this.panel_MainClient.Controls.Add(UC_ClientViewProduct);
+            UC_ClientViewProduct.Dock = DockStyle.Fill;
         }
 
         private void btn_Menu_Click(object sender, EventArgs e)
         {
+            MenuControl.UserControl_Menu UC_Menu = new MenuControl.UserControl_Menu();
 
             panel_Menu.Controls.Clear();
             panel_Menu.Controls.Add(UC_Menu);
