@@ -16,6 +16,11 @@ namespace WWWPOS.ClientControl
         {
             InitializeComponent();
         }
+        private void UserControl_ClientCart_Load(object sender, EventArgs e)
+        {
+            loadData Data = new loadData();
+            Data.LoadCart(flowLayoutPanel_ProductCart);
+        }
 
         private void btn_BrowseProduct_Click(object sender, EventArgs e)
         {
@@ -27,10 +32,6 @@ namespace WWWPOS.ClientControl
             UC_ClientViewProduct.Dock = DockStyle.Fill;
         }
 
-        private void UserControl_ClientCart_Load(object sender, EventArgs e)
-        {
-            loadData Data = new loadData();
-            Data.LoadCart(flowLayoutPanel_ProductCart);
-        }
+        
     }
 }

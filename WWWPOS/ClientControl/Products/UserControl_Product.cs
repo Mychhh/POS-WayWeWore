@@ -45,11 +45,6 @@ namespace WWWPOS.ClientControl.Products
             get => int.Parse(lbl_ProductStocks.Text);
             set => lbl_ProductStocks.Text = value + "";
         }
-        public int ProductQuantity
-        {
-            get => int.Parse(lbl_ProductQty.Text);
-            set => int.Parse(lbl_ProductQty.Text);
-        }
         public string ProductDescriptions
         {
             get => lbl_ProductDescription.Text;
@@ -101,7 +96,7 @@ namespace WWWPOS.ClientControl.Products
         private void btn_AddToCart_Click(object sender, EventArgs e)
         {
             DataBase DB = new DataBase();
-            DB.AddToCart(productID, ProductCategory, ProductName, ProductColor, ProductPrice, ProductQuantity, ProductImgPath, ProductSize, ProductDescriptions);
+            DB.AddToCart(productID, ProductCategory, ProductName, ProductColor, ProductPrice, Int32.Parse(lbl_ProductQty.Text), ProductImgPath, ProductSize, ProductDescriptions);
         }
     }
 }

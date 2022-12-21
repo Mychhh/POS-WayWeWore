@@ -113,12 +113,6 @@
     <Compile Include="ClientControl\Products\UserControl_Product.Designer.cs">
       <DependentUpon>UserControl_Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientControl\Products\UserControl_ProductOrder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ClientControl\Products\UserControl_ProductOrder.Designer.cs">
-      <DependentUpon>UserControl_ProductOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_ClientLandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,9 +330,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\Products\UserControl_Product.resx">
       <DependentUpon>UserControl_Product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClientControl\Products\UserControl_ProductOrder.resx">
-      <DependentUpon>UserControl_ProductOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ClientLandingPage.resx">
       <DependentUpon>Form_ClientLandingPage.cs</DependentUpon>
