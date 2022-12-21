@@ -34,7 +34,7 @@ namespace WWWPOS
         public void InsertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
         {
             connection.Open();
-            string selectQuery = "SELECT Email FROM account WHERE Email = '" + email + "';";
+            string selectQuery = "SELECT Email FROM Account WHERE Email = '" + email + "';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
 
@@ -48,7 +48,7 @@ namespace WWWPOS
                 connection.Close(); //closes the first connection used by checking if the email is already registered
 
                 connection.Open();
-                string insertQuery = "INSERT INTO account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
+                string insertQuery = "INSERT INTO Account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
                 SqlCommand commandDatabase = new SqlCommand(insertQuery, connection);
                 commandDatabase.CommandTimeout = 60;
 
@@ -75,7 +75,7 @@ namespace WWWPOS
         public void Login(string email, string password)
         {
             connection.Open();
-            string selectQuery = "SELECT * FROM account WHERE Email = '" + email + "' AND Password = '" + password + "';";
+            string selectQuery = "SELECT * FROM Account WHERE Email = '" + email + "' AND Password = '" + password + "';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
            
@@ -111,7 +111,7 @@ namespace WWWPOS
         public void UpdateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address)
         {
             connection.Open();
-            string selectQuery = "UPDATE account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + password + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
+            string selectQuery = "UPDATE Account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + password + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
@@ -129,7 +129,7 @@ namespace WWWPOS
         public void SetStatusUser(string user_Status, int account_ID)
         {
             connection.Open();
-            string selectQuery = "UPDATE account SET User_Status = '" + user_Status + "' WHERE Account_Id ='" + account_ID + "';";
+            string selectQuery = "UPDATE Account SET User_Status = '" + user_Status + "' WHERE Account_Id ='" + account_ID + "';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
@@ -259,7 +259,7 @@ namespace WWWPOS
         {
           
             connection.Open();
-            command = new SqlCommand("SELECT * FROM account WHERE User_Type = '"+user_Type+"' AND User_Status = '"+ user_Status+ "'", connection);
+            command = new SqlCommand("SELECT * FROM Account WHERE User_Type = '"+user_Type+"' AND User_Status = '"+ user_Status+ "'", connection);
             mdr = command.ExecuteReader();
 
             while (mdr.Read())
@@ -275,7 +275,7 @@ namespace WWWPOS
         {
            
             connection.Open();
-            command = new SqlCommand("SELECT * FROM account WHERE User_Status = '" + user_Status + "'", connection);
+            command = new SqlCommand("SELECT * FROM Account WHERE User_Status = '" + user_Status + "'", connection);
             mdr = command.ExecuteReader();
 
             while (mdr.Read())
@@ -388,7 +388,7 @@ namespace WWWPOS
             try
             {
                 connection.Open();
-                string selectQuery = "SELECT COUNT(*) FROM account WHERE User_Status = 'Active';";
+                string selectQuery = "SELECT COUNT(*) FROM Account WHERE User_Status = 'Active';";
                 command = new SqlCommand(selectQuery, connection);
                 mdr = command.ExecuteReader();
 

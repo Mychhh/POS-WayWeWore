@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
+using WWWPOS.ErrorMessage;
 
 namespace WWWPOS.ClientControl.Products
 {
@@ -66,20 +67,30 @@ namespace WWWPOS.ClientControl.Products
             set => lbl_Category.Text = value;
         }
 
-
         private void btn_Minus_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void lbl_ProductQty_Click(object sender, EventArgs e)
-        {
-
+            if(ProductQuantity <= 1)
+            {
+                MessageDialogue messageDialogue = new MessageDialogue("Product Quantity is equals to 1");
+                messageDialogue.ShowDialog();
+            }
+            else
+            {
+                ProductQuantity--;
+            }
         }
 
         private void btn_Plus_Click(object sender, EventArgs e)
         {
-
+            if (ProductQuantity >= 1)
+            {
+                MessageDialogue messageDialogue = new MessageDialogue("You reached the maximum stock");
+                messageDialogue.ShowDialog();
+            }
+            else
+            {
+                ProductQuantity++;
+            }
         }
     }
 }

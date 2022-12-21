@@ -122,7 +122,6 @@
             this.lbl_ProductQty.TabIndex = 43;
             this.lbl_ProductQty.Text = "1";
             this.lbl_ProductQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_ProductQty.Click += new System.EventHandler(this.lbl_ProductQty_Click);
             // 
             // btn_Plus
             // 
