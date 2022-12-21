@@ -15,11 +15,12 @@ namespace WWWPOS.ClientControl.Products
 {
     public partial class UserControl_Product : UserControl
     {
-        public UserControl_Product(int id, Image image, double price, int stocks, string description, string size, string color, string category)
+        public UserControl_Product(int id, Image image, string imgPath, double price, int stocks, string description, string size, string color, string category)
         {
             InitializeComponent();
             productID = id;
             ProductImage = image;
+            ProductImgPath = imgPath;
             ProductPrice = price;
             ProductStocks = stocks;
             ProductDescriptions = description;
@@ -28,6 +29,7 @@ namespace WWWPOS.ClientControl.Products
             ProductCategory = category;
         }
         public int productID { get; set; }
+        public string ProductImgPath{ get; set; }
         public Image ProductImage
         {
             get => picBox_ProductPicture.Image;
@@ -97,12 +99,8 @@ namespace WWWPOS.ClientControl.Products
 
         private void btn_AddToCart_Click(object sender, EventArgs e)
         {
-            string imageURL = picBox_ProductPicture.ImageLocation;
-            Console.WriteLine(imageURL);
-            MessageDialogue msg = new MessageDialogue(imageURL);
-            msg.ShowDialog();
-            //DataBase DB = new DataBase();
-            //DB.AddToCart(productID, ProductCategory, ProductName, ProductColor, ProductPrice, ProductQuantity, "sheesh", ProductSize, ProductDescriptions);
+            DataBase DB = new DataBase();
+            DB.AddToCart(productID, ProductCategory, ProductName, ProductColor, ProductPrice, ProductQuantity, ProductImgPath, ProductSize, ProductDescriptions);
         }
     }
 }

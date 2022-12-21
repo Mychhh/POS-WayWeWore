@@ -15,6 +15,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using WWWPOS.ClientControl.Products;
 using WWWPOS.ErrorMessage;
+using System.Security.Cryptography;
 
 namespace WWWPOS
 {
@@ -427,6 +428,7 @@ namespace WWWPOS
                 {
                     int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
+                    string imgPath = "" + mdr[7];
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
                     string description = "" + mdr[9];
@@ -434,7 +436,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    UserControl_Product productAvailable = new UserControl_Product(id, image, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
@@ -459,6 +461,7 @@ namespace WWWPOS
                 {
                     int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
+                    string imgPath = "" + mdr[7];
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
                     string description = "" + mdr[9];
@@ -466,7 +469,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    ClientControl.Products.UserControl_Product productAvailable = new ClientControl.Products.UserControl_Product(id, image, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
@@ -491,6 +494,7 @@ namespace WWWPOS
                 {
                     int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
+                    string imgPath = "" + mdr[7];
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
                     string description = "" + mdr[9];
@@ -498,7 +502,7 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    ClientControl.Products.UserControl_Product productAvailable = new ClientControl.Products.UserControl_Product(id, image, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
@@ -523,19 +527,26 @@ namespace WWWPOS
                 command = new SqlCommand(selectQuery, connection);
                 mdr = command.ExecuteReader();
 
+                Console.WriteLine("I am outside a loop");
+
                 while (mdr.Read())
                 {
                     int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[8]);
                     double price = Double.Parse(mdr[6] + "");
-                    int quantity = int.Parse(mdr[6] + "");
+                    int quantity = int.Parse(mdr[7] + "");
                     string description = "" + mdr[10];
                     string size = "" + mdr[9];
                     string color = "" + mdr[5];
                     string category = "" + mdr[3];
-
+                    
+                    Console.WriteLine("I am here at top");
+                    MessageDialogue messageDialogue = new MessageDialogue("" + mdr[8]);
+                    messageDialogue.ShowDialog();
+                    Console.WriteLine("I am in the middle");
                     UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(user_ID, id, image, price, quantity, description, size, color, category);
                     flowLayoutPanel.Controls.Add(UC_ProductCart);
+                    Console.WriteLine("I am here at bottom");
                 }
 
             }
