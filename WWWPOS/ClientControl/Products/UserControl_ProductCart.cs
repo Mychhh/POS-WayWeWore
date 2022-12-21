@@ -15,7 +15,7 @@ namespace WWWPOS.ClientControl.Products
 {
     public partial class UserControl_ProductCart : UserControl
     {
-        public UserControl_ProductCart(int userid, int productID, Image productImage, double productPrice, int productQuantity, string productDescriptions, string productSize, string productColor, string productCategory)
+        public UserControl_ProductCart(int userid, int productID, Image productImage, double productPrice, int productQuantity, int productStock, string productDescriptions, string productSize, string productColor, string productCategory)
         {
             InitializeComponent();
             UserID = userid;
@@ -23,6 +23,7 @@ namespace WWWPOS.ClientControl.Products
             ProductImage = productImage;
             ProductPrice  = productPrice;
             ProductQuantity = productQuantity;
+            ProductStocks = productStock;
             ProductDescriptions = productDescriptions;
             ProductSize = productSize;
             ProductColor = productColor;
@@ -30,6 +31,7 @@ namespace WWWPOS.ClientControl.Products
         }
         public int UserID { get; set; }
         public int ProductID { get; set; }
+        public int ProductStocks { get; set; }
         public Image ProductImage
         {
             get => picBox_ProductPicture.Image;
@@ -38,14 +40,13 @@ namespace WWWPOS.ClientControl.Products
         public double ProductPrice
         {
             get => Double.Parse(lbl_ProductPrice.Text);
-            set => lbl_ProductPrice.Text = value + "";
+            set => lbl_ProductPrice.Text = "₱ " + value ;
         }
         public int ProductQuantity
         {
             get => Int32.Parse(lbl_ProductQty.Text);
             set => lbl_ProductQty.Text = value + "";
         }
-
         public string ProductDescriptions
         {
             get => lbl_ProductDescription.Text;
@@ -82,7 +83,7 @@ namespace WWWPOS.ClientControl.Products
 
         private void btn_Plus_Click(object sender, EventArgs e)
         {
-            if (ProductQuantity >= 1)
+            if (ProductQuantity == ProductStocks)
             {
                 MessageDialogue messageDialogue = new MessageDialogue("You reached the maximum stock");
                 messageDialogue.ShowDialog();

@@ -61,7 +61,7 @@
             this.lbl_ProductPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ProductPrice.Name = "lbl_ProductPrice";
             this.lbl_ProductPrice.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
-            this.lbl_ProductPrice.Size = new System.Drawing.Size(75, 28);
+            this.lbl_ProductPrice.Size = new System.Drawing.Size(111, 28);
             this.lbl_ProductPrice.TabIndex = 36;
             this.lbl_ProductPrice.Text = "500";
             this.lbl_ProductPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,11 +84,11 @@
             // 
             this.lbl_Category.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.lbl_Category.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Category.Location = new System.Drawing.Point(301, 38);
+            this.lbl_Category.Location = new System.Drawing.Point(341, 38);
             this.lbl_Category.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Category.Name = "lbl_Category";
             this.lbl_Category.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
-            this.lbl_Category.Size = new System.Drawing.Size(151, 28);
+            this.lbl_Category.Size = new System.Drawing.Size(111, 28);
             this.lbl_Category.TabIndex = 48;
             this.lbl_Category.Text = "Category";
             this.lbl_Category.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
