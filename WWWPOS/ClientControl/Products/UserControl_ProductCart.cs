@@ -41,8 +41,8 @@ namespace WWWPOS.ClientControl.Products
         }
         public int ProductQuantity
         {
-            get => int.Parse(lbl_ProductQty.Text);
-            set => int.Parse(lbl_ProductQty.Text);
+            get => Int32.Parse(lbl_ProductQty.Text);
+            set => lbl_ProductQty.Text = value + "";
         }
 
         public string ProductDescriptions

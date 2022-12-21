@@ -532,7 +532,7 @@ namespace WWWPOS
                     int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[8]);
                     double price = Double.Parse(mdr[6] + "");
-                    int quantity = int.Parse(mdr[7] + "");
+                    int quantity = Int32.Parse(mdr[7] + "");
                     string description = "" + mdr[10];
                     string size = "" + mdr[9];
                     string color = "" + mdr[5];
