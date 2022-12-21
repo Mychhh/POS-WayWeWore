@@ -527,8 +527,6 @@ namespace WWWPOS
                 command = new SqlCommand(selectQuery, connection);
                 mdr = command.ExecuteReader();
 
-                Console.WriteLine("I am outside a loop");
-
                 while (mdr.Read())
                 {
                     int id = int.Parse(mdr[0] + "");
@@ -540,13 +538,8 @@ namespace WWWPOS
                     string color = "" + mdr[5];
                     string category = "" + mdr[3];
                     
-                    Console.WriteLine("I am here at top");
-                    MessageDialogue messageDialogue = new MessageDialogue("" + mdr[8]);
-                    messageDialogue.ShowDialog();
-                    Console.WriteLine("I am in the middle");
                     UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(user_ID, id, image, price, quantity, description, size, color, category);
                     flowLayoutPanel.Controls.Add(UC_ProductCart);
-                    Console.WriteLine("I am here at bottom");
                 }
 
             }

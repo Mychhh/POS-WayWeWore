@@ -39,11 +39,6 @@ namespace WWWPOS.ClientControl.Products
             get => Double.Parse(lbl_ProductPrice.Text);
             set => lbl_ProductPrice.Text = value + "";
         }
-        public int ProductStocks
-        {
-            get => int.Parse(lbl_ProductStocks.Text);
-            set => lbl_ProductStocks.Text = value + "";
-        }
         public int ProductQuantity
         {
             get => int.Parse(lbl_ProductQty.Text);
@@ -69,6 +64,22 @@ namespace WWWPOS.ClientControl.Products
         {
             get => lbl_Category.Text;
             set => lbl_Category.Text = value;
+        }
+
+
+        private void btn_Minus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_ProductQty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Plus_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
