@@ -107,7 +107,7 @@
             this.lbl_TotalCart.Location = new System.Drawing.Point(153, 15);
             this.lbl_TotalCart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_TotalCart.Name = "lbl_TotalCart";
-            this.lbl_TotalCart.Size = new System.Drawing.Size(77, 39);
+            this.lbl_TotalCart.Size = new System.Drawing.Size(100, 39);
             this.lbl_TotalCart.TabIndex = 30;
             this.lbl_TotalCart.Text = "$ 1,100";
             this.lbl_TotalCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
