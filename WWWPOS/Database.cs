@@ -532,22 +532,26 @@ namespace WWWPOS
                 command = new SqlCommand(selectJoinedQuerry, connection);
                 mdr = command.ExecuteReader();
 
+                int total = 0;
+
                 while (mdr.Read())
                 {
                     int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[8]);
                     double price = Double.Parse(mdr[6] + "");
                     int quantity = Int32.Parse(mdr[7] + "");
+                    total = Convert.ToInt32(price) * quantity;
                     int stock = Int32.Parse(mdr[19] + "");
                     string description = "" + mdr[10];
                     string size = "" + mdr[9];
                     string color = "" + mdr[5];
                     string category = "" + mdr[3];
-                    
-                    UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(user_ID, id, image, price, quantity, stock, description, size, color, category);
+                    Console.WriteLine(total);
+                    UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(user_ID, id, image, price, quantity, total, stock, description, size, color, category);
                     flowLayoutPanel.Controls.Add(UC_ProductCart);
                 }
 
+                Console.WriteLine(total);
             }
             catch (Exception ex)
             {
