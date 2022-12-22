@@ -22,6 +22,12 @@ namespace WWWPOS.ClientControl
             Data.LoadCart(flowLayoutPanel_ProductCart);
         }
 
+        public string TotalCart
+        {
+            get => lbl_TotalCart.Text;
+            set => lbl_TotalCart.Text = "₱ " + value;
+        }
+
         private void btn_BrowseProduct_Click(object sender, EventArgs e)
         {
             Form_ClientLandingPage clientForm = new Form_ClientLandingPage();

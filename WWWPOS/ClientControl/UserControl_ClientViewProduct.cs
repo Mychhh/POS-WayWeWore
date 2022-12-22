@@ -54,6 +54,7 @@ namespace WWWPOS.ClientControl
             Controls.Clear();
             Controls.Add(UC_ClientCart);
             UC_ClientCart.Dock = DockStyle.Fill;
+
         }
 
     }

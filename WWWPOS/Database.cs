@@ -523,15 +523,12 @@ namespace WWWPOS
             try
             {
                 connection.Open();
-
-                //string selectQuery = "SELECT * FROM Cart WHERE Account_ID = '" + user_ID + "';";
-                //command = new SqlCommand(selectQuery, connection);
-                //mdr = command.ExecuteReader();
-
-                string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product ON Cart.Product_ID = Product.Product_ID";
+                
+                string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "'";
                 command = new SqlCommand(selectJoinedQuerry, connection);
                 mdr = command.ExecuteReader();
 
+                int ProductCartTotal = 0;
                 int total = 0;
 
                 while (mdr.Read())
@@ -546,12 +543,11 @@ namespace WWWPOS
                     string size = "" + mdr[9];
                     string color = "" + mdr[5];
                     string category = "" + mdr[3];
-                    Console.WriteLine(total);
                     UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(user_ID, id, image, price, quantity, total, stock, description, size, color, category);
                     flowLayoutPanel.Controls.Add(UC_ProductCart);
                 }
 
-                Console.WriteLine(total);
+
             }
             catch (Exception ex)
             {
