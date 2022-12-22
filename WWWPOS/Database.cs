@@ -479,6 +479,7 @@ namespace WWWPOS
             {
                 MessageBox.Show(ex.Message);
             }
+            connection.Close();
         }
 
         //Load All available Short
@@ -512,6 +513,7 @@ namespace WWWPOS
             {
                 MessageBox.Show(ex.Message);
             }
+            connection.Close();
         }
 
         //Load Users Cart
@@ -519,7 +521,7 @@ namespace WWWPOS
         {
             string userid = DataBase.user_ID;
             int user_ID = Int32.Parse(userid);
-
+                
             try
             {
                 connection.Open();
@@ -547,13 +549,52 @@ namespace WWWPOS
                     flowLayoutPanel.Controls.Add(UC_ProductCart);
                 }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
+        }
+        
+        public string LoadCartTotalPrice(string totalPrice)
+        {
+            string userid = DataBase.user_ID;
+            int user_ID = Int32.Parse(userid);
+
+            try
+            {
+                connection.Open();
+
+                string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "'";
+                command = new SqlCommand(selectJoinedQuerry, connection);
+                mdr = command.ExecuteReader();
+
+                int ProductCartTotal = 0;
+                int total = 0;
+
+                while (mdr.Read())
+                {
+                    int id = int.Parse(mdr[0] + "");
+                    double price = Double.Parse(mdr[6] + "");
+                    int quantity = Int32.Parse(mdr[7] + "");
+                    total = Convert.ToInt32(price) * quantity;
+                    ProductCartTotal += total;
+                    int stock = Int32.Parse(mdr[19] + "");
+                }
+
+                totalPrice = ProductCartTotal.ToString();
+
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            connection.Close();
+            return totalPrice;
         }
-        
+
     }
 }

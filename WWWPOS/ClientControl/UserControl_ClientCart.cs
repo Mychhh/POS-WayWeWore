@@ -20,6 +20,8 @@ namespace WWWPOS.ClientControl
         {
             loadData Data = new loadData();
             Data.LoadCart(flowLayoutPanel_ProductCart);
+
+            TotalCart = Data.LoadCartTotalPrice(TotalCart);
         }
 
         public string TotalCart
