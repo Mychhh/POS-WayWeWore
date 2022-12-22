@@ -17,6 +17,7 @@ using WWWPOS.ClientControl.Products;
 using WWWPOS.ErrorMessage;
 using System.Security.Cryptography;
 using System.Reflection;
+using Org.BouncyCastle.Utilities.Collections;
 
 namespace WWWPOS
 {
@@ -250,6 +251,23 @@ namespace WWWPOS
             }
         }
 
+        //Update cart
+        public void UpdateAddCartProduct(int productID)
+        {
+            connection.Open();
+            string addQtyQuery = "UPDATE Cart SET Quantity = Quantity + 1 WHERE Product_ID = '"+ productID + "';";
+            command = new SqlCommand(addQtyQuery, connection);
+            mdr = command.ExecuteReader();
+            connection.Close();
+        }
+        public void UpdateDeductCartProduct(int productID)
+        {
+            connection.Open();
+            string addQtyQuery = "UPDATE Cart SET Quantity = Quantity - 1 WHERE Product_ID = '" + productID + "';";
+            command = new SqlCommand(addQtyQuery, connection);
+            mdr = command.ExecuteReader();
+            connection.Close();
+        }
     }
 
     class loadData : DataBase
@@ -287,7 +305,7 @@ namespace WWWPOS
             connection.Close();
         }
 
-        // Product Deleted
+        //Load product to be deleted
         public void ProductArchive(DataGridView dataProduct, string product_Status)
         {
 
@@ -301,7 +319,7 @@ namespace WWWPOS
             }
         }
 
-        //Updating the product
+        //Load product to be updatet
         public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
         {
             try
@@ -530,12 +548,12 @@ namespace WWWPOS
                 command = new SqlCommand(selectJoinedQuerry, connection);
                 mdr = command.ExecuteReader();
 
-                int ProductCartTotal = 0;
                 int total = 0;
 
                 while (mdr.Read())
                 {
-                    int id = int.Parse(mdr[0] + "");
+                    int cartID = int.Parse(mdr[0] + "");
+                    int productID = Int32.Parse(mdr[2] + "");
                     Image image = Image.FromFile(@"" + mdr[8]);
                     double price = Double.Parse(mdr[6] + "");
                     int quantity = Int32.Parse(mdr[7] + "");
@@ -545,7 +563,7 @@ namespace WWWPOS
                     string size = "" + mdr[9];
                     string color = "" + mdr[5];
                     string category = "" + mdr[3];
-                    UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(user_ID, id, image, price, quantity, total, stock, description, size, color, category);
+                    UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(cartID, user_ID, productID, image, price, quantity, total, stock, description, size, color, category);
                     flowLayoutPanel.Controls.Add(UC_ProductCart);
                 }
 
@@ -556,7 +574,8 @@ namespace WWWPOS
             }
             connection.Close();
         }
-        
+
+        //Load cart total price 
         public string LoadCartTotalPrice(string totalPrice)
         {
             string userid = DataBase.user_ID;

@@ -15,10 +15,11 @@ namespace WWWPOS.ClientControl.Products
 {
     public partial class UserControl_ProductCart : UserControl
     {
-        public UserControl_ProductCart(int userid, int productID, Image productImage, double productPrice, int productQuantity, int productTotal, int productStock, string productDescriptions, string productSize, string productColor, string productCategory)
+        public UserControl_ProductCart(int cartID, int userid, int productID, Image productImage, double productPrice, int productQuantity, int productTotal, int productStock, string productDescriptions, string productSize, string productColor, string productCategory)
         {
             InitializeComponent();
             UserID = userid;
+            CartID = cartID;
             ProductID = productID;
             ProductImage = productImage;
             ProductPrice  = productPrice;
@@ -30,6 +31,7 @@ namespace WWWPOS.ClientControl.Products
             ProductColor = productColor;
             ProductCategory = productCategory;
         }
+        public int CartID { get; set; }
         public int UserID { get; set; }
         public int ProductID { get; set; }
         public int ProductStocks { get; set; }
@@ -70,19 +72,6 @@ namespace WWWPOS.ClientControl.Products
             set => lbl_Category.Text = value;
         }
 
-        private void btn_Minus_Click(object sender, EventArgs e)
-        {
-            if(ProductQuantity <= 1)
-            {
-                MessageDialogue messageDialogue = new MessageDialogue("Product Quantity is equals to 1");
-                messageDialogue.ShowDialog();
-            }
-            else
-            {
-                ProductQuantity--;
-            }
-        }
-
         private void btn_Plus_Click(object sender, EventArgs e)
         {
             if (ProductQuantity == ProductStocks)
@@ -92,8 +81,26 @@ namespace WWWPOS.ClientControl.Products
             }
             else
             {
+                DataBase DB = new DataBase();
+                DB.UpdateAddCartProduct(ProductID);
+
                 ProductQuantity++;
             }
         }
+        private void btn_Minus_Click(object sender, EventArgs e)
+        {
+            if (ProductQuantity <= 1)
+            {
+                MessageDialogue messageDialogue = new MessageDialogue("Product Quantity is equals to 1");
+                messageDialogue.ShowDialog();
+            }
+            else
+            {
+                DataBase DB = new DataBase();
+                DB.UpdateDeductCartProduct(ProductID);
+                ProductQuantity--;
+            }
+        }
+
     }
 }
