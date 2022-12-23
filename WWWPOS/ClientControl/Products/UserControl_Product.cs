@@ -79,7 +79,6 @@ namespace WWWPOS.ClientControl.Products
                 maxQty.ShowDialog();
             }
         }
-
         private void btn_Minus_Click(object sender, EventArgs e)
         {
             if (Int32.Parse(lbl_ProductQty.Text) > 1)
@@ -92,7 +91,6 @@ namespace WWWPOS.ClientControl.Products
                 maxQty.ShowDialog();
             }
         }
-
         private void btn_AddToCart_Click(object sender, EventArgs e)
         {
             DataBase DB = new DataBase();

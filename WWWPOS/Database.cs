@@ -224,34 +224,9 @@ namespace WWWPOS
 
         }
 
-
-        //Client Side
+        //-----Client Side-----//  
 
         //Add to cart
-        //public void AddToCart( int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, string productImg, string productSize, string productDescription)
-        //{
-        //    string userID = DataBase.user_ID;
-        //    int user_ID = Int32.Parse(userID);
-
-        //    connection.Open();
-        //    string iquery = "INSERT INTO Cart (Account_ID, Product_ID, Category, Product_Name, Color, Price , Quantity, Product_images, Product_Size, Product_Description, Product_Status) VALUES ('" + user_ID + "' , '" + product_ID + "' , '" + category + "', '" + productName + "', '" + productColor + "', '" + productPrice + "', '" + productQuantity + "','" + productImg + "','" + productSize + "','" + productDescription + "','Active')";
-        //    SqlCommand commandDatabase = new SqlCommand(iquery, connection);
-        //    commandDatabase.CommandTimeout = 60;
-
-        //    try
-        //    {
-        //        SqlDataReader myReader = commandDatabase.ExecuteReader();
-        //        connection.Close();
-        //        MessageDialogue messageDialogue = new MessageDialogue("Added to Cart");
-        //        messageDialogue.ShowDialog();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Show any error message.
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
         public void AddToCart(int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, string productImg, string productSize, string productDescription)
         {
             string userID = DataBase.user_ID;
@@ -260,7 +235,10 @@ namespace WWWPOS
             int SumProductQuantity = 0;
 
             connection.Open();
-            string selectQuery = "SELECT Product_ID, Quantity FROM Cart WHERE Product_ID = '" + product_ID + "'";
+            //string selectQuery = "SELECT Product_ID, Quantity FROM Cart WHERE Product_ID = '" + product_ID + "'";
+            string selectQuery = "SELECT Cart.Product_ID, Cart.Quantity, Products.Stocks " +
+                                 "FROM [waywewore].[dbo].[Cart] AS Cart INNER JOIN [waywewore].[dbo].[Products] AS Products  ON Cart.Product_ID = Products.Product_ID " +
+                                 "WHERE Cart.Product_ID = '" + product_ID + "'";
             SqlCommand commandDatabase = new SqlCommand(selectQuery, connection);
             mdr = commandDatabase.ExecuteReader();
 
@@ -268,6 +246,13 @@ namespace WWWPOS
             if (mdr.Read())
             {
                 SumProductQuantity = Int32.Parse(mdr[1] + "") + productQuantity;
+
+                if (SumProductQuantity > Int32.Parse(mdr[2] + ""))
+                {
+                    MessageDialogue messageDialogue = new MessageDialogue("Omsim");
+                    messageDialogue.ShowDialog();
+                    connection.Close();
+                }
 
                 connection.Close();
                 connection.Open();
@@ -317,7 +302,6 @@ namespace WWWPOS
             }   
 
         }
-
         //Update cart
         public void UpdateAddCartProduct(int productID)
         {

@@ -75,7 +75,7 @@ namespace WWWPOS.ClientControl.Products
         }
         private void btn_Plus_Click(object sender, EventArgs e)
         {
-            if (ProductQuantity == ProductStocks)
+            if (ProductQuantity >= ProductStocks)
             {
                 MessageDialogue messageDialogue = new MessageDialogue("You reached the maximum stock");
                 messageDialogue.ShowDialog();
@@ -89,7 +89,7 @@ namespace WWWPOS.ClientControl.Products
         }
         private void btn_Minus_Click(object sender, EventArgs e)
         {
-            if (ProductQuantity == 1)
+            if (ProductQuantity <= 1)
             {
                 MessageDialogue messageDialogue = new MessageDialogue("Product Quantity is equals to 1");
                 messageDialogue.ShowDialog();
