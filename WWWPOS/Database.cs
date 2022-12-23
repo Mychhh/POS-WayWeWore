@@ -253,28 +253,30 @@ namespace WWWPOS
                     messageDialogue.ShowDialog();
                     connection.Close();
                 }
-
-                connection.Close();
-                connection.Open();
-                string updateCartQuery = "UPDATE Cart SET Quantity = '" + SumProductQuantity + "' WHERE Product_ID ='" + product_ID + "';";
-                SqlCommand commandToUpdateCartQuantity = new SqlCommand(updateCartQuery, connection);
-                commandToUpdateCartQuantity.CommandTimeout = 60;
-
-                try
+                else
                 {
-                    SqlDataReader myReader = commandToUpdateCartQuantity.ExecuteReader();
-                    //connection.Close();
-                    MessageDialogue messageDialogue = new MessageDialogue("Added to Cart");
-                    messageDialogue.ShowDialog();
-                }
-                catch (Exception ex)
-                {
-                    // Show any error message.
-                    MessageBox.Show(ex.Message);
+                    connection.Close();
+                    connection.Open();
+                    string updateCartQuery = "UPDATE Cart SET Quantity = '" + SumProductQuantity + "' WHERE Product_ID ='" + product_ID + "';";
+                    SqlCommand commandToUpdateCartQuantity = new SqlCommand(updateCartQuery, connection);
+                    commandToUpdateCartQuantity.CommandTimeout = 60;
+
+                    try
+                    {
+                        SqlDataReader myReader = commandToUpdateCartQuantity.ExecuteReader();
+                        //connection.Close();
+                        MessageDialogue messageDialogue = new MessageDialogue("Added to Cart");
+                        messageDialogue.ShowDialog();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Show any error message.
+                        MessageBox.Show(ex.Message);
+                    }
+
+                    connection.Close();
                 }
 
-                connection.Close();
-                
             }
             else
             {
