@@ -24,5 +24,18 @@ namespace WWWPOS.ClientControl.ClientCart
             Form_ClientCart F_ClientCart = new Form_ClientCart();
             F_ClientCart.ShowDialog();
         }
+
+        private void Form_ClientPay_Load(object sender, EventArgs e)
+        {
+            loadData data = new loadData();
+            data.LoadTotalItems(this.flPanel_ProductTotal);
+
+            lbl_TotalPrice.Text = "₱ " + data.LoadCartTotalPrice(lbl_TotalPrice.Text);
+        }
+
+        private void lbl_TotalPrice_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

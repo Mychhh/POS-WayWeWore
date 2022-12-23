@@ -110,6 +110,5 @@ namespace WWWPOS.ClientControl.Products
             MessageDialogue message = new MessageDialogue("Product Removed");
             message.ShowDialog();
         }
-
     }
 }

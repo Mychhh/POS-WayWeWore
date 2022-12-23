@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ClientPay));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.flPanel_ProductCart = new System.Windows.Forms.FlowLayoutPanel();
+            this.flPanel_ProductTotal = new System.Windows.Forms.FlowLayoutPanel();
             this.button9 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_BrowseProduct = new System.Windows.Forms.Button();
@@ -40,6 +40,7 @@
             this.btn_Menu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_TotalPrice = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,15 +65,15 @@
             this.label16.TabIndex = 74;
             this.label16.Text = "Payments";
             // 
-            // flPanel_ProductCart
+            // flPanel_ProductTotal
             // 
-            this.flPanel_ProductCart.AutoScroll = true;
-            this.flPanel_ProductCart.Location = new System.Drawing.Point(59, 231);
-            this.flPanel_ProductCart.Margin = new System.Windows.Forms.Padding(0);
-            this.flPanel_ProductCart.Name = "flPanel_ProductCart";
-            this.flPanel_ProductCart.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.flPanel_ProductCart.Size = new System.Drawing.Size(1307, 449);
-            this.flPanel_ProductCart.TabIndex = 80;
+            this.flPanel_ProductTotal.AutoScroll = true;
+            this.flPanel_ProductTotal.Location = new System.Drawing.Point(59, 231);
+            this.flPanel_ProductTotal.Margin = new System.Windows.Forms.Padding(0);
+            this.flPanel_ProductTotal.Name = "flPanel_ProductTotal";
+            this.flPanel_ProductTotal.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.flPanel_ProductTotal.Size = new System.Drawing.Size(1307, 449);
+            this.flPanel_ProductTotal.TabIndex = 80;
             // 
             // button9
             // 
@@ -93,6 +94,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
+            this.panel4.Controls.Add(this.lbl_TotalPrice);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.button9);
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -168,12 +170,26 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 24);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(49, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 25);
+            this.label1.Size = new System.Drawing.Size(100, 46);
             this.label1.TabIndex = 30;
-            this.label1.Text = "label1";
+            this.label1.Text = "Total : ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_TotalPrice
+            // 
+            this.lbl_TotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TotalPrice.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_TotalPrice.Location = new System.Drawing.Point(155, 12);
+            this.lbl_TotalPrice.Name = "lbl_TotalPrice";
+            this.lbl_TotalPrice.Size = new System.Drawing.Size(125, 46);
+            this.lbl_TotalPrice.TabIndex = 31;
+            this.lbl_TotalPrice.Text = "Sheesh";
+            this.lbl_TotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_TotalPrice.Click += new System.EventHandler(this.lbl_TotalPrice_Click);
             // 
             // Form_ClientPay
             // 
@@ -183,7 +199,7 @@
             this.ClientSize = new System.Drawing.Size(1424, 788);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.flPanel_ProductCart);
+            this.Controls.Add(this.flPanel_ProductTotal);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btn_BrowseProduct);
             this.Controls.Add(this.panel_Menu);
@@ -192,9 +208,10 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ClientPay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_ClientTotal";
+            this.Load += new System.EventHandler(this.Form_ClientPay_Load);
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -205,7 +222,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label16;
-        public System.Windows.Forms.FlowLayoutPanel flPanel_ProductCart;
+        public System.Windows.Forms.FlowLayoutPanel flPanel_ProductTotal;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_BrowseProduct;
@@ -214,5 +231,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_TotalPrice;
     }
 }

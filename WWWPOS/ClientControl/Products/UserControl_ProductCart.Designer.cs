@@ -215,12 +215,12 @@
         private System.Windows.Forms.PictureBox picBox_ProductPicture;
         private System.Windows.Forms.Label lbl_ProductPrice;
         private System.Windows.Forms.Label lbl_ProductDescription;
-        private System.Windows.Forms.Button btn_Minus;
-        private System.Windows.Forms.ComboBox cmb_ProductSize;
-        private System.Windows.Forms.Button btn_Plus;
         private System.Windows.Forms.Label lbl_ProductQty;
-        private System.Windows.Forms.ComboBox cmb_Color;
         private System.Windows.Forms.Label lbl_Category;
-        private System.Windows.Forms.Button btn_DeleteProduct;
+        public System.Windows.Forms.Button btn_DeleteProduct;
+        public System.Windows.Forms.Button btn_Minus;
+        public System.Windows.Forms.Button btn_Plus;
+        public System.Windows.Forms.ComboBox cmb_ProductSize;
+        public System.Windows.Forms.ComboBox cmb_Color;
     }
 }

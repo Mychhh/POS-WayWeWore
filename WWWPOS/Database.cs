@@ -586,6 +586,55 @@ namespace WWWPOS
             connection.Close();
         }
 
+        //Load Users Cart
+        public void LoadTotalItems(FlowLayoutPanel flowLayoutPanel)
+        {
+            string userid = DataBase.user_ID;
+            int user_ID = Int32.Parse(userid);
+
+            try
+            {
+                connection.Open();
+
+                string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "'";
+                command = new SqlCommand(selectJoinedQuerry, connection);
+                mdr = command.ExecuteReader();
+
+                int total = 0;
+
+                while (mdr.Read())
+                {
+                    int cartID = int.Parse(mdr[0] + "");
+                    int productID = Int32.Parse(mdr[2] + "");
+                    Image image = Image.FromFile(@"" + mdr[8]);
+                    double price = Double.Parse(mdr[6] + "");
+                    int quantity = Int32.Parse(mdr[7] + "");
+                    total = Convert.ToInt32(price) * quantity;
+                    int stock = Int32.Parse(mdr[19] + "");
+                    string description = "" + mdr[10];
+                    string size = "" + mdr[9];
+                    string color = "" + mdr[5];
+                    string category = "" + mdr[3];
+
+                    UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(cartID, user_ID, productID, image, price, quantity, total, stock, description, size, color, category);
+
+                    UC_ProductCart.Controls.Remove(UC_ProductCart.btn_DeleteProduct);
+                    UC_ProductCart.Controls.Remove(UC_ProductCart.btn_Plus);
+                    UC_ProductCart.Controls.Remove(UC_ProductCart.btn_Minus);
+                    UC_ProductCart.cmb_ProductSize.Enabled = false;
+                    UC_ProductCart.cmb_Color.Enabled = false;
+
+                    flowLayoutPanel.Controls.Add(UC_ProductCart);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            connection.Close();
+        }
+
         //Load cart total price
         public string LoadCartTotalPrice(string totalPrice)
         {
