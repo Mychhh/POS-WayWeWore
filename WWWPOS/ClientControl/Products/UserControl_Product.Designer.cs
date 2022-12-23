@@ -80,7 +80,7 @@
             this.lbl_ProductStocks.AutoSize = true;
             this.lbl_ProductStocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(174)))), ((int)(((byte)(242)))));
             this.lbl_ProductStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductStocks.Location = new System.Drawing.Point(192, 269);
+            this.lbl_ProductStocks.Location = new System.Drawing.Point(182, 268);
             this.lbl_ProductStocks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_ProductStocks.Name = "lbl_ProductStocks";
             this.lbl_ProductStocks.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -91,14 +91,14 @@
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label11.Location = new System.Drawing.Point(233, 272);
+            this.label11.Location = new System.Drawing.Point(223, 269);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 18);
+            this.label11.Size = new System.Drawing.Size(65, 25);
             this.label11.TabIndex = 30;
             this.label11.Text = "Stocks";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_ProductQty
             // 
@@ -157,14 +157,14 @@
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label14.Location = new System.Drawing.Point(96, 274);
+            this.label14.Location = new System.Drawing.Point(96, 268);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 18);
+            this.label14.Size = new System.Drawing.Size(52, 27);
             this.label14.TabIndex = 23;
-            this.label14.Text = "Items";
+            this.label14.Text = "Price";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_ProductPrice
             // 

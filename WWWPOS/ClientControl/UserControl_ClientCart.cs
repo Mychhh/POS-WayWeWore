@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ClientControl.Products;
 
 namespace WWWPOS.ClientControl
 {
@@ -15,6 +16,24 @@ namespace WWWPOS.ClientControl
         public UserControl_ClientCart()
         {
             InitializeComponent();
+        }
+        private void UserControl_ClientCart_Load(object sender, EventArgs e)
+        {
+            loadData Data = new loadData();
+            Data.LoadCart(flowLayoutPanel_ProductCart);
+            LoadCartTotalPrice();
+        }
+
+        public void LoadCartTotalPrice()
+        {
+            loadData Data = new loadData();
+            TotalCart = Data.LoadCartTotalPrice(TotalCart);
+        }
+
+        public string TotalCart
+        {
+            get => lbl_TotalCart.Text;
+            set => lbl_TotalCart.Text = "₱ " + value;
         }
 
         private void btn_BrowseProduct_Click(object sender, EventArgs e)
@@ -27,10 +46,9 @@ namespace WWWPOS.ClientControl
             UC_ClientViewProduct.Dock = DockStyle.Fill;
         }
 
-        private void UserControl_ClientCart_Load(object sender, EventArgs e)
+        private void lbl_ProductPrice_Click(object sender, EventArgs e)
         {
-            loadData Data = new loadData();
-            Data.LoadCart(flowLayoutPanel_ProductCart);
+            LoadCartTotalPrice();
         }
     }
 }
