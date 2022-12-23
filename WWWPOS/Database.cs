@@ -19,7 +19,6 @@ using System.Security.Cryptography;
 using System.Reflection;
 using Org.BouncyCastle.Utilities.Collections;
 using WWWPOS.ClientControl.ClientCart;
-using WWWPOS.ClientControl.NewFolder1;
 
 namespace WWWPOS
 {

@@ -299,3 +299,4 @@ C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.Client
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.ClientCart.Form_ClientCart.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.ClientCart.Form1.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.NewFolder1.Form1.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.ClientCart.Form_ClientPay.resources
