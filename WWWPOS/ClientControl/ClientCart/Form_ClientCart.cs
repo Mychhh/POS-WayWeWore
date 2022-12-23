@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ErrorMessage;
 
 namespace WWWPOS.ClientControl.ClientCart
 {
@@ -36,7 +37,7 @@ namespace WWWPOS.ClientControl.ClientCart
             Data.LoadCart(flPanel_ProductCart);
             LoadCartTotalPrice();
         }
-
+        //Go to view all product
         private void btn_BrowseProduct_Click(object sender, EventArgs e)
         {
             this.Close();

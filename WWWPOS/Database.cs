@@ -18,6 +18,8 @@ using WWWPOS.ErrorMessage;
 using System.Security.Cryptography;
 using System.Reflection;
 using Org.BouncyCastle.Utilities.Collections;
+using WWWPOS.ClientControl.ClientCart;
+using WWWPOS.ClientControl.NewFolder1;
 
 namespace WWWPOS
 {
@@ -548,11 +550,11 @@ namespace WWWPOS
         {
             string userid = DataBase.user_ID;
             int user_ID = Int32.Parse(userid);
-                
+
             try
             {
                 connection.Open();
-                
+
                 string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "'";
                 command = new SqlCommand(selectJoinedQuerry, connection);
                 mdr = command.ExecuteReader();
@@ -575,7 +577,6 @@ namespace WWWPOS
 
                     UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(cartID, user_ID, productID, image, price, quantity, total, stock, description, size, color, category);
                     flowLayoutPanel.Controls.Add(UC_ProductCart);
-
                 }
 
             }
@@ -586,7 +587,7 @@ namespace WWWPOS
             connection.Close();
         }
 
-        //Load cart total price 
+        //Load cart total price
         public string LoadCartTotalPrice(string totalPrice)
         {
             string userid = DataBase.user_ID;
@@ -625,6 +626,7 @@ namespace WWWPOS
             connection.Close();
             return totalPrice;
         }
+
 
     }
 }

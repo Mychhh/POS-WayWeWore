@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Markup;
 using System.Windows.Media;
+using WWWPOS.ClientControl.ClientCart;
 using WWWPOS.ErrorMessage;
 
 namespace WWWPOS.ClientControl.Products
@@ -73,6 +74,13 @@ namespace WWWPOS.ClientControl.Products
             set => lbl_Category.Text = value;
         }
 
+        //Load Total price on add or deduct to product quantity
+        private void UpdateTotalPrice()
+        {
+            Form_ClientCart F_ClientCart = new Form_ClientCart();
+            loadData data = new loadData();
+            F_ClientCart.TotalCart = data.LoadCartTotalPrice(F_ClientCart.TotalCart);
+        }
         private void btn_Plus_Click(object sender, EventArgs e)
         {
             if (ProductQuantity == ProductStocks)
@@ -85,6 +93,7 @@ namespace WWWPOS.ClientControl.Products
                 DataBase DB = new DataBase();
                 DB.UpdateAddCartProduct(ProductID);
                 ProductQuantity++;
+                UpdateTotalPrice();
             }
         }
         private void btn_Minus_Click(object sender, EventArgs e)
@@ -99,7 +108,7 @@ namespace WWWPOS.ClientControl.Products
                 DataBase DB = new DataBase();
                 DB.UpdateDeductCartProduct(ProductID);
                 ProductQuantity--;
-
+                UpdateTotalPrice();
             }
         }
         private void btn_DeleteProduct_Click(object sender, EventArgs e)
@@ -110,6 +119,7 @@ namespace WWWPOS.ClientControl.Products
             this.Dispose();
             MessageDialogue message = new MessageDialogue("Product Removed");
             message.ShowDialog();
+            UpdateTotalPrice();
         }
 
     }

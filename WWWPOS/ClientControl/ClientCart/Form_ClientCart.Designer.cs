@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ClientCart));
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Menu = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flPanel_ProductCart = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_TotalCart = new System.Windows.Forms.Label();
@@ -41,8 +39,10 @@
             this.btn_BrowseProduct = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btn_Menu = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Menu
@@ -62,36 +62,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1400, 2);
             this.panel1.TabIndex = 66;
-            // 
-            // btn_Menu
-            // 
-            this.btn_Menu.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Menu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Menu.FlatAppearance.BorderSize = 0;
-            this.btn_Menu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_Menu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 2.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Menu.ForeColor = System.Drawing.Color.Blue;
-            this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
-            this.btn_Menu.Location = new System.Drawing.Point(1372, 11);
-            this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(27, 31);
-            this.btn_Menu.TabIndex = 67;
-            this.btn_Menu.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            this.pictureBox1.BackgroundImage = global::WWWPOS.Properties.Resources.header;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(495, 3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(465, 132);
-            this.pictureBox1.TabIndex = 65;
-            this.pictureBox1.TabStop = false;
             // 
             // flPanel_ProductCart
             // 
@@ -188,6 +158,36 @@
             this.panel2.Size = new System.Drawing.Size(210, 2);
             this.panel2.TabIndex = 73;
             // 
+            // btn_Menu
+            // 
+            this.btn_Menu.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Menu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Menu.FlatAppearance.BorderSize = 0;
+            this.btn_Menu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Menu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 2.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Menu.ForeColor = System.Drawing.Color.Blue;
+            this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
+            this.btn_Menu.Location = new System.Drawing.Point(1372, 11);
+            this.btn_Menu.Name = "btn_Menu";
+            this.btn_Menu.Size = new System.Drawing.Size(27, 31);
+            this.btn_Menu.TabIndex = 67;
+            this.btn_Menu.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.pictureBox1.BackgroundImage = global::WWWPOS.Properties.Resources.header;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(495, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(465, 132);
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form_ClientCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -208,8 +208,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_ClientCart";
             this.Load += new System.EventHandler(this.Form_ClientCart_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
