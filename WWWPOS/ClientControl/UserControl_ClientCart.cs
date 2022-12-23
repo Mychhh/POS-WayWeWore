@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ClientControl.Products;
 
 namespace WWWPOS.ClientControl
 {
@@ -20,7 +21,12 @@ namespace WWWPOS.ClientControl
         {
             loadData Data = new loadData();
             Data.LoadCart(flowLayoutPanel_ProductCart);
+            LoadCartTotalPrice();
+        }
 
+        public void LoadCartTotalPrice()
+        {
+            loadData Data = new loadData();
             TotalCart = Data.LoadCartTotalPrice(TotalCart);
         }
 
@@ -40,6 +46,9 @@ namespace WWWPOS.ClientControl
             UC_ClientViewProduct.Dock = DockStyle.Fill;
         }
 
-        
+        private void lbl_ProductPrice_Click(object sender, EventArgs e)
+        {
+            LoadCartTotalPrice();
+        }
     }
 }

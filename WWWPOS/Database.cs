@@ -268,6 +268,15 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
         }
+        //Delete Product on Cart
+        public void DeleteCartProduct(int cartID) 
+        {
+            connection.Open();
+            string addQtyQuery = "DELETE FROM Cart WHERE Cart_ID = '" + cartID + "';";
+            command = new SqlCommand(addQtyQuery, connection);
+            mdr = command.ExecuteReader();
+            connection.Close();
+        }
     }
 
     class loadData : DataBase
@@ -563,8 +572,10 @@ namespace WWWPOS
                     string size = "" + mdr[9];
                     string color = "" + mdr[5];
                     string category = "" + mdr[3];
+
                     UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(cartID, user_ID, productID, image, price, quantity, total, stock, description, size, color, category);
                     flowLayoutPanel.Controls.Add(UC_ProductCart);
+
                 }
 
             }

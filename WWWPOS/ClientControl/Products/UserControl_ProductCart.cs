@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using System.Windows.Markup;
 using System.Windows.Media;
 using WWWPOS.ErrorMessage;
 
@@ -83,13 +84,12 @@ namespace WWWPOS.ClientControl.Products
             {
                 DataBase DB = new DataBase();
                 DB.UpdateAddCartProduct(ProductID);
-
                 ProductQuantity++;
             }
         }
         private void btn_Minus_Click(object sender, EventArgs e)
         {
-            if (ProductQuantity <= 1)
+            if (ProductQuantity == 1)
             {
                 MessageDialogue messageDialogue = new MessageDialogue("Product Quantity is equals to 1");
                 messageDialogue.ShowDialog();
@@ -99,7 +99,17 @@ namespace WWWPOS.ClientControl.Products
                 DataBase DB = new DataBase();
                 DB.UpdateDeductCartProduct(ProductID);
                 ProductQuantity--;
+
             }
+        }
+        private void btn_DeleteProduct_Click(object sender, EventArgs e)
+        {
+            DataBase DB = new DataBase();
+            DB.DeleteCartProduct(CartID);
+
+            this.Dispose();
+            MessageDialogue message = new MessageDialogue("Product Removed");
+            message.ShowDialog();
         }
 
     }
