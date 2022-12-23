@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WWWPOS.ClientControl;
+using WWWPOS.ClientControl.ClientCart;
 
 namespace WWWPOS
 {
@@ -17,15 +18,20 @@ namespace WWWPOS
         {
             InitializeComponent();
         }
-        private void ClientPage_Load(object sender, EventArgs e)
+        //method to load all product
+        private void ViewAllAvailableProductMethod()
         {
-            UserControl_ClientViewProduct UC_ClientViewProduct = new UserControl_ClientViewProduct();
-
-            this.panel_MainClient.Controls.Clear();
-            this.panel_MainClient.Controls.Add(UC_ClientViewProduct);
-            UC_ClientViewProduct.Dock = DockStyle.Fill;
+            this.flPanel_ViewProduct.Controls.Clear();
+            loadData ld = new loadData();
+            ld.LoadAllAvailableProducts(this.flPanel_ViewProduct);
         }
 
+        //On load
+        private void ClientPage_Load(object sender, EventArgs e)
+        {
+            ViewAllAvailableProductMethod();
+        }
+        //Logout thingy
         private void btn_Menu_Click(object sender, EventArgs e)
         {
             MenuControl.UserControl_Menu UC_Menu = new MenuControl.UserControl_Menu();
@@ -46,6 +52,34 @@ namespace WWWPOS
                 panel_Menu.Size = new Size(0, 0);
                 panel_Menu.Location = new Point(859, 41);
             }
+        }
+        //All Product
+        private void btn_AllProducts_Click(object sender, EventArgs e)
+        {
+            ViewAllAvailableProductMethod();
+        }
+        //Tshirt Product
+        private void btn_TShirt_Click(object sender, EventArgs e)
+        {
+            this.flPanel_ViewProduct.Controls.Clear();
+            loadData ld = new loadData();
+            ld.LoadAllTshirtProducts(this.flPanel_ViewProduct);
+        }
+        //Short Product
+        private void btn_Short_Click(object sender, EventArgs e)
+        {
+            this.flPanel_ViewProduct.Controls.Clear();
+            loadData ld = new loadData();
+            ld.LoadAllShortProducts(this.flPanel_ViewProduct);
+        }
+        //View Cart
+        private void btn_ViewCart_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            Form_ClientCart F_ClientCart = new Form_ClientCart();
+
+            F_ClientCart.ShowDialog();
         }
     }
 }

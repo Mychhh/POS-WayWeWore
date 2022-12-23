@@ -89,6 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientControl\ClientCart\Form_ClientCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientControl\ClientCart\Form_ClientCart.Designer.cs">
+      <DependentUpon>Form_ClientCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientControl\Products\UserControl_ProductCart.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -319,6 +325,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>wayweworeDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClientControl\ClientCart\Form_ClientCart.resx">
+      <DependentUpon>Form_ClientCart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\Products\UserControl_ProductCart.resx">
       <DependentUpon>UserControl_ProductCart.cs</DependentUpon>
     </EmbeddedResource>

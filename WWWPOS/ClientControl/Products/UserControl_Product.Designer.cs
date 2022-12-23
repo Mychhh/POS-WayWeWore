@@ -258,7 +258,7 @@
             this.Controls.Add(this.lbl_ProductDescription);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lbl_ProductPrice);
-            this.Margin = new System.Windows.Forms.Padding(10);
+            this.Margin = new System.Windows.Forms.Padding(10, 10, 15, 10);
             this.Name = "UserControl_Product";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(303, 473);
