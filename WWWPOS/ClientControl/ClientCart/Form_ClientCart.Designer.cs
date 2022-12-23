@@ -34,16 +34,15 @@
             this.btn_Menu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flPanel_ProductCart = new System.Windows.Forms.FlowLayoutPanel();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_TotalCart = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btn_BrowseProduct = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Menu
@@ -104,17 +103,6 @@
             this.flPanel_ProductCart.Size = new System.Drawing.Size(1307, 449);
             this.flPanel_ProductCart.TabIndex = 71;
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(17, 7);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(138, 25);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Shopping Cart";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
@@ -164,17 +152,6 @@
             this.label15.Text = "Total Price : ";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Location = new System.Drawing.Point(59, 164);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(13, 49, 13, 49);
-            this.panel2.Size = new System.Drawing.Size(181, 49);
-            this.panel2.TabIndex = 70;
-            // 
             // btn_BrowseProduct
             // 
             this.btn_BrowseProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
@@ -191,15 +168,36 @@
             this.btn_BrowseProduct.UseVisualStyleBackColor = false;
             this.btn_BrowseProduct.Click += new System.EventHandler(this.btn_BrowseProduct_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label16.Location = new System.Drawing.Point(82, 168);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(196, 32);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Shopping Cart";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Location = new System.Drawing.Point(72, 203);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(210, 2);
+            this.panel2.TabIndex = 73;
+            // 
             // Form_ClientCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1424, 788);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.flPanel_ProductCart);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_BrowseProduct);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.btn_Menu);
@@ -209,11 +207,11 @@
             this.Name = "Form_ClientCart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_ClientCart";
+            this.Load += new System.EventHandler(this.Form_ClientCart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -223,12 +221,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.FlowLayoutPanel flPanel_ProductCart;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbl_TotalCart;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_BrowseProduct;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel2;
     }
 }
