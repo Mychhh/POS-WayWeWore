@@ -16,6 +16,10 @@ namespace WWWPOS.SideBarControl.Products
         public UserControl_Delete(int productID, double productPrice, int product_Stock, string productColor, string productSize, string productDescription, Image image)
         {
             InitializeComponent();
+
+            cmb_Color.Items.Add(productColor);
+            cmb_ProductSize.Items.Add(productSize);
+
             ID = productID;
             Price = productPrice;
             Stock = product_Stock;
@@ -45,13 +49,13 @@ namespace WWWPOS.SideBarControl.Products
         }
         public string Color
         {
-            get => product_Color.Text;
-            set => product_Color.Text = value;
+            get => cmb_Color.Text;
+            set => cmb_Color.Text = value;
         }
         public string productsSize
         {
-            get => product_Size.Text;
-            set => product_Size.Text = value + "";
+            get => cmb_ProductSize.Text;
+            set => cmb_ProductSize.Text = value + "";
         }
         public Image Pic
         {

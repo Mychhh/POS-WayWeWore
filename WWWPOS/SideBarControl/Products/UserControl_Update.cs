@@ -16,6 +16,10 @@ namespace WWWPOS.SideBarControl.Products
         public UserControl_Update(int productID, string productName,string productType, double productPrice, int product_Stock, string productColor, string productSize, string productDescription, Image image)
         {
             InitializeComponent();
+
+            cmb_Color.Items.Add(productColor);
+            cmb_ProductSize.Items.Add(productSize);
+
             ID = productID;
             products_Name = productName;
             products_Type = productType;
@@ -57,13 +61,13 @@ namespace WWWPOS.SideBarControl.Products
         }
         public string Color
         {
-            get => product_Color.Text;
-            set => product_Color.Text = value;
+            get => cmb_Color.Text;
+            set => cmb_Color.Text = value;
         }
         public string productsSize
         {
-            get => product_Size.Text;
-            set => product_Size.Text = value + "";
+            get => cmb_ProductSize.Text;
+            set => cmb_ProductSize.Text = value + "";
         }
         public Image Pic
         {
@@ -76,16 +80,16 @@ namespace WWWPOS.SideBarControl.Products
 
             UserControlUpdate UC_Update = new UserControlUpdate();
 
-            UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
-            UserControlInventory UC_Inventory = new UserControlInventory();
+            //UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+            //UserControlInventory UC_Inventory = new UserControlInventory();
 
             UC_Update.product_Image.Image = product_Image.Image;
             UC_Update.rtb_Description.Text  = product_Description.Text;
             UC_Update.txtBox_productID.Text = product_ID.Text;
             UC_Update.txtBox_ProductName.Text = product_Name.Text;
             UC_Update.comboBox_ProductType.Text = product_Type.Text;
-            UC_Update.comboBox_Size.Text = product_Size.Text;
-            UC_Update.txtBox_Color.Text = product_Color.Text;
+            UC_Update.comboBox_Size.Text = cmb_ProductSize.Text;
+            UC_Update.txtBox_Color.Text = cmb_Color.Text;
             UC_Update.txtBox_Price.Text = product_Price.Text;
             UC_Update.txtBox_Stocks.Text = product_Stock.Text;
 
@@ -112,8 +116,8 @@ namespace WWWPOS.SideBarControl.Products
             UC_UpdateForm.txtBox_productID.Text = product_ID.Text;
             UC_UpdateForm.txtBox_ProductName.Text = product_Name.Text;
             UC_UpdateForm.comboBox_ProductType.Text = product_Type.Text;
-            UC_UpdateForm.comboBox_Size.Text = product_Size.Text;
-            UC_UpdateForm.txtBox_Color.Text = product_Color.Text;
+            UC_UpdateForm.comboBox_Size.Text = cmb_ProductSize.Text;
+            UC_UpdateForm.txtBox_Color.Text = cmb_Color.Text;
             UC_UpdateForm.txtBox_Price.Text = product_Price.Text;
             UC_UpdateForm.txtBox_Stocks.Text = product_Stock.Text;
 
