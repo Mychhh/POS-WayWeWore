@@ -78,7 +78,6 @@ namespace WWWPOS
             this.Hide();
 
             Form_ClientCart F_ClientCart = new Form_ClientCart();
-
             F_ClientCart.ShowDialog();
         }
 

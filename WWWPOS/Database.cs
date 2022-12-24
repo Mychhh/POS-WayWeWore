@@ -209,7 +209,8 @@ namespace WWWPOS
 
             connection.Open();
             string selectQuery = "UPDATE Products SET Product_Status = '" + product_Status + "' WHERE Product_ID ='" + product_ID + "';";
-            command = new SqlCommand(selectQuery, connection);
+            string selectCartQuery = "UPDATE Cart SET Product_Status = '" + product_Status + "' WHERE Product_ID ='" + product_ID + "';";
+            command = new SqlCommand(selectQuery + selectCartQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
 
@@ -279,7 +280,8 @@ namespace WWWPOS
                 //Otherwise add new item on cart
                 connection.Close();
                 connection.Open();
-                string insertQuery = "INSERT INTO Cart (Account_ID, Product_ID, Category, Product_Name, Color, Price , Quantity, Product_images, Product_Size, Product_Description, Product_Status) VALUES ('" + user_ID + "' , '" + product_ID + "' , '" + category + "', '" + productName + "', '" + productColor + "', '" + productPrice + "', '" + productQuantity + "','" + productImg + "','" + productSize + "','" + productDescription + "','Active')";
+                string insertQuery = "INSERT INTO Cart (Account_ID, Product_ID, Category, Product_Name, Color, Price , Quantity, Product_images, Product_Size, Product_Description, Product_Status) " +
+                                     "VALUES ('" + user_ID + "' , '" + product_ID + "' , '" + category + "', '" + productName + "', '" + productColor + "', '" + productPrice + "', '" + productQuantity + "','" + productImg + "','" + productSize + "','" + productDescription + "','Active')";
                 SqlCommand commandToInsertNewItems = new SqlCommand(insertQuery, connection);
                 commandToInsertNewItems.CommandTimeout = 60;
 
@@ -602,7 +604,14 @@ namespace WWWPOS
             {
                 connection.Open();
 
-                string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "'";
+                //string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] " +
+                //                            "AS Product ON Cart.Product_ID = Product.Product_ID " +
+                //                            "WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' ";
+
+                string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] " +
+                                            "AS Product ON Cart.Product_ID = Product.Product_ID " +
+                                            "WHERE Cart.Account_ID = '" + user_ID + "' ";
+
                 command = new SqlCommand(selectJoinedQuerry, connection);
                 mdr = command.ExecuteReader();
 
@@ -610,20 +619,44 @@ namespace WWWPOS
 
                 while (mdr.Read())
                 {
-                    int cartID = int.Parse(mdr[0] + "");
-                    int productID = Int32.Parse(mdr[2] + "");
-                    Image image = Image.FromFile(@"" + mdr[8]);
-                    double price = Double.Parse(mdr[6] + "");
-                    int quantity = Int32.Parse(mdr[7] + "");
-                    total = Convert.ToInt32(price) * quantity;
-                    int stock = Int32.Parse(mdr[19] + "");
-                    string description = "" + mdr[10];
-                    string size = "" + mdr[9];
-                    string color = "" + mdr[5];
-                    string category = "" + mdr[3];
+                    string productStatus = "" + mdr[12];
 
-                    UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(cartID, user_ID, productID, image, price, quantity, total, stock, description, size, color, category);
-                    flowLayoutPanel.Controls.Add(UC_ProductCart);
+                    if(productStatus == "Inactive")
+                    {
+                        int cartID = int.Parse(mdr[0] + "");
+                        int productID = Int32.Parse(mdr[2] + "");
+                        Image image = Image.FromFile(@"" + mdr[8]);
+                        double price = Double.Parse(mdr[6] + "");
+                        int quantity = Int32.Parse(mdr[7] + "");
+                        string description = "" + mdr[10];
+                        string size = "" + mdr[9];
+                        string color = "" + mdr[5];
+                        string category = "" + mdr[3];
+                                                                                                           
+                        UserControl_ProductCartInactive UC_ProductCartInactive = new UserControl_ProductCartInactive(cartID, user_ID, productID, image, price, quantity, description, size, color, category);
+                        flowLayoutPanel.Controls.Add(UC_ProductCartInactive);
+                    }
+                    else 
+                    {
+                        int cartID = int.Parse(mdr[0] + "");
+                        int productID = Int32.Parse(mdr[2] + "");
+                        Image image = Image.FromFile(@"" + mdr[8]);
+                        double price = Double.Parse(mdr[6] + "");
+                        int quantity = Int32.Parse(mdr[7] + "");
+                        total = Convert.ToInt32(price) * quantity;
+                        int stock = Int32.Parse(mdr[19] + "");
+                        string description = "" + mdr[10];
+                        string size = "" + mdr[9];
+                        string color = "" + mdr[5];
+                        string category = "" + mdr[3];
+
+                        UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(cartID, user_ID, productID, image, price, quantity, total, stock, description, size, color, category);
+
+                        flowLayoutPanel.Controls.Add(UC_ProductCart);
+                    }
+
+                    
+
                 }
 
             }
@@ -634,7 +667,7 @@ namespace WWWPOS
             connection.Close();
         }
 
-        //Load Users Cart
+        //Load Users cart total items
         public void LoadTotalItems(FlowLayoutPanel flowLayoutPanel)
         {
             string userid = DataBase.user_ID;
@@ -644,7 +677,8 @@ namespace WWWPOS
             {
                 connection.Open();
 
-                string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "'";
+                string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product " +
+                                            "ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' ";
                 command = new SqlCommand(selectJoinedQuerry, connection);
                 mdr = command.ExecuteReader();
 
