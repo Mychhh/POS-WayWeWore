@@ -248,8 +248,7 @@ namespace WWWPOS
 
                 if (SumProductQuantity > Int32.Parse(mdr[2] + ""))
                 {
-                    ErrorMessageDialogue messageDialogue = new ErrorMessageDialogue("Omsim");
-                    messageDialogue.ShowDialog();
+                    ErrorMessage("You reached the maximum stock");
                     connection.Close();
                 }
                 else
@@ -263,14 +262,12 @@ namespace WWWPOS
                     try
                     {
                         SqlDataReader myReader = commandToUpdateCartQuantity.ExecuteReader();
-                        //connection.Close();
-                        ErrorMessageDialogue messageDialogue = new ErrorMessageDialogue("Added to Cart");
-                        messageDialogue.ShowDialog();
+                        SuccessMessage("Added to cart");
                     }
                     catch (Exception ex)
                     {
                         // Show any error message.
-                        //MessageBox.Show(ex.Message);
+                        ErrorMessage(ex.Message);
                     }
 
                     connection.Close();
