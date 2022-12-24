@@ -1,6 +1,6 @@
 ﻿namespace WWWPOS.ErrorMessage
 {
-    partial class MessageDialogue
+    partial class ErrorMessageDialogue
     {
         /// <summary>
         /// Required designer variable.
@@ -37,9 +37,9 @@
             // 
             this.lbl_ErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ErrorMessage.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbl_ErrorMessage.Location = new System.Drawing.Point(12, 9);
+            this.lbl_ErrorMessage.Location = new System.Drawing.Point(12, 54);
             this.lbl_ErrorMessage.Name = "lbl_ErrorMessage";
-            this.lbl_ErrorMessage.Size = new System.Drawing.Size(198, 159);
+            this.lbl_ErrorMessage.Size = new System.Drawing.Size(288, 159);
             this.lbl_ErrorMessage.TabIndex = 0;
             this.lbl_ErrorMessage.Text = "Error Message";
             this.lbl_ErrorMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,7 +74,7 @@
             this.btn_Close.UseVisualStyleBackColor = false;
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
-            // ClientMaximumQty
+            // ErrorMessageDialogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +84,7 @@
             this.Controls.Add(this.btn_Alright);
             this.Controls.Add(this.lbl_ErrorMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ClientMaximumQty";
+            this.Name = "ErrorMessageDialogue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClientMaximumQty";
             this.Load += new System.EventHandler(this.ClientMaximumQty_Load);

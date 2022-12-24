@@ -95,7 +95,7 @@ namespace WWWPOS.ClientControl.Products
         {
             if (ProductQuantity >= ProductStocks)
             {
-                MessageDialogue messageDialogue = new MessageDialogue("You reached the maximum stock");
+                ErrorMessageDialogue messageDialogue = new ErrorMessageDialogue("You reached the maximum stock");
                 messageDialogue.ShowDialog();
             }
             else
@@ -109,7 +109,7 @@ namespace WWWPOS.ClientControl.Products
         {
             if (ProductQuantity <= 1)
             {
-                MessageDialogue messageDialogue = new MessageDialogue("Product Quantity is equals to 1");
+                ErrorMessageDialogue messageDialogue = new ErrorMessageDialogue("Product Quantity is equals to 1");
                 messageDialogue.ShowDialog();
             }
             else
@@ -125,7 +125,7 @@ namespace WWWPOS.ClientControl.Products
             DB.DeleteCartProduct(CartID);
 
             this.Dispose();
-            MessageDialogue message = new MessageDialogue("Product Removed");
+            ErrorMessageDialogue message = new ErrorMessageDialogue("Product Removed");
             message.ShowDialog();
         }
     }

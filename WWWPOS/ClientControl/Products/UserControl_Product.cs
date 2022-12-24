@@ -78,7 +78,7 @@ namespace WWWPOS.ClientControl.Products
             }
             else
             {
-                ErrorMessage.MessageDialogue maxQty = new ErrorMessage.MessageDialogue("You reached the maximum Quantity");
+                ErrorMessage.ErrorMessageDialogue maxQty = new ErrorMessage.ErrorMessageDialogue("You reached the maximum Quantity");
                 maxQty.ShowDialog();
             }
         }
@@ -90,7 +90,7 @@ namespace WWWPOS.ClientControl.Products
             }
             else
             {
-                ErrorMessage.MessageDialogue maxQty = new ErrorMessage.MessageDialogue("Quantity is equals to One");
+                ErrorMessage.ErrorMessageDialogue maxQty = new ErrorMessage.ErrorMessageDialogue("Quantity is equals to One");
                 maxQty.ShowDialog();
             }
         }

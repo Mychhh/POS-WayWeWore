@@ -20,6 +20,7 @@ using System.Reflection;
 using Org.BouncyCastle.Utilities.Collections;
 using WWWPOS.ClientControl.ClientCart;
 using System.Windows;
+using WWWPOS.MessageFolder;
 
 namespace WWWPOS
 {
@@ -31,6 +32,28 @@ namespace WWWPOS
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
         protected SqlCommand command;
         protected SqlDataReader mdr;
+
+        //Dialogue Box
+        ErrorMessageDialogue errorMessageDialogue;
+        SuccessMessageDialogue successMessageDialogue;
+        WarningMessageDialogue warningMessageDialogue;
+
+        //Methods for Error Message
+        private void ErrorMessage(string errorName)
+        {
+            errorMessageDialogue = new ErrorMessageDialogue(errorName);
+            errorMessageDialogue.ShowDialog();
+        }
+        private void WarningMessage(string warningName)
+        {
+            warningMessageDialogue = new WarningMessageDialogue(warningName);
+            warningMessageDialogue.ShowDialog();
+        }
+        private void SuccessMessage(string successName)
+        {
+            successMessageDialogue = new SuccessMessageDialogue(successName);
+            successMessageDialogue.ShowDialog();
+        }
 
         //About User
 
@@ -44,7 +67,7 @@ namespace WWWPOS
 
             if (mdr.Read())
             {
-                //MessageBox.Show("Email Already Register!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorMessage("Email Already Registered!");
                 connection.Close();
             }
             else
@@ -59,19 +82,13 @@ namespace WWWPOS
                 try
                 {
                     SqlDataReader myReader = commandDatabase.ExecuteReader();
+                    SuccessMessage("Account Created Successfully!");
                     connection.Close();
                 }
                 catch (Exception ex)
                 {
-                    // Show any error message.
-                    //MessageBox.Show(ex.Message);
+                    ErrorMessage(ex.Message);
                 }
-                //DialogResult dialogResult;
-                //dialogResult = MessageBox.Show("Account Successfully Created!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-                //if (dialogResult == DialogResult.OK)
-                //{
-                //    message = "Success";
-                //}
             }
         }
         
@@ -105,7 +122,7 @@ namespace WWWPOS
             }
             else
             {
-                //MessageBox.Show("Incorrect Login Information! Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorMessage("Incorrect Login Information! \nTry again.");
             }
 
             connection.Close();
@@ -119,13 +136,8 @@ namespace WWWPOS
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
-    
-            //DialogResult dialogResult;
-            //dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-            //if (dialogResult == DialogResult.OK)
-            //{
-            //    message = "Success";
-            //}
+
+            SuccessMessage("Updated Succesfully!");
 
         }
         
@@ -141,12 +153,12 @@ namespace WWWPOS
             DialogResult dialogResult;
             if(user_Status == "Inactive")
             {
-                //dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                SuccessMessage("User Deleted");
 
             }
-           else
+            else
             {
-                //dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                SuccessMessage("User Restored");
 
             }
         }
@@ -249,7 +261,7 @@ namespace WWWPOS
 
                 if (SumProductQuantity > Int32.Parse(mdr[2] + ""))
                 {
-                    MessageDialogue messageDialogue = new MessageDialogue("Omsim");
+                    ErrorMessageDialogue messageDialogue = new ErrorMessageDialogue("Omsim");
                     messageDialogue.ShowDialog();
                     connection.Close();
                 }
@@ -265,7 +277,7 @@ namespace WWWPOS
                     {
                         SqlDataReader myReader = commandToUpdateCartQuantity.ExecuteReader();
                         //connection.Close();
-                        MessageDialogue messageDialogue = new MessageDialogue("Added to Cart");
+                        ErrorMessageDialogue messageDialogue = new ErrorMessageDialogue("Added to Cart");
                         messageDialogue.ShowDialog();
                     }
                     catch (Exception ex)
@@ -290,7 +302,7 @@ namespace WWWPOS
                 try
                 {
                     SqlDataReader myReader = commandToInsertNewItems.ExecuteReader();
-                    MessageDialogue messageDialogue = new MessageDialogue("Added to Cart");
+                    ErrorMessageDialogue messageDialogue = new ErrorMessageDialogue("Added to Cart");
                     messageDialogue.ShowDialog();
                 }
                 catch (Exception ex)
