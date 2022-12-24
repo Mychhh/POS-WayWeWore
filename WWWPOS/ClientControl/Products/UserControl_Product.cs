@@ -19,6 +19,10 @@ namespace WWWPOS.ClientControl.Products
         public UserControl_Product(int id, Image image, string imgPath, string name, double price, int stocks, string description, string size, string color, string category)
         {
             InitializeComponent();
+
+            cmb_ProductSize.Items.Add(size);
+            cmb_Color.Items.Add(color);
+
             productID = id;
             ProductImage = image;
             ProductImgPath = imgPath;

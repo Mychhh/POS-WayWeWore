@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,6 +22,10 @@ namespace WWWPOS.ClientControl.Products
         public UserControl_ProductCart(int cartID, int userid, int productID, Image productImage, double productPrice, int productQuantity, int productTotal, int productStock, string productDescriptions, string productSize, string productColor, string productCategory)
         {
             InitializeComponent();
+
+            cmb_Color.Items.Add(productColor);
+            cmb_ProductSize.Items.Add(productSize);
+
             UserID = userid;
             CartID = cartID;
             ProductID = productID;
@@ -38,6 +43,10 @@ namespace WWWPOS.ClientControl.Products
         public UserControl_ProductCart(int userID, int productID, string productImg, string productName, double productPrice, string productCategory, int productQuantity, string productSize, string productColor, string productDescription)
         {
             InitializeComponent();
+
+            cmb_Color.Items.Add(productColor);
+            cmb_ProductSize.Items.Add(productSize);
+
             UserID = userID;
             ProductID = productID;
             ProductImage = Image.FromFile(productImg); ;

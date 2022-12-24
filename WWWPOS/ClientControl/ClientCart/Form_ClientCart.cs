@@ -18,16 +18,11 @@ namespace WWWPOS.ClientControl.ClientCart
             InitializeComponent();
         }
                 
-        //Load cart total price
-        public void LoadCartTotalPrice()
-        {
-        }
         //On load
         private void Form_ClientCart_Load(object sender, EventArgs e)
         {
             loadData Data = new loadData();
             Data.LoadCart(flPanel_ProductCart);
-            LoadCartTotalPrice();
         }
         //Go to view all product
         private void btn_BrowseProduct_Click(object sender, EventArgs e)

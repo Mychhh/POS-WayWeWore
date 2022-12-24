@@ -627,7 +627,7 @@ namespace WWWPOS
                         string size = "" + mdr[9];
                         string color = "" + mdr[5];
                         string category = "" + mdr[3];
-                                                                                                           
+                                                                                                                                   
                         UserControl_ProductCartInactive UC_ProductCartInactive = new UserControl_ProductCartInactive(cartID, user_ID, productID, image, price, quantity, description, size, color, category);
                         UC_ProductCartInactive.cmb_ProductSize.Enabled = false;
                         UC_ProductCartInactive.cmb_Color.Enabled = false;
@@ -647,6 +647,8 @@ namespace WWWPOS
                         string size = "" + mdr[9];
                         string color = "" + mdr[5];
                         string category = "" + mdr[3];
+
+                        Console.WriteLine(color);
 
                         UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(cartID, user_ID, productID, image, price, quantity, total, stock, description, size, color, category);
                         flowLayoutPanel.Controls.Add(UC_ProductCart);

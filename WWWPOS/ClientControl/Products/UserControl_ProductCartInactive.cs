@@ -16,6 +16,10 @@ namespace WWWPOS.ClientControl.Products
         public UserControl_ProductCartInactive(int cartID, int userid, int productID, Image productImage, double productPrice, int productQuantity, string productDescriptions, string productSize, string productColor, string productCategory)
         {
             InitializeComponent();
+
+            cmb_Color.Items.Add(productColor);
+            cmb_ProductSize.Items.Add(productSize);
+
             CartID = cartID;
             UserID = userid;
             ProductID = productID;
