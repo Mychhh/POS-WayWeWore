@@ -291,8 +291,7 @@ namespace WWWPOS
                 }
                 catch (Exception ex)
                 {
-                    // Show any error message.
-                    //MessageBox.Show(ex.Message);
+                    ErrorMessage(ex.Message);
                 }
                 
                 connection.Close();
@@ -331,10 +330,9 @@ namespace WWWPOS
     class loadData : DataBase
     {
         //-----Admin Side-----//    
-        //User not Delete
+        //Active User
         public void userRecords(DataGridView dataCustomer, string user_Type, string user_Status)
         {
-          
             connection.Open();
             command = new SqlCommand("SELECT * FROM Account WHERE User_Type = '"+user_Type+"' AND User_Status = '"+ user_Status+ "'", connection);
             mdr = command.ExecuteReader();
@@ -343,7 +341,6 @@ namespace WWWPOS
             {
                 dataCustomer.Rows.Add(mdr[0].ToString(), mdr[1].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[7].ToString(), mdr[6].ToString(), mdr[8].ToString());
             }
-
             connection.Close();
         }
         
@@ -359,7 +356,6 @@ namespace WWWPOS
             {
                 dataCustomer.Rows.Add(mdr[0].ToString(), mdr[1].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[7].ToString(), mdr[6].ToString(), mdr[8].ToString());
             }
-
             connection.Close();
         }
 
@@ -375,9 +371,10 @@ namespace WWWPOS
             {
                 dataProduct.Rows.Add(mdr[0].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[6].ToString(), mdr[8].ToString(), mdr[9].ToString(), mdr[10].ToString(), mdr[11].ToString());
             }
+            connection.Close();
         }
 
-        //Load product to be updatet
+        //Load product to be updated
         public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
         {
             try
@@ -425,7 +422,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                ErrorMessage(ex.Message);
             }
         }
 
@@ -453,7 +450,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                ErrorMessage(ex.Message);
             }
 
             return products;
@@ -482,7 +479,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                ErrorMessage(ex.Message);
             }
 
             return users;
@@ -521,7 +518,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                ErrorMessage(ex.Message);
             }
         }
 
@@ -555,7 +552,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                ErrorMessage(ex.Message);
             }
             connection.Close();
         }
@@ -590,7 +587,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                ErrorMessage(ex.Message);
             }
             connection.Close();
         }
@@ -632,7 +629,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                ErrorMessage(ex.Message);
             }
             connection.Close();
         }
@@ -681,7 +678,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                ErrorMessage(ex.Message);
             }
             connection.Close();
         }
@@ -741,7 +738,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                ErrorMessage(ex.Message);
             }
 
             connection.Close();
