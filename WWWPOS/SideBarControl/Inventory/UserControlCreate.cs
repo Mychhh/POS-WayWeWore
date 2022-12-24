@@ -54,9 +54,7 @@ namespace WWWPOS.SideBarControl.Inventory
 
             DB.AddProdducts(txtBox_ProductName.Text, txtBox_Color.Text, product_Price, product_Stock, comboBox_ProductType.Text, comboBox_Size.Text, imageURL, rtb_Description.Text);
 
-            string message = DataBase.message;
-
-            if (message == "Success")
+            if (DataBase.message == "Success")
             {
                 UserControlRead UC_Read = new UserControlRead();
 

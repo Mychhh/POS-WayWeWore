@@ -37,7 +37,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.product_Stock = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.btn_Edit = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.product_Image = new System.Windows.Forms.PictureBox();
             this.product_ID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.product_Image)).BeginInit();
@@ -147,22 +147,22 @@
             this.label14.TabIndex = 52;
             this.label14.Text = "Price";
             // 
-            // btn_Edit
+            // btn_Delete
             // 
-            this.btn_Edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
-            this.btn_Edit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Edit.FlatAppearance.BorderSize = 0;
-            this.btn_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Edit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Edit.Location = new System.Drawing.Point(217, 271);
-            this.btn_Edit.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(63, 60);
-            this.btn_Edit.TabIndex = 58;
-            this.btn_Edit.Text = "DEL";
-            this.btn_Edit.UseVisualStyleBackColor = false;
-            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
+            this.btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.btn_Delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Delete.FlatAppearance.BorderSize = 0;
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Delete.Location = new System.Drawing.Point(217, 271);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(63, 60);
+            this.btn_Delete.TabIndex = 58;
+            this.btn_Delete.Text = "DEL";
+            this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // product_Image
             // 
@@ -192,7 +192,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.Controls.Add(this.product_ID);
-            this.Controls.Add(this.btn_Edit);
+            this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.product_Image);
             this.Controls.Add(this.product_Description);
             this.Controls.Add(this.product_Size);
@@ -214,7 +214,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.PictureBox product_Image;
         private System.Windows.Forms.Label product_Description;
         private System.Windows.Forms.Label product_Size;

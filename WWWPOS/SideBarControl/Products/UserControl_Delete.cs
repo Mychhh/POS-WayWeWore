@@ -58,12 +58,18 @@ namespace WWWPOS.SideBarControl.Products
             get => product_Image.Image;
             set => product_Image.Image = value;
         }
-
-        private void btn_Edit_Click(object sender, EventArgs e)
+        private void btn_Delete_Click(object sender, EventArgs e)
         {
             DataBase DB = new DataBase();
-            DB.SetStatusProducts("Inactive", Int32.Parse(product_ID.Text));
-            this.Dispose(true);
+
+            DB.WarningMessage("Do you really want to delete this product?");
+
+            if (DataBase.message == "continue")
+            {
+                DB.SetStatusProducts("Inactive", Int32.Parse(product_ID.Text));
+                DataBase.message = "";
+                this.Dispose(true);
+            }
         }
     }
 }

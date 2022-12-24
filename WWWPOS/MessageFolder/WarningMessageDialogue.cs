@@ -30,6 +30,7 @@ namespace WWWPOS.MessageFolder
 
         private void btn_Alright_Click(object sender, EventArgs e)
         {
+            DataBase.message = "continue";
             this.Hide();
         }
 

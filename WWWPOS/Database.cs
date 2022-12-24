@@ -39,17 +39,17 @@ namespace WWWPOS
         WarningMessageDialogue warningMessageDialogue;
 
         //Methods for Error Message
-        private void ErrorMessage(string errorName)
+        public void ErrorMessage(string errorName)
         {
             errorMessageDialogue = new ErrorMessageDialogue(errorName);
             errorMessageDialogue.ShowDialog();
         }
-        private void WarningMessage(string warningName)
+        public void WarningMessage(string warningName)
         {
             warningMessageDialogue = new WarningMessageDialogue(warningName);
             warningMessageDialogue.ShowDialog();
         }
-        private void SuccessMessage(string successName)
+        public void SuccessMessage(string successName)
         {
             successMessageDialogue = new SuccessMessageDialogue(successName);
             successMessageDialogue.ShowDialog();
@@ -150,7 +150,6 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
 
-            DialogResult dialogResult;
             if(user_Status == "Inactive")
             {
                 SuccessMessage("User Deleted");
@@ -180,19 +179,16 @@ namespace WWWPOS
             try
             {
                 SqlDataReader myReader = commandDatabase.ExecuteReader();
-                connection.Close();
+                SuccessMessage("Product Added Succesfully!");
+                message = "Success";
             }
             catch (Exception ex)
             {
                 // Show any error message.
-                //MessageBox.Show(ex.Message);
+                ErrorMessage(ex.Message);
             }
-            //DialogResult dialogResult;
-            //dialogResult = MessageBox.Show("Product added Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-            //if (dialogResult == DialogResult.OK)
-            //{
-            //    message = "Success";
-            //}
+
+            connection.Close();
         }
 
         //Update Products
@@ -204,12 +200,7 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
 
-            //DialogResult dialogResult;
-            //dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-            //if (dialogResult == DialogResult.OK)
-            //{
-            //    //dito lagay code pag sucess updated un products pabalik sa edit products view
-            //}
+            SuccessMessage("Product Updated!");
         }
 
         //Delete and restore products
@@ -222,17 +213,13 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
 
-            DialogResult dialogResult;
-
             if (product_Status == "Inactive")
             {
-                //dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-
+                SuccessMessage("Product Deleted");
             }
             else
             {
-                //dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-
+                SuccessMessage("Product Restored");
             }
 
         }

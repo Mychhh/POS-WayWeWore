@@ -59,7 +59,7 @@
             this.btn_Alright.Name = "btn_Alright";
             this.btn_Alright.Size = new System.Drawing.Size(131, 36);
             this.btn_Alright.TabIndex = 4;
-            this.btn_Alright.Text = "Alright";
+            this.btn_Alright.Text = "Yeaaah";
             this.btn_Alright.UseVisualStyleBackColor = false;
             this.btn_Alright.Click += new System.EventHandler(this.btn_Alright_Click);
             // 
