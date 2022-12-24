@@ -19,6 +19,7 @@ using System.Security.Cryptography;
 using System.Reflection;
 using Org.BouncyCastle.Utilities.Collections;
 using WWWPOS.ClientControl.ClientCart;
+using System.Windows;
 
 namespace WWWPOS
 {
@@ -43,7 +44,7 @@ namespace WWWPOS
 
             if (mdr.Read())
             {
-                MessageBox.Show("Email Already Register!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Email Already Register!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 connection.Close();
             }
             else
@@ -63,14 +64,14 @@ namespace WWWPOS
                 catch (Exception ex)
                 {
                     // Show any error message.
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
                 }
-                DialogResult dialogResult;
-                dialogResult = MessageBox.Show("Account Successfully Created!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-                if (dialogResult == DialogResult.OK)
-                {
-                    message = "Success";
-                }
+                //DialogResult dialogResult;
+                //dialogResult = MessageBox.Show("Account Successfully Created!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                //if (dialogResult == DialogResult.OK)
+                //{
+                //    message = "Success";
+                //}
             }
         }
         
@@ -104,7 +105,7 @@ namespace WWWPOS
             }
             else
             {
-                MessageBox.Show("Incorrect Login Information! Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Incorrect Login Information! Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             connection.Close();
@@ -119,12 +120,12 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
     
-            DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-            if (dialogResult == DialogResult.OK)
-            {
-                message = "Success";
-            }
+            //DialogResult dialogResult;
+            //dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            //if (dialogResult == DialogResult.OK)
+            //{
+            //    message = "Success";
+            //}
 
         }
         
@@ -140,12 +141,12 @@ namespace WWWPOS
             DialogResult dialogResult;
             if(user_Status == "Inactive")
             {
-                dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                //dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
            else
             {
-                dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                //dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
         }
@@ -172,14 +173,14 @@ namespace WWWPOS
             catch (Exception ex)
             {
                 // Show any error message.
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
-            DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Product added Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-            if (dialogResult == DialogResult.OK)
-            {
-                message = "Success";
-            }
+            //DialogResult dialogResult;
+            //dialogResult = MessageBox.Show("Product added Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            //if (dialogResult == DialogResult.OK)
+            //{
+            //    message = "Success";
+            //}
         }
 
         //Update Products
@@ -191,12 +192,12 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
 
-            DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-            if (dialogResult == DialogResult.OK)
-            {
-                //dito lagay code pag sucess updated un products pabalik sa edit products view
-            }
+            //DialogResult dialogResult;
+            //dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            //if (dialogResult == DialogResult.OK)
+            //{
+            //    //dito lagay code pag sucess updated un products pabalik sa edit products view
+            //}
         }
 
         //Delete and restore products
@@ -213,12 +214,12 @@ namespace WWWPOS
 
             if (product_Status == "Inactive")
             {
-                dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                //dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
             else
             {
-                dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                //dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
 
@@ -235,7 +236,6 @@ namespace WWWPOS
             int SumProductQuantity = 0;
 
             connection.Open();
-            //string selectQuery = "SELECT Product_ID, Quantity FROM Cart WHERE Product_ID = '" + product_ID + "'";
             string selectQuery = "SELECT Cart.Product_ID, Cart.Quantity, Products.Stocks " +
                                  "FROM [waywewore].[dbo].[Cart] AS Cart INNER JOIN [waywewore].[dbo].[Products] AS Products  ON Cart.Product_ID = Products.Product_ID " +
                                  "WHERE Cart.Product_ID = '" + product_ID + "'";
@@ -271,7 +271,7 @@ namespace WWWPOS
                     catch (Exception ex)
                     {
                         // Show any error message.
-                        MessageBox.Show(ex.Message);
+                        //MessageBox.Show(ex.Message);
                     }
 
                     connection.Close();
@@ -296,7 +296,7 @@ namespace WWWPOS
                 catch (Exception ex)
                 {
                     // Show any error message.
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
                 }
                 
                 connection.Close();
@@ -429,7 +429,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -457,7 +457,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
 
             return products;
@@ -486,7 +486,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
 
             return users;
@@ -508,23 +508,24 @@ namespace WWWPOS
                 while (mdr.Read())
                 {
                     int id = int.Parse(mdr[0] + "");
-                    Image image = Image.FromFile(@"" + mdr[7]);
-                    string imgPath = "" + mdr[7];
+                    string category = "" + mdr[2];
+                    string name = "" + mdr[2];
+                    string color = "" + mdr[4];
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
-                    string description = "" + mdr[9];
+                    Image image = Image.FromFile(@"" + mdr[7]);
+                    string imgPath = "" + mdr[7];
                     string size = "" + mdr[8];
-                    string color = "" + mdr[4];
-                    string category = "" + mdr[2];
+                    string description = "" + mdr[9];
 
-                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -543,6 +544,7 @@ namespace WWWPOS
                     int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
                     string imgPath = "" + mdr[7];
+                    string name = "" + mdr[2];
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
                     string description = "" + mdr[9];
@@ -550,14 +552,14 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
             connection.Close();
         }
@@ -577,6 +579,7 @@ namespace WWWPOS
                     int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
                     string imgPath = "" + mdr[7];
+                    string name = "" + mdr[2];
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
                     string description = "" + mdr[9];
@@ -584,14 +587,14 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
             connection.Close();
         }
@@ -633,7 +636,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
             connection.Close();
         }
@@ -682,9 +685,31 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
             connection.Close();
+        }
+
+        //Load Buy Item
+        public void LoadBuyItem(int productID, string productImg, string productName, double productPrice, string productCategory, int productQuantity, string productSize, string productColor, string productDescription)
+        {
+            string userid = DataBase.user_ID;
+            int userID = Int32.Parse(userid);
+
+            UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(userID, productID, productImg, productName, productPrice, productCategory, productQuantity, productSize, productColor, productDescription);
+            
+            //Removes and Diabled unnecessary controls
+            UC_ProductCart.Controls.Remove(UC_ProductCart.btn_DeleteProduct);
+            UC_ProductCart.Controls.Remove(UC_ProductCart.btn_Plus);
+            UC_ProductCart.Controls.Remove(UC_ProductCart.btn_Minus);
+            UC_ProductCart.cmb_ProductSize.Enabled = false;
+            UC_ProductCart.cmb_Color.Enabled = false;
+
+            Form_ClientPay form_ClientPay = new Form_ClientPay();
+            form_ClientPay.flPanel_ProductTotal.Controls.Add(UC_ProductCart);
+            form_ClientPay.lbl_TotalPrice.Text = (productPrice * productQuantity).ToString();
+
+            form_ClientPay.ShowDialog();
         }
 
         //Load cart total price
@@ -720,13 +745,12 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
 
             connection.Close();
             return totalPrice;
         }
-
 
     }
 }

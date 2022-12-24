@@ -17,6 +17,7 @@ namespace WWWPOS.ClientControl.Products
 {
     public partial class UserControl_ProductCart : UserControl
     {
+        //For Cart
         public UserControl_ProductCart(int cartID, int userid, int productID, Image productImage, double productPrice, int productQuantity, int productTotal, int productStock, string productDescriptions, string productSize, string productColor, string productCategory)
         {
             InitializeComponent();
@@ -33,11 +34,28 @@ namespace WWWPOS.ClientControl.Products
             ProductColor = productColor;
             ProductCategory = productCategory;
         }
+        //For BuyItem
+        public UserControl_ProductCart(int userID, int productID, string productImg, string productName, double productPrice, string productCategory, int productQuantity, string productSize, string productColor, string productDescription)
+        {
+            InitializeComponent();
+            UserID = userID;
+            ProductID = productID;
+            ProductImage = Image.FromFile(productImg); ;
+            ProductNameCart = productName;
+            ProductPrice = productPrice;
+            ProductCategory = productCategory;
+            ProductQuantity = productQuantity;
+            ProductSize = productSize;
+            ProductColor = productColor;
+            ProductDescriptions = productDescription;
+        }
+
         public int CartID { get; set; }
         public int UserID { get; set; }
         public int ProductID { get; set; }
         public int ProductStocks { get; set; }
         public int ProductTotal { get; set; }
+        public string ProductNameCart { get; set;  }
         public Image ProductImage
         {
             get => picBox_ProductPicture.Image;

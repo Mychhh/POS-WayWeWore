@@ -59,6 +59,7 @@
             this.btn_Buy.TabIndex = 32;
             this.btn_Buy.Text = "Buy";
             this.btn_Buy.UseVisualStyleBackColor = false;
+            this.btn_Buy.Click += new System.EventHandler(this.btn_Buy_Click);
             // 
             // btn_AddToCart
             // 

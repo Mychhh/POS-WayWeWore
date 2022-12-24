@@ -27,10 +27,10 @@ namespace WWWPOS.ClientControl.ClientCart
 
         private void Form_ClientPay_Load(object sender, EventArgs e)
         {
-            loadData data = new loadData();
-            data.LoadTotalItems(this.flPanel_ProductTotal);
+            //loadData data = new loadData();
+            //data.LoadTotalItems(this.flPanel_ProductTotal);
 
-            lbl_TotalPrice.Text = "₱ " + data.LoadCartTotalPrice(lbl_TotalPrice.Text);
+            //lbl_TotalPrice.Text = "₱ " + data.LoadCartTotalPrice(lbl_TotalPrice.Text);
         }
 
         private void lbl_TotalPrice_Click(object sender, EventArgs e)

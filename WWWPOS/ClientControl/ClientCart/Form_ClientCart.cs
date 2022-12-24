@@ -43,6 +43,11 @@ namespace WWWPOS.ClientControl.ClientCart
             this.Hide();
 
             Form_ClientPay F_ClientPay = new Form_ClientPay();
+            loadData data = new loadData();
+            data.LoadTotalItems(F_ClientPay.flPanel_ProductTotal);
+
+            F_ClientPay.lbl_TotalPrice.Text = "₱ " + data.LoadCartTotalPrice(F_ClientPay.lbl_TotalPrice.Text);
+
             F_ClientPay.ShowDialog();
         }
     }
