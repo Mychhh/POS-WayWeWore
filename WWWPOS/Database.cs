@@ -603,11 +603,6 @@ namespace WWWPOS
             try
             {
                 connection.Open();
-
-                //string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] " +
-                //                            "AS Product ON Cart.Product_ID = Product.Product_ID " +
-                //                            "WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' ";
-
                 string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] " +
                                             "AS Product ON Cart.Product_ID = Product.Product_ID " +
                                             "WHERE Cart.Account_ID = '" + user_ID + "' ";
@@ -619,7 +614,7 @@ namespace WWWPOS
 
                 while (mdr.Read())
                 {
-                    string productStatus = "" + mdr[12];
+                    string productStatus = "" + mdr[11];
 
                     if(productStatus == "Inactive")
                     {
@@ -634,6 +629,9 @@ namespace WWWPOS
                         string category = "" + mdr[3];
                                                                                                            
                         UserControl_ProductCartInactive UC_ProductCartInactive = new UserControl_ProductCartInactive(cartID, user_ID, productID, image, price, quantity, description, size, color, category);
+                        UC_ProductCartInactive.cmb_ProductSize.Enabled = false;
+                        UC_ProductCartInactive.cmb_Color.Enabled = false;
+
                         flowLayoutPanel.Controls.Add(UC_ProductCartInactive);
                     }
                     else 
@@ -651,11 +649,8 @@ namespace WWWPOS
                         string category = "" + mdr[3];
 
                         UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(cartID, user_ID, productID, image, price, quantity, total, stock, description, size, color, category);
-
                         flowLayoutPanel.Controls.Add(UC_ProductCart);
                     }
-
-                    
 
                 }
 
@@ -749,7 +744,8 @@ namespace WWWPOS
             {
                 connection.Open();
 
-                string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "'";
+                string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product " +
+                    "                       ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' ";
                 command = new SqlCommand(selectJoinedQuerry, connection);
                 mdr = command.ExecuteReader();
 

@@ -55,6 +55,7 @@
             this.btn_DeleteProduct.TabIndex = 58;
             this.btn_DeleteProduct.Text = "X";
             this.btn_DeleteProduct.UseVisualStyleBackColor = false;
+            this.btn_DeleteProduct.Click += new System.EventHandler(this.btn_DeleteProduct_Click);
             // 
             // lbl_Category
             // 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ErrorMessage;
 
 namespace WWWPOS.ClientControl.Products
 {
@@ -64,6 +65,16 @@ namespace WWWPOS.ClientControl.Products
         {
             get => lbl_Category.Text;
             set => lbl_Category.Text = value;
+        }
+
+        private void btn_DeleteProduct_Click(object sender, EventArgs e)
+        {
+            DataBase DB = new DataBase();
+            DB.DeleteCartProduct(CartID);
+
+            this.Dispose();
+            ErrorMessageDialogue message = new ErrorMessageDialogue("Product Removed");
+            message.ShowDialog();
         }
     }
 }
