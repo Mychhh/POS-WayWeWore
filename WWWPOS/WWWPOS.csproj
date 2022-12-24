@@ -89,23 +89,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientControl\ClientCart\Form_ClientCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientControl\ClientCart\Form_ClientCart.Designer.cs">
+      <DependentUpon>Form_ClientCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientControl\ClientCart\Form_ClientPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientControl\ClientCart\Form_ClientPay.Designer.cs">
+      <DependentUpon>Form_ClientPay.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientControl\Products\UserControl_ProductCart.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ClientControl\Products\UserControl_ProductCart.Designer.cs">
       <DependentUpon>UserControl_ProductCart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClientControl\UserControl_ClientViewProduct.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ClientControl\UserControl_ClientViewProduct.Designer.cs">
-      <DependentUpon>UserControl_ClientViewProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClientControl\UserControl_ClientCart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ClientControl\UserControl_ClientCart.Designer.cs">
-      <DependentUpon>UserControl_ClientCart.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientControl\Products\UserControl_Product.cs">
       <SubType>UserControl</SubType>
@@ -319,14 +319,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>wayweworeDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClientControl\ClientCart\Form_ClientCart.resx">
+      <DependentUpon>Form_ClientCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientControl\ClientCart\Form_ClientPay.resx">
+      <DependentUpon>Form_ClientPay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\Products\UserControl_ProductCart.resx">
       <DependentUpon>UserControl_ProductCart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClientControl\UserControl_ClientViewProduct.resx">
-      <DependentUpon>UserControl_ClientViewProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClientControl\UserControl_ClientCart.resx">
-      <DependentUpon>UserControl_ClientCart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\Products\UserControl_Product.resx">
       <DependentUpon>UserControl_Product.cs</DependentUpon>

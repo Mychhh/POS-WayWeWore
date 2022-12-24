@@ -9,18 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using WWWPOS.ClientControl.ClientCart;
 using WWWPOS.ErrorMessage;
 
 namespace WWWPOS.ClientControl.Products
 {
     public partial class UserControl_Product : UserControl
     {
-        public UserControl_Product(int id, Image image, string imgPath, double price, int stocks, string description, string size, string color, string category)
+        public UserControl_Product(int id, Image image, string imgPath, string name, double price, int stocks, string description, string size, string color, string category)
         {
             InitializeComponent();
             productID = id;
             ProductImage = image;
             ProductImgPath = imgPath;
+            Productname = name;
             ProductPrice = price;
             ProductStocks = stocks;
             ProductDescriptions = description;
@@ -35,6 +37,7 @@ namespace WWWPOS.ClientControl.Products
             get => picBox_ProductPicture.Image;
             set => picBox_ProductPicture.Image = value;
         }
+        public string Productname { get; set; }
         public double ProductPrice
         {
             get => Double.Parse(lbl_ProductPrice.Text);
@@ -79,7 +82,6 @@ namespace WWWPOS.ClientControl.Products
                 maxQty.ShowDialog();
             }
         }
-
         private void btn_Minus_Click(object sender, EventArgs e)
         {
             if (Int32.Parse(lbl_ProductQty.Text) > 1)
@@ -92,11 +94,17 @@ namespace WWWPOS.ClientControl.Products
                 maxQty.ShowDialog();
             }
         }
-
         private void btn_AddToCart_Click(object sender, EventArgs e)
         {
             DataBase DB = new DataBase();
             DB.AddToCart(productID, ProductCategory, ProductName, ProductColor, ProductPrice, Int32.Parse(lbl_ProductQty.Text), ProductImgPath, ProductSize, ProductDescriptions);
+        }
+        private void btn_Buy_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loadData data = new loadData();
+            data.LoadBuyItem(productID, ProductImgPath, Productname, ProductPrice, ProductCategory, Int32.Parse(lbl_ProductQty.Text), ProductSize, ProductColor, ProductDescriptions);
+            
         }
     }
 }

@@ -18,6 +18,8 @@ using WWWPOS.ErrorMessage;
 using System.Security.Cryptography;
 using System.Reflection;
 using Org.BouncyCastle.Utilities.Collections;
+using WWWPOS.ClientControl.ClientCart;
+using System.Windows;
 
 namespace WWWPOS
 {
@@ -42,7 +44,7 @@ namespace WWWPOS
 
             if (mdr.Read())
             {
-                MessageBox.Show("Email Already Register!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Email Already Register!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 connection.Close();
             }
             else
@@ -62,14 +64,14 @@ namespace WWWPOS
                 catch (Exception ex)
                 {
                     // Show any error message.
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
                 }
-                DialogResult dialogResult;
-                dialogResult = MessageBox.Show("Account Successfully Created!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-                if (dialogResult == DialogResult.OK)
-                {
-                    message = "Success";
-                }
+                //DialogResult dialogResult;
+                //dialogResult = MessageBox.Show("Account Successfully Created!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                //if (dialogResult == DialogResult.OK)
+                //{
+                //    message = "Success";
+                //}
             }
         }
         
@@ -103,7 +105,7 @@ namespace WWWPOS
             }
             else
             {
-                MessageBox.Show("Incorrect Login Information! Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Incorrect Login Information! Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             connection.Close();
@@ -118,12 +120,12 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
     
-            DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-            if (dialogResult == DialogResult.OK)
-            {
-                message = "Success";
-            }
+            //DialogResult dialogResult;
+            //dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            //if (dialogResult == DialogResult.OK)
+            //{
+            //    message = "Success";
+            //}
 
         }
         
@@ -139,12 +141,12 @@ namespace WWWPOS
             DialogResult dialogResult;
             if(user_Status == "Inactive")
             {
-                dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                //dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
            else
             {
-                dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                //dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
         }
@@ -171,14 +173,14 @@ namespace WWWPOS
             catch (Exception ex)
             {
                 // Show any error message.
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
-            DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Product added Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-            if (dialogResult == DialogResult.OK)
-            {
-                message = "Success";
-            }
+            //DialogResult dialogResult;
+            //dialogResult = MessageBox.Show("Product added Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            //if (dialogResult == DialogResult.OK)
+            //{
+            //    message = "Success";
+            //}
         }
 
         //Update Products
@@ -190,12 +192,12 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
 
-            DialogResult dialogResult;
-            dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-            if (dialogResult == DialogResult.OK)
-            {
-                //dito lagay code pag sucess updated un products pabalik sa edit products view
-            }
+            //DialogResult dialogResult;
+            //dialogResult = MessageBox.Show("Updated Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            //if (dialogResult == DialogResult.OK)
+            //{
+            //    //dito lagay code pag sucess updated un products pabalik sa edit products view
+            //}
         }
 
         //Delete and restore products
@@ -212,45 +214,96 @@ namespace WWWPOS
 
             if (product_Status == "Inactive")
             {
-                dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                //dialogResult = MessageBox.Show("Deleted Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
             else
             {
-                dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                //dialogResult = MessageBox.Show("Restored Successfully!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
 
             }
 
         }
 
-
-        //Client Side
+        //-----Client Side-----//  
 
         //Add to cart
-        public void AddToCart( int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, string productImg, string productSize, string productDescription)
+        public void AddToCart(int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, string productImg, string productSize, string productDescription)
         {
             string userID = DataBase.user_ID;
             int user_ID = Int32.Parse(userID);
 
+            int SumProductQuantity = 0;
+
             connection.Open();
-            string iquery = "INSERT INTO Cart (Account_ID, Product_ID, Category, Product_Name, Color, Price , Quantity, Product_images, Product_Size, Product_Description, Product_Status) VALUES ('" + user_ID + "' , '" + product_ID + "' , '" + category + "', '" + productName + "', '" + productColor + "', '" + productPrice + "', '" + productQuantity + "','" + productImg + "','" + productSize + "','" + productDescription + "','Active')";
-            SqlCommand commandDatabase = new SqlCommand(iquery, connection);
-            commandDatabase.CommandTimeout = 60;
+            string selectQuery = "SELECT Cart.Product_ID, Cart.Quantity, Products.Stocks " +
+                                 "FROM [waywewore].[dbo].[Cart] AS Cart INNER JOIN [waywewore].[dbo].[Products] AS Products  ON Cart.Product_ID = Products.Product_ID " +
+                                 "WHERE Cart.Product_ID = '" + product_ID + "'";
+            SqlCommand commandDatabase = new SqlCommand(selectQuery, connection);
+            mdr = commandDatabase.ExecuteReader();
 
-            try
+            //Checks if the item is available on cart
+            if (mdr.Read())
             {
-                SqlDataReader myReader = commandDatabase.ExecuteReader();
+                SumProductQuantity = Int32.Parse(mdr[1] + "") + productQuantity;
+
+                if (SumProductQuantity > Int32.Parse(mdr[2] + ""))
+                {
+                    MessageDialogue messageDialogue = new MessageDialogue("Omsim");
+                    messageDialogue.ShowDialog();
+                    connection.Close();
+                }
+                else
+                {
+                    connection.Close();
+                    connection.Open();
+                    string updateCartQuery = "UPDATE Cart SET Quantity = '" + SumProductQuantity + "' WHERE Product_ID ='" + product_ID + "';";
+                    SqlCommand commandToUpdateCartQuantity = new SqlCommand(updateCartQuery, connection);
+                    commandToUpdateCartQuantity.CommandTimeout = 60;
+
+                    try
+                    {
+                        SqlDataReader myReader = commandToUpdateCartQuantity.ExecuteReader();
+                        //connection.Close();
+                        MessageDialogue messageDialogue = new MessageDialogue("Added to Cart");
+                        messageDialogue.ShowDialog();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Show any error message.
+                        //MessageBox.Show(ex.Message);
+                    }
+
+                    connection.Close();
+                }
+
+            }
+            else
+            {
+                //Otherwise add new item on cart
                 connection.Close();
-                MessageDialogue messageDialogue = new MessageDialogue("Added to Cart");
-                messageDialogue.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                // Show any error message.
-                MessageBox.Show(ex.Message);
-            }
-        }
+                connection.Open();
+                string insertQuery = "INSERT INTO Cart (Account_ID, Product_ID, Category, Product_Name, Color, Price , Quantity, Product_images, Product_Size, Product_Description, Product_Status) VALUES ('" + user_ID + "' , '" + product_ID + "' , '" + category + "', '" + productName + "', '" + productColor + "', '" + productPrice + "', '" + productQuantity + "','" + productImg + "','" + productSize + "','" + productDescription + "','Active')";
+                SqlCommand commandToInsertNewItems = new SqlCommand(insertQuery, connection);
+                commandToInsertNewItems.CommandTimeout = 60;
 
+                try
+                {
+                    SqlDataReader myReader = commandToInsertNewItems.ExecuteReader();
+                    MessageDialogue messageDialogue = new MessageDialogue("Added to Cart");
+                    messageDialogue.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    //MessageBox.Show(ex.Message);
+                }
+                
+                connection.Close();
+                
+            }   
+
+        }
         //Update cart
         public void UpdateAddCartProduct(int productID)
         {
@@ -376,7 +429,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -404,7 +457,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
 
             return products;
@@ -433,7 +486,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
 
             return users;
@@ -455,23 +508,24 @@ namespace WWWPOS
                 while (mdr.Read())
                 {
                     int id = int.Parse(mdr[0] + "");
-                    Image image = Image.FromFile(@"" + mdr[7]);
-                    string imgPath = "" + mdr[7];
+                    string category = "" + mdr[2];
+                    string name = "" + mdr[2];
+                    string color = "" + mdr[4];
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
-                    string description = "" + mdr[9];
+                    Image image = Image.FromFile(@"" + mdr[7]);
+                    string imgPath = "" + mdr[7];
                     string size = "" + mdr[8];
-                    string color = "" + mdr[4];
-                    string category = "" + mdr[2];
+                    string description = "" + mdr[9];
 
-                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -490,6 +544,7 @@ namespace WWWPOS
                     int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
                     string imgPath = "" + mdr[7];
+                    string name = "" + mdr[2];
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
                     string description = "" + mdr[9];
@@ -497,14 +552,14 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
             connection.Close();
         }
@@ -524,6 +579,7 @@ namespace WWWPOS
                     int id = int.Parse(mdr[0] + "");
                     Image image = Image.FromFile(@"" + mdr[7]);
                     string imgPath = "" + mdr[7];
+                    string name = "" + mdr[2];
                     double price = Double.Parse(mdr[5] + "");
                     int stocks = int.Parse(mdr[6] + "");
                     string description = "" + mdr[9];
@@ -531,14 +587,14 @@ namespace WWWPOS
                     string color = "" + mdr[4];
                     string category = "" + mdr[2];
 
-                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, price, stocks, description, size, color, category);
+                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
                     flowLayoutPanel.Controls.Add(productAvailable);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
             connection.Close();
         }
@@ -548,11 +604,11 @@ namespace WWWPOS
         {
             string userid = DataBase.user_ID;
             int user_ID = Int32.Parse(userid);
-                
+
             try
             {
                 connection.Open();
-                
+
                 string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "'";
                 command = new SqlCommand(selectJoinedQuerry, connection);
                 mdr = command.ExecuteReader();
@@ -575,18 +631,88 @@ namespace WWWPOS
 
                     UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(cartID, user_ID, productID, image, price, quantity, total, stock, description, size, color, category);
                     flowLayoutPanel.Controls.Add(UC_ProductCart);
-
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
             connection.Close();
         }
 
-        //Load cart total price 
+        //Load Users Cart
+        public void LoadTotalItems(FlowLayoutPanel flowLayoutPanel)
+        {
+            string userid = DataBase.user_ID;
+            int user_ID = Int32.Parse(userid);
+
+            try
+            {
+                connection.Open();
+
+                string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "'";
+                command = new SqlCommand(selectJoinedQuerry, connection);
+                mdr = command.ExecuteReader();
+
+                int total = 0;
+
+                while (mdr.Read())
+                {
+                    int cartID = int.Parse(mdr[0] + "");
+                    int productID = Int32.Parse(mdr[2] + "");
+                    Image image = Image.FromFile(@"" + mdr[8]);
+                    double price = Double.Parse(mdr[6] + "");
+                    int quantity = Int32.Parse(mdr[7] + "");
+                    total = Convert.ToInt32(price) * quantity;
+                    int stock = Int32.Parse(mdr[19] + "");
+                    string description = "" + mdr[10];
+                    string size = "" + mdr[9];
+                    string color = "" + mdr[5];
+                    string category = "" + mdr[3];
+
+                    UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(cartID, user_ID, productID, image, price, quantity, total, stock, description, size, color, category);
+
+                    UC_ProductCart.Controls.Remove(UC_ProductCart.btn_DeleteProduct);
+                    UC_ProductCart.Controls.Remove(UC_ProductCart.btn_Plus);
+                    UC_ProductCart.Controls.Remove(UC_ProductCart.btn_Minus);
+                    UC_ProductCart.cmb_ProductSize.Enabled = false;
+                    UC_ProductCart.cmb_Color.Enabled = false;
+
+                    flowLayoutPanel.Controls.Add(UC_ProductCart);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+            connection.Close();
+        }
+
+        //Load Buy Item
+        public void LoadBuyItem(int productID, string productImg, string productName, double productPrice, string productCategory, int productQuantity, string productSize, string productColor, string productDescription)
+        {
+            string userid = DataBase.user_ID;
+            int userID = Int32.Parse(userid);
+
+            UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(userID, productID, productImg, productName, productPrice, productCategory, productQuantity, productSize, productColor, productDescription);
+            
+            //Removes and Diabled unnecessary controls
+            UC_ProductCart.Controls.Remove(UC_ProductCart.btn_DeleteProduct);
+            UC_ProductCart.Controls.Remove(UC_ProductCart.btn_Plus);
+            UC_ProductCart.Controls.Remove(UC_ProductCart.btn_Minus);
+            UC_ProductCart.cmb_ProductSize.Enabled = false;
+            UC_ProductCart.cmb_Color.Enabled = false;
+
+            Form_ClientPay form_ClientPay = new Form_ClientPay();
+            form_ClientPay.flPanel_ProductTotal.Controls.Add(UC_ProductCart);
+            form_ClientPay.lbl_TotalPrice.Text = (productPrice * productQuantity).ToString();
+
+            form_ClientPay.ShowDialog();
+        }
+
+        //Load cart total price
         public string LoadCartTotalPrice(string totalPrice)
         {
             string userid = DataBase.user_ID;
@@ -619,7 +745,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
 
             connection.Close();
