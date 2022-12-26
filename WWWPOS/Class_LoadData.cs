@@ -45,6 +45,8 @@ namespace WWWPOS
                 sqlCommand = new SqlCommand(selectActiveProductQuery, connection);
                 dataReader = sqlCommand.ExecuteReader();
 
+                bool hasItem = false;
+
                 while (dataReader.Read())
                 {
                     productid = int.Parse(dataReader[0] + "");
@@ -63,22 +65,43 @@ namespace WWWPOS
                     productstatus = "" + dataReader[10];
                     productaddedat = "" + dataReader[11];
 
-                    //Class_Products x = productsStack.Pop();
-                    //Console.WriteLine("-------------");
-                    //Console.WriteLine(x.Product_Color);
-                    //Console.WriteLine("-------------");
-
-
                     //Creating a new product
                     Class_Products Products = new Class_Products(productid, accountid, productcategory,
-                                                                 productname, productcolor, productprice,
-                                                                 productstock, productimagepath, productsize,
-                                                                 productdescription, productstatus, productaddedat);
+                                                                    productname, productcolor, productprice,
+                                                                    productstock, productimagepath, productsize,
+                                                                    productdescription, productstatus, productaddedat);
 
+                    //Checkpoint for product duplication
+                    if (productsList.Any())
+                    {
+                        for (int i = 0; i < productsList.Count; i++)
+                        {
+                            Class_Products CheckProducts = productsList[i];
 
-                    arrProductNames.Add(Products.Product_Name);
+                            if (CheckProducts.Product_Name == productname)
+                            {
+                                Console.WriteLine("Sheesh");
+                                CheckProducts.Product_Color += " " + productcolor;
+                                CheckProducts.Product_Size += " " + productsize;
+                                hasItem = true;
+                                break;
+                            }
+                            
+                        }
+                    }
+
+                    if (hasItem == false)
+                    {
+                        //Adding new product to List
+                        productsList.Add(Products);
+                    }
+                    else if(hasItem == true)
+                    {
+                        hasItem = false;
+                    }
+
                     //Adding new product to Stack
-                    productsStack.Push(Products);
+                    //productsStack.Push(Products);
                 }
                 dataReader.Close();
                 sqlCommand.Clone();
@@ -201,30 +224,40 @@ namespace WWWPOS
 
         //Fetching All Stocks
 
-
         public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
         {
             //Calls the method
             GetActiveProduct();
 
-
             //Read
             if (productPanel == "panelView")
             {
-                while (!(productsStack.Count == 0))
+                
+                for(int i = 0; i < productsList.Count; i++)
                 {
-                    Class_Products objProductFromStack = productsStack.Pop();
+                    Class_Products objClassProducts = productsList[i];
 
                     UserControl_AdminViewProducts adminViewProducts =
-                    new UserControl_AdminViewProducts(objProductFromStack.Product_ID, objProductFromStack.Product_Price,
-                                                      objProductFromStack.Product_Stock, objProductFromStack.Product_Color,
-                                                      objProductFromStack.Product_Size, objProductFromStack.Product_Descripiton,
-                                                      Image.FromFile(objProductFromStack.Product_Images));
+                    new UserControl_AdminViewProducts(objClassProducts.Product_ID, objClassProducts.Product_Price,
+                                                      objClassProducts.Product_Stock, objClassProducts.Product_Color,
+                                                      objClassProducts.Product_Size, objClassProducts.Product_Descripiton,
+                                                      Image.FromFile(objClassProducts.Product_Images));
 
                     flowLayoutPanel.Controls.Add(adminViewProducts);
                 }
 
+                //while (!(productsStack.Count == 0))
+                //{
+                //    Class_Products objProductFromStack = productsStack.Pop();
 
+                //    UserControl_AdminViewProducts adminViewProducts =
+                //    new UserControl_AdminViewProducts(objProductFromStack.Product_ID, objProductFromStack.Product_Price,
+                //                                      objProductFromStack.Product_Stock, objProductFromStack.Product_Color,
+                //                                      objProductFromStack.Product_Size, objProductFromStack.Product_Descripiton,
+                //                                      Image.FromFile(objProductFromStack.Product_Images));
+
+                //    flowLayoutPanel.Controls.Add(adminViewProducts);
+                //}
             }
             //Update
             else if (productPanel == "panelEdit")
@@ -240,8 +273,6 @@ namespace WWWPOS
             }
 
         }
-
-
 
         public string AllStocks(string products)
         {

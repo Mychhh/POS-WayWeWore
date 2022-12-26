@@ -22,6 +22,7 @@ using WWWPOS.ClientControl.ClientCart;
 using System.Windows;
 using WWWPOS.MessageFolder;
 using System.Collections;
+using System.Windows.Documents;
 
 namespace WWWPOS
 {
@@ -61,7 +62,7 @@ namespace WWWPOS
 
         //Product Stack
         protected Stack<Class_Products> productsStack = new Stack<Class_Products>();
-        protected ArrayList arrProductNames = new ArrayList();
+        protected List<Class_Products> productsList = new List<Class_Products>();
 
         //-----About User-----//
 
