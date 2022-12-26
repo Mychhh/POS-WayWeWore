@@ -106,7 +106,7 @@ namespace WWWPOS.ClientControl.Products
         private void btn_Buy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            loadData data = new loadData();
+            Class_LoadData data = new Class_LoadData();
             data.LoadBuyItem(productID, ProductImgPath, Productname, ProductPrice, ProductCategory, Int32.Parse(lbl_ProductQty.Text), ProductSize, ProductColor, ProductDescriptions);
             
         }

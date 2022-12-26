@@ -19,7 +19,7 @@ namespace WWWPOS.SideBarControl.Archive
 
         private void UserControlArchiveProduct_Load(object sender, EventArgs e)
         {
-            loadData LD = new loadData();
+            Class_LoadData LD = new Class_LoadData();
             LD.ProductArchive(dataGrid_ArchiveProduct, "Inactive");
 
         }

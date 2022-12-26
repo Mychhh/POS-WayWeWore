@@ -22,7 +22,7 @@ namespace WWWPOS.SideBarControl.Inventory
             UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
             UC_ViewUpdate.flowLayoutPanel.Controls.Clear();
 
-            loadData LD = new loadData();
+            Class_LoadData LD = new Class_LoadData();
             LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
 
 

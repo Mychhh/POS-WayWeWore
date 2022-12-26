@@ -30,7 +30,7 @@ namespace WWWPOS.SideBarControl.Archive
         public static string user_ID, product_ID;
         private void UserControlArchiveAll_Load(object sender, EventArgs e)
         {
-            loadData LD = new loadData();
+            Class_LoadData LD = new Class_LoadData();
             LD.userArchive(dataGrid_ArchiveUserAll, "Inactive");
             LD.ProductArchive(dataGrid_ArchiveProductALL, "Inactive");
         }

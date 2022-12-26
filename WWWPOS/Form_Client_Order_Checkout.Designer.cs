@@ -1,6 +1,6 @@
 ﻿namespace WWWPOS
 {
-    partial class Client_Order_Checkout
+    partial class Form_Client_Order_Checkout
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client_Order_Checkout));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Client_Order_Checkout));
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelControl = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();

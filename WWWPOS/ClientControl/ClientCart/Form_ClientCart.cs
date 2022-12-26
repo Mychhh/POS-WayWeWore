@@ -21,7 +21,7 @@ namespace WWWPOS.ClientControl.ClientCart
         //On load
         private void Form_ClientCart_Load(object sender, EventArgs e)
         {
-            loadData Data = new loadData();
+            Class_LoadData Data = new Class_LoadData();
             Data.LoadCart(flPanel_ProductCart);
         }
         //Go to view all product
@@ -38,7 +38,7 @@ namespace WWWPOS.ClientControl.ClientCart
             this.Hide();
 
             Form_ClientPay F_ClientPay = new Form_ClientPay();
-            loadData data = new loadData();
+            Class_LoadData data = new Class_LoadData();
             data.LoadTotalItems(F_ClientPay.flPanel_ProductTotal);
 
             F_ClientPay.lbl_TotalPrice.Text = "₱ " + data.LoadCartTotalPrice(F_ClientPay.lbl_TotalPrice.Text);

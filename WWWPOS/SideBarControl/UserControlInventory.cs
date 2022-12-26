@@ -39,7 +39,7 @@ namespace WWWPOS.SideBarControl
             panel_Inventory.Controls.Add(UC_ViewUpdate);
             UC_ViewUpdate.Dock = DockStyle.Fill;
 
-            loadData LD = new loadData();
+            Class_LoadData LD = new Class_LoadData();
             LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
         }
         
@@ -50,7 +50,7 @@ namespace WWWPOS.SideBarControl
             panel_Inventory.Controls.Add(UC_Delete);
             UC_Delete.Dock = DockStyle.Fill;
 
-            loadData LD = new loadData();
+            Class_LoadData LD = new Class_LoadData();
             LD.selectProduct(UC_Delete.flowLayoutPanel, "panelDelete");
         }
 

@@ -12,7 +12,7 @@ using WWWPOS.SideBarControl.Products;
 
 namespace WWWPOS
 {
-    internal class loadData : DataBase
+    internal class Class_LoadData : DataBase
     {
         //Product Representation (Fields)
         int productid;

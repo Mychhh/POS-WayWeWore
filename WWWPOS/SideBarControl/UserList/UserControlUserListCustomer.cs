@@ -22,7 +22,7 @@ namespace WWWPOS.SideBarControl.UserList
 
         private void UserControlUserListCustomer_Load(object sender, EventArgs e)
         {
-            loadData LD = new loadData();
+            Class_LoadData LD = new Class_LoadData();
             LD.userRecords(dataGridCustomer, "Client", "Active");
         }
 
