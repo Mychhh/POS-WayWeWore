@@ -376,7 +376,7 @@ namespace WWWPOS
             connection.Close();
         }
 
-        //Load product to be updated
+        //Load All Active Products
         public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
         {
             try
@@ -397,19 +397,25 @@ namespace WWWPOS
                     int stock = int.Parse(mdr[6] + "");
                     string color = "" + mdr[4];
                     string size = "" + mdr[8];
-
                     Image image = Image.FromFile(@"" + mdr[7]);
 
+                    //Read
                     if (productPanel == "panelView")
                     {
+                        //string checkQuery = "SELECT * FROM Products WHERE Product_Status = '" + name + "';";
+                        //SqlCommand commandToCheckProductName = new SqlCommand(checkQuery, connection);
+                        //mdr = commandToCheckProductName.ExecuteReader();
+
                         UserControl_AdminViewProducts obj = new UserControl_AdminViewProducts(id, price, stock, color, size, description, image);
                         flowLayoutPanel.Controls.Add(obj);
                     }
+                    //Update
                     else if (productPanel == "panelEdit")
                     {
                         UserControl_Update obj = new UserControl_Update(id, name, type, price, stock, color, size, description, image);
                         flowLayoutPanel.Controls.Add(obj);
                     }
+                    //Delete
                     else
                     {
                         UserControl_Delete obj = new UserControl_Delete(id, price, stock, color, size, description, image);

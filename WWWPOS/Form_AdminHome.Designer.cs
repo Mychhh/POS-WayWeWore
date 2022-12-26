@@ -230,7 +230,7 @@
             this.panel_Menu.BackColor = System.Drawing.Color.Transparent;
             this.panel_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_Menu.Location = new System.Drawing.Point(1197, 50);
-            this.panel_Menu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Menu.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(175, 122);
             this.panel_Menu.TabIndex = 50;
@@ -248,7 +248,7 @@
             this.btn_Menu.ForeColor = System.Drawing.Color.Blue;
             this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
             this.btn_Menu.Location = new System.Drawing.Point(1335, 4);
-            this.btn_Menu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Menu.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Menu.Name = "btn_Menu";
             this.btn_Menu.Size = new System.Drawing.Size(36, 39);
             this.btn_Menu.TabIndex = 49;
@@ -261,7 +261,7 @@
             this.panel8.BackgroundImage = global::WWWPOS.Properties.Resources.header;
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel8.Location = new System.Drawing.Point(661, 14);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(528, 138);
             this.panel8.TabIndex = 46;
@@ -271,7 +271,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1387, 788);
+            this.ClientSize = new System.Drawing.Size(1416, 788);
             this.ControlBox = false;
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.btn_Menu);
@@ -280,7 +280,7 @@
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_AdminHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form4";
