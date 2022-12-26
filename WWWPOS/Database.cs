@@ -21,6 +21,7 @@ using Org.BouncyCastle.Utilities.Collections;
 using WWWPOS.ClientControl.ClientCart;
 using System.Windows;
 using WWWPOS.MessageFolder;
+using System.Collections;
 
 namespace WWWPOS
 {
@@ -32,6 +33,9 @@ namespace WWWPOS
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
         protected SqlCommand command;
         protected SqlDataReader mdr;
+
+        protected SqlCommand sqlCommand;
+        protected SqlDataReader dataReader;
 
         //Dialogue Box
         ErrorMessageDialogue errorMessageDialogue;
@@ -55,42 +59,46 @@ namespace WWWPOS
             successMessageDialogue.ShowDialog();
         }
 
-        //About User
+        //Product Stack
+        protected Stack<Class_Products> productsStack = new Stack<Class_Products>();
+
+
+     //-----About User-----//
 
         //Signup and Add user
         public void InsertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
-        {
-            connection.Open();
-            string selectQuery = "SELECT Email FROM Account WHERE Email = '" + email + "';";
-            command = new SqlCommand(selectQuery, connection);
-            mdr = command.ExecuteReader();
-
-            if (mdr.Read())
             {
-                ErrorMessage("Email Already Registered!");
-                connection.Close();
-            }
-            else
-            {
-                connection.Close(); //closes the first connection used by checking if the email is already registered
-
                 connection.Open();
-                string insertQuery = "INSERT INTO Account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
-                SqlCommand commandDatabase = new SqlCommand(insertQuery, connection);
-                commandDatabase.CommandTimeout = 60;
+                string selectQuery = "SELECT Email FROM Account WHERE Email = '" + email + "';";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
 
-                try
+                if (mdr.Read())
                 {
-                    SqlDataReader myReader = commandDatabase.ExecuteReader();
-                    SuccessMessage("Account Created Successfully!");
+                    ErrorMessage("Email Already Registered!");
                     connection.Close();
                 }
-                catch (Exception ex)
+                else
                 {
-                    ErrorMessage(ex.Message);
+                    connection.Close(); //closes the first connection used by checking if the email is already registered
+
+                    connection.Open();
+                    string insertQuery = "INSERT INTO Account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
+                    SqlCommand commandDatabase = new SqlCommand(insertQuery, connection);
+                    commandDatabase.CommandTimeout = 60;
+
+                    try
+                    {
+                        SqlDataReader myReader = commandDatabase.ExecuteReader();
+                        SuccessMessage("Account Created Successfully!");
+                        connection.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorMessage(ex.Message);
+                    }
                 }
             }
-        }
         
         //Login User
         public void Login(string email, string password)
@@ -162,7 +170,7 @@ namespace WWWPOS
             }
         }
 
-        //About Products
+     //-----About Products-----//
 
         //Add Products
         public void AddProdducts(string product_Name, string product_Color, double product_Price, int product_Stock, string category ,string product_Size, string product_image, string Product_Description)
@@ -225,7 +233,7 @@ namespace WWWPOS
 
         }
 
-        //-----Client Side-----//  
+     //-----Client Side-----//  
 
         //Add to cart
         public void AddToCart(int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, string productImg, string productSize, string productDescription)
@@ -331,7 +339,81 @@ namespace WWWPOS
 
     class loadData : DataBase
     {
+        //Product Representation (Fields)
+        int productid;
+        int accountid;
+        string productcategory;
+        string productname;
+
+        string productcolor;
+        ArrayList productcolorarraylist = new ArrayList();
+
+        double productprice;
+        int productstock;
+
+        Image productimage;
+        string productimagepath;
+
+        string productsize;
+        ArrayList productsizearraylist = new ArrayList();
+
+        string productdescription;
+        string productstatus;
+        string productaddedat;
+
+
         //-----Admin Side-----//    
+
+        //Get All Active Product and Store it in Stack
+        public void GetActiveProduct()
+        {
+            try
+            {
+                connection.Open();
+
+                string selectActiveProductQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
+                sqlCommand = new SqlCommand(selectActiveProductQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    productid = int.Parse(dataReader[0] + "");
+                    accountid = int.Parse(dataReader[1] + "");
+                    productcategory = "" + dataReader[2];
+                    productname = "" + dataReader[3];
+
+                    productcolor = "" + dataReader[4];
+                    productcolorarraylist.Add("" + dataReader[4]);
+
+                    productprice = Double.Parse(dataReader[5] + "");
+                    productstock = int.Parse(dataReader[6] + "");
+
+                    productimage = Image.FromFile(@"" + dataReader[7]);
+                    productimagepath = "" + dataReader[7];
+
+                    productsize = "" + dataReader[8];
+                    productsizearraylist.Add("" + dataReader[8]);
+
+                    productdescription = "" + dataReader[9];
+                    productstatus = "" + dataReader[10];
+                    productaddedat = "" + dataReader[11];
+
+                    //Creating a new product
+                    Class_Products Products = new Class_Products(productid, accountid, productcategory, productname, productcolorarraylist, productprice, productstock, productimagepath, productsizearraylist, productdescription, productstatus, productaddedat);
+
+                    //Adding new product to Stack
+                    productsStack.Push(Products);
+                }
+                dataReader.Close();
+                sqlCommand.Clone();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+        }
+
         //Active User
         public void userRecords(DataGridView dataCustomer, string user_Type, string user_Status)
         {
@@ -376,65 +458,112 @@ namespace WWWPOS
             connection.Close();
         }
 
-        //Load All Active Products
-        public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
-        {
-            try
-            {
-                connection.Open();
+        //Select product to load
+        //public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
+        //{
+        //    try
+        //    {
+        //        connection.Open();
 
-                string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
-                command = new SqlCommand(selectQuery, connection);
-                mdr = command.ExecuteReader();
+        //        string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
+        //        command = new SqlCommand(selectQuery, connection);
+        //        mdr = command.ExecuteReader();
 
-                while (mdr.Read())
-                {
-                    int id = int.Parse(mdr[0] + "");
-                    string description = "" + mdr[9];
-                    string name = "" + mdr[3];
-                    string type = "" + mdr[2];
-                    double price = Double.Parse(mdr[5] + "");
-                    int stock = int.Parse(mdr[6] + "");
-                    string color = "" + mdr[4];
-                    string size = "" + mdr[8];
-                    Image image = Image.FromFile(@"" + mdr[7]);
+        //        while (mdr.Read())
+        //        {
+        //            productid = int.Parse(mdr[0] + "");
+        //            accountid = int.Parse(mdr[1] + "");
+        //            productcategory = "" + mdr[2];
+        //            productname = "" + mdr[3];
 
-                    //Read
-                    if (productPanel == "panelView")
-                    {
-                        //string checkQuery = "SELECT * FROM Products WHERE Product_Status = '" + name + "';";
-                        //SqlCommand commandToCheckProductName = new SqlCommand(checkQuery, connection);
-                        //mdr = commandToCheckProductName.ExecuteReader();
+        //            productcolor = "" + mdr[4];
+        //            productcolorarraylist.Add("" + mdr[4]);
 
-                        UserControl_AdminViewProducts obj = new UserControl_AdminViewProducts(id, price, stock, color, size, description, image);
-                        flowLayoutPanel.Controls.Add(obj);
-                    }
-                    //Update
-                    else if (productPanel == "panelEdit")
-                    {
-                        UserControl_Update obj = new UserControl_Update(id, name, type, price, stock, color, size, description, image);
-                        flowLayoutPanel.Controls.Add(obj);
-                    }
-                    //Delete
-                    else
-                    {
-                        UserControl_Delete obj = new UserControl_Delete(id, price, stock, color, size, description, image);
-                        flowLayoutPanel.Controls.Add(obj);
-                    }
+        //            productprice = Double.Parse(mdr[5] + "");
+        //            productstock = int.Parse(mdr[6] + "");
 
-                }
-                mdr.Close();
-                command.Clone();
-                connection.Close();
+        //            productimage = Image.FromFile(@"" + mdr[7]);
+        //            productimagepath = "" + mdr[7];
 
-            }
-            catch (Exception ex)
-            {
-                ErrorMessage(ex.Message);
-            }
-        }
+        //            productsize = "" + mdr[8];
+        //            productsizearraylist.Add("" + mdr[8]);
+
+        //            productdescription = "" + mdr[9];
+        //            productstatus = "" + mdr[10];
+        //            productaddedat = "" + mdr[11];
+
+        //            ////Read
+        //            //if (productPanel == "panelView")
+        //            //{
+        //            //    UserControl_AdminViewProducts obj = new UserControl_AdminViewProducts(productid, productprice, productstock, productcolor, productsize, productdescription, productimage);
+        //            //    flowLayoutPanel.Controls.Add(obj);
+        //            //}
+        //            ////Update
+        //            //else if (productPanel == "panelEdit")
+        //            //{
+        //            //    UserControl_Update obj = new UserControl_Update(productid, productname, productcategory, productprice, productstock, productcolor, productsize, productdescription, productimage);
+        //            //    flowLayoutPanel.Controls.Add(obj);
+        //            //}
+        //            ////Delete
+        //            //else
+        //            //{
+        //            //    UserControl_Delete obj = new UserControl_Delete(productid, productprice, productstock, productcolor, productsize, productdescription, productimage);
+        //            //    flowLayoutPanel.Controls.Add(obj);
+        //            //}
+
+        //        }
+        //        mdr.Close();
+        //        command.Clone();
+        //        connection.Close();
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ErrorMessage(ex.Message);
+        //    }
+        //}
 
         //Fetching All Stocks
+
+
+        public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
+        {
+            //Calls the method
+            GetActiveProduct();
+
+            //Read
+            if (productPanel == "panelView")
+            {
+                while (!(productsStack.Count == 0))
+                {
+                    Class_Products objProductFromStack = productsStack.Pop();
+
+                    UserControl_AdminViewProducts adminViewProducts = new UserControl_AdminViewProducts(objProductFromStack.Product_ID, objProductFromStack.Product_Price,
+                                                                                          objProductFromStack.Product_Stock, productcolor,
+                                                                                          productsize, objProductFromStack.Product_Descripiton,
+                                                                                          Image.FromFile(objProductFromStack.Product_Images) );
+                    flowLayoutPanel.Controls.Add(adminViewProducts);
+                }
+                
+
+            }
+            //Update
+            else if (productPanel == "panelEdit")
+            {
+                UserControl_Update obj = new UserControl_Update(productid, productname, productcategory, productprice, productstock, productcolor, productsize, productdescription, productimage);
+                flowLayoutPanel.Controls.Add(obj);
+            }
+            //Delete
+            else
+            {
+                UserControl_Delete obj = new UserControl_Delete(productid, productprice, productstock, productcolor, productsize, productdescription, productimage);
+                flowLayoutPanel.Controls.Add(obj);
+            }
+
+        }
+
+
+
         public string AllStocks(string products)
         {
             try
@@ -494,7 +623,7 @@ namespace WWWPOS
         }
 
         //-----Client Side-----//
-        
+
         //Load All available product
         public void LoadAllAvailableProducts(FlowLayoutPanel flowLayoutPanel)
         {
