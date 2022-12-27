@@ -22,10 +22,12 @@ namespace WWWPOS.SideBarControl.Products
             productSize += "#";
 
             bool hasSameColor = false;
+            bool hasSameSize = false;
 
             //Checks if the string in not empty
             while (!string.IsNullOrEmpty(productColor))
             {
+                //Color Validation
                 if (cmb_ProductColor.Items.Count > 0)
                 {
                     foreach (string colorList in cmb_ProductColor.Items)
@@ -39,6 +41,7 @@ namespace WWWPOS.SideBarControl.Products
                     }
                 }
 
+                //Adds color if it is unique
                 if(hasSameColor == false)
                 {
                     cmb_ProductColor.Items.Add(productColor.Substring(0, productColor.IndexOf("#")));
@@ -49,6 +52,32 @@ namespace WWWPOS.SideBarControl.Products
                     hasSameColor = false;
                 }
 
+                //-----------------------------------------------------------//
+
+                //Size Validation
+                if (cmb_ProductSize.Items.Count > 0)
+                {
+                    foreach (string sizeList in cmb_ProductSize.Items)
+                    {
+                        if (productSize.Substring(0, productSize.IndexOf("#")) == sizeList)
+                        {
+                            productSize = productSize.Remove(0, productSize.IndexOf("#") + 1);
+                            hasSameSize = true;
+                            break;
+                        }
+                    }
+                }
+
+                //Adds color if it is unique
+                if (hasSameSize == false)
+                {
+                    cmb_ProductSize.Items.Add(productSize.Substring(0, productSize.IndexOf("#")));
+                    productSize = productSize.Remove(0, productSize.IndexOf("#") + 1);
+                }
+                else if (hasSameSize == true)
+                {
+                    hasSameSize = false;
+                }
 
                 ////Adding Items to combo box
                 //cmb_ProductColor.Items.Add(productColor.Substring(0, productColor.IndexOf("#")));
