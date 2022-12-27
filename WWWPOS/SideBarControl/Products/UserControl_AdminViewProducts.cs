@@ -21,17 +21,44 @@ namespace WWWPOS.SideBarControl.Products
             productColor += "#";
             productSize += "#";
 
+            bool hasSameColor = false;
+
             //Checks if the string in not empty
             while (!string.IsNullOrEmpty(productColor))
             {
-                //Adding Items to combo box
-                cmb_Color.Items.Add(productColor.Substring(0, productColor.IndexOf("#")));
-                cmb_ProductSize.Items.Add(productSize.Substring(0, productSize.IndexOf("#")));
+                if (cmb_ProductColor.Items.Count > 0)
+                {
+                    foreach (string colorList in cmb_ProductColor.Items)
+                    {
+                        if (productColor.Substring(0, productColor.IndexOf("#")) == colorList)
+                        {
+                            productColor = productColor.Remove(0, productColor.IndexOf("#") + 1);
+                            hasSameColor = true;
+                            break;
+                        }
+                    }
+                }
 
-                //Remove the added string items
-                productColor = productColor.Remove(0, productColor.IndexOf("#") + 1);
-                productSize = productSize.Remove(0, productSize.IndexOf("#") + 1);
+                if(hasSameColor == false)
+                {
+                    cmb_ProductColor.Items.Add(productColor.Substring(0, productColor.IndexOf("#")));
+                    productColor = productColor.Remove(0, productColor.IndexOf("#") + 1);
+                }
+                else if (hasSameColor == true) 
+                {
+                    hasSameColor = false;
+                }
+
+
+                ////Adding Items to combo box
+                //cmb_ProductColor.Items.Add(productColor.Substring(0, productColor.IndexOf("#")));
+                //cmb_ProductSize.Items.Add(productSize.Substring(0, productSize.IndexOf("#")));
+
+                ////Remove the added string items
+                //productColor = productColor.Remove(0, productColor.IndexOf("#") + 1);
+                //productSize = productSize.Remove(0, productSize.IndexOf("#") + 1);
             }
+
 
             ID = productID;
             Price = productPrice;
@@ -61,8 +88,8 @@ namespace WWWPOS.SideBarControl.Products
         }
         public string Color
         {
-            get => cmb_Color.Text;
-            set => cmb_Color.Text = value;
+            get => cmb_ProductColor.Text;
+            set => cmb_ProductColor.Text = value;
         }
         public string productsSize
         {

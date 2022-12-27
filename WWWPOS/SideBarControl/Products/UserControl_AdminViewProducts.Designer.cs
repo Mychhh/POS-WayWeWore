@@ -37,7 +37,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.product_Image = new System.Windows.Forms.PictureBox();
             this.cmb_ProductSize = new System.Windows.Forms.ComboBox();
-            this.cmb_Color = new System.Windows.Forms.ComboBox();
+            this.cmb_ProductColor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.product_Image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,23 +144,23 @@
             this.cmb_ProductSize.Size = new System.Drawing.Size(210, 26);
             this.cmb_ProductSize.TabIndex = 37;
             // 
-            // cmb_Color
+            // cmb_ProductColor
             // 
-            this.cmb_Color.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmb_Color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Color.FormattingEnabled = true;
-            this.cmb_Color.Location = new System.Drawing.Point(70, 305);
-            this.cmb_Color.Name = "cmb_Color";
-            this.cmb_Color.Size = new System.Drawing.Size(210, 26);
-            this.cmb_Color.TabIndex = 38;
+            this.cmb_ProductColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmb_ProductColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_ProductColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_ProductColor.FormattingEnabled = true;
+            this.cmb_ProductColor.Location = new System.Drawing.Point(70, 305);
+            this.cmb_ProductColor.Name = "cmb_ProductColor";
+            this.cmb_ProductColor.Size = new System.Drawing.Size(210, 26);
+            this.cmb_ProductColor.TabIndex = 38;
             // 
             // UserControl_AdminViewProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            this.Controls.Add(this.cmb_Color);
+            this.Controls.Add(this.cmb_ProductColor);
             this.Controls.Add(this.cmb_ProductSize);
             this.Controls.Add(this.product_Image);
             this.Controls.Add(this.product_Description);
@@ -190,6 +190,6 @@
         private System.Windows.Forms.Label product_Stock;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cmb_ProductSize;
-        private System.Windows.Forms.ComboBox cmb_Color;
+        private System.Windows.Forms.ComboBox cmb_ProductColor;
     }
 }
