@@ -14,7 +14,7 @@ namespace WWWPOS
 {
     internal class Class_LoadData : DataBase
     {
-        //Product Representation (Fields)
+    //Product Representation (Fields)
         int productid;
         int accountid;
         string productcategory;
@@ -32,7 +32,7 @@ namespace WWWPOS
         string productaddedat;
 
 
-        //-----Admin Side-----//    
+    //-----Admin Side-----//    
 
         //Get All Active Product and Store it in Stack
         public void GetActiveProduct()
@@ -110,6 +110,31 @@ namespace WWWPOS
             {
                 ErrorMessage(ex.Message);
             }
+        }
+
+        //Get a particular product
+        public void GetParticularProduct(string productcategory, string productname, string productcolor, string productsize)
+        {
+            try
+            {
+                connection.Open();
+                string selectParticularProductQuery = "SELECT * FROM Products " +
+                                                      "WHERE Category = '"+ productcategory + "' AND Product_Name = '"+ productname + "' " +
+                                                      "AND Color = '"+ productcolor + "' AND Product_Size = '"+ productsize + "' ";
+                sqlCommand = new SqlCommand(selectParticularProductQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    //Change the field of the item
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            connection.Close();
         }
 
         //Active User
@@ -331,7 +356,7 @@ namespace WWWPOS
             return users;
         }
 
-        //-----Client Side-----//
+    //-----Client Side-----//
 
         //Load All available product
         public void LoadAllAvailableProducts(FlowLayoutPanel flowLayoutPanel)

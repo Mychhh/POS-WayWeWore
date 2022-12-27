@@ -83,8 +83,6 @@ namespace WWWPOS.SideBarControl.Products
             ID = productID;
             Price = productPrice;
             Stock = product_Stock;
-            //Color = productColor;
-            //productsSize = productSize;
             Descriptions = productDescription;
             Pic = image;
 
@@ -108,20 +106,22 @@ namespace WWWPOS.SideBarControl.Products
             get => int.Parse(product_Stock.Text);
             set => product_Stock.Text = value + "";
         }
-        public string Color
-        {
-            get => cmb_ProductColor.Text;
-            set => cmb_ProductColor.Text = value;
-        }
-        public string productsSize
-        {
-            get => cmb_ProductSize.Text;
-            set => cmb_ProductSize.Text = value + "";
-        }
         public Image Pic
         {
             get => product_Image.Image;
             set => product_Image.Image = value;
+        }
+
+        private void cmb_ProductColor_DropDownClosed(object sender, EventArgs e)
+        {
+            MessageFolder.SuccessMessageDialogue s = new MessageFolder.SuccessMessageDialogue(cmb_ProductColor.Text);
+            s.ShowDialog();
+        }
+
+        private void cmb_ProductSize_DropDownClosed(object sender, EventArgs e)
+        {
+            MessageFolder.SuccessMessageDialogue s = new MessageFolder.SuccessMessageDialogue(cmb_ProductSize.Text);
+            s.ShowDialog();
         }
 
     }

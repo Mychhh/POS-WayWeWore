@@ -29,6 +29,7 @@ namespace WWWPOS
 
     internal class DataBase
     {
+    //SQl Declaration
         public static string user_ID, message;
         public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
@@ -38,12 +39,12 @@ namespace WWWPOS
         protected SqlCommand sqlCommand;
         protected SqlDataReader dataReader;
 
-        //Dialogue Box
+    //Dialogue Box declaration
         ErrorMessageDialogue errorMessageDialogue;
         SuccessMessageDialogue successMessageDialogue;
         WarningMessageDialogue warningMessageDialogue;
 
-        //Methods for Error Message
+    //Methods for Error Message
         public void ErrorMessage(string errorName)
         {
             errorMessageDialogue = new ErrorMessageDialogue(errorName);
@@ -64,7 +65,7 @@ namespace WWWPOS
         protected Stack<Class_Products> productsStack = new Stack<Class_Products>();
         protected List<Class_Products> productsList = new List<Class_Products>();
 
-        //-----About User-----//
+    //-----About User-----//
 
         //Signup and Add user
         public void InsertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
@@ -171,7 +172,7 @@ namespace WWWPOS
             }
         }
 
-     //-----About Products-----//
+    //-----About Products-----//
 
         //Add Products
         public void AddProdducts(string product_Name, string product_Color, double product_Price, int product_Stock, string category ,string product_Size, string product_image, string Product_Description)
@@ -234,7 +235,7 @@ namespace WWWPOS
 
         }
 
-     //-----Client Side-----//  
+    //-----Client Side-----//  
 
         //Add to cart
         public void AddToCart(int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, string productImg, string productSize, string productDescription)

@@ -143,6 +143,7 @@
             this.cmb_ProductSize.Name = "cmb_ProductSize";
             this.cmb_ProductSize.Size = new System.Drawing.Size(210, 26);
             this.cmb_ProductSize.TabIndex = 37;
+            this.cmb_ProductSize.DropDownClosed += new System.EventHandler(this.cmb_ProductSize_DropDownClosed);
             // 
             // cmb_ProductColor
             // 
@@ -154,6 +155,7 @@
             this.cmb_ProductColor.Name = "cmb_ProductColor";
             this.cmb_ProductColor.Size = new System.Drawing.Size(210, 26);
             this.cmb_ProductColor.TabIndex = 38;
+            this.cmb_ProductColor.DropDownClosed += new System.EventHandler(this.cmb_ProductColor_DropDownClosed);
             // 
             // UserControl_AdminViewProducts
             // 
