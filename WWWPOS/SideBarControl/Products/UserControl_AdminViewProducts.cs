@@ -78,25 +78,18 @@ namespace WWWPOS.SideBarControl.Products
                 {
                     hasSameSize = false;
                 }
-
-                ////Adding Items to combo box
-                //cmb_ProductColor.Items.Add(productColor.Substring(0, productColor.IndexOf("#")));
-                //cmb_ProductSize.Items.Add(productSize.Substring(0, productSize.IndexOf("#")));
-
-                ////Remove the added string items
-                //productColor = productColor.Remove(0, productColor.IndexOf("#") + 1);
-                //productSize = productSize.Remove(0, productSize.IndexOf("#") + 1);
             }
-
 
             ID = productID;
             Price = productPrice;
             Stock = product_Stock;
-            Color = productColor;
-            productsSize = productSize;
+            //Color = productColor;
+            //productsSize = productSize;
             Descriptions = productDescription;
             Pic = image;
 
+            cmb_ProductColor.SelectedIndex = 0;
+            cmb_ProductSize.SelectedIndex = 0;
         }
 
         public int ID { get; set; }
@@ -130,9 +123,6 @@ namespace WWWPOS.SideBarControl.Products
             get => product_Image.Image;
             set => product_Image.Image = value;
         }
-
-        public string dummyColor { get; set; }
-        public string dummySize { get; set; }
 
     }
 }
