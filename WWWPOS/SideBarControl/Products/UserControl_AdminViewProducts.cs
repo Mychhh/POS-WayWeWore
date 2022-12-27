@@ -17,8 +17,21 @@ namespace WWWPOS.SideBarControl.Products
         {
             InitializeComponent();
 
-            cmb_Color.Items.Add(productColor);
-            cmb_ProductSize.Items.Add(productSize);
+            //Adding hashtag to the end of string
+            productColor += "#";
+            productSize += "#";
+
+            //Checks if the string in not empty
+            while (!string.IsNullOrEmpty(productColor))
+            {
+                //Adding Items to combo box
+                cmb_Color.Items.Add(productColor.Substring(0, productColor.IndexOf("#")));
+                cmb_ProductSize.Items.Add(productSize.Substring(0, productSize.IndexOf("#")));
+
+                //Remove the added string items
+                productColor = productColor.Remove(0, productColor.IndexOf("#") + 1);
+                productSize = productSize.Remove(0, productSize.IndexOf("#") + 1);
+            }
 
             ID = productID;
             Price = productPrice;
@@ -28,8 +41,8 @@ namespace WWWPOS.SideBarControl.Products
             Descriptions = productDescription;
             Pic = image;
 
-
         }
+
         public int ID { get; set; }
         public string Descriptions
         {
@@ -61,6 +74,9 @@ namespace WWWPOS.SideBarControl.Products
             get => product_Image.Image;
             set => product_Image.Image = value;
         }
+
+        public string dummyColor { get; set; }
+        public string dummySize { get; set; }
 
     }
 }

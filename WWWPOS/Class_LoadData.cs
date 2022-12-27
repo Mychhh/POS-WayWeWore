@@ -80,9 +80,8 @@ namespace WWWPOS
 
                             if (CheckProducts.Product_Name == productname)
                             {
-                                Console.WriteLine("Sheesh");
-                                CheckProducts.Product_Color += " " + productcolor;
-                                CheckProducts.Product_Size += " " + productsize;
+                                CheckProducts.Product_Color += "#" + productcolor;
+                                CheckProducts.Product_Size += "#" + productsize;
                                 hasItem = true;
                                 break;
                             }
