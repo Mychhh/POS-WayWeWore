@@ -16,11 +16,18 @@ namespace WWWPOS.SideBarControl
 {
     public partial class UserControlInventory : UserControl
     {
-
-        SideBarControl.Inventory.UserControlRead UC_Read = new SideBarControl.Inventory.UserControlRead();
         public UserControlInventory()
         {
             InitializeComponent();
+        }
+
+        private void UserControlInventory_Load(object sender, EventArgs e)
+        {
+
+            UserControlRead UC_Read = new UserControlRead();
+            panel_Inventory.Controls.Clear();
+            panel_Inventory.Controls.Add(UC_Read);
+            UC_Read.Dock = DockStyle.Fill;
         }
 
         private void btn_AddProduct_Click(object sender, EventArgs e)
@@ -39,6 +46,7 @@ namespace WWWPOS.SideBarControl
             panel_Inventory.Controls.Add(UC_ViewUpdate);
             UC_ViewUpdate.Dock = DockStyle.Fill;
 
+            //Loads product item
             Class_LoadData LD = new Class_LoadData();
             LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
         }
@@ -52,13 +60,6 @@ namespace WWWPOS.SideBarControl
 
             Class_LoadData LD = new Class_LoadData();
             LD.selectProduct(UC_Delete.flowLayoutPanel, "panelDelete");
-        }
-
-        private void UserControlInventory_Load(object sender, EventArgs e)
-        {
-            panel_Inventory.Controls.Clear();
-            panel_Inventory.Controls.Add(UC_Read);
-            UC_Read.Dock = DockStyle.Fill;
         }
 
     }

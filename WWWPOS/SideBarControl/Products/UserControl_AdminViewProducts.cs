@@ -91,7 +91,6 @@ namespace WWWPOS.SideBarControl.Products
 
             cmb_ProductColor.SelectedIndex = 0;
             cmb_ProductSize.SelectedIndex = 0;
-            Console.WriteLine("Product Description" + Descriptions);
         }
 
         public int ID { get; set; }

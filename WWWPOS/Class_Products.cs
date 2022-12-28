@@ -23,7 +23,7 @@ namespace WWWPOS
         public string Product_Status { get; set; }
         public string Product_Added_At { get; set; }
 
-        //Contructors
+        //Contructors 
         public Class_Products(int productID, int accountID, string productCategory, string productName,
                        string productColor, double productPrice, int productStock, 
                        string productImages, string productSize, string productDescription,
@@ -43,5 +43,6 @@ namespace WWWPOS
             Product_Added_At = productAddedAt;
         }
 
+        //Methods (Operation)
     }
 }

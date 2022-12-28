@@ -13,7 +13,6 @@ namespace WWWPOS.SideBarControl.Inventory
 {
     public partial class UserControlViewUpdate : UserControl
     {
-
         public UserControlViewUpdate()
         {
             InitializeComponent();
@@ -21,9 +20,6 @@ namespace WWWPOS.SideBarControl.Inventory
 
         private void UserControlViewUpdate_Load(object sender, EventArgs e)
         {
-            //loadData LD = new loadData();
-            //LD.selectProduct(flowLayoutPanel, "panelEdit");
         }
-
     }
 }

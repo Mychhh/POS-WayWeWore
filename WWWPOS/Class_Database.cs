@@ -31,6 +31,7 @@ namespace WWWPOS
     {
     //SQl Declaration
         public static string user_ID, message;
+        public static bool isLogin = false;
         public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
         protected SqlCommand command;
@@ -208,6 +209,7 @@ namespace WWWPOS
             string selectQuery = "UPDATE Products SET Category='" + category + "',Product_Name='" + name + "',Color='" + color + "',Price='" + price + "',Stocks='" + stock + "',Product_Size='" + size + "',Product_Description='" + description + "' WHERE Product_ID ='" + productID + "';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
+            
             connection.Close();
 
             SuccessMessage("Product Updated!");
