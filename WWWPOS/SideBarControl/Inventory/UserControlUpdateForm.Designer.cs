@@ -28,38 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBox_productID = new System.Windows.Forms.TextBox();
+            this.txtBox_ProductID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.product_Image = new System.Windows.Forms.PictureBox();
+            this.picbox_ProductImage = new System.Windows.Forms.PictureBox();
             this.btn_Browse = new System.Windows.Forms.Button();
-            this.rtb_Description = new System.Windows.Forms.RichTextBox();
-            this.txtBox_Stocks = new System.Windows.Forms.TextBox();
-            this.txtBox_Price = new System.Windows.Forms.TextBox();
+            this.rtb_ProductDescription = new System.Windows.Forms.RichTextBox();
+            this.txtBox_ProductStocks = new System.Windows.Forms.TextBox();
+            this.txtBox_ProductPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtBox_Color = new System.Windows.Forms.TextBox();
+            this.txtBox_ProductColor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_Size = new System.Windows.Forms.ComboBox();
+            this.cmb_ProductSize = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox_ProductType = new System.Windows.Forms.ComboBox();
+            this.cmb_ProductCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBox_ProductName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_UpdateProduct = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Close = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.product_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_ProductImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtBox_productID
+            // txtBox_ProductID
             // 
-            this.txtBox_productID.Enabled = false;
-            this.txtBox_productID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_productID.Location = new System.Drawing.Point(472, 67);
-            this.txtBox_productID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBox_productID.Name = "txtBox_productID";
-            this.txtBox_productID.Size = new System.Drawing.Size(384, 28);
-            this.txtBox_productID.TabIndex = 104;
+            this.txtBox_ProductID.Enabled = false;
+            this.txtBox_ProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_ProductID.Location = new System.Drawing.Point(472, 67);
+            this.txtBox_ProductID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBox_ProductID.Name = "txtBox_ProductID";
+            this.txtBox_ProductID.Size = new System.Drawing.Size(384, 28);
+            this.txtBox_ProductID.TabIndex = 104;
             // 
             // label7
             // 
@@ -71,17 +71,17 @@
             this.label7.TabIndex = 103;
             this.label7.Text = "Product ID";
             // 
-            // product_Image
+            // picbox_ProductImage
             // 
-            this.product_Image.BackColor = System.Drawing.Color.LightGray;
-            this.product_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.product_Image.Location = new System.Drawing.Point(34, 63);
-            this.product_Image.Margin = new System.Windows.Forms.Padding(4);
-            this.product_Image.Name = "product_Image";
-            this.product_Image.Size = new System.Drawing.Size(405, 250);
-            this.product_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.product_Image.TabIndex = 102;
-            this.product_Image.TabStop = false;
+            this.picbox_ProductImage.BackColor = System.Drawing.Color.LightGray;
+            this.picbox_ProductImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picbox_ProductImage.Location = new System.Drawing.Point(34, 63);
+            this.picbox_ProductImage.Margin = new System.Windows.Forms.Padding(4);
+            this.picbox_ProductImage.Name = "picbox_ProductImage";
+            this.picbox_ProductImage.Size = new System.Drawing.Size(405, 250);
+            this.picbox_ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbox_ProductImage.TabIndex = 102;
+            this.picbox_ProductImage.TabStop = false;
             // 
             // btn_Browse
             // 
@@ -98,32 +98,32 @@
             this.btn_Browse.Text = "Browse";
             this.btn_Browse.UseVisualStyleBackColor = false;
             // 
-            // rtb_Description
+            // rtb_ProductDescription
             // 
-            this.rtb_Description.Location = new System.Drawing.Point(34, 360);
-            this.rtb_Description.Margin = new System.Windows.Forms.Padding(4);
-            this.rtb_Description.Name = "rtb_Description";
-            this.rtb_Description.Size = new System.Drawing.Size(404, 132);
-            this.rtb_Description.TabIndex = 100;
-            this.rtb_Description.Text = "Description";
+            this.rtb_ProductDescription.Location = new System.Drawing.Point(34, 360);
+            this.rtb_ProductDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.rtb_ProductDescription.Name = "rtb_ProductDescription";
+            this.rtb_ProductDescription.Size = new System.Drawing.Size(404, 132);
+            this.rtb_ProductDescription.TabIndex = 100;
+            this.rtb_ProductDescription.Text = "Description";
             // 
-            // txtBox_Stocks
+            // txtBox_ProductStocks
             // 
-            this.txtBox_Stocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_Stocks.Location = new System.Drawing.Point(474, 408);
-            this.txtBox_Stocks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBox_Stocks.Name = "txtBox_Stocks";
-            this.txtBox_Stocks.Size = new System.Drawing.Size(384, 28);
-            this.txtBox_Stocks.TabIndex = 99;
+            this.txtBox_ProductStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_ProductStocks.Location = new System.Drawing.Point(474, 408);
+            this.txtBox_ProductStocks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBox_ProductStocks.Name = "txtBox_ProductStocks";
+            this.txtBox_ProductStocks.Size = new System.Drawing.Size(384, 28);
+            this.txtBox_ProductStocks.TabIndex = 99;
             // 
-            // txtBox_Price
+            // txtBox_ProductPrice
             // 
-            this.txtBox_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_Price.Location = new System.Drawing.Point(474, 351);
-            this.txtBox_Price.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBox_Price.Name = "txtBox_Price";
-            this.txtBox_Price.Size = new System.Drawing.Size(384, 28);
-            this.txtBox_Price.TabIndex = 98;
+            this.txtBox_ProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_ProductPrice.Location = new System.Drawing.Point(474, 351);
+            this.txtBox_ProductPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBox_ProductPrice.Name = "txtBox_ProductPrice";
+            this.txtBox_ProductPrice.Size = new System.Drawing.Size(384, 28);
+            this.txtBox_ProductPrice.TabIndex = 98;
             // 
             // label6
             // 
@@ -145,14 +145,14 @@
             this.label8.TabIndex = 96;
             this.label8.Text = "Price";
             // 
-            // txtBox_Color
+            // txtBox_ProductColor
             // 
-            this.txtBox_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_Color.Location = new System.Drawing.Point(474, 296);
-            this.txtBox_Color.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBox_Color.Name = "txtBox_Color";
-            this.txtBox_Color.Size = new System.Drawing.Size(384, 28);
-            this.txtBox_Color.TabIndex = 95;
+            this.txtBox_ProductColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_ProductColor.Location = new System.Drawing.Point(474, 296);
+            this.txtBox_ProductColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBox_ProductColor.Name = "txtBox_ProductColor";
+            this.txtBox_ProductColor.Size = new System.Drawing.Size(384, 28);
+            this.txtBox_ProductColor.TabIndex = 95;
             // 
             // label5
             // 
@@ -164,21 +164,21 @@
             this.label5.TabIndex = 94;
             this.label5.Text = "Color";
             // 
-            // comboBox_Size
+            // cmb_ProductSize
             // 
-            this.comboBox_Size.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Size.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Size.FormattingEnabled = true;
-            this.comboBox_Size.Items.AddRange(new object[] {
+            this.cmb_ProductSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_ProductSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_ProductSize.FormattingEnabled = true;
+            this.cmb_ProductSize.Items.AddRange(new object[] {
             "Small",
             "Medium",
             "Large",
             "Extra Large"});
-            this.comboBox_Size.Location = new System.Drawing.Point(474, 238);
-            this.comboBox_Size.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox_Size.Name = "comboBox_Size";
-            this.comboBox_Size.Size = new System.Drawing.Size(384, 30);
-            this.comboBox_Size.TabIndex = 93;
+            this.cmb_ProductSize.Location = new System.Drawing.Point(474, 238);
+            this.cmb_ProductSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_ProductSize.Name = "cmb_ProductSize";
+            this.cmb_ProductSize.Size = new System.Drawing.Size(384, 30);
+            this.cmb_ProductSize.TabIndex = 93;
             // 
             // label4
             // 
@@ -190,19 +190,19 @@
             this.label4.TabIndex = 92;
             this.label4.Text = "Size";
             // 
-            // comboBox_ProductType
+            // cmb_ProductCategory
             // 
-            this.comboBox_ProductType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_ProductType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_ProductType.FormattingEnabled = true;
-            this.comboBox_ProductType.Items.AddRange(new object[] {
+            this.cmb_ProductCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_ProductCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_ProductCategory.FormattingEnabled = true;
+            this.cmb_ProductCategory.Items.AddRange(new object[] {
             "T-Shirts",
             "Shorts"});
-            this.comboBox_ProductType.Location = new System.Drawing.Point(474, 180);
-            this.comboBox_ProductType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox_ProductType.Name = "comboBox_ProductType";
-            this.comboBox_ProductType.Size = new System.Drawing.Size(384, 30);
-            this.comboBox_ProductType.TabIndex = 91;
+            this.cmb_ProductCategory.Location = new System.Drawing.Point(474, 180);
+            this.cmb_ProductCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_ProductCategory.Name = "cmb_ProductCategory";
+            this.cmb_ProductCategory.Size = new System.Drawing.Size(384, 30);
+            this.cmb_ProductCategory.TabIndex = 91;
             // 
             // label3
             // 
@@ -210,9 +210,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(470, 154);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 22);
+            this.label3.Size = new System.Drawing.Size(150, 22);
             this.label3.TabIndex = 90;
-            this.label3.Text = "Product type";
+            this.label3.Text = "Product Category";
             // 
             // txtBox_ProductName
             // 
@@ -283,20 +283,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 503);
             this.Controls.Add(this.btn_Close);
-            this.Controls.Add(this.txtBox_productID);
+            this.Controls.Add(this.txtBox_ProductID);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.product_Image);
+            this.Controls.Add(this.picbox_ProductImage);
             this.Controls.Add(this.btn_Browse);
-            this.Controls.Add(this.rtb_Description);
-            this.Controls.Add(this.txtBox_Stocks);
-            this.Controls.Add(this.txtBox_Price);
+            this.Controls.Add(this.rtb_ProductDescription);
+            this.Controls.Add(this.txtBox_ProductStocks);
+            this.Controls.Add(this.txtBox_ProductPrice);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtBox_Color);
+            this.Controls.Add(this.txtBox_ProductColor);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox_Size);
+            this.Controls.Add(this.cmb_ProductSize);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox_ProductType);
+            this.Controls.Add(this.cmb_ProductCategory);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBox_ProductName);
             this.Controls.Add(this.label2);
@@ -306,7 +306,7 @@
             this.Name = "UserControlUpdateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserControlUpdateForm";
-            ((System.ComponentModel.ISupportInitialize)(this.product_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_ProductImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,20 +314,20 @@
 
         #endregion
 
-        public System.Windows.Forms.TextBox txtBox_productID;
+        public System.Windows.Forms.TextBox txtBox_ProductID;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.PictureBox product_Image;
+        public System.Windows.Forms.PictureBox picbox_ProductImage;
         private System.Windows.Forms.Button btn_Browse;
-        public System.Windows.Forms.RichTextBox rtb_Description;
-        public System.Windows.Forms.TextBox txtBox_Stocks;
-        public System.Windows.Forms.TextBox txtBox_Price;
+        public System.Windows.Forms.RichTextBox rtb_ProductDescription;
+        public System.Windows.Forms.TextBox txtBox_ProductStocks;
+        public System.Windows.Forms.TextBox txtBox_ProductPrice;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.TextBox txtBox_Color;
+        public System.Windows.Forms.TextBox txtBox_ProductColor;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.ComboBox comboBox_Size;
+        public System.Windows.Forms.ComboBox cmb_ProductSize;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.ComboBox comboBox_ProductType;
+        public System.Windows.Forms.ComboBox cmb_ProductCategory;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtBox_ProductName;
         private System.Windows.Forms.Label label2;

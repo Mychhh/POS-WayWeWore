@@ -26,11 +26,11 @@ namespace WWWPOS.SideBarControl.Inventory
         {
             DataBase DB = new DataBase();
 
-            int productID = Int32.Parse(txtBox_productID.Text);
-            double productPrice = Double.Parse(txtBox_Price.Text);
-            int productStock = Int32.Parse(txtBox_Stocks.Text);
+            int productID = Int32.Parse(txtBox_ProductID.Text);
+            double productPrice = Double.Parse(txtBox_ProductPrice.Text);
+            int productStock = Int32.Parse(txtBox_ProductStocks.Text);
 
-            DB.UpdateProducts(productID, comboBox_ProductType.Text, txtBox_ProductName.Text, txtBox_Color.Text, productPrice, productStock, comboBox_Size.Text, rtb_Description.Text);
+            DB.UpdateProducts(productID, cmb_ProductCategory.Text, txtBox_ProductName.Text, txtBox_ProductColor.Text, productPrice, productStock, cmb_ProductSize.Text, rtb_ProductDescription.Text);
             this.Close();
         }
     }
