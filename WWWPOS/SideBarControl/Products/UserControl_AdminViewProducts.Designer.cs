@@ -28,49 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.product_Description = new System.Windows.Forms.Label();
-            this.product_Size = new System.Windows.Forms.Label();
+            this.lbl_ProductDescription = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.product_Color = new System.Windows.Forms.Label();
-            this.product_Price = new System.Windows.Forms.Label();
+            this.lbl_ProductPrice = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.product_Stock = new System.Windows.Forms.Label();
+            this.lbl_ProductStock = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.product_Image = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.product_Image)).BeginInit();
+            this.picbox_ProductImage = new System.Windows.Forms.PictureBox();
+            this.cmb_ProductSize = new System.Windows.Forms.ComboBox();
+            this.cmb_ProductColor = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_ProductImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // product_Description
+            // lbl_ProductDescription
             // 
-            this.product_Description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.product_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product_Description.Location = new System.Drawing.Point(13, 341);
-            this.product_Description.Name = "product_Description";
-            this.product_Description.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.product_Description.Size = new System.Drawing.Size(269, 64);
-            this.product_Description.TabIndex = 30;
-            this.product_Description.Text = "Description";
-            this.product_Description.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // product_Size
-            // 
-            this.product_Size.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.product_Size.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product_Size.Location = new System.Drawing.Point(72, 270);
-            this.product_Size.Name = "product_Size";
-            this.product_Size.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.product_Size.Size = new System.Drawing.Size(208, 26);
-            this.product_Size.TabIndex = 35;
-            this.product_Size.Text = "Size";
-            this.product_Size.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_ProductDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.lbl_ProductDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProductDescription.Location = new System.Drawing.Point(15, 341);
+            this.lbl_ProductDescription.Name = "lbl_ProductDescription";
+            this.lbl_ProductDescription.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.lbl_ProductDescription.Size = new System.Drawing.Size(265, 64);
+            this.lbl_ProductDescription.TabIndex = 30;
+            this.lbl_ProductDescription.Text = "Description";
+            this.lbl_ProductDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(11, 308);
+            this.label3.Location = new System.Drawing.Point(14, 307);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 23);
             this.label3.TabIndex = 32;
@@ -87,94 +76,105 @@
             this.label2.TabIndex = 34;
             this.label2.Text = "Stocks";
             // 
-            // product_Color
+            // lbl_ProductPrice
             // 
-            this.product_Color.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.product_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product_Color.Location = new System.Drawing.Point(72, 304);
-            this.product_Color.Name = "product_Color";
-            this.product_Color.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.product_Color.Size = new System.Drawing.Size(208, 26);
-            this.product_Color.TabIndex = 33;
-            this.product_Color.Text = "Color";
-            this.product_Color.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // product_Price
-            // 
-            this.product_Price.AutoSize = true;
-            this.product_Price.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
-            this.product_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product_Price.Location = new System.Drawing.Point(71, 233);
-            this.product_Price.Name = "product_Price";
-            this.product_Price.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.product_Price.Size = new System.Drawing.Size(28, 24);
-            this.product_Price.TabIndex = 27;
-            this.product_Price.Text = "0";
+            this.lbl_ProductPrice.AutoSize = true;
+            this.lbl_ProductPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.lbl_ProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProductPrice.Location = new System.Drawing.Point(71, 233);
+            this.lbl_ProductPrice.Name = "lbl_ProductPrice";
+            this.lbl_ProductPrice.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.lbl_ProductPrice.Size = new System.Drawing.Size(28, 24);
+            this.lbl_ProductPrice.TabIndex = 27;
+            this.lbl_ProductPrice.Text = "0";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(11, 265);
+            this.label20.Location = new System.Drawing.Point(13, 268);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(41, 23);
             this.label20.TabIndex = 28;
             this.label20.Text = "Size";
             // 
-            // product_Stock
+            // lbl_ProductStock
             // 
-            this.product_Stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(174)))), ((int)(((byte)(242)))));
-            this.product_Stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product_Stock.Location = new System.Drawing.Point(233, 235);
-            this.product_Stock.Name = "product_Stock";
-            this.product_Stock.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.product_Stock.Size = new System.Drawing.Size(47, 26);
-            this.product_Stock.TabIndex = 29;
-            this.product_Stock.Text = "0";
-            this.product_Stock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_ProductStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(174)))), ((int)(((byte)(242)))));
+            this.lbl_ProductStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProductStock.Location = new System.Drawing.Point(233, 232);
+            this.lbl_ProductStock.Name = "lbl_ProductStock";
+            this.lbl_ProductStock.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.lbl_ProductStock.Size = new System.Drawing.Size(47, 26);
+            this.lbl_ProductStock.TabIndex = 29;
+            this.lbl_ProductStock.Text = "0";
+            this.lbl_ProductStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(11, 234);
+            this.label14.Location = new System.Drawing.Point(12, 233);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 23);
             this.label14.TabIndex = 31;
             this.label14.Text = "Price";
             // 
-            // product_Image
+            // picbox_ProductImage
             // 
-            this.product_Image.Image = global::WWWPOS.Properties.Resources.image;
-            this.product_Image.Location = new System.Drawing.Point(16, 18);
-            this.product_Image.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.product_Image.Name = "product_Image";
-            this.product_Image.Size = new System.Drawing.Size(264, 212);
-            this.product_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.product_Image.TabIndex = 36;
-            this.product_Image.TabStop = false;
+            this.picbox_ProductImage.Image = global::WWWPOS.Properties.Resources.image;
+            this.picbox_ProductImage.Location = new System.Drawing.Point(16, 18);
+            this.picbox_ProductImage.Margin = new System.Windows.Forms.Padding(4);
+            this.picbox_ProductImage.Name = "picbox_ProductImage";
+            this.picbox_ProductImage.Size = new System.Drawing.Size(264, 212);
+            this.picbox_ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbox_ProductImage.TabIndex = 36;
+            this.picbox_ProductImage.TabStop = false;
+            // 
+            // cmb_ProductSize
+            // 
+            this.cmb_ProductSize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmb_ProductSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_ProductSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_ProductSize.FormattingEnabled = true;
+            this.cmb_ProductSize.Location = new System.Drawing.Point(70, 265);
+            this.cmb_ProductSize.Name = "cmb_ProductSize";
+            this.cmb_ProductSize.Size = new System.Drawing.Size(210, 26);
+            this.cmb_ProductSize.TabIndex = 37;
+            this.cmb_ProductSize.DropDownClosed += new System.EventHandler(this.cmb_ProductSize_DropDownClosed);
+            // 
+            // cmb_ProductColor
+            // 
+            this.cmb_ProductColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmb_ProductColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_ProductColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_ProductColor.FormattingEnabled = true;
+            this.cmb_ProductColor.Location = new System.Drawing.Point(70, 305);
+            this.cmb_ProductColor.Name = "cmb_ProductColor";
+            this.cmb_ProductColor.Size = new System.Drawing.Size(210, 26);
+            this.cmb_ProductColor.TabIndex = 38;
             // 
             // UserControl_AdminViewProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            this.Controls.Add(this.product_Image);
-            this.Controls.Add(this.product_Description);
-            this.Controls.Add(this.product_Size);
+            this.Controls.Add(this.cmb_ProductColor);
+            this.Controls.Add(this.cmb_ProductSize);
+            this.Controls.Add(this.picbox_ProductImage);
+            this.Controls.Add(this.lbl_ProductDescription);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.product_Color);
-            this.Controls.Add(this.product_Price);
+            this.Controls.Add(this.lbl_ProductPrice);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.product_Stock);
+            this.Controls.Add(this.lbl_ProductStock);
             this.Controls.Add(this.label14);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControl_AdminViewProducts";
             this.Size = new System.Drawing.Size(293, 422);
-            ((System.ComponentModel.ISupportInitialize)(this.product_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_ProductImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,15 +182,15 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox product_Image;
-        private System.Windows.Forms.Label product_Description;
-        private System.Windows.Forms.Label product_Size;
+        private System.Windows.Forms.PictureBox picbox_ProductImage;
+        private System.Windows.Forms.Label lbl_ProductDescription;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label product_Color;
-        private System.Windows.Forms.Label product_Price;
+        private System.Windows.Forms.Label lbl_ProductPrice;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label product_Stock;
+        private System.Windows.Forms.Label lbl_ProductStock;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmb_ProductSize;
+        private System.Windows.Forms.ComboBox cmb_ProductColor;
     }
 }

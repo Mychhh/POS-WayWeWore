@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WWWPOS.ErrorMessage
 {
-    public partial class MessageDialogue : Form
+    public partial class ErrorMessageDialogue : Form
     {
-        public MessageDialogue(string errorMessage)
+        public ErrorMessageDialogue(string errorMessage)
         {
             InitializeComponent();
             ErrorMessage  = errorMessage;
@@ -32,12 +32,12 @@ namespace WWWPOS.ErrorMessage
 
         private void btn_Alright_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
     }
 }

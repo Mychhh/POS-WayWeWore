@@ -22,7 +22,7 @@ namespace WWWPOS
         private void ViewAllAvailableProductMethod()
         {
             this.flPanel_ViewProduct.Controls.Clear();
-            loadData ld = new loadData();
+            Class_LoadData ld = new Class_LoadData();
             ld.LoadAllAvailableProducts(this.flPanel_ViewProduct);
         }
 
@@ -62,14 +62,14 @@ namespace WWWPOS
         private void btn_TShirt_Click(object sender, EventArgs e)
         {
             this.flPanel_ViewProduct.Controls.Clear();
-            loadData ld = new loadData();
+            Class_LoadData ld = new Class_LoadData();
             ld.LoadAllTshirtProducts(this.flPanel_ViewProduct);
         }
         //Short Product
         private void btn_Short_Click(object sender, EventArgs e)
         {
             this.flPanel_ViewProduct.Controls.Clear();
-            loadData ld = new loadData();
+            Class_LoadData ld = new Class_LoadData();
             ld.LoadAllShortProducts(this.flPanel_ViewProduct);
         }
         //View Cart
@@ -78,7 +78,6 @@ namespace WWWPOS
             this.Hide();
 
             Form_ClientCart F_ClientCart = new Form_ClientCart();
-
             F_ClientCart.ShowDialog();
         }
 

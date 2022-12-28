@@ -118,7 +118,7 @@ namespace WWWPOS.SideBarControl.UserList
         //All User
         private void UserControlUserListAllUser_Load(object sender, EventArgs e)
         {
-            loadData LD = new loadData();
+            Class_LoadData LD = new Class_LoadData();
             LD.userRecords(dataGridAdmin,"Admin","Active");
             LD.userRecords(dataGridCustomer, "Client", "Active");
         }

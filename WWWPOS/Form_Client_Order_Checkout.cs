@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace WWWPOS
 {
-    public partial class Client_Order_Checkout : Form
+    public partial class Form_Client_Order_Checkout : Form
     {
         //ClientControl.UserControl_ViewCart viewCart = new ClientControl.UserControl_ViewCart();
 
         MenuControl.UserControl_Menu UC_Menu = new MenuControl.UserControl_Menu();
-        public Client_Order_Checkout()
+        public Form_Client_Order_Checkout()
         {
             InitializeComponent();
         }

@@ -20,7 +20,7 @@ namespace WWWPOS.SideBarControl
 
         private void UserControlDashboard_Load(object sender, EventArgs e)
         {
-            loadData ld = new loadData();
+            Class_LoadData ld = new Class_LoadData();
             
             string totalStocks = "";
             string totalUsers = "";

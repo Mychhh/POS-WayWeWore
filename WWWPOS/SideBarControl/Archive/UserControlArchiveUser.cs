@@ -19,7 +19,7 @@ namespace WWWPOS.SideBarControl.Archive
 
         private void UserControlArchiveUser_Load(object sender, EventArgs e)
         {
-            loadData LD = new loadData();
+            Class_LoadData LD = new Class_LoadData();
             LD.userArchive(dataGrid_ArchiveUser, "Inactive");
         }
         public static string user_ID;

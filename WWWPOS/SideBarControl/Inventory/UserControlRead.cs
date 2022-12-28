@@ -21,7 +21,7 @@ namespace WWWPOS.SideBarControl.Inventory
        
         private void UserControlRead_Load(object sender, EventArgs e)
         {
-            loadData LD = new loadData();
+            Class_LoadData LD = new Class_LoadData();
             LD.selectProduct(flowLayoutPanel, "panelView");
         }
     }

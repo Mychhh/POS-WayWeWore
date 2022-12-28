@@ -89,11 +89,6 @@
             this.cmb_ProductSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_ProductSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_ProductSize.FormattingEnabled = true;
-            this.cmb_ProductSize.Items.AddRange(new object[] {
-            "Small",
-            "Medium",
-            "Large",
-            "Extra Large"});
             this.cmb_ProductSize.Location = new System.Drawing.Point(217, 83);
             this.cmb_ProductSize.Name = "cmb_ProductSize";
             this.cmb_ProductSize.Size = new System.Drawing.Size(175, 26);
@@ -131,17 +126,9 @@
             this.cmb_Color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Color.FormattingEnabled = true;
-            this.cmb_Color.Items.AddRange(new object[] {
-            "Blue",
-            "Red",
-            "Green",
-            "Violet",
-            "Orange",
-            "Black",
-            "White"});
             this.cmb_Color.Location = new System.Drawing.Point(408, 83);
             this.cmb_Color.Name = "cmb_Color";
-            this.cmb_Color.Size = new System.Drawing.Size(175, 26);
+            this.cmb_Color.Size = new System.Drawing.Size(171, 26);
             this.cmb_Color.TabIndex = 47;
             // 
             // lbl_Category
@@ -165,7 +152,7 @@
             this.btn_DeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteProduct.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_DeleteProduct.Location = new System.Drawing.Point(560, 4);
+            this.btn_DeleteProduct.Location = new System.Drawing.Point(554, 4);
             this.btn_DeleteProduct.Margin = new System.Windows.Forms.Padding(0);
             this.btn_DeleteProduct.Name = "btn_DeleteProduct";
             this.btn_DeleteProduct.Size = new System.Drawing.Size(25, 25);

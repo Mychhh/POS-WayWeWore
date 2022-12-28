@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class_Products.cs" />
     <Compile Include="ClientControl\ClientCart\Form_ClientCart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,24 +114,31 @@
     <Compile Include="ClientControl\Products\UserControl_Product.Designer.cs">
       <DependentUpon>UserControl_Product.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientControl\Products\UserControl_ProductCartInactive.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl\Products\UserControl_ProductCartInactive.Designer.cs">
+      <DependentUpon>UserControl_ProductCartInactive.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ClientLandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_ClientLandingPage.Designer.cs">
       <DependentUpon>Form_ClientLandingPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client_Order_Checkout.cs">
+    <Compile Include="Form_Client_Order_Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_Order_Checkout.Designer.cs">
-      <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
+    <Compile Include="Form_Client_Order_Checkout.Designer.cs">
+      <DependentUpon>Form_Client_Order_Checkout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database.cs" />
-    <Compile Include="MessageFolder\MessageDialogue.cs">
+    <Compile Include="Class_Database.cs" />
+    <Compile Include="Class_LoadData.cs" />
+    <Compile Include="MessageFolder\ErrorMessageDialogue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MessageFolder\MessageDialogue.Designer.cs">
-      <DependentUpon>MessageDialogue.cs</DependentUpon>
+    <Compile Include="MessageFolder\ErrorMessageDialogue.Designer.cs">
+      <DependentUpon>ErrorMessageDialogue.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_LoginPage.cs">
       <SubType>Form</SubType>
@@ -149,6 +157,18 @@
     </Compile>
     <Compile Include="MenuControl\UserControl_Menu.Designer.cs">
       <DependentUpon>UserControl_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageFolder\SuccessMessageDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageFolder\SuccessMessageDialogue.Designer.cs">
+      <DependentUpon>SuccessMessageDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageFolder\WarningMessageDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageFolder\WarningMessageDialogue.Designer.cs">
+      <DependentUpon>WarningMessageDialogue.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -331,14 +351,17 @@
     <EmbeddedResource Include="ClientControl\Products\UserControl_Product.resx">
       <DependentUpon>UserControl_Product.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientControl\Products\UserControl_ProductCartInactive.resx">
+      <DependentUpon>UserControl_ProductCartInactive.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_ClientLandingPage.resx">
       <DependentUpon>Form_ClientLandingPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client_Order_Checkout.resx">
-      <DependentUpon>Client_Order_Checkout.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Client_Order_Checkout.resx">
+      <DependentUpon>Form_Client_Order_Checkout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MessageFolder\MessageDialogue.resx">
-      <DependentUpon>MessageDialogue.cs</DependentUpon>
+    <EmbeddedResource Include="MessageFolder\ErrorMessageDialogue.resx">
+      <DependentUpon>ErrorMessageDialogue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_LoginPage.resx">
       <DependentUpon>Form_LoginPage.cs</DependentUpon>
@@ -348,6 +371,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuControl\UserControl_Menu.resx">
       <DependentUpon>UserControl_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageFolder\SuccessMessageDialogue.resx">
+      <DependentUpon>SuccessMessageDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageFolder\WarningMessageDialogue.resx">
+      <DependentUpon>WarningMessageDialogue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

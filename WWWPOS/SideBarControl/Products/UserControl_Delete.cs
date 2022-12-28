@@ -16,6 +16,10 @@ namespace WWWPOS.SideBarControl.Products
         public UserControl_Delete(int productID, double productPrice, int product_Stock, string productColor, string productSize, string productDescription, Image image)
         {
             InitializeComponent();
+
+            cmb_Color.Items.Add(productColor);
+            cmb_ProductSize.Items.Add(productSize);
+
             ID = productID;
             Price = productPrice;
             Stock = product_Stock;
@@ -45,25 +49,31 @@ namespace WWWPOS.SideBarControl.Products
         }
         public string Color
         {
-            get => product_Color.Text;
-            set => product_Color.Text = value;
+            get => cmb_Color.Text;
+            set => cmb_Color.Text = value;
         }
         public string productsSize
         {
-            get => product_Size.Text;
-            set => product_Size.Text = value + "";
+            get => cmb_ProductSize.Text;
+            set => cmb_ProductSize.Text = value + "";
         }
         public Image Pic
         {
             get => product_Image.Image;
             set => product_Image.Image = value;
         }
-
-        private void btn_Edit_Click(object sender, EventArgs e)
+        private void btn_Delete_Click(object sender, EventArgs e)
         {
             DataBase DB = new DataBase();
-            DB.SetStatusProducts("Inactive", Int32.Parse(product_ID.Text));
-            this.Dispose(true);
+
+            DB.WarningMessage("Do you really want to delete this product?");
+
+            if (DataBase.message == "continue")
+            {
+                DB.SetStatusProducts("Inactive", Int32.Parse(product_ID.Text));
+                DataBase.message = "";
+                this.Dispose(true);
+            }
         }
     }
 }
