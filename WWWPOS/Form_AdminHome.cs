@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.SideBarControl;
 using WWWPOS.SideBarControl.Inventory;
 
 namespace WWWPOS
 {
     public partial class Form_AdminHome : Form
     {
-
+        
         MenuControl.UserControl_Menu UC_Menu = new MenuControl.UserControl_Menu();
 
         public Form_AdminHome()
@@ -23,11 +24,40 @@ namespace WWWPOS
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            SideBarControl.UserControlDashboard UC_Dashboard = new SideBarControl.UserControlDashboard();
+            switch (DataBase.isLogin)
+            {
+                case true:
 
-            //panel_Main.Controls.Clear();
-            panel_Main.Controls.Add(UC_Dashboard);
-            UC_Dashboard.Dock = DockStyle.Fill;
+                    UserControlInventory UC_Inventory = new UserControlInventory();
+                    //UserControlRead UC_Read = new UserControlRead();
+
+                    //Main Panel
+                    panel_Main.Controls.Clear();
+                    panel_Main.Controls.Add(UC_Inventory);
+                    UC_Inventory.Dock = DockStyle.Fill;
+
+                    UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+                    //Inventory Panel
+                    UC_Inventory.panel_Inventory.Controls.Clear();
+                    UC_Inventory.panel_Inventory.Controls.Add(UC_ViewUpdate);
+                    UC_ViewUpdate.Dock = DockStyle.Fill;
+
+                    //Loads product item
+                    Class_LoadData LD = new Class_LoadData();
+                    LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
+
+                    break;
+
+                case false:
+
+                    UserControlDashboard UC_Dashboard = new UserControlDashboard();
+
+                    //panel_Main.Controls.Clear();
+                    panel_Main.Controls.Add(UC_Dashboard);
+                    UC_Dashboard.Dock = DockStyle.Fill;
+                    DataBase.isLogin = true;
+                    break;
+            }
         }
 
         private void btn_Dashboard_Click(object sender, EventArgs e)

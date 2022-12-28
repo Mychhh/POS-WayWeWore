@@ -164,6 +164,8 @@ namespace WWWPOS.SideBarControl.Products
             UC_UpdateForm.txtBox_ProductPrice.Text = Price.ToString();
             UC_UpdateForm.txtBox_ProductStocks.Text = Stock.ToString();
 
+            UC_UpdateForm.cmb_ProductSize.Enabled = false;
+
             UC_UpdateForm.ShowDialog();
         }
     }

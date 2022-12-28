@@ -24,6 +24,12 @@ namespace WWWPOS.SideBarControl.Inventory
 
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
         {
+            Form_AdminHome form_AdminHome = new Form_AdminHome();
+            form_AdminHome.Hide();
+            form_AdminHome.ShowDialog();
+
+            //
+
             DataBase DB = new DataBase();
 
             int productID = Int32.Parse(txtBox_ProductID.Text);

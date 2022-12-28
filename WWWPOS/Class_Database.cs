@@ -31,6 +31,7 @@ namespace WWWPOS
     {
     //SQl Declaration
         public static string user_ID, message;
+        public static bool isLogin = false;
         public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
         protected SqlCommand command;
