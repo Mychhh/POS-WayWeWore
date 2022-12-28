@@ -14,7 +14,7 @@ namespace WWWPOS.SideBarControl.Products
 {
     public partial class UserControl_AdminViewProducts : UserControl
     {
-        public UserControl_AdminViewProducts(int productID, string productCategory, string productName, double productPrice, int product_Stock, string productColor, string productSize, string productDescription, Image image)
+        public UserControl_AdminViewProducts(int productID, string productCategory, string productName, double productPrice, int productStock, string productColor, string productSize, string productDescription, Image productImage)
         {
             InitializeComponent();
 
@@ -85,9 +85,9 @@ namespace WWWPOS.SideBarControl.Products
             Category = productCategory;
             Productname = productName;
             Price = productPrice;
-            Stock = product_Stock;
+            Stock = productStock;
             Descriptions = productDescription;
-            Pic = image;
+            Pic = productImage;
 
             cmb_ProductColor.SelectedIndex = 0;
             cmb_ProductSize.SelectedIndex = 0;
@@ -99,18 +99,18 @@ namespace WWWPOS.SideBarControl.Products
         public string Productname { get; set; }
         public string Descriptions
         {
-            get => product_Description.Text;
-            set => product_Description.Text = value;
+            get => lbl_ProductDescription.Text;
+            set => lbl_ProductDescription.Text = value;
         }
         public double Price
         {
-            get => Double.Parse(lbl_Product_Price.Text);
-            set => lbl_Product_Price.Text = value + "";
+            get => Double.Parse(lbl_ProductPrice.Text);
+            set => lbl_ProductPrice.Text = value + "";
         }
         public int Stock
         {
-            get => int.Parse(product_Stock.Text);
-            set => product_Stock.Text = value + "";
+            get => int.Parse(lbl_ProductStock.Text);
+            set => lbl_ProductStock.Text = value + "";
         }
         public string Color {
             get => cmb_ProductColor.Text;
@@ -123,16 +123,15 @@ namespace WWWPOS.SideBarControl.Products
         }
         public Image Pic
         {
-            get => product_Image.Image;
-            set => product_Image.Image = value;
+            get => picbox_ProductImage.Image;
+            set => picbox_ProductImage.Image = value;
         }
 
         //Change the Item Information after choosing product size and color
         private void cmb_ProductSize_DropDownClosed(object sender, EventArgs e)
         {
+            //Calls the method with a string array return type and use it to change the value of item based on given value
             Class_LoadData C_LoadData = new Class_LoadData();
-            //C_LoadData.GetParticularProduct(Category, Productname, cmb_ProductColor.Text, cmb_ProductSize.Text);
-
             string[] returnValue = C_LoadData.GetParticularProduct(Category, Productname, cmb_ProductColor.Text, cmb_ProductSize.Text);
 
             Price = Double.Parse(returnValue[5]);
