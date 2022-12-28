@@ -112,21 +112,46 @@ namespace WWWPOS
             }
         }
 
-        //Get a particular product
-        public void GetParticularProduct(string productcategory, string productname, string productcolor, string productsize)
+        //Get a particular product on AdminViewProducts
+        public string[] GetParticularProduct(string productcategory, string productname, string productcolor, string productsize)
         {
+            string ProductID = "";
+            string AccountID = "";
+            string Category = "";
+            string Name = "";
+            string Color = "";
+            string Price = "";
+            string Stock = "";
+            string ImagePath = "";
+            string Size = "";
+            string Description = "";
+            string Status = "";
+            string AddedAt = "";
+
             try
             {
                 connection.Open();
                 string selectParticularProductQuery = "SELECT * FROM Products " +
-                                                      "WHERE Category = '"+ productcategory + "' AND Product_Name = '"+ productname + "' " +
-                                                      "AND Color = '"+ productcolor + "' AND Product_Size = '"+ productsize + "' ";
+                                                      "WHERE Category = '" + productcategory + "' AND Product_Name = '" + productname + "' " +
+                                                      "AND Color = '" + productcolor + "' AND Product_Size = '" + productsize + "' ";
                 sqlCommand = new SqlCommand(selectParticularProductQuery, connection);
                 dataReader = sqlCommand.ExecuteReader();
 
                 if (dataReader.Read())
                 {
                     //Change the field of the item
+                    ProductID = "" + dataReader[0];
+                    AccountID = "" + dataReader[1];
+                    Category = "" + dataReader[2];
+                    Name = "" + dataReader[3];
+                    Color = "" + dataReader[4];
+                    Price = "" + dataReader[5];
+                    Stock = "" + dataReader[6];
+                    ImagePath = "" + dataReader[7];
+                    Size = "" + dataReader[8];
+                    Description = "" + dataReader[9];
+                    Status = "" + dataReader[10];
+                    AddedAt = "" + dataReader[11];
                 }
 
             }
@@ -135,6 +160,11 @@ namespace WWWPOS
                 ErrorMessage(ex.Message);
             }
             connection.Close();
+            
+            string[] name = { ProductID, AccountID, Category, Name, Color, Price, Stock, ImagePath, Size, Description, Status, AddedAt };
+
+
+            return name;
         }
 
         //Active User
@@ -262,7 +292,8 @@ namespace WWWPOS
                     Class_Products objClassProducts = productsList[i];
 
                     UserControl_AdminViewProducts adminViewProducts =
-                    new UserControl_AdminViewProducts(objClassProducts.Product_ID, objClassProducts.Product_Price,
+                    new UserControl_AdminViewProducts(objClassProducts.Product_ID, objClassProducts.Product_Category,
+                                                      objClassProducts.Product_Name, objClassProducts.Product_Price,
                                                       objClassProducts.Product_Stock, objClassProducts.Product_Color,
                                                       objClassProducts.Product_Size, objClassProducts.Product_Descripiton,
                                                       Image.FromFile(objClassProducts.Product_Images));

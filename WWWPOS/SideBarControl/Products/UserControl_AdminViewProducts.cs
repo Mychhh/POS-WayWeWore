@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
+using WWWPOS.MessageFolder;
 
 namespace WWWPOS.SideBarControl.Products
 {
     public partial class UserControl_AdminViewProducts : UserControl
     {
-        public UserControl_AdminViewProducts(int productID, double productPrice, int product_Stock, string productColor, string productSize, string productDescription, Image image)
+        public UserControl_AdminViewProducts(int productID, string productCategory, string productName, double productPrice, int product_Stock, string productColor, string productSize, string productDescription, Image image)
         {
             InitializeComponent();
 
@@ -81,6 +82,8 @@ namespace WWWPOS.SideBarControl.Products
             }
 
             ID = productID;
+            Category = productCategory;
+            Productname = productName;
             Price = productPrice;
             Stock = product_Stock;
             Descriptions = productDescription;
@@ -88,9 +91,12 @@ namespace WWWPOS.SideBarControl.Products
 
             cmb_ProductColor.SelectedIndex = 0;
             cmb_ProductSize.SelectedIndex = 0;
+            Console.WriteLine("Product Description" + Descriptions);
         }
 
         public int ID { get; set; }
+        public string Category { get; set; }
+        public string Productname { get; set; }
         public string Descriptions
         {
             get => product_Description.Text;
@@ -98,13 +104,22 @@ namespace WWWPOS.SideBarControl.Products
         }
         public double Price
         {
-            get => Double.Parse(product_Price.Text);
-            set => product_Price.Text = value + "";
+            get => Double.Parse(lbl_Product_Price.Text);
+            set => lbl_Product_Price.Text = value + "";
         }
         public int Stock
         {
             get => int.Parse(product_Stock.Text);
             set => product_Stock.Text = value + "";
+        }
+        public string Color {
+            get => cmb_ProductColor.Text;
+            set => cmb_ProductColor.Text = value;
+        }
+        public string Productsize
+        {
+            get => cmb_ProductSize.Text;
+            set => cmb_ProductSize.Text = value;
         }
         public Image Pic
         {
@@ -112,16 +127,18 @@ namespace WWWPOS.SideBarControl.Products
             set => product_Image.Image = value;
         }
 
-        private void cmb_ProductColor_DropDownClosed(object sender, EventArgs e)
-        {
-            MessageFolder.SuccessMessageDialogue s = new MessageFolder.SuccessMessageDialogue(cmb_ProductColor.Text);
-            s.ShowDialog();
-        }
-
+        //Change the Item Information after choosing product size and color
         private void cmb_ProductSize_DropDownClosed(object sender, EventArgs e)
         {
-            MessageFolder.SuccessMessageDialogue s = new MessageFolder.SuccessMessageDialogue(cmb_ProductSize.Text);
-            s.ShowDialog();
+            Class_LoadData C_LoadData = new Class_LoadData();
+            //C_LoadData.GetParticularProduct(Category, Productname, cmb_ProductColor.Text, cmb_ProductSize.Text);
+
+            string[] returnValue = C_LoadData.GetParticularProduct(Category, Productname, cmb_ProductColor.Text, cmb_ProductSize.Text);
+
+            Price = Double.Parse(returnValue[5]);
+            Stock = Int32.Parse(returnValue[6]);
+            Descriptions = returnValue[9];
+            Pic = Image.FromFile(@"" + returnValue[7]);
         }
 
     }
