@@ -131,10 +131,15 @@ namespace WWWPOS.SideBarControl.Products
             Class_LoadData C_LoadData = new Class_LoadData();
             string[] returnValue = C_LoadData.GetParticularProduct(Category, Productname, cmb_ProductColor.Text, cmb_ProductSize.Text);
 
-            Price = Double.Parse(returnValue[5]);
-            Stock = Int32.Parse(returnValue[6]);
-            Descriptions = returnValue[9];
-            Pic = Image.FromFile(@"" + returnValue[7]);
+            this.ID = Int32.Parse(returnValue[0]);
+            this.Category = returnValue[2];
+            this.Productname = returnValue[3];
+            this.Color = returnValue[4];
+            this.Price = Double.Parse(returnValue[5]);
+            this.Stock = Int32.Parse(returnValue[6]);
+            this.Pic = Image.FromFile(@"" + returnValue[7]);
+            this.Productsize = returnValue[8];
+            this.Descriptions = returnValue[9];
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
@@ -152,21 +157,25 @@ namespace WWWPOS.SideBarControl.Products
             //UC_Update.txtBox_Price.Text = lbl_ProductPrice.Text;
             //UC_Update.txtBox_Stocks.Text = lbl_ProductStock.Text;
 
+            //-------------------------------------------------------//
+
             UserControlUpdateForm UC_UpdateForm = new UserControlUpdateForm();
 
-            UC_UpdateForm.picbox_ProductImage.Image = picbox_ProductImage.Image;
-            UC_UpdateForm.rtb_ProductDescription.Text = lbl_ProductDescription.Text;
-            UC_UpdateForm.txtBox_ProductID.Text = ID.ToString();
-            UC_UpdateForm.txtBox_ProductName.Text = Productname;
-            UC_UpdateForm.cmb_ProductCategory.Text = Category;
-            UC_UpdateForm.cmb_ProductSize.Text = Productsize;
-            UC_UpdateForm.txtBox_ProductColor.Text = Color;
-            UC_UpdateForm.txtBox_ProductPrice.Text = Price.ToString();
-            UC_UpdateForm.txtBox_ProductStocks.Text = Stock.ToString();
+            UC_UpdateForm.picbox_ProductImage.Image = this.Pic;
+            UC_UpdateForm.rtb_ProductDescription.Text = this.Descriptions;
+            UC_UpdateForm.txtBox_ProductID.Text = this.ID.ToString();
+            UC_UpdateForm.txtBox_ProductName.Text = this.Productname;
+            UC_UpdateForm.cmb_ProductCategory.Text = this.Category;
+            UC_UpdateForm.cmb_ProductSize.Text = this.Productsize;
+            UC_UpdateForm.txtBox_ProductColor.Text = this.Color;
+            UC_UpdateForm.txtBox_ProductPrice.Text = this.Price.ToString();
+            UC_UpdateForm.txtBox_ProductStocks.Text = this.Stock.ToString();
 
             UC_UpdateForm.cmb_ProductSize.Enabled = false;
+            UC_UpdateForm.txtBox_ProductColor.Enabled = false;
 
             UC_UpdateForm.ShowDialog();
+
         }
     }
 }
