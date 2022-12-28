@@ -186,6 +186,7 @@
             this.cmb_ProductSize.Name = "cmb_ProductSize";
             this.cmb_ProductSize.Size = new System.Drawing.Size(139, 26);
             this.cmb_ProductSize.TabIndex = 60;
+            this.cmb_ProductSize.DropDownClosed += new System.EventHandler(this.cmb_ProductSize_DropDownClosed);
             // 
             // UserControl_Delete
             // 

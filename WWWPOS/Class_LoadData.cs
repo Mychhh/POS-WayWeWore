@@ -252,10 +252,21 @@ namespace WWWPOS
                 }
             }
             //Delete
-            else
+            else if (productPanel == "panelDelete")
             {
-                UserControl_Delete obj = new UserControl_Delete(productid, productprice, productstock, productcolor, productsize, productdescription, productimage);
-                flowLayoutPanel.Controls.Add(obj);
+                for (int i = 0; i < productsList.Count; i++)
+                {
+                    Class_Products objClassProducts = productsList[i];
+
+                    UserControl_Delete adminDeleteProducts =
+                    new UserControl_Delete(objClassProducts.Product_ID, objClassProducts.Product_Category,
+                                                      objClassProducts.Product_Name, objClassProducts.Product_Price,
+                                                      objClassProducts.Product_Stock, objClassProducts.Product_Color,
+                                                      objClassProducts.Product_Size, objClassProducts.Product_Descripiton,
+                                                      Image.FromFile(objClassProducts.Product_Images));
+
+                    flowLayoutPanel.Controls.Add(adminDeleteProducts);
+                }
             }
 
         }

@@ -16,22 +16,84 @@ namespace WWWPOS.SideBarControl.Products
         public UserControl_Delete(int productID, string productCategory, string productName, double productPrice, int productStock, string productColor, string productSize, string productDescription, Image productImage)
         {
             InitializeComponent();
+            //Adding hashtag to the end of string
+            productColor += "#";
+            productSize += "#";
 
-            cmb_ProductColor.Items.Add(productColor);
-            cmb_ProductSize.Items.Add(productSize);
+            bool hasSameColor = false;
+            bool hasSameSize = false;
+
+            //Checks if the string in not empty
+            while (!string.IsNullOrEmpty(productColor))
+            {
+                //Color Validation
+                if (cmb_ProductColor.Items.Count > 0)
+                {
+                    foreach (string colorList in cmb_ProductColor.Items)
+                    {
+                        if (productColor.Substring(0, productColor.IndexOf("#")) == colorList)
+                        {
+                            productColor = productColor.Remove(0, productColor.IndexOf("#") + 1);
+                            hasSameColor = true;
+                            break;
+                        }
+                    }
+                }
+
+                //Adds color if it is unique
+                if (hasSameColor == false)
+                {
+                    cmb_ProductColor.Items.Add(productColor.Substring(0, productColor.IndexOf("#")));
+                    productColor = productColor.Remove(0, productColor.IndexOf("#") + 1);
+                }
+                else if (hasSameColor == true)
+                {
+                    hasSameColor = false;
+                }
+
+                //-----------------------------------------------------------//
+
+                //Size Validation
+                if (cmb_ProductSize.Items.Count > 0)
+                {
+                    foreach (string sizeList in cmb_ProductSize.Items)
+                    {
+                        if (productSize.Substring(0, productSize.IndexOf("#")) == sizeList)
+                        {
+                            productSize = productSize.Remove(0, productSize.IndexOf("#") + 1);
+                            hasSameSize = true;
+                            break;
+                        }
+                    }
+                }
+
+                //Adds color if it is unique
+                if (hasSameSize == false)
+                {
+                    cmb_ProductSize.Items.Add(productSize.Substring(0, productSize.IndexOf("#")));
+                    productSize = productSize.Remove(0, productSize.IndexOf("#") + 1);
+                }
+                else if (hasSameSize == true)
+                {
+                    hasSameSize = false;
+                }
+            }
 
             ID = productID;
+            Category = productCategory;
+            Productname = productName;
             Price = productPrice;
-            Stock = lbl_ProductStock;
-            Color = productColor;
-            productsSize = productSize;
+            Stock = productStock;
             Descriptions = productDescription;
-            Pic = image;
+            Pic = productImage;
+
+            cmb_ProductColor.SelectedIndex = 0;
+            cmb_ProductSize.SelectedIndex = 0;
         }
-        public int ID {
-            get => int.Parse(product_ID.Text);
-            set => product_ID.Text = value + "";
-        }
+
+        public int ID { get; set; }
+        public string Category { get; set; }
+        public string Productname { get; set; }
         public string Descriptions
         {
             get => lbl_ProductDescription.Text;
@@ -52,10 +114,10 @@ namespace WWWPOS.SideBarControl.Products
             get => cmb_ProductColor.Text;
             set => cmb_ProductColor.Text = value;
         }
-        public string productsSize
+        public string Productsize
         {
             get => cmb_ProductSize.Text;
-            set => cmb_ProductSize.Text = value + "";
+            set => cmb_ProductSize.Text = value;
         }
         public Image Pic
         {
@@ -70,10 +132,41 @@ namespace WWWPOS.SideBarControl.Products
 
             if (DataBase.message == "continue")
             {
-                DB.SetStatusProducts("Inactive", Int32.Parse(product_ID.Text));
+                DB.SetStatusProducts("Inactive", ID);
                 DataBase.message = "";
-                this.Dispose(true);
+
+                //This refresh the form
+                Form_AdminHome form_AdminHome = new Form_AdminHome();
+                form_AdminHome.Hide();
+                form_AdminHome.ShowDialog();
+
+                //UserControlInventory UC_Inventory = new UserControlInventory();
+                //UserControlDelete UC_Delete = new UserControlDelete();
+
+                //UC_Inventory.panel_Inventory.Controls.Clear();
+                //UC_Inventory.panel_Inventory.Controls.Add(UC_Delete);
+                //UC_Delete.Dock = DockStyle.Fill;
+
+                //Class_LoadData LD = new Class_LoadData();
+                //LD.selectProduct(UC_Delete.flowLayoutPanel, "panelDelete");
             }
+        }
+
+        private void cmb_ProductSize_DropDownClosed(object sender, EventArgs e)
+        {
+            //Calls the method with a string array return type and use it to change the value of item based on given value
+            Class_LoadData C_LoadData = new Class_LoadData();
+            string[] returnValue = C_LoadData.GetParticularProduct(Category, Productname, cmb_ProductColor.Text, cmb_ProductSize.Text);
+
+            this.ID = Int32.Parse(returnValue[0]);
+            this.Category = returnValue[2];
+            this.Productname = returnValue[3];
+            this.Color = returnValue[4];
+            this.Price = Double.Parse(returnValue[5]);
+            this.Stock = Int32.Parse(returnValue[6]);
+            this.Pic = Image.FromFile(@"" + returnValue[7]);
+            this.Productsize = returnValue[8];
+            this.Descriptions = returnValue[9];
         }
     }
 }
