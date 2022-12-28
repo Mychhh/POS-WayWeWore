@@ -13,16 +13,16 @@ namespace WWWPOS.SideBarControl.Products
 {
     public partial class UserControl_Delete : UserControl
     {
-        public UserControl_Delete(int productID, double productPrice, int product_Stock, string productColor, string productSize, string productDescription, Image image)
+        public UserControl_Delete(int productID, string productCategory, string productName, double productPrice, int productStock, string productColor, string productSize, string productDescription, Image productImage)
         {
             InitializeComponent();
 
-            cmb_Color.Items.Add(productColor);
+            cmb_ProductColor.Items.Add(productColor);
             cmb_ProductSize.Items.Add(productSize);
 
             ID = productID;
             Price = productPrice;
-            Stock = product_Stock;
+            Stock = lbl_ProductStock;
             Color = productColor;
             productsSize = productSize;
             Descriptions = productDescription;
@@ -34,23 +34,23 @@ namespace WWWPOS.SideBarControl.Products
         }
         public string Descriptions
         {
-            get => product_Description.Text;
-            set => product_Description.Text = value;
+            get => lbl_ProductDescription.Text;
+            set => lbl_ProductDescription.Text = value;
         }
         public double Price
         {
-            get => Double.Parse(product_Price.Text);
-            set => product_Price.Text = value + "";
+            get => Double.Parse(lbl_ProductPrice.Text);
+            set => lbl_ProductPrice.Text = value + "";
         }
         public int Stock
         {
-            get => int.Parse(product_Stock.Text);
-            set => product_Stock.Text = value + "";
+            get => int.Parse(lbl_ProductStock.Text);
+            set => lbl_ProductStock.Text = value + "";
         }
         public string Color
         {
-            get => cmb_Color.Text;
-            set => cmb_Color.Text = value;
+            get => cmb_ProductColor.Text;
+            set => cmb_ProductColor.Text = value;
         }
         public string productsSize
         {
@@ -59,8 +59,8 @@ namespace WWWPOS.SideBarControl.Products
         }
         public Image Pic
         {
-            get => product_Image.Image;
-            set => product_Image.Image = value;
+            get => picbox_ProductImage.Image;
+            set => picbox_ProductImage.Image = value;
         }
         private void btn_Delete_Click(object sender, EventArgs e)
         {

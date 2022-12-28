@@ -112,7 +112,7 @@ namespace WWWPOS
             }
         }
 
-        //Get a particular product on AdminViewProducts
+        //Get a particular product
         public string[] GetParticularProduct(string productcategory, string productname, string productcolor, string productsize)
         {
             string ProductID = "";
