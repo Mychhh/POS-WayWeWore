@@ -19,7 +19,7 @@ namespace WWWPOS
         public Form_AdminHome()
         {
             InitializeComponent();
-                    }
+        }
 
         private void Form2_Load(object sender, EventArgs e)
         {

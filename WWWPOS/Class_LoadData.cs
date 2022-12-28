@@ -211,73 +211,7 @@ namespace WWWPOS
             connection.Close();
         }
 
-        //Select product to load
-        //public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
-        //{
-        //    try
-        //    {
-        //        connection.Open();
-
-        //        string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
-        //        command = new SqlCommand(selectQuery, connection);
-        //        mdr = command.ExecuteReader();
-
-        //        while (mdr.Read())
-        //        {
-        //            productid = int.Parse(mdr[0] + "");
-        //            accountid = int.Parse(mdr[1] + "");
-        //            productcategory = "" + mdr[2];
-        //            productname = "" + mdr[3];
-
-        //            productcolor = "" + mdr[4];
-        //            productcolorarraylist.Add("" + mdr[4]);
-
-        //            productprice = Double.Parse(mdr[5] + "");
-        //            productstock = int.Parse(mdr[6] + "");
-
-        //            productimage = Image.FromFile(@"" + mdr[7]);
-        //            productimagepath = "" + mdr[7];
-
-        //            productsize = "" + mdr[8];
-        //            productsizearraylist.Add("" + mdr[8]);
-
-        //            productdescription = "" + mdr[9];
-        //            productstatus = "" + mdr[10];
-        //            productaddedat = "" + mdr[11];
-
-        //            ////Read
-        //            //if (productPanel == "panelView")
-        //            //{
-        //            //    UserControl_AdminViewProducts obj = new UserControl_AdminViewProducts(productid, productprice, productstock, productcolor, productsize, productdescription, productimage);
-        //            //    flowLayoutPanel.Controls.Add(obj);
-        //            //}
-        //            ////Update
-        //            //else if (productPanel == "panelEdit")
-        //            //{
-        //            //    UserControl_Update obj = new UserControl_Update(productid, productname, productcategory, productprice, productstock, productcolor, productsize, productdescription, productimage);
-        //            //    flowLayoutPanel.Controls.Add(obj);
-        //            //}
-        //            ////Delete
-        //            //else
-        //            //{
-        //            //    UserControl_Delete obj = new UserControl_Delete(productid, productprice, productstock, productcolor, productsize, productdescription, productimage);
-        //            //    flowLayoutPanel.Controls.Add(obj);
-        //            //}
-
-        //        }
-        //        mdr.Close();
-        //        command.Clone();
-        //        connection.Close();
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ErrorMessage(ex.Message);
-        //    }
-        //}
-
         //Fetching All Stocks
-
         public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
         {
             //Calls the method
@@ -286,7 +220,6 @@ namespace WWWPOS
             //Read
             if (productPanel == "panelView")
             {
-                
                 for(int i = 0; i < productsList.Count; i++)
                 {
                     Class_Products objClassProducts = productsList[i];
@@ -300,25 +233,23 @@ namespace WWWPOS
 
                     flowLayoutPanel.Controls.Add(adminViewProducts);
                 }
-
-                //while (!(productsStack.Count == 0))
-                //{
-                //    Class_Products objProductFromStack = productsStack.Pop();
-
-                //    UserControl_AdminViewProducts adminViewProducts =
-                //    new UserControl_AdminViewProducts(objProductFromStack.Product_ID, objProductFromStack.Product_Price,
-                //                                      objProductFromStack.Product_Stock, objProductFromStack.Product_Color,
-                //                                      objProductFromStack.Product_Size, objProductFromStack.Product_Descripiton,
-                //                                      Image.FromFile(objProductFromStack.Product_Images));
-
-                //    flowLayoutPanel.Controls.Add(adminViewProducts);
-                //}
             }
             //Update
             else if (productPanel == "panelEdit")
             {
-                UserControl_Update obj = new UserControl_Update(productid, productname, productcategory, productprice, productstock, productcolor, productsize, productdescription, productimage);
-                flowLayoutPanel.Controls.Add(obj);
+                for (int i = 0; i < productsList.Count; i++)
+                {
+                    Class_Products objClassProducts = productsList[i];
+
+                    UserControl_Update adminViewUpdateProducts =
+                    new UserControl_Update(objClassProducts.Product_ID, objClassProducts.Product_Category,
+                                                      objClassProducts.Product_Name, objClassProducts.Product_Price,
+                                                      objClassProducts.Product_Stock, objClassProducts.Product_Color,
+                                                      objClassProducts.Product_Size, objClassProducts.Product_Descripiton,
+                                                      Image.FromFile(objClassProducts.Product_Images));
+
+                    flowLayoutPanel.Controls.Add(adminViewUpdateProducts);
+                }
             }
             //Delete
             else
