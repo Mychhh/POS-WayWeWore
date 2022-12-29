@@ -8,30 +8,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WWWPOS.ClientControl.ClientCart;
 using WWWPOS.ClientControl.Products;
+using WWWPOS.SideBarControl.Inventory;
+using WWWPOS.SideBarControl;
 using WWWPOS.SideBarControl.Products;
 
 namespace WWWPOS
 {
     internal class Class_LoadData : DataBase
     {
-    //Product Representation (Fields)
-        int productid;
-        int accountid;
-        string productcategory;
-        string productname;
-        string productcolor;
-        double productprice;
-        int productstock;
-
-        Image productimage;
-        string productimagepath;
-
-        string productsize;
-        string productdescription;
-        string productstatus;
-        string productaddedat;
-
-
+    
     //-----Admin Side-----//    
 
         //Get All Active Product and Store it in Stack
@@ -49,21 +34,21 @@ namespace WWWPOS
 
                 while (dataReader.Read())
                 {
-                    productid = int.Parse(dataReader[0] + "");
-                    accountid = int.Parse(dataReader[1] + "");
-                    productcategory = "" + dataReader[2];
-                    productname = "" + dataReader[3];
-                    productcolor = "" + dataReader[4];
-                    productprice = Double.Parse(dataReader[5] + "");
-                    productstock = int.Parse(dataReader[6] + "");
+                    int productid = int.Parse(dataReader[0] + "");
+                    int accountid = int.Parse(dataReader[1] + "");
+                    string productcategory = "" + dataReader[2];
+                    string productname = "" + dataReader[3];
+                    string productcolor = "" + dataReader[4];
+                    double productprice = Double.Parse(dataReader[5] + "");
+                    int productstock = int.Parse(dataReader[6] + "");
 
-                    productimage = Image.FromFile(@"" + dataReader[7]);
-                    productimagepath = "" + dataReader[7];
+                    Image productimage = Image.FromFile(@"" + dataReader[7]);
+                    string productimagepath = "" + dataReader[7];
 
-                    productsize = "" + dataReader[8];
-                    productdescription = "" + dataReader[9];
-                    productstatus = "" + dataReader[10];
-                    productaddedat = "" + dataReader[11];
+                    string productsize = "" + dataReader[8];
+                    string productdescription = "" + dataReader[9];
+                    string productstatus = "" + dataReader[10];
+                    string productaddedat = "" + dataReader[11];
 
                     //Creating a new product
                     Class_Products Products = new Class_Products(productid, accountid, productcategory,
@@ -167,50 +152,6 @@ namespace WWWPOS
             return name;
         }
 
-        //Active User
-        public void userRecords(DataGridView dataCustomer, string user_Type, string user_Status)
-        {
-            connection.Open();
-            command = new SqlCommand("SELECT * FROM Account WHERE User_Type = '" + user_Type + "' AND User_Status = '" + user_Status + "'", connection);
-            mdr = command.ExecuteReader();
-
-            while (mdr.Read())
-            {
-                dataCustomer.Rows.Add(mdr[0].ToString(), mdr[1].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[7].ToString(), mdr[6].ToString(), mdr[8].ToString());
-            }
-            connection.Close();
-        }
-
-        // User Deleted
-        public void userArchive(DataGridView dataCustomer, string user_Status)
-        {
-
-            connection.Open();
-            command = new SqlCommand("SELECT * FROM Account WHERE User_Status = '" + user_Status + "'", connection);
-            mdr = command.ExecuteReader();
-
-            while (mdr.Read())
-            {
-                dataCustomer.Rows.Add(mdr[0].ToString(), mdr[1].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[7].ToString(), mdr[6].ToString(), mdr[8].ToString());
-            }
-            connection.Close();
-        }
-
-        //Load product to be deleted
-        public void ProductArchive(DataGridView dataProduct, string product_Status)
-        {
-
-            connection.Open();
-            command = new SqlCommand("SELECT * FROM Products WHERE Product_Status = '" + product_Status + "'", connection);
-            mdr = command.ExecuteReader();
-
-            while (mdr.Read())
-            {
-                dataProduct.Rows.Add(mdr[0].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[6].ToString(), mdr[8].ToString(), mdr[9].ToString(), mdr[10].ToString(), mdr[11].ToString());
-            }
-            connection.Close();
-        }
-
         //Fetching All Stocks
         public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
         {
@@ -220,7 +161,7 @@ namespace WWWPOS
             //Read
             if (productPanel == "panelView")
             {
-                for(int i = 0; i < productsList.Count; i++)
+                for (int i = 0; i < productsList.Count; i++)
                 {
                     Class_Products objClassProducts = productsList[i];
 
@@ -271,6 +212,51 @@ namespace WWWPOS
 
         }
 
+        //Active User
+        public void userRecords(DataGridView dataCustomer, string user_Type, string user_Status)
+        {
+            connection.Open();
+            command = new SqlCommand("SELECT * FROM Account WHERE User_Type = '" + user_Type + "' AND User_Status = '" + user_Status + "'", connection);
+            mdr = command.ExecuteReader();
+
+            while (mdr.Read())
+            {
+                dataCustomer.Rows.Add(mdr[0].ToString(), mdr[1].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[7].ToString(), mdr[6].ToString(), mdr[8].ToString());
+            }
+            connection.Close();
+        }
+
+        // User Deleted
+        public void userArchive(DataGridView dataCustomer, string user_Status)
+        {
+
+            connection.Open();
+            command = new SqlCommand("SELECT * FROM Account WHERE User_Status = '" + user_Status + "'", connection);
+            mdr = command.ExecuteReader();
+
+            while (mdr.Read())
+            {
+                dataCustomer.Rows.Add(mdr[0].ToString(), mdr[1].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[7].ToString(), mdr[6].ToString(), mdr[8].ToString());
+            }
+            connection.Close();
+        }
+
+        //Load product archive
+        public void ProductArchive(DataGridView dataProduct, string product_Status)
+        {
+
+            connection.Open();
+            command = new SqlCommand("SELECT * FROM Products WHERE Product_Status = '" + product_Status + "'", connection);
+            mdr = command.ExecuteReader();
+
+            while (mdr.Read())
+            {
+                dataProduct.Rows.Add(mdr[0].ToString(), mdr[2].ToString(), mdr[3].ToString(), mdr[4].ToString(), mdr[5].ToString(), mdr[6].ToString(), mdr[8].ToString(), mdr[9].ToString(), mdr[10].ToString(), mdr[11].ToString());
+            }
+            connection.Close();
+        }
+
+        //Dashboard
         public string AllStocks(string products)
         {
             try
@@ -299,8 +285,6 @@ namespace WWWPOS
 
             return products;
         }
-
-        //Fetching All User
         public string AllUser(string users)
         {
             try
@@ -329,114 +313,79 @@ namespace WWWPOS
             return users;
         }
 
-    //-----Client Side-----//
+        //-----Client Side-----//
 
-        //Load All available product
-        public void LoadAllAvailableProducts(FlowLayoutPanel flowLayoutPanel)
+        //Loads available product
+        public void LoadAllAvailableProducts(FlowLayoutPanel flowLayoutPanel, string productPanel)
         {
-            try
+            //Calls the method
+            GetActiveProduct();
+
+            switch (productPanel)
             {
-                connection.Open();
+                case "AllProduct":
 
-                string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
-                command = new SqlCommand(selectQuery, connection);
-                mdr = command.ExecuteReader();
+                    for (int i = 0; i < productsList.Count; i++)
+                    {
+                        Class_Products objClassProducts = productsList[i];
 
-                while (mdr.Read())
-                {
-                    int id = int.Parse(mdr[0] + "");
-                    string category = "" + mdr[2];
-                    string name = "" + mdr[2];
-                    string color = "" + mdr[4];
-                    double price = Double.Parse(mdr[5] + "");
-                    int stocks = int.Parse(mdr[6] + "");
-                    Image image = Image.FromFile(@"" + mdr[7]);
-                    string imgPath = "" + mdr[7];
-                    string size = "" + mdr[8];
-                    string description = "" + mdr[9];
+                        UserControl_Product UC_Products =
+                        new UserControl_Product(objClassProducts.Product_ID, objClassProducts.Product_Images, objClassProducts.Product_Name,
+                                                objClassProducts.Product_Price, objClassProducts.Product_Stock, objClassProducts.Product_Descripiton,
+                                                objClassProducts.Product_Size, objClassProducts.Product_Color, objClassProducts.Product_Category);
 
-                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
-                    flowLayoutPanel.Controls.Add(productAvailable);
-                }
+                        flowLayoutPanel.Controls.Add(UC_Products);
+                    }
 
+                    break;
+
+                case "TshirtProduct":
+
+                    for (int i = 0; i < productsList.Count; i++)
+                    {
+                        Class_Products objClassProducts = productsList[i];
+
+                        UserControl_Product UC_Products =
+                        new UserControl_Product(objClassProducts.Product_ID, objClassProducts.Product_Images, objClassProducts.Product_Name,
+                                                objClassProducts.Product_Price, objClassProducts.Product_Stock, objClassProducts.Product_Descripiton,
+                                                objClassProducts.Product_Size, objClassProducts.Product_Color, objClassProducts.Product_Category);
+
+                        switch (objClassProducts.Product_Category)
+                        {
+                            case "T-Shirts":
+                                flowLayoutPanel.Controls.Add(UC_Products);
+                                break;
+                        }
+                        
+                    }
+
+                    break;
+
+                case "ShortProduct":
+
+                    for (int i = 0; i < productsList.Count; i++)
+                    {
+                        Class_Products objClassProducts = productsList[i];
+
+                        UserControl_Product UC_Products =
+                        new UserControl_Product(objClassProducts.Product_ID, objClassProducts.Product_Images, objClassProducts.Product_Name,
+                                                objClassProducts.Product_Price, objClassProducts.Product_Stock, objClassProducts.Product_Descripiton,
+                                                objClassProducts.Product_Size, objClassProducts.Product_Color, objClassProducts.Product_Category);
+
+                        switch (objClassProducts.Product_Category)
+                        {
+                            case "Shorts":
+                                flowLayoutPanel.Controls.Add(UC_Products);
+                                break;
+                        }
+
+                    }
+
+                    break;
             }
-            catch (Exception ex)
-            {
-                ErrorMessage(ex.Message);
-            }
+
         }
 
-        //Load All available Tshirt
-        public void LoadAllTshirtProducts(FlowLayoutPanel flowLayoutPanel)
-        {
-            try
-            {
-                connection.Open();
-                string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active' AND Category = 'T-Shirts';";
-                command = new SqlCommand(selectQuery, connection);
-                mdr = command.ExecuteReader();
-
-                while (mdr.Read())
-                {
-                    int id = int.Parse(mdr[0] + "");
-                    Image image = Image.FromFile(@"" + mdr[7]);
-                    string imgPath = "" + mdr[7];
-                    string name = "" + mdr[2];
-                    double price = Double.Parse(mdr[5] + "");
-                    int stocks = int.Parse(mdr[6] + "");
-                    string description = "" + mdr[9];
-                    string size = "" + mdr[8];
-                    string color = "" + mdr[4];
-                    string category = "" + mdr[2];
-
-                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
-                    flowLayoutPanel.Controls.Add(productAvailable);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                ErrorMessage(ex.Message);
-            }
-            connection.Close();
-        }
-
-        //Load All available Short
-        public void LoadAllShortProducts(FlowLayoutPanel flowLayoutPanel)
-        {
-            try
-            {
-                connection.Open();
-                string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active' AND Category = 'Shorts';";
-                command = new SqlCommand(selectQuery, connection);
-                mdr = command.ExecuteReader();
-
-                while (mdr.Read())
-                {
-                    int id = int.Parse(mdr[0] + "");
-                    Image image = Image.FromFile(@"" + mdr[7]);
-                    string imgPath = "" + mdr[7];
-                    string name = "" + mdr[2];
-                    double price = Double.Parse(mdr[5] + "");
-                    int stocks = int.Parse(mdr[6] + "");
-                    string description = "" + mdr[9];
-                    string size = "" + mdr[8];
-                    string color = "" + mdr[4];
-                    string category = "" + mdr[2];
-
-                    UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
-                    flowLayoutPanel.Controls.Add(productAvailable);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                ErrorMessage(ex.Message);
-            }
-            connection.Close();
-        }
-
-        //Load Users Cart
         public void LoadCart(FlowLayoutPanel flowLayoutPanel)
         {
             string userid = DataBase.user_ID;

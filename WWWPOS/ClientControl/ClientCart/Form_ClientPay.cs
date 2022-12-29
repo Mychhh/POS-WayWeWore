@@ -24,7 +24,13 @@ namespace WWWPOS.ClientControl.ClientCart
             Form_ClientCart F_ClientCart = new Form_ClientCart();
             F_ClientCart.ShowDialog();
         }
+        private void btn_GoToProducts_Click(object sender, EventArgs e)
+        {
+            this.Hide();
 
+            Form_ClientLandingPage F_ClientLandingPage = new Form_ClientLandingPage();
+            F_ClientLandingPage.ShowDialog();
+        }
         private void Form_ClientPay_Load(object sender, EventArgs e)
         {
             //loadData data = new loadData();
@@ -37,5 +43,6 @@ namespace WWWPOS.ClientControl.ClientCart
         {
 
         }
+
     }
 }

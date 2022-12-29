@@ -106,12 +106,12 @@
             this.btn_BrowseProduct.FlatAppearance.BorderSize = 0;
             this.btn_BrowseProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_BrowseProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BrowseProduct.Location = new System.Drawing.Point(1191, 164);
+            this.btn_BrowseProduct.Location = new System.Drawing.Point(1202, 173);
             this.btn_BrowseProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btn_BrowseProduct.Name = "btn_BrowseProduct";
-            this.btn_BrowseProduct.Size = new System.Drawing.Size(175, 49);
+            this.btn_BrowseProduct.Size = new System.Drawing.Size(164, 32);
             this.btn_BrowseProduct.TabIndex = 69;
-            this.btn_BrowseProduct.Text = "Products";
+            this.btn_BrowseProduct.Text = "Browse product";
             this.btn_BrowseProduct.UseVisualStyleBackColor = false;
             this.btn_BrowseProduct.Click += new System.EventHandler(this.btn_BrowseProduct_Click);
             // 
