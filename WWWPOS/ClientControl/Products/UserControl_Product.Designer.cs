@@ -30,7 +30,7 @@
         {
             this.btn_Buy = new System.Windows.Forms.Button();
             this.btn_AddToCart = new System.Windows.Forms.Button();
-            this.lbl_ProductStocks = new System.Windows.Forms.Label();
+            this.lbl_ProductStock = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbl_ProductQty = new System.Windows.Forms.Label();
             this.btn_Minus = new System.Windows.Forms.Button();
@@ -39,10 +39,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.lbl_ProductPrice = new System.Windows.Forms.Label();
             this.cmb_ProductSize = new System.Windows.Forms.ComboBox();
-            this.picBox_ProductPicture = new System.Windows.Forms.PictureBox();
-            this.cmb_Color = new System.Windows.Forms.ComboBox();
+            this.picbox_ProductImage = new System.Windows.Forms.PictureBox();
+            this.cmb_ProductColor = new System.Windows.Forms.ComboBox();
             this.lbl_Category = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_ProductPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_ProductImage)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Buy
@@ -76,19 +76,19 @@
             this.btn_AddToCart.UseVisualStyleBackColor = false;
             this.btn_AddToCart.Click += new System.EventHandler(this.btn_AddToCart_Click);
             // 
-            // lbl_ProductStocks
+            // lbl_ProductStock
             // 
-            this.lbl_ProductStocks.AutoSize = true;
-            this.lbl_ProductStocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(174)))), ((int)(((byte)(242)))));
-            this.lbl_ProductStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductStocks.Location = new System.Drawing.Point(182, 268);
-            this.lbl_ProductStocks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_ProductStocks.Name = "lbl_ProductStocks";
-            this.lbl_ProductStocks.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.lbl_ProductStocks.Size = new System.Drawing.Size(38, 26);
-            this.lbl_ProductStocks.TabIndex = 22;
-            this.lbl_ProductStocks.Text = "10";
-            this.lbl_ProductStocks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_ProductStock.AutoSize = true;
+            this.lbl_ProductStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(174)))), ((int)(((byte)(242)))));
+            this.lbl_ProductStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProductStock.Location = new System.Drawing.Point(182, 268);
+            this.lbl_ProductStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_ProductStock.Name = "lbl_ProductStock";
+            this.lbl_ProductStock.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lbl_ProductStock.Size = new System.Drawing.Size(38, 26);
+            this.lbl_ProductStock.TabIndex = 22;
+            this.lbl_ProductStock.Text = "10";
+            this.lbl_ProductStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -190,29 +190,30 @@
             this.cmb_ProductSize.Name = "cmb_ProductSize";
             this.cmb_ProductSize.Size = new System.Drawing.Size(135, 26);
             this.cmb_ProductSize.TabIndex = 33;
+            this.cmb_ProductSize.DropDownClosed += new System.EventHandler(this.cmb_ProductSize_DropDownClosed);
             // 
-            // picBox_ProductPicture
+            // picbox_ProductImage
             // 
-            this.picBox_ProductPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBox_ProductPicture.Image = global::WWWPOS.Properties.Resources.Images;
-            this.picBox_ProductPicture.InitialImage = null;
-            this.picBox_ProductPicture.Location = new System.Drawing.Point(13, 13);
-            this.picBox_ProductPicture.Name = "picBox_ProductPicture";
-            this.picBox_ProductPicture.Size = new System.Drawing.Size(275, 245);
-            this.picBox_ProductPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBox_ProductPicture.TabIndex = 34;
-            this.picBox_ProductPicture.TabStop = false;
+            this.picbox_ProductImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picbox_ProductImage.Image = global::WWWPOS.Properties.Resources.Images;
+            this.picbox_ProductImage.InitialImage = null;
+            this.picbox_ProductImage.Location = new System.Drawing.Point(13, 13);
+            this.picbox_ProductImage.Name = "picbox_ProductImage";
+            this.picbox_ProductImage.Size = new System.Drawing.Size(275, 245);
+            this.picbox_ProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbox_ProductImage.TabIndex = 34;
+            this.picbox_ProductImage.TabStop = false;
             // 
-            // cmb_Color
+            // cmb_ProductColor
             // 
-            this.cmb_Color.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmb_Color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_Color.FormattingEnabled = true;
-            this.cmb_Color.Location = new System.Drawing.Point(13, 390);
-            this.cmb_Color.Name = "cmb_Color";
-            this.cmb_Color.Size = new System.Drawing.Size(135, 26);
-            this.cmb_Color.TabIndex = 35;
+            this.cmb_ProductColor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmb_ProductColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_ProductColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_ProductColor.FormattingEnabled = true;
+            this.cmb_ProductColor.Location = new System.Drawing.Point(13, 390);
+            this.cmb_ProductColor.Name = "cmb_ProductColor";
+            this.cmb_ProductColor.Size = new System.Drawing.Size(135, 26);
+            this.cmb_ProductColor.TabIndex = 35;
             // 
             // lbl_Category
             // 
@@ -233,15 +234,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.Controls.Add(this.lbl_Category);
-            this.Controls.Add(this.cmb_Color);
-            this.Controls.Add(this.picBox_ProductPicture);
+            this.Controls.Add(this.cmb_ProductColor);
+            this.Controls.Add(this.picbox_ProductImage);
             this.Controls.Add(this.lbl_ProductQty);
             this.Controls.Add(this.btn_Plus);
             this.Controls.Add(this.cmb_ProductSize);
             this.Controls.Add(this.btn_Minus);
             this.Controls.Add(this.btn_Buy);
             this.Controls.Add(this.btn_AddToCart);
-            this.Controls.Add(this.lbl_ProductStocks);
+            this.Controls.Add(this.lbl_ProductStock);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbl_ProductDescription);
             this.Controls.Add(this.label14);
@@ -250,7 +251,7 @@
             this.Name = "UserControl_Product";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(303, 473);
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_ProductPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_ProductImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,13 +264,13 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btn_Buy;
         private System.Windows.Forms.Button btn_AddToCart;
-        private System.Windows.Forms.Label lbl_ProductStocks;
+        private System.Windows.Forms.Label lbl_ProductStock;
         private System.Windows.Forms.Label lbl_ProductQty;
         private System.Windows.Forms.Label lbl_ProductDescription;
         private System.Windows.Forms.Label lbl_ProductPrice;
         private System.Windows.Forms.ComboBox cmb_ProductSize;
-        private System.Windows.Forms.PictureBox picBox_ProductPicture;
-        private System.Windows.Forms.ComboBox cmb_Color;
+        private System.Windows.Forms.PictureBox picbox_ProductImage;
+        private System.Windows.Forms.ComboBox cmb_ProductColor;
         private System.Windows.Forms.Label lbl_Category;
     }
 }
