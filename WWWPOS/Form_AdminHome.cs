@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WWWPOS.SideBarControl;
 using WWWPOS.SideBarControl.Inventory;
+using WWWPOS.SideBarControl.Orders;
+using WWWPOS.SideBarControl.UserList;
 
 namespace WWWPOS
 {
@@ -20,10 +22,12 @@ namespace WWWPOS
         public Form_AdminHome()
         {
             InitializeComponent();
+            
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            lbl_AdminName.Text = DataBase.user_Name;
             switch (DataBase.isLogin)
             {
                 case true:
@@ -128,7 +132,7 @@ namespace WWWPOS
 
         private void btn_Inventory_Click(object sender, EventArgs e)
         {
-            SideBarControl.UserControlInventory UC_Inventory = new SideBarControl.UserControlInventory();
+            UserControlInventory UC_Inventory = new UserControlInventory();
             UserControlRead UC_Read = new UserControlRead();
 
             //Main Panel
@@ -163,5 +167,23 @@ namespace WWWPOS
             }
 
         }
+
+        private void btn_Orders_Click(object sender, EventArgs e)
+        {
+            UserControlOrder UC_Order = new UserControlOrder();
+            UserControlOrderPending UC_OrderPending = new UserControlOrderPending();
+
+            //Main Panel
+            panel_Main.Controls.Clear();
+            panel_Main.Controls.Add(UC_Order);
+            UC_Order.Dock = DockStyle.Fill;
+
+            //InventoryPanel
+            UC_Order.Refresh();
+            UC_Order.panel_Order.Controls.Clear();
+            UC_Order.panel_Order.Controls.Add(UC_OrderPending);
+            UC_OrderPending.Dock = DockStyle.Fill;
+        }
+
     }
 }

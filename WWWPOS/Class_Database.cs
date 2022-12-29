@@ -30,7 +30,7 @@ namespace WWWPOS
     internal class DataBase
     {
     //SQl Declaration
-        public static string user_ID, message;
+        public static string user_ID, message, user_Name;
         public static bool isLogin = false;
         public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
@@ -115,6 +115,7 @@ namespace WWWPOS
             if (mdr.Read())
             {
                 user_ID = mdr["Account_Id"].ToString();
+                user_Name = mdr["Full_Name"].ToString();
                 String userType = mdr["User_Type"].ToString();
 
                 if (userType == "Client")

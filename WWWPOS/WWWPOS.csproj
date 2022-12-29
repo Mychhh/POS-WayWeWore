@@ -232,6 +232,24 @@
     <Compile Include="SideBarControl\Inventory\UserControlViewUpdate.Designer.cs">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Orders\UserControlOrderFailed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Orders\UserControlOrderFailed.Designer.cs">
+      <DependentUpon>UserControlOrderFailed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Orders\UserControlOrderPending.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Orders\UserControlOrderPending.Designer.cs">
+      <DependentUpon>UserControlOrderPending.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Orders\UserControlOrderSuccess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Orders\UserControlOrderSuccess.Designer.cs">
+      <DependentUpon>UserControlOrderSuccess.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\Products\UserControl_AdminViewProducts.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -303,6 +321,12 @@
     </Compile>
     <Compile Include="SideBarControl\UserControUserList.Designer.cs">
       <DependentUpon>UserControUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\UserControlOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserControlOrder.Designer.cs">
+      <DependentUpon>UserControlOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="SideBarControl\UserList\UserControlUserListAddUser.cs">
       <SubType>UserControl</SubType>
@@ -418,6 +442,15 @@
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlViewUpdate.resx">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Orders\UserControlOrderFailed.resx">
+      <DependentUpon>UserControlOrderFailed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Orders\UserControlOrderPending.resx">
+      <DependentUpon>UserControlOrderPending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Orders\UserControlOrderSuccess.resx">
+      <DependentUpon>UserControlOrderSuccess.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Products\UserControl_AdminViewProducts.resx">
       <DependentUpon>UserControl_AdminViewProducts.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,6 +477,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControlInventory.resx">
       <DependentUpon>UserControlInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserControlOrder.resx">
+      <DependentUpon>UserControlOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControlPurchase.resx">
       <DependentUpon>UserControlPurchase.cs</DependentUpon>
