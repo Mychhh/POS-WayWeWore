@@ -161,21 +161,16 @@ namespace WWWPOS.ClientControl.Products
         }
         private void btn_AddToCart_Click(object sender, EventArgs e)
         {
-            //int product_ID, string category, string productName,
-            //string productColor, double productPrice, int productQuantity,
-            //string productImg, string productSize, string productDescription
-
             DataBase DB = new DataBase();
             DB.AddToCart(ID, Category, ProductName, Color, Price, Int32.Parse(lbl_ProductQty.Text), ImagePath, Productsize, Descriptions);
         }
         private void btn_Buy_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //Class_LoadData data = new Class_LoadData();
-            //data.LoadBuyItem(productID, ProductImgPath, Productname, ProductPrice, ProductCategory, Int32.Parse(lbl_ProductQty.Text), ProductSize, ProductColor, ProductDescriptions);
-            
-        }
+            this.Hide();
+            Class_LoadData data = new Class_LoadData();
+            data.LoadBuyItem(ID, ImagePath, Productname, Price, Category, Int32.Parse(lbl_ProductQty.Text), Productsize, Color, Descriptions);
 
+        }
         private void cmb_ProductSize_DropDownClosed(object sender, EventArgs e)
         {
             //Calls the method with a string array return type and use it to change the value of item based on given value
@@ -191,5 +186,6 @@ namespace WWWPOS.ClientControl.Products
             SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue(ID.ToString());
             successMessageDialogue.ShowDialog();
         }
+
     }
 }
