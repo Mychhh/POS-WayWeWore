@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WWWPOS.ClientControl;
 using WWWPOS.ClientControl.ClientCart;
+using WWWPOS.ClientControl.Products;
 
 namespace WWWPOS
 {
@@ -75,6 +76,7 @@ namespace WWWPOS
             this.Hide();
 
             Form_ClientCart F_ClientCart = new Form_ClientCart();
+                        
             F_ClientCart.ShowDialog();
         }
 

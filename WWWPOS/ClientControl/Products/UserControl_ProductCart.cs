@@ -38,6 +38,9 @@ namespace WWWPOS.ClientControl.Products
             ProductSize = productSize;
             ProductColor = productColor;
             ProductCategory = productCategory;
+
+            cmb_Color.Enabled = false;
+            cmb_ProductSize.Enabled = false;
         }
         //For BuyItem
         public UserControl_ProductCart(int userID, int productID, string productImg, string productName, double productPrice, string productCategory, int productQuantity, string productSize, string productColor, string productDescription)
