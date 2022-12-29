@@ -26,7 +26,7 @@ namespace WWWPOS
             {
                 connection.Open();
 
-                string selectActiveProductQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
+                string selectActiveProductQuery = "SELECT * FROM Products WHERE Product_Status = 'Active' ORDER BY ProductAdd_at DESC";
                 sqlCommand = new SqlCommand(selectActiveProductQuery, connection);
                 dataReader = sqlCommand.ExecuteReader();
 

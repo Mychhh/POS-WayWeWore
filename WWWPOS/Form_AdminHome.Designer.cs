@@ -45,6 +45,7 @@
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.btn_Menu = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btn_Orders = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.btn_Orders);
             this.panel1.Controls.Add(this.btn_Inventory);
             this.panel1.Controls.Add(this.btn_Archive);
             this.panel1.Controls.Add(this.btn_UserList);
@@ -266,6 +268,21 @@
             this.panel8.Size = new System.Drawing.Size(528, 138);
             this.panel8.TabIndex = 46;
             // 
+            // btn_Orders
+            // 
+            this.btn_Orders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.btn_Orders.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Orders.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Orders.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Orders.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Orders.Location = new System.Drawing.Point(20, 756);
+            this.btn_Orders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Orders.Name = "btn_Orders";
+            this.btn_Orders.Size = new System.Drawing.Size(336, 55);
+            this.btn_Orders.TabIndex = 54;
+            this.btn_Orders.Text = "Order";
+            this.btn_Orders.UseVisualStyleBackColor = false;
+            // 
             // Form_AdminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -309,5 +326,6 @@
         public System.Windows.Forms.Panel panel_Main;
         private System.Windows.Forms.Button btn_Menu;
         private System.Windows.Forms.Panel panel_Menu;
+        private System.Windows.Forms.Button btn_Orders;
     }
 }
