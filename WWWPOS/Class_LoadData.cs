@@ -345,14 +345,18 @@ namespace WWWPOS
                     {
                         Class_Products objClassProducts = productsList[i];
 
-                        UserControl_AdminViewProducts adminViewProducts =
-                        new UserControl_AdminViewProducts(objClassProducts.Product_ID, objClassProducts.Product_Category,
-                                                          objClassProducts.Product_Name, objClassProducts.Product_Price,
-                                                          objClassProducts.Product_Stock, objClassProducts.Product_Color,
-                                                          objClassProducts.Product_Size, objClassProducts.Product_Descripiton,
-                                                          Image.FromFile(objClassProducts.Product_Images));
+                        UserControl_Product UC_Products =
+                        new UserControl_Product(objClassProducts.Product_ID, objClassProducts.Product_Images, objClassProducts.Product_Name,
+                                                objClassProducts.Product_Price, objClassProducts.Product_Stock, objClassProducts.Product_Descripiton,
+                                                objClassProducts.Product_Size, objClassProducts.Product_Color, objClassProducts.Product_Category);
 
-                        flowLayoutPanel.Controls.Add(adminViewProducts);
+                        switch (objClassProducts.Product_Category)
+                        {
+                            case "T-Shirts":
+                                flowLayoutPanel.Controls.Add(UC_Products);
+                                break;
+                        }
+                        
                     }
 
                     break;
@@ -363,14 +367,18 @@ namespace WWWPOS
                     {
                         Class_Products objClassProducts = productsList[i];
 
-                        UserControl_AdminViewProducts adminViewProducts =
-                        new UserControl_AdminViewProducts(objClassProducts.Product_ID, objClassProducts.Product_Category,
-                                                          objClassProducts.Product_Name, objClassProducts.Product_Price,
-                                                          objClassProducts.Product_Stock, objClassProducts.Product_Color,
-                                                          objClassProducts.Product_Size, objClassProducts.Product_Descripiton,
-                                                          Image.FromFile(objClassProducts.Product_Images));
+                        UserControl_Product UC_Products =
+                        new UserControl_Product(objClassProducts.Product_ID, objClassProducts.Product_Images, objClassProducts.Product_Name,
+                                                objClassProducts.Product_Price, objClassProducts.Product_Stock, objClassProducts.Product_Descripiton,
+                                                objClassProducts.Product_Size, objClassProducts.Product_Color, objClassProducts.Product_Category);
 
-                        flowLayoutPanel.Controls.Add(adminViewProducts);
+                        switch (objClassProducts.Product_Category)
+                        {
+                            case "Shorts":
+                                flowLayoutPanel.Controls.Add(UC_Products);
+                                break;
+                        }
+
                     }
 
                     break;
@@ -378,112 +386,6 @@ namespace WWWPOS
 
         }
 
-        //Load All available product
-        //public void LoadAllAvailableProducts(FlowLayoutPanel flowLayoutPanel)
-        //{
-        //    try
-        //    {
-        //        connection.Open();
-
-        //        string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active';";
-        //        command = new SqlCommand(selectQuery, connection);
-        //        mdr = command.ExecuteReader();
-
-        //        while (mdr.Read())
-        //        {
-        //            int id = int.Parse(mdr[0] + "");
-        //            string category = "" + mdr[2];
-        //            string name = "" + mdr[2];
-        //            string color = "" + mdr[4];
-        //            double price = Double.Parse(mdr[5] + "");
-        //            int stocks = int.Parse(mdr[6] + "");
-        //            Image image = Image.FromFile(@"" + mdr[7]);
-        //            string imgPath = "" + mdr[7];
-        //            string size = "" + mdr[8];
-        //            string description = "" + mdr[9];
-
-        //            UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
-        //            flowLayoutPanel.Controls.Add(productAvailable);
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ErrorMessage(ex.Message);
-        //    }
-        //}
-
-        //Load All available Tshirt
-        //public void LoadAllTshirtProducts(FlowLayoutPanel flowLayoutPanel)
-        //{
-        //    try
-        //    {
-        //        connection.Open();
-        //        string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active' AND Category = 'T-Shirts';";
-        //        command = new SqlCommand(selectQuery, connection);
-        //        mdr = command.ExecuteReader();
-
-        //        while (mdr.Read())
-        //        {
-        //            int id = int.Parse(mdr[0] + "");
-        //            Image image = Image.FromFile(@"" + mdr[7]);
-        //            string imgPath = "" + mdr[7];
-        //            string name = "" + mdr[2];
-        //            double price = Double.Parse(mdr[5] + "");
-        //            int stocks = int.Parse(mdr[6] + "");
-        //            string description = "" + mdr[9];
-        //            string size = "" + mdr[8];
-        //            string color = "" + mdr[4];
-        //            string category = "" + mdr[2];
-
-        //            UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
-        //            flowLayoutPanel.Controls.Add(productAvailable);
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ErrorMessage(ex.Message);
-        //    }
-        //    connection.Close();
-        //}
-
-        //Load All available Short
-        //public void LoadAllShortProducts(FlowLayoutPanel flowLayoutPanel)
-        //{
-        //    try
-        //    {
-        //        connection.Open();
-        //        string selectQuery = "SELECT * FROM Products WHERE Product_Status = 'Active' AND Category = 'Shorts';";
-        //        command = new SqlCommand(selectQuery, connection);
-        //        mdr = command.ExecuteReader();
-
-        //        while (mdr.Read())
-        //        {
-        //            int id = int.Parse(mdr[0] + "");
-        //            Image image = Image.FromFile(@"" + mdr[7]);
-        //            string imgPath = "" + mdr[7];
-        //            string name = "" + mdr[2];
-        //            double price = Double.Parse(mdr[5] + "");
-        //            int stocks = int.Parse(mdr[6] + "");
-        //            string description = "" + mdr[9];
-        //            string size = "" + mdr[8];
-        //            string color = "" + mdr[4];
-        //            string category = "" + mdr[2];
-
-        //            UserControl_Product productAvailable = new UserControl_Product(id, image, imgPath, name, price, stocks, description, size, color, category);
-        //            flowLayoutPanel.Controls.Add(productAvailable);
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ErrorMessage(ex.Message);
-        //    }
-        //    connection.Close();
-        //}
-
-        //Load Users Cart
         public void LoadCart(FlowLayoutPanel flowLayoutPanel)
         {
             string userid = DataBase.user_ID;

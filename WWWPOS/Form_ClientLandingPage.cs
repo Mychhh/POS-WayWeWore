@@ -18,18 +18,18 @@ namespace WWWPOS
         {
             InitializeComponent();
         }
-        //method to load all product
-        private void ViewAllAvailableProductMethod()
+        //method to load particular product
+        private void ViewAllAvailableProductMethod(string productView)
         {
             this.flPanel_ViewProduct.Controls.Clear();
-            Class_LoadData ld = new Class_LoadData();
-            ld.LoadAllAvailableProducts(this.flPanel_ViewProduct, "AllProduct");
+            Class_LoadData loadData = new Class_LoadData();
+            loadData.LoadAllAvailableProducts(this.flPanel_ViewProduct, productView );
         }
 
         //On load
         private void ClientPage_Load(object sender, EventArgs e)
         {
-            ViewAllAvailableProductMethod();
+            ViewAllAvailableProductMethod("AllProduct");
         }
         //Logout thingy
         private void btn_Menu_Click(object sender, EventArgs e)
@@ -56,21 +56,18 @@ namespace WWWPOS
         //All Product
         private void btn_AllProducts_Click(object sender, EventArgs e)
         {
-            ViewAllAvailableProductMethod();
+            ViewAllAvailableProductMethod("AllProduct");
         }
         //Tshirt Product
         private void btn_TShirt_Click(object sender, EventArgs e)
         {
-            //this.flPanel_ViewProduct.Controls.Clear();
-            //Class_LoadData ld = new Class_LoadData();
-            //ld.LoadAllTshirtProducts(this.flPanel_ViewProduct);
+            ViewAllAvailableProductMethod("TshirtProduct");
+
         }
         //Short Product
         private void btn_Short_Click(object sender, EventArgs e)
         {
-            //this.flPanel_ViewProduct.Controls.Clear();
-            //Class_LoadData ld = new Class_LoadData();
-            //ld.LoadAllShortProducts(this.flPanel_ViewProduct);
+            ViewAllAvailableProductMethod("ShortProduct");
         }
         //View Cart
         private void btn_ViewCart_Click(object sender, EventArgs e)

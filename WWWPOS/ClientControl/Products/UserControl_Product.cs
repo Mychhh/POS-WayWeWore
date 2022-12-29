@@ -89,14 +89,18 @@ namespace WWWPOS.ClientControl.Products
             Price = productPrice;
             Stock = productStock;
             Descriptions = productDescription;
-            Pic = Image.FromFile(@"" + productImage) ;
+            Pic = Image.FromFile(@"" + productImage);
+            ImagePath = productImage;
 
             cmb_ProductColor.SelectedIndex = 0;
             cmb_ProductSize.SelectedIndex = 0;
         }
 
         public int ID { get; set; }
-        public string Category { get; set; }
+        public string Category {
+            get => lbl_Category.Text;
+            set => lbl_Category.Text = value;
+        }
         public string Productname { get; set; }
         public string Descriptions
         {
@@ -128,6 +132,7 @@ namespace WWWPOS.ClientControl.Products
             get => picbox_ProductImage.Image;
             set => picbox_ProductImage.Image = value;
         }
+        public string ImagePath { get; set; }
 
         private void btn_Plus_Click(object sender, EventArgs e)
         {
@@ -156,8 +161,12 @@ namespace WWWPOS.ClientControl.Products
         }
         private void btn_AddToCart_Click(object sender, EventArgs e)
         {
-            //DataBase DB = new DataBase();
-            //DB.AddToCart(productID, ProductCategory, ProductName, ProductColor, ProductPrice, Int32.Parse(lbl_ProductQty.Text), ProductImgPath, ProductSize, ProductDescriptions);
+            //int product_ID, string category, string productName,
+            //string productColor, double productPrice, int productQuantity,
+            //string productImg, string productSize, string productDescription
+
+            DataBase DB = new DataBase();
+            DB.AddToCart(ID, Category, ProductName, Color, Price, Int32.Parse(lbl_ProductQty.Text), ImagePath, Productsize, Descriptions);
         }
         private void btn_Buy_Click(object sender, EventArgs e)
         {
