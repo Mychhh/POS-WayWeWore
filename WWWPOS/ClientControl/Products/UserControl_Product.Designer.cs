@@ -139,7 +139,7 @@
             this.lbl_ProductDescription.TabIndex = 20;
             this.lbl_ProductDescription.Text = "Item Description Lorem Ipsum Dolor Sit amet Goblok Kontol Blah Blah Blah Akirents" +
     "n Omsim";
-            this.lbl_ProductDescription.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_ProductDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_Plus
             // 
