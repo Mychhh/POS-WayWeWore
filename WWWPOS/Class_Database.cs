@@ -340,6 +340,29 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
         }
+        //Product Payments 
+        public void PlaceOrder()
+        {
+            string userID = DataBase.user_ID;
+            int user_ID = Int32.Parse(userID);
+
+            try
+            {
+                connection.Open();
+                string placeOrderQuery = "UPDATE Cart SET Cart_Status = 'Pending' WHERE Account_Id ='" + user_ID + "' AND Product_Status = 'Active' ";
+                sqlCommand = new SqlCommand(placeOrderQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                SuccessMessage("Placed Order Succesfully \n Go to cashier");
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+
+            connection.Close();
+        }
     }
 
 }

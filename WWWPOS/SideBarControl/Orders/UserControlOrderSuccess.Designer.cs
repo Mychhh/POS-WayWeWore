@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Admin = new System.Windows.Forms.Label();
+            this.flPanel_SuccessOrders = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // Admin
@@ -41,10 +42,18 @@
             this.Admin.TabIndex = 10;
             this.Admin.Text = "Success orders";
             // 
+            // flPanel_SuccessOrders
+            // 
+            this.flPanel_SuccessOrders.Location = new System.Drawing.Point(38, 47);
+            this.flPanel_SuccessOrders.Name = "flPanel_SuccessOrders";
+            this.flPanel_SuccessOrders.Size = new System.Drawing.Size(860, 388);
+            this.flPanel_SuccessOrders.TabIndex = 11;
+            // 
             // UserControlOrderSuccess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flPanel_SuccessOrders);
             this.Controls.Add(this.Admin);
             this.Name = "UserControlOrderSuccess";
             this.Size = new System.Drawing.Size(932, 449);
@@ -56,5 +65,6 @@
         #endregion
 
         private System.Windows.Forms.Label Admin;
+        private System.Windows.Forms.FlowLayoutPanel flPanel_SuccessOrders;
     }
 }

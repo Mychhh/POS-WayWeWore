@@ -32,7 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.flPanel_ProductTotal = new System.Windows.Forms.FlowLayoutPanel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btn_Pay = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_TotalPrice = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,28 +76,29 @@
             this.flPanel_ProductTotal.Size = new System.Drawing.Size(1307, 449);
             this.flPanel_ProductTotal.TabIndex = 80;
             // 
-            // button9
+            // btn_Pay
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(815, 12);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(465, 46);
-            this.button9.TabIndex = 29;
-            this.button9.Text = "Pay";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.btn_Pay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Pay.FlatAppearance.BorderSize = 0;
+            this.btn_Pay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Pay.ForeColor = System.Drawing.Color.White;
+            this.btn_Pay.Location = new System.Drawing.Point(815, 12);
+            this.btn_Pay.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Pay.Name = "btn_Pay";
+            this.btn_Pay.Size = new System.Drawing.Size(465, 46);
+            this.btn_Pay.TabIndex = 29;
+            this.btn_Pay.Text = "Pay";
+            this.btn_Pay.UseVisualStyleBackColor = false;
+            this.btn_Pay.Click += new System.EventHandler(this.btn_Pay_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
             this.panel4.Controls.Add(this.lbl_TotalPrice);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.button9);
+            this.panel4.Controls.Add(this.btn_Pay);
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(59, 693);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
@@ -241,7 +242,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.FlowLayoutPanel flPanel_ProductTotal;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btn_Pay;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_GoToCart;
         private System.Windows.Forms.Panel panel_Menu;
