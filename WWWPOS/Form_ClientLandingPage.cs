@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WWWPOS.ClientControl;
 using WWWPOS.ClientControl.ClientCart;
 using WWWPOS.ClientControl.Products;
+using WWWPOS.MessageFolder;
 
 namespace WWWPOS
 {
@@ -26,7 +27,6 @@ namespace WWWPOS
             Class_LoadData loadData = new Class_LoadData();
             loadData.LoadAllAvailableProducts(this.flPanel_ViewProduct, productView );
         }
-
         //On load
         private void ClientPage_Load(object sender, EventArgs e)
         {
@@ -76,7 +76,21 @@ namespace WWWPOS
             this.Hide();
 
             Form_ClientCart F_ClientCart = new Form_ClientCart();
-                        
+
+            Class_LoadData Data = new Class_LoadData();
+            Data.LoadCart(F_ClientCart.flPanel_ProductCart);
+
+            if (F_ClientCart.flPanel_ProductCart.Controls.Count == 0)
+            {
+                UserControl_NoItemsCart UC_NoItemsCart = new UserControl_NoItemsCart();
+
+                F_ClientCart.flPanel_ProductCart.Controls.Clear();
+                F_ClientCart.flPanel_ProductCart.Controls.Add(UC_NoItemsCart);
+
+                F_ClientCart.btn_Checkout.Enabled = false;
+                F_ClientCart.btn_Checkout.BackColor = Color.White;
+            }
+
             F_ClientCart.ShowDialog();
         }
 

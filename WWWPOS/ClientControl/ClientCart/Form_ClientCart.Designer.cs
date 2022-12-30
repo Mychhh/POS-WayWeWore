@@ -199,9 +199,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.FlowLayoutPanel flPanel_ProductCart;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btn_Checkout;
         private System.Windows.Forms.Button btn_BrowseProduct;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Button btn_Checkout;
     }
 }

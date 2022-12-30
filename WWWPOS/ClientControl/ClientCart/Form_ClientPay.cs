@@ -23,6 +23,10 @@ namespace WWWPOS.ClientControl.ClientCart
             this.Hide();
 
             Form_ClientCart F_ClientCart = new Form_ClientCart();
+
+            Class_LoadData Data = new Class_LoadData();
+            Data.LoadCart(F_ClientCart.flPanel_ProductCart);
+
             F_ClientCart.ShowDialog();
         }
         private void btn_GoToProducts_Click(object sender, EventArgs e)

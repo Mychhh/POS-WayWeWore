@@ -14,6 +14,7 @@ using WWWPOS.SideBarControl.Products;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Windows.Controls.Primitives;
+using WWWPOS.MessageFolder;
 
 namespace WWWPOS
 {
@@ -428,7 +429,7 @@ namespace WWWPOS
 
                         flowLayoutPanel.Controls.Add(UC_ProductCartInactive);
                     }
-                    else
+                    else if (productStatus == "Active")
                     {
                         int cartID = int.Parse(mdr[0] + "");
                         int productID = Int32.Parse(mdr[2] + "");
@@ -447,7 +448,7 @@ namespace WWWPOS
                     }
 
                 }
-
+                
             }
             catch (Exception ex)
             {

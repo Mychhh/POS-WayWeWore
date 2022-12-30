@@ -102,6 +102,12 @@
     <Compile Include="ClientControl\ClientCart\Form_ClientPay.Designer.cs">
       <DependentUpon>Form_ClientPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientControl\Products\UserControl_NoItemsCart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl\Products\UserControl_NoItemsCart.Designer.cs">
+      <DependentUpon>UserControl_NoItemsCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientControl\Products\UserControl_ProductCart.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -368,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\ClientCart\Form_ClientPay.resx">
       <DependentUpon>Form_ClientPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientControl\Products\UserControl_NoItemsCart.resx">
+      <DependentUpon>UserControl_NoItemsCart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\Products\UserControl_ProductCart.resx">
       <DependentUpon>UserControl_ProductCart.cs</DependentUpon>
