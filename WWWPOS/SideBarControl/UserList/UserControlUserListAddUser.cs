@@ -33,6 +33,7 @@ namespace WWWPOS.SideBarControl.UserList
                 Controls.Clear();
                 Controls.Add(UC_AllUser);
                 UC_AllUser.Dock = DockStyle.Fill;
+                DataBase.message = "";
             }
         }
     }

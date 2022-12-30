@@ -93,6 +93,7 @@ namespace WWWPOS
                     try
                     {
                         SqlDataReader myReader = commandDatabase.ExecuteReader();
+                        message = "Success";
                         SuccessMessage("Account Created Successfully!");
                         connection.Close();
                     }
