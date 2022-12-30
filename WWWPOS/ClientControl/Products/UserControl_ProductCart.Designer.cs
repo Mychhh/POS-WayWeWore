@@ -38,6 +38,8 @@
             this.lbl_Category = new System.Windows.Forms.Label();
             this.btn_DeleteProduct = new System.Windows.Forms.Button();
             this.picBox_ProductPicture = new System.Windows.Forms.PictureBox();
+            this.lbl_ItemTotal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProductPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,11 +175,36 @@
             this.picBox_ProductPicture.TabIndex = 35;
             this.picBox_ProductPicture.TabStop = false;
             // 
+            // lbl_ItemTotal
+            // 
+            this.lbl_ItemTotal.BackColor = System.Drawing.Color.Silver;
+            this.lbl_ItemTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ItemTotal.Location = new System.Drawing.Point(320, 180);
+            this.lbl_ItemTotal.Name = "lbl_ItemTotal";
+            this.lbl_ItemTotal.Size = new System.Drawing.Size(256, 26);
+            this.lbl_ItemTotal.TabIndex = 51;
+            this.lbl_ItemTotal.Text = "1";
+            this.lbl_ItemTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(218, 180);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 26);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Item total :";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserControl_ProductCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_ItemTotal);
             this.Controls.Add(this.btn_DeleteProduct);
             this.Controls.Add(this.lbl_Category);
             this.Controls.Add(this.cmb_Color);
@@ -209,5 +236,7 @@
         public System.Windows.Forms.Button btn_Plus;
         public System.Windows.Forms.ComboBox cmb_ProductSize;
         public System.Windows.Forms.ComboBox cmb_Color;
+        private System.Windows.Forms.Label lbl_ItemTotal;
+        private System.Windows.Forms.Label label2;
     }
 }

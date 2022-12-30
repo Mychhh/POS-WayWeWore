@@ -122,11 +122,11 @@
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(49, 12);
+            this.label1.Location = new System.Drawing.Point(41, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 46);
+            this.label1.Size = new System.Drawing.Size(122, 46);
             this.label1.TabIndex = 30;
-            this.label1.Text = "Total : ";
+            this.label1.Text = "Subtotal : ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_GoToCart
