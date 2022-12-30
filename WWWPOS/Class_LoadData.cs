@@ -466,7 +466,8 @@ namespace WWWPOS
                 connection.Open();
 
                 string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product " +
-                                            "ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' ";
+                                            "ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' " +
+                                            "ORDER BY [Cart].ProductAddedToCart_at DESC";
                 command = new SqlCommand(selectJoinedQuerry, connection);
                 mdr = command.ExecuteReader();
 
