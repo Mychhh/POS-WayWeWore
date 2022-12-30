@@ -47,7 +47,7 @@ namespace WWWPOS.ClientControl.Products
                 //Adds color if it is unique
                 if (hasSameColor == false)
                 {
-                    cmb_ProductColor.Items.Add(productColor.Substring(0, productColor.IndexOf("#")));
+                    cmb_ProductColor.Items.Insert(0, productColor.Substring(0, productColor.IndexOf("#")));
                     productColor = productColor.Remove(0, productColor.IndexOf("#") + 1);
                 }
                 else if (hasSameColor == true)
@@ -71,10 +71,10 @@ namespace WWWPOS.ClientControl.Products
                     }
                 }
 
-                //Adds color if it is unique
+                //Adds size if it is unique
                 if (hasSameSize == false)
                 {
-                    cmb_ProductSize.Items.Add(productSize.Substring(0, productSize.IndexOf("#")));
+                    cmb_ProductSize.Items.Insert(0, productSize.Substring(0, productSize.IndexOf("#")));
                     productSize = productSize.Remove(0, productSize.IndexOf("#") + 1);
                 }
                 else if (hasSameSize == true)
@@ -182,9 +182,6 @@ namespace WWWPOS.ClientControl.Products
             Stock = Int32.Parse(returnValue[6]);
             Descriptions = returnValue[9];
             Pic = Image.FromFile(@"" + returnValue[7]);
-
-            SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue(ID.ToString());
-            successMessageDialogue.ShowDialog();
         }
 
     }
