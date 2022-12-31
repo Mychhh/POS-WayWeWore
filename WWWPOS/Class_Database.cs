@@ -23,6 +23,9 @@ using System.Windows;
 using WWWPOS.MessageFolder;
 using System.Collections;
 using System.Windows.Documents;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Security.Policy;
+using System.Xml.Linq;
 
 namespace WWWPOS
 {
@@ -62,11 +65,15 @@ namespace WWWPOS
             successMessageDialogue.ShowDialog();
         }
 
-        //Product Stack
+        //Product Stack & List
         protected Stack<Class_Products> productsStack = new Stack<Class_Products>();
         protected List<Class_Products> productsList = new List<Class_Products>();
 
-    //-----About User-----//
+        //Order Stack & List
+        protected Stack<Class_Orders> ordersStack = new Stack<Class_Orders>();
+        protected List<Class_Orders> ordersList = new List<Class_Orders>();
+
+        //-----About User-----//
 
         //Signup and Add user
         public void InsertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
@@ -254,14 +261,13 @@ namespace WWWPOS
                 {
                     numberOfRows = Int32.Parse(dataReader[0] + "");
                 }
-                connection.Close();
             }
             catch (Exception ex)
             {
                 // Show any error message.
                 ErrorMessage(ex.Message);
             }
-
+            connection.Close();
             return numberOfRows;
         }
         //Gets last number order
@@ -270,6 +276,7 @@ namespace WWWPOS
             int getNumberOfRowsOrders = GetNumberOfRows();
             int LastOrderNumber = 0;
 
+            connection.Open();
             string getOrderNumberOfLastRowQuery = "SELECT TOP 1 * FROM Orders ORDER BY OrderID DESC";
 
             //Checks if the table is empty
@@ -282,7 +289,6 @@ namespace WWWPOS
             {
                 try
                 {
-                    connection.Open();
                     sqlCommand = new SqlCommand(getOrderNumberOfLastRowQuery, connection);
                     dataReader = sqlCommand.ExecuteReader();
 
@@ -291,7 +297,6 @@ namespace WWWPOS
                         LastOrderNumber = Int32.Parse(dataReader[0] + "");
                     }
 
-                    connection.Close();
                 }
                 catch (Exception ex)
                 {
@@ -299,26 +304,26 @@ namespace WWWPOS
                     ErrorMessage(ex.Message);
                 }
             }
-
+            connection.Close();
             return LastOrderNumber;
         }
 
         //Get orders from client
-        public void GetOrders(int productid, int ordernumber, string productname, string productcategory, string productcolor, string productsize,double productprice, int productquantity, string productimage,string productstatus)
+        public void GetOrders(int productid, int ordernumber, string productname, string productcategory, string productcolor, string productsize,double productprice, int productquantity, string productimage, string productstatus, string addedtocartat)
         {
             
             //Account ID
             int user_ID = Int32.Parse(DataBase.user_ID);
 
-            //change value of last order number parameter
-            ordernumber = GetLastOrderNumber();
+            ////change value of last order number parameter
+            //ordernumber = GetLastOrderNumber();
 
             //Model
-            //connection.Open();
-            string iquery = "INSERT INTO Orders(AccountID, OrderNumber, ProductID, Name, Category, Color, Size, Price, Quantity, ImagePath, Status) " +
+            connection.Open();
+            string iquery = "INSERT INTO Orders(AccountID, OrderNumber, ProductID, Name, Category, Color, Size, Price, Quantity, ImagePath, Status, AddedToCartAt) " +
                             "VALUES ('" + user_ID + "', '" + ordernumber + "' , '" + productid + "', '" + productname + "'," +
                                     "'" + productcategory + "', '" + productcolor + "', '" + productsize + "'," +
-                                    "'" + productprice + "','" + productquantity + "','" + productimage + "','" + productstatus + "')";
+                                    "'" + productprice + "','" + productquantity + "','" + productimage + "','" + productstatus + "' ,'" + addedtocartat + "')"; 
 
             try
             {
@@ -326,14 +331,13 @@ namespace WWWPOS
                 sqlCommand.CommandTimeout = 60;
                 dataReader = sqlCommand.ExecuteReader();
 
-                SuccessMessage("Product Added Succesfully!");
-                message = "Success";
-                //connection.Close();
+                connection.Close();
             }
             catch (Exception ex)
             {
                 // Show any error message.
                 ErrorMessage(ex.Message);
+                connection.Close();
             }
 
         }
@@ -440,11 +444,11 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
         }
-        //Product Payments 
+        
+        //Product Payments | Working
         public void PlaceOrder()
         {
-            string userID = DataBase.user_ID;
-            int user_ID = Int32.Parse(userID);
+            int user_ID = Int32.Parse(DataBase.user_ID);
 
             //updates the CartStatus to Pending
             try
@@ -457,35 +461,35 @@ namespace WWWPOS
                 SuccessMessage("Placed Order Succesfully \n\n Go to cashier");
 
                 //adds row to Orders Table
-                try
-                {
-                    connection.Close();
-                    connection.Open();
-                    string pendingOrderQuery = "SELECT * FROM Cart WHERE Account_ID = '" + user_ID + "' AND Product_Status = 'Active' AND Cart_Status = 'Pending'";
-                    sqlCommand = new SqlCommand(pendingOrderQuery, connection);
-                    dataReader = sqlCommand.ExecuteReader();
+                //try
+                //{
+                //    connection.Close();
+                //    connection.Open();
+                //    string pendingOrderQuery = "SELECT * FROM Cart WHERE Account_ID = '" + user_ID + "' AND Product_Status = 'Active' AND Cart_Status = 'Pending'";
+                //    sqlCommand = new SqlCommand(pendingOrderQuery, connection);
+                //    dataReader = sqlCommand.ExecuteReader();
 
-                    while (dataReader.Read())
-                    {
-                        int Cart_ID = Int32.Parse(dataReader[0] + "");
-                        int Account_ID = Int32.Parse(dataReader[1] + "");
-                        int Product_ID = Int32.Parse(dataReader[2] + "");
-                        string Category = "" + dataReader[3];
-                        string Product_Name = "" + dataReader[4];
-                        string Color = "" + dataReader[5];
-                        double Price = Double.Parse(dataReader[6] + "");
-                        int Quantity = Int32.Parse(dataReader[7] + "");
-                        string Product_images = "" + dataReader[8];
-                        string Product_Size = "" + dataReader[9];
-                        string Product_Description = "" + dataReader[10];
-                        string Product_Status = "" + dataReader[11];
-                        string ProductAddedToCart_at = "" + dataReader[12];
-                        string Cart_Status = "" + dataReader[13];
+                //    while (dataReader.Read())
+                //    {
+                //        int Cart_ID = Int32.Parse(dataReader[0] + "");
+                //        int Account_ID = Int32.Parse(dataReader[1] + "");
+                //        int Product_ID = Int32.Parse(dataReader[2] + "");
+                //        string Category = "" + dataReader[3];
+                //        string Product_Name = "" + dataReader[4];
+                //        string Color = "" + dataReader[5];
+                //        double Price = Double.Parse(dataReader[6] + "");
+                //        int Quantity = Int32.Parse(dataReader[7] + "");
+                //        string Product_images = "" + dataReader[8];
+                //        string Product_Size = "" + dataReader[9];
+                //        string Product_Description = "" + dataReader[10];
+                //        string Product_Status = "" + dataReader[11];
+                //        string ProductAddedToCart_at = "" + dataReader[12];
+                //        string Cart_Status = "" + dataReader[13];
 
-                        GetOrders(Product_ID, 1, Product_Name, Category, Color, Product_Size, Price, Quantity, Product_images, Product_Status);
-                    }
+                //        GetOrders(Product_ID, 1, Product_Name, Category, Color, Product_Size, Price, Quantity, Product_images, Product_Status);
+                //    }
 
-                    connection.Close();
+                //    connection.Close();
 
                     //Deletes the product Cart
                     //try
@@ -503,12 +507,12 @@ namespace WWWPOS
                     //    ErrorMessage(ex.Message);
                     //}
 
-                }
-                catch (Exception ex)
-                {
-                    // Show any error message.
-                    ErrorMessage(ex.Message);
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    // Show any error message.
+                //    ErrorMessage(ex.Message);
+                //}
 
             }
             catch (Exception ex)
@@ -517,6 +521,93 @@ namespace WWWPOS
                 ErrorMessage(ex.Message);
             }
 
+        }
+        //Add data to Rows table
+        public void RowsTableInsertData()
+        {
+            int user_ID = Int32.Parse(DataBase.user_ID);
+
+            //change value of last order number parameter
+            int lastRowNumber = GetLastOrderNumber();
+
+            connection.Open();
+            string pendingOrderQuery = "SELECT * FROM Cart WHERE Account_ID = '" + user_ID + "' AND Product_Status = 'Active' AND Cart_Status = 'Pending'";
+
+            //adds row to Orders Table
+            try
+            {
+                sqlCommand = new SqlCommand(pendingOrderQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    int Cart_ID = Int32.Parse(dataReader[0] + "");
+                    int Account_ID = Int32.Parse(dataReader[1] + "");
+                    int Product_ID = Int32.Parse(dataReader[2] + "");
+                    string Category = "" + dataReader[3];
+                    string Product_Name = "" + dataReader[4];
+                    string Color = "" + dataReader[5];
+                    double Price = Double.Parse(dataReader[6] + "");
+                    int Quantity = Int32.Parse(dataReader[7] + "");
+                    string Product_images = "" + dataReader[8];
+                    string Product_Size = "" + dataReader[9];
+                    string Product_Description = "" + dataReader[10];
+                    string Product_Status = "" + dataReader[11];
+                    string ProductAddedToCart_at = "" + dataReader[12];
+                    string Cart_Status = "" + dataReader[13];
+
+                    //GetOrders(Product_ID, lastRowNumber, Product_Name, Category, Color, Product_Size, Price, Quantity, Product_images, Product_Status);
+
+                    Class_Orders orders = new Class_Orders(lastRowNumber, Account_ID, Product_ID,
+                                                           Product_Name, Category, Color, Product_Size,
+                                                           Price, Quantity, Product_images,
+                                                           Product_Status, ProductAddedToCart_at);
+
+                    ordersList.Add(orders);
+                }
+
+                connection.Close();
+
+                for (int i = 0; i < ordersList.Count; i++)
+                {
+                    Class_Orders orders = ordersList[i];
+
+                    GetOrders(orders.ProductID, orders.OrderNumber, orders.Name, orders.Category,
+                              orders.Color, orders.Size, orders.Price, 
+                              orders.Quantity, orders.ImagePath, orders.Status,
+                              orders.AddedToCartAt);
+                }
+
+                //clears the value of orderList
+                ordersList.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+        }
+        //Deletes cart rows
+        public void DeletesTheCartPending()
+        {
+            int user_ID = Int32.Parse(DataBase.user_ID);
+
+            //Deletes the product Cart
+            try
+            {
+                connection.Open();
+                string deleteCartProduct = "DELETE FROM Cart WHERE Account_ID = '" + user_ID + "' ";
+
+                sqlCommand = new SqlCommand(deleteCartProduct, connection);
+                dataReader = sqlCommand.ExecuteReader();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
         }
     }
 

@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class_Orders.cs" />
     <Compile Include="Class_Products.cs" />
     <Compile Include="ClientControl\ClientCart\Form_ClientCart.cs">
       <SubType>Form</SubType>

@@ -163,6 +163,9 @@ namespace WWWPOS.ClientControl.Products
         {
             DataBase DB = new DataBase();
             DB.AddToCart(ID, Category, ProductName, Color, Price, Int32.Parse(lbl_ProductQty.Text), ImagePath, Productsize, Descriptions);
+
+            SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue(ID.ToString());
+            successMessageDialogue.ShowDialog();
         }
         private void btn_Buy_Click(object sender, EventArgs e)
         {
