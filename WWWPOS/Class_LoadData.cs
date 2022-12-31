@@ -427,6 +427,7 @@ namespace WWWPOS
                         UC_ProductCartInactive.cmb_ProductSize.Enabled = false;
                         UC_ProductCartInactive.cmb_Color.Enabled = false;
 
+
                         flowLayoutPanel.Controls.Add(UC_ProductCartInactive);
                     }
                     else if (productStatus == "Active")

@@ -31,6 +31,7 @@ namespace WWWPOS.ClientControl.Products
             ProductID = productID;
             ProductImage = productImage;
             ProductPrice  = productPrice;
+            ProductPriceWithoutSign = productPrice;
             ProductQuantity = productQuantity;
             ProductTotal = productTotal;
             ProductStocks = productStock;
@@ -66,7 +67,10 @@ namespace WWWPOS.ClientControl.Products
         public int UserID { get; set; }
         public int ProductID { get; set; }
         public int ProductStocks { get; set; }
-        public int ProductTotal { get; set; }
+        public int ProductTotal {
+            get => Int32.Parse(lbl_ItemTotal.Text);
+            set => lbl_ItemTotal.Text = value + "";
+        }
         public string ProductNameCart { get; set;  }
         public Image ProductImage
         {
@@ -78,6 +82,7 @@ namespace WWWPOS.ClientControl.Products
             get => Double.Parse(lbl_ProductPrice.Text);
             set => lbl_ProductPrice.Text = "₱ " + value ;
         }
+        public double ProductPriceWithoutSign { get; set; }
         public int ProductQuantity
         {
             get => Int32.Parse(lbl_ProductQty.Text);
@@ -115,6 +120,8 @@ namespace WWWPOS.ClientControl.Products
                 DataBase DB = new DataBase();
                 DB.UpdateAddCartProduct(ProductID);
                 ProductQuantity++;
+                
+                ProductTotal = Convert.ToInt32(ProductPriceWithoutSign) * ProductQuantity;
             }
         }
         private void btn_Minus_Click(object sender, EventArgs e)
@@ -129,6 +136,7 @@ namespace WWWPOS.ClientControl.Products
                 DataBase DB = new DataBase();
                 DB.UpdateDeductCartProduct(ProductID);
                 ProductQuantity--;
+                ProductTotal = Convert.ToInt32(ProductPriceWithoutSign) * ProductQuantity;
             }
         }
         private void btn_DeleteProduct_Click(object sender, EventArgs e)
