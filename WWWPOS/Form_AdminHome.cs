@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using WWWPOS.SideBarControl;
 using WWWPOS.SideBarControl.Inventory;
@@ -179,10 +180,10 @@ namespace WWWPOS
             UC_Order.Dock = DockStyle.Fill;
 
             //InventoryPanel
-            UC_Order.Refresh();
             UC_Order.panel_Order.Controls.Clear();
             UC_Order.panel_Order.Controls.Add(UC_OrderPending);
             UC_OrderPending.Dock = DockStyle.Fill;
+
         }
 
     }

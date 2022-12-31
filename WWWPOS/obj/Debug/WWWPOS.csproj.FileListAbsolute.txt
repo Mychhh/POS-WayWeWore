@@ -312,3 +312,5 @@ C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBa
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.ClientCart.Form_ClientViewOrders.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.Products.UserControl_AllOrders.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.ClientControl.Products.UserControl_NoItemsCart.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Orders.PendingOrders.UserControl_PendingOrderContainer.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Orders.PendingOrders.UserControl1.resources

@@ -239,6 +239,12 @@
     <Compile Include="SideBarControl\Inventory\UserControlViewUpdate.Designer.cs">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Orders\PendingOrders\UserControl_PendingOrderContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Orders\PendingOrders\UserControl_PendingOrderContainer.Designer.cs">
+      <DependentUpon>UserControl_PendingOrderContainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\Orders\UserControlOrderFailed.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -451,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Inventory\UserControlViewUpdate.resx">
       <DependentUpon>UserControlViewUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Orders\PendingOrders\UserControl_PendingOrderContainer.resx">
+      <DependentUpon>UserControl_PendingOrderContainer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Orders\UserControlOrderFailed.resx">
       <DependentUpon>UserControlOrderFailed.cs</DependentUpon>
