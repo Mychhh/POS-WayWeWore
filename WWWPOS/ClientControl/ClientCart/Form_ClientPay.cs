@@ -48,6 +48,7 @@ namespace WWWPOS.ClientControl.ClientCart
             DataBase DB = new DataBase();
             DB.PlaceOrder();
             DB.RowsTableInsertData();
+            DB.DeletesTheCartPending();
 
             this.Hide();
             Form_ClientLandingPage F_ClientLandingPage = new Form_ClientLandingPage();

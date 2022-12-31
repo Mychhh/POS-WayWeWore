@@ -347,24 +347,23 @@ namespace WWWPOS
         //Add to cart
         public void AddToCart(int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, string productImg, string productSize, string productDescription)
         {
-            string userID = DataBase.user_ID;
-            int user_ID = Int32.Parse(userID);
+            int user_ID = Int32.Parse(DataBase.user_ID);
 
             int SumProductQuantity = 0;
 
             connection.Open();
             string selectQuery = "SELECT Cart.Product_ID, Cart.Quantity, Products.Stocks " +
                                  "FROM [waywewore].[dbo].[Cart] AS Cart INNER JOIN [waywewore].[dbo].[Products] AS Products  ON Cart.Product_ID = Products.Product_ID " +
-                                 "WHERE Cart.Product_ID = '" + product_ID + "'";
+                                 "WHERE Cart.Product_ID = '" + product_ID + "' AND Cart.Account_ID = '" + user_ID + "' ";
             SqlCommand commandDatabase = new SqlCommand(selectQuery, connection);
             mdr = commandDatabase.ExecuteReader();
 
             //Checks if the item is available on cart
             if (mdr.Read())
             {
-                SumProductQuantity = Int32.Parse(mdr[1] + "") + productQuantity;
+                SumProductQuantity = Int32.Parse(mdr[2] + "") + productQuantity;
 
-                if (SumProductQuantity > Int32.Parse(mdr[2] + ""))
+                if (SumProductQuantity > Int32.Parse(mdr[3] + ""))
                 {
                     ErrorMessage("You reached the maximum stock");
                     connection.Close();
@@ -373,7 +372,9 @@ namespace WWWPOS
                 {
                     connection.Close();
                     connection.Open();
-                    string updateCartQuery = "UPDATE Cart SET Quantity = '" + SumProductQuantity + "' WHERE Product_ID ='" + product_ID + "';";
+                    string updateCartQuery = "UPDATE Cart SET Quantity = '" + SumProductQuantity + "' " +
+                                             "WHERE Product_ID ='" + product_ID + "' AND Cart.Account_ID = '" + user_ID + "' ";
+
                     SqlCommand commandToUpdateCartQuantity = new SqlCommand(updateCartQuery, connection);
                     commandToUpdateCartQuantity.CommandTimeout = 60;
 
@@ -421,16 +422,20 @@ namespace WWWPOS
         //Update cart
         public void UpdateAddCartProduct(int productID)
         {
+            int user_ID = Int32.Parse(DataBase.user_ID);
+
             connection.Open();
-            string addQtyQuery = "UPDATE Cart SET Quantity = Quantity + 1 WHERE Product_ID = '"+ productID + "';";
+            string addQtyQuery = "UPDATE Cart SET Quantity = Quantity + 1 WHERE Product_ID = '"+ productID + "' AND Cart.Account_ID = '" + user_ID + "' ";
             command = new SqlCommand(addQtyQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
         }
         public void UpdateDeductCartProduct(int productID)
         {
+            int user_ID = Int32.Parse(DataBase.user_ID);
+
             connection.Open();
-            string addQtyQuery = "UPDATE Cart SET Quantity = Quantity - 1 WHERE Product_ID = '" + productID + "';";
+            string addQtyQuery = "UPDATE Cart SET Quantity = Quantity - 1 WHERE Product_ID = '" + productID + "'  AND Cart.Account_ID = '" + user_ID + "' ";
             command = new SqlCommand(addQtyQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
@@ -438,14 +443,16 @@ namespace WWWPOS
         //Delete Product on Cart
         public void DeleteCartProduct(int cartID) 
         {
+            int user_ID = Int32.Parse(DataBase.user_ID);
+
             connection.Open();
-            string addQtyQuery = "DELETE FROM Cart WHERE Cart_ID = '" + cartID + "';";
+            string addQtyQuery = "DELETE FROM Cart WHERE Cart_ID = '" + cartID + "'  AND Cart.Account_ID = '" + user_ID + "'  ";
             command = new SqlCommand(addQtyQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
         }
         
-        //Product Payments | Working
+        //Product Payments
         public void PlaceOrder()
         {
             int user_ID = Int32.Parse(DataBase.user_ID);
