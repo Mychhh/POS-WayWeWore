@@ -465,7 +465,6 @@ namespace WWWPOS
                 sqlCommand = new SqlCommand(placeOrderQuery, connection);
                 dataReader = sqlCommand.ExecuteReader();
                 connection.Close();
-                SuccessMessage("Placed Order Succesfully \n\n Go to cashier");
 
             }
             catch (Exception ex)
@@ -534,6 +533,31 @@ namespace WWWPOS
                 //clears the value of orderList
                 ordersList.Clear();
 
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+        }
+        //OrdersInsertBuyData
+        public void OrdersInsertBuyData(int productid, string productimg, string productname, double productprice, string productcategory, int productquantity, string productsize, string productcolor, string productdescription)
+        {
+            int user_ID = Int32.Parse(DataBase.user_ID);
+
+            //change value of last order number parameter
+            int lastRowNumber = GetLastOrderNumber();
+
+            connection.Open();
+            string pendingOrderQuery = "INSERT INTO Orders (OrderNumber, AccountID, ProductID, Name, Category , Color, Size, Price, Quantity, ImagePath, Status, OrderStatus) " +
+                                       "VALUES ('" + lastRowNumber + "' , '" + user_ID + "' , '" + productid + "' , '" + productname + "' , '" + productcategory + "', '" + productcolor + "', '" + productsize + "', '" + productprice + "', '" + productquantity + "','" + productimg + "', 'Active', 'Pending')";
+
+            //adds row to Orders Table
+            try
+            {
+                sqlCommand = new SqlCommand(pendingOrderQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+                connection.Close();
             }
             catch (Exception ex)
             {

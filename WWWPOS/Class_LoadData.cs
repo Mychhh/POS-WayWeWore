@@ -513,8 +513,7 @@ namespace WWWPOS
         //Load Buy Item
         public void LoadBuyItem(int productID, string productImg, string productName, double productPrice, string productCategory, int productQuantity, string productSize, string productColor, string productDescription)
         {
-            string userid = DataBase.user_ID;
-            int userID = Int32.Parse(userid);
+            int userID = Int32.Parse(DataBase.user_ID);
 
             UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(userID, productID, productImg, productName, productPrice, productCategory, productQuantity, productSize, productColor, productDescription);
 
@@ -528,6 +527,10 @@ namespace WWWPOS
             Form_ClientPay form_ClientPay = new Form_ClientPay();
             form_ClientPay.flPanel_ProductTotal.Controls.Add(UC_ProductCart);
             form_ClientPay.lbl_TotalPrice.Text = (productPrice * productQuantity).ToString();
+
+            //UserControl_ProductCart userControl_ProductCart = new UserControl_ProductCart();
+            //SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Product ID " + userControl_ProductCart.BuyProductID.ToString());
+            //successMessageDialogue.ShowDialog();
 
             form_ClientPay.ShowDialog();
         }

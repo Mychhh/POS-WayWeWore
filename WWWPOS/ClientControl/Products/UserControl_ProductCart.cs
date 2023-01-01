@@ -13,15 +13,30 @@ using System.Windows.Markup;
 using System.Windows.Media;
 using WWWPOS.ClientControl.ClientCart;
 using WWWPOS.ErrorMessage;
+using WWWPOS.MessageFolder;
 
 namespace WWWPOS.ClientControl.Products
 {
     public partial class UserControl_ProductCart : UserControl
     {
+        //Static Fields for buy item
+        public static int  CARTID = 0;
+
+        public static int PRODUCTID;
+        public static string PRODUCTImagePath;
+        public static string PRODUCTName;
+        public static double PRODUCTPrice;
+        public static string PRODUCTCategory;
+        public static int PRODUCTQuantity;
+        public static string PRODUCTSize;
+        public static string PRODUCTColor;
+        public static string PRODUCTDescription;
+
         //For Cart
         public UserControl_ProductCart(int cartID, int userid, int productID, Image productImage, double productPrice, int productQuantity, int productTotal, int productStock, string productDescriptions, string productSize, string productColor, string productCategory)
         {
             InitializeComponent();
+            CARTID = cartID;
 
             cmb_Color.Items.Add(productColor);
             cmb_ProductSize.Items.Add(productSize);
@@ -45,22 +60,39 @@ namespace WWWPOS.ClientControl.Products
         }
         //For BuyItem
         public UserControl_ProductCart(int userID, int productID, string productImg, string productName, double productPrice, string productCategory, int productQuantity, string productSize, string productColor, string productDescription)
-        {
+        { 
             InitializeComponent();
 
             cmb_Color.Items.Add(productColor);
             cmb_ProductSize.Items.Add(productSize);
 
             UserID = userID;
-            ProductID = productID;
-            ProductImage = Image.FromFile(productImg); ;
+            BuyProductID = productID;
+            ProductImage = Image.FromFile(productImg);
+            ProductImagePath = productImg;
             ProductNameCart = productName;
             ProductPrice = productPrice;
             ProductCategory = productCategory;
+            Category = productCategory;
             ProductQuantity = productQuantity;
+            ProductTotal = Convert.ToInt32(productPrice) * productQuantity;
+            Quantity = productQuantity;
             ProductSize = productSize;
+            PSize = productSize;
             ProductColor = productColor;
+            PColor = productColor;
             ProductDescriptions = productDescription;
+            Description = productDescription;
+
+            PRODUCTID = productID;
+            PRODUCTImagePath = productImg;
+            PRODUCTName = productName;
+            PRODUCTPrice = productPrice;
+            PRODUCTCategory = productCategory;
+            PRODUCTQuantity = productQuantity;
+            PRODUCTSize = productSize;
+            PRODUCTColor = productColor;
+            PRODUCTDescription = productDescription;
         }
 
         public int CartID { get; set; }
@@ -77,6 +109,7 @@ namespace WWWPOS.ClientControl.Products
             get => picBox_ProductPicture.Image;
             set => picBox_ProductPicture.Image = value;
         }
+        public string ProductImagePath { get; set; }
         public double ProductPrice
         {
             get => Double.Parse(lbl_ProductPrice.Text);
@@ -88,26 +121,34 @@ namespace WWWPOS.ClientControl.Products
             get => Int32.Parse(lbl_ProductQty.Text);
             set => lbl_ProductQty.Text = value + "";
         }
+        public int Quantity { get; set; }
         public string ProductDescriptions
         {
             get => lbl_ProductDescription.Text;
             set => lbl_ProductDescription.Text = value;
         }
+        public string Description { get; set; }
         public string ProductSize
         {
             get => cmb_ProductSize.Text;
             set => cmb_ProductSize.Text = value;
         }
+        public string PSize { get; set; }
         public string ProductColor
         {
             get => cmb_Color.Text;
             set => cmb_Color.Text = value;
         }
+        public string PColor { get; set; }
         public string ProductCategory
         {
             get => lbl_Category.Text;
             set => lbl_Category.Text = value;
         }
+        public string Category { get; set; }
+
+        public int BuyProductID { get; set; }
+
         private void btn_Plus_Click(object sender, EventArgs e)
         {
             if (ProductQuantity >= ProductStocks)

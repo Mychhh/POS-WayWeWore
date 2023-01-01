@@ -166,10 +166,8 @@ namespace WWWPOS.ClientControl.Products
         }
         private void btn_Buy_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Class_LoadData data = new Class_LoadData();
             data.LoadBuyItem(ID, ImagePath, Productname, Price, Category, Int32.Parse(lbl_ProductQty.Text), Productsize, Color, Descriptions);
-
         }
         private void cmb_ProductSize_DropDownClosed(object sender, EventArgs e)
         {
