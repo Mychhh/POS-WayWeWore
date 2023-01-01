@@ -19,12 +19,13 @@ namespace WWWPOS
         public int Quantity { get; set; }
         public string ImagePath { get; set; }
         public string Status { get; set; }
+        public string OrderStatus { get; set; }
         public string AddedToCartAt { get; set; }
 
         public Class_Orders(int orderNumber, int accountID, int productID,
                             string name, string category, string color, string size, 
                             double price, int quantity, string imagePath, 
-                            string status, string addedToCartAt)
+                            string status, string orderStatus, string addedToCartAt)
         {
             OrderNumber = orderNumber;
             AccountID = accountID;
@@ -37,6 +38,7 @@ namespace WWWPOS
             Quantity = quantity;
             ImagePath = imagePath;
             Status = status;
+            OrderStatus = orderStatus;
             AddedToCartAt = addedToCartAt;
         }
     }

@@ -309,7 +309,7 @@ namespace WWWPOS
         }
 
         //Get orders from client
-        public void GetOrders(int productid, int ordernumber, string productname, string productcategory, string productcolor, string productsize,double productprice, int productquantity, string productimage, string productstatus, string addedtocartat)
+        public void GetOrders(int productid, int ordernumber, string productname, string productcategory, string productcolor, string productsize,double productprice, int productquantity, string productimage, string productstatus, string orderstatus, string addedtocartat)
         {
             
             //Account ID
@@ -320,10 +320,10 @@ namespace WWWPOS
 
             //Model
             connection.Open();
-            string iquery = "INSERT INTO Orders(AccountID, OrderNumber, ProductID, Name, Category, Color, Size, Price, Quantity, ImagePath, Status, AddedToCartAt) " +
+            string iquery = "INSERT INTO Orders(AccountID, OrderNumber, ProductID, Name, Category, Color, Size, Price, Quantity, ImagePath, Status, OrderStatus, AddedToCartAt) " +
                             "VALUES ('" + user_ID + "', '" + ordernumber + "' , '" + productid + "', '" + productname + "'," +
                                     "'" + productcategory + "', '" + productcolor + "', '" + productsize + "'," +
-                                    "'" + productprice + "','" + productquantity + "','" + productimage + "','" + productstatus + "' ,'" + addedtocartat + "')"; 
+                                    "'" + productprice + "','" + productquantity + "','" + productimage + "','" + productstatus + "', '" + orderstatus + "' ,'" + addedtocartat + "')"; 
 
             try
             {
@@ -355,8 +355,8 @@ namespace WWWPOS
             string selectQuery = "SELECT Cart.Product_ID, Cart.Quantity, Products.Stocks " +
                                  "FROM [waywewore].[dbo].[Cart] AS Cart INNER JOIN [waywewore].[dbo].[Products] AS Products  ON Cart.Product_ID = Products.Product_ID " +
                                  "WHERE Cart.Product_ID = '" + product_ID + "' AND Cart.Account_ID = '" + user_ID + "' ";
-            SqlCommand commandDatabase = new SqlCommand(selectQuery, connection);
-            mdr = commandDatabase.ExecuteReader();
+            sqlCommand = new SqlCommand(selectQuery, connection);
+            mdr = sqlCommand.ExecuteReader();
 
             //Checks if the item is available on cart
             if (mdr.Read())
@@ -467,60 +467,6 @@ namespace WWWPOS
                 connection.Close();
                 SuccessMessage("Placed Order Succesfully \n\n Go to cashier");
 
-                //adds row to Orders Table
-                //try
-                //{
-                //    connection.Close();
-                //    connection.Open();
-                //    string pendingOrderQuery = "SELECT * FROM Cart WHERE Account_ID = '" + user_ID + "' AND Product_Status = 'Active' AND Cart_Status = 'Pending'";
-                //    sqlCommand = new SqlCommand(pendingOrderQuery, connection);
-                //    dataReader = sqlCommand.ExecuteReader();
-
-                //    while (dataReader.Read())
-                //    {
-                //        int Cart_ID = Int32.Parse(dataReader[0] + "");
-                //        int Account_ID = Int32.Parse(dataReader[1] + "");
-                //        int Product_ID = Int32.Parse(dataReader[2] + "");
-                //        string Category = "" + dataReader[3];
-                //        string Product_Name = "" + dataReader[4];
-                //        string Color = "" + dataReader[5];
-                //        double Price = Double.Parse(dataReader[6] + "");
-                //        int Quantity = Int32.Parse(dataReader[7] + "");
-                //        string Product_images = "" + dataReader[8];
-                //        string Product_Size = "" + dataReader[9];
-                //        string Product_Description = "" + dataReader[10];
-                //        string Product_Status = "" + dataReader[11];
-                //        string ProductAddedToCart_at = "" + dataReader[12];
-                //        string Cart_Status = "" + dataReader[13];
-
-                //        GetOrders(Product_ID, 1, Product_Name, Category, Color, Product_Size, Price, Quantity, Product_images, Product_Status);
-                //    }
-
-                //    connection.Close();
-
-                    //Deletes the product Cart
-                    //try
-                    //{
-                    //    connection.Open();
-                    //    string deleteCartProduct = "DELETE FROM Cart WHERE Account_ID = '" + user_ID + "' ";
-
-                    //    sqlCommand = new SqlCommand(deleteCartProduct, connection);
-                    //    dataReader = sqlCommand.ExecuteReader();
-                    //    connection.Close();
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    // Show any error message.
-                    //    ErrorMessage(ex.Message);
-                    //}
-
-                //}
-                //catch (Exception ex)
-                //{
-                //    // Show any error message.
-                //    ErrorMessage(ex.Message);
-                //}
-
             }
             catch (Exception ex)
             {
@@ -529,8 +475,8 @@ namespace WWWPOS
             }
 
         }
-        //Add data to Rows table
-        public void RowsTableInsertData()
+        //Add data to Orders table
+        public void OrdersTableInsertData()
         {
             int user_ID = Int32.Parse(DataBase.user_ID);
 
@@ -568,7 +514,7 @@ namespace WWWPOS
                     Class_Orders orders = new Class_Orders(lastRowNumber, Account_ID, Product_ID,
                                                            Product_Name, Category, Color, Product_Size,
                                                            Price, Quantity, Product_images,
-                                                           Product_Status, ProductAddedToCart_at);
+                                                           Product_Status, "Pending", ProductAddedToCart_at);
 
                     ordersList.Add(orders);
                 }
@@ -582,7 +528,7 @@ namespace WWWPOS
                     GetOrders(orders.ProductID, orders.OrderNumber, orders.Name, orders.Category,
                               orders.Color, orders.Size, orders.Price, 
                               orders.Quantity, orders.ImagePath, orders.Status,
-                              orders.AddedToCartAt);
+                              orders.OrderStatus, orders.AddedToCartAt);
                 }
 
                 //clears the value of orderList

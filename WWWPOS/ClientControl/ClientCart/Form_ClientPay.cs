@@ -47,7 +47,7 @@ namespace WWWPOS.ClientControl.ClientCart
         {
             DataBase DB = new DataBase();
             DB.PlaceOrder();
-            DB.RowsTableInsertData();
+            DB.OrdersTableInsertData();
             DB.DeletesTheCartPending();
 
             this.Hide();
