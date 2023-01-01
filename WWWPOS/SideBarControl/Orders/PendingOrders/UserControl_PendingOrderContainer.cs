@@ -24,5 +24,32 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             get => Int32.Parse(lbl_OrderNumber.Text);
             set => lbl_OrderNumber.Text = "Order Number : " + value + "";
         }
+
+        private void UserControl_PendingOrderContainer_Load(object sender, EventArgs e)
+        {
+            UserControl_ParticularPendingOrder UC_ParticularPendingOrder;
+
+
+            for (int i = 0; i <= 3; i++)
+            {
+                switch (i)
+                {
+                    case 1:
+                        UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(1);
+                        this.flowLayoutPanel1.Controls.Add(UC_ParticularPendingOrder);
+                        break;
+                    case 2:
+                        UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(2);
+                        this.flowLayoutPanel1.Controls.Add(UC_ParticularPendingOrder);
+                        break;
+                    case 3:
+                        UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(3);
+                        this.flowLayoutPanel1.Controls.Add(UC_ParticularPendingOrder);
+                        break;
+                }
+
+            }
+                        
+        }
     }
 }

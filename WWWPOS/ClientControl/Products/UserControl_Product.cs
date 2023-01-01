@@ -162,7 +162,7 @@ namespace WWWPOS.ClientControl.Products
         private void btn_AddToCart_Click(object sender, EventArgs e)
         {
             DataBase DB = new DataBase();
-            DB.AddToCart(ID, Category, ProductName, Color, Price, Int32.Parse(lbl_ProductQty.Text), ImagePath, Productsize, Descriptions);
+            DB.AddToCart(ID, Category, Productname, Color, Price, Int32.Parse(lbl_ProductQty.Text), ImagePath, Productsize, Descriptions);
         }
         private void btn_Buy_Click(object sender, EventArgs e)
         {
