@@ -72,7 +72,7 @@ namespace WWWPOS
         protected List<Class_Orders> ordersList = new List<Class_Orders>();
 
         //Order Stack & List
-        protected List<Class_OrdersStatus> orderStatus = new List<Class_OrdersStatus>();
+        protected List<Class_OrdersStatus> classOrderStatus = new List<Class_OrdersStatus>();
 
         //-----About User-----//
 
@@ -592,42 +592,40 @@ namespace WWWPOS
         //Get Data from Orders Table
         public void GetDataFromOrderTable()
         {
-            int user_ID = Int32.Parse(DataBase.user_ID);
-
             try
             {
                 connection.Open();
 
                 string selectOrderNumberQuery = "SELECT * FROM Orders WHERE OrderStatus = 'Pending'";
                 sqlCommand = new SqlCommand(selectOrderNumberQuery, connection);
-                dataReader = command.ExecuteReader();
+                dataReader = sqlCommand.ExecuteReader();
 
                 while (dataReader.Read())
                 {
-                    int Cart_ID = Int32.Parse(dataReader[0] + "");
-                    int Account_ID = Int32.Parse(dataReader[1] + "");
-                    int Product_ID = Int32.Parse(dataReader[2] + "");
-                    string Category = "" + dataReader[3];
-                    string Product_Name = "" + dataReader[4];
-                    string Color = "" + dataReader[5];
-                    double Price = Double.Parse(dataReader[6] + "");
-                    int Quantity = Int32.Parse(dataReader[7] + "");
-                    string Product_images = "" + dataReader[8];
-                    string Product_Size = "" + dataReader[9];
-                    string Product_Description = "" + dataReader[10];
-                    string Product_Status = "" + dataReader[11];
-                    string ProductAddedToCart_at = "" + dataReader[12];
-                    string Cart_Status = "" + dataReader[13];
+                    int orderID = Int32.Parse(dataReader[0] + "");
+                    int orderNumber = Int32.Parse(dataReader[1] + "");
+                    int accountID = Int32.Parse(dataReader[2] + "");
+                    int productId = Int32.Parse(dataReader[3] + "");
+                    string name = "" + dataReader[4];
+                    string category = "" + dataReader[5];
+                    string color = "" + dataReader[6];
+                    string size = "" + dataReader[7];
+                    double price = Double.Parse(dataReader[8] + "");
+                    int quantity = Int32.Parse(dataReader[9] + "");
+                    string imagePath = "" + dataReader[10];
+                    string status = "" + dataReader[11];
+                    string orderStatus = "" + dataReader[12];
+                    string addedToCartAt = "" + dataReader[13];
+                    string placedOrder = "" + dataReader[14];
 
-                    //GetOrders(Product_ID, lastRowNumber, Product_Name, Category, Color, Product_Size, Price, Quantity, Product_images, Product_Status);
+                    Class_OrdersStatus orders = new Class_OrdersStatus(orderID, orderNumber, accountID, productId,
+                                                                       name, category, color, size,
+                                                                       price, quantity, imagePath, status,
+                                                                       orderStatus, addedToCartAt, placedOrder);
 
-                    Class_Orders orders = new Class_Orders(lastRowNumber, Account_ID, Product_ID,
-                                                           Product_Name, Category, Color, Product_Size,
-                                                           Price, Quantity, Product_images,
-                                                           Product_Status, "Pending", ProductAddedToCart_at);
-
-                    ordersList.Add(orders);
+                    classOrderStatus.Add(orders);
                 }
+                
             }
             catch (Exception ex)
             {

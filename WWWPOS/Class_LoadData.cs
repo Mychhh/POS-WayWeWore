@@ -15,6 +15,8 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Windows.Controls.Primitives;
 using WWWPOS.MessageFolder;
+using WWWPOS.SideBarControl.Orders.PendingOrders;
+using WWWPOS.SideBarControl.Orders;
 
 namespace WWWPOS
 {
@@ -574,6 +576,68 @@ namespace WWWPOS
         }
 
         //-----Cashier Side-----//
+        
+        //Load Order ID
+        public void GetOrderID(FlowLayoutPanel flowLayoutPanel)
+        {
+            //Gets the data from Orders Table
+            GetDataFromOrderTable();
 
+            List<int> objOrderNumber = new List<int>();
+
+            bool hasSameOrderNumber = false;
+
+            for (int i = 0; i < classOrderStatus.Count; i++)
+            {
+                Class_OrdersStatus objClassOrderStatus = classOrderStatus[i];
+
+                UserControl_PendingOrderContainer UC_PendingOrderContainer = new UserControl_PendingOrderContainer(objClassOrderStatus.OrderNumber);
+
+                //checks if the Collections has any value
+                if(objOrderNumber.Any()){
+
+                    SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue(objOrderNumber.Count.ToString());
+                    successMessageDialogue.ShowDialog();
+
+                    for (int orderNumberIndex = 0; orderNumberIndex < objOrderNumber.Count; orderNumberIndex++)
+                    {
+
+                        if (objClassOrderStatus.OrderNumber == objOrderNumber[orderNumberIndex])
+                        {
+                            hasSameOrderNumber = true;
+                        }
+
+                    }
+                }
+
+                if (hasSameOrderNumber == false)
+                {
+                    flowLayoutPanel.Controls.Add(UC_PendingOrderContainer);
+                    objOrderNumber.Add(objClassOrderStatus.OrderNumber);
+                }
+                else if (hasSameOrderNumber)
+                {
+                    hasSameOrderNumber = false;
+                }
+
+                //if (productsList.Any())
+                //{
+                //    for (int i = 0; i < productsList.Count; i++)
+                //    {
+                //        Class_Products CheckProducts = productsList[i];
+
+                //        if (CheckProducts.Product_Name == productname)
+                //        {
+                //            CheckProducts.Product_Color += "#" + productcolor;
+                //            CheckProducts.Product_Size += "#" + productsize;
+                //            hasItem = true;
+                //            break;
+                //        }
+
+                //    }
+                //}
+
+            }
+        }
     }
 }

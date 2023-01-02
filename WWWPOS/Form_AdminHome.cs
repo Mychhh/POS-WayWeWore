@@ -184,6 +184,11 @@ namespace WWWPOS
             UC_Order.panel_Order.Controls.Add(UC_OrderPending);
             UC_OrderPending.Dock = DockStyle.Fill;
 
+            //UserControlOrderPending UC_OrderPending = new UserControlOrderPending();
+
+            Class_LoadData loadData = new Class_LoadData();
+            loadData.GetOrderID(UC_OrderPending.flowLayoutPanel1);
+
         }
 
     }

@@ -89,8 +89,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassOrders\Class_Orders.cs" />
-    <Compile Include="ClassOrders\Class_OrdersStatus.cs" />
+    <Compile Include="ClassOrdersFolder\Class_Orders.cs" />
+    <Compile Include="ClassOrdersFolder\Class_OrdersStatus.cs" />
     <Compile Include="Class_Products.cs" />
     <Compile Include="ClientControl\ClientCart\Form_ClientCart.cs">
       <SubType>Form</SubType>
