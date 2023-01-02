@@ -31,14 +31,14 @@
             this.lbl_OrderNumber = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flPanel_ParticularItem = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flPanel_ParticularItem.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,16 +82,16 @@
             this.button1.Text = "Mark as failed";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // flowLayoutPanel1
+            // flPanel_ParticularItem
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 51);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(814, 227);
-            this.flowLayoutPanel1.TabIndex = 4;
+            this.flPanel_ParticularItem.AutoScroll = true;
+            this.flPanel_ParticularItem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flPanel_ParticularItem.Controls.Add(this.panel1);
+            this.flPanel_ParticularItem.Location = new System.Drawing.Point(8, 51);
+            this.flPanel_ParticularItem.Name = "flPanel_ParticularItem";
+            this.flPanel_ParticularItem.Padding = new System.Windows.Forms.Padding(5);
+            this.flPanel_ParticularItem.Size = new System.Drawing.Size(814, 227);
+            this.flPanel_ParticularItem.TabIndex = 4;
             // 
             // panel1
             // 
@@ -171,7 +171,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flPanel_ParticularItem);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lbl_OrderNumber);
@@ -180,7 +180,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(830, 286);
             this.Load += new System.EventHandler(this.UserControl_PendingOrderContainer_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flPanel_ParticularItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -198,6 +198,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.FlowLayoutPanel flPanel_ParticularItem;
     }
 }

@@ -17,6 +17,8 @@ using System.Windows.Controls.Primitives;
 using WWWPOS.MessageFolder;
 using WWWPOS.SideBarControl.Orders.PendingOrders;
 using WWWPOS.SideBarControl.Orders;
+using System.ComponentModel;
+using System.Windows.Data;
 
 namespace WWWPOS
 {
@@ -587,17 +589,16 @@ namespace WWWPOS
 
             bool hasSameOrderNumber = false;
 
+            //for dummy UserControl_PendingOrderContainer
+            Class_OrdersStatus DummyObjClassOrderStatus = classOrderStatus[0];
+            UserControl_PendingOrderContainer Dummy_UC_PendingOrderContainer = new UserControl_PendingOrderContainer(DummyObjClassOrderStatus.OrderNumber);
+
             for (int i = 0; i < classOrderStatus.Count; i++)
             {
                 Class_OrdersStatus objClassOrderStatus = classOrderStatus[i];
 
-                UserControl_PendingOrderContainer UC_PendingOrderContainer = new UserControl_PendingOrderContainer(objClassOrderStatus.OrderNumber);
-
                 //checks if the Collections has any value
                 if(objOrderNumber.Any()){
-
-                    SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue(objOrderNumber.Count.ToString());
-                    successMessageDialogue.ShowDialog();
 
                     for (int orderNumberIndex = 0; orderNumberIndex < objOrderNumber.Count; orderNumberIndex++)
                     {
@@ -605,6 +606,11 @@ namespace WWWPOS
                         if (objClassOrderStatus.OrderNumber == objOrderNumber[orderNumberIndex])
                         {
                             hasSameOrderNumber = true;
+                            
+                            //Just Add particular pending orders on the Pending orders container
+
+                            UserControl_ParticularPendingOrder UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderID);
+                            Dummy_UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
                         }
 
                     }
@@ -612,30 +618,22 @@ namespace WWWPOS
 
                 if (hasSameOrderNumber == false)
                 {
+                    UserControl_PendingOrderContainer UC_PendingOrderContainer = new UserControl_PendingOrderContainer(objClassOrderStatus.OrderNumber);
+                    
+                    //re-assign the instance of dummy UserControl_PendingOrderContainer
+                    Dummy_UC_PendingOrderContainer = UC_PendingOrderContainer;
+
                     flowLayoutPanel.Controls.Add(UC_PendingOrderContainer);
                     objOrderNumber.Add(objClassOrderStatus.OrderNumber);
+
+                    UserControl_ParticularPendingOrder UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderID);
+                    UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+
                 }
                 else if (hasSameOrderNumber)
                 {
                     hasSameOrderNumber = false;
                 }
-
-                //if (productsList.Any())
-                //{
-                //    for (int i = 0; i < productsList.Count; i++)
-                //    {
-                //        Class_Products CheckProducts = productsList[i];
-
-                //        if (CheckProducts.Product_Name == productname)
-                //        {
-                //            CheckProducts.Product_Color += "#" + productcolor;
-                //            CheckProducts.Product_Size += "#" + productsize;
-                //            hasItem = true;
-                //            break;
-                //        }
-
-                //    }
-                //}
 
             }
         }

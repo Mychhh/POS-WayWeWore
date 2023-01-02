@@ -44,6 +44,7 @@
             this.lbl_ProductID = new System.Windows.Forms.Label();
             this.btn_Remove = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbl_OrderID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_OrderNumber
@@ -242,11 +243,24 @@
             this.button1.Text = "Item packed";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // lbl_OrderID
+            // 
+            this.lbl_OrderID.BackColor = System.Drawing.Color.Cyan;
+            this.lbl_OrderID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_OrderID.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_OrderID.Location = new System.Drawing.Point(352, 3);
+            this.lbl_OrderID.Name = "lbl_OrderID";
+            this.lbl_OrderID.Size = new System.Drawing.Size(319, 30);
+            this.lbl_OrderID.TabIndex = 22;
+            this.lbl_OrderID.Text = "Color";
+            this.lbl_OrderID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserControl_ParticularPendingOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
+            this.Controls.Add(this.lbl_OrderID);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Remove);
             this.Controls.Add(this.lbl_ItemTotal);
@@ -288,5 +302,6 @@
         private System.Windows.Forms.Label lbl_ProductID;
         private System.Windows.Forms.Button btn_Remove;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbl_OrderID;
     }
 }

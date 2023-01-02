@@ -12,9 +12,11 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
 {
     public partial class UserControl_ParticularPendingOrder : UserControl
     {
-        public UserControl_ParticularPendingOrder(int productid)
+        public UserControl_ParticularPendingOrder(int orderID)
         {
             InitializeComponent();
+
+            lbl_OrderID.Text = orderID.ToString();
         }
         public int productid
         {

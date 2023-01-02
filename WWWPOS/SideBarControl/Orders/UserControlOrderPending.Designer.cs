@@ -81,7 +81,6 @@
             this.Controls.Add(this.Admin);
             this.Name = "UserControlOrderPending";
             this.Size = new System.Drawing.Size(932, 449);
-            this.Load += new System.EventHandler(this.UserControlOrderPending_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
