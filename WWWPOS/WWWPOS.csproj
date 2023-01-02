@@ -89,7 +89,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassOrders\Abstract_Orders.cs" />
     <Compile Include="ClassOrders\Class_Orders.cs" />
     <Compile Include="ClassOrders\Class_OrdersStatus.cs" />
     <Compile Include="Class_Products.cs" />

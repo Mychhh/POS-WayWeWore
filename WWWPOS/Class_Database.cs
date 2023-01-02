@@ -72,7 +72,7 @@ namespace WWWPOS
         protected List<Class_Orders> ordersList = new List<Class_Orders>();
 
         //Order Stack & List
-        protected List<Class_Orders> PendingOrder = new List<Class_Orders>();
+        protected List<Class_OrdersStatus> orderStatus = new List<Class_OrdersStatus>();
 
         //-----About User-----//
 
@@ -592,17 +592,42 @@ namespace WWWPOS
         //Get Data from Orders Table
         public void GetDataFromOrderTable()
         {
-            string userid = DataBase.user_ID;
-            int user_ID = Int32.Parse(userid);
+            int user_ID = Int32.Parse(DataBase.user_ID);
 
             try
             {
                 connection.Open();
 
                 string selectOrderNumberQuery = "SELECT * FROM Orders WHERE OrderStatus = 'Pending'";
-                command = new SqlCommand(selectOrderNumberQuery, connection);
-                mdr = command.ExecuteReader();
+                sqlCommand = new SqlCommand(selectOrderNumberQuery, connection);
+                dataReader = command.ExecuteReader();
 
+                while (dataReader.Read())
+                {
+                    int Cart_ID = Int32.Parse(dataReader[0] + "");
+                    int Account_ID = Int32.Parse(dataReader[1] + "");
+                    int Product_ID = Int32.Parse(dataReader[2] + "");
+                    string Category = "" + dataReader[3];
+                    string Product_Name = "" + dataReader[4];
+                    string Color = "" + dataReader[5];
+                    double Price = Double.Parse(dataReader[6] + "");
+                    int Quantity = Int32.Parse(dataReader[7] + "");
+                    string Product_images = "" + dataReader[8];
+                    string Product_Size = "" + dataReader[9];
+                    string Product_Description = "" + dataReader[10];
+                    string Product_Status = "" + dataReader[11];
+                    string ProductAddedToCart_at = "" + dataReader[12];
+                    string Cart_Status = "" + dataReader[13];
+
+                    //GetOrders(Product_ID, lastRowNumber, Product_Name, Category, Color, Product_Size, Price, Quantity, Product_images, Product_Status);
+
+                    Class_Orders orders = new Class_Orders(lastRowNumber, Account_ID, Product_ID,
+                                                           Product_Name, Category, Color, Product_Size,
+                                                           Price, Quantity, Product_images,
+                                                           Product_Status, "Pending", ProductAddedToCart_at);
+
+                    ordersList.Add(orders);
+                }
             }
             catch (Exception ex)
             {
