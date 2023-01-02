@@ -38,6 +38,8 @@
             this.lbl_Category = new System.Windows.Forms.Label();
             this.btn_DeleteProduct = new System.Windows.Forms.Button();
             this.picBox_ProductPicture = new System.Windows.Forms.PictureBox();
+            this.lbl_ItemTotal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProductPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,11 +47,11 @@
             // 
             this.lbl_ProductPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.lbl_ProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductPrice.Location = new System.Drawing.Point(218, 38);
+            this.lbl_ProductPrice.Location = new System.Drawing.Point(218, 41);
             this.lbl_ProductPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ProductPrice.Name = "lbl_ProductPrice";
             this.lbl_ProductPrice.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
-            this.lbl_ProductPrice.Size = new System.Drawing.Size(111, 28);
+            this.lbl_ProductPrice.Size = new System.Drawing.Size(174, 28);
             this.lbl_ProductPrice.TabIndex = 36;
             this.lbl_ProductPrice.Text = "500";
             this.lbl_ProductPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -58,7 +60,7 @@
             // 
             this.lbl_ProductDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.lbl_ProductDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductDescription.Location = new System.Drawing.Point(217, 123);
+            this.lbl_ProductDescription.Location = new System.Drawing.Point(217, 111);
             this.lbl_ProductDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_ProductDescription.Name = "lbl_ProductDescription";
             this.lbl_ProductDescription.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -75,7 +77,7 @@
             this.btn_Minus.FlatAppearance.BorderSize = 0;
             this.btn_Minus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Minus.Location = new System.Drawing.Point(460, 33);
+            this.btn_Minus.Location = new System.Drawing.Point(459, 165);
             this.btn_Minus.Name = "btn_Minus";
             this.btn_Minus.Size = new System.Drawing.Size(25, 31);
             this.btn_Minus.TabIndex = 42;
@@ -89,7 +91,7 @@
             this.cmb_ProductSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_ProductSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_ProductSize.FormattingEnabled = true;
-            this.cmb_ProductSize.Location = new System.Drawing.Point(217, 83);
+            this.cmb_ProductSize.Location = new System.Drawing.Point(217, 77);
             this.cmb_ProductSize.Name = "cmb_ProductSize";
             this.cmb_ProductSize.Size = new System.Drawing.Size(175, 26);
             this.cmb_ProductSize.TabIndex = 46;
@@ -101,7 +103,7 @@
             this.btn_Plus.FlatAppearance.BorderSize = 0;
             this.btn_Plus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Plus.Location = new System.Drawing.Point(541, 32);
+            this.btn_Plus.Location = new System.Drawing.Point(540, 164);
             this.btn_Plus.Name = "btn_Plus";
             this.btn_Plus.Size = new System.Drawing.Size(41, 38);
             this.btn_Plus.TabIndex = 41;
@@ -113,7 +115,7 @@
             // 
             this.lbl_ProductQty.BackColor = System.Drawing.Color.Silver;
             this.lbl_ProductQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductQty.Location = new System.Drawing.Point(491, 38);
+            this.lbl_ProductQty.Location = new System.Drawing.Point(490, 170);
             this.lbl_ProductQty.Name = "lbl_ProductQty";
             this.lbl_ProductQty.Size = new System.Drawing.Size(47, 28);
             this.lbl_ProductQty.TabIndex = 43;
@@ -126,20 +128,20 @@
             this.cmb_Color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Color.FormattingEnabled = true;
-            this.cmb_Color.Location = new System.Drawing.Point(408, 83);
+            this.cmb_Color.Location = new System.Drawing.Point(404, 77);
             this.cmb_Color.Name = "cmb_Color";
-            this.cmb_Color.Size = new System.Drawing.Size(171, 26);
+            this.cmb_Color.Size = new System.Drawing.Size(175, 26);
             this.cmb_Color.TabIndex = 47;
             // 
             // lbl_Category
             // 
             this.lbl_Category.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.lbl_Category.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Category.Location = new System.Drawing.Point(341, 38);
+            this.lbl_Category.Location = new System.Drawing.Point(404, 41);
             this.lbl_Category.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Category.Name = "lbl_Category";
             this.lbl_Category.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
-            this.lbl_Category.Size = new System.Drawing.Size(111, 28);
+            this.lbl_Category.Size = new System.Drawing.Size(175, 28);
             this.lbl_Category.TabIndex = 48;
             this.lbl_Category.Text = "Category";
             this.lbl_Category.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,11 +175,36 @@
             this.picBox_ProductPicture.TabIndex = 35;
             this.picBox_ProductPicture.TabStop = false;
             // 
+            // lbl_ItemTotal
+            // 
+            this.lbl_ItemTotal.BackColor = System.Drawing.Color.Silver;
+            this.lbl_ItemTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ItemTotal.Location = new System.Drawing.Point(320, 170);
+            this.lbl_ItemTotal.Name = "lbl_ItemTotal";
+            this.lbl_ItemTotal.Size = new System.Drawing.Size(121, 26);
+            this.lbl_ItemTotal.TabIndex = 51;
+            this.lbl_ItemTotal.Text = "1";
+            this.lbl_ItemTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(218, 170);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 26);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Item total :";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserControl_ProductCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_ItemTotal);
             this.Controls.Add(this.btn_DeleteProduct);
             this.Controls.Add(this.lbl_Category);
             this.Controls.Add(this.cmb_Color);
@@ -209,5 +236,7 @@
         public System.Windows.Forms.Button btn_Plus;
         public System.Windows.Forms.ComboBox cmb_ProductSize;
         public System.Windows.Forms.ComboBox cmb_Color;
+        private System.Windows.Forms.Label lbl_ItemTotal;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ClientControl.Products;
 using WWWPOS.ErrorMessage;
+using WWWPOS.MessageFolder;
 
 namespace WWWPOS.ClientControl.ClientCart
 {
@@ -21,8 +23,6 @@ namespace WWWPOS.ClientControl.ClientCart
         //On load
         private void Form_ClientCart_Load(object sender, EventArgs e)
         {
-            Class_LoadData Data = new Class_LoadData();
-            Data.LoadCart(flPanel_ProductCart);
         }
         //Go to view all product
         private void btn_BrowseProduct_Click(object sender, EventArgs e)
