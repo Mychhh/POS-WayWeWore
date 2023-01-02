@@ -609,14 +609,14 @@ namespace WWWPOS
                             hasSameOrderNumber = true;
                             
                             //Just Add particular pending orders on the Pending orders container
-                            UserControl_ParticularPendingOrder UC_ParticularPendingOrder = 
+                            UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
                         new UserControl_ParticularPendingOrder(objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
                                                                objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
                                                                (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
 
 
                             //int productid, string category, string color, string size, double price, int quantity, int total
-                            
+
                             Dummy_UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
 
                             DummyOrderTotalPrice += Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
@@ -637,10 +637,10 @@ namespace WWWPOS
                     flowLayoutPanel.Controls.Add(UC_PendingOrderContainer);
                     objOrderNumber.Add(objClassOrderStatus.OrderNumber);
 
-                    UserControl_ParticularPendingOrder UC_ParticularPendingOrder = 
-                    new UserControl_ParticularPendingOrder(objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
-                                                            objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
-                                                            (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
+                    UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
+                new UserControl_ParticularPendingOrder(objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
+                                                               objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
+                                                               (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
 
                     UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
 

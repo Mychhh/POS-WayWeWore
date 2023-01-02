@@ -6,17 +6,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using UserControl = System.Windows.Forms.UserControl;
 
 namespace WWWPOS.SideBarControl.Orders.PendingOrders
 {
     public partial class UserControl_ParticularPendingOrder : UserControl
     {
+        public bool isPacked = true;
+
         public UserControl_ParticularPendingOrder(string productname, string category, string color, string size, double price, int quantity, int total)
         {
             InitializeComponent();
 
-            ProductID = productname;
+            PProductName = productname;
             Category = category;
             PColor = color;
             PSize = size;
@@ -24,7 +28,7 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             Quantity = quantity;
             Total = total;
         }
-        public string ProductID
+        public string PProductName
         {
             get => lbl_ProductID.Text;
             set => lbl_ProductID.Text = value + "";
@@ -58,6 +62,28 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
         {
             get => Int32.Parse(lbl_ItemTotal.Text);
             set => lbl_ItemTotal.Text = value + "";
+        }
+
+        private void btn_ItemPacked_Click(object sender, EventArgs e)
+        {
+            if (isPacked == false)
+            {
+                btn_ItemPacked.Text = "Pack Item";
+                isPacked = !isPacked;
+                lbl_IsPacked.Visible = false;
+            }
+            else if (isPacked)
+            {
+                lbl_IsPacked.Visible = true;
+                btn_ItemPacked.Text = "Unpack Item";
+                isPacked = !isPacked;
+            }
+
+        }
+
+        private void btn_Remove_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
