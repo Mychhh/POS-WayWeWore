@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WWWPOS
+namespace WWWPOS.ClassOrders
 {
-    internal class Class_Orders
+    internal abstract class Abstract_Orders
     {
         public int OrderNumber { get; set; }
         public int AccountID { get; set; }
@@ -22,9 +22,9 @@ namespace WWWPOS
         public string OrderStatus { get; set; }
         public string AddedToCartAt { get; set; }
 
-        public Class_Orders(int orderNumber, int accountID, int productID,
-                            string name, string category, string color, string size, 
-                            double price, int quantity, string imagePath, 
+        public Abstract_Orders(int orderNumber, int accountID, int productID,
+                            string name, string category, string color, string size,
+                            double price, int quantity, string imagePath,
                             string status, string orderStatus, string addedToCartAt)
         {
             OrderNumber = orderNumber;
@@ -41,5 +41,6 @@ namespace WWWPOS
             OrderStatus = orderStatus;
             AddedToCartAt = addedToCartAt;
         }
+
     }
 }

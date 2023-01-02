@@ -66,12 +66,13 @@ namespace WWWPOS
         }
 
         //Product Stack & List
-        protected Stack<Class_Products> productsStack = new Stack<Class_Products>();
         protected List<Class_Products> productsList = new List<Class_Products>();
 
         //Order Stack & List
-        protected Stack<Class_Orders> ordersStack = new Stack<Class_Orders>();
         protected List<Class_Orders> ordersList = new List<Class_Orders>();
+
+        //Order Stack & List
+        protected List<Class_Orders> PendingOrder = new List<Class_Orders>();
 
         //-----About User-----//
 
@@ -451,7 +452,6 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
         }
-        
         //Product Payments
         public void PlaceOrder()
         {
@@ -585,6 +585,31 @@ namespace WWWPOS
                 // Show any error message.
                 ErrorMessage(ex.Message);
             }
+        }
+        
+        //-----Cashier Side-----//
+        
+        //Get Data from Orders Table
+        public void GetDataFromOrderTable()
+        {
+            string userid = DataBase.user_ID;
+            int user_ID = Int32.Parse(userid);
+
+            try
+            {
+                connection.Open();
+
+                string selectOrderNumberQuery = "SELECT * FROM Orders WHERE OrderStatus = 'Pending'";
+                command = new SqlCommand(selectOrderNumberQuery, connection);
+                mdr = command.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+
+            connection.Close();
         }
     }
 
