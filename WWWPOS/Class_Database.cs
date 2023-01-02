@@ -634,6 +634,26 @@ namespace WWWPOS
 
             connection.Close();
         }
+
+        //Delete Particular Product
+        public void RemoveParticularProduct(int orderID)
+        {
+            //Deletes the particular order
+            try
+            {
+                connection.Open();
+                string deleteParticularOrder = "DELETE FROM Orders WHERE OrderID = '" + orderID + "' ";
+
+                sqlCommand = new SqlCommand(deleteParticularOrder, connection);
+                dataReader = sqlCommand.ExecuteReader();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+        } 
     }
 
 }

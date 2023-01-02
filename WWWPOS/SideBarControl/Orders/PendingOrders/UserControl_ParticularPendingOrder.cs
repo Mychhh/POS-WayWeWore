@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using WWWPOS.MessageFolder;
 using UserControl = System.Windows.Forms.UserControl;
 
 namespace WWWPOS.SideBarControl.Orders.PendingOrders
@@ -83,7 +84,14 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
 
         private void btn_Remove_Click(object sender, EventArgs e)
         {
+            WarningMessageDialogue warningMessageDialogue = new WarningMessageDialogue("Remove this Product?");
+            warningMessageDialogue.ShowDialog();
 
+            if(DataBase.message == "continue")
+            {
+                DataBase.message = "";
+                this.Hide();
+            }
         }
     }
 }

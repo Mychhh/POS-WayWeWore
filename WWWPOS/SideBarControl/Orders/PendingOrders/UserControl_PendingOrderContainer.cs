@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WWWPOS.ErrorMessage;
+using WWWPOS.MessageFolder;
 
 namespace WWWPOS.SideBarControl.Orders.PendingOrders
 {
@@ -50,5 +51,13 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             }
         }
 
+        private void btn_MarkAsSuccess_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_MarkAsFailed_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

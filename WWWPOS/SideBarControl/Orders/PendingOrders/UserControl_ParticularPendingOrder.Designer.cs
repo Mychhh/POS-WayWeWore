@@ -222,7 +222,7 @@
             this.btn_Remove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Remove.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Remove.Location = new System.Drawing.Point(144, 12);
+            this.btn_Remove.Location = new System.Drawing.Point(639, 12);
             this.btn_Remove.Name = "btn_Remove";
             this.btn_Remove.Size = new System.Drawing.Size(134, 30);
             this.btn_Remove.TabIndex = 20;
@@ -237,7 +237,7 @@
             this.btn_ItemPacked.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_ItemPacked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ItemPacked.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_ItemPacked.Location = new System.Drawing.Point(4, 12);
+            this.btn_ItemPacked.Location = new System.Drawing.Point(499, 12);
             this.btn_ItemPacked.Name = "btn_ItemPacked";
             this.btn_ItemPacked.Size = new System.Drawing.Size(134, 30);
             this.btn_ItemPacked.TabIndex = 21;
@@ -250,9 +250,9 @@
             this.lbl_IsPacked.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.lbl_IsPacked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_IsPacked.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_IsPacked.Location = new System.Drawing.Point(284, 12);
+            this.lbl_IsPacked.Location = new System.Drawing.Point(6, 12);
             this.lbl_IsPacked.Name = "lbl_IsPacked";
-            this.lbl_IsPacked.Size = new System.Drawing.Size(489, 30);
+            this.lbl_IsPacked.Size = new System.Drawing.Size(487, 30);
             this.lbl_IsPacked.TabIndex = 22;
             this.lbl_IsPacked.Text = "Item Packed";
             this.lbl_IsPacked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
