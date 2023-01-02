@@ -589,10 +589,9 @@ namespace WWWPOS
 
             bool hasSameOrderNumber = false;
 
-            //for dummy UserControl_PendingOrderContainer
+            //Dummy to have a copy of instance UserControl_PendingOrderContainer to add ParticularPendingProducts
             Class_OrdersStatus DummyObjClassOrderStatus = classOrderStatus[0];
             UserControl_PendingOrderContainer Dummy_UC_PendingOrderContainer = new UserControl_PendingOrderContainer(DummyObjClassOrderStatus.OrderNumber);
-
             int DummyOrderTotalPrice = 0;
 
             for (int i = 0; i < classOrderStatus.Count; i++)
@@ -610,7 +609,14 @@ namespace WWWPOS
                             hasSameOrderNumber = true;
                             
                             //Just Add particular pending orders on the Pending orders container
-                            UserControl_ParticularPendingOrder UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderID);
+                            UserControl_ParticularPendingOrder UC_ParticularPendingOrder = 
+                        new UserControl_ParticularPendingOrder(objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
+                                                               objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
+                                                               (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
+
+
+                            //int productid, string category, string color, string size, double price, int quantity, int total
+                            
                             Dummy_UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
 
                             DummyOrderTotalPrice += Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
@@ -618,6 +624,7 @@ namespace WWWPOS
                         }
 
                     }
+
                 }
 
                 if (hasSameOrderNumber == false)
@@ -630,14 +637,17 @@ namespace WWWPOS
                     flowLayoutPanel.Controls.Add(UC_PendingOrderContainer);
                     objOrderNumber.Add(objClassOrderStatus.OrderNumber);
 
-                    UserControl_ParticularPendingOrder UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderID);
+                    UserControl_ParticularPendingOrder UC_ParticularPendingOrder = 
+                    new UserControl_ParticularPendingOrder(objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
+                                                            objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
+                                                            (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
+
                     UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
 
                     int OrderTotalPrice = Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
                     DummyOrderTotalPrice += OrderTotalPrice;
 
                     UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
-
                 }
                 else if (hasSameOrderNumber)
                 {

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ErrorMessage;
 
 namespace WWWPOS.SideBarControl.Orders.PendingOrders
 {
@@ -25,30 +26,29 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             set => lbl_OrderNumber.Text = "Order Number : " + value + "";
         }
 
-        private void UserControl_PendingOrderContainer_Load(object sender, EventArgs e)
+        private void btn_Compute_Click(object sender, EventArgs e)
         {
-            //UserControl_ParticularPendingOrder UC_ParticularPendingOrder;
 
-            //for (int i = 0; i <= 3; i++)
-            //{
-            //    switch (i)
-            //    {
-            //        case 1:
-            //            UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(1);
-            //            this.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
-            //            break;
-            //        case 2:
-            //            UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(2);
-            //            this.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
-            //            break;
-            //        case 3:
-            //            UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(3);
-            //            this.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
-            //            break;
-            //    }
-
-            //}
-                        
+            if (txtBox_ClientPay.Text == "")
+            {
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("No amount");
+                errorMessageDialogue.ShowDialog();
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(txtBox_ClientPay.Text, @"^[a-zA-Z]+$"))
+            {
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Only numbers is Allowed");
+                errorMessageDialogue.ShowDialog();
+            }
+            else if (Convert.ToInt32(txtBox_ClientPay.Text) < Convert.ToInt32(lbl_OrderTotal.Text))
+            {
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Payment is less than the total cost");
+                errorMessageDialogue.ShowDialog();
+            }
+            else
+            {
+                lbl_Change.Text = (Convert.ToInt32(txtBox_ClientPay.Text) - Convert.ToInt32(lbl_OrderTotal.Text)).ToString();
+            }
         }
+
     }
 }

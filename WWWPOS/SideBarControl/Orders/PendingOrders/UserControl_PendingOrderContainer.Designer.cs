@@ -33,11 +33,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.flPanel_ParticularItem = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_Compute = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtBox_ClientPay = new System.Windows.Forms.TextBox();
+            this.lbl_Change = new System.Windows.Forms.Label();
             this.lbl_OrderTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.flPanel_ParticularItem.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -95,10 +96,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btn_Compute);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtBox_ClientPay);
+            this.panel1.Controls.Add(this.lbl_Change);
             this.panel1.Controls.Add(this.lbl_OrderTotal);
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
@@ -106,65 +108,79 @@
             this.panel1.Size = new System.Drawing.Size(771, 57);
             this.panel1.TabIndex = 6;
             // 
-            // button3
+            // btn_Compute
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(491, 7);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 37);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Compute";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_Compute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Compute.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Compute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Compute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Compute.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Compute.Location = new System.Drawing.Point(535, 9);
+            this.btn_Compute.Name = "btn_Compute";
+            this.btn_Compute.Size = new System.Drawing.Size(106, 37);
+            this.btn_Compute.TabIndex = 5;
+            this.btn_Compute.Text = "Compute";
+            this.btn_Compute.UseVisualStyleBackColor = false;
+            this.btn_Compute.Click += new System.EventHandler(this.btn_Compute_Click);
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(252, 9);
+            this.label3.Location = new System.Drawing.Point(296, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 37);
             this.label3.TabIndex = 5;
             this.label3.Text = "-";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // txtBox_ClientPay
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(283, 9);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 37);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_ClientPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_ClientPay.Location = new System.Drawing.Point(327, 12);
+            this.txtBox_ClientPay.Name = "txtBox_ClientPay";
+            this.txtBox_ClientPay.Size = new System.Drawing.Size(202, 30);
+            this.txtBox_ClientPay.TabIndex = 7;
+            this.txtBox_ClientPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label2
+            // lbl_Change
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(603, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 37);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Change";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Change.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_Change.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Change.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_Change.Location = new System.Drawing.Point(647, 9);
+            this.lbl_Change.Name = "lbl_Change";
+            this.lbl_Change.Size = new System.Drawing.Size(121, 37);
+            this.lbl_Change.TabIndex = 6;
+            this.lbl_Change.Text = "Change";
+            this.lbl_Change.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_OrderTotal
             // 
             this.lbl_OrderTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.lbl_OrderTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_OrderTotal.ForeColor = System.Drawing.Color.Black;
-            this.lbl_OrderTotal.Location = new System.Drawing.Point(3, 9);
+            this.lbl_OrderTotal.Location = new System.Drawing.Point(146, 9);
+            this.lbl_OrderTotal.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_OrderTotal.Name = "lbl_OrderTotal";
-            this.lbl_OrderTotal.Size = new System.Drawing.Size(243, 37);
+            this.lbl_OrderTotal.Size = new System.Drawing.Size(147, 37);
             this.lbl_OrderTotal.TabIndex = 5;
             this.lbl_OrderTotal.Text = "Order Total : ";
             this.lbl_OrderTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 37);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Order Total : ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserControl_PendingOrderContainer
             // 
@@ -179,7 +195,6 @@
             this.Name = "UserControl_PendingOrderContainer";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(830, 286);
-            this.Load += new System.EventHandler(this.UserControl_PendingOrderContainer_Load);
             this.flPanel_ParticularItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -193,11 +208,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lbl_Change;
+        private System.Windows.Forms.Button btn_Compute;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBox_ClientPay;
         public System.Windows.Forms.FlowLayoutPanel flPanel_ParticularItem;
         public System.Windows.Forms.Label lbl_OrderTotal;
+        public System.Windows.Forms.Label label1;
     }
 }
