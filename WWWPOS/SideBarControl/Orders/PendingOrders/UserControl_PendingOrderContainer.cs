@@ -57,7 +57,14 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
 
         private void btn_MarkAsFailed_Click(object sender, EventArgs e)
         {
+            WarningMessageDialogue warningMessageDialogue = new WarningMessageDialogue("Remove this Orders?");
+            warningMessageDialogue.ShowDialog();
 
+            if (DataBase.message == "continue")
+            {
+                DataBase.message = "";
+                this.Hide();
+            }
         }
     }
 }

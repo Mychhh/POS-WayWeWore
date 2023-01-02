@@ -653,7 +653,27 @@ namespace WWWPOS
                 // Show any error message.
                 ErrorMessage(ex.Message);
             }
-        } 
+        }
+
+        //Remove Orders
+        public void RemoveOrders(int orderNumber)
+        {
+            //Deletes the particular order
+            try
+            {
+                connection.Open();
+                string removeOrders = "DELETE FROM Orders WHERE OrderNumber = '" + orderNumber + "' ";
+
+                sqlCommand = new SqlCommand(removeOrders, connection);
+                dataReader = sqlCommand.ExecuteReader();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+        }
     }
 
 }
