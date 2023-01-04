@@ -17,11 +17,12 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
     {
         public bool isPacked = true;
 
-        public UserControl_ParticularPendingOrder(int orderNumber, string productname, string category, string color, string size, double price, int quantity, int total)
+        public UserControl_ParticularPendingOrder(int ordernumber, int orderid, string productname, string category, string color, string size, double price, int quantity, int total)
         {
             InitializeComponent();
 
-            OrderNumber = orderNumber;
+            OrderNumber = ordernumber;
+            OrderID = orderid;
             PProductName = productname;
             Category = category;
             PColor = color;
@@ -31,6 +32,7 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             Total = total;
         }
         public int OrderNumber { get; set; }
+        public int OrderID { get; set; }
         public string PProductName
         {
             get => lbl_ProductID.Text;
@@ -86,12 +88,12 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
 
         private void btn_Remove_Click(object sender, EventArgs e)
         {
+
+            DataBase DB = new DataBase();
+            SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order succesfully removed");
+
             Class_LoadData loadData = new Class_LoadData();
             int OrderQuantity = loadData.GetOrderQuantity(OrderNumber);
-
-            WarningMessageDialogue s = new WarningMessageDialogue("Order Quantity " + OrderQuantity.ToString());
-            s.ShowDialog();
-
 
             WarningMessageDialogue warningMessageDialogue = new WarningMessageDialogue("Remove this Product?");
             warningMessageDialogue.ShowDialog();
@@ -103,8 +105,9 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
                 {
                     DataBase.message = "";
 
-                    SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order succesfully removed");
                     successMessageDialogue.ShowDialog();
+
+                    DB.RemoveParticularProduct(OrderID);
 
                     Form_AdminHome form_AdminHome = new Form_AdminHome();
                     form_AdminHome.Hide();
@@ -117,6 +120,11 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
                 if (DataBase.message == "continue")
                 {
                     DataBase.message = "";
+
+                    successMessageDialogue.ShowDialog();
+
+                    DB.RemoveParticularProduct(OrderID);
+
                     this.Hide();
                 }
             }

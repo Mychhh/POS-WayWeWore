@@ -19,6 +19,7 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             InitializeComponent();
 
             OrderNumber = ordernumber;
+            OrderNumberWithoutSign = ordernumber;
         }
 
         public int OrderNumber
@@ -26,6 +27,7 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             get => Int32.Parse(lbl_OrderNumber.Text);
             set => lbl_OrderNumber.Text = "Order Number : " + value + "";
         }
+        public int OrderNumberWithoutSign { get; set; }
 
         private void btn_Compute_Click(object sender, EventArgs e)
         {
@@ -66,6 +68,9 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
 
                 SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order succesfully removed");
                 successMessageDialogue.ShowDialog();
+
+                DataBase DB = new DataBase();
+                DB.RemoveOrders(OrderNumberWithoutSign);
 
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
                 form_AdminHome.Hide();

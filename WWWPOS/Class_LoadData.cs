@@ -610,7 +610,7 @@ namespace WWWPOS
                             
                             //Just Add particular pending orders on the Pending orders container
                             UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
-                        new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
+                        new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
                                                                objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
                                                                (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
 
@@ -638,7 +638,7 @@ namespace WWWPOS
                     objOrderNumber.Add(objClassOrderStatus.OrderNumber);
 
                     UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
-                new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
+                new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
                                                                objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
                                                                (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
 
