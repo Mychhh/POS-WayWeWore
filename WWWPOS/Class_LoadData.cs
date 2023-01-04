@@ -633,6 +633,7 @@ namespace WWWPOS
 
                     if (hasSameOrderNumber == false)
                     {
+                        DummyOrderTotalPrice = 0; 
                         UserControl_PendingOrderContainer UC_PendingOrderContainer = new UserControl_PendingOrderContainer(objClassOrderStatus.OrderNumber);
 
                         //re-assign the instance of dummy UserControl_PendingOrderContainer
