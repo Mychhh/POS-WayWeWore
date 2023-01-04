@@ -40,7 +40,24 @@ namespace WWWPOS
 
                     if(DataBase.fromWhat == "OrdersDelete")
                     {
+                        UserControlOrder UC_Order = new UserControlOrder();
+
                         DataBase.fromWhat = "";
+
+                        //Main Panel
+                        panel_Main.Controls.Clear();
+                        panel_Main.Controls.Add(UC_Order);
+                        UC_Order.Dock = DockStyle.Fill;
+
+                        UserControlOrderPending UC_OrderPending = new UserControlOrderPending();
+                        //OrderPending FlowLayout Panel
+                        UC_Order.panel_Order.Controls.Clear();
+                        UC_Order.panel_Order.Controls.Add(UC_OrderPending);
+                        UC_OrderPending.Dock = DockStyle.Fill;
+
+                        Class_LoadData loadData = new Class_LoadData();
+                        loadData.GetOrderID(UC_OrderPending.flPanel_PendingOrders);
+
                     }
                     else if (DataBase.fromWhat == "InventoryDelete")
                     {
@@ -201,7 +218,7 @@ namespace WWWPOS
             //UserControlOrderPending UC_OrderPending = new UserControlOrderPending();
 
             Class_LoadData loadData = new Class_LoadData();
-            loadData.GetOrderID(UC_OrderPending.flowLayoutPanel1);
+            loadData.GetOrderID(UC_OrderPending.flPanel_PendingOrders);
 
         }
 
