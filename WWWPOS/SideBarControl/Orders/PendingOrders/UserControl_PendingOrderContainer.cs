@@ -55,6 +55,26 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
 
         private void btn_MarkAsSuccess_Click(object sender, EventArgs e)
         {
+            WarningMessageDialogue warningMessageDialogue = new WarningMessageDialogue("Complete this Orders?");
+            warningMessageDialogue.ShowDialog();
+
+            if (DataBase.message == "continue")
+            {
+                DataBase.message = "";
+
+                SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order marked as Success");
+                successMessageDialogue.ShowDialog();
+
+                DataBase DB = new DataBase();
+
+                DB.OrderSuccess(OrderNumberWithoutSign);
+
+                Form_AdminHome form_AdminHome = new Form_AdminHome();
+                form_AdminHome.Hide();
+                DataBase.fromWhat = "OrdersDelete";
+                form_AdminHome.ShowDialog();
+
+            }
         }
 
         private void btn_MarkAsFailed_Click(object sender, EventArgs e)

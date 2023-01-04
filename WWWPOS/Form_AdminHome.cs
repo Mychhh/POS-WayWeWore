@@ -220,6 +220,11 @@ namespace WWWPOS
             Class_LoadData loadData = new Class_LoadData();
             loadData.GetOrderID(UC_OrderPending.flPanel_PendingOrders);
 
+            if (UC_OrderPending.flPanel_PendingOrders.Controls.Count == 0)
+            {
+                UserControl_NoOrder UC_NoOrder = new UserControl_NoOrder();
+                UC_OrderPending.flPanel_PendingOrders.Controls.Add(UC_NoOrder);
+            }
         }
 
     }

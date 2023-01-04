@@ -585,73 +585,78 @@ namespace WWWPOS
             //Gets the data from Orders Table
             GetDataFromOrderTable();
 
-            List<int> objOrderNumber = new List<int>();
 
-            bool hasSameOrderNumber = false;
-
-            //Dummy to have a copy of instance UserControl_PendingOrderContainer to add ParticularPendingProducts
-            Class_OrdersStatus DummyObjClassOrderStatus = classOrderStatus[0];
-            UserControl_PendingOrderContainer Dummy_UC_PendingOrderContainer = new UserControl_PendingOrderContainer(DummyObjClassOrderStatus.OrderNumber);
-            int DummyOrderTotalPrice = 0;
-
-            for (int i = 0; i < classOrderStatus.Count; i++)
+            if (classOrderStatus.Any())
             {
-                Class_OrdersStatus objClassOrderStatus = classOrderStatus[i];
+                List<int> objOrderNumber = new List<int>();
 
-                //checks if the Collections has any value
-                if(objOrderNumber.Any()){
+                bool hasSameOrderNumber = false;
 
-                    for (int orderNumberIndex = 0; orderNumberIndex < objOrderNumber.Count; orderNumberIndex++)
+                //Dummy to have a copy of instance UserControl_PendingOrderContainer to add ParticularPendingProducts
+                Class_OrdersStatus DummyObjClassOrderStatus = classOrderStatus[0];
+                UserControl_PendingOrderContainer Dummy_UC_PendingOrderContainer = new UserControl_PendingOrderContainer(DummyObjClassOrderStatus.OrderNumber);
+                int DummyOrderTotalPrice = 0;
+
+                for (int i = 0; i < classOrderStatus.Count; i++)
+                {
+                    Class_OrdersStatus objClassOrderStatus = classOrderStatus[i];
+
+                    //checks if the Collections has any value
+                    if (objOrderNumber.Any())
                     {
 
-                        if (objClassOrderStatus.OrderNumber == objOrderNumber[orderNumberIndex])
+                        for (int orderNumberIndex = 0; orderNumberIndex < objOrderNumber.Count; orderNumberIndex++)
                         {
-                            hasSameOrderNumber = true;
-                            
-                            //Just Add particular pending orders on the Pending orders container
-                            UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
-                        new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
-                                                               objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
-                                                               (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
+
+                            if (objClassOrderStatus.OrderNumber == objOrderNumber[orderNumberIndex])
+                            {
+                                hasSameOrderNumber = true;
+
+                                //Just Add particular pending orders on the Pending orders container
+                                UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
+                            new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
+                                                                   objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
+                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
 
 
-                            //int productid, string category, string color, string size, double price, int quantity, int total
+                                //int productid, string category, string color, string size, double price, int quantity, int total
 
-                            Dummy_UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+                                Dummy_UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
 
-                            DummyOrderTotalPrice += Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
-                            Dummy_UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
+                                DummyOrderTotalPrice += Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
+                                Dummy_UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
+                            }
+
                         }
 
                     }
 
-                }
+                    if (hasSameOrderNumber == false)
+                    {
+                        UserControl_PendingOrderContainer UC_PendingOrderContainer = new UserControl_PendingOrderContainer(objClassOrderStatus.OrderNumber);
 
-                if (hasSameOrderNumber == false)
-                {
-                    UserControl_PendingOrderContainer UC_PendingOrderContainer = new UserControl_PendingOrderContainer(objClassOrderStatus.OrderNumber);
-                    
-                    //re-assign the instance of dummy UserControl_PendingOrderContainer
-                    Dummy_UC_PendingOrderContainer = UC_PendingOrderContainer;
+                        //re-assign the instance of dummy UserControl_PendingOrderContainer
+                        Dummy_UC_PendingOrderContainer = UC_PendingOrderContainer;
 
-                    flowLayoutPanel.Controls.Add(UC_PendingOrderContainer);
-                    objOrderNumber.Add(objClassOrderStatus.OrderNumber);
+                        flowLayoutPanel.Controls.Add(UC_PendingOrderContainer);
+                        objOrderNumber.Add(objClassOrderStatus.OrderNumber);
 
-                    UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
-                new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
-                                                               objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
-                                                               (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
+                        UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
+                    new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
+                                                                   objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
+                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
 
-                    UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+                        UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
 
-                    int OrderTotalPrice = Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
-                    DummyOrderTotalPrice += OrderTotalPrice;
+                        int OrderTotalPrice = Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
+                        DummyOrderTotalPrice += OrderTotalPrice;
 
-                    UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
-                }
-                else if (hasSameOrderNumber)
-                {
-                    hasSameOrderNumber = false;
+                        UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
+                    }
+                    else if (hasSameOrderNumber)
+                    {
+                        hasSameOrderNumber = false;
+                    }
                 }
 
             }
@@ -685,5 +690,48 @@ namespace WWWPOS
             return orderQty;
         }
 
+        //Get Success Orders
+        public void GetSuccessOrders(DataGridView dataProduct)
+        {
+            //Get success Orders
+            try
+            {
+                connection.Open();
+
+                string getSuccessOrderQuery = "SELECT * FROM Orders WHERE OrderStatus = 'Success' ORDER BY OrderID DESC";
+                sqlCommand = new SqlCommand(getSuccessOrderQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    int orderID = Int32.Parse(dataReader[0] + "");
+                    int orderNumber = Int32.Parse(dataReader[1] + "");
+                    int accountID = Int32.Parse(dataReader[2] + "");
+                    int productId = Int32.Parse(dataReader[3] + "");
+                    string name = "" + dataReader[4];
+                    string category = "" + dataReader[5];
+                    string color = "" + dataReader[6];
+                    string size = "" + dataReader[7];
+                    double price = Double.Parse(dataReader[8] + "");
+                    int quantity = Int32.Parse(dataReader[9] + "");
+                    int totalPrice = Convert.ToInt32( Convert.ToInt32(price) * quantity);
+                    string imagePath = "" + dataReader[10];
+                    string status = "" + dataReader[11];
+                    string orderStatus = "" + dataReader[12];
+                    string addedToCartAt = "" + dataReader[13];
+                    string placedOrder = "" + dataReader[14];
+
+                    dataProduct.Rows.Add(dataReader[0].ToString(), dataReader[5].ToString(), dataReader[4].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), dataReader[8].ToString(), dataReader[9].ToString(), totalPrice.ToString());
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+
+            connection.Close();
+        }
     }
 }

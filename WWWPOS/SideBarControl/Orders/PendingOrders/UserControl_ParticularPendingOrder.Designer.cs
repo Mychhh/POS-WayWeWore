@@ -52,7 +52,7 @@
             this.lbl_OrderNumber.BackColor = System.Drawing.Color.Gray;
             this.lbl_OrderNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_OrderNumber.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_OrderNumber.Location = new System.Drawing.Point(6, 49);
+            this.lbl_OrderNumber.Location = new System.Drawing.Point(107, 49);
             this.lbl_OrderNumber.Name = "lbl_OrderNumber";
             this.lbl_OrderNumber.Size = new System.Drawing.Size(115, 33);
             this.lbl_OrderNumber.TabIndex = 1;
@@ -64,7 +64,7 @@
             this.label1.BackColor = System.Drawing.Color.Gray;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(127, 49);
+            this.label1.Location = new System.Drawing.Point(6, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 33);
             this.label1.TabIndex = 6;
@@ -196,7 +196,7 @@
             this.lbl_Category.BackColor = System.Drawing.SystemColors.Control;
             this.lbl_Category.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Category.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_Category.Location = new System.Drawing.Point(127, 91);
+            this.lbl_Category.Location = new System.Drawing.Point(6, 91);
             this.lbl_Category.Name = "lbl_Category";
             this.lbl_Category.Size = new System.Drawing.Size(95, 39);
             this.lbl_Category.TabIndex = 13;
@@ -208,7 +208,7 @@
             this.lbl_ProductID.BackColor = System.Drawing.SystemColors.Control;
             this.lbl_ProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ProductID.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_ProductID.Location = new System.Drawing.Point(6, 91);
+            this.lbl_ProductID.Location = new System.Drawing.Point(107, 91);
             this.lbl_ProductID.Name = "lbl_ProductID";
             this.lbl_ProductID.Size = new System.Drawing.Size(115, 39);
             this.lbl_ProductID.TabIndex = 12;

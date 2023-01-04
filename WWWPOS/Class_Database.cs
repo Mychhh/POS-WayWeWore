@@ -675,6 +675,27 @@ namespace WWWPOS
                 ErrorMessage(ex.Message);
             }
         }
+
+        //Success Orders
+        public void OrderSuccess(int orderNumber)
+        {
+            try
+            {
+                connection.Open();
+                //update order status to success
+                string updateOrdersToSuccessQuery = "UPDATE Orders SET OrderStatus = 'Success' WHERE OrderNumber = '" + orderNumber + "' ";
+
+                sqlCommand = new SqlCommand(updateOrdersToSuccessQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+        }
+
     }
 
 }
