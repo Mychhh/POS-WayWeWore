@@ -66,6 +66,12 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
 
                 SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order succesfully removed");
                 successMessageDialogue.ShowDialog();
+
+                Form_AdminHome form_AdminHome = new Form_AdminHome();
+                form_AdminHome.Hide();
+                DataBase.fromWhat = "OrdersDelete";
+                form_AdminHome.ShowDialog();
+
             }
         }
     }
