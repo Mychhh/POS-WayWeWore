@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlOrderPending));
             this.Admin = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flPanel_PendingOrders = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.SuspendLayout();
@@ -45,15 +45,15 @@
             this.Admin.TabIndex = 9;
             this.Admin.Text = "Pending orders";
             // 
-            // flowLayoutPanel1
+            // flPanel_PendingOrders
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(23, 47);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(887, 388);
-            this.flowLayoutPanel1.TabIndex = 10;
+            this.flPanel_PendingOrders.AutoScroll = true;
+            this.flPanel_PendingOrders.BackColor = System.Drawing.SystemColors.Control;
+            this.flPanel_PendingOrders.Location = new System.Drawing.Point(23, 47);
+            this.flPanel_PendingOrders.Name = "flPanel_PendingOrders";
+            this.flPanel_PendingOrders.Padding = new System.Windows.Forms.Padding(5);
+            this.flPanel_PendingOrders.Size = new System.Drawing.Size(887, 388);
+            this.flPanel_PendingOrders.TabIndex = 10;
             // 
             // dataGridViewImageColumn1
             // 
@@ -77,11 +77,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flPanel_PendingOrders);
             this.Controls.Add(this.Admin);
             this.Name = "UserControlOrderPending";
             this.Size = new System.Drawing.Size(932, 449);
-            this.Load += new System.EventHandler(this.UserControlOrderPending_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,6 +90,6 @@
         private System.Windows.Forms.Label Admin;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.FlowLayoutPanel flPanel_PendingOrders;
     }
 }

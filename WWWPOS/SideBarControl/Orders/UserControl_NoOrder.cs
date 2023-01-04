@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WWWPOS.SideBarControl.Orders
 {
-    public partial class UserControlOrderFailed : UserControl
+    public partial class UserControl_NoOrder : UserControl
     {
-        public UserControlOrderFailed()
+        public UserControl_NoOrder()
         {
             InitializeComponent();
         }

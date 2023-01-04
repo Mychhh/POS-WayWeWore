@@ -31,7 +31,20 @@ namespace WWWPOS.SideBarControl.UserList
         private void btn_Pending_Click(object sender, EventArgs e)
         {
             UserControlOrderPending UC_OrderPending = new UserControlOrderPending();
-            OrderView(UC_OrderPending);
+
+            //InventoryPanel
+            this.panel_Order.Controls.Clear();
+            this.panel_Order.Controls.Add(UC_OrderPending);
+            UC_OrderPending.Dock = DockStyle.Fill;
+
+            Class_LoadData loadData = new Class_LoadData();
+            loadData.GetOrderID(UC_OrderPending.flPanel_PendingOrders);
+
+            if (UC_OrderPending.flPanel_PendingOrders.Controls.Count == 0)
+            {
+                UserControl_NoOrder UC_NoOrder = new UserControl_NoOrder();
+                UC_OrderPending.flPanel_PendingOrders.Controls.Add(UC_NoOrder);
+            }
         }
 
         private void btn_Success_Click(object sender, EventArgs e)
@@ -40,10 +53,5 @@ namespace WWWPOS.SideBarControl.UserList
             OrderView(UC_OrderSuccess);
         }
 
-        private void btn_Failed_Click(object sender, EventArgs e)
-        {
-            UserControlOrderFailed UC_OrderFailed = new UserControlOrderFailed();
-            OrderView(UC_OrderFailed);
-        }
     }
 }

@@ -35,6 +35,7 @@ namespace WWWPOS
     //SQl Declaration
         public static string user_ID, message, user_Name;
         public static bool isLogin = false;
+        public static string fromWhat = "";
         public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
         protected SqlCommand command;
@@ -66,12 +67,13 @@ namespace WWWPOS
         }
 
         //Product Stack & List
-        protected Stack<Class_Products> productsStack = new Stack<Class_Products>();
         protected List<Class_Products> productsList = new List<Class_Products>();
 
         //Order Stack & List
-        protected Stack<Class_Orders> ordersStack = new Stack<Class_Orders>();
         protected List<Class_Orders> ordersList = new List<Class_Orders>();
+
+        //Order Stack & List
+        protected List<Class_OrdersStatus> classOrderStatus = new List<Class_OrdersStatus>();
 
         //-----About User-----//
 
@@ -451,7 +453,6 @@ namespace WWWPOS
             mdr = command.ExecuteReader();
             connection.Close();
         }
-        
         //Product Payments
         public void PlaceOrder()
         {
@@ -586,6 +587,115 @@ namespace WWWPOS
                 ErrorMessage(ex.Message);
             }
         }
+        
+        //-----Cashier Side-----//
+        
+        //Get Data from Orders Table
+        public void GetDataFromOrderTable()
+        {
+            try
+            {
+                connection.Open();
+
+                string selectOrderNumberQuery = "SELECT * FROM Orders WHERE OrderStatus = 'Pending'";
+                sqlCommand = new SqlCommand(selectOrderNumberQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    int orderID = Int32.Parse(dataReader[0] + "");
+                    int orderNumber = Int32.Parse(dataReader[1] + "");
+                    int accountID = Int32.Parse(dataReader[2] + "");
+                    int productId = Int32.Parse(dataReader[3] + "");
+                    string name = "" + dataReader[4];
+                    string category = "" + dataReader[5];
+                    string color = "" + dataReader[6];
+                    string size = "" + dataReader[7];
+                    double price = Double.Parse(dataReader[8] + "");
+                    int quantity = Int32.Parse(dataReader[9] + "");
+                    string imagePath = "" + dataReader[10];
+                    string status = "" + dataReader[11];
+                    string orderStatus = "" + dataReader[12];
+                    string addedToCartAt = "" + dataReader[13];
+                    string placedOrder = "" + dataReader[14];
+
+                    Class_OrdersStatus orders = new Class_OrdersStatus(orderID, orderNumber, accountID, productId,
+                                                                       name, category, color, size,
+                                                                       price, quantity, imagePath, status,
+                                                                       orderStatus, addedToCartAt, placedOrder);
+
+                    classOrderStatus.Add(orders);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+
+            connection.Close();
+        }
+
+        //Delete Particular Product
+        public void RemoveParticularProduct(int orderID)
+        {
+            //Deletes the particular order
+            try
+            {
+                connection.Open();
+                string deleteParticularOrder = "DELETE FROM Orders WHERE OrderID = '" + orderID + "' ";
+
+                sqlCommand = new SqlCommand(deleteParticularOrder, connection);
+                dataReader = sqlCommand.ExecuteReader();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+        }
+
+        //Remove Orders
+        public void RemoveOrders(int orderNumber)
+        {
+            //Deletes the particular order
+            try
+            {
+                connection.Open();
+                string removeOrders = "DELETE FROM Orders WHERE OrderNumber = '" + orderNumber + "' ";
+
+                sqlCommand = new SqlCommand(removeOrders, connection);
+                dataReader = sqlCommand.ExecuteReader();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+        }
+
+        //Success Orders
+        public void OrderSuccess(int orderNumber)
+        {
+            try
+            {
+                connection.Open();
+                //update order status to success
+                string updateOrdersToSuccessQuery = "UPDATE Orders SET OrderStatus = 'Success' WHERE OrderNumber = '" + orderNumber + "' ";
+
+                sqlCommand = new SqlCommand(updateOrdersToSuccessQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+        }
+
     }
 
 }

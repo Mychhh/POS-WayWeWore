@@ -15,6 +15,10 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Windows.Controls.Primitives;
 using WWWPOS.MessageFolder;
+using WWWPOS.SideBarControl.Orders.PendingOrders;
+using WWWPOS.SideBarControl.Orders;
+using System.ComponentModel;
+using System.Windows.Data;
 
 namespace WWWPOS
 {
@@ -390,6 +394,7 @@ namespace WWWPOS
 
         }
 
+        //Load Cart
         public void LoadCart(FlowLayoutPanel flowLayoutPanel)
         {
             string userid = DataBase.user_ID;
@@ -528,10 +533,6 @@ namespace WWWPOS
             form_ClientPay.flPanel_ProductTotal.Controls.Add(UC_ProductCart);
             form_ClientPay.lbl_TotalPrice.Text = (productPrice * productQuantity).ToString();
 
-            //UserControl_ProductCart userControl_ProductCart = new UserControl_ProductCart();
-            //SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Product ID " + userControl_ProductCart.BuyProductID.ToString());
-            //successMessageDialogue.ShowDialog();
-
             form_ClientPay.ShowDialog();
         }
 
@@ -577,21 +578,152 @@ namespace WWWPOS
         }
 
         //-----Cashier Side-----//
-
-        //Load order number
-        public void LoadOrderNumber()
+        
+        //Load Order ID
+        public void GetOrderID(FlowLayoutPanel flowLayoutPanel)
         {
-            string userid = DataBase.user_ID;
-            int user_ID = Int32.Parse(userid);
+            //Gets the data from Orders Table
+            GetDataFromOrderTable();
 
+
+            if (classOrderStatus.Any())
+            {
+                List<int> objOrderNumber = new List<int>();
+
+                bool hasSameOrderNumber = false;
+
+                //Dummy to have a copy of instance UserControl_PendingOrderContainer to add ParticularPendingProducts
+                Class_OrdersStatus DummyObjClassOrderStatus = classOrderStatus[0];
+                UserControl_PendingOrderContainer Dummy_UC_PendingOrderContainer = new UserControl_PendingOrderContainer(DummyObjClassOrderStatus.OrderNumber);
+                int DummyOrderTotalPrice = 0;
+
+                for (int i = 0; i < classOrderStatus.Count; i++)
+                {
+                    Class_OrdersStatus objClassOrderStatus = classOrderStatus[i];
+
+                    //checks if the Collections has any value
+                    if (objOrderNumber.Any())
+                    {
+
+                        for (int orderNumberIndex = 0; orderNumberIndex < objOrderNumber.Count; orderNumberIndex++)
+                        {
+
+                            if (objClassOrderStatus.OrderNumber == objOrderNumber[orderNumberIndex])
+                            {
+                                hasSameOrderNumber = true;
+
+                                //Just Add particular pending orders on the Pending orders container
+                                UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
+                            new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
+                                                                   objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
+                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
+
+
+                                //int productid, string category, string color, string size, double price, int quantity, int total
+
+                                Dummy_UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+
+                                DummyOrderTotalPrice += Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
+                                Dummy_UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
+                            }
+
+                        }
+
+                    }
+
+                    if (hasSameOrderNumber == false)
+                    {
+                        UserControl_PendingOrderContainer UC_PendingOrderContainer = new UserControl_PendingOrderContainer(objClassOrderStatus.OrderNumber);
+
+                        //re-assign the instance of dummy UserControl_PendingOrderContainer
+                        Dummy_UC_PendingOrderContainer = UC_PendingOrderContainer;
+
+                        flowLayoutPanel.Controls.Add(UC_PendingOrderContainer);
+                        objOrderNumber.Add(objClassOrderStatus.OrderNumber);
+
+                        UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
+                    new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
+                                                                   objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
+                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
+
+                        UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+
+                        int OrderTotalPrice = Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
+                        DummyOrderTotalPrice += OrderTotalPrice;
+
+                        UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
+                    }
+                    else if (hasSameOrderNumber)
+                    {
+                        hasSameOrderNumber = false;
+                    }
+                }
+
+            }
+        }
+
+        //Get the length of order
+        public int GetOrderQuantity (int orderNumber)
+        {
+            int orderQty = 0;
+            //Deletes the particular order
+            try
+            {
+                connection.Open();
+                string getOrderQuantity = "SELECT COUNT(*) FROM Orders WHERE OrderNumber = '" + orderNumber + "' ";
+
+                sqlCommand = new SqlCommand(getOrderQuantity, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    orderQty = Int32.Parse(dataReader[0] + "");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+            connection.Close();
+            return orderQty;
+        }
+
+        //Get Success Orders
+        public void GetSuccessOrders(DataGridView dataProduct)
+        {
+            //Get success Orders
             try
             {
                 connection.Open();
 
-                string selectOrderNumberQuery = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product " +
-                    "                       ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' ";
-                command = new SqlCommand(selectOrderNumberQuery, connection);
-                mdr = command.ExecuteReader();
+                string getSuccessOrderQuery = "SELECT * FROM Orders WHERE OrderStatus = 'Success' ORDER BY OrderID DESC";
+                sqlCommand = new SqlCommand(getSuccessOrderQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    int orderID = Int32.Parse(dataReader[0] + "");
+                    int orderNumber = Int32.Parse(dataReader[1] + "");
+                    int accountID = Int32.Parse(dataReader[2] + "");
+                    int productId = Int32.Parse(dataReader[3] + "");
+                    string name = "" + dataReader[4];
+                    string category = "" + dataReader[5];
+                    string color = "" + dataReader[6];
+                    string size = "" + dataReader[7];
+                    double price = Double.Parse(dataReader[8] + "");
+                    int quantity = Int32.Parse(dataReader[9] + "");
+                    int totalPrice = Convert.ToInt32( Convert.ToInt32(price) * quantity);
+                    string imagePath = "" + dataReader[10];
+                    string status = "" + dataReader[11];
+                    string orderStatus = "" + dataReader[12];
+                    string addedToCartAt = "" + dataReader[13];
+                    string placedOrder = "" + dataReader[14];
+
+                    dataProduct.Rows.Add(dataReader[0].ToString(), dataReader[5].ToString(), dataReader[4].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), dataReader[8].ToString(), dataReader[9].ToString(), totalPrice.ToString());
+
+                }
 
             }
             catch (Exception ex)
@@ -601,59 +733,5 @@ namespace WWWPOS
 
             connection.Close();
         }
-
-
-        ////Load Pending Order
-        //public void LoadPendingOrders(FlowLayoutPanel flowLayoutPanel)
-        //{
-        //    string userid = DataBase.user_ID;
-        //    int user_ID = Int32.Parse(userid);
-
-        //    try
-        //    {
-        //        connection.Open();
-
-        //        string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product " +
-        //                                    "ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' AND Cart.Cart_Status = 'Pending'" +
-        //                                    "ORDER BY [Cart].ProductAddedToCart_at DESC";
-        //        command = new SqlCommand(selectJoinedQuerry, connection);
-        //        mdr = command.ExecuteReader();
-
-        //        int total = 0;
-
-        //        while (mdr.Read())
-        //        {
-        //            int cartID = int.Parse(mdr[0] + "");
-        //            int productID = Int32.Parse(mdr[2] + "");
-        //            Image image = Image.FromFile(@"" + mdr[8]);
-        //            double price = Double.Parse(mdr[6] + "");
-        //            int quantity = Int32.Parse(mdr[7] + "");
-        //            total = Convert.ToInt32(price) * quantity;
-        //            int stock = Int32.Parse(mdr[19] + "");
-        //            string description = "" + mdr[10];
-        //            string size = "" + mdr[9];
-        //            string color = "" + mdr[5];
-        //            string category = "" + mdr[3];
-
-        //            UserControl_ProductCart UC_ProductCart = new UserControl_ProductCart(cartID, user_ID, productID, image, price, quantity, total, stock, description, size, color, category);
-
-        //            UC_ProductCart.Controls.Remove(UC_ProductCart.btn_DeleteProduct);
-        //            UC_ProductCart.Controls.Remove(UC_ProductCart.btn_Plus);
-        //            UC_ProductCart.Controls.Remove(UC_ProductCart.btn_Minus);
-        //            UC_ProductCart.cmb_ProductSize.Enabled = false;
-        //            UC_ProductCart.cmb_Color.Enabled = false;
-
-        //            flowLayoutPanel.Controls.Add(UC_ProductCart);
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ErrorMessage(ex.Message);
-        //    }
-        //    connection.Close();
-        //}
-
-
     }
 }

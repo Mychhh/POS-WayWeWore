@@ -315,3 +315,4 @@ C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.Client
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Orders.PendingOrders.UserControl_PendingOrderContainer.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Orders.PendingOrders.UserControl1.resources
 C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Orders.PendingOrders.UserControl_ParticularPendingOrder.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.Orders.UserControl_NoOrder.resources

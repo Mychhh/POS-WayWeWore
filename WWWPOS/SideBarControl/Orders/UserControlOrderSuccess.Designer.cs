@@ -28,24 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlOrderSuccess));
             this.Admin = new System.Windows.Forms.Label();
-            this.dataGridAdmin = new System.Windows.Forms.DataGridView();
-            this.Account_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Full_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Register_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridSuccessOrders = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.edit_Admin = new System.Windows.Forms.DataGridViewImageColumn();
-            this.delete_Admin = new System.Windows.Forms.DataGridViewImageColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAdmin)).BeginInit();
+            this.Order_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Prize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSuccessOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // Admin
@@ -58,101 +55,35 @@
             this.Admin.TabIndex = 10;
             this.Admin.Text = "Success orders";
             // 
-            // dataGridAdmin
+            // dataGridSuccessOrders
             // 
-            this.dataGridAdmin.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridAdmin.ColumnHeadersHeight = 35;
-            this.dataGridAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Account_ID,
-            this.Full_Name,
-            this.Email,
-            this.Password,
-            this.Phone,
-            this.Column1,
-            this.userStatus,
-            this.userType,
-            this.Register_at,
-            this.edit_Admin,
-            this.delete_Admin});
-            this.dataGridAdmin.EnableHeadersVisualStyles = false;
-            this.dataGridAdmin.Location = new System.Drawing.Point(38, 47);
-            this.dataGridAdmin.Name = "dataGridAdmin";
-            this.dataGridAdmin.RowHeadersVisible = false;
-            this.dataGridAdmin.RowHeadersWidth = 51;
-            this.dataGridAdmin.Size = new System.Drawing.Size(860, 388);
-            this.dataGridAdmin.TabIndex = 12;
-            // 
-            // Account_ID
-            // 
-            this.Account_ID.HeaderText = "Account_ID";
-            this.Account_ID.MinimumWidth = 6;
-            this.Account_ID.Name = "Account_ID";
-            this.Account_ID.Width = 125;
-            // 
-            // Full_Name
-            // 
-            this.Full_Name.HeaderText = "Name";
-            this.Full_Name.MinimumWidth = 6;
-            this.Full_Name.Name = "Full_Name";
-            this.Full_Name.Width = 125;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.Width = 125;
-            // 
-            // Password
-            // 
-            this.Password.HeaderText = "Password";
-            this.Password.MinimumWidth = 6;
-            this.Password.Name = "Password";
-            this.Password.Width = 125;
-            // 
-            // Phone
-            // 
-            this.Phone.HeaderText = "Phone";
-            this.Phone.MinimumWidth = 6;
-            this.Phone.Name = "Phone";
-            this.Phone.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Address";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // userStatus
-            // 
-            this.userStatus.HeaderText = "User_Status";
-            this.userStatus.MinimumWidth = 6;
-            this.userStatus.Name = "userStatus";
-            this.userStatus.Width = 125;
-            // 
-            // userType
-            // 
-            this.userType.HeaderText = "User_Type";
-            this.userType.MinimumWidth = 6;
-            this.userType.Name = "userType";
-            this.userType.Width = 125;
-            // 
-            // Register_at
-            // 
-            this.Register_at.HeaderText = "Register_at";
-            this.Register_at.MinimumWidth = 6;
-            this.Register_at.Name = "Register_at";
-            this.Register_at.Width = 125;
+            this.dataGridSuccessOrders.AllowUserToAddRows = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSuccessOrders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridSuccessOrders.ColumnHeadersHeight = 35;
+            this.dataGridSuccessOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridSuccessOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Order_ID,
+            this.Product_Category,
+            this.Product_Name,
+            this.Color,
+            this.Product_Size,
+            this.Product_Prize,
+            this.Product_Quantity,
+            this.Product_Total});
+            this.dataGridSuccessOrders.EnableHeadersVisualStyles = false;
+            this.dataGridSuccessOrders.Location = new System.Drawing.Point(38, 47);
+            this.dataGridSuccessOrders.Name = "dataGridSuccessOrders";
+            this.dataGridSuccessOrders.RowHeadersVisible = false;
+            this.dataGridSuccessOrders.RowHeadersWidth = 51;
+            this.dataGridSuccessOrders.Size = new System.Drawing.Size(860, 388);
+            this.dataGridSuccessOrders.TabIndex = 12;
             // 
             // dataGridViewImageColumn1
             // 
@@ -161,7 +92,7 @@
             this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
             this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 38;
+            this.dataGridViewImageColumn1.Width = 125;
             // 
             // dataGridViewImageColumn2
             // 
@@ -170,35 +101,74 @@
             this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
             this.dataGridViewImageColumn2.MinimumWidth = 6;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 55;
+            this.dataGridViewImageColumn2.Width = 125;
             // 
-            // edit_Admin
+            // Order_ID
             // 
-            this.edit_Admin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.edit_Admin.HeaderText = "Edit";
-            this.edit_Admin.Image = ((System.Drawing.Image)(resources.GetObject("edit_Admin.Image")));
-            this.edit_Admin.MinimumWidth = 6;
-            this.edit_Admin.Name = "edit_Admin";
-            this.edit_Admin.Width = 38;
+            this.Order_ID.HeaderText = "Order ID";
+            this.Order_ID.MinimumWidth = 6;
+            this.Order_ID.Name = "Order_ID";
+            this.Order_ID.Width = 125;
             // 
-            // delete_Admin
+            // Product_Category
             // 
-            this.delete_Admin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.delete_Admin.HeaderText = "Delete";
-            this.delete_Admin.Image = ((System.Drawing.Image)(resources.GetObject("delete_Admin.Image")));
-            this.delete_Admin.MinimumWidth = 6;
-            this.delete_Admin.Name = "delete_Admin";
-            this.delete_Admin.Width = 55;
+            this.Product_Category.HeaderText = "Category";
+            this.Product_Category.MinimumWidth = 6;
+            this.Product_Category.Name = "Product_Category";
+            this.Product_Category.Width = 125;
+            // 
+            // Product_Name
+            // 
+            this.Product_Name.HeaderText = "Name";
+            this.Product_Name.MinimumWidth = 6;
+            this.Product_Name.Name = "Product_Name";
+            this.Product_Name.Width = 125;
+            // 
+            // Color
+            // 
+            this.Color.HeaderText = "Color";
+            this.Color.MinimumWidth = 6;
+            this.Color.Name = "Color";
+            this.Color.Width = 125;
+            // 
+            // Product_Size
+            // 
+            this.Product_Size.HeaderText = "Size";
+            this.Product_Size.MinimumWidth = 6;
+            this.Product_Size.Name = "Product_Size";
+            this.Product_Size.Width = 125;
+            // 
+            // Product_Prize
+            // 
+            this.Product_Prize.HeaderText = "Price";
+            this.Product_Prize.MinimumWidth = 6;
+            this.Product_Prize.Name = "Product_Prize";
+            this.Product_Prize.Width = 125;
+            // 
+            // Product_Quantity
+            // 
+            this.Product_Quantity.HeaderText = "Quantity";
+            this.Product_Quantity.MinimumWidth = 6;
+            this.Product_Quantity.Name = "Product_Quantity";
+            this.Product_Quantity.Width = 125;
+            // 
+            // Product_Total
+            // 
+            this.Product_Total.HeaderText = "Total";
+            this.Product_Total.MinimumWidth = 6;
+            this.Product_Total.Name = "Product_Total";
+            this.Product_Total.Width = 125;
             // 
             // UserControlOrderSuccess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridAdmin);
+            this.Controls.Add(this.dataGridSuccessOrders);
             this.Controls.Add(this.Admin);
             this.Name = "UserControlOrderSuccess";
             this.Size = new System.Drawing.Size(932, 449);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAdmin)).EndInit();
+            this.Load += new System.EventHandler(this.UserControlOrderSuccess_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSuccessOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,19 +177,16 @@
         #endregion
 
         private System.Windows.Forms.Label Admin;
-        private System.Windows.Forms.DataGridView dataGridAdmin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Account_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Full_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Register_at;
-        private System.Windows.Forms.DataGridViewImageColumn edit_Admin;
-        private System.Windows.Forms.DataGridViewImageColumn delete_Admin;
+        private System.Windows.Forms.DataGridView dataGridSuccessOrders;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Order_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Prize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Total;
     }
 }

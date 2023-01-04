@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ErrorMessage;
+using WWWPOS.MessageFolder;
 
 namespace WWWPOS.SideBarControl.Orders.PendingOrders
 {
@@ -17,6 +19,7 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             InitializeComponent();
 
             OrderNumber = ordernumber;
+            OrderNumberWithoutSign = ordernumber;
         }
 
         public int OrderNumber
@@ -24,32 +27,77 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             get => Int32.Parse(lbl_OrderNumber.Text);
             set => lbl_OrderNumber.Text = "Order Number : " + value + "";
         }
+        public int OrderNumberWithoutSign { get; set; }
 
-        private void UserControl_PendingOrderContainer_Load(object sender, EventArgs e)
+        private void btn_Compute_Click(object sender, EventArgs e)
         {
-            UserControl_ParticularPendingOrder UC_ParticularPendingOrder;
 
-
-            for (int i = 0; i <= 3; i++)
+            if (txtBox_ClientPay.Text == "")
             {
-                switch (i)
-                {
-                    case 1:
-                        UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(1);
-                        this.flowLayoutPanel1.Controls.Add(UC_ParticularPendingOrder);
-                        break;
-                    case 2:
-                        UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(2);
-                        this.flowLayoutPanel1.Controls.Add(UC_ParticularPendingOrder);
-                        break;
-                    case 3:
-                        UC_ParticularPendingOrder = new UserControl_ParticularPendingOrder(3);
-                        this.flowLayoutPanel1.Controls.Add(UC_ParticularPendingOrder);
-                        break;
-                }
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("No amount");
+                errorMessageDialogue.ShowDialog();
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(txtBox_ClientPay.Text, @"^[a-zA-Z]+$"))
+            {
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Only numbers is Allowed");
+                errorMessageDialogue.ShowDialog();
+            }
+            else if (Convert.ToInt32(txtBox_ClientPay.Text) < Convert.ToInt32(lbl_OrderTotal.Text))
+            {
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Payment is less than the total cost");
+                errorMessageDialogue.ShowDialog();
+            }
+            else
+            {
+                lbl_Change.Text = (Convert.ToInt32(txtBox_ClientPay.Text) - Convert.ToInt32(lbl_OrderTotal.Text)).ToString();
+            }
+        }
+
+        private void btn_MarkAsSuccess_Click(object sender, EventArgs e)
+        {
+            WarningMessageDialogue warningMessageDialogue = new WarningMessageDialogue("Complete this Orders?");
+            warningMessageDialogue.ShowDialog();
+
+            if (DataBase.message == "continue")
+            {
+                DataBase.message = "";
+
+                SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order marked as Success");
+                successMessageDialogue.ShowDialog();
+
+                DataBase DB = new DataBase();
+
+                DB.OrderSuccess(OrderNumberWithoutSign);
+
+                Form_AdminHome form_AdminHome = new Form_AdminHome();
+                form_AdminHome.Hide();
+                DataBase.fromWhat = "OrdersDelete";
+                form_AdminHome.ShowDialog();
 
             }
-                        
+        }
+
+        private void btn_MarkAsFailed_Click(object sender, EventArgs e)
+        {
+            WarningMessageDialogue warningMessageDialogue = new WarningMessageDialogue("Remove this Orders?");
+            warningMessageDialogue.ShowDialog();
+
+            if (DataBase.message == "continue")
+            {
+                DataBase.message = "";
+
+                SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order succesfully removed");
+                successMessageDialogue.ShowDialog();
+
+                DataBase DB = new DataBase();
+                DB.RemoveOrders(OrderNumberWithoutSign);
+
+                Form_AdminHome form_AdminHome = new Form_AdminHome();
+                form_AdminHome.Hide();
+                DataBase.fromWhat = "OrdersDelete";
+                form_AdminHome.ShowDialog();
+
+            }
         }
     }
 }

@@ -25,31 +25,62 @@ namespace WWWPOS
             InitializeComponent();
             
         }
-
+        public void CloseTheForm()
+        {
+            this.Hide();
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
             lbl_AdminName.Text = DataBase.user_Name;
+
+            //Checks if the user is Already Login
             switch (DataBase.isLogin)
             {
                 case true:
 
-                    UserControlInventory UC_Inventory = new UserControlInventory();
-                    //UserControlRead UC_Read = new UserControlRead();
+                    if(DataBase.fromWhat == "OrdersDelete")
+                    {
+                        UserControlOrder UC_Order = new UserControlOrder();
 
-                    //Main Panel
-                    panel_Main.Controls.Clear();
-                    panel_Main.Controls.Add(UC_Inventory);
-                    UC_Inventory.Dock = DockStyle.Fill;
+                        DataBase.fromWhat = "";
 
-                    UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
-                    //Inventory Panel
-                    UC_Inventory.panel_Inventory.Controls.Clear();
-                    UC_Inventory.panel_Inventory.Controls.Add(UC_ViewUpdate);
-                    UC_ViewUpdate.Dock = DockStyle.Fill;
+                        //Main Panel
+                        panel_Main.Controls.Clear();
+                        panel_Main.Controls.Add(UC_Order);
+                        UC_Order.Dock = DockStyle.Fill;
 
-                    //Loads product item
-                    Class_LoadData LD = new Class_LoadData();
-                    LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
+                        UserControlOrderPending UC_OrderPending = new UserControlOrderPending();
+                        //OrderPending FlowLayout Panel
+                        UC_Order.panel_Order.Controls.Clear();
+                        UC_Order.panel_Order.Controls.Add(UC_OrderPending);
+                        UC_OrderPending.Dock = DockStyle.Fill;
+
+                        Class_LoadData loadData = new Class_LoadData();
+                        loadData.GetOrderID(UC_OrderPending.flPanel_PendingOrders);
+
+                    }
+                    else if (DataBase.fromWhat == "InventoryDelete")
+                    {
+                        DataBase.fromWhat = "";
+
+                        UserControlInventory UC_Inventory = new UserControlInventory();
+                        //UserControlRead UC_Read = new UserControlRead();
+
+                        //Main Panel
+                        panel_Main.Controls.Clear();
+                        panel_Main.Controls.Add(UC_Inventory);
+                        UC_Inventory.Dock = DockStyle.Fill;
+
+                        UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+                        //Inventory Panel
+                        UC_Inventory.panel_Inventory.Controls.Clear();
+                        UC_Inventory.panel_Inventory.Controls.Add(UC_ViewUpdate);
+                        UC_ViewUpdate.Dock = DockStyle.Fill;
+
+                        //Loads product item
+                        Class_LoadData LD = new Class_LoadData();
+                        LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
+                    }
 
                     break;
 
@@ -184,6 +215,16 @@ namespace WWWPOS
             UC_Order.panel_Order.Controls.Add(UC_OrderPending);
             UC_OrderPending.Dock = DockStyle.Fill;
 
+            //UserControlOrderPending UC_OrderPending = new UserControlOrderPending();
+
+            Class_LoadData loadData = new Class_LoadData();
+            loadData.GetOrderID(UC_OrderPending.flPanel_PendingOrders);
+
+            if (UC_OrderPending.flPanel_PendingOrders.Controls.Count == 0)
+            {
+                UserControl_NoOrder UC_NoOrder = new UserControl_NoOrder();
+                UC_OrderPending.flPanel_PendingOrders.Controls.Add(UC_NoOrder);
+            }
         }
 
     }

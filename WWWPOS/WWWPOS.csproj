@@ -89,7 +89,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class_Orders.cs" />
+    <Compile Include="ClassOrdersFolder\Class_Orders.cs" />
+    <Compile Include="ClassOrdersFolder\Class_OrdersStatus.cs" />
     <Compile Include="Class_Products.cs" />
     <Compile Include="ClientControl\ClientCart\Form_ClientCart.cs">
       <SubType>Form</SubType>
@@ -251,12 +252,6 @@
     <Compile Include="SideBarControl\Orders\PendingOrders\UserControl_PendingOrderContainer.Designer.cs">
       <DependentUpon>UserControl_PendingOrderContainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="SideBarControl\Orders\UserControlOrderFailed.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SideBarControl\Orders\UserControlOrderFailed.Designer.cs">
-      <DependentUpon>UserControlOrderFailed.cs</DependentUpon>
-    </Compile>
     <Compile Include="SideBarControl\Orders\UserControlOrderPending.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -268,6 +263,12 @@
     </Compile>
     <Compile Include="SideBarControl\Orders\UserControlOrderSuccess.Designer.cs">
       <DependentUpon>UserControlOrderSuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\Orders\UserControl_NoOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\Orders\UserControl_NoOrder.Designer.cs">
+      <DependentUpon>UserControl_NoOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="SideBarControl\Products\UserControl_AdminViewProducts.cs">
       <SubType>UserControl</SubType>
@@ -470,14 +471,14 @@
     <EmbeddedResource Include="SideBarControl\Orders\PendingOrders\UserControl_PendingOrderContainer.resx">
       <DependentUpon>UserControl_PendingOrderContainer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SideBarControl\Orders\UserControlOrderFailed.resx">
-      <DependentUpon>UserControlOrderFailed.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Orders\UserControlOrderPending.resx">
       <DependentUpon>UserControlOrderPending.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Orders\UserControlOrderSuccess.resx">
       <DependentUpon>UserControlOrderSuccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\Orders\UserControl_NoOrder.resx">
+      <DependentUpon>UserControl_NoOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Products\UserControl_AdminViewProducts.resx">
       <DependentUpon>UserControl_AdminViewProducts.cs</DependentUpon>

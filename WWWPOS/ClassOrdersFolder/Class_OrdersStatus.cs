@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace WWWPOS
 {
-    internal class Class_Orders
+    internal class Class_OrdersStatus
     {
+        public int OrderID { get; set; }
         public int OrderNumber { get; set; }
         public int AccountID { get; set; }
-        public int ProductID { get; set; }
+        public int ProductId { get; set; }
         public string Name { get; set; }
         public string Category { get; set; }
         public string Color { get; set; }
@@ -19,17 +20,16 @@ namespace WWWPOS
         public int Quantity { get; set; }
         public string ImagePath { get; set; }
         public string Status { get; set; }
-        public string OrderStatus { get; set; }
+        public string OrderStatus  { get; set; }
         public string AddedToCartAt { get; set; }
+        public string PlacedOrder { get; set; }
 
-        public Class_Orders(int orderNumber, int accountID, int productID,
-                            string name, string category, string color, string size, 
-                            double price, int quantity, string imagePath, 
-                            string status, string orderStatus, string addedToCartAt)
+        public Class_OrdersStatus(int orderID, int orderNumber, int accountID, int productId, string name, string category, string color, string size, double price, int quantity, string imagePath, string status, string orderStatus, string addedToCartAt, string placedOrder)
         {
+            OrderID = orderID;
             OrderNumber = orderNumber;
             AccountID = accountID;
-            ProductID = productID;
+            ProductId = productId;
             Name = name;
             Category = category;
             Color = color;
@@ -40,6 +40,7 @@ namespace WWWPOS
             Status = status;
             OrderStatus = orderStatus;
             AddedToCartAt = addedToCartAt;
+            PlacedOrder = placedOrder;
         }
     }
 }

@@ -16,5 +16,11 @@ namespace WWWPOS.SideBarControl.Orders
         {
             InitializeComponent();
         }
+
+        private void UserControlOrderSuccess_Load(object sender, EventArgs e)
+        {
+            Class_LoadData loadData = new Class_LoadData();
+            loadData.GetSuccessOrders(this.dataGridSuccessOrders);
+        }
     }
 }

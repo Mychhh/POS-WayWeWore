@@ -135,20 +135,12 @@ namespace WWWPOS.SideBarControl.Products
                 DB.SetStatusProducts("Inactive", ID);
                 DataBase.message = "";
 
+
                 //This refresh the form
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
                 form_AdminHome.Hide();
+                DataBase.fromWhat = "InventoryDelete";
                 form_AdminHome.ShowDialog();
-
-                //UserControlInventory UC_Inventory = new UserControlInventory();
-                //UserControlDelete UC_Delete = new UserControlDelete();
-
-                //UC_Inventory.panel_Inventory.Controls.Clear();
-                //UC_Inventory.panel_Inventory.Controls.Add(UC_Delete);
-                //UC_Delete.Dock = DockStyle.Fill;
-
-                //Class_LoadData LD = new Class_LoadData();
-                //LD.selectProduct(UC_Delete.flowLayoutPanel, "panelDelete");
             }
         }
 
@@ -168,5 +160,6 @@ namespace WWWPOS.SideBarControl.Products
             this.Productsize = returnValue[8];
             this.Descriptions = returnValue[9];
         }
+
     }
 }
