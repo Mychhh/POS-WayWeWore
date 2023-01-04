@@ -28,29 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.TshirtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TshirtSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Prize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Product_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Order_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridSuccessOrders = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSuccessOrders)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeight = 29;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TshirtName,
-            this.TshirtSize,
-            this.Color,
-            this.ProductPrice});
-            this.dataGridView1.Location = new System.Drawing.Point(5, 37);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(926, 477);
-            this.dataGridView1.TabIndex = 37;
             // 
             // label1
             // 
@@ -62,55 +52,117 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Tshirt";
             // 
-            // TshirtName
+            // Product_Total
             // 
-            this.TshirtName.HeaderText = "Name";
-            this.TshirtName.MinimumWidth = 6;
-            this.TshirtName.Name = "TshirtName";
-            this.TshirtName.Width = 146;
+            this.Product_Total.HeaderText = "Total";
+            this.Product_Total.MinimumWidth = 6;
+            this.Product_Total.Name = "Product_Total";
+            this.Product_Total.Width = 125;
             // 
-            // TshirtSize
+            // Product_Quantity
             // 
-            this.TshirtSize.HeaderText = "Size";
-            this.TshirtSize.MinimumWidth = 6;
-            this.TshirtSize.Name = "TshirtSize";
-            this.TshirtSize.Width = 145;
+            this.Product_Quantity.HeaderText = "Quantity";
+            this.Product_Quantity.MinimumWidth = 6;
+            this.Product_Quantity.Name = "Product_Quantity";
+            this.Product_Quantity.Width = 125;
+            // 
+            // Product_Prize
+            // 
+            this.Product_Prize.HeaderText = "Price";
+            this.Product_Prize.MinimumWidth = 6;
+            this.Product_Prize.Name = "Product_Prize";
+            this.Product_Prize.Width = 125;
+            // 
+            // Product_Size
+            // 
+            this.Product_Size.HeaderText = "Size";
+            this.Product_Size.MinimumWidth = 6;
+            this.Product_Size.Name = "Product_Size";
+            this.Product_Size.Width = 125;
             // 
             // Color
             // 
             this.Color.HeaderText = "Color";
             this.Color.MinimumWidth = 6;
             this.Color.Name = "Color";
-            this.Color.Width = 146;
+            this.Color.Width = 125;
             // 
-            // ProductPrice
+            // Product_Name
             // 
-            this.ProductPrice.HeaderText = "Price";
-            this.ProductPrice.MinimumWidth = 6;
-            this.ProductPrice.Name = "ProductPrice";
-            this.ProductPrice.Width = 145;
+            this.Product_Name.HeaderText = "Name";
+            this.Product_Name.MinimumWidth = 6;
+            this.Product_Name.Name = "Product_Name";
+            this.Product_Name.Width = 125;
+            // 
+            // Product_Category
+            // 
+            this.Product_Category.HeaderText = "Category";
+            this.Product_Category.MinimumWidth = 6;
+            this.Product_Category.Name = "Product_Category";
+            this.Product_Category.Width = 125;
+            // 
+            // Order_ID
+            // 
+            this.Order_ID.HeaderText = "Order ID";
+            this.Order_ID.MinimumWidth = 6;
+            this.Order_ID.Name = "Order_ID";
+            this.Order_ID.Width = 125;
+            // 
+            // dataGridSuccessOrders
+            // 
+            this.dataGridSuccessOrders.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSuccessOrders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridSuccessOrders.ColumnHeadersHeight = 35;
+            this.dataGridSuccessOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridSuccessOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Order_ID,
+            this.Product_Category,
+            this.Product_Name,
+            this.Color,
+            this.Product_Size,
+            this.Product_Prize,
+            this.Product_Quantity,
+            this.Product_Total});
+            this.dataGridSuccessOrders.EnableHeadersVisualStyles = false;
+            this.dataGridSuccessOrders.Location = new System.Drawing.Point(23, 37);
+            this.dataGridSuccessOrders.Name = "dataGridSuccessOrders";
+            this.dataGridSuccessOrders.RowHeadersVisible = false;
+            this.dataGridSuccessOrders.RowHeadersWidth = 51;
+            this.dataGridSuccessOrders.Size = new System.Drawing.Size(880, 395);
+            this.dataGridSuccessOrders.TabIndex = 37;
             // 
             // UserControlPurchaseTshirt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridSuccessOrders);
             this.Controls.Add(this.label1);
             this.Name = "UserControlPurchaseTshirt";
-            this.Size = new System.Drawing.Size(932, 517);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(932, 449);
+            this.Load += new System.EventHandler(this.UserControlPurchaseTshirt_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSuccessOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TshirtName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TshirtSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Prize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Size;
         private System.Windows.Forms.DataGridViewTextBoxColumn Color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Order_ID;
+        public System.Windows.Forms.DataGridView dataGridSuccessOrders;
     }
 }

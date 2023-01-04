@@ -24,6 +24,9 @@ namespace WWWPOS.SideBarControl
             panel_Purchase.Controls.Clear();
             panel_Purchase.Controls.Add(UC_PurchaseTshirt);
             UC_PurchaseTshirt.Dock = DockStyle.Fill;
+
+            Class_LoadData loadData = new Class_LoadData();
+            loadData.GetPurchaseOrder(UC_PurchaseTshirt.dataGridSuccessOrders, "TShirt");
         }
 
         private void btn_Short_Click(object sender, EventArgs e)
@@ -33,6 +36,9 @@ namespace WWWPOS.SideBarControl
             panel_Purchase.Controls.Clear();
             panel_Purchase.Controls.Add(UC_PurchaseShort);
             UC_PurchaseShort.Dock = DockStyle.Fill;
+
+            Class_LoadData loadData = new Class_LoadData();
+            loadData.GetPurchaseOrder(UC_PurchaseShort.dataGridSuccessOrders, "Short");
 
         }
     }

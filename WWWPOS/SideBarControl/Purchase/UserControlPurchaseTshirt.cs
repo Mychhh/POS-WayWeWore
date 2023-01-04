@@ -16,5 +16,10 @@ namespace WWWPOS.SideBarControl.Purchase
         {
             InitializeComponent();
         }
+
+        private void UserControlPurchaseTshirt_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

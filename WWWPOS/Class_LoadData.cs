@@ -733,5 +733,96 @@ namespace WWWPOS
 
             connection.Close();
         }
+
+        //Load Purchase
+        public void GetPurchaseOrder(DataGridView dataProduct, string whatPurchase)
+        {
+            switch (whatPurchase)
+            {
+
+                case "TShirt":
+
+                    try
+                    {
+                        connection.Open();
+                        string getTShirtPurchaseQuery = "SELECT * FROM Orders WHERE OrderStatus = 'Success' AND Category = 'T-Shirts' ORDER BY OrderID DESC";
+                        sqlCommand = new SqlCommand(getTShirtPurchaseQuery, connection);
+                        dataReader = sqlCommand.ExecuteReader();
+
+                        while (dataReader.Read())
+                        {
+                            int orderID = Int32.Parse(dataReader[0] + "");
+                            int orderNumber = Int32.Parse(dataReader[1] + "");
+                            int accountID = Int32.Parse(dataReader[2] + "");
+                            int productId = Int32.Parse(dataReader[3] + "");
+                            string name = "" + dataReader[4];
+                            string category = "" + dataReader[5];
+                            string color = "" + dataReader[6];
+                            string size = "" + dataReader[7];
+                            double price = Double.Parse(dataReader[8] + "");
+                            int quantity = Int32.Parse(dataReader[9] + "");
+                            int totalPrice = Convert.ToInt32(Convert.ToInt32(price) * quantity);
+                            string imagePath = "" + dataReader[10];
+                            string status = "" + dataReader[11];
+                            string orderStatus = "" + dataReader[12];
+                            string addedToCartAt = "" + dataReader[13];
+                            string placedOrder = "" + dataReader[14];
+
+                            dataProduct.Rows.Add(dataReader[0].ToString(), dataReader[5].ToString(), dataReader[4].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), dataReader[8].ToString(), dataReader[9].ToString(), totalPrice.ToString());
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorMessage(ex.Message);
+                    }
+
+                    connection.Close();
+
+                    break;
+
+                case "Short":
+
+                    try
+                    {
+                        connection.Open();
+                        string getTShirtPurchaseQuery = "SELECT * FROM Orders WHERE OrderStatus = 'Success' AND Category = 'Shorts' ORDER BY OrderID DESC";
+                        sqlCommand = new SqlCommand(getTShirtPurchaseQuery, connection);
+                        dataReader = sqlCommand.ExecuteReader();
+
+                        while (dataReader.Read())
+                        {
+                            int orderID = Int32.Parse(dataReader[0] + "");
+                            int orderNumber = Int32.Parse(dataReader[1] + "");
+                            int accountID = Int32.Parse(dataReader[2] + "");
+                            int productId = Int32.Parse(dataReader[3] + "");
+                            string name = "" + dataReader[4];
+                            string category = "" + dataReader[5];
+                            string color = "" + dataReader[6];
+                            string size = "" + dataReader[7];
+                            double price = Double.Parse(dataReader[8] + "");
+                            int quantity = Int32.Parse(dataReader[9] + "");
+                            int totalPrice = Convert.ToInt32(Convert.ToInt32(price) * quantity);
+                            string imagePath = "" + dataReader[10];
+                            string status = "" + dataReader[11];
+                            string orderStatus = "" + dataReader[12];
+                            string addedToCartAt = "" + dataReader[13];
+                            string placedOrder = "" + dataReader[14];
+
+                            dataProduct.Rows.Add(dataReader[0].ToString(), dataReader[5].ToString(), dataReader[4].ToString(), dataReader[6].ToString(), dataReader[7].ToString(), dataReader[8].ToString(), dataReader[9].ToString(), totalPrice.ToString());
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorMessage(ex.Message);
+                    }
+
+                    connection.Close();
+
+                    break;
+            }
+
+        }
     }
 }
