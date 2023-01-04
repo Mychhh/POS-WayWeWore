@@ -16,5 +16,9 @@ namespace WWWPOS.SideBarControl.Purchase
         {
             InitializeComponent();
         }
+
+        private void UserControlPurchaseShort_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

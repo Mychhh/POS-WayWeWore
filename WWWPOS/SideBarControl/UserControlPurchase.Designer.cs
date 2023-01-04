@@ -42,7 +42,7 @@
             this.panel1.Controls.Add(this.btn_Short);
             this.panel1.Controls.Add(this.btn_Tshirt);
             this.panel1.Controls.Add(this.lbl_PurchaseHistory);
-            this.panel1.Location = new System.Drawing.Point(25, 19);
+            this.panel1.Location = new System.Drawing.Point(25, 18);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(932, 82);
             this.panel1.TabIndex = 0;
@@ -92,18 +92,18 @@
             this.panel_Purchase.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_Purchase.Location = new System.Drawing.Point(25, 117);
             this.panel_Purchase.Name = "panel_Purchase";
-            this.panel_Purchase.Size = new System.Drawing.Size(932, 517);
+            this.panel_Purchase.Size = new System.Drawing.Size(932, 449);
             this.panel_Purchase.TabIndex = 21;
             // 
             // UserControlPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.panel_Purchase);
             this.Controls.Add(this.panel1);
             this.Name = "UserControlPurchase";
-            this.Size = new System.Drawing.Size(976, 655);
+            this.Size = new System.Drawing.Size(976, 580);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
