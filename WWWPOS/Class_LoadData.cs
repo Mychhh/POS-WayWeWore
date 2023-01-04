@@ -610,7 +610,7 @@ namespace WWWPOS
                             
                             //Just Add particular pending orders on the Pending orders container
                             UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
-                        new UserControl_ParticularPendingOrder(objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
+                        new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
                                                                objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
                                                                (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
 
@@ -638,7 +638,7 @@ namespace WWWPOS
                     objOrderNumber.Add(objClassOrderStatus.OrderNumber);
 
                     UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
-                new UserControl_ParticularPendingOrder(objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
+                new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
                                                                objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
                                                                (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
 
@@ -656,5 +656,34 @@ namespace WWWPOS
 
             }
         }
+
+        //Get the length of order
+        public int GetOrderQuantity (int orderNumber)
+        {
+            int orderQty = 0;
+            //Deletes the particular order
+            try
+            {
+                connection.Open();
+                string getOrderQuantity = "SELECT COUNT(*) FROM Orders WHERE OrderNumber = '" + orderNumber + "' ";
+
+                sqlCommand = new SqlCommand(getOrderQuantity, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    orderQty = Int32.Parse(dataReader[0] + "");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+            connection.Close();
+            return orderQty;
+        }
+
     }
 }

@@ -135,9 +135,11 @@ namespace WWWPOS.SideBarControl.Products
                 DB.SetStatusProducts("Inactive", ID);
                 DataBase.message = "";
 
+
                 //This refresh the form
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
                 form_AdminHome.Hide();
+                DataBase.fromWhat = "InventoryDelete";
                 form_AdminHome.ShowDialog();
             }
         }

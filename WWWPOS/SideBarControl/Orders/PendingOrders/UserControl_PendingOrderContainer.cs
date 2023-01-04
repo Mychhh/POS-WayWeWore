@@ -63,7 +63,9 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             if (DataBase.message == "continue")
             {
                 DataBase.message = "";
-                this.Hide();
+
+                SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order succesfully removed");
+                successMessageDialogue.ShowDialog();
             }
         }
     }

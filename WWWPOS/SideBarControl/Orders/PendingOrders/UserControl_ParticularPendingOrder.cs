@@ -17,10 +17,11 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
     {
         public bool isPacked = true;
 
-        public UserControl_ParticularPendingOrder(string productname, string category, string color, string size, double price, int quantity, int total)
+        public UserControl_ParticularPendingOrder(int orderNumber, string productname, string category, string color, string size, double price, int quantity, int total)
         {
             InitializeComponent();
 
+            OrderNumber = orderNumber;
             PProductName = productname;
             Category = category;
             PColor = color;
@@ -29,6 +30,7 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             Quantity = quantity;
             Total = total;
         }
+        public int OrderNumber { get; set; }
         public string PProductName
         {
             get => lbl_ProductID.Text;
@@ -84,14 +86,41 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
 
         private void btn_Remove_Click(object sender, EventArgs e)
         {
+            Class_LoadData loadData = new Class_LoadData();
+            int OrderQuantity = loadData.GetOrderQuantity(OrderNumber);
+
+            WarningMessageDialogue s = new WarningMessageDialogue("Order Quantity " + OrderQuantity.ToString());
+            s.ShowDialog();
+
+
             WarningMessageDialogue warningMessageDialogue = new WarningMessageDialogue("Remove this Product?");
             warningMessageDialogue.ShowDialog();
 
-            if(DataBase.message == "continue")
+
+            if (OrderQuantity == 1)
             {
-                DataBase.message = "";
-                this.Hide();
+                if (DataBase.message == "continue")
+                {
+                    DataBase.message = "";
+
+                    SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order succesfully removed");
+                    successMessageDialogue.ShowDialog();
+
+                    Form_AdminHome form_AdminHome = new Form_AdminHome();
+                    form_AdminHome.Hide();
+                    DataBase.fromWhat = "OrdersDelete";
+                    form_AdminHome.ShowDialog();
+                }
             }
+            else
+            {
+                if (DataBase.message == "continue")
+                {
+                    DataBase.message = "";
+                    this.Hide();
+                }
+            }
+
         }
     }
 }

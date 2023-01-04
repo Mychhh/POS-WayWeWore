@@ -25,31 +25,45 @@ namespace WWWPOS
             InitializeComponent();
             
         }
-
+        public void CloseTheForm()
+        {
+            this.Hide();
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
             lbl_AdminName.Text = DataBase.user_Name;
+
+            //Checks if the user is Already Login
             switch (DataBase.isLogin)
             {
                 case true:
 
-                    UserControlInventory UC_Inventory = new UserControlInventory();
-                    //UserControlRead UC_Read = new UserControlRead();
+                    if(DataBase.fromWhat == "OrdersDelete")
+                    {
+                        DataBase.fromWhat = "";
+                    }
+                    else if (DataBase.fromWhat == "InventoryDelete")
+                    {
+                        DataBase.fromWhat = "";
 
-                    //Main Panel
-                    panel_Main.Controls.Clear();
-                    panel_Main.Controls.Add(UC_Inventory);
-                    UC_Inventory.Dock = DockStyle.Fill;
+                        UserControlInventory UC_Inventory = new UserControlInventory();
+                        //UserControlRead UC_Read = new UserControlRead();
 
-                    UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
-                    //Inventory Panel
-                    UC_Inventory.panel_Inventory.Controls.Clear();
-                    UC_Inventory.panel_Inventory.Controls.Add(UC_ViewUpdate);
-                    UC_ViewUpdate.Dock = DockStyle.Fill;
+                        //Main Panel
+                        panel_Main.Controls.Clear();
+                        panel_Main.Controls.Add(UC_Inventory);
+                        UC_Inventory.Dock = DockStyle.Fill;
 
-                    //Loads product item
-                    Class_LoadData LD = new Class_LoadData();
-                    LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
+                        UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+                        //Inventory Panel
+                        UC_Inventory.panel_Inventory.Controls.Clear();
+                        UC_Inventory.panel_Inventory.Controls.Add(UC_ViewUpdate);
+                        UC_ViewUpdate.Dock = DockStyle.Fill;
+
+                        //Loads product item
+                        Class_LoadData LD = new Class_LoadData();
+                        LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
+                    }
 
                     break;
 
