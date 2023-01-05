@@ -181,7 +181,7 @@
             this.lbl_OrderTotal.Name = "lbl_OrderTotal";
             this.lbl_OrderTotal.Size = new System.Drawing.Size(147, 37);
             this.lbl_OrderTotal.TabIndex = 5;
-            this.lbl_OrderTotal.Text = "Order Total : ";
+            this.lbl_OrderTotal.Text = "0";
             this.lbl_OrderTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserControl_PendingOrderContainer

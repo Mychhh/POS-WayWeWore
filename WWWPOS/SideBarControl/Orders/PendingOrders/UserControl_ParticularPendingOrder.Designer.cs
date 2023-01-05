@@ -304,7 +304,7 @@
         private System.Windows.Forms.Label lbl_Category;
         private System.Windows.Forms.Label lbl_ProductID;
         private System.Windows.Forms.Button btn_Remove;
-        private System.Windows.Forms.Button btn_ItemPacked;
-        private System.Windows.Forms.Label lbl_IsPacked;
+        public System.Windows.Forms.Button btn_ItemPacked;
+        public System.Windows.Forms.Label lbl_IsPacked;
     }
 }

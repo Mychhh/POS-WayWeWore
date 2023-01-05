@@ -631,14 +631,16 @@ namespace WWWPOS
 
                     classOrderStatus.Add(orders);
                 }
-                
+
+                connection.Close();
             }
             catch (Exception ex)
             {
                 ErrorMessage(ex.Message);
+
+                connection.Close();
             }
 
-            connection.Close();
         }
 
         //Delete Particular Product
@@ -777,24 +779,31 @@ namespace WWWPOS
         }
 
         //Check if the items is still on Stock
-        public void CheckStock(int productID)
+        public void CheckStock(int productID, int ordernumber)
         {
             try
             {
                 connection.Open();
-                string checkStockQuery = "SELECT * " +
-                                     "FROM [waywewore].[dbo].Products AS Products" +
-                                     "INNER JOIN [waywewore].[dbo].Orders AS Orders ON Products.Product_ID = Orders.ProductID" +
-                                     "WHERE Products.Product_ID = '" + productID + "' AND Orders.ProductID = '" + productID + "' AND OrderStatus = 'Pending'";
-                
+                string checkStockQuery = "SELECT Products.Stocks, Orders.Quantity, Orders.OrderNumber " +
+                                         "FROM [waywewore].[dbo].Products AS Products " +
+                                         "INNER JOIN [waywewore].[dbo].Orders AS Orders ON Products.Product_ID = Orders.ProductID " +
+                                         "WHERE Products.Product_ID = '" + productID + "' AND Orders.ProductID = '" + productID + "' " +
+                                         "AND Orders.OrderStatus = 'Pending' AND Orders.OrderNumber = '" + ordernumber + "' ";
                 sqlCommand = new SqlCommand(checkStockQuery, connection);
                 dataReader = sqlCommand.ExecuteReader();
 
-                while (dataReader.Read())
+                ErrorMessageDialogue errMessageDialogue = new ErrorMessageDialogue((Int32.Parse(dataReader[1] + "")).ToString());
+                errMessageDialogue.ShowDialog();
+
+                if (dataReader.Read())
                 {
-                    if (Int32.Parse(dataReader[6] + "") < Int32.Parse(dataReader[21] + ""))
+                    ErrorMessageDialogue erorMessageDialogue = new ErrorMessageDialogue(("<" + Int32.Parse(dataReader[1] + "")).ToString());
+                    erorMessageDialogue.ShowDialog();
+
+                    if (Int32.Parse(dataReader[0] + "") < Int32.Parse(dataReader[1] + ""))
                     {
-                        //
+                        ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue((Int32.Parse(dataReader[0] + "") + "<" + Int32.Parse(dataReader[1] + "")).ToString());
+                        errorMessageDialogue.ShowDialog();
                     }
                     else
                     {
@@ -807,7 +816,7 @@ namespace WWWPOS
             catch (Exception ex)
             {
                 // Show any error message.
-                ErrorMessage(ex.Message);
+                ErrorMessage("I am here " + ex.Message);
             }
 
         }
