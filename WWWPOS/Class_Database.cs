@@ -115,6 +115,7 @@ namespace WWWPOS
         
         //Login User
         public void Login(string email, string password)
+
         {
             connection.Open();
             string selectQuery = "SELECT * FROM Account WHERE Email = '" + email + "' AND Password = '" + password + "';";
