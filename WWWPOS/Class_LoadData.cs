@@ -616,7 +616,7 @@ namespace WWWPOS
                                 UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
                             new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
                                                                    objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
-                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
+                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)), objClassOrderStatus.Status);
 
 
                                 //int productid, string category, string color, string size, double price, int quantity, int total
@@ -645,7 +645,7 @@ namespace WWWPOS
                         UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
                     new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
                                                                    objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
-                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
+                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)), objClassOrderStatus.Status);
 
                         UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
 

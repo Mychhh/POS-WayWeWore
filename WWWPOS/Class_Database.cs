@@ -776,7 +776,41 @@ namespace WWWPOS
 
         }
 
+        //Check if the items is still on Stock
+        public void CheckStock(int productID)
+        {
+            try
+            {
+                connection.Open();
+                string checkStockQuery = "SELECT * " +
+                                     "FROM [waywewore].[dbo].Products AS Products" +
+                                     "INNER JOIN [waywewore].[dbo].Orders AS Orders ON Products.Product_ID = Orders.ProductID" +
+                                     "WHERE Products.Product_ID = '" + productID + "' AND Orders.ProductID = '" + productID + "' AND OrderStatus = 'Pending'";
+                
+                sqlCommand = new SqlCommand(checkStockQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
 
+                while (dataReader.Read())
+                {
+                    if (Int32.Parse(dataReader[6] + "") < Int32.Parse(dataReader[21] + ""))
+                    {
+                        //
+                    }
+                    else
+                    {
+
+                    }
+                }
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+
+        }
 
     }
 
