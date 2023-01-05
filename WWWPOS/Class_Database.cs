@@ -26,7 +26,6 @@ using System.Windows.Documents;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Policy;
 using System.Xml.Linq;
-using WWWPOS.ClassOrdersFolder;
 
 namespace WWWPOS
 {
@@ -75,9 +74,6 @@ namespace WWWPOS
 
         //Order Stack & List
         protected List<Class_OrdersStatus> classOrderStatus = new List<Class_OrdersStatus>();
-
-        //Order ProductQty
-        protected List<Class_ProductIDQTY> classProductNUMQTY = new List<Class_ProductIDQTY>();
 
         //-----About User-----//
 
@@ -693,59 +689,6 @@ namespace WWWPOS
                 sqlCommand = new SqlCommand(updateOrdersToSuccessQuery, connection);
                 dataReader = sqlCommand.ExecuteReader();
                 connection.Close();
-            }
-            catch (Exception ex)
-            {
-                // Show any error message.
-                ErrorMessage("I am here " + ex.Message);
-            }
-        }
-
-        //Get Order Based on OrderID
-        public void GetOrderNumber(int ordernumber)
-        {
-            try
-            {
-                connection.Open();
-                string getOrderNumberQuery = "SELECT * FROM Orders WHERE OrderNumber = '"+ ordernumber + "' ";
-                sqlCommand = new SqlCommand(getOrderNumberQuery, connection);
-                dataReader = sqlCommand.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    int ProductID = Int32.Parse(dataReader[3] + "");
-                    int ProductQTY = Int32.Parse(dataReader[9] + "");
-
-                    Class_ProductIDQTY productIDQTY = new Class_ProductIDQTY(ProductID, ProductQTY);
-
-                    classProductNUMQTY.Add(productIDQTY);
-                }
-
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                // Show any error message.
-                ErrorMessage(ex.Message);
-            }
-        }
-
-        //Deduct Stock on Product
-        public void ProductDeduction()
-        {
-            try
-            {
-                for(int i = 0; i < classProductNUMQTY.Count; i++)
-                {
-                    Class_ProductIDQTY productIDQTY = classProductNUMQTY[i];
-
-                    connection.Open();
-                    string deductQtyQuery = "UPDATE Products SET Stocks = Stocks - '" + productIDQTY.ProductQTY + "' WHERE Product_ID = '" + productIDQTY.ProductID + "' ";
-                    sqlCommand = new SqlCommand(deductQtyQuery, connection);
-                    dataReader = sqlCommand.ExecuteReader();
-                    connection.Close();
-                }
-
             }
             catch (Exception ex)
             {

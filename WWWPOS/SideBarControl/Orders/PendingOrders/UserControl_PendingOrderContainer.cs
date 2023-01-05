@@ -1,6 +1,4 @@
-﻿using Org.BouncyCastle.Utilities;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Forms;
 using WWWPOS.ErrorMessage;
 using WWWPOS.MessageFolder;
@@ -70,17 +67,13 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
 
                 DataBase DB = new DataBase();
 
-                //Updates the Order Status
                 DB.OrderSuccess(OrderNumberWithoutSign);
-
-                //Deduct Stock Quantity
-                //DB.GetOrderNumber(OrderNumberWithoutSign);
-                //DB.ProductDeduction();
 
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
                 form_AdminHome.Hide();
                 DataBase.fromWhat = "OrdersDelete";
                 form_AdminHome.ShowDialog();
+
             }
         }
 
