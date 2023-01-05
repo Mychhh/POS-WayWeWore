@@ -589,7 +589,6 @@ namespace WWWPOS
             if (classOrderStatus.Any())
             {
                 List<int> objOrderNumber = new List<int>();
-
                 bool hasSameOrderNumber = false;
 
                 //Dummy to have a copy of instance UserControl_PendingOrderContainer to add ParticularPendingProducts
@@ -633,7 +632,9 @@ namespace WWWPOS
 
                     if (hasSameOrderNumber == false)
                     {
+                        //this resets the total price
                         DummyOrderTotalPrice = 0; 
+
                         UserControl_PendingOrderContainer UC_PendingOrderContainer = new UserControl_PendingOrderContainer(objClassOrderStatus.OrderNumber);
 
                         //re-assign the instance of dummy UserControl_PendingOrderContainer
