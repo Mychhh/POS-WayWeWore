@@ -636,8 +636,9 @@ namespace WWWPOS
                                     {
                                         if (Int32.Parse(mdr[0] + "") < Int32.Parse(mdr[1] + ""))
                                         {
-                                            ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue((Int32.Parse(mdr[0] + "") + "<" + Int32.Parse(mdr[1] + "")).ToString());
-                                            errorMessageDialogue.ShowDialog();
+                                            //
+                                            Dummy_UC_PendingOrderContainer.btn_MarkAsSuccess.Enabled = false;
+                                            Dummy_UC_PendingOrderContainer.btn_MarkAsSuccess.BackColor = Color.DimGray;
 
                                             UC_ParticularPendingOrder.lbl_IsPacked.BackColor = Color.IndianRed;
                                             UC_ParticularPendingOrder.lbl_IsPacked.ForeColor = Color.WhiteSmoke;
@@ -709,8 +710,9 @@ namespace WWWPOS
                             {
                                 if (Int32.Parse(mdr[0] + "") < Int32.Parse(mdr[1] + ""))
                                 {
-                                    ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue((Int32.Parse(mdr[0] + "") + "<" + Int32.Parse(mdr[1] + "")).ToString());
-                                    errorMessageDialogue.ShowDialog();
+                                    //
+                                    UC_PendingOrderContainer.btn_MarkAsSuccess.Enabled = false;
+                                    UC_PendingOrderContainer.btn_MarkAsSuccess.BackColor = Color.DimGray;
 
                                     UC_ParticularPendingOrder.lbl_IsPacked.BackColor = Color.IndianRed;
                                     UC_ParticularPendingOrder.lbl_IsPacked.ForeColor = Color.WhiteSmoke;

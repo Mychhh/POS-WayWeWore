@@ -101,34 +101,18 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             warningMessageDialogue.ShowDialog();
 
 
-            if (OrderQuantity == 1)
+            if (DataBase.message == "continue")
             {
-                if (DataBase.message == "continue")
-                {
-                    DataBase.message = "";
+                DataBase.message = "";
 
-                    successMessageDialogue.ShowDialog();
+                successMessageDialogue.ShowDialog();
 
-                    DB.RemoveParticularProduct(OrderID);
+                DB.RemoveParticularProduct(OrderID);
 
-                    Form_AdminHome form_AdminHome = new Form_AdminHome();
-                    form_AdminHome.Hide();
-                    DataBase.fromWhat = "OrdersDelete";
-                    form_AdminHome.ShowDialog();
-                }
-            }
-            else
-            {
-                if (DataBase.message == "continue")
-                {
-                    DataBase.message = "";
-
-                    successMessageDialogue.ShowDialog();
-
-                    DB.RemoveParticularProduct(OrderID);
-
-                    this.Hide();
-                }
+                Form_AdminHome form_AdminHome = new Form_AdminHome();
+                form_AdminHome.Hide();
+                DataBase.fromWhat = "OrdersDelete";
+                form_AdminHome.ShowDialog();
             }
 
         }

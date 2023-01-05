@@ -207,7 +207,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_OrderNumber;
-        private System.Windows.Forms.Button btn_MarkAsSuccess;
         private System.Windows.Forms.Button btn_MarkAsFailed;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_Change;
@@ -217,5 +216,6 @@
         public System.Windows.Forms.FlowLayoutPanel flPanel_ParticularItem;
         public System.Windows.Forms.Label lbl_OrderTotal;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btn_MarkAsSuccess;
     }
 }
