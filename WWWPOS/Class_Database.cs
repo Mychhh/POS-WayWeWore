@@ -778,49 +778,6 @@ namespace WWWPOS
 
         }
 
-        //Check if the items is still on Stock
-        public void CheckStock(int productID, int ordernumber)
-        {
-            try
-            {
-                connection.Open();
-                string checkStockQuery = "SELECT Products.Stocks, Orders.Quantity, Orders.OrderNumber " +
-                                         "FROM [waywewore].[dbo].Products AS Products " +
-                                         "INNER JOIN [waywewore].[dbo].Orders AS Orders ON Products.Product_ID = Orders.ProductID " +
-                                         "WHERE Products.Product_ID = '" + productID + "' AND Orders.ProductID = '" + productID + "' " +
-                                         "AND Orders.OrderStatus = 'Pending' AND Orders.OrderNumber = '" + ordernumber + "' ";
-                sqlCommand = new SqlCommand(checkStockQuery, connection);
-                dataReader = sqlCommand.ExecuteReader();
-
-                ErrorMessageDialogue errMessageDialogue = new ErrorMessageDialogue((Int32.Parse(dataReader[1] + "")).ToString());
-                errMessageDialogue.ShowDialog();
-
-                if (dataReader.Read())
-                {
-                    ErrorMessageDialogue erorMessageDialogue = new ErrorMessageDialogue(("<" + Int32.Parse(dataReader[1] + "")).ToString());
-                    erorMessageDialogue.ShowDialog();
-
-                    if (Int32.Parse(dataReader[0] + "") < Int32.Parse(dataReader[1] + ""))
-                    {
-                        ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue((Int32.Parse(dataReader[0] + "") + "<" + Int32.Parse(dataReader[1] + "")).ToString());
-                        errorMessageDialogue.ShowDialog();
-                    }
-                    else
-                    {
-
-                    }
-                }
-
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                // Show any error message.
-                ErrorMessage("I am here " + ex.Message);
-            }
-
-        }
-
     }
 
 }
