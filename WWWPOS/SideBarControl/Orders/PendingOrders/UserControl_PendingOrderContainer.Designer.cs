@@ -181,7 +181,7 @@
             this.lbl_OrderTotal.Name = "lbl_OrderTotal";
             this.lbl_OrderTotal.Size = new System.Drawing.Size(147, 37);
             this.lbl_OrderTotal.TabIndex = 5;
-            this.lbl_OrderTotal.Text = "Order Total : ";
+            this.lbl_OrderTotal.Text = "0";
             this.lbl_OrderTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserControl_PendingOrderContainer
@@ -207,7 +207,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_OrderNumber;
-        private System.Windows.Forms.Button btn_MarkAsSuccess;
         private System.Windows.Forms.Button btn_MarkAsFailed;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_Change;
@@ -217,5 +216,6 @@
         public System.Windows.Forms.FlowLayoutPanel flPanel_ParticularItem;
         public System.Windows.Forms.Label lbl_OrderTotal;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btn_MarkAsSuccess;
     }
 }

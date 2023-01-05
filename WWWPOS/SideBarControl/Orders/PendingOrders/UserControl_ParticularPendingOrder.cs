@@ -17,7 +17,7 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
     {
         public bool isPacked = true;
 
-        public UserControl_ParticularPendingOrder(int ordernumber, int orderid, string productname, string category, string color, string size, double price, int quantity, int total)
+        public UserControl_ParticularPendingOrder(int ordernumber, int orderid, string productname, string category, string color, string size, double price, int quantity, int total, string status)
         {
             InitializeComponent();
 
@@ -30,6 +30,7 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             Price = price;
             Quantity = quantity;
             Total = total;
+            Status = status;
         }
         public int OrderNumber { get; set; }
         public int OrderID { get; set; }
@@ -68,6 +69,7 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             get => Int32.Parse(lbl_ItemTotal.Text);
             set => lbl_ItemTotal.Text = value + "";
         }
+        public string Status { get; set; }
 
         private void btn_ItemPacked_Click(object sender, EventArgs e)
         {
@@ -99,34 +101,18 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             warningMessageDialogue.ShowDialog();
 
 
-            if (OrderQuantity == 1)
+            if (DataBase.message == "continue")
             {
-                if (DataBase.message == "continue")
-                {
-                    DataBase.message = "";
+                DataBase.message = "";
 
-                    successMessageDialogue.ShowDialog();
+                successMessageDialogue.ShowDialog();
 
-                    DB.RemoveParticularProduct(OrderID);
+                DB.RemoveParticularProduct(OrderID);
 
-                    Form_AdminHome form_AdminHome = new Form_AdminHome();
-                    form_AdminHome.Hide();
-                    DataBase.fromWhat = "OrdersDelete";
-                    form_AdminHome.ShowDialog();
-                }
-            }
-            else
-            {
-                if (DataBase.message == "continue")
-                {
-                    DataBase.message = "";
-
-                    successMessageDialogue.ShowDialog();
-
-                    DB.RemoveParticularProduct(OrderID);
-
-                    this.Hide();
-                }
+                Form_AdminHome form_AdminHome = new Form_AdminHome();
+                form_AdminHome.Hide();
+                DataBase.fromWhat = "OrdersDelete";
+                form_AdminHome.ShowDialog();
             }
 
         }

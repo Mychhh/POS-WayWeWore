@@ -26,6 +26,7 @@ using System.Windows.Documents;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Policy;
 using System.Xml.Linq;
+using WWWPOS.ClassOrdersFolder;
 
 namespace WWWPOS
 {
@@ -75,6 +76,9 @@ namespace WWWPOS
         //Order Stack & List
         protected List<Class_OrdersStatus> classOrderStatus = new List<Class_OrdersStatus>();
 
+        //Order Stack & List
+        protected List<Class_OrderIDQTY> classOrderIDQTY = new List<Class_OrderIDQTY>();
+
         //-----About User-----//
 
         //Signup and Add user
@@ -115,6 +119,7 @@ namespace WWWPOS
         
         //Login User
         public void Login(string email, string password)
+
         {
             connection.Open();
             string selectQuery = "SELECT * FROM Account WHERE Email = '" + email + "' AND Password = '" + password + "';";
@@ -626,14 +631,16 @@ namespace WWWPOS
 
                     classOrderStatus.Add(orders);
                 }
-                
+
+                connection.Close();
             }
             catch (Exception ex)
             {
                 ErrorMessage(ex.Message);
+
+                connection.Close();
             }
 
-            connection.Close();
         }
 
         //Delete Particular Product
@@ -682,7 +689,6 @@ namespace WWWPOS
             try
             {
                 connection.Open();
-                //update order status to success
                 string updateOrdersToSuccessQuery = "UPDATE Orders SET OrderStatus = 'Success' WHERE OrderNumber = '" + orderNumber + "' ";
 
                 sqlCommand = new SqlCommand(updateOrdersToSuccessQuery, connection);
@@ -694,6 +700,125 @@ namespace WWWPOS
                 // Show any error message.
                 ErrorMessage(ex.Message);
             }
+        }
+
+        //Select particular Order
+        public void ParticularOrder(int ordernumber)
+        {
+            classOrderIDQTY.Clear();
+            try
+            {
+                connection.Open();
+                string deductStocksQuery = " SELECT * FROM Orders WHERE OrderNumber = '"+ ordernumber + "' ";
+
+                sqlCommand = new SqlCommand(deductStocksQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    int orderID = Int32.Parse(dataReader[0] + "");
+                    int orderNumber = Int32.Parse(dataReader[1] + "");
+                    int accountID = Int32.Parse(dataReader[2] + "");
+                    int productId = Int32.Parse(dataReader[3] + "");
+                    string name = "" + dataReader[4];
+                    string category = "" + dataReader[5];
+                    string color = "" + dataReader[6];
+                    string size = "" + dataReader[7];
+                    double price = Double.Parse(dataReader[8] + "");
+                    int quantity = Int32.Parse(dataReader[9] + "");
+                    string imagePath = "" + dataReader[10];
+                    string status = "" + dataReader[11];
+                    string orderStatus = "" + dataReader[12];
+                    string addedToCartAt = "" + dataReader[13];
+                    string placedOrder = "" + dataReader[14];
+
+                    Class_OrderIDQTY IDQTY = new Class_OrderIDQTY(productId, quantity);
+
+                    classOrderIDQTY.Add(IDQTY);
+                }
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage(ex.Message);
+            }
+        }
+
+        //Deduct Product Stocks
+        public void DeductProductStock(int ordernumber)
+        {
+            ParticularOrder(ordernumber);
+
+            if (classOrderIDQTY.Any())
+            {
+
+                for(int i = 0; i < classOrderIDQTY.Count; i++)
+                {
+                    Class_OrderIDQTY objClassOrderIDQTY = classOrderIDQTY[i];
+
+                    try
+                    {
+                        connection.Open();
+                        string deductStocksQuery = " UPDATE Products SET Stocks = Stocks - '" + objClassOrderIDQTY.ProductQty + "' WHERE Product_ID = '" + objClassOrderIDQTY.ProductID + "' ";
+
+                        sqlCommand = new SqlCommand(deductStocksQuery, connection);
+                        dataReader = sqlCommand.ExecuteReader();
+                        connection.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Show any error message.
+                        ErrorMessage(ex.Message);
+                    }
+                }
+
+            }
+
+        }
+
+        //Check if the items is still on Stock
+        public void CheckStock(int productID, int ordernumber)
+        {
+            try
+            {
+                connection.Open();
+                string checkStockQuery = "SELECT Products.Stocks, Orders.Quantity, Orders.OrderNumber " +
+                                         "FROM [waywewore].[dbo].Products AS Products " +
+                                         "INNER JOIN [waywewore].[dbo].Orders AS Orders ON Products.Product_ID = Orders.ProductID " +
+                                         "WHERE Products.Product_ID = '" + productID + "' AND Orders.ProductID = '" + productID + "' " +
+                                         "AND Orders.OrderStatus = 'Pending' AND Orders.OrderNumber = '" + ordernumber + "' ";
+                sqlCommand = new SqlCommand(checkStockQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                ErrorMessageDialogue errMessageDialogue = new ErrorMessageDialogue((Int32.Parse(dataReader[1] + "")).ToString());
+                errMessageDialogue.ShowDialog();
+
+                if (dataReader.Read())
+                {
+                    ErrorMessageDialogue erorMessageDialogue = new ErrorMessageDialogue(("<" + Int32.Parse(dataReader[1] + "")).ToString());
+                    erorMessageDialogue.ShowDialog();
+
+                    if (Int32.Parse(dataReader[0] + "") < Int32.Parse(dataReader[1] + ""))
+                    {
+                        ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue((Int32.Parse(dataReader[0] + "") + "<" + Int32.Parse(dataReader[1] + "")).ToString());
+                        errorMessageDialogue.ShowDialog();
+                    }
+                    else
+                    {
+
+                    }
+                }
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage("I am here " + ex.Message);
+            }
+
         }
 
     }

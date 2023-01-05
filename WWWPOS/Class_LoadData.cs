@@ -19,6 +19,8 @@ using WWWPOS.SideBarControl.Orders.PendingOrders;
 using WWWPOS.SideBarControl.Orders;
 using System.ComponentModel;
 using System.Windows.Data;
+using WWWPOS.ErrorMessage;
+using System.Data;
 
 namespace WWWPOS
 {
@@ -604,7 +606,6 @@ namespace WWWPOS
                     //checks if the Collections has any value
                     if (objOrderNumber.Any())
                     {
-
                         for (int orderNumberIndex = 0; orderNumberIndex < objOrderNumber.Count; orderNumberIndex++)
                         {
 
@@ -616,15 +617,60 @@ namespace WWWPOS
                                 UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
                             new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
                                                                    objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
-                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
+                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)), objClassOrderStatus.Status);
+                                //
 
+                                try
+                                {
 
-                                //int productid, string category, string color, string size, double price, int quantity, int total
+                                    connection.Open();
+                                    string checkStockQuery = "SELECT Products.Stocks, Orders.Quantity, Orders.OrderNumber " +
+                                                             "FROM [waywewore].[dbo].Products AS Products " +
+                                                             "INNER JOIN [waywewore].[dbo].Orders AS Orders ON Products.Product_ID = Orders.ProductID " +
+                                                             "WHERE Products.Product_ID = '" + objClassOrderStatus.ProductId + "' AND Orders.ProductID = '" + objClassOrderStatus.ProductId + "' " +
+                                                             "AND Orders.OrderStatus = 'Pending' AND Orders.OrderNumber = '" + objClassOrderStatus.OrderNumber + "' ";
+                                    sqlCommand = new SqlCommand(checkStockQuery, connection);
+                                    mdr = sqlCommand.ExecuteReader();
 
-                                Dummy_UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+                                    if (mdr.Read())
+                                    {
+                                        if (Int32.Parse(mdr[0] + "") < Int32.Parse(mdr[1] + ""))
+                                        {
+                                            //
+                                            Dummy_UC_PendingOrderContainer.btn_MarkAsSuccess.Enabled = false;
+                                            Dummy_UC_PendingOrderContainer.btn_MarkAsSuccess.BackColor = Color.DimGray;
 
-                                DummyOrderTotalPrice += Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
-                                Dummy_UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
+                                            UC_ParticularPendingOrder.lbl_IsPacked.BackColor = Color.IndianRed;
+                                            UC_ParticularPendingOrder.lbl_IsPacked.ForeColor = Color.WhiteSmoke;
+                                            UC_ParticularPendingOrder.lbl_IsPacked.Visible = true;
+                                            UC_ParticularPendingOrder.lbl_IsPacked.Text = "Product Unavailable";
+                                            UC_ParticularPendingOrder.btn_ItemPacked.Enabled = false;
+
+                                            Dummy_UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+                                        }
+                                        else
+                                        {
+                                            Dummy_UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+
+                                            DummyOrderTotalPrice += Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
+                                            Dummy_UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
+                                        }
+                                    }
+
+                                    connection.Close();
+                                }
+                                catch (Exception ex)
+                                {
+                                    // Show any error message.
+                                    ErrorMessage("I am here " + ex.Message);
+                                    connection.Close();
+                                }
+
+                                //
+                                //Dummy_UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+
+                                //DummyOrderTotalPrice += Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
+                                //Dummy_UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
                             }
 
                         }
@@ -645,14 +691,64 @@ namespace WWWPOS
                         UserControl_ParticularPendingOrder UC_ParticularPendingOrder =
                     new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
                                                                    objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
-                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)));
+                                                                   (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)), objClassOrderStatus.Status);
 
-                        UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+                        //
+                        try
+                        {
+                            
+                            connection.Open();
+                            string checkStockQuery = "SELECT Products.Stocks, Orders.Quantity, Orders.OrderNumber " +
+                                                     "FROM [waywewore].[dbo].Products AS Products " +
+                                                     "INNER JOIN [waywewore].[dbo].Orders AS Orders ON Products.Product_ID = Orders.ProductID " +
+                                                     "WHERE Products.Product_ID = '" + objClassOrderStatus.ProductId + "' AND Orders.ProductID = '" + objClassOrderStatus.ProductId + "' " +
+                                                     "AND Orders.OrderStatus = 'Pending' AND Orders.OrderNumber = '" + objClassOrderStatus.OrderNumber + "' ";
+                            sqlCommand = new SqlCommand(checkStockQuery, connection);
+                            mdr = sqlCommand.ExecuteReader();
 
-                        int OrderTotalPrice = Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
-                        DummyOrderTotalPrice += OrderTotalPrice;
+                            if (mdr.Read())
+                            {
+                                if (Int32.Parse(mdr[0] + "") < Int32.Parse(mdr[1] + ""))
+                                {
+                                    //
+                                    UC_PendingOrderContainer.btn_MarkAsSuccess.Enabled = false;
+                                    UC_PendingOrderContainer.btn_MarkAsSuccess.BackColor = Color.DimGray;
 
-                        UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
+                                    UC_ParticularPendingOrder.lbl_IsPacked.BackColor = Color.IndianRed;
+                                    UC_ParticularPendingOrder.lbl_IsPacked.ForeColor = Color.WhiteSmoke;
+                                    UC_ParticularPendingOrder.lbl_IsPacked.Visible = true;
+                                    UC_ParticularPendingOrder.lbl_IsPacked.Text = "Product Unavailable";
+                                    UC_ParticularPendingOrder.btn_ItemPacked.Enabled = false;
+
+                                    UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+                                }
+                                else
+                                {
+                                    UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+
+                                    int OrderTotalPrice = Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
+                                    DummyOrderTotalPrice += OrderTotalPrice;
+
+                                    UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
+                                }
+                            }
+
+                            connection.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            // Show any error message.
+                            ErrorMessage("I am here " + ex.Message);
+                            connection.Close();
+                        }
+                        //
+
+                        //UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
+
+                        //int OrderTotalPrice = Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
+                        //DummyOrderTotalPrice += OrderTotalPrice;
+
+                        //UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
                     }
                     else if (hasSameOrderNumber)
                     {
