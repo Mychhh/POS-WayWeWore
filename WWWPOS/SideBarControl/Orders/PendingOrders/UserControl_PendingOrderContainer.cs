@@ -65,9 +65,12 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
                 SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order marked as Success");
                 successMessageDialogue.ShowDialog();
 
+                //Updates the order status
                 DataBase DB = new DataBase();
-
                 DB.OrderSuccess(OrderNumberWithoutSign);
+
+                //Deduct Product stocks
+                DB.DeductProductStock(OrderNumberWithoutSign);
 
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
                 form_AdminHome.Hide();
