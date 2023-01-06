@@ -24,9 +24,15 @@ namespace WWWPOS.SideBarControl
             
             string totalStocks = "";
             string totalUsers = "";
+            string totalSales = "";
 
             lbl_Stocks.Text = ld.AllStocks(totalStocks);
             lbl_Users.Text = ld.AllUser(totalUsers);
+            lbl_Sales.Text = ld.AllSales(totalSales);
+
+            Class_LoadData class_LoadData = new Class_LoadData();
+            class_LoadData.AllPorductChart();
         }
+
     }
 }

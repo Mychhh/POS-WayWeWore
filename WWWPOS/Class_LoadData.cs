@@ -322,6 +322,62 @@ namespace WWWPOS
 
             return users;
         }
+        public string AllSales(string sales)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = "SELECT SUM(Price) FROM Orders WHERE OrderStatus = 'Pending'";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                double numberOfSales = 0;
+
+                while (mdr.Read())
+                {
+                    numberOfSales = Double.Parse(mdr[0] + "");
+                }
+
+                int convertedSales = Convert.ToInt32(numberOfSales);
+
+                sales = convertedSales.ToString();
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+                connection.Close();
+            }
+            
+            return sales;
+        }
+
+        public void AllPorductChart()
+        {
+            DataTable dataTable = new DataTable();
+            UserControlDashboard UC_Dashboard = new UserControlDashboard();
+
+            try
+            {   
+                connection.Open();
+                string getAllProductQuery = "SELECT ProductID, Name, Quantity FROM Orders WHERE OrderStatus = 'Pending'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(getAllProductQuery, connection);
+                
+                dataAdapter.Fill(dataTable);
+                UC_Dashboard.chart_AllProduct.DataSource = dataTable;
+
+                connection.Close();
+
+                UC_Dashboard.chart_AllProduct.Series["AllProduct"].XValueMember = "Name";
+                UC_Dashboard.chart_AllProduct.Series["AllProduct"].YValueMembers = "Quantity";
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+        }
 
         //-----Client Side-----//
 
