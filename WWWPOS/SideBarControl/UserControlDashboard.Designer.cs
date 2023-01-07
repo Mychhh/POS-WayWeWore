@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.lbl_Users = new System.Windows.Forms.Label();
@@ -44,11 +46,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.wayweworeDataSet = new WWWPOS.wayweworeDataSet();
+            this.wayweworeDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accountTableAdapter = new WWWPOS.wayweworeDataSetTableAdapters.accountTableAdapter();
             this.panel11.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_AllProduct)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel11
@@ -152,22 +161,38 @@
             // 
             // chart_AllProduct
             // 
+            this.chart_AllProduct.BackColor = System.Drawing.Color.Gainsboro;
             this.chart_AllProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.Name = "ChartArea1";
-            this.chart_AllProduct.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart_AllProduct.Legends.Add(legend1);
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(174)))), ((int)(((byte)(242)))));
+            chartArea2.Name = "ChartArea1";
+            chartArea2.ShadowColor = System.Drawing.Color.Empty;
+            this.chart_AllProduct.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            legend2.ShadowColor = System.Drawing.Color.Empty;
+            this.chart_AllProduct.Legends.Add(legend2);
             this.chart_AllProduct.Location = new System.Drawing.Point(23, 243);
             this.chart_AllProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart_AllProduct.Name = "chart_AllProduct";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "AllProduct";
-            this.chart_AllProduct.Series.Add(series1);
+            series2.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            series2.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Unscaled;
+            series2.BackSecondaryColor = System.Drawing.Color.IndianRed;
+            series2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            series2.Legend = "Legend1";
+            series2.Name = "Sales";
+            series2.ShadowColor = System.Drawing.Color.Empty;
+            this.chart_AllProduct.Series.Add(series2);
             this.chart_AllProduct.Size = new System.Drawing.Size(932, 320);
             this.chart_AllProduct.TabIndex = 49;
-            this.chart_AllProduct.Text = "Sales";
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Sales";
+            title2.ShadowColor = System.Drawing.Color.Black;
+            title2.Text = "Product total sales";
+            this.chart_AllProduct.Titles.Add(title2);
             // 
             // panel1
             // 
@@ -202,6 +227,25 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "404";
             // 
+            // wayweworeDataSet
+            // 
+            this.wayweworeDataSet.DataSetName = "wayweworeDataSet";
+            this.wayweworeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // wayweworeDataSetBindingSource
+            // 
+            this.wayweworeDataSetBindingSource.DataSource = this.wayweworeDataSet;
+            this.wayweworeDataSetBindingSource.Position = 0;
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataMember = "account";
+            this.accountBindingSource.DataSource = this.wayweworeDataSetBindingSource;
+            // 
+            // accountTableAdapter
+            // 
+            this.accountTableAdapter.ClearBeforeFill = true;
+            // 
             // UserControlDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -223,6 +267,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart_AllProduct)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,5 +288,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.DataVisualization.Charting.Chart chart_AllProduct;
+        private wayweworeDataSet wayweworeDataSet;
+        private System.Windows.Forms.BindingSource wayweworeDataSetBindingSource;
+        private System.Windows.Forms.BindingSource accountBindingSource;
+        private wayweworeDataSetTableAdapters.accountTableAdapter accountTableAdapter;
     }
 }

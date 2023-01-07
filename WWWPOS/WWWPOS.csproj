@@ -205,6 +205,7 @@
     <Compile Include="SideBarControl\Archive\UserControlArchiveUser.Designer.cs">
       <DependentUpon>UserControlArchiveUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Dashboard\ClassProductSales.cs" />
     <Compile Include="SideBarControl\Inventory\UserControlCreate.cs">
       <SubType>UserControl</SubType>
     </Compile>

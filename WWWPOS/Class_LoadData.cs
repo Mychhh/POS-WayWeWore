@@ -21,6 +21,9 @@ using System.ComponentModel;
 using System.Windows.Data;
 using WWWPOS.ErrorMessage;
 using System.Data;
+using WWWPOS.SideBarControl.Dashboard;
+using Google.Protobuf.WellKnownTypes;
+using System.Data.Common;
 
 namespace WWWPOS
 {
@@ -353,30 +356,74 @@ namespace WWWPOS
             return sales;
         }
 
-        public void AllPorductChart()
+        public void LoadChartSales(UserControlDashboard userControlDashboard)
         {
-            DataTable dataTable = new DataTable();
-            UserControlDashboard UC_Dashboard = new UserControlDashboard();
-
             try
-            {   
+            {
                 connection.Open();
-                string getAllProductQuery = "SELECT ProductID, Name, Quantity FROM Orders WHERE OrderStatus = 'Pending'";
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(getAllProductQuery, connection);
-                
-                dataAdapter.Fill(dataTable);
-                UC_Dashboard.chart_AllProduct.DataSource = dataTable;
 
-                connection.Close();
+                string loadChartQuery = "SELECT ProductID, Name, Category, Quantity  FROM Orders WHERE OrderStatus = 'Success'";
 
-                UC_Dashboard.chart_AllProduct.Series["AllProduct"].XValueMember = "Name";
-                UC_Dashboard.chart_AllProduct.Series["AllProduct"].YValueMembers = "Quantity";
+                command = new SqlCommand(loadChartQuery, connection);
+                mdr = command.ExecuteReader();
+
+                ClassProductSales classProductSales = new ClassProductSales();
+                bool hasSameValue = false;
+
+                while (mdr.Read())
+                {
+                    if (classProductSales.ProductCategory.Any())
+                    {
+                        foreach(string category in classProductSales.ProductCategory)
+                        {
+                            if (category == "" + mdr[2])
+                            {
+                                hasSameValue = true;
+                                //gets the index of list by finding its value
+                                int indexOfCategory = classProductSales.ProductCategory.IndexOf(category);
+                                //gets the value of list by its index
+                                int valueOfIndexCategory = classProductSales.ProductQuantity[indexOfCategory];
+                                //updating the list value by its index
+                                classProductSales.ProductQuantity[indexOfCategory] = valueOfIndexCategory + Int32.Parse(mdr[3] + "");
+                                break;
+
+                            }
+                        }
+                    }
+
+                    if (hasSameValue == false)
+                    {
+                        classProductSales.ProductCategory.Add("" + mdr[2]);
+                        classProductSales.ProductQuantity.Add(Int32.Parse(mdr[3] + ""));
+                    }else if(hasSameValue == true)
+                    {
+                        hasSameValue = false;
+                    }
+                    
+                }
+
+                //checks the value of classProductsSales
+                foreach (string sales in classProductSales.ProductCategory)
+                {
+                    userControlDashboard.xValuescategory.Add(sales);
+                }
+                //checks the value of classProductsSales
+                foreach (int products in classProductSales.ProductQuantity)
+                {
+                    userControlDashboard.yValuesquantity.Add(products);
+                }
 
             }
             catch (Exception ex)
             {
                 ErrorMessage(ex.Message);
+                Console.WriteLine(ex.Message);
             }
+            finally
+            {
+                connection.Close();
+            }
+            
         }
 
         //-----Client Side-----//
