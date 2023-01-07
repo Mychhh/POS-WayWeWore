@@ -20,9 +20,9 @@ namespace WWWPOS.SideBarControl.Purchase
         private void UserControlAllProduct_Load(object sender, EventArgs e)
         {
             Class_LoadData loadData = new Class_LoadData();
-            loadData.GetPurchaseOrder(this.dataGridShort, "TShirt");
+            loadData.GetPurchaseOrder(this.dataGridShort, "Short");
 
-            loadData.GetPurchaseOrder(this.dataGridTShirt, "Short");
+            loadData.GetPurchaseOrder(this.dataGridTShirt, "TShirt");
         }
     }
 }
