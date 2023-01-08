@@ -129,7 +129,6 @@
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title1.Name = "Sales";
             title1.ShadowColor = System.Drawing.Color.Black;
-            title1.Text = "Title based on Combo Box";
             this.SalesReport.Titles.Add(title1);
             // 
             // UserControlSales

@@ -331,13 +331,13 @@ namespace WWWPOS
             try
             {
                 connection.Open();
-                string selectQuery = "SELECT SUM(Price) FROM Orders WHERE OrderStatus = 'Pending'";
+                string selectQuery = "SELECT SUM(Price) FROM Orders WHERE OrderStatus = 'Success'";
                 command = new SqlCommand(selectQuery, connection);
                 mdr = command.ExecuteReader();
 
                 double numberOfSales = 0;
 
-                while (mdr.Read())
+                if (mdr.Read())
                 {
                     numberOfSales = Double.Parse(mdr[0] + "");
                 }
@@ -345,12 +345,13 @@ namespace WWWPOS
                 int convertedSales = Convert.ToInt32(numberOfSales);
 
                 sales = convertedSales.ToString();
-
-                connection.Close();
             }
             catch (Exception ex)
             {
                 ErrorMessage(ex.Message);
+            }
+            finally
+            {
                 connection.Close();
             }
             
