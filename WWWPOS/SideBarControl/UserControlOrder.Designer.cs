@@ -93,10 +93,10 @@
             // panel_Order
             // 
             this.panel_Order.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_Order.Location = new System.Drawing.Point(25, 117);
+            this.panel_Order.Location = new System.Drawing.Point(25, 115);
             this.panel_Order.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Order.Name = "panel_Order";
-            this.panel_Order.Size = new System.Drawing.Size(932, 449);
+            this.panel_Order.Size = new System.Drawing.Size(932, 484);
             this.panel_Order.TabIndex = 22;
             // 
             // UserControlOrder
@@ -106,7 +106,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_Order);
             this.Name = "UserControlOrder";
-            this.Size = new System.Drawing.Size(976, 580);
+            this.Size = new System.Drawing.Size(976, 613);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
