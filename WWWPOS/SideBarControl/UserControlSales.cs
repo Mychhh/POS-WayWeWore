@@ -42,32 +42,51 @@ namespace WWWPOS.SideBarControl
 
         private void cmb_Category_DropDownClosed(object sender, EventArgs e)
         {
+            string range = getsDateRange();
+            string category = getsCategory();
+
             if (cmb_Category.SelectedIndex == 0)
             {
-                class_LoadData.GetDesiredChartData(this, "SELECT ProductID, Name, Category, Quantity  FROM Orders WHERE OrderStatus = 'Success'", "AllProduct");
+                class_LoadData.GetDesiredChartData(this, category + range, "AllProduct");
                 SalesReport.Series["Sales Report"].Points.DataBindXY(xValues, yValues);
             }
             else if (cmb_Category.SelectedIndex == 1)
             {
-                class_LoadData.GetDesiredChartData(this, "SELECT ProductID, Name, Quantity, PlacedOrder FROM Orders WHERE OrderStatus = 'Success' AND Category = 'T-Shirts'", "ParticularProduct");
+                class_LoadData.GetDesiredChartData(this, category + range, "ParticularProduct");
                 SalesReport.Series["Sales Report"].Points.DataBindXY(xValues, yValues);
             }
             else if (cmb_Category.SelectedIndex == 2)
             {
-                class_LoadData.GetDesiredChartData(this, "SELECT ProductID, Name, Quantity, PlacedOrder FROM Orders WHERE OrderStatus = 'Success' AND Category = 'Shorts'", "ParticularProduct");
+                class_LoadData.GetDesiredChartData(this, category + range, "ParticularProduct");
                 SalesReport.Series["Sales Report"].Points.DataBindXY(xValues, yValues);
             }
         }
 
         private void cmbDateRange_DropDownClosed(object sender, EventArgs e)
         {
+            string range = getsDateRange();
+            string category = getsCategory();
 
+            if (cmb_Category.SelectedIndex == 0)
+            {
+                class_LoadData.GetDesiredChartData(this, category + range, "AllProduct");
+                SalesReport.Series["Sales Report"].Points.DataBindXY(xValues, yValues);
+            }
+            else
+            {
+                class_LoadData.GetDesiredChartData(this, category + range, "ParticularProduct");
+                SalesReport.Series["Sales Report"].Points.DataBindXY(xValues, yValues);
+            }
+        }
+
+        private string getsDateRange()
+        {
             TodaysDate = class_LoadData.GetDate();
             string dateAdjustment = "";
 
             switch (cmbDateRange.SelectedIndex)
             {
-                case 0 :
+                case 0:
 
                     dateRangeQuery = "";
                     break;
@@ -76,7 +95,7 @@ namespace WWWPOS.SideBarControl
 
                     dateAdjustment = class_LoadData.GetDateAdjustment("Weekly");
 
-                    dateRangeQuery = " AND PlacedOrder BETWEEN '"+ dateAdjustment + "' AND '"+ TodaysDate + "' ";                
+                    dateRangeQuery = " AND PlacedOrder BETWEEN '" + dateAdjustment + "' AND '" + TodaysDate + "' ";
 
                     break;
 
@@ -84,7 +103,7 @@ namespace WWWPOS.SideBarControl
 
                     dateAdjustment = class_LoadData.GetDateAdjustment("Monthly");
 
-                    dateRangeQuery = " AND PlacedOrder BETWEEN '"+ dateAdjustment + "' AND '" + TodaysDate + "' ";
+                    dateRangeQuery = " AND PlacedOrder BETWEEN '" + dateAdjustment + "' AND '" + TodaysDate + "' ";
 
                     break;
 
@@ -92,7 +111,7 @@ namespace WWWPOS.SideBarControl
 
                     dateAdjustment = class_LoadData.GetDateAdjustment("Quarterly");
 
-                    dateRangeQuery = " AND PlacedOrder BETWEEN '"+ dateAdjustment + "' AND '" + TodaysDate + "' ";
+                    dateRangeQuery = " AND PlacedOrder BETWEEN '" + dateAdjustment + "' AND '" + TodaysDate + "' ";
 
                     break;
 
@@ -100,12 +119,35 @@ namespace WWWPOS.SideBarControl
 
                     dateAdjustment = class_LoadData.GetDateAdjustment("Annually");
 
-                    dateRangeQuery = " AND PlacedOrder BETWEEN '"+ dateAdjustment + "' AND '" + TodaysDate + "' ";
+                    dateRangeQuery = " AND PlacedOrder BETWEEN '" + dateAdjustment + "' AND '" + TodaysDate + "' ";
 
                     break;
+
             }
+
+            return dateRangeQuery;
 
         }
 
+
+        private string getsCategory()
+        {
+            string category = "";
+
+            if (cmb_Category.SelectedIndex == 0)
+            {
+                category = "SELECT ProductID, Name, Category, Quantity  FROM Orders WHERE OrderStatus = 'Success' ";
+            }
+            else if (cmb_Category.SelectedIndex == 1)
+            {
+                category = "SELECT ProductID, Name, Quantity, PlacedOrder FROM Orders WHERE OrderStatus = 'Success' AND Category = 'T-Shirts'  ";
+            }
+            else if (cmb_Category.SelectedIndex == 2)
+            {
+                category = "SELECT ProductID, Name, Quantity, PlacedOrder FROM Orders WHERE OrderStatus = 'Success' AND Category = 'Shorts'  ";
+            }
+
+            return category;
+        }
     }
 }
