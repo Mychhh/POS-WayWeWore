@@ -91,8 +91,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGrid_ArchiveProduct.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid_ArchiveProduct.EnableHeadersVisualStyles = false;
-            this.dataGrid_ArchiveProduct.Location = new System.Drawing.Point(24, 38);
-            this.dataGrid_ArchiveProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGrid_ArchiveProduct.Location = new System.Drawing.Point(18, 38);
+            this.dataGrid_ArchiveProduct.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_ArchiveProduct.Name = "dataGrid_ArchiveProduct";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -104,7 +104,7 @@
             this.dataGrid_ArchiveProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGrid_ArchiveProduct.RowHeadersVisible = false;
             this.dataGrid_ArchiveProduct.RowHeadersWidth = 51;
-            this.dataGrid_ArchiveProduct.Size = new System.Drawing.Size(875, 417);
+            this.dataGrid_ArchiveProduct.Size = new System.Drawing.Size(894, 441);
             this.dataGrid_ArchiveProduct.TabIndex = 36;
             this.dataGrid_ArchiveProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_ArchiveProduct_CellContentClick);
             this.dataGrid_ArchiveProduct.SelectionChanged += new System.EventHandler(this.dataGrid_ArchiveProduct_SelectionChanged);
@@ -196,7 +196,7 @@
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserControlArchiveProduct";
-            this.Size = new System.Drawing.Size(932, 517);
+            this.Size = new System.Drawing.Size(932, 493);
             this.Load += new System.EventHandler(this.UserControlArchiveProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ArchiveProduct)).EndInit();
             this.ResumeLayout(false);

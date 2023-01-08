@@ -99,8 +99,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGrid_ArchiveUser.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid_ArchiveUser.EnableHeadersVisualStyles = false;
-            this.dataGrid_ArchiveUser.Location = new System.Drawing.Point(24, 38);
-            this.dataGrid_ArchiveUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGrid_ArchiveUser.Location = new System.Drawing.Point(17, 38);
+            this.dataGrid_ArchiveUser.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_ArchiveUser.Name = "dataGrid_ArchiveUser";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -112,7 +112,7 @@
             this.dataGrid_ArchiveUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGrid_ArchiveUser.RowHeadersVisible = false;
             this.dataGrid_ArchiveUser.RowHeadersWidth = 51;
-            this.dataGrid_ArchiveUser.Size = new System.Drawing.Size(875, 417);
+            this.dataGrid_ArchiveUser.Size = new System.Drawing.Size(896, 451);
             this.dataGrid_ArchiveUser.TabIndex = 35;
             this.dataGrid_ArchiveUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_ArchiveUser_CellContentClick);
             this.dataGrid_ArchiveUser.SelectionChanged += new System.EventHandler(this.dataGrid_ArchiveUser_SelectionChanged);
@@ -197,7 +197,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserControlArchiveUser";
-            this.Size = new System.Drawing.Size(932, 517);
+            this.Size = new System.Drawing.Size(932, 493);
             this.Load += new System.EventHandler(this.UserControlArchiveUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ArchiveUser)).EndInit();
             this.ResumeLayout(false);
