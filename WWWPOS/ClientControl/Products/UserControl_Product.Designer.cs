@@ -63,11 +63,12 @@
             // 
             // btn_AddToCart
             // 
-            this.btn_AddToCart.BackColor = System.Drawing.Color.White;
+            this.btn_AddToCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.btn_AddToCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AddToCart.FlatAppearance.BorderSize = 0;
             this.btn_AddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddToCart.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_AddToCart.Location = new System.Drawing.Point(13, 426);
             this.btn_AddToCart.Name = "btn_AddToCart";
             this.btn_AddToCart.Size = new System.Drawing.Size(135, 30);
@@ -79,7 +80,7 @@
             // lbl_ProductStock
             // 
             this.lbl_ProductStock.AutoSize = true;
-            this.lbl_ProductStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(174)))), ((int)(((byte)(242)))));
+            this.lbl_ProductStock.BackColor = System.Drawing.Color.Silver;
             this.lbl_ProductStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ProductStock.Location = new System.Drawing.Point(182, 268);
             this.lbl_ProductStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -93,7 +94,7 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(223, 269);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 25);
@@ -129,7 +130,7 @@
             // 
             // lbl_ProductDescription
             // 
-            this.lbl_ProductDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.lbl_ProductDescription.BackColor = System.Drawing.Color.Silver;
             this.lbl_ProductDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ProductDescription.Location = new System.Drawing.Point(13, 301);
             this.lbl_ProductDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -159,7 +160,7 @@
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(96, 268);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 27);
@@ -169,7 +170,7 @@
             // 
             // lbl_ProductPrice
             // 
-            this.lbl_ProductPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.lbl_ProductPrice.BackColor = System.Drawing.Color.Silver;
             this.lbl_ProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ProductPrice.Location = new System.Drawing.Point(14, 267);
             this.lbl_ProductPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -217,7 +218,7 @@
             // 
             // lbl_Category
             // 
-            this.lbl_Category.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.lbl_Category.BackColor = System.Drawing.Color.Silver;
             this.lbl_Category.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Category.Location = new System.Drawing.Point(155, 390);
             this.lbl_Category.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -232,7 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.lbl_Category);
             this.Controls.Add(this.cmb_ProductColor);
             this.Controls.Add(this.picbox_ProductImage);

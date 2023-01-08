@@ -92,12 +92,12 @@
             // 
             // btn_Short
             // 
-            this.btn_Short.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Short.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Short.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Short.FlatAppearance.BorderSize = 0;
             this.btn_Short.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Short.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_Short.ForeColor = System.Drawing.Color.White;
+            this.btn_Short.ForeColor = System.Drawing.Color.Black;
             this.btn_Short.Location = new System.Drawing.Point(747, 164);
             this.btn_Short.Name = "btn_Short";
             this.btn_Short.Size = new System.Drawing.Size(250, 45);
@@ -108,12 +108,12 @@
             // 
             // btn_TShirt
             // 
-            this.btn_TShirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_TShirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_TShirt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_TShirt.FlatAppearance.BorderSize = 0;
             this.btn_TShirt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TShirt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_TShirt.ForeColor = System.Drawing.Color.White;
+            this.btn_TShirt.ForeColor = System.Drawing.Color.Black;
             this.btn_TShirt.Location = new System.Drawing.Point(473, 164);
             this.btn_TShirt.Name = "btn_TShirt";
             this.btn_TShirt.Size = new System.Drawing.Size(250, 45);
@@ -124,12 +124,12 @@
             // 
             // btn_AllProducts
             // 
-            this.btn_AllProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_AllProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_AllProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AllProducts.FlatAppearance.BorderSize = 0;
             this.btn_AllProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AllProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_AllProducts.ForeColor = System.Drawing.Color.White;
+            this.btn_AllProducts.ForeColor = System.Drawing.Color.Black;
             this.btn_AllProducts.Location = new System.Drawing.Point(196, 164);
             this.btn_AllProducts.Name = "btn_AllProducts";
             this.btn_AllProducts.Size = new System.Drawing.Size(250, 45);
@@ -146,7 +146,6 @@
             this.btn_ViewCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ViewCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_ViewCart.ForeColor = System.Drawing.Color.Black;
-            this.btn_ViewCart.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewCart.Image")));
             this.btn_ViewCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ViewCart.Location = new System.Drawing.Point(1025, 164);
             this.btn_ViewCart.Name = "btn_ViewCart";
