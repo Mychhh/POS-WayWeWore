@@ -43,7 +43,6 @@
             this.panel1.Controls.Add(this.btn_Success);
             this.panel1.Controls.Add(this.lbl_Inventory);
             this.panel1.Location = new System.Drawing.Point(25, 18);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(932, 82);
             this.panel1.TabIndex = 21;
@@ -93,16 +92,17 @@
             // panel_Order
             // 
             this.panel_Order.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_Order.Location = new System.Drawing.Point(25, 115);
+            this.panel_Order.Location = new System.Drawing.Point(25, 107);
             this.panel_Order.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Order.Name = "panel_Order";
-            this.panel_Order.Size = new System.Drawing.Size(932, 484);
+            this.panel_Order.Size = new System.Drawing.Size(932, 492);
             this.panel_Order.TabIndex = 22;
             // 
             // UserControlOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_Order);
             this.Name = "UserControlOrder";

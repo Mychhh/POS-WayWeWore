@@ -90,9 +90,9 @@
             // panel_Purchase
             // 
             this.panel_Purchase.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_Purchase.Location = new System.Drawing.Point(25, 106);
+            this.panel_Purchase.Location = new System.Drawing.Point(25, 107);
             this.panel_Purchase.Name = "panel_Purchase";
-            this.panel_Purchase.Size = new System.Drawing.Size(932, 504);
+            this.panel_Purchase.Size = new System.Drawing.Size(932, 492);
             this.panel_Purchase.TabIndex = 21;
             // 
             // UserControlPurchase

@@ -228,7 +228,7 @@
             this.Controls.Add(this.Admin);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlUserListCustomer";
-            this.Size = new System.Drawing.Size(932, 482);
+            this.Size = new System.Drawing.Size(932, 492);
             this.Load += new System.EventHandler(this.UserControlUserListCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSet)).EndInit();

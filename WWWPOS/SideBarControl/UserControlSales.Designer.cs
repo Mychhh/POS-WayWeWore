@@ -47,10 +47,10 @@
             this.panel8.Controls.Add(this.cmb_Category);
             this.panel8.Controls.Add(this.cmbDateRange);
             this.panel8.Controls.Add(this.label1);
-            this.panel8.Location = new System.Drawing.Point(25, 16);
+            this.panel8.Location = new System.Drawing.Point(25, 18);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(932, 67);
+            this.panel8.Size = new System.Drawing.Size(932, 82);
             this.panel8.TabIndex = 25;
             // 
             // cmb_Category
@@ -110,7 +110,7 @@
             legend1.Name = "Legend1";
             legend1.ShadowColor = System.Drawing.Color.Empty;
             this.SalesReport.Legends.Add(legend1);
-            this.SalesReport.Location = new System.Drawing.Point(25, 98);
+            this.SalesReport.Location = new System.Drawing.Point(25, 107);
             this.SalesReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SalesReport.Name = "SalesReport";
             series1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
@@ -124,7 +124,7 @@
             series1.Name = "Sales Report";
             series1.ShadowColor = System.Drawing.Color.Empty;
             this.SalesReport.Series.Add(series1);
-            this.SalesReport.Size = new System.Drawing.Size(932, 503);
+            this.SalesReport.Size = new System.Drawing.Size(932, 492);
             this.SalesReport.TabIndex = 50;
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title1.Name = "Sales";
@@ -135,6 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.Controls.Add(this.SalesReport);
             this.Controls.Add(this.panel8);
             this.Name = "UserControlSales";

@@ -105,7 +105,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 233);
+            this.label1.Location = new System.Drawing.Point(16, 195);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 29);
             this.label1.TabIndex = 2;
@@ -145,7 +145,7 @@
             this.dataGridAdmin.Name = "dataGridAdmin";
             this.dataGridAdmin.RowHeadersVisible = false;
             this.dataGridAdmin.RowHeadersWidth = 51;
-            this.dataGridAdmin.Size = new System.Drawing.Size(890, 199);
+            this.dataGridAdmin.Size = new System.Drawing.Size(670, 161);
             this.dataGridAdmin.TabIndex = 8;
             this.dataGridAdmin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAdmin_CellContentClick);
             this.dataGridAdmin.SelectionChanged += new System.EventHandler(this.dataGridAdmin_SelectionChanged);
@@ -257,11 +257,11 @@
             this.edit_Client,
             this.delete_Client});
             this.dataGridCustomer.EnableHeadersVisualStyles = false;
-            this.dataGridCustomer.Location = new System.Drawing.Point(20, 265);
+            this.dataGridCustomer.Location = new System.Drawing.Point(20, 227);
             this.dataGridCustomer.Name = "dataGridCustomer";
             this.dataGridCustomer.RowHeadersVisible = false;
             this.dataGridCustomer.RowHeadersWidth = 51;
-            this.dataGridCustomer.Size = new System.Drawing.Size(890, 201);
+            this.dataGridCustomer.Size = new System.Drawing.Size(670, 159);
             this.dataGridCustomer.TabIndex = 9;
             this.dataGridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCustomer_CellContentClick);
             this.dataGridCustomer.SelectionChanged += new System.EventHandler(this.dataGridCustomer_SelectionChanged);
@@ -356,7 +356,7 @@
             this.Controls.Add(this.Admin);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UserControlUserListAllUser";
-            this.Size = new System.Drawing.Size(932, 482);
+            this.Size = new System.Drawing.Size(932, 492);
             this.Load += new System.EventHandler(this.UserControlUserListAllUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSetBindingSource)).EndInit();
