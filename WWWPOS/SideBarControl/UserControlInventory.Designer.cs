@@ -114,7 +114,7 @@
             this.panel_Inventory.Location = new System.Drawing.Point(25, 117);
             this.panel_Inventory.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Inventory.Name = "panel_Inventory";
-            this.panel_Inventory.Size = new System.Drawing.Size(932, 449);
+            this.panel_Inventory.Size = new System.Drawing.Size(932, 483);
             this.panel_Inventory.TabIndex = 20;
             // 
             // UserControlInventory
@@ -125,7 +125,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UserControlInventory";
-            this.Size = new System.Drawing.Size(976, 580);
+            this.Size = new System.Drawing.Size(976, 613);
             this.Load += new System.EventHandler(this.UserControlInventory_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -264,7 +264,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserControlCreate";
-            this.Size = new System.Drawing.Size(932, 517);
+            this.Size = new System.Drawing.Size(932, 483);
             ((System.ComponentModel.ISupportInitialize)(this.product_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
