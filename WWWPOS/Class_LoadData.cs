@@ -356,7 +356,6 @@ namespace WWWPOS
             
             return sales;
         }
-
         public void LoadChartSales(UserControlDashboard userControlDashboard)
         {
             try
@@ -424,6 +423,104 @@ namespace WWWPOS
                 connection.Close();
             }
             
+        }
+        public string GetDate()
+        {
+            string getDate = "";
+
+            try
+            {
+                connection.Open();
+
+                string getTodaysDateQuery = "SELECT GETDATE()";
+
+                //string getDateWeeklyQuery = "";
+                //string getDateMonthlyQuery = "";
+                //string getDateQuarterlyQuery = "";
+                //string getDateAnnuallyQuery = "";
+
+                //string getDesiredDateQuery = "";
+
+                //switch (date)
+                //{
+                //    case "Weekly":
+                //        getDesiredDateQuery = "'"+ getTodaysDateQuery + "' - 7";
+                //        break;
+                //    case "Monthly":
+                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 30";
+                //        break;
+                //    case "Quarterly":
+                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 123";
+                //        break;
+                //    case "Annually":
+                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 367";
+                //        break;
+                //}
+
+                command = new SqlCommand(getTodaysDateQuery, connection);
+                mdr = command.ExecuteReader();
+
+                if (mdr.Read())
+                {
+                    getDate = mdr[0] + "";
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return getDate;
+        }
+
+        public string GetDateAdjustment(string date)
+        {
+            string getDate = "";
+
+            try
+            {
+                connection.Open();
+
+                string getDesiredDateQuery = "";
+
+                switch (date)
+                {
+                    case "Weekly":
+                        getDesiredDateQuery = " SELECT GETDATE() - 7 ";
+                        break;
+                    case "Monthly":
+                        getDesiredDateQuery = " SELECT GETDATE() - 30 ";
+                        break;
+                    case "Quarterly":
+                        getDesiredDateQuery = " SELECT GETDATE() - 123 ";
+                        break;
+                    case "Annually":
+                        getDesiredDateQuery = " SELECT GETDATE() - 367 ";
+                        break;
+                }
+
+                command = new SqlCommand(getDesiredDateQuery, connection);
+                mdr = command.ExecuteReader();
+
+                if (mdr.Read())
+                {
+                    getDate = mdr[0] + "";
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return getDate;
         }
 
         //Sales

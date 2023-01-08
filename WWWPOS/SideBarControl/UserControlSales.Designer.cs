@@ -34,7 +34,7 @@
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cmb_Category = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbDateRange = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SalesReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel8.SuspendLayout();
@@ -45,7 +45,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel8.Controls.Add(this.cmb_Category);
-            this.panel8.Controls.Add(this.comboBox1);
+            this.panel8.Controls.Add(this.cmbDateRange);
             this.panel8.Controls.Add(this.label1);
             this.panel8.Location = new System.Drawing.Point(25, 16);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -69,22 +69,23 @@
             this.cmb_Category.TabIndex = 4;
             this.cmb_Category.DropDownClosed += new System.EventHandler(this.cmb_Category_DropDownClosed);
             // 
-            // comboBox1
+            // cmbDateRange
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbDateRange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbDateRange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDateRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDateRange.FormattingEnabled = true;
+            this.cmbDateRange.Items.AddRange(new object[] {
+            "All Time",
             "Weekly",
             "Monthly",
             "Quarterly",
             "Annually"});
-            this.comboBox1.Location = new System.Drawing.Point(688, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(221, 33);
-            this.comboBox1.TabIndex = 3;
+            this.cmbDateRange.Location = new System.Drawing.Point(688, 18);
+            this.cmbDateRange.Name = "cmbDateRange";
+            this.cmbDateRange.Size = new System.Drawing.Size(221, 33);
+            this.cmbDateRange.TabIndex = 3;
+            this.cmbDateRange.DropDownClosed += new System.EventHandler(this.cmbDateRange_DropDownClosed);
             // 
             // label1
             // 
@@ -92,9 +93,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(25, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 25);
+            this.label1.Size = new System.Drawing.Size(124, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Sales report";
+            this.label1.Text = "Sales Report";
             // 
             // SalesReport
             // 
@@ -120,7 +121,7 @@
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             series1.Legend = "Legend1";
-            series1.Name = "Sales report";
+            series1.Name = "Sales Report";
             series1.ShadowColor = System.Drawing.Color.Empty;
             this.SalesReport.Series.Add(series1);
             this.SalesReport.Size = new System.Drawing.Size(932, 451);
@@ -151,7 +152,7 @@
 
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbDateRange;
         private System.Windows.Forms.ComboBox cmb_Category;
         public System.Windows.Forms.DataVisualization.Charting.Chart SalesReport;
     }
