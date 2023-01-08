@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.MessageFolder;
 
 namespace WWWPOS.SideBarControl
 {
@@ -33,19 +34,22 @@ namespace WWWPOS.SideBarControl
 
         private void cmb_Category_DropDownClosed(object sender, EventArgs e)
         {
-            Class_LoadData loadtData = new Class_LoadData();
+            Class_LoadData class_LoadData = new Class_LoadData();
 
             if (cmb_Category.SelectedIndex == 0)
             {
-                loadtData.GetDesiredChartData(this, "SELECT ProductID, Name, Category, Quantity, PlacedOrder FROM Orders WHERE OrderStatus = 'Success'", "AllProduct");
+                class_LoadData.GetDesiredChartData(this, "SELECT ProductID, Name, Category, Quantity  FROM Orders WHERE OrderStatus = 'Success'", "AllProduct");
+                SalesReport.Series["Sales report"].Points.DataBindXY(xValues, yValues);
             }
             else if (cmb_Category.SelectedIndex == 1)
             {
-                loadtData.GetDesiredChartData(this, "SELECT ProductID, Name, Quantity, PlacedOrder FROM Orders WHERE OrderStatus = 'Success' AND Category = 'T-Shirts'", "ParticularProduct");
+                class_LoadData.GetDesiredChartData(this, "SELECT ProductID, Name, Quantity, PlacedOrder FROM Orders WHERE OrderStatus = 'Success' AND Category = 'T-Shirts'", "ParticularProduct");
+                SalesReport.Series["Sales report"].Points.DataBindXY(xValues, yValues);
             }
             else if (cmb_Category.SelectedIndex == 2)
             {
-                loadtData.GetDesiredChartData(this, "SELECT ProductID, Name, Quantity, PlacedOrder FROM Orders WHERE OrderStatus = 'Success' AND Category = 'Shorts'", "ParticularProduct");
+                class_LoadData.GetDesiredChartData(this, "SELECT ProductID, Name, Quantity, PlacedOrder FROM Orders WHERE OrderStatus = 'Success' AND Category = 'Shorts'", "ParticularProduct");
+                SalesReport.Series["Sales report"].Points.DataBindXY(xValues, yValues);
             }
         }
     }

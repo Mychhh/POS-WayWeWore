@@ -442,75 +442,56 @@ namespace WWWPOS
 
                 ClassSalesChartData classSalesChartData = new ClassSalesChartData();
                 bool hasSameValue = false;
+                int numProduct = 0;
+                int numQuantity = 0;
 
                 while (mdr.Read())
                 {
                     switch (whatProduct)
                     {
                         case "AllProduct":
-                            if (classSalesChartData.Product.Any())
-                            {
-                                foreach (string category in classSalesChartData.Product)
-                                {
-                                    if (category == "" + mdr[2])
-                                    {
-                                        hasSameValue = true;
-                                        //gets the index of list by finding its value
-                                        int indexOfCategory = classSalesChartData.Product.IndexOf(category);
-                                        //gets the value of list by its index
-                                        int valueOfIndexCategory = classSalesChartData.Quantity[indexOfCategory];
-                                        //updating the list value by its index
-                                        classSalesChartData.Quantity[indexOfCategory] = valueOfIndexCategory + Int32.Parse(mdr[3] + "");
-                                        break;
-                                    }
-                                }
-                            }
-
-                            if (hasSameValue == false)
-                            {
-                                classSalesChartData.Product.Add("" + mdr[2]);
-                                classSalesChartData.Quantity.Add(Int32.Parse(mdr[3] + ""));
-                            }
-                            else if (hasSameValue == true)
-                            {
-                                hasSameValue = false;
-                            }
+                            numProduct = 2;
+                            numQuantity = 3;
                             break;
 
                         case "ParticularProduct":
-                            if (classSalesChartData.Product.Any())
-                            {
-                                foreach (string category in classSalesChartData.Product)
-                                {
-                                    if (category == "" + mdr[1])
-                                    {
-                                        hasSameValue = true;
-                                        //gets the index of list by finding its value
-                                        int indexOfCategory = classSalesChartData.Product.IndexOf(category);
-                                        //gets the value of list by its index
-                                        int valueOfIndexCategory = classSalesChartData.Quantity[indexOfCategory];
-                                        //updating the list value by its index
-                                        classSalesChartData.Quantity[indexOfCategory] = valueOfIndexCategory + Int32.Parse(mdr[2] + "");
-                                        break;
-                                    }
-                                }
-                            }
-
-                            if (hasSameValue == false)
-                            {
-                                classSalesChartData.Product.Add("" + mdr[1]);
-                                classSalesChartData.Quantity.Add(Int32.Parse(mdr[2] + ""));
-                            }
-                            else if (hasSameValue == true)
-                            {
-                                hasSameValue = false;
-                            }
-
+                            numProduct = 1;
+                            numQuantity = 2;
                             break;
                     }
 
-                    
+                    if (classSalesChartData.Product.Any())
+                    {
+                        foreach (string product in classSalesChartData.Product)
+                        {
+                            if (product == "" + mdr[numProduct])
+                            {
+                                hasSameValue = true;
+                                //gets the index of list by finding its value
+                                int indexOfCategory = classSalesChartData.Product.IndexOf(product);
+                                //gets the value of list by its index
+                                int valueOfIndexCategory = classSalesChartData.Quantity[indexOfCategory];
+                                //updating the list value by its index
+                                classSalesChartData.Quantity[indexOfCategory] = valueOfIndexCategory + Int32.Parse(mdr[numQuantity] + "");
+                                break;
+                            }
+                        }
+                    }
+
+                    if (hasSameValue == false)
+                    {
+                        classSalesChartData.Product.Add("" + mdr[numProduct]);
+                        classSalesChartData.Quantity.Add(Int32.Parse(mdr[numQuantity] + ""));
+                    }
+                    else if (hasSameValue == true)
+                    {
+                        hasSameValue = false;
+                    }
+
                 }
+
+                UC_Sales.xValues.Clear();
+                UC_Sales.yValues.Clear();
 
                 //checks the value of classProductsSales
                 foreach (string sales in classSalesChartData.Product)
