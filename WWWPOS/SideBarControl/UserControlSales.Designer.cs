@@ -31,106 +31,61 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cmb_Category = new System.Windows.Forms.ComboBox();
+            this.cmbDateRange = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.SalesReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesReport)).BeginInit();
             this.SuspendLayout();
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel8.Controls.Add(this.cmb_Category);
+            this.panel8.Controls.Add(this.cmbDateRange);
             this.panel8.Controls.Add(this.label1);
-            this.panel8.Controls.Add(this.panel9);
             this.panel8.Location = new System.Drawing.Point(25, 16);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(932, 67);
             this.panel8.TabIndex = 25;
             // 
-            // panel9
+            // cmb_Category
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            this.panel9.Controls.Add(this.label8);
-            this.panel9.Location = new System.Drawing.Point(691, 12);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(221, 34);
-            this.panel9.TabIndex = 1;
+            this.cmb_Category.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmb_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Category.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Category.FormattingEnabled = true;
+            this.cmb_Category.Items.AddRange(new object[] {
+            "All Items",
+            "T-Shirt",
+            "Short"});
+            this.cmb_Category.Location = new System.Drawing.Point(451, 18);
+            this.cmb_Category.Name = "cmb_Category";
+            this.cmb_Category.Size = new System.Drawing.Size(221, 33);
+            this.cmb_Category.TabIndex = 4;
+            this.cmb_Category.DropDownClosed += new System.EventHandler(this.cmb_Category_DropDownClosed);
             // 
-            // label8
+            // cmbDateRange
             // 
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(295, 18);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 25);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "V";
-            // 
-            // chart3
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart3.Legends.Add(legend1);
-            this.chart3.Location = new System.Drawing.Point(25, 366);
-            this.chart3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chart3.Name = "chart3";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart3.Series.Add(series1);
-            this.chart3.Size = new System.Drawing.Size(932, 274);
-            this.chart3.TabIndex = 27;
-            this.chart3.Text = "chart3";
-            // 
-            // chart1
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(25, 122);
-            this.chart1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(458, 210);
-            this.chart1.TabIndex = 24;
-            this.chart1.Text = "chart1";
-            // 
-            // chart2
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart2.Legends.Add(legend3);
-            this.chart2.Location = new System.Drawing.Point(519, 122);
-            this.chart2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chart2.Name = "chart2";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart2.Series.Add(series3);
-            this.chart2.Size = new System.Drawing.Size(438, 210);
-            this.chart2.TabIndex = 26;
-            this.chart2.Text = "chart2";
+            this.cmbDateRange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbDateRange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDateRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDateRange.FormattingEnabled = true;
+            this.cmbDateRange.Items.AddRange(new object[] {
+            "All Time",
+            "Weekly",
+            "Monthly",
+            "Quarterly",
+            "Annually"});
+            this.cmbDateRange.Location = new System.Drawing.Point(688, 18);
+            this.cmbDateRange.Name = "cmbDateRange";
+            this.cmbDateRange.Size = new System.Drawing.Size(221, 33);
+            this.cmbDateRange.TabIndex = 3;
+            this.cmbDateRange.DropDownClosed += new System.EventHandler(this.cmbDateRange_DropDownClosed);
             // 
             // label1
             // 
@@ -142,22 +97,52 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Sales Report";
             // 
+            // SalesReport
+            // 
+            this.SalesReport.BackColor = System.Drawing.Color.Gainsboro;
+            this.SalesReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(174)))), ((int)(((byte)(242)))));
+            chartArea1.Name = "Shit";
+            chartArea1.ShadowColor = System.Drawing.Color.Empty;
+            this.SalesReport.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            legend1.ShadowColor = System.Drawing.Color.Empty;
+            this.SalesReport.Legends.Add(legend1);
+            this.SalesReport.Location = new System.Drawing.Point(25, 113);
+            this.SalesReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SalesReport.Name = "SalesReport";
+            series1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            series1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Unscaled;
+            series1.BackSecondaryColor = System.Drawing.Color.IndianRed;
+            series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series1.ChartArea = "Shit";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Sales Report";
+            series1.ShadowColor = System.Drawing.Color.Empty;
+            this.SalesReport.Series.Add(series1);
+            this.SalesReport.Size = new System.Drawing.Size(932, 451);
+            this.SalesReport.TabIndex = 50;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Sales";
+            title1.ShadowColor = System.Drawing.Color.Black;
+            this.SalesReport.Titles.Add(title1);
+            // 
             // UserControlSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.SalesReport);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.chart3);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.chart2);
             this.Name = "UserControlSales";
-            this.Size = new System.Drawing.Size(976, 655);
+            this.Size = new System.Drawing.Size(976, 580);
+            this.Load += new System.EventHandler(this.UserControlSales_Load);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesReport)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,11 +150,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbDateRange;
+        private System.Windows.Forms.ComboBox cmb_Category;
+        public System.Windows.Forms.DataVisualization.Charting.Chart SalesReport;
     }
 }

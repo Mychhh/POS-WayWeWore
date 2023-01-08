@@ -21,6 +21,10 @@ using System.ComponentModel;
 using System.Windows.Data;
 using WWWPOS.ErrorMessage;
 using System.Data;
+using WWWPOS.SideBarControl.Dashboard;
+using Google.Protobuf.WellKnownTypes;
+using System.Data.Common;
+using WWWPOS.SideBarControl.Sales;
 
 namespace WWWPOS
 {
@@ -321,6 +325,292 @@ namespace WWWPOS
             }
 
             return users;
+        }
+        public string AllSales(string sales)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = "SELECT SUM(Price) FROM Orders WHERE OrderStatus = 'Success'";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                double numberOfSales = 0;
+
+                if (mdr.Read())
+                {
+                    numberOfSales = Double.Parse(mdr[0] + "");
+                }
+
+                int convertedSales = Convert.ToInt32(numberOfSales);
+
+                sales = convertedSales.ToString();
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            
+            return sales;
+        }
+        public void LoadChartSales(UserControlDashboard userControlDashboard)
+        {
+            try
+            {
+                connection.Open();
+
+                string loadChartQuery = "SELECT ProductID, Name, Category, Quantity  FROM Orders WHERE OrderStatus = 'Success'";
+
+                command = new SqlCommand(loadChartQuery, connection);
+                mdr = command.ExecuteReader();
+
+                ClassProductSales classProductSales = new ClassProductSales();
+                bool hasSameValue = false;
+
+                while (mdr.Read())
+                {
+                    if (classProductSales.ProductCategory.Any())
+                    {
+                        foreach(string category in classProductSales.ProductCategory)
+                        {
+                            if (category == "" + mdr[2])
+                            {
+                                hasSameValue = true;
+                                //gets the index of list by finding its value
+                                int indexOfCategory = classProductSales.ProductCategory.IndexOf(category);
+                                //gets the value of list by its index
+                                int valueOfIndexCategory = classProductSales.ProductQuantity[indexOfCategory];
+                                //updating the list value by its index
+                                classProductSales.ProductQuantity[indexOfCategory] = valueOfIndexCategory + Int32.Parse(mdr[3] + "");
+                                break;
+
+                            }
+                        }
+                    }
+
+                    if (hasSameValue == false)
+                    {
+                        classProductSales.ProductCategory.Add("" + mdr[2]);
+                        classProductSales.ProductQuantity.Add(Int32.Parse(mdr[3] + ""));
+                    }else if(hasSameValue == true)
+                    {
+                        hasSameValue = false;
+                    }
+                    
+                }
+
+                //checks the value of classProductsSales
+                foreach (string sales in classProductSales.ProductCategory)
+                {
+                    userControlDashboard.xValuescategory.Add(sales);
+                }
+                //checks the value of classProductsSales
+                foreach (int products in classProductSales.ProductQuantity)
+                {
+                    userControlDashboard.yValuesquantity.Add(products);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            
+        }
+        public string GetDate()
+        {
+            string getDate = "";
+
+            try
+            {
+                connection.Open();
+
+                string getTodaysDateQuery = "SELECT GETDATE()";
+
+                //string getDateWeeklyQuery = "";
+                //string getDateMonthlyQuery = "";
+                //string getDateQuarterlyQuery = "";
+                //string getDateAnnuallyQuery = "";
+
+                //string getDesiredDateQuery = "";
+
+                //switch (date)
+                //{
+                //    case "Weekly":
+                //        getDesiredDateQuery = "'"+ getTodaysDateQuery + "' - 7";
+                //        break;
+                //    case "Monthly":
+                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 30";
+                //        break;
+                //    case "Quarterly":
+                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 123";
+                //        break;
+                //    case "Annually":
+                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 367";
+                //        break;
+                //}
+
+                command = new SqlCommand(getTodaysDateQuery, connection);
+                mdr = command.ExecuteReader();
+
+                if (mdr.Read())
+                {
+                    getDate = mdr[0] + "";
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return getDate;
+        }
+
+        public string GetDateAdjustment(string date)
+        {
+            string getDate = "";
+
+            try
+            {
+                connection.Open();
+
+                string getDesiredDateQuery = "";
+
+                switch (date)
+                {
+                    case "Weekly":
+                        getDesiredDateQuery = " SELECT GETDATE() - 7 ";
+                        break;
+                    case "Monthly":
+                        getDesiredDateQuery = " SELECT GETDATE() - 30 ";
+                        break;
+                    case "Quarterly":
+                        getDesiredDateQuery = " SELECT GETDATE() - 123 ";
+                        break;
+                    case "Annually":
+                        getDesiredDateQuery = " SELECT GETDATE() - 367 ";
+                        break;
+                }
+
+                command = new SqlCommand(getDesiredDateQuery, connection);
+                mdr = command.ExecuteReader();
+
+                if (mdr.Read())
+                {
+                    getDate = mdr[0] + "";
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return getDate;
+        }
+
+        //Sales
+        public void GetDesiredChartData(UserControlSales UC_Sales, string query, string whatProduct)
+        {
+            //"SELECT ProductID, Name, Category, Quantity  FROM Orders WHERE OrderStatus = 'Success'"
+
+            try
+            {
+                connection.Open();
+
+                string loadDesiredChartQuery = query;
+
+                command = new SqlCommand(loadDesiredChartQuery, connection);
+                mdr = command.ExecuteReader();
+
+                ClassSalesChartData classSalesChartData = new ClassSalesChartData();
+                bool hasSameValue = false;
+                int numProduct = 0;
+                int numQuantity = 0;
+
+                while (mdr.Read())
+                {
+                    switch (whatProduct)
+                    {
+                        case "AllProduct":
+                            numProduct = 2;
+                            numQuantity = 3;
+                            break;
+
+                        case "ParticularProduct":
+                            numProduct = 1;
+                            numQuantity = 2;
+                            break;
+                    }
+
+                    if (classSalesChartData.Product.Any())
+                    {
+                        foreach (string product in classSalesChartData.Product)
+                        {
+                            if (product == "" + mdr[numProduct])
+                            {
+                                hasSameValue = true;
+                                //gets the index of list by finding its value
+                                int indexOfCategory = classSalesChartData.Product.IndexOf(product);
+                                //gets the value of list by its index
+                                int valueOfIndexCategory = classSalesChartData.Quantity[indexOfCategory];
+                                //updating the list value by its index
+                                classSalesChartData.Quantity[indexOfCategory] = valueOfIndexCategory + Int32.Parse(mdr[numQuantity] + "");
+                                break;
+                            }
+                        }
+                    }
+
+                    if (hasSameValue == false)
+                    {
+                        classSalesChartData.Product.Add("" + mdr[numProduct]);
+                        classSalesChartData.Quantity.Add(Int32.Parse(mdr[numQuantity] + ""));
+                    }
+                    else if (hasSameValue == true)
+                    {
+                        hasSameValue = false;
+                    }
+
+                }
+
+                UC_Sales.xValues.Clear();
+                UC_Sales.yValues.Clear();
+
+                //checks the value of classProductsSales
+                foreach (string sales in classSalesChartData.Product)
+                {
+                    UC_Sales.xValues.Add(sales);
+                }
+                //checks the value of classProductsSales
+                foreach (int products in classSalesChartData.Quantity)
+                {
+                    UC_Sales.yValues.Add(products);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         //-----Client Side-----//

@@ -205,6 +205,7 @@
     <Compile Include="SideBarControl\Archive\UserControlArchiveUser.Designer.cs">
       <DependentUpon>UserControlArchiveUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Dashboard\ClassProductSales.cs" />
     <Compile Include="SideBarControl\Inventory\UserControlCreate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -307,6 +308,7 @@
     <Compile Include="SideBarControl\Purchase\UserControlPurchaseTshirt.Designer.cs">
       <DependentUpon>UserControlPurchaseTshirt.cs</DependentUpon>
     </Compile>
+    <Compile Include="SideBarControl\Sales\ClassSalesChartData.cs" />
     <Compile Include="SideBarControl\UserControlArchive.cs">
       <SubType>UserControl</SubType>
     </Compile>

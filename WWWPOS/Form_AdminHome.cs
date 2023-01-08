@@ -85,8 +85,11 @@ namespace WWWPOS
                     break;
 
                 case false:
+                    Class_LoadData class_LoadData = new Class_LoadData();
 
                     UserControlDashboard UC_Dashboard = new UserControlDashboard();
+
+                    class_LoadData.LoadChartSales(UC_Dashboard);
 
                     //panel_Main.Controls.Clear();
                     panel_Main.Controls.Add(UC_Dashboard);
@@ -98,7 +101,11 @@ namespace WWWPOS
 
         private void btn_Dashboard_Click(object sender, EventArgs e)
         {
+            Class_LoadData class_LoadData = new Class_LoadData();
+
             SideBarControl.UserControlDashboard UC_Dashboard = new SideBarControl.UserControlDashboard();
+
+            class_LoadData.LoadChartSales(UC_Dashboard);
 
             panel_Main.Controls.Clear();
             panel_Main.Controls.Add(UC_Dashboard);
@@ -107,7 +114,11 @@ namespace WWWPOS
 
         private void btn_Sales_Click(object sender, EventArgs e)
         {
+            Class_LoadData class_LoadData = new Class_LoadData();
+
             SideBarControl.UserControlSales UC_Sales = new SideBarControl.UserControlSales();
+
+            class_LoadData.GetDesiredChartData(UC_Sales, "SELECT ProductID, Name, Category, Quantity  FROM Orders WHERE OrderStatus = 'Success'", "AllProduct");
 
             panel_Main.Controls.Clear();
             panel_Main.Controls.Add(UC_Sales);
