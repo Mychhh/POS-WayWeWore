@@ -24,6 +24,7 @@ using System.Data;
 using WWWPOS.SideBarControl.Dashboard;
 using Google.Protobuf.WellKnownTypes;
 using System.Data.Common;
+using WWWPOS.SideBarControl.Sales;
 
 namespace WWWPOS
 {
@@ -417,13 +418,120 @@ namespace WWWPOS
             catch (Exception ex)
             {
                 ErrorMessage(ex.Message);
-                Console.WriteLine(ex.Message);
             }
             finally
             {
                 connection.Close();
             }
             
+        }
+
+        //Sales
+        public void GetDesiredChartData(UserControlSales UC_Sales, string query, string whatProduct)
+        {
+            //"SELECT ProductID, Name, Category, Quantity  FROM Orders WHERE OrderStatus = 'Success'"
+
+            try
+            {
+                connection.Open();
+
+                string loadDesiredChartQuery = query;
+
+                command = new SqlCommand(loadDesiredChartQuery, connection);
+                mdr = command.ExecuteReader();
+
+                ClassSalesChartData classSalesChartData = new ClassSalesChartData();
+                bool hasSameValue = false;
+
+                while (mdr.Read())
+                {
+                    switch (whatProduct)
+                    {
+                        case "AllProduct":
+                            if (classSalesChartData.Product.Any())
+                            {
+                                foreach (string category in classSalesChartData.Product)
+                                {
+                                    if (category == "" + mdr[2])
+                                    {
+                                        hasSameValue = true;
+                                        //gets the index of list by finding its value
+                                        int indexOfCategory = classSalesChartData.Product.IndexOf(category);
+                                        //gets the value of list by its index
+                                        int valueOfIndexCategory = classSalesChartData.Quantity[indexOfCategory];
+                                        //updating the list value by its index
+                                        classSalesChartData.Quantity[indexOfCategory] = valueOfIndexCategory + Int32.Parse(mdr[3] + "");
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (hasSameValue == false)
+                            {
+                                classSalesChartData.Product.Add("" + mdr[2]);
+                                classSalesChartData.Quantity.Add(Int32.Parse(mdr[3] + ""));
+                            }
+                            else if (hasSameValue == true)
+                            {
+                                hasSameValue = false;
+                            }
+                            break;
+
+                        case "ParticularProduct":
+                            if (classSalesChartData.Product.Any())
+                            {
+                                foreach (string category in classSalesChartData.Product)
+                                {
+                                    if (category == "" + mdr[1])
+                                    {
+                                        hasSameValue = true;
+                                        //gets the index of list by finding its value
+                                        int indexOfCategory = classSalesChartData.Product.IndexOf(category);
+                                        //gets the value of list by its index
+                                        int valueOfIndexCategory = classSalesChartData.Quantity[indexOfCategory];
+                                        //updating the list value by its index
+                                        classSalesChartData.Quantity[indexOfCategory] = valueOfIndexCategory + Int32.Parse(mdr[2] + "");
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (hasSameValue == false)
+                            {
+                                classSalesChartData.Product.Add("" + mdr[1]);
+                                classSalesChartData.Quantity.Add(Int32.Parse(mdr[2] + ""));
+                            }
+                            else if (hasSameValue == true)
+                            {
+                                hasSameValue = false;
+                            }
+
+                            break;
+                    }
+
+                    
+                }
+
+                //checks the value of classProductsSales
+                foreach (string sales in classSalesChartData.Product)
+                {
+                    UC_Sales.xValues.Add(sales);
+                }
+                //checks the value of classProductsSales
+                foreach (int products in classSalesChartData.Quantity)
+                {
+                    UC_Sales.yValues.Add(products);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         //-----Client Side-----//
