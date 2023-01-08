@@ -110,7 +110,7 @@
             legend1.Name = "Legend1";
             legend1.ShadowColor = System.Drawing.Color.Empty;
             this.SalesReport.Legends.Add(legend1);
-            this.SalesReport.Location = new System.Drawing.Point(25, 113);
+            this.SalesReport.Location = new System.Drawing.Point(25, 98);
             this.SalesReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SalesReport.Name = "SalesReport";
             series1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
@@ -124,7 +124,7 @@
             series1.Name = "Sales Report";
             series1.ShadowColor = System.Drawing.Color.Empty;
             this.SalesReport.Series.Add(series1);
-            this.SalesReport.Size = new System.Drawing.Size(932, 451);
+            this.SalesReport.Size = new System.Drawing.Size(932, 503);
             this.SalesReport.TabIndex = 50;
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title1.Name = "Sales";
@@ -138,7 +138,7 @@
             this.Controls.Add(this.SalesReport);
             this.Controls.Add(this.panel8);
             this.Name = "UserControlSales";
-            this.Size = new System.Drawing.Size(976, 580);
+            this.Size = new System.Drawing.Size(976, 613);
             this.Load += new System.EventHandler(this.UserControlSales_Load);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
