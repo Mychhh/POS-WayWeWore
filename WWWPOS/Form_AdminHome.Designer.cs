@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_AdminHome));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_Orders = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_Inventory = new System.Windows.Forms.Button();
             this.btn_Archive = new System.Windows.Forms.Button();
             this.btn_UserList = new System.Windows.Forms.Button();
@@ -73,17 +73,6 @@
             this.panel1.Size = new System.Drawing.Size(400, 1024);
             this.panel1.TabIndex = 30;
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(198, 214);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 25);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Admin";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btn_Orders
             // 
             this.btn_Orders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
@@ -99,6 +88,17 @@
             this.btn_Orders.Text = "Order";
             this.btn_Orders.UseVisualStyleBackColor = false;
             this.btn_Orders.Click += new System.EventHandler(this.btn_Orders_Click);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(198, 214);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 25);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Admin";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_Inventory
             // 
@@ -241,26 +241,26 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            this.panel13.Location = new System.Drawing.Point(419, 178);
+            this.panel13.Location = new System.Drawing.Point(413, 142);
             this.panel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(976, 2);
+            this.panel13.Size = new System.Drawing.Size(990, 2);
             this.panel13.TabIndex = 45;
             // 
             // panel_Main
             // 
             this.panel_Main.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Main.Location = new System.Drawing.Point(419, 194);
+            this.panel_Main.Location = new System.Drawing.Point(419, 161);
             this.panel_Main.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Main.Name = "panel_Main";
-            this.panel_Main.Size = new System.Drawing.Size(976, 580);
+            this.panel_Main.Size = new System.Drawing.Size(976, 613);
             this.panel_Main.TabIndex = 47;
             // 
             // panel_Menu
             // 
             this.panel_Menu.BackColor = System.Drawing.Color.Transparent;
             this.panel_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_Menu.Location = new System.Drawing.Point(1197, 50);
+            this.panel_Menu.Location = new System.Drawing.Point(1184, 4);
             this.panel_Menu.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(175, 122);
@@ -278,7 +278,7 @@
             this.btn_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 2.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Menu.ForeColor = System.Drawing.Color.Blue;
             this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
-            this.btn_Menu.Location = new System.Drawing.Point(1335, 4);
+            this.btn_Menu.Location = new System.Drawing.Point(1367, 13);
             this.btn_Menu.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Menu.Name = "btn_Menu";
             this.btn_Menu.Size = new System.Drawing.Size(36, 39);
@@ -291,10 +291,10 @@
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.panel8.BackgroundImage = global::WWWPOS.Properties.Resources.header;
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel8.Location = new System.Drawing.Point(661, 14);
+            this.panel8.Location = new System.Drawing.Point(753, 4);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(528, 138);
+            this.panel8.Size = new System.Drawing.Size(377, 114);
             this.panel8.TabIndex = 46;
             // 
             // Form_AdminHome
