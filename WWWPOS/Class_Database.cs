@@ -368,9 +368,9 @@ namespace WWWPOS
             //Checks if the item is available on cart
             if (mdr.Read())
             {
-                SumProductQuantity = Int32.Parse(mdr[2] + "") + productQuantity;
+                SumProductQuantity = Int32.Parse(mdr[1] + "") + productQuantity;
 
-                if (SumProductQuantity > Int32.Parse(mdr[3] + ""))
+                if (SumProductQuantity > Int32.Parse(mdr[2] + ""))
                 {
                     ErrorMessage("You reached the maximum stock");
                     connection.Close();
@@ -395,8 +395,11 @@ namespace WWWPOS
                         // Show any error message.
                         ErrorMessage(ex.Message);
                     }
-
-                    connection.Close();
+                    finally
+                    {
+                        connection.Close();
+                    }
+                    
                 }
 
             }
@@ -420,9 +423,11 @@ namespace WWWPOS
                 {
                     ErrorMessage(ex.Message);
                 }
-                
-                connection.Close();
-                
+                finally
+                {
+                    connection.Close();
+                }
+
             }   
 
         }
@@ -467,7 +472,15 @@ namespace WWWPOS
             try
             {
                 connection.Open();
-                string placeOrderQuery = "UPDATE Cart SET Cart_Status = 'Pending' WHERE Account_Id ='" + user_ID + "' AND Product_Status = 'Active' ";
+                string placeOrderQuery = "UPDATE Cart " +
+                                         "SET Cart.Cart_Status = 'Pending'" +
+                                         "FROM[waywewore].[dbo].[Cart] AS Cart " +
+                                         "INNER JOIN[waywewore].[dbo].[Products] AS Product " +
+                                         "ON Cart.Product_ID = Product.Product_ID " +
+                                         "WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' AND Product.Stocks >= 1";
+
+                
+
                 sqlCommand = new SqlCommand(placeOrderQuery, connection);
                 dataReader = sqlCommand.ExecuteReader();
                 connection.Close();

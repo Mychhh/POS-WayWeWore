@@ -37,6 +37,7 @@
             this.lbl_ProductPrice = new System.Windows.Forms.Label();
             this.picBox_ProductPicture = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Color = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProductPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,11 +73,12 @@
             // 
             // cmb_Color
             // 
+            this.cmb_Color.BackColor = System.Drawing.Color.Gray;
             this.cmb_Color.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmb_Color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Color.FormattingEnabled = true;
-            this.cmb_Color.Location = new System.Drawing.Point(408, 110);
+            this.cmb_Color.Location = new System.Drawing.Point(233, 214);
             this.cmb_Color.Name = "cmb_Color";
             this.cmb_Color.Size = new System.Drawing.Size(171, 26);
             this.cmb_Color.TabIndex = 56;
@@ -155,11 +157,23 @@
             this.label1.Text = "Product Unavailable";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbl_Color
+            // 
+            this.lbl_Color.BackColor = System.Drawing.Color.Silver;
+            this.lbl_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Color.Location = new System.Drawing.Point(398, 110);
+            this.lbl_Color.Name = "lbl_Color";
+            this.lbl_Color.Size = new System.Drawing.Size(181, 27);
+            this.lbl_Color.TabIndex = 60;
+            this.lbl_Color.Text = "Color";
+            this.lbl_Color.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserControl_ProductCartInactive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.Gray;
+            this.Controls.Add(this.lbl_Color);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_DeleteProduct);
             this.Controls.Add(this.lbl_Category);
@@ -189,5 +203,6 @@
         private System.Windows.Forms.Label lbl_ProductPrice;
         private System.Windows.Forms.PictureBox picBox_ProductPicture;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Color;
     }
 }

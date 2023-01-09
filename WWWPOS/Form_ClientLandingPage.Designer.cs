@@ -33,15 +33,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Menu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_BrowseProduct = new System.Windows.Forms.Button();
             this.btn_Short = new System.Windows.Forms.Button();
             this.btn_TShirt = new System.Windows.Forms.Button();
             this.btn_AllProducts = new System.Windows.Forms.Button();
             this.btn_ViewCart = new System.Windows.Forms.Button();
             this.flPanel_ViewProduct = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Menu
@@ -93,39 +90,14 @@
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btn_BrowseProduct);
-            this.panel2.Location = new System.Drawing.Point(196, 227);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(13, 49, 13, 49);
-            this.panel2.Size = new System.Drawing.Size(1079, 43);
-            this.panel2.TabIndex = 71;
-            // 
-            // btn_BrowseProduct
-            // 
-            this.btn_BrowseProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
-            this.btn_BrowseProduct.FlatAppearance.BorderSize = 0;
-            this.btn_BrowseProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_BrowseProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BrowseProduct.Location = new System.Drawing.Point(961, 5);
-            this.btn_BrowseProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_BrowseProduct.Name = "btn_BrowseProduct";
-            this.btn_BrowseProduct.Size = new System.Drawing.Size(101, 30);
-            this.btn_BrowseProduct.TabIndex = 1;
-            this.btn_BrowseProduct.Text = "Search";
-            this.btn_BrowseProduct.UseVisualStyleBackColor = false;
-            // 
             // btn_Short
             // 
-            this.btn_Short.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Short.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Short.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Short.FlatAppearance.BorderSize = 0;
             this.btn_Short.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Short.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_Short.ForeColor = System.Drawing.Color.White;
+            this.btn_Short.ForeColor = System.Drawing.Color.Black;
             this.btn_Short.Location = new System.Drawing.Point(747, 164);
             this.btn_Short.Name = "btn_Short";
             this.btn_Short.Size = new System.Drawing.Size(250, 45);
@@ -136,12 +108,12 @@
             // 
             // btn_TShirt
             // 
-            this.btn_TShirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_TShirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_TShirt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_TShirt.FlatAppearance.BorderSize = 0;
             this.btn_TShirt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TShirt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_TShirt.ForeColor = System.Drawing.Color.White;
+            this.btn_TShirt.ForeColor = System.Drawing.Color.Black;
             this.btn_TShirt.Location = new System.Drawing.Point(473, 164);
             this.btn_TShirt.Name = "btn_TShirt";
             this.btn_TShirt.Size = new System.Drawing.Size(250, 45);
@@ -152,12 +124,12 @@
             // 
             // btn_AllProducts
             // 
-            this.btn_AllProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_AllProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_AllProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AllProducts.FlatAppearance.BorderSize = 0;
             this.btn_AllProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AllProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_AllProducts.ForeColor = System.Drawing.Color.White;
+            this.btn_AllProducts.ForeColor = System.Drawing.Color.Black;
             this.btn_AllProducts.Location = new System.Drawing.Point(196, 164);
             this.btn_AllProducts.Name = "btn_AllProducts";
             this.btn_AllProducts.Size = new System.Drawing.Size(250, 45);
@@ -174,7 +146,6 @@
             this.btn_ViewCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ViewCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_ViewCart.ForeColor = System.Drawing.Color.Black;
-            this.btn_ViewCart.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewCart.Image")));
             this.btn_ViewCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ViewCart.Location = new System.Drawing.Point(1025, 164);
             this.btn_ViewCart.Name = "btn_ViewCart";
@@ -187,10 +158,10 @@
             // flPanel_ViewProduct
             // 
             this.flPanel_ViewProduct.AutoScroll = true;
-            this.flPanel_ViewProduct.Location = new System.Drawing.Point(12, 287);
+            this.flPanel_ViewProduct.Location = new System.Drawing.Point(12, 230);
             this.flPanel_ViewProduct.Name = "flPanel_ViewProduct";
             this.flPanel_ViewProduct.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
-            this.flPanel_ViewProduct.Size = new System.Drawing.Size(1400, 485);
+            this.flPanel_ViewProduct.Size = new System.Drawing.Size(1400, 542);
             this.flPanel_ViewProduct.TabIndex = 76;
             // 
             // Form_ClientLandingPage
@@ -199,7 +170,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1424, 788);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_Short);
             this.Controls.Add(this.btn_TShirt);
             this.Controls.Add(this.btn_AllProducts);
@@ -215,7 +185,6 @@
             this.Text = "a";
             this.Load += new System.EventHandler(this.ClientPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -226,8 +195,6 @@
         private System.Windows.Forms.Button btn_Menu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_BrowseProduct;
         private System.Windows.Forms.Button btn_Short;
         private System.Windows.Forms.Button btn_TShirt;
         private System.Windows.Forms.Button btn_AllProducts;

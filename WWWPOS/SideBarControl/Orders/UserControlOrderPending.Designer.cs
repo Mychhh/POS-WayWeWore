@@ -52,7 +52,7 @@
             this.flPanel_PendingOrders.Location = new System.Drawing.Point(23, 47);
             this.flPanel_PendingOrders.Name = "flPanel_PendingOrders";
             this.flPanel_PendingOrders.Padding = new System.Windows.Forms.Padding(5);
-            this.flPanel_PendingOrders.Size = new System.Drawing.Size(887, 388);
+            this.flPanel_PendingOrders.Size = new System.Drawing.Size(887, 434);
             this.flPanel_PendingOrders.TabIndex = 10;
             // 
             // dataGridViewImageColumn1
@@ -80,7 +80,7 @@
             this.Controls.Add(this.flPanel_PendingOrders);
             this.Controls.Add(this.Admin);
             this.Name = "UserControlOrderPending";
-            this.Size = new System.Drawing.Size(932, 449);
+            this.Size = new System.Drawing.Size(932, 484);
             this.ResumeLayout(false);
             this.PerformLayout();
 

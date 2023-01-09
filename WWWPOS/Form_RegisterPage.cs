@@ -59,5 +59,12 @@ namespace WWWPOS
                 btn_show_hide_pass.Image = WWWPOS.Properties.Resources.showPass;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginPage loginPage = new LoginPage();
+            loginPage.ShowDialog();
+        }
     }
 }

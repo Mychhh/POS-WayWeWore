@@ -94,6 +94,11 @@ namespace WWWPOS.ClientControl.Products
 
             cmb_ProductColor.SelectedIndex = 0;
             cmb_ProductSize.SelectedIndex = 0;
+
+            //
+            Color = cmb_ProductColor.Text;
+            cmb_ProductColor.Visible = false;
+            //
         }
 
         public int ID { get; set; }
@@ -119,8 +124,8 @@ namespace WWWPOS.ClientControl.Products
         }
         public string Color
         {
-            get => cmb_ProductColor.Text;
-            set => cmb_ProductColor.Text = value;
+            get => lbl_ProductColor.Text;
+            set => lbl_ProductColor.Text = value;
         }
         public string Productsize
         {
@@ -163,6 +168,8 @@ namespace WWWPOS.ClientControl.Products
         {
             DataBase DB = new DataBase();
             DB.AddToCart(ID, Category, Productname, Color, Price, Int32.Parse(lbl_ProductQty.Text), ImagePath, Productsize, Descriptions);
+
+            lbl_ProductQty.Text = "1";
         }
         private void btn_Buy_Click(object sender, EventArgs e)
         {

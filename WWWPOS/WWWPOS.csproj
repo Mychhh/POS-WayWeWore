@@ -135,12 +135,6 @@
     <Compile Include="Form_ClientLandingPage.Designer.cs">
       <DependentUpon>Form_ClientLandingPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Client_Order_Checkout.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Client_Order_Checkout.Designer.cs">
-      <DependentUpon>Form_Client_Order_Checkout.cs</DependentUpon>
-    </Compile>
     <Compile Include="Class_Database.cs" />
     <Compile Include="Class_LoadData.cs" />
     <Compile Include="MessageFolder\ErrorMessageDialogue.cs">
@@ -406,9 +400,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ClientLandingPage.resx">
       <DependentUpon>Form_ClientLandingPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Client_Order_Checkout.resx">
-      <DependentUpon>Form_Client_Order_Checkout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageFolder\ErrorMessageDialogue.resx">
       <DependentUpon>ErrorMessageDialogue.cs</DependentUpon>

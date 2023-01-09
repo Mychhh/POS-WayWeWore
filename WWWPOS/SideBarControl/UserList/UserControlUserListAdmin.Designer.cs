@@ -103,12 +103,12 @@
             this.edit_Admin,
             this.delete_Admin});
             this.dataGrid_Admin.EnableHeadersVisualStyles = false;
-            this.dataGrid_Admin.Location = new System.Drawing.Point(27, 42);
-            this.dataGrid_Admin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGrid_Admin.Location = new System.Drawing.Point(18, 42);
+            this.dataGrid_Admin.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_Admin.Name = "dataGrid_Admin";
             this.dataGrid_Admin.RowHeadersVisible = false;
             this.dataGrid_Admin.RowHeadersWidth = 51;
-            this.dataGrid_Admin.Size = new System.Drawing.Size(875, 407);
+            this.dataGrid_Admin.Size = new System.Drawing.Size(893, 425);
             this.dataGrid_Admin.TabIndex = 8;
             this.dataGrid_Admin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Admin_CellContentClick);
             this.dataGrid_Admin.SelectionChanged += new System.EventHandler(this.dataGrid_Admin_SelectionChanged);
@@ -200,9 +200,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGrid_Admin);
             this.Controls.Add(this.Admin);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlUserListAdmin";
-            this.Size = new System.Drawing.Size(976, 528);
+            this.Size = new System.Drawing.Size(932, 492);
             this.Load += new System.EventHandler(this.UserControlUserListAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wayweworeDataSet)).EndInit();

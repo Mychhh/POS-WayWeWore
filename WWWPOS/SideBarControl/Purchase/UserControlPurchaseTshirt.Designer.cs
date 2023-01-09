@@ -135,7 +135,7 @@
             this.dataGridSuccessOrders.Name = "dataGridSuccessOrders";
             this.dataGridSuccessOrders.RowHeadersVisible = false;
             this.dataGridSuccessOrders.RowHeadersWidth = 51;
-            this.dataGridSuccessOrders.Size = new System.Drawing.Size(880, 395);
+            this.dataGridSuccessOrders.Size = new System.Drawing.Size(880, 452);
             this.dataGridSuccessOrders.TabIndex = 37;
             // 
             // UserControlPurchaseTshirt
@@ -145,7 +145,7 @@
             this.Controls.Add(this.dataGridSuccessOrders);
             this.Controls.Add(this.label1);
             this.Name = "UserControlPurchaseTshirt";
-            this.Size = new System.Drawing.Size(932, 449);
+            this.Size = new System.Drawing.Size(932, 504);
             this.Load += new System.EventHandler(this.UserControlPurchaseTshirt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSuccessOrders)).EndInit();
             this.ResumeLayout(false);

@@ -39,6 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Menu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +74,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.panel4.Controls.Add(this.btn_Checkout);
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(59, 693);
@@ -84,12 +85,12 @@
             // 
             // btn_Checkout
             // 
-            this.btn_Checkout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.btn_Checkout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Checkout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Checkout.FlatAppearance.BorderSize = 0;
             this.btn_Checkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Checkout.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Checkout.ForeColor = System.Drawing.Color.White;
+            this.btn_Checkout.ForeColor = System.Drawing.Color.Black;
             this.btn_Checkout.Location = new System.Drawing.Point(815, 12);
             this.btn_Checkout.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Checkout.Name = "btn_Checkout";
@@ -106,10 +107,10 @@
             this.btn_BrowseProduct.FlatAppearance.BorderSize = 0;
             this.btn_BrowseProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_BrowseProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BrowseProduct.Location = new System.Drawing.Point(1202, 173);
+            this.btn_BrowseProduct.Location = new System.Drawing.Point(1116, 168);
             this.btn_BrowseProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btn_BrowseProduct.Name = "btn_BrowseProduct";
-            this.btn_BrowseProduct.Size = new System.Drawing.Size(164, 32);
+            this.btn_BrowseProduct.Size = new System.Drawing.Size(250, 45);
             this.btn_BrowseProduct.TabIndex = 69;
             this.btn_BrowseProduct.Text = "Browse product";
             this.btn_BrowseProduct.UseVisualStyleBackColor = false;
@@ -165,12 +166,22 @@
             this.pictureBox1.TabIndex = 65;
             this.pictureBox1.TabStop = false;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.panel3.Location = new System.Drawing.Point(11, 685);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1400, 2);
+            this.panel3.TabIndex = 67;
+            // 
             // Form_ClientCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1424, 788);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.flPanel_ProductCart);
@@ -203,5 +214,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Button btn_Checkout;
+        private System.Windows.Forms.Panel panel3;
     }
 }

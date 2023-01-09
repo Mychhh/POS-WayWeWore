@@ -34,9 +34,10 @@
             // flowLayoutPanel
             // 
             this.flowLayoutPanel.AutoScroll = true;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(931, 490);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(932, 483);
             this.flowLayoutPanel.TabIndex = 2;
             // 
             // UserControlDelete
@@ -46,7 +47,7 @@
             this.Controls.Add(this.flowLayoutPanel);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UserControlDelete";
-            this.Size = new System.Drawing.Size(937, 496);
+            this.Size = new System.Drawing.Size(932, 483);
             this.Load += new System.EventHandler(this.UserControlDelete_Load);
             this.ResumeLayout(false);
 

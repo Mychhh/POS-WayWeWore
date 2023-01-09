@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.btn_show_hide_pass = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -42,7 +43,6 @@
             this.Tagline = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,22 +66,35 @@
             this.panel1.Controls.Add(this.Tagline);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.panel1.Location = new System.Drawing.Point(815, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(815, -3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(568, 779);
+            this.panel1.Size = new System.Drawing.Size(577, 797);
             this.panel1.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(533, 10);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 29);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "X";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btn_show_hide_pass
             // 
-            this.btn_show_hide_pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(196)))), ((int)(((byte)(116)))));
+            this.btn_show_hide_pass.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_show_hide_pass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_show_hide_pass.FlatAppearance.BorderSize = 0;
             this.btn_show_hide_pass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_show_hide_pass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_show_hide_pass.Image = global::WWWPOS.Properties.Resources.showPass;
             this.btn_show_hide_pass.Location = new System.Drawing.Point(452, 438);
-            this.btn_show_hide_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_show_hide_pass.Margin = new System.Windows.Forms.Padding(4);
             this.btn_show_hide_pass.Name = "btn_show_hide_pass";
             this.btn_show_hide_pass.Size = new System.Drawing.Size(44, 27);
             this.btn_show_hide_pass.TabIndex = 12;
@@ -120,14 +133,14 @@
             // 
             // btn_SignUp
             // 
-            this.btn_SignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.btn_SignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_SignUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_SignUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SignUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_SignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SignUp.ForeColor = System.Drawing.Color.White;
+            this.btn_SignUp.ForeColor = System.Drawing.Color.Black;
             this.btn_SignUp.Location = new System.Drawing.Point(77, 601);
-            this.btn_SignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_SignUp.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SignUp.Name = "btn_SignUp";
             this.btn_SignUp.Size = new System.Drawing.Size(419, 39);
             this.btn_SignUp.TabIndex = 8;
@@ -144,7 +157,7 @@
             this.btn_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.ForeColor = System.Drawing.Color.White;
             this.btn_Login.Location = new System.Drawing.Point(77, 510);
-            this.btn_Login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(419, 39);
             this.btn_Login.TabIndex = 6;
@@ -154,12 +167,12 @@
             // 
             // txtBox_Password
             // 
-            this.txtBox_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.txtBox_Password.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtBox_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBox_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Password.Location = new System.Drawing.Point(77, 438);
-            this.txtBox_Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBox_Password.Margin = new System.Windows.Forms.Padding(4);
             this.txtBox_Password.Name = "txtBox_Password";
             this.txtBox_Password.Size = new System.Drawing.Size(419, 27);
             this.txtBox_Password.TabIndex = 5;
@@ -179,12 +192,12 @@
             // 
             // txtBox_Email
             // 
-            this.txtBox_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.txtBox_Email.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtBox_Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Email.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBox_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Email.Location = new System.Drawing.Point(77, 359);
-            this.txtBox_Email.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBox_Email.Margin = new System.Windows.Forms.Padding(4);
             this.txtBox_Email.Name = "txtBox_Email";
             this.txtBox_Email.Size = new System.Drawing.Size(419, 27);
             this.txtBox_Email.TabIndex = 3;
@@ -230,23 +243,10 @@
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Location = new System.Drawing.Point(56, 237);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(707, 251);
             this.panel3.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(533, 10);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 29);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "X";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // LoginPage
             // 
@@ -279,13 +279,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Tagline;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_SignUp;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_show_hide_pass;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

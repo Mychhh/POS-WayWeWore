@@ -42,6 +42,7 @@
             this.btn_Menu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_GoToProducts = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -78,12 +79,12 @@
             // 
             // btn_Pay
             // 
-            this.btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.btn_Pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Pay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Pay.FlatAppearance.BorderSize = 0;
             this.btn_Pay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Pay.ForeColor = System.Drawing.Color.White;
+            this.btn_Pay.ForeColor = System.Drawing.Color.Black;
             this.btn_Pay.Location = new System.Drawing.Point(815, 12);
             this.btn_Pay.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Pay.Name = "btn_Pay";
@@ -95,7 +96,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.panel4.Controls.Add(this.lbl_TotalPrice);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btn_Pay);
@@ -108,8 +109,8 @@
             // 
             // lbl_TotalPrice
             // 
-            this.lbl_TotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalPrice.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_TotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TotalPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.lbl_TotalPrice.Location = new System.Drawing.Point(155, 12);
             this.lbl_TotalPrice.Name = "lbl_TotalPrice";
             this.lbl_TotalPrice.Size = new System.Drawing.Size(125, 46);
@@ -136,10 +137,10 @@
             this.btn_GoToCart.FlatAppearance.BorderSize = 0;
             this.btn_GoToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_GoToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_GoToCart.Location = new System.Drawing.Point(1202, 173);
+            this.btn_GoToCart.Location = new System.Drawing.Point(1116, 168);
             this.btn_GoToCart.Margin = new System.Windows.Forms.Padding(4);
             this.btn_GoToCart.Name = "btn_GoToCart";
-            this.btn_GoToCart.Size = new System.Drawing.Size(164, 32);
+            this.btn_GoToCart.Size = new System.Drawing.Size(250, 45);
             this.btn_GoToCart.TabIndex = 79;
             this.btn_GoToCart.Text = "View cart";
             this.btn_GoToCart.UseVisualStyleBackColor = false;
@@ -200,14 +201,23 @@
             this.btn_GoToProducts.FlatAppearance.BorderSize = 0;
             this.btn_GoToProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_GoToProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_GoToProducts.Location = new System.Drawing.Point(1021, 173);
+            this.btn_GoToProducts.Location = new System.Drawing.Point(846, 168);
             this.btn_GoToProducts.Margin = new System.Windows.Forms.Padding(4);
             this.btn_GoToProducts.Name = "btn_GoToProducts";
-            this.btn_GoToProducts.Size = new System.Drawing.Size(164, 32);
+            this.btn_GoToProducts.Size = new System.Drawing.Size(250, 45);
             this.btn_GoToProducts.TabIndex = 83;
             this.btn_GoToProducts.Text = "Browse product";
             this.btn_GoToProducts.UseVisualStyleBackColor = false;
             this.btn_GoToProducts.Click += new System.EventHandler(this.btn_GoToProducts_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.panel3.Location = new System.Drawing.Point(11, 685);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1400, 2);
+            this.panel3.TabIndex = 84;
             // 
             // Form_ClientPay
             // 
@@ -215,6 +225,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1424, 788);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.btn_GoToProducts);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label16);
@@ -252,5 +263,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lbl_TotalPrice;
         private System.Windows.Forms.Button btn_GoToProducts;
+        private System.Windows.Forms.Panel panel3;
     }
 }

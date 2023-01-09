@@ -101,7 +101,7 @@
             this.panel8.BackgroundImage = global::WWWPOS.Properties.Resources.header;
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel8.Location = new System.Drawing.Point(11, 151);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(412, 138);
             this.panel8.TabIndex = 109;
@@ -229,7 +229,7 @@
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_UpdateUser);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControl_UpdateForm";
             this.Size = new System.Drawing.Size(903, 462);
             this.ResumeLayout(false);

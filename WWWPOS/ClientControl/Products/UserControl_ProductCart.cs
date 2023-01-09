@@ -57,6 +57,8 @@ namespace WWWPOS.ClientControl.Products
 
             cmb_Color.Enabled = false;
             cmb_ProductSize.Enabled = false;
+
+            cmb_Color.Visible = false;
         }
         //For BuyItem
         public UserControl_ProductCart(int userID, int productID, string productImg, string productName, double productPrice, string productCategory, int productQuantity, string productSize, string productColor, string productDescription)
@@ -93,6 +95,9 @@ namespace WWWPOS.ClientControl.Products
             PRODUCTSize = productSize;
             PRODUCTColor = productColor;
             PRODUCTDescription = productDescription;
+
+            //
+            cmb_Color.Visible = false;
         }
 
         public int CartID { get; set; }
@@ -136,8 +141,8 @@ namespace WWWPOS.ClientControl.Products
         public string PSize { get; set; }
         public string ProductColor
         {
-            get => cmb_Color.Text;
-            set => cmb_Color.Text = value;
+            get => lbl_Color.Text;
+            set => lbl_Color.Text = value;
         }
         public string PColor { get; set; }
         public string ProductCategory

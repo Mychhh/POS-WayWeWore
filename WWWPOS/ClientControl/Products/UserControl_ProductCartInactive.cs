@@ -30,6 +30,8 @@ namespace WWWPOS.ClientControl.Products
             ProductSize = productSize;
             ProductColor = productColor;
             ProductCategory = productCategory;
+
+            cmb_Color.Visible = false;
         }
 
         public int CartID { get; set; }
@@ -62,8 +64,8 @@ namespace WWWPOS.ClientControl.Products
         }
         public string ProductColor
         {
-            get => cmb_Color.Text;
-            set => cmb_Color.Text = value;
+            get => lbl_Color.Text;
+            set => lbl_Color.Text = value;
         }
         public string ProductCategory
         {

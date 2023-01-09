@@ -40,12 +40,13 @@
             this.picBox_ProductPicture = new System.Windows.Forms.PictureBox();
             this.lbl_ItemTotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbl_Color = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProductPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_ProductPrice
             // 
-            this.lbl_ProductPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.lbl_ProductPrice.BackColor = System.Drawing.Color.Silver;
             this.lbl_ProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ProductPrice.Location = new System.Drawing.Point(218, 41);
             this.lbl_ProductPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -128,14 +129,14 @@
             this.cmb_Color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Color.FormattingEnabled = true;
-            this.cmb_Color.Location = new System.Drawing.Point(404, 77);
+            this.cmb_Color.Location = new System.Drawing.Point(222, 216);
             this.cmb_Color.Name = "cmb_Color";
             this.cmb_Color.Size = new System.Drawing.Size(175, 26);
             this.cmb_Color.TabIndex = 47;
             // 
             // lbl_Category
             // 
-            this.lbl_Category.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.lbl_Category.BackColor = System.Drawing.Color.Silver;
             this.lbl_Category.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Category.Location = new System.Drawing.Point(404, 41);
             this.lbl_Category.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -178,7 +179,8 @@
             // lbl_ItemTotal
             // 
             this.lbl_ItemTotal.BackColor = System.Drawing.Color.Silver;
-            this.lbl_ItemTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ItemTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ItemTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.lbl_ItemTotal.Location = new System.Drawing.Point(320, 170);
             this.lbl_ItemTotal.Name = "lbl_ItemTotal";
             this.lbl_ItemTotal.Size = new System.Drawing.Size(121, 26);
@@ -190,7 +192,7 @@
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(218, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 26);
@@ -198,11 +200,23 @@
             this.label2.Text = "Item total :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbl_Color
+            // 
+            this.lbl_Color.BackColor = System.Drawing.Color.Silver;
+            this.lbl_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Color.Location = new System.Drawing.Point(404, 77);
+            this.lbl_Color.Name = "lbl_Color";
+            this.lbl_Color.Size = new System.Drawing.Size(175, 26);
+            this.lbl_Color.TabIndex = 53;
+            this.lbl_Color.Text = "Color";
+            this.lbl_Color.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserControl_ProductCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.lbl_Color);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_ItemTotal);
             this.Controls.Add(this.btn_DeleteProduct);
@@ -238,5 +252,6 @@
         public System.Windows.Forms.ComboBox cmb_Color;
         private System.Windows.Forms.Label lbl_ItemTotal;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_Color;
     }
 }

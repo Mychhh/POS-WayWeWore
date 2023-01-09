@@ -91,6 +91,11 @@ namespace WWWPOS.SideBarControl.Products
 
             cmb_ProductColor.SelectedIndex = 0;
             cmb_ProductSize.SelectedIndex = 0;
+
+            //
+            lbl_ProductColor.Text = cmb_ProductColor.Text;
+            cmb_ProductColor.Visible = false;
+            //
         }
 
         public int ID { get; set; }

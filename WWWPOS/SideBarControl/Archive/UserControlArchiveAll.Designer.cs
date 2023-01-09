@@ -37,6 +37,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGrid_ArchiveUserAll = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.restoreUser = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGrid_ArchiveProductALL = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,16 +59,6 @@
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.restoreProduct = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.restoreUser = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ArchiveUserAll)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ArchiveProductALL)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 220);
+            this.label2.Location = new System.Drawing.Point(19, 244);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 29);
             this.label2.TabIndex = 33;
@@ -117,7 +117,7 @@
             this.dataGrid_ArchiveUserAll.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid_ArchiveUserAll.EnableHeadersVisualStyles = false;
             this.dataGrid_ArchiveUserAll.Location = new System.Drawing.Point(24, 38);
-            this.dataGrid_ArchiveUserAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGrid_ArchiveUserAll.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_ArchiveUserAll.Name = "dataGrid_ArchiveUserAll";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -129,10 +129,82 @@
             this.dataGrid_ArchiveUserAll.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGrid_ArchiveUserAll.RowHeadersVisible = false;
             this.dataGrid_ArchiveUserAll.RowHeadersWidth = 51;
-            this.dataGrid_ArchiveUserAll.Size = new System.Drawing.Size(875, 178);
+            this.dataGrid_ArchiveUserAll.Size = new System.Drawing.Size(875, 202);
             this.dataGrid_ArchiveUserAll.TabIndex = 36;
             this.dataGrid_ArchiveUserAll.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_ArchiveUserAll_CellContentClick);
             this.dataGrid_ArchiveUserAll.SelectionChanged += new System.EventHandler(this.dataGrid_ArchiveUserAll_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Account_ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Phone";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "User_Status";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "User_Type";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Register_at";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // restoreUser
+            // 
+            this.restoreUser.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.restoreUser.HeaderText = "Restore";
+            this.restoreUser.Image = global::WWWPOS.Properties.Resources.restore;
+            this.restoreUser.MinimumWidth = 6;
+            this.restoreUser.Name = "restoreUser";
+            this.restoreUser.Width = 71;
             // 
             // dataGrid_ArchiveProductALL
             // 
@@ -168,8 +240,8 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGrid_ArchiveProductALL.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGrid_ArchiveProductALL.EnableHeadersVisualStyles = false;
-            this.dataGrid_ArchiveProductALL.Location = new System.Drawing.Point(24, 254);
-            this.dataGrid_ArchiveProductALL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGrid_ArchiveProductALL.Location = new System.Drawing.Point(24, 278);
+            this.dataGrid_ArchiveProductALL.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_ArchiveProductALL.Name = "dataGrid_ArchiveProductALL";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -181,7 +253,7 @@
             this.dataGrid_ArchiveProductALL.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGrid_ArchiveProductALL.RowHeadersVisible = false;
             this.dataGrid_ArchiveProductALL.RowHeadersWidth = 51;
-            this.dataGrid_ArchiveProductALL.Size = new System.Drawing.Size(875, 178);
+            this.dataGrid_ArchiveProductALL.Size = new System.Drawing.Size(875, 211);
             this.dataGrid_ArchiveProductALL.TabIndex = 37;
             this.dataGrid_ArchiveProductALL.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_ArchiveProductALL_CellContentClick);
             this.dataGrid_ArchiveProductALL.SelectionChanged += new System.EventHandler(this.dataGrid_ArchiveProductALL_SelectionChanged);
@@ -265,78 +337,6 @@
             this.restoreProduct.Name = "restoreProduct";
             this.restoreProduct.Width = 71;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Account_ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Password";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Phone";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Address";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "User_Status";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "User_Type";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Register_at";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 125;
-            // 
-            // restoreUser
-            // 
-            this.restoreUser.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.restoreUser.HeaderText = "Restore";
-            this.restoreUser.Image = global::WWWPOS.Properties.Resources.restore;
-            this.restoreUser.MinimumWidth = 6;
-            this.restoreUser.Name = "restoreUser";
-            this.restoreUser.Width = 71;
-            // 
             // UserControlArchiveAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -347,7 +347,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserControlArchiveAll";
-            this.Size = new System.Drawing.Size(932, 517);
+            this.Size = new System.Drawing.Size(932, 493);
             this.Load += new System.EventHandler(this.UserControlArchiveAll_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ArchiveUserAll)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ArchiveProductALL)).EndInit();

@@ -58,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 219);
+            this.label2.Location = new System.Drawing.Point(18, 250);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 29);
             this.label2.TabIndex = 37;
@@ -101,7 +101,7 @@
             this.dataGridTShirt.Name = "dataGridTShirt";
             this.dataGridTShirt.RowHeadersVisible = false;
             this.dataGridTShirt.RowHeadersWidth = 51;
-            this.dataGridTShirt.Size = new System.Drawing.Size(880, 174);
+            this.dataGridTShirt.Size = new System.Drawing.Size(880, 210);
             this.dataGridTShirt.TabIndex = 39;
             // 
             // Order_ID
@@ -183,11 +183,11 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.dataGridShort.EnableHeadersVisualStyles = false;
-            this.dataGridShort.Location = new System.Drawing.Point(23, 251);
+            this.dataGridShort.Location = new System.Drawing.Point(23, 282);
             this.dataGridShort.Name = "dataGridShort";
             this.dataGridShort.RowHeadersVisible = false;
             this.dataGridShort.RowHeadersWidth = 51;
-            this.dataGridShort.Size = new System.Drawing.Size(880, 182);
+            this.dataGridShort.Size = new System.Drawing.Size(880, 210);
             this.dataGridShort.TabIndex = 40;
             // 
             // dataGridViewTextBoxColumn1
@@ -256,7 +256,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UserControlAllProduct";
-            this.Size = new System.Drawing.Size(932, 449);
+            this.Size = new System.Drawing.Size(932, 504);
             this.Load += new System.EventHandler(this.UserControlAllProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTShirt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridShort)).EndInit();
