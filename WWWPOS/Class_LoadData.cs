@@ -230,7 +230,7 @@ namespace WWWPOS
         public void userRecords(DataGridView dataCustomer, string user_Type, string user_Status)
         {
             connection.Open();
-            command = new SqlCommand("SELECT * FROM Account WHERE User_Type = '" + user_Type + "' AND User_Status = '" + user_Status + "'", connection);
+            command = new SqlCommand("SELECT * FROM Account WHERE User_Type = '" + user_Type + "' AND User_Status = '" + user_Status + "'  ORDER BY Register_at DESC", connection);
             mdr = command.ExecuteReader();
 
             while (mdr.Read())
@@ -245,7 +245,7 @@ namespace WWWPOS
         {
 
             connection.Open();
-            command = new SqlCommand("SELECT * FROM Account WHERE User_Status = '" + user_Status + "'", connection);
+            command = new SqlCommand("SELECT * FROM Account WHERE User_Status = '" + user_Status + "'  ORDER BY Register_at DESC", connection);
             mdr = command.ExecuteReader();
 
             while (mdr.Read())
@@ -260,7 +260,7 @@ namespace WWWPOS
         {
 
             connection.Open();
-            command = new SqlCommand("SELECT * FROM Products WHERE Product_Status = '" + product_Status + "'", connection);
+            command = new SqlCommand("SELECT * FROM Products WHERE Product_Status = '" + product_Status + "' ORDER BY ProductAdd_at DESC", connection);
             mdr = command.ExecuteReader();
 
             while (mdr.Read())
@@ -434,29 +434,6 @@ namespace WWWPOS
                 connection.Open();
 
                 string getTodaysDateQuery = "SELECT GETDATE()";
-
-                //string getDateWeeklyQuery = "";
-                //string getDateMonthlyQuery = "";
-                //string getDateQuarterlyQuery = "";
-                //string getDateAnnuallyQuery = "";
-
-                //string getDesiredDateQuery = "";
-
-                //switch (date)
-                //{
-                //    case "Weekly":
-                //        getDesiredDateQuery = "'"+ getTodaysDateQuery + "' - 7";
-                //        break;
-                //    case "Monthly":
-                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 30";
-                //        break;
-                //    case "Quarterly":
-                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 123";
-                //        break;
-                //    case "Annually":
-                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 367";
-                //        break;
-                //}
 
                 command = new SqlCommand(getTodaysDateQuery, connection);
                 mdr = command.ExecuteReader();

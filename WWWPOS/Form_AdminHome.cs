@@ -79,8 +79,31 @@ namespace WWWPOS
 
                         //Loads product item
                         Class_LoadData LD = new Class_LoadData();
+                        LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelDelete");
+                    }
+                    else if (DataBase.fromWhat == "InventoryUpdate")
+                    {
+                        DataBase.fromWhat = "";
+
+                        UserControlInventory UC_Inventory = new UserControlInventory();
+                        //UserControlRead UC_Read = new UserControlRead();
+
+                        //Main Panel
+                        panel_Main.Controls.Clear();
+                        panel_Main.Controls.Add(UC_Inventory);
+                        UC_Inventory.Dock = DockStyle.Fill;
+
+                        UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+                        //Inventory Panel
+                        UC_Inventory.panel_Inventory.Controls.Clear();
+                        UC_Inventory.panel_Inventory.Controls.Add(UC_ViewUpdate);
+                        UC_ViewUpdate.Dock = DockStyle.Fill;
+
+                        //Loads product item
+                        Class_LoadData LD = new Class_LoadData();
                         LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
                     }
+
 
                     break;
 

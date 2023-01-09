@@ -194,16 +194,16 @@
             // 
             // btn_UpdateUser
             // 
-            this.btn_UpdateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
+            this.btn_UpdateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_UpdateUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_UpdateUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_UpdateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_UpdateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_UpdateUser.ForeColor = System.Drawing.Color.White;
-            this.btn_UpdateUser.Location = new System.Drawing.Point(549, 396);
+            this.btn_UpdateUser.ForeColor = System.Drawing.Color.Black;
+            this.btn_UpdateUser.Location = new System.Drawing.Point(456, 396);
             this.btn_UpdateUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_UpdateUser.Name = "btn_UpdateUser";
-            this.btn_UpdateUser.Size = new System.Drawing.Size(235, 39);
+            this.btn_UpdateUser.Size = new System.Drawing.Size(399, 39);
             this.btn_UpdateUser.TabIndex = 99;
             this.btn_UpdateUser.Text = "Update";
             this.btn_UpdateUser.UseVisualStyleBackColor = false;

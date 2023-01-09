@@ -59,14 +59,30 @@ namespace WWWPOS.SideBarControl.Inventory
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
         {
 
-            DataBase DB = new DataBase();
-            DB.UpdateProducts(Int32.Parse(ID), Category, Productname, Color, Double.Parse(Price), Int32.Parse(Stock), Productsize, Descriptions);
+            //DataBase DB = new DataBase();
+            //DB.UpdateProducts(Int32.Parse(ID), Category, Productname, Color, Double.Parse(Price), Int32.Parse(Stock), Productsize, Descriptions);
 
-            Form_AdminHome form_AdminHome = new Form_AdminHome();
-            form_AdminHome.Hide();
-            form_AdminHome.ShowDialog();
+            //Form_AdminHome form_AdminHome = new Form_AdminHome();
+            //form_AdminHome.Hide();
+            //form_AdminHome.ShowDialog();
             
-            this.Close();
+            //this.Close();
+
+            DataBase DB = new DataBase();
+
+            DB.WarningMessage("Continue updating the product?");
+
+            if (DataBase.message == "continue")
+            {
+                DB.UpdateProducts(Int32.Parse(ID), Category, Productname, Color, Double.Parse(Price), Int32.Parse(Stock), Productsize, Descriptions);
+                DataBase.message = "";
+
+                //This refresh the form
+                Form_AdminHome form_AdminHome = new Form_AdminHome();
+                form_AdminHome.Hide();
+                DataBase.fromWhat = "InventoryUpdate";
+                form_AdminHome.ShowDialog();
+            }
         }
     }
 }

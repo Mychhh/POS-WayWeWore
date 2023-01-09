@@ -51,7 +51,7 @@
             this.panel8.BackgroundImage = global::WWWPOS.Properties.Resources.header;
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel8.Location = new System.Drawing.Point(17, 166);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(412, 138);
             this.panel8.TabIndex = 60;
@@ -168,7 +168,7 @@
             // 
             // btn_AddProduct
             // 
-            this.btn_AddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
+            this.btn_AddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_AddProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_AddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -221,7 +221,7 @@
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_AddProduct);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlUserListAddUser";
             this.Size = new System.Drawing.Size(880, 476);
             this.ResumeLayout(false);

@@ -49,11 +49,11 @@
             // 
             // btn_User
             // 
-            this.btn_User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_User.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_User.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_User.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_User.ForeColor = System.Drawing.Color.White;
+            this.btn_User.ForeColor = System.Drawing.Color.Black;
             this.btn_User.Location = new System.Drawing.Point(604, 18);
             this.btn_User.Name = "btn_User";
             this.btn_User.Size = new System.Drawing.Size(141, 46);
@@ -64,11 +64,11 @@
             // 
             // btn_Product
             // 
-            this.btn_Product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Product.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Product.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Product.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Product.ForeColor = System.Drawing.Color.White;
+            this.btn_Product.ForeColor = System.Drawing.Color.Black;
             this.btn_Product.Location = new System.Drawing.Point(767, 18);
             this.btn_Product.Name = "btn_Product";
             this.btn_Product.Size = new System.Drawing.Size(141, 46);

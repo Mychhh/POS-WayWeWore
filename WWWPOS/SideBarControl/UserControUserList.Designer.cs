@@ -51,11 +51,11 @@
             // 
             // btn_AddUser
             // 
-            this.btn_AddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_AddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_AddUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AddUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_AddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddUser.ForeColor = System.Drawing.Color.White;
+            this.btn_AddUser.ForeColor = System.Drawing.Color.Black;
             this.btn_AddUser.Location = new System.Drawing.Point(765, 18);
             this.btn_AddUser.Name = "btn_AddUser";
             this.btn_AddUser.Size = new System.Drawing.Size(141, 46);
@@ -66,11 +66,11 @@
             // 
             // btn_Customer
             // 
-            this.btn_Customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Customer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Customer.ForeColor = System.Drawing.Color.White;
+            this.btn_Customer.ForeColor = System.Drawing.Color.Black;
             this.btn_Customer.Location = new System.Drawing.Point(604, 18);
             this.btn_Customer.Name = "btn_Customer";
             this.btn_Customer.Size = new System.Drawing.Size(141, 46);
@@ -81,11 +81,11 @@
             // 
             // btn_Admin
             // 
-            this.btn_Admin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Admin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Admin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Admin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Admin.ForeColor = System.Drawing.Color.White;
+            this.btn_Admin.ForeColor = System.Drawing.Color.Black;
             this.btn_Admin.Location = new System.Drawing.Point(440, 18);
             this.btn_Admin.Name = "btn_Admin";
             this.btn_Admin.Size = new System.Drawing.Size(141, 46);
