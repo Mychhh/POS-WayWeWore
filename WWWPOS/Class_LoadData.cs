@@ -425,81 +425,6 @@ namespace WWWPOS
             }
             
         }
-        public string GetDate()
-        {
-            string getDate = "";
-
-            try
-            {
-                connection.Open();
-
-                string getTodaysDateQuery = "SELECT GETDATE()";
-
-                command = new SqlCommand(getTodaysDateQuery, connection);
-                mdr = command.ExecuteReader();
-
-                if (mdr.Read())
-                {
-                    getDate = mdr[0] + "";
-                }
-            }
-            catch (Exception ex)
-            {
-                ErrorMessage(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return getDate;
-        }
-
-        public string GetDateAdjustment(string date)
-        {
-            string getDate = "";
-
-            try
-            {
-                connection.Open();
-
-                string getDesiredDateQuery = "";
-
-                switch (date)
-                {
-                    case "Weekly":
-                        getDesiredDateQuery = " SELECT GETDATE() - 7 ";
-                        break;
-                    case "Monthly":
-                        getDesiredDateQuery = " SELECT GETDATE() - 30 ";
-                        break;
-                    case "Quarterly":
-                        getDesiredDateQuery = " SELECT GETDATE() - 123 ";
-                        break;
-                    case "Annually":
-                        getDesiredDateQuery = " SELECT GETDATE() - 367 ";
-                        break;
-                }
-
-                command = new SqlCommand(getDesiredDateQuery, connection);
-                mdr = command.ExecuteReader();
-
-                if (mdr.Read())
-                {
-                    getDate = mdr[0] + "";
-                }
-            }
-            catch (Exception ex)
-            {
-                ErrorMessage(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return getDate;
-        }
 
         //Sales
         public void GetDesiredChartData(UserControlSales UC_Sales, string query, string whatProduct)
@@ -525,7 +450,7 @@ namespace WWWPOS
                     switch (whatProduct)
                     {
                         case "AllProduct":
-                            numProduct = 2;
+                            numProduct = 1;
                             numQuantity = 3;
                             break;
 
