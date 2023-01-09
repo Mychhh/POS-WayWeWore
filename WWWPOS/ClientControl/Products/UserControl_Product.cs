@@ -94,6 +94,11 @@ namespace WWWPOS.ClientControl.Products
 
             cmb_ProductColor.SelectedIndex = 0;
             cmb_ProductSize.SelectedIndex = 0;
+
+            //
+            Color = cmb_ProductColor.Text;
+            cmb_ProductColor.Visible = false;
+            //
         }
 
         public int ID { get; set; }
@@ -119,8 +124,8 @@ namespace WWWPOS.ClientControl.Products
         }
         public string Color
         {
-            get => cmb_ProductColor.Text;
-            set => cmb_ProductColor.Text = value;
+            get => lbl_ProductColor.Text;
+            set => lbl_ProductColor.Text = value;
         }
         public string Productsize
         {

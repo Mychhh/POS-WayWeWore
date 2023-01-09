@@ -40,6 +40,7 @@
             this.picBox_ProductPicture = new System.Windows.Forms.PictureBox();
             this.lbl_ItemTotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbl_Color = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_ProductPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,7 +129,7 @@
             this.cmb_Color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Color.FormattingEnabled = true;
-            this.cmb_Color.Location = new System.Drawing.Point(404, 77);
+            this.cmb_Color.Location = new System.Drawing.Point(222, 216);
             this.cmb_Color.Name = "cmb_Color";
             this.cmb_Color.Size = new System.Drawing.Size(175, 26);
             this.cmb_Color.TabIndex = 47;
@@ -199,11 +200,23 @@
             this.label2.Text = "Item total :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbl_Color
+            // 
+            this.lbl_Color.BackColor = System.Drawing.Color.Silver;
+            this.lbl_Color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Color.Location = new System.Drawing.Point(404, 77);
+            this.lbl_Color.Name = "lbl_Color";
+            this.lbl_Color.Size = new System.Drawing.Size(175, 26);
+            this.lbl_Color.TabIndex = 53;
+            this.lbl_Color.Text = "Color";
+            this.lbl_Color.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserControl_ProductCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.lbl_Color);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_ItemTotal);
             this.Controls.Add(this.btn_DeleteProduct);
@@ -239,5 +252,6 @@
         public System.Windows.Forms.ComboBox cmb_Color;
         private System.Windows.Forms.Label lbl_ItemTotal;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_Color;
     }
 }

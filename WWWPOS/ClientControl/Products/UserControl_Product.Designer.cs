@@ -42,6 +42,7 @@
             this.picbox_ProductImage = new System.Windows.Forms.PictureBox();
             this.cmb_ProductColor = new System.Windows.Forms.ComboBox();
             this.lbl_Category = new System.Windows.Forms.Label();
+            this.lbl_ProductColor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_ProductImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,7 +212,7 @@
             this.cmb_ProductColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_ProductColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_ProductColor.FormattingEnabled = true;
-            this.cmb_ProductColor.Location = new System.Drawing.Point(13, 390);
+            this.cmb_ProductColor.Location = new System.Drawing.Point(75, 476);
             this.cmb_ProductColor.Name = "cmb_ProductColor";
             this.cmb_ProductColor.Size = new System.Drawing.Size(135, 26);
             this.cmb_ProductColor.TabIndex = 35;
@@ -229,11 +230,25 @@
             this.lbl_Category.Text = "Category";
             this.lbl_Category.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbl_ProductColor
+            // 
+            this.lbl_ProductColor.BackColor = System.Drawing.Color.Silver;
+            this.lbl_ProductColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProductColor.Location = new System.Drawing.Point(13, 390);
+            this.lbl_ProductColor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_ProductColor.Name = "lbl_ProductColor";
+            this.lbl_ProductColor.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
+            this.lbl_ProductColor.Size = new System.Drawing.Size(135, 28);
+            this.lbl_ProductColor.TabIndex = 37;
+            this.lbl_ProductColor.Text = "Color";
+            this.lbl_ProductColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserControl_Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.lbl_ProductColor);
             this.Controls.Add(this.lbl_Category);
             this.Controls.Add(this.cmb_ProductColor);
             this.Controls.Add(this.picbox_ProductImage);
@@ -273,5 +288,6 @@
         private System.Windows.Forms.PictureBox picbox_ProductImage;
         private System.Windows.Forms.ComboBox cmb_ProductColor;
         private System.Windows.Forms.Label lbl_Category;
+        private System.Windows.Forms.Label lbl_ProductColor;
     }
 }
