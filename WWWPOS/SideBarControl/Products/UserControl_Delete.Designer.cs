@@ -40,6 +40,7 @@
             this.product_ID = new System.Windows.Forms.Label();
             this.cmb_ProductColor = new System.Windows.Forms.ComboBox();
             this.cmb_ProductSize = new System.Windows.Forms.ComboBox();
+            this.lbl_ProductColor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_ProductImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,10 +135,10 @@
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ForeColor = System.Drawing.Color.Black;
-            this.btn_Delete.Location = new System.Drawing.Point(216, 270);
+            this.btn_Delete.Location = new System.Drawing.Point(216, 265);
             this.btn_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(63, 60);
+            this.btn_Delete.Size = new System.Drawing.Size(63, 65);
             this.btn_Delete.TabIndex = 58;
             this.btn_Delete.Text = "DEL";
             this.btn_Delete.UseVisualStyleBackColor = false;
@@ -171,7 +172,7 @@
             this.cmb_ProductColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_ProductColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_ProductColor.FormattingEnabled = true;
-            this.cmb_ProductColor.Location = new System.Drawing.Point(70, 305);
+            this.cmb_ProductColor.Location = new System.Drawing.Point(70, 424);
             this.cmb_ProductColor.Name = "cmb_ProductColor";
             this.cmb_ProductColor.Size = new System.Drawing.Size(139, 26);
             this.cmb_ProductColor.TabIndex = 61;
@@ -188,11 +189,23 @@
             this.cmb_ProductSize.TabIndex = 60;
             this.cmb_ProductSize.DropDownClosed += new System.EventHandler(this.cmb_ProductSize_DropDownClosed);
             // 
+            // lbl_ProductColor
+            // 
+            this.lbl_ProductColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.lbl_ProductColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProductColor.Location = new System.Drawing.Point(70, 304);
+            this.lbl_ProductColor.Name = "lbl_ProductColor";
+            this.lbl_ProductColor.Size = new System.Drawing.Size(139, 26);
+            this.lbl_ProductColor.TabIndex = 62;
+            this.lbl_ProductColor.Text = "Color";
+            this.lbl_ProductColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserControl_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.lbl_ProductColor);
             this.Controls.Add(this.cmb_ProductColor);
             this.Controls.Add(this.cmb_ProductSize);
             this.Controls.Add(this.product_ID);
@@ -228,5 +241,6 @@
         private System.Windows.Forms.Label product_ID;
         private System.Windows.Forms.ComboBox cmb_ProductColor;
         private System.Windows.Forms.ComboBox cmb_ProductSize;
+        private System.Windows.Forms.Label lbl_ProductColor;
     }
 }
