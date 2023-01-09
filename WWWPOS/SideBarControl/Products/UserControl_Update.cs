@@ -153,7 +153,7 @@ namespace WWWPOS.SideBarControl.Products
             //UserControlUpdate UC_Update = new UserControlUpdate();
 
             //UC_Update.product_Image.Image = picbox_ProductImage.Image;
-            //UC_Update.rtb_Description.Text = lbl_ProductDescription.Text;
+            //UC_Update.rtb_Description.Text  = lbl_ProductDescription.Text;
             //UC_Update.txtBox_productID.Text = product_ID.Text;
             //UC_Update.txtBox_ProductName.Text = product_Name.Text;
             //UC_Update.comboBox_ProductType.Text = product_Type.Text;

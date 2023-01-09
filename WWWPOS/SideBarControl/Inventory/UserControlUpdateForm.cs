@@ -53,7 +53,7 @@ namespace WWWPOS.SideBarControl.Inventory
 
         private void btn_Close_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace WWWPOS.SideBarControl.Inventory
             form_AdminHome.Hide();
             form_AdminHome.ShowDialog();
             
-            this.Hide();
+            this.Close();
         }
     }
 }

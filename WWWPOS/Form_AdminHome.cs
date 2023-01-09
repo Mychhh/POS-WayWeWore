@@ -71,40 +71,15 @@ namespace WWWPOS
                         panel_Main.Controls.Add(UC_Inventory);
                         UC_Inventory.Dock = DockStyle.Fill;
 
-                        UserControlDelete UC_Delete = new UserControlDelete();
-
-                        //Inventory Panel
-                        UC_Inventory.panel_Inventory.Controls.Clear();
-                        UC_Inventory.panel_Inventory.Controls.Add(UC_Delete);
-                        UC_Delete.Dock = DockStyle.Fill;
-
-                        //Loads product item
-                        Class_LoadData LD = new Class_LoadData();
-                        LD.selectProduct(UC_Delete.flowLayoutPanel, "panelEdit");
-                    }
-                    else if (DataBase.fromWhat == "InventoryEdit")
-                    {
-                        DataBase.fromWhat = "";
-
-                        UserControlInventory UC_Inventory = new UserControlInventory();
-                        //UserControlRead UC_Read = new UserControlRead();
-
-                        //Main Panel
-                        panel_Main.Controls.Clear();
-                        panel_Main.Controls.Add(UC_Inventory);
-                        UC_Inventory.Dock = DockStyle.Fill;
-
-                        //Inventory Panel
                         UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+                        //Inventory Panel
                         UC_Inventory.panel_Inventory.Controls.Clear();
                         UC_Inventory.panel_Inventory.Controls.Add(UC_ViewUpdate);
                         UC_ViewUpdate.Dock = DockStyle.Fill;
 
                         //Loads product item
-                        UserControlUpdate UC_Update = new UserControlUpdate();
-                        UC_ViewUpdate.flowLayoutPanel.Controls.Clear();
-                        UC_ViewUpdate.flowLayoutPanel.Controls.Add(UC_Update);
-
+                        Class_LoadData LD = new Class_LoadData();
+                        LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
                     }
 
                     break;
