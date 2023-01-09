@@ -168,6 +168,8 @@ namespace WWWPOS.ClientControl.Products
         {
             DataBase DB = new DataBase();
             DB.AddToCart(ID, Category, Productname, Color, Price, Int32.Parse(lbl_ProductQty.Text), ImagePath, Productsize, Descriptions);
+
+            lbl_ProductQty.Text = "1";
         }
         private void btn_Buy_Click(object sender, EventArgs e)
         {

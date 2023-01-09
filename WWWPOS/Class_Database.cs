@@ -368,9 +368,9 @@ namespace WWWPOS
             //Checks if the item is available on cart
             if (mdr.Read())
             {
-                SumProductQuantity = Int32.Parse(mdr[2] + "") + productQuantity;
+                SumProductQuantity = Int32.Parse(mdr[1] + "") + productQuantity;
 
-                if (SumProductQuantity > Int32.Parse(mdr[3] + ""))
+                if (SumProductQuantity > Int32.Parse(mdr[2] + ""))
                 {
                     ErrorMessage("You reached the maximum stock");
                     connection.Close();
@@ -395,8 +395,11 @@ namespace WWWPOS
                         // Show any error message.
                         ErrorMessage(ex.Message);
                     }
-
-                    connection.Close();
+                    finally
+                    {
+                        connection.Close();
+                    }
+                    
                 }
 
             }
@@ -420,9 +423,11 @@ namespace WWWPOS
                 {
                     ErrorMessage(ex.Message);
                 }
-                
-                connection.Close();
-                
+                finally
+                {
+                    connection.Close();
+                }
+
             }   
 
         }
