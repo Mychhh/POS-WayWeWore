@@ -633,8 +633,10 @@ namespace WWWPOS
                         new UserControl_Product(objClassProducts.Product_ID, objClassProducts.Product_Images, objClassProducts.Product_Name,
                                                 objClassProducts.Product_Price, objClassProducts.Product_Stock, objClassProducts.Product_Descripiton,
                                                 objClassProducts.Product_Size, objClassProducts.Product_Color, objClassProducts.Product_Category);
-
-                        flowLayoutPanel.Controls.Add(UC_Products);
+                        if (objClassProducts.Product_Stock >= 1)
+                        {
+                            flowLayoutPanel.Controls.Add(UC_Products);
+                        }
                     }
 
                     break;
@@ -653,7 +655,10 @@ namespace WWWPOS
                         switch (objClassProducts.Product_Category)
                         {
                             case "T-Shirts":
-                                flowLayoutPanel.Controls.Add(UC_Products);
+                                if (objClassProducts.Product_Stock >= 1)
+                                {
+                                    flowLayoutPanel.Controls.Add(UC_Products);
+                                }
                                 break;
                         }
                         
@@ -675,7 +680,10 @@ namespace WWWPOS
                         switch (objClassProducts.Product_Category)
                         {
                             case "Shorts":
-                                flowLayoutPanel.Controls.Add(UC_Products);
+                                if (objClassProducts.Product_Stock >= 1)
+                                {
+                                    flowLayoutPanel.Controls.Add(UC_Products);
+                                }
                                 break;
                         }
 
@@ -707,8 +715,9 @@ namespace WWWPOS
                 while (mdr.Read())
                 {
                     string productStatus = "" + mdr[11];
+                    int productStocks = Int32.Parse(mdr[20] + "");
 
-                    if (productStatus == "Inactive")
+                    if (productStatus == "Inactive" || productStocks <= 0)
                     {
                         int cartID = int.Parse(mdr[0] + "");
                         int productID = Int32.Parse(mdr[2] + "");
@@ -766,7 +775,7 @@ namespace WWWPOS
                 connection.Open();
 
                 string selectJoinedQuerry = "SELECT* FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product ON Cart.Product_ID = Product.Product_ID " +
-                                            "WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' AND Cart.Cart_Status IS NULL " +
+                                            "WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' AND Cart.Cart_Status IS NULL AND Product.Stocks >= 1" +
                                             "ORDER BY[Cart].ProductAddedToCart_at DESC";
                 
                 command = new SqlCommand(selectJoinedQuerry, connection);
@@ -839,7 +848,7 @@ namespace WWWPOS
                 connection.Open();
 
                 string selectJoinedQuerry = "SELECT * FROM[waywewore].[dbo].[Cart] AS Cart INNER JOIN[waywewore].[dbo].[Products] AS Product " +
-                    "                       ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' ";
+                    "                       ON Cart.Product_ID = Product.Product_ID WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' AND Product.Stocks >= 1";
                 command = new SqlCommand(selectJoinedQuerry, connection);
                 mdr = command.ExecuteReader();
 

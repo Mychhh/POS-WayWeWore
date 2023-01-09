@@ -472,7 +472,15 @@ namespace WWWPOS
             try
             {
                 connection.Open();
-                string placeOrderQuery = "UPDATE Cart SET Cart_Status = 'Pending' WHERE Account_Id ='" + user_ID + "' AND Product_Status = 'Active' ";
+                string placeOrderQuery = "UPDATE Cart " +
+                                         "SET Cart.Cart_Status = 'Pending'" +
+                                         "FROM[waywewore].[dbo].[Cart] AS Cart " +
+                                         "INNER JOIN[waywewore].[dbo].[Products] AS Product " +
+                                         "ON Cart.Product_ID = Product.Product_ID " +
+                                         "WHERE Cart.Account_ID = '" + user_ID + "' AND Product.Product_Status = 'Active' AND Product.Stocks >= 1";
+
+                
+
                 sqlCommand = new SqlCommand(placeOrderQuery, connection);
                 dataReader = sqlCommand.ExecuteReader();
                 connection.Close();
