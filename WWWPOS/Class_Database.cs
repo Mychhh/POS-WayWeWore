@@ -33,7 +33,7 @@ namespace WWWPOS
 
     internal class DataBase
     {
-    //SQl Declaration
+        //SQl Declaration
         public static string user_ID, message, user_Name;
         public static bool isLogin = false;
         public static string fromWhat = "";
@@ -44,7 +44,6 @@ namespace WWWPOS
 
         protected SqlCommand sqlCommand;
         protected SqlDataReader dataReader;
-
     //Dialogue Box declaration
         ErrorMessageDialogue errorMessageDialogue;
         SuccessMessageDialogue successMessageDialogue;
@@ -69,17 +68,14 @@ namespace WWWPOS
 
         //Product Stack & List
         protected List<Class_Products> productsList = new List<Class_Products>();
-
         //Order Stack & List
         protected List<Class_Orders> ordersList = new List<Class_Orders>();
-
         //Order Stack & List
         protected List<Class_OrdersStatus> classOrderStatus = new List<Class_OrdersStatus>();
-
         //Order Stack & List
         protected List<Class_OrderIDQTY> classOrderIDQTY = new List<Class_OrderIDQTY>();
 
-        //-----About User-----//
+    //-----About User-----//
 
         //Signup and Add user
         public void InsertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
@@ -116,7 +112,6 @@ namespace WWWPOS
                     }
                 }
             }
-        
         //Login User
         public void Login(string email, string password)
 
@@ -154,7 +149,6 @@ namespace WWWPOS
 
             connection.Close();
         }
-
         //Update account
         public void UpdateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address)
         {
@@ -167,7 +161,6 @@ namespace WWWPOS
             SuccessMessage("Updated Succesfully!");
 
         }
-        
         //Delete and restore account
         public void SetStatusUser(string user_Status, int account_ID)
         {
@@ -217,7 +210,6 @@ namespace WWWPOS
 
             connection.Close();
         }
-
         //Update Products
         public void UpdateProducts(int productID, string category, string name, string color, double price, int stock, string size, string description)
         {
@@ -230,15 +222,15 @@ namespace WWWPOS
 
             SuccessMessage("Product Updated!");
         }
-
         //Delete and restore products
         public void SetStatusProducts(string product_Status, int product_ID)
         {
 
             connection.Open();
-            string selectQuery = "UPDATE Products SET Product_Status = '" + product_Status + "' WHERE Product_ID ='" + product_ID + "';";
-            string selectCartQuery = "UPDATE Cart SET Product_Status = '" + product_Status + "' WHERE Product_ID ='" + product_ID + "';";
-            command = new SqlCommand(selectQuery + selectCartQuery, connection);
+            string updateQuery = "UPDATE Products SET Product_Status = '" + product_Status + "' WHERE Product_ID ='" + product_ID + "';";
+            string updateCartQuery = "UPDATE Cart SET Product_Status = '" + product_Status + "' WHERE Product_ID ='" + product_ID + "';";
+            string updateOrderQuery = "UPDATE Orders SET Status = '" + product_Status + "' WHERE ProductID ='" + product_ID + "';";
+            command = new SqlCommand(updateQuery + updateCartQuery + updateOrderQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
 
@@ -252,7 +244,6 @@ namespace WWWPOS
             }
 
         }
-
         //Gets the number of rows of the Orders Table
         public int GetNumberOfRows()
         {
@@ -349,7 +340,7 @@ namespace WWWPOS
 
         }
 
-        //-----Client Side-----//  
+    //-----Client Side-----//  
 
         //Add to cart
         public void AddToCart(int product_ID, string category, string productName, string productColor, double productPrice, int productQuantity, string productImg, string productSize, string productDescription)
@@ -606,7 +597,7 @@ namespace WWWPOS
             }
         }
         
-        //-----Cashier Side-----//
+    //-----Cashier Side-----//
         
         //Get Data from Orders Table
         public void GetDataFromOrderTable()

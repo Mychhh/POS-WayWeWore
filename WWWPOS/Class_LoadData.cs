@@ -917,7 +917,6 @@ namespace WWWPOS
                             new UserControl_ParticularPendingOrder(objClassOrderStatus.OrderNumber, objClassOrderStatus.OrderID, objClassOrderStatus.Name, objClassOrderStatus.Category, objClassOrderStatus.Color,
                                                                    objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
                                                                    (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)), objClassOrderStatus.Status);
-                                //
 
                                 try
                                 {
@@ -935,7 +934,6 @@ namespace WWWPOS
                                     {
                                         if (Int32.Parse(mdr[0] + "") < Int32.Parse(mdr[1] + ""))
                                         {
-                                            //
                                             Dummy_UC_PendingOrderContainer.btn_MarkAsSuccess.Enabled = false;
                                             Dummy_UC_PendingOrderContainer.btn_MarkAsSuccess.BackColor = Color.DimGray;
 
@@ -965,11 +963,6 @@ namespace WWWPOS
                                     connection.Close();
                                 }
 
-                                //
-                                //Dummy_UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
-
-                                //DummyOrderTotalPrice += Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
-                                //Dummy_UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
                             }
 
                         }
@@ -992,12 +985,11 @@ namespace WWWPOS
                                                                    objClassOrderStatus.Size, objClassOrderStatus.Price, objClassOrderStatus.Quantity,
                                                                    (objClassOrderStatus.Quantity * Convert.ToInt32(objClassOrderStatus.Price)), objClassOrderStatus.Status);
 
-                        //
                         try
                         {
                             
                             connection.Open();
-                            string checkStockQuery = "SELECT Products.Stocks, Orders.Quantity, Orders.OrderNumber " +
+                            string checkStockQuery = "SELECT Products.Stocks, Orders.Quantity, Orders.OrderNumber, Products.Product_Status " +
                                                      "FROM [waywewore].[dbo].Products AS Products " +
                                                      "INNER JOIN [waywewore].[dbo].Orders AS Orders ON Products.Product_ID = Orders.ProductID " +
                                                      "WHERE Products.Product_ID = '" + objClassOrderStatus.ProductId + "' AND Orders.ProductID = '" + objClassOrderStatus.ProductId + "' " +
@@ -1007,9 +999,8 @@ namespace WWWPOS
 
                             if (mdr.Read())
                             {
-                                if (Int32.Parse(mdr[0] + "") < Int32.Parse(mdr[1] + ""))
+                                if (Int32.Parse(mdr[0] + "") < Int32.Parse(mdr[1] + "") || Int32.Parse(mdr[0] + "") <= 0 || "" + mdr[3] == "Inactive"  )
                                 {
-                                    //
                                     UC_PendingOrderContainer.btn_MarkAsSuccess.Enabled = false;
                                     UC_PendingOrderContainer.btn_MarkAsSuccess.BackColor = Color.DimGray;
 
@@ -1037,17 +1028,9 @@ namespace WWWPOS
                         catch (Exception ex)
                         {
                             // Show any error message.
-                            ErrorMessage("I am here " + ex.Message);
+                            ErrorMessage(ex.Message);
                             connection.Close();
                         }
-                        //
-
-                        //UC_PendingOrderContainer.flPanel_ParticularItem.Controls.Add(UC_ParticularPendingOrder);
-
-                        //int OrderTotalPrice = Convert.ToInt32(objClassOrderStatus.Price) * objClassOrderStatus.Quantity;
-                        //DummyOrderTotalPrice += OrderTotalPrice;
-
-                        //UC_PendingOrderContainer.lbl_OrderTotal.Text = DummyOrderTotalPrice.ToString();
                     }
                     else if (hasSameOrderNumber)
                     {

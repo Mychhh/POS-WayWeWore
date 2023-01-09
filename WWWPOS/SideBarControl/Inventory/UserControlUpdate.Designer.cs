@@ -177,6 +177,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.txtBox_productID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.product_Image);

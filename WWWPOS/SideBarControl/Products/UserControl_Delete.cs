@@ -137,9 +137,8 @@ namespace WWWPOS.SideBarControl.Products
 
             if (DataBase.message == "continue")
             {
-                DB.SetStatusProducts("Inactive", ID);
+                //DB.SetStatusProducts("Inactive", ID);
                 DataBase.message = "";
-
 
                 //This refresh the form
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
