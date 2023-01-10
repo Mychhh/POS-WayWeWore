@@ -143,7 +143,7 @@ namespace WWWPOS.SideBarControl.Products
 
                 //This refresh the form
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
-                WWWPOS.Form_AdminHome.ActiveForm.Hide();
+                WWWPOS.Form_AdminHome.ActiveForm.Dispose();
                 DataBase.fromWhat = "InventoryDelete";
                 form_AdminHome.ShowDialog();
             }
