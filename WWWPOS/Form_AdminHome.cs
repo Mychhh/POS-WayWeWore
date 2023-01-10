@@ -25,10 +25,6 @@ namespace WWWPOS
             InitializeComponent();
             
         }
-        public void CloseTheForm()
-        {
-            this.Hide();
-        }
         private void Form2_Load(object sender, EventArgs e)
         {
             lbl_AdminName.Text = DataBase.user_Name;

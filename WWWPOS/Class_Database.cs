@@ -225,10 +225,17 @@ namespace WWWPOS
             string selectQuery = "UPDATE Products SET Category='" + category + "',Product_Name='" + name + "',Color='" + color + "',Price='" + price + "',Stocks='" + stock + "',Product_Size='" + size + "',Product_Description='" + description + "' WHERE Product_ID ='" + productID + "';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
-            
             connection.Close();
 
             SuccessMessage("Product Updated!");
+
+            UserControlUpdateForm.ActiveForm.Hide();
+
+            UserControlUpdateForm userControlUpdateForm = new UserControlUpdateForm();
+            userControlUpdateForm.Hide();
+            userControlUpdateForm.Close();
+            userControlUpdateForm.Dispose();
+
         }
 
         //Delete and restore products
