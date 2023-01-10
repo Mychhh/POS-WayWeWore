@@ -229,6 +229,11 @@ namespace WWWPOS
             connection.Close();
 
             SuccessMessage("Product Updated!");
+
+            //This adds new the form
+            //Form_AdminHome form_AdminHome = new Form_AdminHome();
+            //DataBase.fromWhat = "InventoryUpdate";
+            //form_AdminHome.ShowDialog();
         }
 
         //Delete and restore products
