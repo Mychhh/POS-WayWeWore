@@ -19,20 +19,30 @@ namespace WWWPOS.SideBarControl.Inventory
 
         private void btn_UpdateProduct_Click(object sender, EventArgs e)
         {
-            UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
-            UC_ViewUpdate.flowLayoutPanel.Controls.Clear();
+            //UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+            //UC_ViewUpdate.flowLayoutPanel.Controls.Clear();
 
-            Class_LoadData LD = new Class_LoadData();
-            LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
+            //Class_LoadData LD = new Class_LoadData();
+            //LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
 
 
             DataBase DB = new DataBase();
 
-            int productID = Int32.Parse(txtBox_productID.Text);
-            double productPrice = Double.Parse(txtBox_Price.Text);
-            int productStock = Int32.Parse(txtBox_Stocks.Text);
+            //int productID = Int32.Parse(txtBox_productID.Text);
+            //double productPrice = Double.Parse(txtBox_Price.Text);
+            //int productStock = Int32.Parse(txtBox_Stocks.Text);
 
-            DB.UpdateProducts(productID, comboBox_ProductType.Text, txtBox_ProductName.Text, txtBox_Color.Text, productPrice, productStock, comboBox_Size.Text, rtb_Description.Text);
+            DB.UpdateProducts(Convert.ToInt32(txtBox_productID.Text), comboBox_ProductType.Text, txtBox_ProductName.Text,
+                              txtBox_Color.Text, Convert.ToDouble(txtBox_Price.Text), Convert.ToInt32(txtBox_Stocks.Text),
+                              comboBox_Size.Text, rtb_Description.Text);
+
+            DataBase.message = "";
+
+            //This close and add new form
+            Form_AdminHome form_AdminHome = new Form_AdminHome();
+            WWWPOS.Form_AdminHome.ActiveForm.Hide();
+            DataBase.fromWhat = "InventoryUpdate";
+            form_AdminHome.ShowDialog();
 
         }
 

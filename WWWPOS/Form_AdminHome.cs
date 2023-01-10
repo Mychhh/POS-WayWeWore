@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using WWWPOS.SideBarControl;
 using WWWPOS.SideBarControl.Inventory;
 using WWWPOS.SideBarControl.Orders;
+using WWWPOS.SideBarControl.Products;
 using WWWPOS.SideBarControl.UserList;
 
 namespace WWWPOS
@@ -102,6 +103,36 @@ namespace WWWPOS
                         //Loads product item
                         Class_LoadData LD = new Class_LoadData();
                         LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
+                    }
+                    else if (DataBase.fromWhat == "InventoryUpdateUserControl")
+                    {
+                        DataBase.fromWhat = "";
+
+                        UserControlInventory UC_Inventory = new UserControlInventory();
+                        //UserControlRead UC_Read = new UserControlRead();
+
+                        //Main Panel
+                        panel_Main.Controls.Clear();
+                        panel_Main.Controls.Add(UC_Inventory);
+                        UC_Inventory.Dock = DockStyle.Fill;
+
+                        UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+                        //Inventory Panel
+                        UC_Inventory.panel_Inventory.Controls.Clear();
+                        UC_Inventory.panel_Inventory.Controls.Add(UC_ViewUpdate);
+                        UC_ViewUpdate.Dock = DockStyle.Fill;
+
+                        //loads update user control
+                        //UserControlUpdate userControlUpdate = new UserControlUpdate();
+                        try
+                        {
+                            UC_ViewUpdate.flowLayoutPanel.Controls.Add(UserControl_Update.UC_Update);
+                        }
+                        catch
+                        {
+                            UserControlUpdate UC_Update = new UserControlUpdate();
+                            UC_ViewUpdate.flowLayoutPanel.Controls.Add(UC_Update);
+                        }
                     }
 
 

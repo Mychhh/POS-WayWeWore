@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.MessageFolder;
 using WWWPOS.SideBarControl.Inventory;
 
 namespace WWWPOS.SideBarControl.Products
 {
+
     public partial class UserControl_Update : UserControl
     {
+        public static UserControlUpdate UC_Update = new UserControlUpdate();
+
         public UserControl_Update(int productID, string productCategory, string productName, double productPrice, int productStock, string productColor, string productSize, string productDescription, Image productImage)
         {
             InitializeComponent();
@@ -149,37 +153,46 @@ namespace WWWPOS.SideBarControl.Products
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
+            SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue(Productname);
+            successMessageDialogue.ShowDialog();
 
             //UserControlUpdate UC_Update = new UserControlUpdate();
 
-            //UC_Update.product_Image.Image = picbox_ProductImage.Image;
-            //UC_Update.rtb_Description.Text  = lbl_ProductDescription.Text;
-            //UC_Update.txtBox_productID.Text = product_ID.Text;
-            //UC_Update.txtBox_ProductName.Text = product_Name.Text;
-            //UC_Update.comboBox_ProductType.Text = product_Type.Text;
-            //UC_Update.comboBox_Size.Text = cmb_ProductSize.Text;
-            //UC_Update.txtBox_Color.Text = cmb_ProductColor.Text;
-            //UC_Update.txtBox_Price.Text = lbl_ProductPrice.Text;
-            //UC_Update.txtBox_Stocks.Text = lbl_ProductStock.Text;
+            UC_Update.product_Image.Image = picbox_ProductImage.Image;
+            UC_Update.rtb_Description.Text = lbl_ProductDescription.Text;
+            UC_Update.txtBox_productID.Text = ID.ToString();
+            UC_Update.txtBox_ProductName.Text = Productname;
+            UC_Update.comboBox_ProductType.Text = Category;
+            UC_Update.comboBox_Size.Text = cmb_ProductSize.Text;
+            UC_Update.txtBox_Color.Text = cmb_ProductColor.Text;
+            UC_Update.txtBox_Price.Text = lbl_ProductPrice.Text;
+            UC_Update.txtBox_Stocks.Text = lbl_ProductStock.Text;
 
+            successMessageDialogue = new SuccessMessageDialogue(UC_Update.txtBox_ProductName.Text);
+            successMessageDialogue.ShowDialog();
+
+            Form_AdminHome form_AdminHome = new Form_AdminHome();
+            WWWPOS.Form_AdminHome.ActiveForm.Hide();
+            DataBase.fromWhat = "InventoryUpdateUserControl";
+            form_AdminHome.ShowDialog();
             //-------------------------------------------------------//
 
-            UserControlUpdateForm UC_UpdateForm = new UserControlUpdateForm();
+            //UserControlUpdateForm UC_UpdateForm = new UserControlUpdateForm();
 
-            UC_UpdateForm.picbox_ProductImage.Image = this.Pic;
-            UC_UpdateForm.rtb_ProductDescription.Text = this.Descriptions;
-            UC_UpdateForm.txtBox_ProductID.Text = this.ID.ToString();
-            UC_UpdateForm.txtBox_ProductName.Text = this.Productname;
-            UC_UpdateForm.cmb_ProductCategory.Text = this.Category;
-            UC_UpdateForm.cmb_ProductSize.Text = this.Productsize;
-            UC_UpdateForm.txtBox_ProductColor.Text = this.Color;
-            UC_UpdateForm.txtBox_ProductPrice.Text = this.Price.ToString();
-            UC_UpdateForm.txtBox_ProductStocks.Text = this.Stock.ToString();
+            //UC_UpdateForm.picbox_ProductImage.Image = this.Pic;
+            //UC_UpdateForm.rtb_ProductDescription.Text = this.Descriptions;
+            //UC_UpdateForm.txtBox_ProductID.Text = this.ID.ToString();
+            //UC_UpdateForm.txtBox_ProductName.Text = this.Productname;
+            //UC_UpdateForm.cmb_ProductCategory.Text = this.Category;
+            //UC_UpdateForm.cmb_ProductSize.Text = this.Productsize;
+            //UC_UpdateForm.txtBox_ProductColor.Text = this.Color;
+            //UC_UpdateForm.txtBox_ProductPrice.Text = this.Price.ToString();
+            //UC_UpdateForm.txtBox_ProductStocks.Text = this.Stock.ToString();
 
-            UC_UpdateForm.cmb_ProductSize.Enabled = false;
-            UC_UpdateForm.txtBox_ProductColor.Enabled = false;
+            //UC_UpdateForm.cmb_ProductSize.Enabled = false;
+            //UC_UpdateForm.txtBox_ProductColor.Enabled = false;
 
-            UC_UpdateForm.ShowDialog();
+            //UC_UpdateForm.ShowDialog();
 
         }
     }
