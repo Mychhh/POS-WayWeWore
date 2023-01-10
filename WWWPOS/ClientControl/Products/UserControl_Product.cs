@@ -17,6 +17,9 @@ namespace WWWPOS.ClientControl.Products
 {
     public partial class UserControl_Product : UserControl
     {
+
+        Class_LoadData C_LoadData = new Class_LoadData();
+
         public UserControl_Product(int productID, string productImage, string productName, double productPrice, int productStock, string productDescription, string productSize, string productColor, string productCategory)
         {
             InitializeComponent();
@@ -87,7 +90,7 @@ namespace WWWPOS.ClientControl.Products
             Category = productCategory;
             Productname = productName;
             Price = productPrice;
-            Stock = productStock;
+            //Stock = productStock;
             Descriptions = productDescription;
             Pic = Image.FromFile(@"" + productImage);
             ImagePath = productImage;
@@ -98,6 +101,8 @@ namespace WWWPOS.ClientControl.Products
             //
             Color = cmb_ProductColor.Text;
             cmb_ProductColor.Visible = false;
+            //
+            clickMe();
             //
         }
 
@@ -179,8 +184,7 @@ namespace WWWPOS.ClientControl.Products
         private void cmb_ProductSize_DropDownClosed(object sender, EventArgs e)
         {
             //Calls the method with a string array return type and use it to change the value of item based on given value
-            Class_LoadData C_LoadData = new Class_LoadData();
-            string[] returnValue = C_LoadData.GetParticularProduct(Category, Productname, cmb_ProductColor.Text, cmb_ProductSize.Text);
+            string[] returnValue = C_LoadData.GetParticularProduct(Category, Productname, Color, Productsize);
 
             ID = Int32.Parse(returnValue[0]);
             Price = Double.Parse(returnValue[5]);
@@ -188,6 +192,16 @@ namespace WWWPOS.ClientControl.Products
             Descriptions = returnValue[9];
             Pic = Image.FromFile(@"" + returnValue[7]);
         }
+        private void clickMe()
+        {
+            //Calls the method with a string array return type and use it to change the value of item based on given value
+            string[] returnValue = C_LoadData.GetParticularProduct(Category, Productname, Color, Productsize);
 
+            ID = Int32.Parse(returnValue[0]);
+            Price = Double.Parse(returnValue[5]);
+            Stock = Int32.Parse(returnValue[6]);
+            Descriptions = returnValue[9];
+            Pic = Image.FromFile(@"" + returnValue[7]);
+        }
     }
 }

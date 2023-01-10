@@ -595,7 +595,35 @@ namespace WWWPOS
             }
 
         }
+        public int GetStock(int stock, int productID)
+        {
+            //SELECT Stocks FROM Products WHERE Product_ID = 24
+            try
+            {
+                connection.Open();
 
+                string selectJoinedQuerry = "SELECT Stocks FROM Products WHERE Product_ID = '"+ productID + "'";
+
+                command = new SqlCommand(selectJoinedQuerry, connection);
+                mdr = command.ExecuteReader();
+
+                if (mdr.Read())
+                {
+                    stock = Int32.Parse(mdr[0] + "");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return stock;
+        }
         //Load Cart
         public void LoadCart(FlowLayoutPanel flowLayoutPanel)
         {
@@ -715,7 +743,10 @@ namespace WWWPOS
             {
                 ErrorMessage(ex.Message);
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
         }
 
         //Load Buy Item

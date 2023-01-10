@@ -87,9 +87,9 @@
             this.lbl_ProductStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_ProductStock.Name = "lbl_ProductStock";
             this.lbl_ProductStock.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.lbl_ProductStock.Size = new System.Drawing.Size(38, 26);
+            this.lbl_ProductStock.Size = new System.Drawing.Size(28, 26);
             this.lbl_ProductStock.TabIndex = 22;
-            this.lbl_ProductStock.Text = "10";
+            this.lbl_ProductStock.Text = "0";
             this.lbl_ProductStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
