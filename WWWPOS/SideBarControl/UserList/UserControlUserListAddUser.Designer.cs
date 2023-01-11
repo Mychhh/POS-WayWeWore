@@ -133,9 +133,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(455, 256);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 22);
+            this.label4.Size = new System.Drawing.Size(159, 22);
             this.label4.TabIndex = 52;
-            this.label4.Text = "Number";
+            this.label4.Text = "Cellphone Number";
             // 
             // label3
             // 

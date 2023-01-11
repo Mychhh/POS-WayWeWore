@@ -27,6 +27,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Policy;
 using System.Xml.Linq;
 using WWWPOS.ClassOrdersFolder;
+using MySqlX.XDevAPI.Common;
 
 namespace WWWPOS
 {
@@ -44,8 +45,10 @@ namespace WWWPOS
 
         protected SqlCommand sqlCommand;
         protected SqlDataReader dataReader;
+        //Login
+        public static LoginPage login = new LoginPage();
 
-    //Dialogue Box declaration
+        //Dialogue Box declaration
         ErrorMessageDialogue errorMessageDialogue;
         SuccessMessageDialogue successMessageDialogue;
         WarningMessageDialogue warningMessageDialogue;
@@ -79,7 +82,27 @@ namespace WWWPOS
         //Order Stack & List
         protected List<Class_OrderIDQTY> classOrderIDQTY = new List<Class_OrderIDQTY>();
 
-        //-----About User-----//
+    //-----Password Encryption-----//
+        
+        public static string PasswordEncryption(string password)
+        {
+            byte[] encryptedData = new byte[password.Length];
+            encryptedData = System.Text.Encoding.UTF8.GetBytes(password);
+            string EncryptedData = Convert.ToBase64String(encryptedData);
+            return EncryptedData;
+        }
+
+        public static string PasswordDecryption(string password)
+        {
+            SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
+
+            byte[] password_bytes = Encoding.ASCII.GetBytes(password);
+            byte[] encrypted_password = sha1.ComputeHash(password_bytes);
+
+            return Convert.ToBase64String(encrypted_password);
+        }
+
+    //-----About User-----//
 
         //Signup and Add user
         public void InsertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)

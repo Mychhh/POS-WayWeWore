@@ -44,10 +44,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel_Main = new System.Windows.Forms.Panel();
-            this.panel_Menu = new System.Windows.Forms.Panel();
             this.btn_Menu = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.panel_Menu = new System.Windows.Forms.Panel();
+            this.btn_Account = new System.Windows.Forms.Button();
+            this.btn_Logout = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -256,16 +260,6 @@
             this.panel_Main.Size = new System.Drawing.Size(976, 613);
             this.panel_Main.TabIndex = 47;
             // 
-            // panel_Menu
-            // 
-            this.panel_Menu.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_Menu.Location = new System.Drawing.Point(1184, 4);
-            this.panel_Menu.Margin = new System.Windows.Forms.Padding(4);
-            this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(175, 122);
-            this.panel_Menu.TabIndex = 50;
-            // 
             // btn_Menu
             // 
             this.btn_Menu.BackColor = System.Drawing.Color.Transparent;
@@ -297,6 +291,55 @@
             this.panel8.Size = new System.Drawing.Size(377, 114);
             this.panel8.TabIndex = 46;
             // 
+            // panel_Menu
+            // 
+            this.panel_Menu.Controls.Add(this.btn_Logout);
+            this.panel_Menu.Controls.Add(this.panel3);
+            this.panel_Menu.Controls.Add(this.btn_Account);
+            this.panel_Menu.Location = new System.Drawing.Point(1135, 13);
+            this.panel_Menu.Name = "panel_Menu";
+            this.panel_Menu.Size = new System.Drawing.Size(225, 114);
+            this.panel_Menu.TabIndex = 50;
+            this.panel_Menu.Visible = false;
+            // 
+            // btn_Account
+            // 
+            this.btn_Account.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.btn_Account.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Account.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Account.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Account.Location = new System.Drawing.Point(3, 3);
+            this.btn_Account.Name = "btn_Account";
+            this.btn_Account.Size = new System.Drawing.Size(219, 47);
+            this.btn_Account.TabIndex = 0;
+            this.btn_Account.Text = "Account";
+            this.btn_Account.UseVisualStyleBackColor = false;
+            // 
+            // btn_Logout
+            // 
+            this.btn_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.btn_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Logout.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Logout.Location = new System.Drawing.Point(3, 57);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(219, 47);
+            this.btn_Logout.TabIndex = 47;
+            this.btn_Logout.Text = "Logout";
+            this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.panel3.Location = new System.Drawing.Point(12, 55);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 2);
+            this.panel3.TabIndex = 46;
+            // 
             // Form_AdminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -317,6 +360,7 @@
             this.Text = "Admin Home";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
+            this.panel_Menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -338,8 +382,11 @@
         private System.Windows.Forms.Button btn_Inventory;
         public System.Windows.Forms.Panel panel_Main;
         private System.Windows.Forms.Button btn_Menu;
-        private System.Windows.Forms.Panel panel_Menu;
         private System.Windows.Forms.Button btn_Orders;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel_Menu;
+        private System.Windows.Forms.Button btn_Account;
+        private System.Windows.Forms.Button btn_Logout;
+        private System.Windows.Forms.Panel panel3;
     }
 }

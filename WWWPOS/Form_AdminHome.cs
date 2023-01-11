@@ -26,10 +26,6 @@ namespace WWWPOS
             InitializeComponent();
             
         }
-        public void CloseTheForm()
-        {
-            this.Hide();
-        }
         private void Form2_Load(object sender, EventArgs e)
         {
             lbl_AdminName.Text = DataBase.user_Name;
@@ -246,23 +242,7 @@ namespace WWWPOS
 
         private void btn_Menu_Click(object sender, EventArgs e)
         {
-            panel_Menu.Controls.Clear();
-            panel_Menu.Controls.Add(UC_Menu);
-            UC_Menu.Dock = DockStyle.Fill;
-
-            if (!UC_Menu.Visible)
-            {
-                UC_Menu.Show();
-                panel_Menu.Size = new Size(214, 140);
-                panel_Menu.Location = new Point(813, 41);
-            }
-            else if (UC_Menu.Visible)
-            {
-                UC_Menu.Hide();
-                panel_Menu.Size = new Size(0, 0);
-                panel_Menu.Location = new Point(859, 41);
-            }
-
+            panel_Menu.Visible = !panel_Menu.Visible;
         }
 
         private void btn_Orders_Click(object sender, EventArgs e)
@@ -292,5 +272,11 @@ namespace WWWPOS
             }
         }
 
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            DataBase.isLogin = false;
+            WWWPOS.Form_AdminHome.ActiveForm.Hide();
+            DataBase.login.Show();
+        }
     }
 }
