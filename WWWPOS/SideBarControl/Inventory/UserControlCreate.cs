@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WWWPOS.ErrorMessage;
+using WWWPOS.MessageFolder;
 
 namespace WWWPOS.SideBarControl.Inventory
 {
@@ -42,18 +43,40 @@ namespace WWWPOS.SideBarControl.Inventory
             {
                 if(ofd.ShowDialog() == DialogResult.OK)
                 {
-                    imageURL = ofd.FileName;
-                    product_Image.Image = Image.FromFile(ofd.FileName);
+                    if (ofd.FileName.Contains(".png") || ofd.FileName.Contains(".jfif") || ofd.FileName.Contains(".png") || ofd.FileName.Contains(".PNG") || ofd.FileName.Contains(".jpeg") || ofd.FileName.Contains(".JPEG"))
+                    {
+                        imageURL = ofd.FileName;
+                        product_Image.Image = Image.FromFile(ofd.FileName);
+                    }
+                    else
+                    {
+                        SuccessMessageDialogue sas = new SuccessMessageDialogue("Invalid File");
+                        sas.ShowDialog();
+                    }
                 }
             }
         }
         private void btn_AddProduct_Click(object sender, EventArgs e)
         {
-            double product_Price = Double.Parse(txtBox_Price.Text);
-            int product_Stock = Int32.Parse(txtBox_Stocks.Text);
 
+            if (txtBox_ProductName.Text.Length == 0 || comboBox_ProductType.Text == "" || comboBox_Size.Text == "" || txtBox_Color.Text.Length == 0 || txtBox_Price.Text.Length == 0 || txtBox_Stocks.Text.Length == 0 || rtb_Description.Text.Length == 0)
+            {
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Fill out required fields");
+                errorMessageDialogue.ShowDialog();
+            }
+            else if (imageURL != null)
+            {
+                double product_Price = Double.Parse(txtBox_Price.Text);
+                int product_Stock = Int32.Parse(txtBox_Stocks.Text);
 
-            DB.AddProdducts(txtBox_ProductName.Text, txtBox_Color.Text, product_Price, product_Stock, comboBox_ProductType.Text, comboBox_Size.Text, imageURL, rtb_Description.Text);
+                DB.AddProdducts(txtBox_ProductName.Text, txtBox_Color.Text, product_Price, product_Stock, comboBox_ProductType.Text, comboBox_Size.Text, imageURL, rtb_Description.Text);
+            }
+            else if (imageURL == null)
+            {
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Please select an Image");
+                errorMessageDialogue.ShowDialog();
+            }
+            //DB.AddProdducts(txtBox_ProductName.Text, txtBox_Color.Text, product_Price, product_Stock, comboBox_ProductType.Text, comboBox_Size.Text, imageURL, rtb_Description.Text);
 
             if (DataBase.message == "Success")
             {
