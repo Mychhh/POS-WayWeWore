@@ -84,6 +84,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(399, 28);
             this.txt_Password.TabIndex = 111;
+            this.txt_Password.TextChanged += new System.EventHandler(this.txt_Password_TextChanged);
             // 
             // label6
             // 
@@ -114,6 +115,7 @@
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(399, 28);
             this.txt_Name.TabIndex = 108;
+            this.txt_Name.TextChanged += new System.EventHandler(this.txt_Name_TextChanged);
             // 
             // txt_Number
             // 
@@ -123,6 +125,7 @@
             this.txt_Number.Name = "txt_Number";
             this.txt_Number.Size = new System.Drawing.Size(399, 28);
             this.txt_Number.TabIndex = 107;
+            this.txt_Number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Number_KeyPress);
             // 
             // label8
             // 
@@ -142,6 +145,7 @@
             this.txt_Address.Name = "txt_Address";
             this.txt_Address.Size = new System.Drawing.Size(399, 28);
             this.txt_Address.TabIndex = 105;
+            this.txt_Address.TextChanged += new System.EventHandler(this.txt_Address_TextChanged);
             // 
             // label5
             // 
