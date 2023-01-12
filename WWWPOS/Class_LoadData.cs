@@ -515,7 +515,42 @@ namespace WWWPOS
             }
         }
 
-        //-----Client Side-----//
+        //Get User
+        public void GetAccount()
+        {
+            try
+            {
+                connection.Open();
+                string loadChartQuery = "SELECT * FROM Account WHERE Account_Id = '"+DataBase.user_ID+"' ";
+                sqlCommand = new SqlCommand(loadChartQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    string userID = "" + dataReader[0];
+                    string name = "" + dataReader[1];
+                    string email = "" + dataReader[2];
+                    string password = "" + dataReader[3];
+                    int number = Convert.ToInt32(dataReader[4] + "");
+                    string address = "" + dataReader[5];
+                    string userType = "" + dataReader[6];
+
+
+                    Form_Account form_Account = new Form_Account(userType, name, email, password, number, address);
+                    form_Account.Show();
+                }
+            }
+            catch(Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+    //-----Client Side-----//
 
         //Loads available product
         public void LoadAllAvailableProducts(FlowLayoutPanel flowLayoutPanel, string productPanel)
@@ -811,7 +846,7 @@ namespace WWWPOS
             return totalPrice;
         }
 
-        //-----Cashier Side-----//
+    //-----Cashier Side-----//
         
         //Load Order ID
         public void GetOrderID(FlowLayoutPanel flowLayoutPanel)

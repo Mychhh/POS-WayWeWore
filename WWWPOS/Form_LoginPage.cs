@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ErrorMessage;
 using WWWPOS.MessageFolder;
 
 namespace WWWPOS
@@ -25,7 +26,8 @@ namespace WWWPOS
 
             if (string.IsNullOrEmpty(txtBox_Email.Text) || string.IsNullOrEmpty(txtBox_Password.Text))
             {
-                MessageBox.Show("Please input Email and Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("No Email or Password");
+                errorMessageDialogue.ShowDialog();
             }
             else
             {
@@ -64,7 +66,6 @@ namespace WWWPOS
             {
                 txtBox_Password.UseSystemPasswordChar = true;
                 btn_show_hide_pass.Image = WWWPOS.Properties.Resources.showPass;
-
 
             }
 

@@ -29,7 +29,7 @@ namespace WWWPOS.SideBarControl.UserList
                 ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Invalid Email");
                 errorMessageDialogue.ShowDialog();
             }
-            else if (txt_Password.Text.Length != 8)
+            else if (txt_Password.Text.Length < 8)
             {
                 ErrorMessageDialogue errMessageDialogue = new ErrorMessageDialogue("Password must be 8 characters");
                 errMessageDialogue.ShowDialog();
@@ -115,6 +115,21 @@ namespace WWWPOS.SideBarControl.UserList
                 ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Maximum number reached");
                 errorMessageDialogue.ShowDialog();
                 txt_Number.Text = txt_Number.Text.Remove(11);
+            }
+        }
+
+        private void btn_show_hide_pass_Click(object sender, EventArgs e)
+        {
+            if (txt_Password.UseSystemPasswordChar)
+            {
+                txt_Password.UseSystemPasswordChar = false;
+                btn_show_hide_pass.Image = WWWPOS.Properties.Resources.hidePass;
+            }
+            else if (!txt_Password.UseSystemPasswordChar)
+            {
+                txt_Password.UseSystemPasswordChar = true;
+                btn_show_hide_pass.Image = WWWPOS.Properties.Resources.showPass;
+
             }
         }
     }

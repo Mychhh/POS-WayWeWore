@@ -244,7 +244,6 @@ namespace WWWPOS
         {
             panel_Menu.Visible = !panel_Menu.Visible;
         }
-
         private void btn_Orders_Click(object sender, EventArgs e)
         {
             UserControlOrder UC_Order = new UserControlOrder();
@@ -279,6 +278,12 @@ namespace WWWPOS
             DataBase.login.Show();
             DataBase.login.txtBox_Email.Clear();
             DataBase.login.txtBox_Password.Clear();
+        }
+
+        private void btn_Account_Click(object sender, EventArgs e)
+        {
+            Class_LoadData C_LoadData = new Class_LoadData();
+            C_LoadData.GetAccount();
         }
     }
 }

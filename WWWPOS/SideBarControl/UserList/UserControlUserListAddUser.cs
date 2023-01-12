@@ -64,7 +64,7 @@ namespace WWWPOS.SideBarControl.UserList
             else
             {
                 int phoneNumber = Int32.Parse(txt_Number.Text);
-                //DB.InsertAccount(txt_Email.Text, txt_Name.Text, txt_Address.Text, txt_Password.Text, phoneNumber, cmb_UserType.Text);
+                DB.InsertAccount(txt_Email.Text, txt_Name.Text, txt_Address.Text, txt_Password.Text, phoneNumber, cmb_UserType.Text);
             }
 
             if (DataBase.message == "Success")
@@ -78,6 +78,21 @@ namespace WWWPOS.SideBarControl.UserList
                 DataBase.message = "";
             }
 
+        }
+
+        private void btn_show_hide_pass_Click(object sender, EventArgs e)
+        {
+            if (txt_Password.UseSystemPasswordChar)
+            {
+                txt_Password.UseSystemPasswordChar = false;
+                btn_show_hide_pass.Image = WWWPOS.Properties.Resources.hidePass;
+            }
+            else if (!txt_Password.UseSystemPasswordChar)
+            {
+                txt_Password.UseSystemPasswordChar = true;
+                btn_show_hide_pass.Image = WWWPOS.Properties.Resources.showPass;
+
+            }
         }
     }
 }
