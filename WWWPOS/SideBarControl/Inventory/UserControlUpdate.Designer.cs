@@ -91,12 +91,14 @@
             // 
             resources.ApplyResources(this.txtBox_Stocks, "txtBox_Stocks");
             this.txtBox_Stocks.Name = "txtBox_Stocks";
+            this.txtBox_Stocks.TextChanged += new System.EventHandler(this.txtBox_Stocks_TextChanged);
             this.txtBox_Stocks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_Stocks_KeyPress);
             // 
             // txtBox_Price
             // 
             resources.ApplyResources(this.txtBox_Price, "txtBox_Price");
             this.txtBox_Price.Name = "txtBox_Price";
+            this.txtBox_Price.TextChanged += new System.EventHandler(this.txtBox_Price_TextChanged);
             this.txtBox_Price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_Price_KeyPress);
             // 
             // label6

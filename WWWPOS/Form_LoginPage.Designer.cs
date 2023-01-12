@@ -274,9 +274,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Login;
-        private System.Windows.Forms.TextBox txtBox_Password;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBox_Email;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Tagline;
         private System.Windows.Forms.Panel panel2;
@@ -287,6 +285,8 @@
         private System.Windows.Forms.Button btn_show_hide_pass;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.TextBox txtBox_Password;
+        public System.Windows.Forms.TextBox txtBox_Email;
     }
 }
 

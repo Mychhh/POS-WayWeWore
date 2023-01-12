@@ -32,9 +32,6 @@ namespace WWWPOS
                 DB.Login(txtBox_Email.Text, txtBox_Password.Text);
             }
 
-            txtBox_Email.Clear();
-            txtBox_Password.Clear();
-
         }
 
         private void btn_Client_Click(object sender, EventArgs e)

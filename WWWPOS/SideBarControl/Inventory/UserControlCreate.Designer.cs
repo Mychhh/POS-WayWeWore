@@ -193,6 +193,7 @@
             this.txtBox_Price.Name = "txtBox_Price";
             this.txtBox_Price.Size = new System.Drawing.Size(384, 28);
             this.txtBox_Price.TabIndex = 23;
+            this.txtBox_Price.TextChanged += new System.EventHandler(this.txtBox_Price_TextChanged);
             this.txtBox_Price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_Price_KeyPress);
             // 
             // txtBox_Stocks
@@ -203,6 +204,7 @@
             this.txtBox_Stocks.Name = "txtBox_Stocks";
             this.txtBox_Stocks.Size = new System.Drawing.Size(384, 28);
             this.txtBox_Stocks.TabIndex = 24;
+            this.txtBox_Stocks.TextChanged += new System.EventHandler(this.txtBox_Stocks_TextChanged);
             this.txtBox_Stocks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_Stocks_KeyPress);
             // 
             // rtb_Description

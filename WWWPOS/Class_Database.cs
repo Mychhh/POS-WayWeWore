@@ -28,6 +28,7 @@ using System.Security.Policy;
 using System.Xml.Linq;
 using WWWPOS.ClassOrdersFolder;
 using MySqlX.XDevAPI.Common;
+using System.Text.RegularExpressions;
 
 namespace WWWPOS
 {
@@ -102,7 +103,15 @@ namespace WWWPOS
             return Convert.ToBase64String(encrypted_password);
         }
 
-    //-----About User-----//
+        //-----Regular Expresion-----//
+
+        public static Regex validEmail = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        public static Regex hasNumber = new Regex(@"[0-9]+");
+        public static Regex hasUpper = new Regex(@"[A-Z]+");
+        public static Regex hasLower = new Regex(@"[a-z]+");
+        public static Regex hasSymbol = new Regex(@"[!@#$%^&*()-+=/,{}:;""'<>?~]+");
+
+        //-----About User-----//
 
         //Signup and Add user
         public void InsertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)

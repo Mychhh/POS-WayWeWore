@@ -125,6 +125,7 @@
             this.txt_Number.Name = "txt_Number";
             this.txt_Number.Size = new System.Drawing.Size(399, 28);
             this.txt_Number.TabIndex = 107;
+            this.txt_Number.TextChanged += new System.EventHandler(this.txt_Number_TextChanged);
             this.txt_Number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Number_KeyPress);
             // 
             // label8
@@ -185,6 +186,7 @@
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(399, 28);
             this.txt_Email.TabIndex = 101;
+            this.txt_Email.TextChanged += new System.EventHandler(this.txt_Email_TextChanged);
             // 
             // label2
             // 

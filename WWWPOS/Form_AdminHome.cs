@@ -277,6 +277,8 @@ namespace WWWPOS
             DataBase.isLogin = false;
             WWWPOS.Form_AdminHome.ActiveForm.Hide();
             DataBase.login.Show();
+            DataBase.login.txtBox_Email.Clear();
+            DataBase.login.txtBox_Password.Clear();
         }
     }
 }

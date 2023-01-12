@@ -21,17 +21,10 @@ namespace WWWPOS.SideBarControl.UserList
         }
         private void btn_UpdateUser_Click(object sender, EventArgs e)
         {
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             string email = txt_Email.Text;
-            Match match = regex.Match(email);
-
             string password = txt_Password.Text;
-            var hasNumber = new Regex(@"[0-9]+");
-            var hasUpper = new Regex(@"[A-Z]+");
-            var hasLower = new Regex(@"[a-z]+");
-            var hasSymbol = new Regex(@"[!@#$%^&*()-+=/,{}:;""'<>?~]+");
-
-            if (!match.Success)
+            
+            if (!DataBase.validEmail.IsMatch(email))
             {
                 ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Invalid Email");
                 errorMessageDialogue.ShowDialog();
@@ -41,22 +34,22 @@ namespace WWWPOS.SideBarControl.UserList
                 ErrorMessageDialogue errMessageDialogue = new ErrorMessageDialogue("Password must be 8 characters");
                 errMessageDialogue.ShowDialog();
             }
-            else if (!hasNumber.IsMatch(password))
+            else if (!DataBase.hasNumber.IsMatch(password))
             {
                 ErrorMessageDialogue errMessageDialogue = new ErrorMessageDialogue("Password must have at least 1 number");
                 errMessageDialogue.ShowDialog();
             }
-            else if (!hasUpper.IsMatch(password))
+            else if (!DataBase.hasUpper.IsMatch(password))
             {
                 ErrorMessageDialogue errMessageDialogue = new ErrorMessageDialogue("Password must have at least 1 uppercase letter");
                 errMessageDialogue.ShowDialog();
             }
-            else if (!hasLower.IsMatch(password))
+            else if (!DataBase.hasLower.IsMatch(password))
             {
                 ErrorMessageDialogue errMessageDialogue = new ErrorMessageDialogue("Password must have at least 1 lowercase letter");
                 errMessageDialogue.ShowDialog();
             }
-            else if (!hasSymbol.IsMatch(password))
+            else if (!DataBase.hasSymbol.IsMatch(password))
             {
                 ErrorMessageDialogue errMessageDialogue = new ErrorMessageDialogue("Password must have at least 1 non-alphanumeric character");
                 errMessageDialogue.ShowDialog();
@@ -86,7 +79,6 @@ namespace WWWPOS.SideBarControl.UserList
 
         }
 
-
         private void txt_Number_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -109,6 +101,21 @@ namespace WWWPOS.SideBarControl.UserList
         private void txt_Password_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_Email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Number_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_Number.Text.Length > 11)
+            {
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Maximum number reached");
+                errorMessageDialogue.ShowDialog();
+                txt_Number.Text = txt_Number.Text.Remove(11);
+            }
         }
     }
 }

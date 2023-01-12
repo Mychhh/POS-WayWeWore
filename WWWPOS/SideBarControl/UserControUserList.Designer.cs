@@ -56,7 +56,7 @@
             this.btn_AddUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_AddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddUser.ForeColor = System.Drawing.Color.Black;
-            this.btn_AddUser.Location = new System.Drawing.Point(765, 18);
+            this.btn_AddUser.Location = new System.Drawing.Point(431, 22);
             this.btn_AddUser.Name = "btn_AddUser";
             this.btn_AddUser.Size = new System.Drawing.Size(141, 46);
             this.btn_AddUser.TabIndex = 4;
@@ -71,7 +71,7 @@
             this.btn_Customer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Customer.ForeColor = System.Drawing.Color.Black;
-            this.btn_Customer.Location = new System.Drawing.Point(604, 18);
+            this.btn_Customer.Location = new System.Drawing.Point(761, 22);
             this.btn_Customer.Name = "btn_Customer";
             this.btn_Customer.Size = new System.Drawing.Size(141, 46);
             this.btn_Customer.TabIndex = 3;
@@ -86,7 +86,7 @@
             this.btn_Admin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Admin.ForeColor = System.Drawing.Color.Black;
-            this.btn_Admin.Location = new System.Drawing.Point(440, 18);
+            this.btn_Admin.Location = new System.Drawing.Point(596, 22);
             this.btn_Admin.Name = "btn_Admin";
             this.btn_Admin.Size = new System.Drawing.Size(141, 46);
             this.btn_Admin.TabIndex = 2;

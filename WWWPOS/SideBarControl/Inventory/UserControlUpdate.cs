@@ -78,7 +78,7 @@ namespace WWWPOS.SideBarControl.Inventory
         }
 
         //Forms Validation 
-        ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Maximum Text Reached");
+        ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Maximum input reached");
 
         private void txtBox_ProductName_TextChanged(object sender, EventArgs e)
         {
@@ -122,6 +122,24 @@ namespace WWWPOS.SideBarControl.Inventory
             {
                 errorMessageDialogue.ShowDialog();
                 rtb_Description.Text = rtb_Description.Text.Remove(50);
+            }
+        }
+
+        private void txtBox_Price_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBox_Price.Text.Length > 7)
+            {
+                errorMessageDialogue.ShowDialog();
+                txtBox_Price.Text = txtBox_Price.Text.Remove(7);
+            }
+        }
+
+        private void txtBox_Stocks_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBox_Stocks.Text.Length > 7)
+            {
+                errorMessageDialogue.ShowDialog();
+                txtBox_Stocks.Text = txtBox_Stocks.Text.Remove(7);
             }
         }
     }

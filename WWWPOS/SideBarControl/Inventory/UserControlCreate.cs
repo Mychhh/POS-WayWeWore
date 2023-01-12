@@ -113,5 +113,22 @@ namespace WWWPOS.SideBarControl.Inventory
             }
         }
 
+        private void txtBox_Price_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBox_Price.Text.Length > 7)
+            {
+                errorMessageDialogue.ShowDialog();
+                txtBox_Price.Text = txtBox_Price.Text.Remove(7);
+            }
+        }
+
+        private void txtBox_Stocks_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBox_Stocks.Text.Length > 7)
+            {
+                errorMessageDialogue.ShowDialog();
+                txtBox_Stocks.Text = txtBox_Stocks.Text.Remove(7);
+            }
+        }
     }
 }
