@@ -148,7 +148,6 @@ namespace WWWPOS
                     break;
             }
         }
-
         private void btn_Dashboard_Click(object sender, EventArgs e)
         {
             Class_LoadData class_LoadData = new Class_LoadData();
@@ -161,7 +160,6 @@ namespace WWWPOS
             panel_Main.Controls.Add(UC_Dashboard);
             UC_Dashboard.Dock = DockStyle.Fill;
         }
-
         private void btn_Sales_Click(object sender, EventArgs e)
         {
             Class_LoadData class_LoadData = new Class_LoadData();
@@ -174,7 +172,6 @@ namespace WWWPOS
             panel_Main.Controls.Add(UC_Sales);
             UC_Sales.Dock = DockStyle.Fill; 
         }
-
         private void btn_Purchase_Click(object sender, EventArgs e)
         {
             SideBarControl.UserControlPurchase UC_Purchase = new SideBarControl.UserControlPurchase();
@@ -190,7 +187,6 @@ namespace WWWPOS
             UC_Purchase.panel_Purchase.Controls.Add(UC_AllPurchase);
             UC_AllPurchase.Dock = DockStyle.Fill;
         }
-
         private void btn_UserList_Click(object sender, EventArgs e)
         {
             SideBarControl.UserControUserList UC_UserList = new SideBarControl.UserControUserList();
@@ -206,7 +202,6 @@ namespace WWWPOS
             UC_UserList.panel_UserList.Controls.Add(UC_AllUser);
             UC_AllUser.Dock = DockStyle.Fill;
         }
-
         private void btn_Archive_Click(object sender, EventArgs e)
         {
             SideBarControl.UserControlArchive UC_Archive = new SideBarControl.UserControlArchive();
@@ -222,7 +217,6 @@ namespace WWWPOS
             UC_Archive.panel_Archive.Controls.Add(UC_AllArchive);
             UC_AllArchive.Dock = DockStyle.Fill;
         }
-
         private void btn_Inventory_Click(object sender, EventArgs e)
         {
             UserControlInventory UC_Inventory = new UserControlInventory();
@@ -239,7 +233,6 @@ namespace WWWPOS
             UC_Inventory.panel_Inventory.Controls.Add(UC_Read);
             UC_Read.Dock = DockStyle.Fill;
         }
-
         private void btn_Menu_Click(object sender, EventArgs e)
         {
             panel_Menu.Visible = !panel_Menu.Visible;
@@ -270,7 +263,6 @@ namespace WWWPOS
                 UC_OrderPending.flPanel_PendingOrders.Controls.Add(UC_NoOrder);
             }
         }
-
         private void btn_Logout_Click(object sender, EventArgs e)
         {
             DataBase.isLogin = false;
@@ -279,7 +271,6 @@ namespace WWWPOS
             DataBase.login.txtBox_Email.Clear();
             DataBase.login.txtBox_Password.Clear();
         }
-
         private void btn_Account_Click(object sender, EventArgs e)
         {
             Class_LoadData C_LoadData = new Class_LoadData();

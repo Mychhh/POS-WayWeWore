@@ -42,5 +42,14 @@ namespace WWWPOS
         {
             this.Close();
         }
+
+        private void Btn_Update_Click(object sender, EventArgs e)
+        {
+            Form_AdminHome.ActiveForm.Hide();
+
+            Class_LoadData C_LoadData = new Class_LoadData();
+            C_LoadData.UpdateAccount(txt_Name.Text, txt_Password.Text, Convert.ToInt32(txt_Number.Text), txt_Address.Text);
+            this.Hide();
+        }
     }
 }

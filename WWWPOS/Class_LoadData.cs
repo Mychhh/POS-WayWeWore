@@ -25,6 +25,7 @@ using WWWPOS.SideBarControl.Dashboard;
 using Google.Protobuf.WellKnownTypes;
 using System.Data.Common;
 using WWWPOS.SideBarControl.Sales;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WWWPOS
 {
@@ -515,7 +516,7 @@ namespace WWWPOS
             }
         }
 
-        //Get User
+    //Account
         public void GetAccount()
         {
             try
@@ -546,6 +547,26 @@ namespace WWWPOS
             }
             finally
             {
+                connection.Close();
+            }
+        }
+        public void UpdateAccount(string name, string password, int phone, string address)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = "UPDATE Account SET Full_Name = '" + name + "', Password = '" + password + "', Phone = '" + phone + "', Address = '" + address + "' WHERE Account_Id = '"+DataBase.user_ID+"' ";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                SuccessMessage("Updated Succesfully!");
+            }
+            catch(Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            { 
                 connection.Close();
             }
         }

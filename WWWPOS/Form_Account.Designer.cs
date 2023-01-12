@@ -40,7 +40,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_UserType = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_Update = new System.Windows.Forms.Button();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.lbl_Email = new System.Windows.Forms.Label();
             this.btn_show_hide_pass = new System.Windows.Forms.Button();
@@ -168,21 +168,23 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(304, 420);
             this.flowLayoutPanel1.TabIndex = 122;
             // 
-            // button1
+            // Btn_Update
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(364, 390);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 33);
-            this.button1.TabIndex = 123;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Btn_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.Btn_Update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Update.Location = new System.Drawing.Point(364, 390);
+            this.Btn_Update.Name = "Btn_Update";
+            this.Btn_Update.Size = new System.Drawing.Size(118, 33);
+            this.Btn_Update.TabIndex = 123;
+            this.Btn_Update.Text = "Update";
+            this.Btn_Update.UseVisualStyleBackColor = false;
+            this.Btn_Update.Click += new System.EventHandler(this.Btn_Update_Click);
             // 
             // txt_Email
             // 
+            this.txt_Email.Enabled = false;
             this.txt_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Email.Location = new System.Drawing.Point(364, 161);
             this.txt_Email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -225,7 +227,7 @@
             this.Controls.Add(this.btn_show_hide_pass);
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.lbl_Email);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lbl_UserType);
             this.Controls.Add(this.panel1);
@@ -262,7 +264,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_UserType;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_Update;
         public System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.Button btn_show_hide_pass;
