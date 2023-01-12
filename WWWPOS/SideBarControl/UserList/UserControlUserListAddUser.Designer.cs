@@ -43,6 +43,7 @@
             this.btn_AddProduct = new System.Windows.Forms.Button();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btn_show_hide_pass = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel8
@@ -51,7 +52,7 @@
             this.panel8.BackgroundImage = global::WWWPOS.Properties.Resources.header;
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel8.Location = new System.Drawing.Point(17, 166);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(412, 138);
             this.panel8.TabIndex = 60;
@@ -133,9 +134,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(455, 256);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 22);
+            this.label4.Size = new System.Drawing.Size(159, 22);
             this.label4.TabIndex = 52;
-            this.label4.Text = "Number";
+            this.label4.Text = "Cellphone Number";
             // 
             // label3
             // 
@@ -168,12 +169,12 @@
             // 
             // btn_AddProduct
             // 
-            this.btn_AddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
+            this.btn_AddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_AddProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_AddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddProduct.ForeColor = System.Drawing.Color.White;
+            this.btn_AddProduct.ForeColor = System.Drawing.Color.Black;
             this.btn_AddProduct.Location = new System.Drawing.Point(459, 390);
             this.btn_AddProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddProduct.Name = "btn_AddProduct";
@@ -202,10 +203,27 @@
             this.label6.TabIndex = 61;
             this.label6.Text = "Password";
             // 
+            // btn_show_hide_pass
+            // 
+            this.btn_show_hide_pass.BackColor = System.Drawing.Color.Transparent;
+            this.btn_show_hide_pass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_show_hide_pass.FlatAppearance.BorderSize = 0;
+            this.btn_show_hide_pass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_show_hide_pass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_show_hide_pass.Image = global::WWWPOS.Properties.Resources.showPass;
+            this.btn_show_hide_pass.Location = new System.Drawing.Point(803, 170);
+            this.btn_show_hide_pass.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_show_hide_pass.Name = "btn_show_hide_pass";
+            this.btn_show_hide_pass.Size = new System.Drawing.Size(32, 20);
+            this.btn_show_hide_pass.TabIndex = 63;
+            this.btn_show_hide_pass.UseVisualStyleBackColor = false;
+            this.btn_show_hide_pass.Click += new System.EventHandler(this.btn_show_hide_pass_Click);
+            // 
             // UserControlUserListAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_show_hide_pass);
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel8);
@@ -221,7 +239,7 @@
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_AddProduct);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlUserListAddUser";
             this.Size = new System.Drawing.Size(880, 476);
             this.ResumeLayout(false);
@@ -246,5 +264,6 @@
         private System.Windows.Forms.Button btn_AddProduct;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_show_hide_pass;
     }
 }

@@ -49,11 +49,11 @@
             // 
             // btn_Short
             // 
-            this.btn_Short.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Short.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Short.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Short.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Short.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Short.ForeColor = System.Drawing.Color.White;
+            this.btn_Short.ForeColor = System.Drawing.Color.Black;
             this.btn_Short.Location = new System.Drawing.Point(761, 18);
             this.btn_Short.Name = "btn_Short";
             this.btn_Short.Size = new System.Drawing.Size(141, 46);
@@ -64,11 +64,11 @@
             // 
             // btn_Tshirt
             // 
-            this.btn_Tshirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Tshirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Tshirt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Tshirt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Tshirt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Tshirt.ForeColor = System.Drawing.Color.White;
+            this.btn_Tshirt.ForeColor = System.Drawing.Color.Black;
             this.btn_Tshirt.Location = new System.Drawing.Point(594, 18);
             this.btn_Tshirt.Name = "btn_Tshirt";
             this.btn_Tshirt.Size = new System.Drawing.Size(141, 46);

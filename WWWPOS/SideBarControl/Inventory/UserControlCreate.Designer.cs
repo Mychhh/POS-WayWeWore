@@ -60,12 +60,12 @@
             // 
             // btn_AddProduct
             // 
-            this.btn_AddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
+            this.btn_AddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_AddProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_AddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddProduct.ForeColor = System.Drawing.Color.White;
+            this.btn_AddProduct.ForeColor = System.Drawing.Color.Black;
             this.btn_AddProduct.Location = new System.Drawing.Point(489, 398);
             this.btn_AddProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddProduct.Name = "btn_AddProduct";
@@ -93,6 +93,7 @@
             this.txtBox_ProductName.Name = "txtBox_ProductName";
             this.txtBox_ProductName.Size = new System.Drawing.Size(384, 28);
             this.txtBox_ProductName.TabIndex = 12;
+            this.txtBox_ProductName.TextChanged += new System.EventHandler(this.txtBox_ProductName_TextChanged);
             // 
             // label3
             // 
@@ -152,6 +153,7 @@
             this.txtBox_Color.Name = "txtBox_Color";
             this.txtBox_Color.Size = new System.Drawing.Size(384, 28);
             this.txtBox_Color.TabIndex = 18;
+            this.txtBox_Color.TextChanged += new System.EventHandler(this.txtBox_Color_TextChanged);
             // 
             // label5
             // 
@@ -191,6 +193,8 @@
             this.txtBox_Price.Name = "txtBox_Price";
             this.txtBox_Price.Size = new System.Drawing.Size(384, 28);
             this.txtBox_Price.TabIndex = 23;
+            this.txtBox_Price.TextChanged += new System.EventHandler(this.txtBox_Price_TextChanged);
+            this.txtBox_Price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_Price_KeyPress);
             // 
             // txtBox_Stocks
             // 
@@ -200,15 +204,19 @@
             this.txtBox_Stocks.Name = "txtBox_Stocks";
             this.txtBox_Stocks.Size = new System.Drawing.Size(384, 28);
             this.txtBox_Stocks.TabIndex = 24;
+            this.txtBox_Stocks.TextChanged += new System.EventHandler(this.txtBox_Stocks_TextChanged);
+            this.txtBox_Stocks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_Stocks_KeyPress);
             // 
             // rtb_Description
             // 
+            this.rtb_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtb_Description.Location = new System.Drawing.Point(48, 304);
             this.rtb_Description.Margin = new System.Windows.Forms.Padding(4);
             this.rtb_Description.Name = "rtb_Description";
             this.rtb_Description.Size = new System.Drawing.Size(404, 132);
             this.rtb_Description.TabIndex = 25;
             this.rtb_Description.Text = "Description";
+            this.rtb_Description.TextChanged += new System.EventHandler(this.rtb_Description_TextChanged);
             this.rtb_Description.Enter += new System.EventHandler(this.rtb_Description_Enter);
             this.rtb_Description.Leave += new System.EventHandler(this.rtb_Description_Leave);
             // 

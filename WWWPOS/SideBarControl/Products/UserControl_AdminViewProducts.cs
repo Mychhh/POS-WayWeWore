@@ -81,6 +81,7 @@ namespace WWWPOS.SideBarControl.Products
                 }
             }
 
+
             ID = productID;
             Category = productCategory;
             Productname = productName;
@@ -95,6 +96,8 @@ namespace WWWPOS.SideBarControl.Products
             //
             lbl_ProductColor.Text = cmb_ProductColor.Text;
             cmb_ProductColor.Visible = false;
+            //
+            clickMe();
             //
         }
 
@@ -138,11 +141,21 @@ namespace WWWPOS.SideBarControl.Products
             Class_LoadData C_LoadData = new Class_LoadData();
             string[] returnValue = C_LoadData.GetParticularProduct(Category, Productname, cmb_ProductColor.Text, cmb_ProductSize.Text);
 
+            ID = Int32.Parse(returnValue[0]);
             Price = Double.Parse(returnValue[5]);
             Stock = Int32.Parse(returnValue[6]);
             Descriptions = returnValue[9];
-            Pic = Image.FromFile(@"" + returnValue[7]);
         }
 
+        private void clickMe()
+        {
+            Class_LoadData C_LoadData = new Class_LoadData();
+            string[] returnValue = C_LoadData.GetParticularProduct(Category, Productname, cmb_ProductColor.Text, cmb_ProductSize.Text);
+
+            ID = Int32.Parse(returnValue[0]);
+            Price = Double.Parse(returnValue[5]);
+            Stock = Int32.Parse(returnValue[6]);
+            Descriptions = returnValue[9];
+        }
     }
 }

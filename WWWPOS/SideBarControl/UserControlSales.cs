@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using WWWPOS.MessageFolder;
 
 namespace WWWPOS.SideBarControl
@@ -31,39 +32,38 @@ namespace WWWPOS.SideBarControl
         public string dateRangeQuery { get; set; }
         public string TodaysDate { get; set; }
 
-        public char TodaysDateFirstLetter { get; set; }
-        public char TodaysDateSecondLetter { get; set; }
-
         private void UserControlSales_Load(object sender, EventArgs e)
         {
             SalesReport.Series["Sales Report"].Points.DataBindXY(xValues, yValues);
         }
-
 
         private void cmb_Category_DropDownClosed(object sender, EventArgs e)
         {
             string range = getsDateRange();
             string category = getsCategory();
 
-            if (cmb_Category.SelectedIndex == 0)
+            if (cmb_Category.Text == "All Items") 
             {
                 class_LoadData.GetDesiredChartData(this, category + range, "AllProduct");
                 SalesReport.Series["Sales Report"].Points.DataBindXY(xValues, yValues);
             }
-            else if (cmb_Category.SelectedIndex == 1)
+            else if (cmb_Category.Text == "T-Shirt")
             {
                 class_LoadData.GetDesiredChartData(this, category + range, "ParticularProduct");
                 SalesReport.Series["Sales Report"].Points.DataBindXY(xValues, yValues);
             }
-            else if (cmb_Category.SelectedIndex == 2)
+            else if (cmb_Category.Text == "Short")
             {
                 class_LoadData.GetDesiredChartData(this, category + range, "ParticularProduct");
                 SalesReport.Series["Sales Report"].Points.DataBindXY(xValues, yValues);
             }
+
+            Console.WriteLine(category + range);
         }
 
         private void cmbDateRange_DropDownClosed(object sender, EventArgs e)
         {
+            
             string range = getsDateRange();
             string category = getsCategory();
 
@@ -72,7 +72,7 @@ namespace WWWPOS.SideBarControl
                 class_LoadData.GetDesiredChartData(this, category + range, "AllProduct");
                 SalesReport.Series["Sales Report"].Points.DataBindXY(xValues, yValues);
             }
-            else
+            else if (!(cmb_Category.SelectedIndex == 0))
             {
                 class_LoadData.GetDesiredChartData(this, category + range, "ParticularProduct");
                 SalesReport.Series["Sales Report"].Points.DataBindXY(xValues, yValues);
@@ -81,9 +81,6 @@ namespace WWWPOS.SideBarControl
 
         private string getsDateRange()
         {
-            TodaysDate = class_LoadData.GetDate();
-            string dateAdjustment = "";
-
             switch (cmbDateRange.SelectedIndex)
             {
                 case 0:
@@ -92,43 +89,23 @@ namespace WWWPOS.SideBarControl
                     break;
 
                 case 1:
-
-                    dateAdjustment = class_LoadData.GetDateAdjustment("Weekly");
-
-                    dateRangeQuery = " AND PlacedOrder BETWEEN '" + dateAdjustment + "' AND '" + TodaysDate + "' ";
-
+                    dateRangeQuery = "AND PlacedOrder BETWEEN GETDATE() -7  AND GETDATE() ";
                     break;
 
                 case 2:
-
-                    dateAdjustment = class_LoadData.GetDateAdjustment("Monthly");
-
-                    dateRangeQuery = " AND PlacedOrder BETWEEN '" + dateAdjustment + "' AND '" + TodaysDate + "' ";
-
+                    dateRangeQuery = "AND PlacedOrder BETWEEN GETDATE() -31 AND GETDATE() ";
                     break;
 
                 case 3:
-
-                    dateAdjustment = class_LoadData.GetDateAdjustment("Quarterly");
-
-                    dateRangeQuery = " AND PlacedOrder BETWEEN '" + dateAdjustment + "' AND '" + TodaysDate + "' ";
-
+                    dateRangeQuery = "AND PlacedOrder BETWEEN GETDATE() -124 AND GETDATE() ";
                     break;
 
                 case 4:
-
-                    dateAdjustment = class_LoadData.GetDateAdjustment("Annually");
-
-                    dateRangeQuery = " AND PlacedOrder BETWEEN '" + dateAdjustment + "' AND '" + TodaysDate + "' ";
-
+                    dateRangeQuery = "AND PlacedOrder BETWEEN GETDATE() -367 AND GETDATE() ";
                     break;
-
             }
-
             return dateRangeQuery;
-
         }
-
 
         private string getsCategory()
         {

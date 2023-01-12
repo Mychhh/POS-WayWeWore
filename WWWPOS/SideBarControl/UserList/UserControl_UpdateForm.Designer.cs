@@ -44,6 +44,7 @@
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_UpdateUser = new System.Windows.Forms.Button();
+            this.btn_show_hide_pass = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_AccountID
@@ -84,6 +85,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(399, 28);
             this.txt_Password.TabIndex = 111;
+            this.txt_Password.TextChanged += new System.EventHandler(this.txt_Password_TextChanged);
             // 
             // label6
             // 
@@ -114,6 +116,7 @@
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(399, 28);
             this.txt_Name.TabIndex = 108;
+            this.txt_Name.TextChanged += new System.EventHandler(this.txt_Name_TextChanged);
             // 
             // txt_Number
             // 
@@ -123,6 +126,8 @@
             this.txt_Number.Name = "txt_Number";
             this.txt_Number.Size = new System.Drawing.Size(399, 28);
             this.txt_Number.TabIndex = 107;
+            this.txt_Number.TextChanged += new System.EventHandler(this.txt_Number_TextChanged);
+            this.txt_Number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Number_KeyPress);
             // 
             // label8
             // 
@@ -142,6 +147,7 @@
             this.txt_Address.Name = "txt_Address";
             this.txt_Address.Size = new System.Drawing.Size(399, 28);
             this.txt_Address.TabIndex = 105;
+            this.txt_Address.TextChanged += new System.EventHandler(this.txt_Address_TextChanged);
             // 
             // label5
             // 
@@ -181,6 +187,7 @@
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(399, 28);
             this.txt_Email.TabIndex = 101;
+            this.txt_Email.TextChanged += new System.EventHandler(this.txt_Email_TextChanged);
             // 
             // label2
             // 
@@ -194,25 +201,42 @@
             // 
             // btn_UpdateUser
             // 
-            this.btn_UpdateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
+            this.btn_UpdateUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_UpdateUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_UpdateUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_UpdateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_UpdateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_UpdateUser.ForeColor = System.Drawing.Color.White;
-            this.btn_UpdateUser.Location = new System.Drawing.Point(549, 396);
+            this.btn_UpdateUser.ForeColor = System.Drawing.Color.Black;
+            this.btn_UpdateUser.Location = new System.Drawing.Point(456, 396);
             this.btn_UpdateUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_UpdateUser.Name = "btn_UpdateUser";
-            this.btn_UpdateUser.Size = new System.Drawing.Size(235, 39);
+            this.btn_UpdateUser.Size = new System.Drawing.Size(399, 39);
             this.btn_UpdateUser.TabIndex = 99;
             this.btn_UpdateUser.Text = "Update";
             this.btn_UpdateUser.UseVisualStyleBackColor = false;
             this.btn_UpdateUser.Click += new System.EventHandler(this.btn_UpdateUser_Click);
             // 
+            // btn_show_hide_pass
+            // 
+            this.btn_show_hide_pass.BackColor = System.Drawing.Color.Transparent;
+            this.btn_show_hide_pass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_show_hide_pass.FlatAppearance.BorderSize = 0;
+            this.btn_show_hide_pass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_show_hide_pass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_show_hide_pass.Image = global::WWWPOS.Properties.Resources.showPass;
+            this.btn_show_hide_pass.Location = new System.Drawing.Point(817, 181);
+            this.btn_show_hide_pass.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_show_hide_pass.Name = "btn_show_hide_pass";
+            this.btn_show_hide_pass.Size = new System.Drawing.Size(32, 20);
+            this.btn_show_hide_pass.TabIndex = 115;
+            this.btn_show_hide_pass.UseVisualStyleBackColor = false;
+            this.btn_show_hide_pass.Click += new System.EventHandler(this.btn_show_hide_pass_Click);
+            // 
             // UserControl_UpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_show_hide_pass);
             this.Controls.Add(this.txt_AccountID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_UserType);
@@ -255,5 +279,6 @@
         public System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button btn_UpdateUser;
+        private System.Windows.Forms.Button btn_show_hide_pass;
     }
 }

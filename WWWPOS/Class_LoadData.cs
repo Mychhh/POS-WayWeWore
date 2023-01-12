@@ -25,6 +25,7 @@ using WWWPOS.SideBarControl.Dashboard;
 using Google.Protobuf.WellKnownTypes;
 using System.Data.Common;
 using WWWPOS.SideBarControl.Sales;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WWWPOS
 {
@@ -230,7 +231,7 @@ namespace WWWPOS
         public void userRecords(DataGridView dataCustomer, string user_Type, string user_Status)
         {
             connection.Open();
-            command = new SqlCommand("SELECT * FROM Account WHERE User_Type = '" + user_Type + "' AND User_Status = '" + user_Status + "'", connection);
+            command = new SqlCommand("SELECT * FROM Account WHERE User_Type = '" + user_Type + "' AND User_Status = '" + user_Status + "'  ORDER BY Register_at DESC", connection);
             mdr = command.ExecuteReader();
 
             while (mdr.Read())
@@ -245,7 +246,7 @@ namespace WWWPOS
         {
 
             connection.Open();
-            command = new SqlCommand("SELECT * FROM Account WHERE User_Status = '" + user_Status + "'", connection);
+            command = new SqlCommand("SELECT * FROM Account WHERE User_Status = '" + user_Status + "'  ORDER BY Register_at DESC", connection);
             mdr = command.ExecuteReader();
 
             while (mdr.Read())
@@ -260,7 +261,7 @@ namespace WWWPOS
         {
 
             connection.Open();
-            command = new SqlCommand("SELECT * FROM Products WHERE Product_Status = '" + product_Status + "'", connection);
+            command = new SqlCommand("SELECT * FROM Products WHERE Product_Status = '" + product_Status + "' ORDER BY ProductAdd_at DESC", connection);
             mdr = command.ExecuteReader();
 
             while (mdr.Read())
@@ -425,104 +426,6 @@ namespace WWWPOS
             }
             
         }
-        public string GetDate()
-        {
-            string getDate = "";
-
-            try
-            {
-                connection.Open();
-
-                string getTodaysDateQuery = "SELECT GETDATE()";
-
-                //string getDateWeeklyQuery = "";
-                //string getDateMonthlyQuery = "";
-                //string getDateQuarterlyQuery = "";
-                //string getDateAnnuallyQuery = "";
-
-                //string getDesiredDateQuery = "";
-
-                //switch (date)
-                //{
-                //    case "Weekly":
-                //        getDesiredDateQuery = "'"+ getTodaysDateQuery + "' - 7";
-                //        break;
-                //    case "Monthly":
-                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 30";
-                //        break;
-                //    case "Quarterly":
-                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 123";
-                //        break;
-                //    case "Annually":
-                //        getDesiredDateQuery = "'" + getTodaysDateQuery + "' - 367";
-                //        break;
-                //}
-
-                command = new SqlCommand(getTodaysDateQuery, connection);
-                mdr = command.ExecuteReader();
-
-                if (mdr.Read())
-                {
-                    getDate = mdr[0] + "";
-                }
-            }
-            catch (Exception ex)
-            {
-                ErrorMessage(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return getDate;
-        }
-
-        public string GetDateAdjustment(string date)
-        {
-            string getDate = "";
-
-            try
-            {
-                connection.Open();
-
-                string getDesiredDateQuery = "";
-
-                switch (date)
-                {
-                    case "Weekly":
-                        getDesiredDateQuery = " SELECT GETDATE() - 7 ";
-                        break;
-                    case "Monthly":
-                        getDesiredDateQuery = " SELECT GETDATE() - 30 ";
-                        break;
-                    case "Quarterly":
-                        getDesiredDateQuery = " SELECT GETDATE() - 123 ";
-                        break;
-                    case "Annually":
-                        getDesiredDateQuery = " SELECT GETDATE() - 367 ";
-                        break;
-                }
-
-                command = new SqlCommand(getDesiredDateQuery, connection);
-                mdr = command.ExecuteReader();
-
-                if (mdr.Read())
-                {
-                    getDate = mdr[0] + "";
-                }
-            }
-            catch (Exception ex)
-            {
-                ErrorMessage(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return getDate;
-        }
 
         //Sales
         public void GetDesiredChartData(UserControlSales UC_Sales, string query, string whatProduct)
@@ -548,7 +451,7 @@ namespace WWWPOS
                     switch (whatProduct)
                     {
                         case "AllProduct":
-                            numProduct = 2;
+                            numProduct = 1;
                             numQuantity = 3;
                             break;
 
@@ -613,7 +516,62 @@ namespace WWWPOS
             }
         }
 
-        //-----Client Side-----//
+    //Account
+        public void GetAccount()
+        {
+            try
+            {
+                connection.Open();
+                string loadChartQuery = "SELECT * FROM Account WHERE Account_Id = '"+DataBase.user_ID+"' ";
+                sqlCommand = new SqlCommand(loadChartQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    string userID = "" + dataReader[0];
+                    string name = "" + dataReader[1];
+                    string email = "" + dataReader[2];
+                    string password = "" + dataReader[3];
+                    int number = Convert.ToInt32(dataReader[4] + "");
+                    string address = "" + dataReader[5];
+                    string userType = "" + dataReader[6];
+
+
+                    Form_Account form_Account = new Form_Account(userType, name, email, password, number, address);
+                    form_Account.Show();
+                }
+            }
+            catch(Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public void UpdateAccount(string name, string password, int phone, string address)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = "UPDATE Account SET Full_Name = '" + name + "', Password = '" + password + "', Phone = '" + phone + "', Address = '" + address + "' WHERE Account_Id = '"+DataBase.user_ID+"' ";
+                command = new SqlCommand(selectQuery, connection);
+                mdr = command.ExecuteReader();
+
+                SuccessMessage("Updated Succesfully!");
+            }
+            catch(Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            { 
+                connection.Close();
+            }
+        }
+
+    //-----Client Side-----//
 
         //Loads available product
         public void LoadAllAvailableProducts(FlowLayoutPanel flowLayoutPanel, string productPanel)
@@ -693,7 +651,35 @@ namespace WWWPOS
             }
 
         }
+        public int GetStock(int stock, int productID)
+        {
+            //SELECT Stocks FROM Products WHERE Product_ID = 24
+            try
+            {
+                connection.Open();
 
+                string selectJoinedQuerry = "SELECT Stocks FROM Products WHERE Product_ID = '"+ productID + "'";
+
+                command = new SqlCommand(selectJoinedQuerry, connection);
+                mdr = command.ExecuteReader();
+
+                if (mdr.Read())
+                {
+                    stock = Int32.Parse(mdr[0] + "");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return stock;
+        }
         //Load Cart
         public void LoadCart(FlowLayoutPanel flowLayoutPanel)
         {
@@ -813,7 +799,10 @@ namespace WWWPOS
             {
                 ErrorMessage(ex.Message);
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
         }
 
         //Load Buy Item
@@ -878,7 +867,7 @@ namespace WWWPOS
             return totalPrice;
         }
 
-        //-----Cashier Side-----//
+    //-----Cashier Side-----//
         
         //Load Order ID
         public void GetOrderID(FlowLayoutPanel flowLayoutPanel)

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using WWWPOS.SideBarControl;
 using WWWPOS.SideBarControl.Inventory;
 using WWWPOS.SideBarControl.Orders;
+using WWWPOS.SideBarControl.Products;
 using WWWPOS.SideBarControl.UserList;
 
 namespace WWWPOS
@@ -24,10 +25,6 @@ namespace WWWPOS
         {
             InitializeComponent();
             
-        }
-        public void CloseTheForm()
-        {
-            this.Hide();
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -79,8 +76,61 @@ namespace WWWPOS
 
                         //Loads product item
                         Class_LoadData LD = new Class_LoadData();
+                        LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelDelete");
+                    }
+                    else if (DataBase.fromWhat == "InventoryUpdate")
+                    {
+                        DataBase.fromWhat = "";
+
+                        UserControlInventory UC_Inventory = new UserControlInventory();
+                        //UserControlRead UC_Read = new UserControlRead();
+
+                        //Main Panel
+                        panel_Main.Controls.Clear();
+                        panel_Main.Controls.Add(UC_Inventory);
+                        UC_Inventory.Dock = DockStyle.Fill;
+
+                        UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+                        //Inventory Panel
+                        UC_Inventory.panel_Inventory.Controls.Clear();
+                        UC_Inventory.panel_Inventory.Controls.Add(UC_ViewUpdate);
+                        UC_ViewUpdate.Dock = DockStyle.Fill;
+
+                        //Loads product item
+                        Class_LoadData LD = new Class_LoadData();
                         LD.selectProduct(UC_ViewUpdate.flowLayoutPanel, "panelEdit");
                     }
+                    else if (DataBase.fromWhat == "InventoryUpdateUserControl")
+                    {
+                        DataBase.fromWhat = "";
+
+                        UserControlInventory UC_Inventory = new UserControlInventory();
+                        //UserControlRead UC_Read = new UserControlRead();
+
+                        //Main Panel
+                        panel_Main.Controls.Clear();
+                        panel_Main.Controls.Add(UC_Inventory);
+                        UC_Inventory.Dock = DockStyle.Fill;
+
+                        UserControlViewUpdate UC_ViewUpdate = new UserControlViewUpdate();
+                        //Inventory Panel
+                        UC_Inventory.panel_Inventory.Controls.Clear();
+                        UC_Inventory.panel_Inventory.Controls.Add(UC_ViewUpdate);
+                        UC_ViewUpdate.Dock = DockStyle.Fill;
+
+                        //loads update user control
+                        //UserControlUpdate userControlUpdate = new UserControlUpdate();
+                        try
+                        {
+                            UC_ViewUpdate.flowLayoutPanel.Controls.Add(UserControl_Update.UC_Update);
+                        }
+                        catch
+                        {
+                            UserControlUpdate UC_Update = new UserControlUpdate();
+                            UC_ViewUpdate.flowLayoutPanel.Controls.Add(UC_Update);
+                        }
+                    }
+
 
                     break;
 
@@ -98,7 +148,6 @@ namespace WWWPOS
                     break;
             }
         }
-
         private void btn_Dashboard_Click(object sender, EventArgs e)
         {
             Class_LoadData class_LoadData = new Class_LoadData();
@@ -111,7 +160,6 @@ namespace WWWPOS
             panel_Main.Controls.Add(UC_Dashboard);
             UC_Dashboard.Dock = DockStyle.Fill;
         }
-
         private void btn_Sales_Click(object sender, EventArgs e)
         {
             Class_LoadData class_LoadData = new Class_LoadData();
@@ -124,7 +172,6 @@ namespace WWWPOS
             panel_Main.Controls.Add(UC_Sales);
             UC_Sales.Dock = DockStyle.Fill; 
         }
-
         private void btn_Purchase_Click(object sender, EventArgs e)
         {
             SideBarControl.UserControlPurchase UC_Purchase = new SideBarControl.UserControlPurchase();
@@ -140,7 +187,6 @@ namespace WWWPOS
             UC_Purchase.panel_Purchase.Controls.Add(UC_AllPurchase);
             UC_AllPurchase.Dock = DockStyle.Fill;
         }
-
         private void btn_UserList_Click(object sender, EventArgs e)
         {
             SideBarControl.UserControUserList UC_UserList = new SideBarControl.UserControUserList();
@@ -156,7 +202,6 @@ namespace WWWPOS
             UC_UserList.panel_UserList.Controls.Add(UC_AllUser);
             UC_AllUser.Dock = DockStyle.Fill;
         }
-
         private void btn_Archive_Click(object sender, EventArgs e)
         {
             SideBarControl.UserControlArchive UC_Archive = new SideBarControl.UserControlArchive();
@@ -172,7 +217,6 @@ namespace WWWPOS
             UC_Archive.panel_Archive.Controls.Add(UC_AllArchive);
             UC_AllArchive.Dock = DockStyle.Fill;
         }
-
         private void btn_Inventory_Click(object sender, EventArgs e)
         {
             UserControlInventory UC_Inventory = new UserControlInventory();
@@ -189,28 +233,10 @@ namespace WWWPOS
             UC_Inventory.panel_Inventory.Controls.Add(UC_Read);
             UC_Read.Dock = DockStyle.Fill;
         }
-
         private void btn_Menu_Click(object sender, EventArgs e)
         {
-            panel_Menu.Controls.Clear();
-            panel_Menu.Controls.Add(UC_Menu);
-            UC_Menu.Dock = DockStyle.Fill;
-
-            if (!UC_Menu.Visible)
-            {
-                UC_Menu.Show();
-                panel_Menu.Size = new Size(214, 140);
-                panel_Menu.Location = new Point(813, 41);
-            }
-            else if (UC_Menu.Visible)
-            {
-                UC_Menu.Hide();
-                panel_Menu.Size = new Size(0, 0);
-                panel_Menu.Location = new Point(859, 41);
-            }
-
+            panel_Menu.Visible = !panel_Menu.Visible;
         }
-
         private void btn_Orders_Click(object sender, EventArgs e)
         {
             UserControlOrder UC_Order = new UserControlOrder();
@@ -237,6 +263,18 @@ namespace WWWPOS
                 UC_OrderPending.flPanel_PendingOrders.Controls.Add(UC_NoOrder);
             }
         }
-
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            DataBase.isLogin = false;
+            WWWPOS.Form_AdminHome.ActiveForm.Hide();
+            DataBase.login.Show();
+            DataBase.login.txtBox_Email.Clear();
+            DataBase.login.txtBox_Password.Clear();
+        }
+        private void btn_Account_Click(object sender, EventArgs e)
+        {
+            Class_LoadData C_LoadData = new Class_LoadData();
+            C_LoadData.GetAccount();
+        }
     }
 }

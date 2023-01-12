@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ClientLandingPage));
-            this.panel_Menu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Menu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,17 +37,13 @@
             this.btn_AllProducts = new System.Windows.Forms.Button();
             this.btn_ViewCart = new System.Windows.Forms.Button();
             this.flPanel_ViewProduct = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel_Menu = new System.Windows.Forms.Panel();
+            this.btn_Logout = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Account = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_Menu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel_Menu
-            // 
-            this.panel_Menu.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_Menu.Location = new System.Drawing.Point(1227, 14);
-            this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(130, 98);
-            this.panel_Menu.TabIndex = 62;
             // 
             // panel1
             // 
@@ -164,18 +159,67 @@
             this.flPanel_ViewProduct.Size = new System.Drawing.Size(1400, 542);
             this.flPanel_ViewProduct.TabIndex = 76;
             // 
+            // panel_Menu
+            // 
+            this.panel_Menu.Controls.Add(this.btn_Logout);
+            this.panel_Menu.Controls.Add(this.panel3);
+            this.panel_Menu.Controls.Add(this.btn_Account);
+            this.panel_Menu.Location = new System.Drawing.Point(1141, 3);
+            this.panel_Menu.Name = "panel_Menu";
+            this.panel_Menu.Size = new System.Drawing.Size(225, 114);
+            this.panel_Menu.TabIndex = 77;
+            this.panel_Menu.Visible = false;
+            // 
+            // btn_Logout
+            // 
+            this.btn_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.btn_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Logout.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Logout.Location = new System.Drawing.Point(3, 57);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(219, 47);
+            this.btn_Logout.TabIndex = 47;
+            this.btn_Logout.Text = "Logout";
+            this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.panel3.Location = new System.Drawing.Point(12, 55);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 2);
+            this.panel3.TabIndex = 46;
+            // 
+            // btn_Account
+            // 
+            this.btn_Account.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.btn_Account.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Account.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Account.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Account.Location = new System.Drawing.Point(3, 3);
+            this.btn_Account.Name = "btn_Account";
+            this.btn_Account.Size = new System.Drawing.Size(219, 47);
+            this.btn_Account.TabIndex = 0;
+            this.btn_Account.Text = "Account";
+            this.btn_Account.UseVisualStyleBackColor = false;
+            // 
             // Form_ClientLandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1424, 788);
+            this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.btn_Short);
             this.Controls.Add(this.btn_TShirt);
             this.Controls.Add(this.btn_AllProducts);
             this.Controls.Add(this.btn_ViewCart);
             this.Controls.Add(this.flPanel_ViewProduct);
-            this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.btn_Menu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -185,13 +229,12 @@
             this.Text = "a";
             this.Load += new System.EventHandler(this.ClientPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_Menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel_Menu;
         private System.Windows.Forms.Button btn_Menu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -200,5 +243,9 @@
         private System.Windows.Forms.Button btn_AllProducts;
         private System.Windows.Forms.Button btn_ViewCart;
         public System.Windows.Forms.FlowLayoutPanel flPanel_ViewProduct;
+        private System.Windows.Forms.Panel panel_Menu;
+        private System.Windows.Forms.Button btn_Logout;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btn_Account;
     }
 }

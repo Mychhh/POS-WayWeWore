@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using WWWPOS.ErrorMessage;
 
 namespace WWWPOS
 {
@@ -23,9 +24,9 @@ namespace WWWPOS
         {
             if (string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_FullName.Text) || string.IsNullOrEmpty(txt_Address.Text) || string.IsNullOrEmpty(txt_Password.Text) || string.IsNullOrEmpty(txt_Phone.Text))
             {
-                MessageBox.Show("Please input all requiremenst", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Fill out the required fields");
+                errorMessageDialogue.ShowDialog();
             }
-
             else
             {
                 int phoneNumber = Int32.Parse(txt_Phone.Text);
@@ -66,5 +67,6 @@ namespace WWWPOS
             LoginPage loginPage = new LoginPage();
             loginPage.ShowDialog();
         }
+
     }
 }

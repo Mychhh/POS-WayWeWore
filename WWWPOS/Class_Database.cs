@@ -27,6 +27,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Policy;
 using System.Xml.Linq;
 using WWWPOS.ClassOrdersFolder;
+using MySqlX.XDevAPI.Common;
+using System.Text.RegularExpressions;
 
 namespace WWWPOS
 {
@@ -44,8 +46,10 @@ namespace WWWPOS
 
         protected SqlCommand sqlCommand;
         protected SqlDataReader dataReader;
+        //Login
+        public static LoginPage login = new LoginPage();
 
-    //Dialogue Box declaration
+        //Dialogue Box declaration
         ErrorMessageDialogue errorMessageDialogue;
         SuccessMessageDialogue successMessageDialogue;
         WarningMessageDialogue warningMessageDialogue;
@@ -78,6 +82,34 @@ namespace WWWPOS
 
         //Order Stack & List
         protected List<Class_OrderIDQTY> classOrderIDQTY = new List<Class_OrderIDQTY>();
+
+    //-----Password Encryption-----//
+        
+        public static string PasswordEncryption(string password)
+        {
+            byte[] encryptedData = new byte[password.Length];
+            encryptedData = System.Text.Encoding.UTF8.GetBytes(password);
+            string EncryptedData = Convert.ToBase64String(encryptedData);
+            return EncryptedData;
+        }
+
+        public static string PasswordDecryption(string password)
+        {
+            SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
+
+            byte[] password_bytes = Encoding.ASCII.GetBytes(password);
+            byte[] encrypted_password = sha1.ComputeHash(password_bytes);
+
+            return Convert.ToBase64String(encrypted_password);
+        }
+
+        //-----Regular Expresion-----//
+
+        public static Regex validEmail = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        public static Regex hasNumber = new Regex(@"[0-9]+");
+        public static Regex hasUpper = new Regex(@"[A-Z]+");
+        public static Regex hasLower = new Regex(@"[a-z]+");
+        public static Regex hasSymbol = new Regex(@"[!@#$%^&*()-+=/,{}:;""'<>?~]+");
 
         //-----About User-----//
 
@@ -229,6 +261,11 @@ namespace WWWPOS
             connection.Close();
 
             SuccessMessage("Product Updated!");
+
+            //This adds new the form
+            //Form_AdminHome form_AdminHome = new Form_AdminHome();
+            //DataBase.fromWhat = "InventoryUpdate";
+            //form_AdminHome.ShowDialog();
         }
 
         //Delete and restore products

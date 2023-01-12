@@ -45,9 +45,9 @@
             // 
             // lbl_OrderNumber
             // 
-            this.lbl_OrderNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
+            this.lbl_OrderNumber.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbl_OrderNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_OrderNumber.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_OrderNumber.ForeColor = System.Drawing.Color.Black;
             this.lbl_OrderNumber.Location = new System.Drawing.Point(8, 5);
             this.lbl_OrderNumber.Name = "lbl_OrderNumber";
             this.lbl_OrderNumber.Size = new System.Drawing.Size(215, 37);
@@ -98,6 +98,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_Compute);
             this.panel1.Controls.Add(this.label3);
@@ -107,12 +108,12 @@
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(771, 57);
+            this.panel1.Size = new System.Drawing.Size(778, 57);
             this.panel1.TabIndex = 6;
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(8, 9);
@@ -125,11 +126,11 @@
             // 
             // btn_Compute
             // 
-            this.btn_Compute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Compute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Compute.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Compute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Compute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Compute.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Compute.ForeColor = System.Drawing.Color.Black;
             this.btn_Compute.Location = new System.Drawing.Point(535, 9);
             this.btn_Compute.Name = "btn_Compute";
             this.btn_Compute.Size = new System.Drawing.Size(106, 37);
@@ -140,7 +141,7 @@
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.BackColor = System.Drawing.Color.LightGray;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label3.Location = new System.Drawing.Point(296, 7);
@@ -173,9 +174,9 @@
             // 
             // lbl_OrderTotal
             // 
-            this.lbl_OrderTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.lbl_OrderTotal.BackColor = System.Drawing.SystemColors.Control;
             this.lbl_OrderTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_OrderTotal.ForeColor = System.Drawing.Color.Black;
+            this.lbl_OrderTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.lbl_OrderTotal.Location = new System.Drawing.Point(146, 9);
             this.lbl_OrderTotal.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_OrderTotal.Name = "lbl_OrderTotal";

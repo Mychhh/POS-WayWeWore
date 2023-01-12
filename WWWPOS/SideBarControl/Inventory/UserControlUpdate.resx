@@ -243,6 +243,9 @@
   <data name="&gt;&gt;btn_Browse.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="rtb_Description.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.8pt</value>
+  </data>
   <data name="rtb_Description.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 357</value>
   </data>
@@ -706,7 +709,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>904, 550</value>
+    <value>858, 509</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UserControlUpdate</value>

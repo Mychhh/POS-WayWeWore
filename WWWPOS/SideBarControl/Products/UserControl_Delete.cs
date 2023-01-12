@@ -94,6 +94,8 @@ namespace WWWPOS.SideBarControl.Products
             lbl_ProductColor.Text = cmb_ProductColor.Text;
             cmb_ProductColor.Visible = false;
             //
+            clickMe();
+            //
         }
 
         public int ID { get; set; }
@@ -141,9 +143,9 @@ namespace WWWPOS.SideBarControl.Products
                 DataBase.message = "";
 
 
-                //This refresh the form
+                //This close and add new form
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
-                form_AdminHome.Hide();
+                WWWPOS.Form_AdminHome.ActiveForm.Dispose();
                 DataBase.fromWhat = "InventoryDelete";
                 form_AdminHome.ShowDialog();
             }
@@ -155,15 +157,22 @@ namespace WWWPOS.SideBarControl.Products
             Class_LoadData C_LoadData = new Class_LoadData();
             string[] returnValue = C_LoadData.GetParticularProduct(Category, Productname, cmb_ProductColor.Text, cmb_ProductSize.Text);
 
-            this.ID = Int32.Parse(returnValue[0]);
-            this.Category = returnValue[2];
-            this.Productname = returnValue[3];
-            this.Color = returnValue[4];
-            this.Price = Double.Parse(returnValue[5]);
-            this.Stock = Int32.Parse(returnValue[6]);
-            this.Pic = Image.FromFile(@"" + returnValue[7]);
-            this.Productsize = returnValue[8];
-            this.Descriptions = returnValue[9];
+
+            ID = Int32.Parse(returnValue[0]);
+            Price = Double.Parse(returnValue[5]);
+            Stock = Int32.Parse(returnValue[6]);
+            Descriptions = returnValue[9];
+        }
+
+        private void clickMe()
+        {
+            Class_LoadData C_LoadData = new Class_LoadData();
+            string[] returnValue = C_LoadData.GetParticularProduct(Category, Productname, cmb_ProductColor.Text, cmb_ProductSize.Text);
+
+            ID = Int32.Parse(returnValue[0]);
+            Price = Double.Parse(returnValue[5]);
+            Stock = Int32.Parse(returnValue[6]);
+            Descriptions = returnValue[9];
         }
 
     }

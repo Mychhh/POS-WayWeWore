@@ -24,7 +24,7 @@ namespace WWWPOS.MenuControl
 
         private void btn_Logout_Click(object sender, EventArgs e)
         {
-            Form.ActiveForm.Hide();
+            Form.ActiveForm.Close();
             LoginPage lg = new LoginPage();
             lg.Show();
         }

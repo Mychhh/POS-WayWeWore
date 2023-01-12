@@ -49,11 +49,11 @@
             // 
             // btn_Pending
             // 
-            this.btn_Pending.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Pending.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Pending.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Pending.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Pending.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Pending.ForeColor = System.Drawing.Color.White;
+            this.btn_Pending.ForeColor = System.Drawing.Color.Black;
             this.btn_Pending.Location = new System.Drawing.Point(603, 22);
             this.btn_Pending.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Pending.Name = "btn_Pending";
@@ -65,11 +65,11 @@
             // 
             // btn_Success
             // 
-            this.btn_Success.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Success.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.btn_Success.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Success.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Success.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Success.ForeColor = System.Drawing.Color.White;
+            this.btn_Success.ForeColor = System.Drawing.Color.Black;
             this.btn_Success.Location = new System.Drawing.Point(761, 22);
             this.btn_Success.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Success.Name = "btn_Success";

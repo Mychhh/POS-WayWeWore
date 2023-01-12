@@ -129,6 +129,12 @@
     <Compile Include="ClientControl\Products\UserControl_ProductCartInactive.Designer.cs">
       <DependentUpon>UserControl_ProductCartInactive.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Account.Designer.cs">
+      <DependentUpon>Form_Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ClientLandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\Products\UserControl_ProductCartInactive.resx">
       <DependentUpon>UserControl_ProductCartInactive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Account.resx">
+      <DependentUpon>Form_Account.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ClientLandingPage.resx">
       <DependentUpon>Form_ClientLandingPage.cs</DependentUpon>

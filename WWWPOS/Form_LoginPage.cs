@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ErrorMessage;
+using WWWPOS.MessageFolder;
 
 namespace WWWPOS
 {
@@ -20,15 +23,17 @@ namespace WWWPOS
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrEmpty(txtBox_Email.Text) || string.IsNullOrEmpty(txtBox_Password.Text))
             {
-                MessageBox.Show("Please input Email and Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("No Email or Password");
+                errorMessageDialogue.ShowDialog();
             }
             else
             {
                 DB.Login(txtBox_Email.Text, txtBox_Password.Text);
             }
-           
+
         }
 
         private void btn_Client_Click(object sender, EventArgs e)
@@ -40,7 +45,7 @@ namespace WWWPOS
 
         private void label5_Click(object sender, EventArgs e)
         {
-            Close();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void btn_SignUp_Click(object sender, EventArgs e)
@@ -61,7 +66,6 @@ namespace WWWPOS
             {
                 txtBox_Password.UseSystemPasswordChar = true;
                 btn_show_hide_pass.Image = WWWPOS.Properties.Resources.showPass;
-
 
             }
 

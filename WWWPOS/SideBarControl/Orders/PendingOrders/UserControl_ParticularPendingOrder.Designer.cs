@@ -247,9 +247,9 @@
             // 
             // lbl_IsPacked
             // 
-            this.lbl_IsPacked.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
+            this.lbl_IsPacked.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.lbl_IsPacked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_IsPacked.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_IsPacked.ForeColor = System.Drawing.Color.White;
             this.lbl_IsPacked.Location = new System.Drawing.Point(6, 12);
             this.lbl_IsPacked.Name = "lbl_IsPacked";
             this.lbl_IsPacked.Size = new System.Drawing.Size(487, 30);
