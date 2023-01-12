@@ -173,7 +173,7 @@
             this.btn_AddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddProduct.ForeColor = System.Drawing.Color.White;
+            this.btn_AddProduct.ForeColor = System.Drawing.Color.Black;
             this.btn_AddProduct.Location = new System.Drawing.Point(459, 390);
             this.btn_AddProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddProduct.Name = "btn_AddProduct";

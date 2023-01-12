@@ -161,9 +161,6 @@ namespace WWWPOS.SideBarControl.Products
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-            SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue(Productname);
-            successMessageDialogue.ShowDialog();
-
             //UserControlUpdate UC_Update = new UserControlUpdate();
 
             UC_Update.product_Image.Image = picbox_ProductImage.Image;
@@ -175,10 +172,6 @@ namespace WWWPOS.SideBarControl.Products
             UC_Update.txtBox_Color.Text = cmb_ProductColor.Text;
             UC_Update.txtBox_Price.Text = lbl_ProductPrice.Text;
             UC_Update.txtBox_Stocks.Text = lbl_ProductStock.Text;
-
-            successMessageDialogue = new SuccessMessageDialogue(UC_Update.txtBox_ProductName.Text);
-            successMessageDialogue.ShowDialog();
-
             Form_AdminHome form_AdminHome = new Form_AdminHome();
             WWWPOS.Form_AdminHome.ActiveForm.Hide();
             DataBase.fromWhat = "InventoryUpdateUserControl";
@@ -203,5 +196,6 @@ namespace WWWPOS.SideBarControl.Products
             //UC_UpdateForm.ShowDialog();
 
         }
+
     }
 }

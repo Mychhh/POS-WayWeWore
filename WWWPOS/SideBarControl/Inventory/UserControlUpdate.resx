@@ -243,6 +243,9 @@
   <data name="&gt;&gt;btn_Browse.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="rtb_Description.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.8pt</value>
+  </data>
   <data name="rtb_Description.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 357</value>
   </data>

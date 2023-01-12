@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WWWPOS.ErrorMessage;
 
 namespace WWWPOS.SideBarControl.Inventory
 {
@@ -64,5 +65,53 @@ namespace WWWPOS.SideBarControl.Inventory
             }
 
         }
+
+        //Forms Validation 
+        ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Maximum Text Reached");
+        private void txtBox_ProductName_TextChanged(object sender, EventArgs e)
+        {
+            if(txtBox_ProductName.TextLength > 20)
+            {
+                errorMessageDialogue.ShowDialog();
+                txtBox_ProductName.Text = txtBox_ProductName.Text.Remove(19);
+            }
+        }
+
+        private void rtb_Description_TextChanged(object sender, EventArgs e)
+        {
+            if (rtb_Description.TextLength > 50)
+            {
+                errorMessageDialogue.ShowDialog();
+                rtb_Description.Text = rtb_Description.Text.Remove(49);
+            }
+        }
+
+        private void txtBox_Color_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBox_Color.TextLength > 15)
+            {
+                errorMessageDialogue.ShowDialog();
+                txtBox_Color.Text = txtBox_Color.Text.Remove(14);
+            }
+        }
+
+        private void txtBox_Price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != Convert.ToChar(Keys.Back) &&  ch != Convert.ToChar(Keys.Delete))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBox_Stocks_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != Convert.ToChar(Keys.Back) && ch != Convert.ToChar(Keys.Delete))
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }

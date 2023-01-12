@@ -83,6 +83,7 @@
             // 
             resources.ApplyResources(this.rtb_Description, "rtb_Description");
             this.rtb_Description.Name = "rtb_Description";
+            this.rtb_Description.TextChanged += new System.EventHandler(this.rtb_Description_TextChanged);
             this.rtb_Description.Enter += new System.EventHandler(this.rtb_Description_Enter);
             this.rtb_Description.Leave += new System.EventHandler(this.rtb_Description_Leave);
             // 
@@ -90,11 +91,13 @@
             // 
             resources.ApplyResources(this.txtBox_Stocks, "txtBox_Stocks");
             this.txtBox_Stocks.Name = "txtBox_Stocks";
+            this.txtBox_Stocks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_Stocks_KeyPress);
             // 
             // txtBox_Price
             // 
             resources.ApplyResources(this.txtBox_Price, "txtBox_Price");
             this.txtBox_Price.Name = "txtBox_Price";
+            this.txtBox_Price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_Price_KeyPress);
             // 
             // label6
             // 
@@ -110,6 +113,7 @@
             // 
             resources.ApplyResources(this.txtBox_Color, "txtBox_Color");
             this.txtBox_Color.Name = "txtBox_Color";
+            this.txtBox_Color.TextChanged += new System.EventHandler(this.txtBox_Color_TextChanged);
             // 
             // label5
             // 
@@ -152,6 +156,7 @@
             // 
             resources.ApplyResources(this.txtBox_ProductName, "txtBox_ProductName");
             this.txtBox_ProductName.Name = "txtBox_ProductName";
+            this.txtBox_ProductName.TextChanged += new System.EventHandler(this.txtBox_ProductName_TextChanged);
             // 
             // label2
             // 
@@ -160,10 +165,10 @@
             // 
             // btn_UpdateProduct
             // 
-            this.btn_UpdateProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(165)))));
+            this.btn_UpdateProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             resources.ApplyResources(this.btn_UpdateProduct, "btn_UpdateProduct");
             this.btn_UpdateProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_UpdateProduct.ForeColor = System.Drawing.Color.White;
+            this.btn_UpdateProduct.ForeColor = System.Drawing.Color.Black;
             this.btn_UpdateProduct.Name = "btn_UpdateProduct";
             this.btn_UpdateProduct.UseVisualStyleBackColor = false;
             this.btn_UpdateProduct.Click += new System.EventHandler(this.btn_UpdateProduct_Click);
