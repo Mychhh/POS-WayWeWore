@@ -114,7 +114,7 @@ namespace WWWPOS
         //-----About User-----//
 
         //Signup and Add user
-        public void InsertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
+        public void InsertAccount(string email, string name, string address, string password, long phoneNumber, string user_Type)
             {
                 connection.Open();
                 string selectQuery = "SELECT Email FROM Account WHERE Email = '" + email + "';";
