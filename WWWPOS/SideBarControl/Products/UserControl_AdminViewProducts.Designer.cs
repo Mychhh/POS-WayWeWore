@@ -72,7 +72,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(165, 235);
+            this.label2.Location = new System.Drawing.Point(151, 237);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 23);
             this.label2.TabIndex = 34;
@@ -81,7 +81,7 @@
             // lbl_ProductPrice
             // 
             this.lbl_ProductPrice.AutoSize = true;
-            this.lbl_ProductPrice.BackColor = System.Drawing.Color.Silver;
+            this.lbl_ProductPrice.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ProductPrice.Location = new System.Drawing.Point(71, 233);
             this.lbl_ProductPrice.Name = "lbl_ProductPrice";
@@ -103,12 +103,12 @@
             // 
             // lbl_ProductStock
             // 
-            this.lbl_ProductStock.BackColor = System.Drawing.Color.Silver;
+            this.lbl_ProductStock.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ProductStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ProductStock.Location = new System.Drawing.Point(233, 235);
+            this.lbl_ProductStock.Location = new System.Drawing.Point(219, 235);
             this.lbl_ProductStock.Name = "lbl_ProductStock";
             this.lbl_ProductStock.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.lbl_ProductStock.Size = new System.Drawing.Size(47, 23);
+            this.lbl_ProductStock.Size = new System.Drawing.Size(61, 23);
             this.lbl_ProductStock.TabIndex = 29;
             this.lbl_ProductStock.Text = "0";
             this.lbl_ProductStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -118,7 +118,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(12, 233);
+            this.label14.Location = new System.Drawing.Point(12, 235);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 23);
             this.label14.TabIndex = 31;
