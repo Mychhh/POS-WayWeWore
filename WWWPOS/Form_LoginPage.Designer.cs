@@ -217,15 +217,15 @@
             // 
             // Tagline
             // 
-            this.Tagline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tagline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tagline.ForeColor = System.Drawing.Color.White;
             this.Tagline.Location = new System.Drawing.Point(72, 213);
             this.Tagline.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Tagline.Name = "Tagline";
             this.Tagline.Size = new System.Drawing.Size(424, 90);
             this.Tagline.TabIndex = 1;
-            this.Tagline.Text = "Tagline Lorem Ipsum dolor Sit amet Contol sit lea adaodjdjd Blahbahblah Ndwbofosi" +
-    "do fso dcosldvicab";
+            this.Tagline.Text = "WayWeWore, a new clothing business, offers a unique blend of vintage and modern s" +
+    "tyles";
             this.Tagline.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2

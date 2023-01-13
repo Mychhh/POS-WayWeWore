@@ -29,7 +29,7 @@ namespace WWWPOS
             }
             else
             {
-                int phoneNumber = Int32.Parse(txt_Phone.Text);
+                long phoneNumber = Int64.Parse(txt_Phone.Text);
                 string user_Type = "Client";
                 data.InsertAccount(txt_Email.Text, txt_FullName.Text, txt_Address.Text, txt_Password.Text, phoneNumber, user_Type);
 

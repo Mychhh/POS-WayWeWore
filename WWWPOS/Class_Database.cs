@@ -114,7 +114,7 @@ namespace WWWPOS
         //-----About User-----//
 
         //Signup and Add user
-        public void InsertAccount(string email, string name, string address, string password, int phoneNumber, string user_Type)
+        public void InsertAccount(string email, string name, string address, string password, long phoneNumber, string user_Type)
             {
                 connection.Open();
                 string selectQuery = "SELECT Email FROM Account WHERE Email = '" + email + "';";
@@ -188,7 +188,7 @@ namespace WWWPOS
         }
 
         //Update account
-        public void UpdateUser(int account_ID, string user_Name, string email, string password, int phone, string user_Type, string address)
+        public void UpdateUser(int account_ID, string user_Name, string email, string password, long phone, string user_Type, string address)
         {
             connection.Open();
             string selectQuery = "UPDATE Account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + password + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";

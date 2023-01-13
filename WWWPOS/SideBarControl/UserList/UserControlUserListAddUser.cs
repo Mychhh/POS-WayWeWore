@@ -31,7 +31,7 @@ namespace WWWPOS.SideBarControl.UserList
                 ErrorMessageDialogue errMessageDialogue = new ErrorMessageDialogue("Fill out required fields");
                 errMessageDialogue.ShowDialog();
             }
-            else if (txt_Password.Text.Length != 8)
+            else if (txt_Password.Text.Length < 8)
             {
                 ErrorMessageDialogue errMessageDialogue = new ErrorMessageDialogue("Password must be 8 characters");
                 errMessageDialogue.ShowDialog();
@@ -63,7 +63,7 @@ namespace WWWPOS.SideBarControl.UserList
             }
             else
             {
-                int phoneNumber = Int32.Parse(txt_Number.Text);
+                long phoneNumber = Int64.Parse(txt_Number.Text);
                 DB.InsertAccount(txt_Email.Text, txt_Name.Text, txt_Address.Text, txt_Password.Text, phoneNumber, cmb_UserType.Text);
             }
 
