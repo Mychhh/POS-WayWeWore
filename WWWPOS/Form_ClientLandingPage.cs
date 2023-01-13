@@ -55,7 +55,7 @@ namespace WWWPOS
         //View Cart
         private void btn_ViewCart_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
 
             Form_ClientCart F_ClientCart = new Form_ClientCart();
 

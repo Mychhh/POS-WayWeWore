@@ -84,7 +84,7 @@
             this.btn_Checkout.Name = "btn_Checkout";
             this.btn_Checkout.Size = new System.Drawing.Size(465, 46);
             this.btn_Checkout.TabIndex = 29;
-            this.btn_Checkout.Text = "Place Order";
+            this.btn_Checkout.Text = "Process Order";
             this.btn_Checkout.UseVisualStyleBackColor = false;
             this.btn_Checkout.Click += new System.EventHandler(this.btn_Checkout_Click);
             // 

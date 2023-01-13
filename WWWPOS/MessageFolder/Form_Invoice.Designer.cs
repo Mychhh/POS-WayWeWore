@@ -35,7 +35,6 @@
             this.btn_Okay = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,7 +64,7 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 565);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 514);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(425, 2);
             this.flowLayoutPanel2.TabIndex = 1;
@@ -77,9 +76,9 @@
             this.btn_Okay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Okay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Okay.ForeColor = System.Drawing.Color.White;
-            this.btn_Okay.Location = new System.Drawing.Point(3, 407);
+            this.btn_Okay.Location = new System.Drawing.Point(32, 453);
             this.btn_Okay.Name = "btn_Okay";
-            this.btn_Okay.Size = new System.Drawing.Size(415, 38);
+            this.btn_Okay.Size = new System.Drawing.Size(354, 38);
             this.btn_Okay.TabIndex = 3;
             this.btn_Okay.Text = "Okay po";
             this.btn_Okay.UseVisualStyleBackColor = false;
@@ -101,29 +100,18 @@
             this.flowLayoutPanel.AutoScroll = true;
             this.flowLayoutPanel.Location = new System.Drawing.Point(8, 102);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(405, 299);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(405, 330);
             this.flowLayoutPanel.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::WWWPOS.Properties.Resources.header;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(3, 449);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(415, 114);
-            this.panel3.TabIndex = 2;
             // 
             // Form_Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(421, 567);
+            this.ClientSize = new System.Drawing.Size(421, 517);
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Okay);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -143,7 +131,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_Okay;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
