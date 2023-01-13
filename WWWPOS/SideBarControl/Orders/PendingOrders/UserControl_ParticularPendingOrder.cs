@@ -16,7 +16,6 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
     public partial class UserControl_ParticularPendingOrder : UserControl
     {
         public bool isPacked = true;
-
         public UserControl_ParticularPendingOrder(int ordernumber, int orderid, string productname, string category, string color, string size, double price, int quantity, int total, string status)
         {
             InitializeComponent();
@@ -110,7 +109,7 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
                 DB.RemoveParticularProduct(OrderID);
 
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
-                form_AdminHome.Hide();
+                Form_AdminHome.ActiveForm.Dispose();
                 DataBase.fromWhat = "OrdersDelete";
                 form_AdminHome.ShowDialog();
             }

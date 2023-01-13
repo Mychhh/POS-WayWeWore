@@ -105,6 +105,24 @@
     <Compile Include="ClientControl\ClientCart\Form_ClientPay.Designer.cs">
       <DependentUpon>Form_ClientPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientControl\ClientCart\UserControl_ProducOrderInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl\ClientCart\UserControl_ProducOrderInfo.Designer.cs">
+      <DependentUpon>UserControl_ProducOrderInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientControl\ClientCart\UserControl_ProductInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl\ClientCart\UserControl_ProductInfo.Designer.cs">
+      <DependentUpon>UserControl_ProductInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientControl\ClientCart\UserControl_ProductItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientControl\ClientCart\UserControl_ProductItem.Designer.cs">
+      <DependentUpon>UserControl_ProductItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientControl\Products\UserControl_NoItemsCart.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,6 +184,12 @@
     </Compile>
     <Compile Include="MenuControl\UserControl_Menu.Designer.cs">
       <DependentUpon>UserControl_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageFolder\Form_Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageFolder\Form_Invoice.Designer.cs">
+      <DependentUpon>Form_Invoice.cs</DependentUpon>
     </Compile>
     <Compile Include="MessageFolder\SuccessMessageDialogue.cs">
       <SubType>Form</SubType>
@@ -392,6 +416,15 @@
     <EmbeddedResource Include="ClientControl\ClientCart\Form_ClientPay.resx">
       <DependentUpon>Form_ClientPay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientControl\ClientCart\UserControl_ProducOrderInfo.resx">
+      <DependentUpon>UserControl_ProducOrderInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientControl\ClientCart\UserControl_ProductInfo.resx">
+      <DependentUpon>UserControl_ProductInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientControl\ClientCart\UserControl_ProductItem.resx">
+      <DependentUpon>UserControl_ProductItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientControl\Products\UserControl_NoItemsCart.resx">
       <DependentUpon>UserControl_NoItemsCart.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuControl\UserControl_Menu.resx">
       <DependentUpon>UserControl_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageFolder\Form_Invoice.resx">
+      <DependentUpon>Form_Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageFolder\SuccessMessageDialogue.resx">
       <DependentUpon>SuccessMessageDialogue.cs</DependentUpon>

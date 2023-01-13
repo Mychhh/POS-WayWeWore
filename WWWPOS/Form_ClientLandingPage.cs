@@ -46,7 +46,6 @@ namespace WWWPOS
         private void btn_TShirt_Click(object sender, EventArgs e)
         {
             ViewAllAvailableProductMethod("TshirtProduct");
-
         }
         //Short Product
         private void btn_Short_Click(object sender, EventArgs e)
@@ -56,7 +55,7 @@ namespace WWWPOS
         //View Cart
         private void btn_ViewCart_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
 
             Form_ClientCart F_ClientCart = new Form_ClientCart();
 
@@ -82,6 +81,14 @@ namespace WWWPOS
             DataBase.isLogin = false;
             WWWPOS.Form_AdminHome.ActiveForm.Hide();
             DataBase.login.Show();
+            DataBase.login.txtBox_Email.Clear();
+            DataBase.login.txtBox_Password.Clear();
+        }
+
+        private void btn_Account_Click(object sender, EventArgs e)
+        {
+            Class_LoadData C_LoadData = new Class_LoadData();
+            C_LoadData.GetAccount();
         }
     }
 }

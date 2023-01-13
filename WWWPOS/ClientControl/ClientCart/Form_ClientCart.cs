@@ -24,10 +24,9 @@ namespace WWWPOS.ClientControl.ClientCart
         private void Form_ClientCart_Load(object sender, EventArgs e)
         {
         }
-        //Go to view all product
         private void btn_BrowseProduct_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
 
             Form_ClientLandingPage clientForm = new Form_ClientLandingPage();
             clientForm.ShowDialog();
@@ -35,7 +34,8 @@ namespace WWWPOS.ClientControl.ClientCart
 
         private void btn_Checkout_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
+            this.Dispose();
 
             Form_ClientPay F_ClientPay = new Form_ClientPay();
             Class_LoadData data = new Class_LoadData();
@@ -44,6 +44,7 @@ namespace WWWPOS.ClientControl.ClientCart
             F_ClientPay.lbl_TotalPrice.Text = "₱ " + data.LoadCartTotalPrice(F_ClientPay.lbl_TotalPrice.Text);
 
             F_ClientPay.ShowDialog();
+
         }
     }
 }

@@ -78,7 +78,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
             this.pictureBox1.BackgroundImage = global::WWWPOS.Properties.Resources.header;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(495, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(474, 3);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(465, 132);
@@ -207,6 +207,7 @@
             this.btn_Account.TabIndex = 0;
             this.btn_Account.Text = "Account";
             this.btn_Account.UseVisualStyleBackColor = false;
+            this.btn_Account.Click += new System.EventHandler(this.btn_Account_Click);
             // 
             // Form_ClientLandingPage
             // 

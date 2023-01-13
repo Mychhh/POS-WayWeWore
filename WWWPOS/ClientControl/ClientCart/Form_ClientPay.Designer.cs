@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ClientPay));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.flPanel_ProductTotal = new System.Windows.Forms.FlowLayoutPanel();
@@ -37,12 +36,10 @@
             this.lbl_TotalPrice = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_GoToCart = new System.Windows.Forms.Button();
-            this.panel_Menu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Menu = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_GoToProducts = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,9 +47,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Location = new System.Drawing.Point(72, 203);
+            this.panel2.Location = new System.Drawing.Point(80, 203);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(165, 2);
+            this.panel2.Size = new System.Drawing.Size(260, 2);
             this.panel2.TabIndex = 82;
             // 
             // label16
@@ -63,9 +60,9 @@
             this.label16.Location = new System.Drawing.Point(82, 168);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(140, 32);
+            this.label16.Size = new System.Drawing.Size(255, 32);
             this.label16.TabIndex = 74;
-            this.label16.Text = "Payments";
+            this.label16.Text = "Order Confirmation";
             // 
             // flPanel_ProductTotal
             // 
@@ -85,12 +82,12 @@
             this.btn_Pay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Pay.ForeColor = System.Drawing.Color.Black;
-            this.btn_Pay.Location = new System.Drawing.Point(815, 12);
+            this.btn_Pay.Location = new System.Drawing.Point(842, 12);
             this.btn_Pay.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Pay.Name = "btn_Pay";
             this.btn_Pay.Size = new System.Drawing.Size(465, 46);
             this.btn_Pay.TabIndex = 29;
-            this.btn_Pay.Text = "Pay";
+            this.btn_Pay.Text = "Confirm Order";
             this.btn_Pay.UseVisualStyleBackColor = false;
             this.btn_Pay.Click += new System.EventHandler(this.btn_Pay_Click);
             // 
@@ -142,18 +139,9 @@
             this.btn_GoToCart.Name = "btn_GoToCart";
             this.btn_GoToCart.Size = new System.Drawing.Size(250, 45);
             this.btn_GoToCart.TabIndex = 79;
-            this.btn_GoToCart.Text = "View cart";
+            this.btn_GoToCart.Text = "View Orders";
             this.btn_GoToCart.UseVisualStyleBackColor = false;
             this.btn_GoToCart.Click += new System.EventHandler(this.btn_BrowseProduct_Click);
-            // 
-            // panel_Menu
-            // 
-            this.panel_Menu.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_Menu.Location = new System.Drawing.Point(1227, 14);
-            this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(130, 98);
-            this.panel_Menu.TabIndex = 78;
             // 
             // panel1
             // 
@@ -163,36 +151,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1400, 2);
             this.panel1.TabIndex = 76;
-            // 
-            // btn_Menu
-            // 
-            this.btn_Menu.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Menu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Menu.FlatAppearance.BorderSize = 0;
-            this.btn_Menu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_Menu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 2.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Menu.ForeColor = System.Drawing.Color.Blue;
-            this.btn_Menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Menu.Image")));
-            this.btn_Menu.Location = new System.Drawing.Point(1372, 11);
-            this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(27, 31);
-            this.btn_Menu.TabIndex = 77;
-            this.btn_Menu.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
-            this.pictureBox1.BackgroundImage = global::WWWPOS.Properties.Resources.header;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(495, 3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(465, 132);
-            this.pictureBox1.TabIndex = 75;
-            this.pictureBox1.TabStop = false;
             // 
             // btn_GoToProducts
             // 
@@ -219,6 +177,18 @@
             this.panel3.Size = new System.Drawing.Size(1400, 2);
             this.panel3.TabIndex = 84;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.pictureBox1.BackgroundImage = global::WWWPOS.Properties.Resources.header;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(474, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(465, 132);
+            this.pictureBox1.TabIndex = 75;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form_ClientPay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -232,8 +202,6 @@
             this.Controls.Add(this.flPanel_ProductTotal);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btn_GoToCart);
-            this.Controls.Add(this.panel_Menu);
-            this.Controls.Add(this.btn_Menu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -256,8 +224,6 @@
         private System.Windows.Forms.Button btn_Pay;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_GoToCart;
-        private System.Windows.Forms.Panel panel_Menu;
-        private System.Windows.Forms.Button btn_Menu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
