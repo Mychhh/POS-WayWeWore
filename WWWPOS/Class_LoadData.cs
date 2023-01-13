@@ -819,6 +819,8 @@ namespace WWWPOS
             UC_ProductCart.cmb_ProductSize.Enabled = false;
             UC_ProductCart.cmb_Color.Enabled = false;
 
+            Form_ClientLandingPage.ActiveForm.Close();
+
             Form_ClientPay form_ClientPay = new Form_ClientPay();
             form_ClientPay.flPanel_ProductTotal.Controls.Add(UC_ProductCart);
             form_ClientPay.lbl_TotalPrice.Text = (productPrice * productQuantity).ToString();
@@ -867,8 +869,42 @@ namespace WWWPOS
             return totalPrice;
         }
 
-    //-----Cashier Side-----//
-        
+        //Gets the last Data
+        public string GetsLastOrderID()
+        {
+            string orderID = "";
+
+            connection.Open();
+            string getsLastDataQuery = "SELECT TOP 1 * FROM Orders ORDER BY OrderID DESC";
+            command = new SqlCommand(getsLastDataQuery, connection);
+            mdr = command.ExecuteReader();
+
+            if (mdr.Read())
+            {
+                orderID = "" + mdr[0];
+            }
+            connection.Close();
+            return orderID;
+        }
+        public string GetsLastOrderDate()
+        {
+            string orderID = "";
+
+            connection.Open();
+            string getsLastDataQuery = "SELECT TOP 1 * FROM Orders ORDER BY OrderID DESC";
+            command = new SqlCommand(getsLastDataQuery, connection);
+            mdr = command.ExecuteReader();
+
+            if (mdr.Read())
+            {
+                orderID = "" + mdr[14];
+            }
+            connection.Close();
+            return orderID;
+        }
+
+        //-----Cashier Side-----//
+
         //Load Order ID
         public void GetOrderID(FlowLayoutPanel flowLayoutPanel)
         {

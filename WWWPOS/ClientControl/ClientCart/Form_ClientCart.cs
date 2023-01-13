@@ -24,10 +24,9 @@ namespace WWWPOS.ClientControl.ClientCart
         private void Form_ClientCart_Load(object sender, EventArgs e)
         {
         }
-        //Go to view all product
         private void btn_BrowseProduct_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Form_ClientCart.ActiveForm.Dispose();
 
             Form_ClientLandingPage clientForm = new Form_ClientLandingPage();
             clientForm.ShowDialog();

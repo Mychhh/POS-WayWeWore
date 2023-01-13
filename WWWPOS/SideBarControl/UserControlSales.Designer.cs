@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cmb_Category = new System.Windows.Forms.ComboBox();
             this.cmbDateRange = new System.Windows.Forms.ComboBox();
@@ -77,10 +77,10 @@
             this.cmbDateRange.FormattingEnabled = true;
             this.cmbDateRange.Items.AddRange(new object[] {
             "All Time",
-            "Weekly",
-            "Monthly",
-            "Quarterly",
-            "Annually"});
+            "Last 7 Days",
+            "Last Month",
+            "Last 4 Months",
+            "Last Year"});
             this.cmbDateRange.Location = new System.Drawing.Point(688, 18);
             this.cmbDateRange.Name = "cmbDateRange";
             this.cmbDateRange.Size = new System.Drawing.Size(221, 33);
@@ -101,35 +101,35 @@
             // 
             this.SalesReport.BackColor = System.Drawing.Color.Gainsboro;
             this.SalesReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(174)))), ((int)(((byte)(242)))));
-            chartArea1.Name = "Shit";
-            chartArea1.ShadowColor = System.Drawing.Color.Empty;
-            this.SalesReport.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            legend1.ShadowColor = System.Drawing.Color.Empty;
-            this.SalesReport.Legends.Add(legend1);
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(174)))), ((int)(((byte)(242)))));
+            chartArea2.Name = "Shit";
+            chartArea2.ShadowColor = System.Drawing.Color.Empty;
+            this.SalesReport.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            legend2.ShadowColor = System.Drawing.Color.Empty;
+            this.SalesReport.Legends.Add(legend2);
             this.SalesReport.Location = new System.Drawing.Point(25, 107);
             this.SalesReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SalesReport.Name = "SalesReport";
-            series1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
-            series1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Unscaled;
-            series1.BackSecondaryColor = System.Drawing.Color.IndianRed;
-            series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            series1.ChartArea = "Shit";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Sales Report";
-            series1.ShadowColor = System.Drawing.Color.Empty;
-            this.SalesReport.Series.Add(series1);
+            series2.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            series2.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Unscaled;
+            series2.BackSecondaryColor = System.Drawing.Color.IndianRed;
+            series2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series2.ChartArea = "Shit";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            series2.Legend = "Legend1";
+            series2.Name = "Sales Report";
+            series2.ShadowColor = System.Drawing.Color.Empty;
+            this.SalesReport.Series.Add(series2);
             this.SalesReport.Size = new System.Drawing.Size(932, 492);
             this.SalesReport.TabIndex = 50;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Sales";
-            title1.ShadowColor = System.Drawing.Color.Black;
-            this.SalesReport.Titles.Add(title1);
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Sales";
+            title2.ShadowColor = System.Drawing.Color.Black;
+            this.SalesReport.Titles.Add(title2);
             // 
             // UserControlSales
             // 

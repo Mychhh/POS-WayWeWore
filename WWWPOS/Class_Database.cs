@@ -453,8 +453,7 @@ namespace WWWPOS
                 try
                 {
                     SqlDataReader myReader = commandToInsertNewItems.ExecuteReader();
-                    ErrorMessageDialogue messageDialogue = new ErrorMessageDialogue("Added to Cart");
-                    messageDialogue.ShowDialog();
+                    SuccessMessage("Added to cart");
                 }
                 catch (Exception ex)
                 {
@@ -531,6 +530,11 @@ namespace WWWPOS
 
         }
         //Add data to Orders table
+
+        public Form_Invoice form_Invoice = new Form_Invoice();
+        public UserControl_ProductInfo UC_ProductInfo = new UserControl_ProductInfo();
+        public UserControl_ProductItem UC_ProductItem;
+        public UserControl_ProducOrderInfo UC_ProductOrderInfo;
         public void OrdersTableInsertData()
         {
             int user_ID = Int32.Parse(DataBase.user_ID);
@@ -564,8 +568,6 @@ namespace WWWPOS
                     string ProductAddedToCart_at = "" + dataReader[12];
                     string Cart_Status = "" + dataReader[13];
 
-                    //GetOrders(Product_ID, lastRowNumber, Product_Name, Category, Color, Product_Size, Price, Quantity, Product_images, Product_Status);
-
                     Class_Orders orders = new Class_Orders(lastRowNumber, Account_ID, Product_ID,
                                                            Product_Name, Category, Color, Product_Size,
                                                            Price, Quantity, Product_images,
@@ -575,6 +577,10 @@ namespace WWWPOS
                 }
 
                 connection.Close();
+                
+                //
+
+                form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductInfo);
 
                 for (int i = 0; i < ordersList.Count; i++)
                 {
@@ -584,8 +590,15 @@ namespace WWWPOS
                               orders.Color, orders.Size, orders.Price, 
                               orders.Quantity, orders.ImagePath, orders.Status,
                               orders.OrderStatus, orders.AddedToCartAt);
-                }
 
+                    UC_ProductItem = new UserControl_ProductItem(orders.Name, orders.Quantity, (int)orders.Price);
+                    form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductItem);//multiple
+                }
+                Class_LoadData C_LoadData = new Class_LoadData();
+                UC_ProductOrderInfo = new UserControl_ProducOrderInfo(C_LoadData.GetsLastOrderID(), C_LoadData.GetsLastOrderDate());
+
+                form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductOrderInfo);
+                form_Invoice.ShowDialog();
                 //clears the value of orderList
                 ordersList.Clear();
 

@@ -191,7 +191,7 @@ namespace WWWPOS.ClientControl.Products
             DB.DeleteCartProduct(CartID);
 
             this.Dispose();
-            ErrorMessageDialogue message = new ErrorMessageDialogue("Product Removed");
+            SuccessMessageDialogue message = new SuccessMessageDialogue("Product Removed");
             message.ShowDialog();
         }
     }
