@@ -451,7 +451,7 @@ namespace WWWPOS
                     switch (whatProduct)
                     {
                         case "AllProduct":
-                            numProduct = 1;
+                            numProduct = 2;
                             numQuantity = 3;
                             break;
 
