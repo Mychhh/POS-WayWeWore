@@ -68,6 +68,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(391, 28);
             this.txt_Password.TabIndex = 119;
+            this.txt_Password.UseSystemPasswordChar = true;
             // 
             // label6
             // 
@@ -217,6 +218,7 @@
             this.btn_show_hide_pass.Size = new System.Drawing.Size(44, 20);
             this.btn_show_hide_pass.TabIndex = 126;
             this.btn_show_hide_pass.UseVisualStyleBackColor = false;
+            this.btn_show_hide_pass.Click += new System.EventHandler(this.btn_show_hide_pass_Click);
             // 
             // Form_Account
             // 

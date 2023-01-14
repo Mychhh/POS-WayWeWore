@@ -169,7 +169,7 @@ namespace WWWPOS
                 {
                     WWWPOS.LoginPage.ActiveForm.Hide();
                     Form_ClientLandingPage clientView = new Form_ClientLandingPage(); ;
-                    clientView.Show();
+                    clientView.Show(); 
                 }
                 else if (userType == "Admin")
                 {
