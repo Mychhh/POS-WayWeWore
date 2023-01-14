@@ -85,6 +85,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(399, 28);
             this.txt_Password.TabIndex = 111;
+            this.txt_Password.UseSystemPasswordChar = true;
             this.txt_Password.TextChanged += new System.EventHandler(this.txt_Password_TextChanged);
             // 
             // label6
