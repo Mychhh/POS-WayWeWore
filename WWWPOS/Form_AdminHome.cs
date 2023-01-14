@@ -276,5 +276,102 @@ namespace WWWPOS
             Class_LoadData C_LoadData = new Class_LoadData();
             C_LoadData.GetAccount();
         }
+
+        //Hover Effects
+        private void btn_Dashboard_MouseHover(object sender, EventArgs e)
+        {
+            btn_Dashboard.Width = 255;
+            btn_Dashboard.Height = 48;
+        }
+
+        private void btn_Dashboard_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Dashboard.Width = 252;
+            btn_Dashboard.Height = 45;
+        }
+        private void btn_Sales_MouseHover(object sender, EventArgs e)
+        {
+            btn_Sales.BackColor = Color.FromArgb(234, 223, 91);
+            btn_Sales.Width = 255;
+            btn_Sales.Height = 48;
+        }
+
+        private void btn_Sales_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Sales.BackColor = Color.FromArgb(231, 198, 116);
+            btn_Sales.Width = 252;
+            btn_Sales.Height = 45;
+        }
+
+        private void btn_Purchase_MouseHover(object sender, EventArgs e)
+        {
+            btn_Purchase.BackColor = Color.FromArgb(234, 223, 91);
+            btn_Purchase.Width = 255;
+            btn_Purchase.Height = 48;
+        }
+
+        private void btn_Purchase_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Purchase.BackColor = Color.FromArgb(231, 198, 116);
+            btn_Purchase.Width = 252;
+            btn_Purchase.Height = 45;
+        }
+
+        private void btn_Inventory_MouseHover(object sender, EventArgs e)
+        {
+            btn_Inventory.BackColor = Color.FromArgb(234, 223, 91);
+            btn_Inventory.Width = 255;
+            btn_Inventory.Height = 48;
+        }
+
+        private void btn_Inventory_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Inventory.BackColor = Color.FromArgb(231, 198, 116);
+            btn_Inventory.Width = 252;
+            btn_Inventory.Height = 45;
+        }
+
+        private void btn_Orders_MouseHover(object sender, EventArgs e)
+        {
+            btn_Orders.BackColor = Color.FromArgb(234, 223, 91);
+            btn_Orders.Width = 255;
+            btn_Orders.Height = 48;
+        }
+
+        private void btn_Orders_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Orders.BackColor = Color.FromArgb(231, 198, 116);
+            btn_Orders.Width = 252;
+            btn_Orders.Height = 45;
+        }
+
+        private void btn_UserList_MouseHover(object sender, EventArgs e)
+        {
+            btn_UserList.BackColor = Color.FromArgb(234, 223, 91);
+            btn_UserList.Width = 255;
+            btn_UserList.Height = 48;
+        }
+
+        private void btn_UserList_MouseLeave(object sender, EventArgs e)
+        {
+            btn_UserList.BackColor = Color.FromArgb(231, 198, 116);
+            btn_UserList.Width = 252;
+            btn_UserList.Height = 45;
+        }
+
+        private void btn_Archive_MouseHover(object sender, EventArgs e)
+        {
+            btn_Archive.BackColor = Color.FromArgb(234, 223, 91);
+            btn_Archive.Width = 255;
+            btn_Archive.Height = 48;
+        }
+
+        private void btn_Archive_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Archive.BackColor = Color.FromArgb(231, 198, 116);
+            btn_Archive.Width = 252;
+            btn_Archive.Height = 45;
+        }
+
     }
 }

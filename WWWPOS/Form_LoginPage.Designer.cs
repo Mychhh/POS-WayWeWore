@@ -94,7 +94,7 @@
             this.btn_show_hide_pass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_show_hide_pass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_show_hide_pass.Image = global::WWWPOS.Properties.Resources.showPass;
-            this.btn_show_hide_pass.Location = new System.Drawing.Point(452, 438);
+            this.btn_show_hide_pass.Location = new System.Drawing.Point(452, 457);
             this.btn_show_hide_pass.Margin = new System.Windows.Forms.Padding(4);
             this.btn_show_hide_pass.Name = "btn_show_hide_pass";
             this.btn_show_hide_pass.Size = new System.Drawing.Size(44, 27);
@@ -106,7 +106,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(267, 560);
+            this.label3.Location = new System.Drawing.Point(267, 579);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 30);
@@ -117,7 +117,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(292, 574);
+            this.panel5.Location = new System.Drawing.Point(292, 593);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(180, 2);
@@ -126,7 +126,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(107, 574);
+            this.panel4.Location = new System.Drawing.Point(107, 593);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(180, 2);
@@ -140,7 +140,7 @@
             this.btn_SignUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_SignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SignUp.ForeColor = System.Drawing.Color.Black;
-            this.btn_SignUp.Location = new System.Drawing.Point(77, 601);
+            this.btn_SignUp.Location = new System.Drawing.Point(77, 620);
             this.btn_SignUp.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SignUp.Name = "btn_SignUp";
             this.btn_SignUp.Size = new System.Drawing.Size(419, 39);
@@ -157,7 +157,7 @@
             this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.ForeColor = System.Drawing.Color.White;
-            this.btn_Login.Location = new System.Drawing.Point(77, 510);
+            this.btn_Login.Location = new System.Drawing.Point(77, 529);
             this.btn_Login.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(419, 39);
@@ -172,7 +172,7 @@
             this.txtBox_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBox_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_Password.Location = new System.Drawing.Point(77, 438);
+            this.txtBox_Password.Location = new System.Drawing.Point(77, 457);
             this.txtBox_Password.Margin = new System.Windows.Forms.Padding(4);
             this.txtBox_Password.Name = "txtBox_Password";
             this.txtBox_Password.Size = new System.Drawing.Size(419, 27);
@@ -183,7 +183,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(168, 401);
+            this.label2.Location = new System.Drawing.Point(168, 420);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(241, 33);
@@ -197,7 +197,7 @@
             this.txtBox_Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Email.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBox_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_Email.Location = new System.Drawing.Point(77, 359);
+            this.txtBox_Email.Location = new System.Drawing.Point(77, 378);
             this.txtBox_Email.Margin = new System.Windows.Forms.Padding(4);
             this.txtBox_Email.Name = "txtBox_Email";
             this.txtBox_Email.Size = new System.Drawing.Size(419, 27);
@@ -207,7 +207,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(168, 322);
+            this.label1.Location = new System.Drawing.Point(168, 341);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 33);
@@ -217,12 +217,12 @@
             // 
             // Tagline
             // 
-            this.Tagline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tagline.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tagline.ForeColor = System.Drawing.Color.White;
-            this.Tagline.Location = new System.Drawing.Point(72, 213);
+            this.Tagline.Location = new System.Drawing.Point(48, 217);
             this.Tagline.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Tagline.Name = "Tagline";
-            this.Tagline.Size = new System.Drawing.Size(424, 90);
+            this.Tagline.Size = new System.Drawing.Size(468, 90);
             this.Tagline.TabIndex = 1;
             this.Tagline.Text = "WayWeWore, a new clothing business, offers a unique blend of vintage and modern s" +
     "tyles";
