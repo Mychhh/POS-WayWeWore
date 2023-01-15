@@ -42,7 +42,7 @@ namespace WWWPOS
         public static string user_ID, message, user_Name;
         public static bool isLogin = false;
         public static string fromWhat = "";
-        public const string SQLServerLink = "Data Source=MIKO\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
+        public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
         protected SqlCommand command;
         protected SqlDataReader mdr;
@@ -147,76 +147,83 @@ namespace WWWPOS
 
         //Signup and Add user
         public void InsertAccount(string email, string name, string address, string password, long phoneNumber, string user_Type)
+        {
+            connection.Open();
+            string selectQuery = "SELECT Email FROM Account WHERE Email = '" + email + "';";
+            command = new SqlCommand(selectQuery, connection);
+            mdr = command.ExecuteReader();
+
+            if (mdr.Read())
+            {
+                ErrorMessage("Email Already Registered!");
+                connection.Close();
+            }
+            else
+            {
+                connection.Close(); //closes the first connection used by checking if the email is already registered
+
+                connection.Open();
+                string insertQuery = "INSERT INTO Account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + PasswordEncryption(password) + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
+                SqlCommand commandDatabase = new SqlCommand(insertQuery, connection);
+                commandDatabase.CommandTimeout = 60;
+
+                try
+                {
+                    SqlDataReader myReader = commandDatabase.ExecuteReader();
+                    message = "Success";
+                    SuccessMessage("Account Created Successfully!");
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    ErrorMessage(ex.Message);
+                }
+            }
+        }
+        
+        //Login User
+        public void Login(string email, string password)
+        {
+            try
             {
                 connection.Open();
-                string selectQuery = "SELECT Email FROM Account WHERE Email = '" + email + "';";
+                string selectQuery = "SELECT * FROM Account WHERE Email = '" + email + "' AND Password = '" + PasswordEncryption(password) + "' ";
                 command = new SqlCommand(selectQuery, connection);
                 mdr = command.ExecuteReader();
 
                 if (mdr.Read())
                 {
-                    ErrorMessage("Email Already Registered!");
-                    connection.Close();
+                    user_ID = "" + mdr[0];
+                    user_Name = "" + mdr[1];
+                    string userType = "" + mdr[6];
+
+                    if (userType == "Client")
+                    {
+                        WWWPOS.LoginPage.ActiveForm.Hide();
+                        Form_ClientLandingPage clientView = new Form_ClientLandingPage(); ;
+                        clientView.Show();
+                    }
+                    else if (userType == "Admin")
+                    {
+                        WWWPOS.LoginPage.ActiveForm.Hide();
+                        Form_AdminHome f2 = new Form_AdminHome();
+                        f2.ShowDialog();
+                    }
+
                 }
                 else
                 {
-                    connection.Close(); //closes the first connection used by checking if the email is already registered
-
-                    connection.Open();
-                    string insertQuery = "INSERT INTO Account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + PasswordEncryption(password) + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
-                    SqlCommand commandDatabase = new SqlCommand(insertQuery, connection);
-                    commandDatabase.CommandTimeout = 60;
-
-                    try
-                    {
-                        SqlDataReader myReader = commandDatabase.ExecuteReader();
-                        message = "Success";
-                        SuccessMessage("Account Created Successfully!");
-                        connection.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        ErrorMessage(ex.Message);
-                    }
+                    ErrorMessage("Incorrect Login Information! \nTry again.");
                 }
             }
-        
-        //Login User
-        public void Login(string email, string password)
-
-        {
-            connection.Open();
-            string selectQuery = "SELECT * FROM Account WHERE Email = '" + email + "' AND Password = '" + PasswordEncryption(password) + "';";
-            command = new SqlCommand(selectQuery, connection);
-            mdr = command.ExecuteReader();
-           
-
-            if (mdr.Read())
+            catch(Exception ex)
             {
-                user_ID = mdr["Account_Id"].ToString();
-                user_Name = mdr["Full_Name"].ToString();
-                String userType = mdr["User_Type"].ToString();
-
-                if (userType == "Client")
-                {
-                    WWWPOS.LoginPage.ActiveForm.Hide();
-                    Form_ClientLandingPage clientView = new Form_ClientLandingPage(); ;
-                    clientView.Show(); 
-                }
-                else if (userType == "Admin")
-                {
-                    WWWPOS.LoginPage.ActiveForm.Hide();
-                    Form_AdminHome f2 = new Form_AdminHome();
-                    f2.ShowDialog();
-                }
-
+                ErrorMessage(ex.Message);
             }
-            else
+            finally
             {
-                ErrorMessage("Incorrect Login Information! \nTry again.");
+                connection.Close();
             }
-
-            connection.Close();
         }
 
         //Update account

@@ -12,7 +12,7 @@ namespace WWWPOS
 {
     public partial class Form_Account : Form
     {
-        public Form_Account(string userType, string accountName, string email, string password, int accountNumber, string address)
+        public Form_Account(string userType, string accountName, string email, string password, long accountNumber, string address)
         {
             InitializeComponent();
             UserType = userType;
@@ -35,7 +35,7 @@ namespace WWWPOS
         public string AccountName { get; set; }
         public string Email { get ; set; }
         public string Password { get; set; }
-        public int AccountNumber { get; set; }
+        public long AccountNumber { get; set; }
         public string Address { get; set; }
 
         private void lbl_Close_Click(object sender, EventArgs e)
