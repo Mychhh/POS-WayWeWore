@@ -39,7 +39,7 @@ namespace WWWPOS
         public static string user_ID, message, user_Name;
         public static bool isLogin = false;
         public static string fromWhat = "";
-        public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
+        public const string SQLServerLink = "Data Source=MIKO\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
         protected SqlCommand command;
         protected SqlDataReader mdr;
@@ -87,10 +87,15 @@ namespace WWWPOS
         
         public static string PasswordEncryption(string password)
         {
-            byte[] encryptedData = new byte[password.Length];
-            encryptedData = System.Text.Encoding.UTF8.GetBytes(password);
-            string EncryptedData = Convert.ToBase64String(encryptedData);
-            return EncryptedData;
+            //byte[] encryptedData = new byte[password.Length];
+            //encryptedData = System.Text.Encoding.UTF8.GetBytes(password);
+            //string EncryptedData = Convert.ToBase64String(encryptedData);
+            // return EncryptedData;
+
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hash = System.Text.Encoding.ASCII.GetString(data);
+            return hash;
         }
 
         public static string PasswordDecryption(string password)
@@ -129,13 +134,21 @@ namespace WWWPOS
                 else
                 {
                     connection.Close(); //closes the first connection used by checking if the email is already registered
-
+              
                     connection.Open();
-                    string insertQuery = "INSERT INTO Account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
+                    string insertQuery = "INSERT INTO Account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + PasswordEncryption(password) + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
                     SqlCommand commandDatabase = new SqlCommand(insertQuery, connection);
                     commandDatabase.CommandTimeout = 60;
 
-                    try
+                try
+                {
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
                     {
                         SqlDataReader myReader = commandDatabase.ExecuteReader();
                         message = "Success";
@@ -154,7 +167,7 @@ namespace WWWPOS
 
         {
             connection.Open();
-            string selectQuery = "SELECT * FROM Account WHERE Email = '" + email + "' AND Password = '" + password + "';";
+            string selectQuery = "SELECT * FROM Account WHERE Email = '" + email + "' AND Password = '" + PasswordEncryption(password) + "';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
            
