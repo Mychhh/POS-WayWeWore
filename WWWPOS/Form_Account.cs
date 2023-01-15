@@ -48,7 +48,7 @@ namespace WWWPOS
             Form_AdminHome.ActiveForm.Hide();
 
             Class_LoadData C_LoadData = new Class_LoadData();
-            C_LoadData.UpdateAccount(txt_Name.Text, txt_Password.Text, Convert.ToInt32(txt_Number.Text), txt_Address.Text);
+            C_LoadData.UpdateAccount(txt_Name.Text, txt_Password.Text, Convert.ToInt64(txt_Number.Text), txt_Address.Text);
             this.Hide();
         }
 

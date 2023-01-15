@@ -553,7 +553,7 @@ namespace WWWPOS
                     string name = "" + dataReader[1];
                     string email = "" + dataReader[2];
                     string password = "" + dataReader[3];
-                    int number = Convert.ToInt32(dataReader[4] + "");
+                    long number = Convert.ToInt64(dataReader[4] + "");
                     string address = "" + dataReader[5];
                     string userType = "" + dataReader[6];
 
