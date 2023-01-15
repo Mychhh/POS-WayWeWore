@@ -26,6 +26,7 @@ using Google.Protobuf.WellKnownTypes;
 using System.Data.Common;
 using WWWPOS.SideBarControl.Sales;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.IO;
 
 namespace WWWPOS
 {
@@ -541,7 +542,8 @@ namespace WWWPOS
             }
         }
 
-    //Account
+   
+        //Account
         public void GetAccount()
         {
             try
@@ -562,7 +564,7 @@ namespace WWWPOS
                     string userType = "" + dataReader[6];
 
 
-                    Form_Account form_Account = new Form_Account(userType, name, email, password, number, address);
+                    Form_Account form_Account = new Form_Account(userType, name, email, PasswordDecryption(password), number, address);
                     form_Account.Show();
                 }
             }
@@ -580,7 +582,7 @@ namespace WWWPOS
             try
             {
                 connection.Open();
-                string selectQuery = "UPDATE Account SET Full_Name = '" + name + "', Password = '" + password + "', Phone = '" + phone + "', Address = '" + address + "' WHERE Account_Id = '"+DataBase.user_ID+"' ";
+                string selectQuery = "UPDATE Account SET Full_Name = '" + name + "', Password = '" + PasswordEncryption(password) + "', Phone = '" + phone + "', Address = '" + address + "' WHERE Account_Id = '"+DataBase.user_ID+"' ";
                 command = new SqlCommand(selectQuery, connection);
                 mdr = command.ExecuteReader();
 

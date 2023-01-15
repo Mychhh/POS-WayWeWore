@@ -29,6 +29,9 @@ using System.Xml.Linq;
 using WWWPOS.ClassOrdersFolder;
 using MySqlX.XDevAPI.Common;
 using System.Text.RegularExpressions;
+using System.IO;
+using System.Windows.Input;
+using System.Windows.Markup;
 
 namespace WWWPOS
 {
@@ -39,7 +42,7 @@ namespace WWWPOS
         public static string user_ID, message, user_Name;
         public static bool isLogin = false;
         public static string fromWhat = "";
-        public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
+        public const string SQLServerLink = "Data Source=MIKO\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
         protected  SqlConnection connection = new SqlConnection(SQLServerLink);
         protected SqlCommand command;
         protected SqlDataReader mdr;
@@ -83,25 +86,54 @@ namespace WWWPOS
         //Order Stack & List
         protected List<Class_OrderIDQTY> classOrderIDQTY = new List<Class_OrderIDQTY>();
 
-    //-----Password Encryption-----//
-        
+
+        //password Encrypt
+        public static string hash = "f0xle@rn";
+
         public static string PasswordEncryption(string password)
         {
-            byte[] encryptedData = new byte[password.Length];
-            encryptedData = System.Text.Encoding.UTF8.GetBytes(password);
-            string EncryptedData = Convert.ToBase64String(encryptedData);
-            return EncryptedData;
+            byte[] password_Data = UTF8Encoding.UTF8.GetBytes(password);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                byte[] keyss = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider()
+                {
+                    Key = keyss,
+                    Mode = CipherMode.ECB,
+                    Padding = PaddingMode.PKCS7
+                })
+                {
+                    ICryptoTransform transform = tripDes.CreateEncryptor();
+                    byte[] password_Enrypt = transform.TransformFinalBlock(password_Data, 0, password_Data.Length);
+
+                    return Convert.ToBase64String(password_Enrypt, 0, password_Enrypt.Length);
+                }
+            }
+
         }
 
+        //password Decrypt
         public static string PasswordDecryption(string password)
         {
-            SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
+            byte[] password_Data = Convert.FromBase64String(password);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                byte[] password_Keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider()
+                {
+                    Key = password_Keys,
+                    Mode = CipherMode.ECB,
+                    Padding = PaddingMode.PKCS7
+                })
+                {
+                    ICryptoTransform transform = tripDes.CreateDecryptor();
+                    byte[] password_Decrypt = transform.TransformFinalBlock(password_Data, 0, password_Data.Length);
 
-            byte[] password_bytes = Encoding.ASCII.GetBytes(password);
-            byte[] encrypted_password = sha1.ComputeHash(password_bytes);
-
-            return Convert.ToBase64String(encrypted_password);
+                    return UTF8Encoding.UTF8.GetString(password_Decrypt);
+                }
+            }
         }
+
 
         //-----Regular Expresion-----//
 
@@ -131,7 +163,7 @@ namespace WWWPOS
                     connection.Close(); //closes the first connection used by checking if the email is already registered
 
                     connection.Open();
-                    string insertQuery = "INSERT INTO Account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
+                    string insertQuery = "INSERT INTO Account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + PasswordEncryption(password) + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
                     SqlCommand commandDatabase = new SqlCommand(insertQuery, connection);
                     commandDatabase.CommandTimeout = 60;
 
@@ -154,7 +186,7 @@ namespace WWWPOS
 
         {
             connection.Open();
-            string selectQuery = "SELECT * FROM Account WHERE Email = '" + email + "' AND Password = '" + password + "';";
+            string selectQuery = "SELECT * FROM Account WHERE Email = '" + email + "' AND Password = '" + PasswordEncryption(password) + "';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
            
@@ -191,7 +223,7 @@ namespace WWWPOS
         public void UpdateUser(int account_ID, string user_Name, string email, string password, long phone, string user_Type, string address)
         {
             connection.Open();
-            string selectQuery = "UPDATE Account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + password + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
+            string selectQuery = "UPDATE Account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + PasswordEncryption(password) + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
