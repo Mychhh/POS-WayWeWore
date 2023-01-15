@@ -578,7 +578,7 @@ namespace WWWPOS
                     string userID = "" + dataReader[0];
                     string name = "" + dataReader[1];
                     string email = "" + dataReader[2];
-                    string password = "" + dataReader[4];
+                    string password = "" + PasswordDecryption(dataReader[3].ToString());
                     int number = Convert.ToInt32(dataReader[4] + "");
                     string address = "" + dataReader[5];
                     string userType = "" + dataReader[6];
