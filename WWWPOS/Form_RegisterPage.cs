@@ -22,15 +22,6 @@ namespace WWWPOS
         DataBase data = new DataBase();
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(txt_Email.Text) ||
-            //    string.IsNullOrEmpty(txt_FullName.Text) ||
-            //    string.IsNullOrEmpty(txt_Address.Text) ||
-            //    string.IsNullOrEmpty(txt_Password.Text) ||
-            //    string.IsNullOrEmpty(txt_Phone.Text))
-            //{
-            //    ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Fill out the required fields");
-            //    errorMessageDialogue.ShowDialog();
-            //}
             DataBase DB = new DataBase();
 
             string password = txt_Password.Text;

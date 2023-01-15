@@ -559,7 +559,7 @@ namespace WWWPOS
 
 
                     Form_Account form_Account = new Form_Account(userType, name, email, PasswordDecryption(password), number, address);
-                    form_Account.Show();
+                    form_Account.ShowDialog();
                 }
             }
             catch(Exception ex)
@@ -579,8 +579,6 @@ namespace WWWPOS
                 string selectQuery = "UPDATE Account SET Full_Name = '" + name + "', Password = '" + PasswordEncryption(password) + "', Phone = '" + phone + "', Address = '" + address + "' WHERE Account_Id = '"+DataBase.user_ID+"' ";
                 command = new SqlCommand(selectQuery, connection);
                 mdr = command.ExecuteReader();
-
-                SuccessMessage("Updated Succesfully!");
             }
             catch(Exception ex)
             {

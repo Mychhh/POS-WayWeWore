@@ -73,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(151, 237);
@@ -85,7 +85,7 @@
             // lbl_ProductPrice
             // 
             this.lbl_ProductPrice.AutoSize = true;
-            this.lbl_ProductPrice.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_ProductPrice.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ProductPrice.Location = new System.Drawing.Point(71, 233);
             this.lbl_ProductPrice.Name = "lbl_ProductPrice";
@@ -107,7 +107,7 @@
             // 
             // lbl_ProductStock
             // 
-            this.lbl_ProductStock.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lbl_ProductStock.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ProductStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ProductStock.Location = new System.Drawing.Point(216, 232);
             this.lbl_ProductStock.Name = "lbl_ProductStock";
@@ -120,6 +120,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(12, 235);

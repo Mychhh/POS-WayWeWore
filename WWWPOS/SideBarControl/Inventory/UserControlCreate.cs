@@ -71,7 +71,7 @@ namespace WWWPOS.SideBarControl.Inventory
                 ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Fill out required fields");
                 errorMessageDialogue.ShowDialog();
             }
-            else if (imageURL != null)
+            else if (imageURL != null && !(txtBox_ProductName.Text.Length == 0 || comboBox_ProductType.Text == "" || comboBox_Size.Text == "" || txtBox_Color.Text.Length == 0 || txtBox_Price.Text.Length == 0 || txtBox_Stocks.Text.Length == 0 || rtb_Description.Text.Length == 0))
             {
                 double product_Price = Double.Parse(txtBox_Price.Text);
                 int product_Stock = Int32.Parse(txtBox_Stocks.Text);
@@ -90,6 +90,7 @@ namespace WWWPOS.SideBarControl.Inventory
                 UserControlRead UC_Read = new UserControlRead();
 
                 Controls.Clear();
+                UC_Read.BackColor = Color.Transparent;
                 Controls.Add(UC_Read);
                 UC_Read.Dock = DockStyle.Fill;
             }
