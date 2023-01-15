@@ -43,7 +43,14 @@ namespace WWWPOS.SideBarControl.Inventory
             {
                 if(ofd.ShowDialog() == DialogResult.OK)
                 {
-                    if (ofd.FileName.Contains(".png") || ofd.FileName.Contains(".jfif") || ofd.FileName.Contains(".png") || ofd.FileName.Contains(".PNG") || ofd.FileName.Contains(".jpeg") || ofd.FileName.Contains(".JPEG"))
+                    if (ofd.FileName.Contains(".jfif") || ofd.FileName.Contains(".JFIF") || 
+                        ofd.FileName.Contains(".png") || ofd.FileName.Contains(".PNG") ||
+                        ofd.FileName.Contains(".gif") || ofd.FileName.Contains(".GIF") ||
+                        ofd.FileName.Contains(".webp") || ofd.FileName.Contains(".WEBP") ||
+                        ofd.FileName.Contains(".svg") || ofd.FileName.Contains(".SVG") || 
+                        ofd.FileName.Contains(".jpg") || ofd.FileName.Contains(".JPG") || 
+                        ofd.FileName.Contains(".jpeg") || ofd.FileName.Contains(".JPEG")
+                       )
                     {
                         imageURL = ofd.FileName;
                         product_Image.Image = Image.FromFile(ofd.FileName);
@@ -64,7 +71,7 @@ namespace WWWPOS.SideBarControl.Inventory
                 ErrorMessageDialogue errorMessageDialogue = new ErrorMessageDialogue("Fill out required fields");
                 errorMessageDialogue.ShowDialog();
             }
-            else if (imageURL != null)
+            else if (imageURL != null && !(txtBox_ProductName.Text.Length == 0 || comboBox_ProductType.Text == "" || comboBox_Size.Text == "" || txtBox_Color.Text.Length == 0 || txtBox_Price.Text.Length == 0 || txtBox_Stocks.Text.Length == 0 || rtb_Description.Text.Length == 0))
             {
                 double product_Price = Double.Parse(txtBox_Price.Text);
                 int product_Stock = Int32.Parse(txtBox_Stocks.Text);
@@ -83,6 +90,7 @@ namespace WWWPOS.SideBarControl.Inventory
                 UserControlRead UC_Read = new UserControlRead();
 
                 Controls.Clear();
+                UC_Read.BackColor = Color.Transparent;
                 Controls.Add(UC_Read);
                 UC_Read.Dock = DockStyle.Fill;
             }

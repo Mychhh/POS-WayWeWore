@@ -55,7 +55,13 @@ namespace WWWPOS.SideBarControl.Inventory
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    if (ofd.FileName.Contains(".png") || ofd.FileName.Contains(".jfif") || ofd.FileName.Contains(".png") || ofd.FileName.Contains(".PNG") || ofd.FileName.Contains(".jpeg") || ofd.FileName.Contains(".JPEG"))
+                    if (ofd.FileName.Contains(".jfif") || ofd.FileName.Contains(".JFIF") ||
+                        ofd.FileName.Contains(".png") || ofd.FileName.Contains(".PNG") ||
+                        ofd.FileName.Contains(".gif") || ofd.FileName.Contains(".GIF") ||
+                        ofd.FileName.Contains(".webp") || ofd.FileName.Contains(".WEBP") ||
+                        ofd.FileName.Contains(".svg") || ofd.FileName.Contains(".SVG") ||
+                        ofd.FileName.Contains(".jpeg") || ofd.FileName.Contains(".JPEG")
+                       )
                     {
                         imageURL = ofd.FileName;
                         product_Image.Image = Image.FromFile(ofd.FileName);

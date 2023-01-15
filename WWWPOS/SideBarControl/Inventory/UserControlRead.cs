@@ -16,12 +16,14 @@ namespace WWWPOS.SideBarControl.Inventory
         public UserControlRead()
         {
             InitializeComponent();
+            this.BackColor = Color.Transparent;
         }
 
         private void UserControlRead_Load(object sender, EventArgs e)
         {
             Class_LoadData LD = new Class_LoadData();
             LD.selectProduct(flowLayoutPanel, "panelView");
+            this.BackColor = Color.Transparent;
         }
     }
 }

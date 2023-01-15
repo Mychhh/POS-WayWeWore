@@ -112,7 +112,6 @@ namespace WWWPOS
                 ErrorMessage(ex.Message);
             }
         }
-
         //Get a particular product
         public string[] GetParticularProduct(string productcategory, string productname, string productcolor, string productsize)
         {
@@ -167,7 +166,6 @@ namespace WWWPOS
 
             return name;
         }
-
         //Fetching All Stocks
         public void selectProduct(FlowLayoutPanel flowLayoutPanel, string productPanel)
         {
@@ -252,7 +250,6 @@ namespace WWWPOS
             }
 
         }
-
         //Active User
         public void userRecords(DataGridView dataCustomer, string user_Type, string user_Status)
         {
@@ -266,7 +263,6 @@ namespace WWWPOS
             }
             connection.Close();
         }
-
         // User Deleted
         public void userArchive(DataGridView dataCustomer, string user_Status)
         {
@@ -281,7 +277,6 @@ namespace WWWPOS
             }
             connection.Close();
         }
-
         //Load product archive
         public void ProductArchive(DataGridView dataProduct, string product_Status)
         {
@@ -375,7 +370,7 @@ namespace WWWPOS
             }
             catch (Exception ex)
             {
-                ErrorMessage(ex.Message);
+                ErrorMessage("I am here " + ex.Message);
             }
             finally
             {
@@ -383,7 +378,7 @@ namespace WWWPOS
             }
             
             return sales;
-        }
+        } //Error might happen if theres no sakes 50/50
         public void LoadChartSales(UserControlDashboard userControlDashboard)
         {
             try
@@ -542,7 +537,6 @@ namespace WWWPOS
             }
         }
 
-   
         //Account
         public void GetAccount()
         {
@@ -559,13 +553,13 @@ namespace WWWPOS
                     string name = "" + dataReader[1];
                     string email = "" + dataReader[2];
                     string password = "" + dataReader[3];
-                    int number = Convert.ToInt32(dataReader[4] + "");
+                    long number = Convert.ToInt64(dataReader[4] + "");
                     string address = "" + dataReader[5];
                     string userType = "" + dataReader[6];
 
 
                     Form_Account form_Account = new Form_Account(userType, name, email, PasswordDecryption(password), number, address);
-                    form_Account.Show();
+                    form_Account.ShowDialog();
                 }
             }
             catch(Exception ex)
@@ -577,7 +571,7 @@ namespace WWWPOS
                 connection.Close();
             }
         }
-        public void UpdateAccount(string name, string password, int phone, string address)
+        public void UpdateAccount(string name, string password, long phone, string address)
         {
             try
             {
@@ -585,8 +579,6 @@ namespace WWWPOS
                 string selectQuery = "UPDATE Account SET Full_Name = '" + name + "', Password = '" + PasswordEncryption(password) + "', Phone = '" + phone + "', Address = '" + address + "' WHERE Account_Id = '"+DataBase.user_ID+"' ";
                 command = new SqlCommand(selectQuery, connection);
                 mdr = command.ExecuteReader();
-
-                SuccessMessage("Updated Succesfully!");
             }
             catch(Exception ex)
             {
@@ -776,7 +768,6 @@ namespace WWWPOS
             }
             connection.Close();
         }
-
         //Load Users cart total items
         public void LoadTotalItems(FlowLayoutPanel flowLayoutPanel)
         {
@@ -831,7 +822,6 @@ namespace WWWPOS
                 connection.Close();
             }
         }
-
         //Load Buy Item
         public void LoadBuyItem(int productID, string productImg, string productName, double productPrice, string productCategory, int productQuantity, string productSize, string productColor, string productDescription)
         {
@@ -895,7 +885,6 @@ namespace WWWPOS
             connection.Close();
             return totalPrice;
         }
-
         //Gets the last Data
         public string GetsLastOrderID()
         {
@@ -1109,7 +1098,6 @@ namespace WWWPOS
 
             }
         }
-
         //Get the length of order
         public int GetOrderQuantity (int orderNumber)
         {
@@ -1137,7 +1125,6 @@ namespace WWWPOS
             connection.Close();
             return orderQty;
         }
-
         //Get Success Orders
         public void GetSuccessOrders(DataGridView dataProduct)
         {
@@ -1181,7 +1168,6 @@ namespace WWWPOS
 
             connection.Close();
         }
-
         //Load Purchase
         public void GetPurchaseOrder(DataGridView dataProduct, string whatPurchase)
         {
