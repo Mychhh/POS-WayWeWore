@@ -29,6 +29,7 @@ using System.Xml.Linq;
 using WWWPOS.ClassOrdersFolder;
 using MySqlX.XDevAPI.Common;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace WWWPOS
 {
@@ -87,26 +88,33 @@ namespace WWWPOS
         
         public static string PasswordEncryption(string password)
         {
-            //byte[] encryptedData = new byte[password.Length];
-            //encryptedData = System.Text.Encoding.UTF8.GetBytes(password);
-            //string EncryptedData = Convert.ToBase64String(encryptedData);
-            // return EncryptedData;
+            RijndaelManaged RijndaelCipher = new RijndaelManaged();
 
-            byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
-            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
-            String hash = System.Text.Encoding.ASCII.GetString(data);
-            return hash;
+            byte[] PlainText = System.Text.Encoding.Unicode.GetBytes(password);
+            byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
+
+            PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
+            ICryptoTransform Encryptor = RijndaelCipher.CreateEncryptor(SecretKey.GetBytes(32), SecretKey.GetBytes(16));
+            MemoryStream memoryStream = new MemoryStream();
+
+            CryptoStream cryptoStream = new CryptoStream(memoryStream, Encryptor, CryptoStreamMode.Write);
+
+            cryptoStream.Write(PlainText, 0, PlainText.Length);
+
+            cryptoStream.FlushFinalBlock();
+
+            byte[] CipherBytes = memoryStream.ToArray();
+
+            memoryStream.Close();
+            cryptoStream.Close();
+
+
+            string EncryptedData = Convert.ToBase64String(CipherBytes);
+
+            return EncryptedData;
         }
 
-        public static string PasswordDecryption(string password)
-        {
-            SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
-
-            byte[] password_bytes = Encoding.ASCII.GetBytes(password);
-            byte[] encrypted_password = sha1.ComputeHash(password_bytes);
-
-            return Convert.ToBase64String(encrypted_password);
-        }
+    
 
         //-----Regular Expresion-----//
 
@@ -134,21 +142,13 @@ namespace WWWPOS
                 else
                 {
                     connection.Close(); //closes the first connection used by checking if the email is already registered
-              
+
                     connection.Open();
                     string insertQuery = "INSERT INTO Account(Full_Name, Email, Password,Phone,Address, User_Status, User_Type) VALUES ('" + name + "', '" + email + "', '" + PasswordEncryption(password) + "', '" + phoneNumber + "', '" + address + "','"  + "Active" + "','" + user_Type + "')";
                     SqlCommand commandDatabase = new SqlCommand(insertQuery, connection);
                     commandDatabase.CommandTimeout = 60;
 
-                try
-                {
-
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
+                    try
                     {
                         SqlDataReader myReader = commandDatabase.ExecuteReader();
                         message = "Success";
@@ -204,7 +204,7 @@ namespace WWWPOS
         public void UpdateUser(int account_ID, string user_Name, string email, string password, long phone, string user_Type, string address)
         {
             connection.Open();
-            string selectQuery = "UPDATE Account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + password + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
+            string selectQuery = "UPDATE Account SET Full_Name = '" + user_Name + "', Email = '" + email + "', Password = '" + PasswordEncryption(password) + "', Phone = '" + phone + "', User_Type = '" + user_Type + "', Address = '"+address +"' WHERE Account_Id ='" + account_ID+"';";
             command = new SqlCommand(selectQuery, connection);
             mdr = command.ExecuteReader();
             connection.Close();
