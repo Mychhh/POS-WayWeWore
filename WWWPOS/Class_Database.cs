@@ -30,6 +30,8 @@ using WWWPOS.ClassOrdersFolder;
 using MySqlX.XDevAPI.Common;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Windows.Input;
+using System.Windows.Markup;
 
 namespace WWWPOS
 {
@@ -84,37 +86,54 @@ namespace WWWPOS
         //Order Stack & List
         protected List<Class_OrderIDQTY> classOrderIDQTY = new List<Class_OrderIDQTY>();
 
-    //-----Password Encryption-----//
-        
+
+        //password Encrypt
+        public static string hash = "f0xle@rn";
+
         public static string PasswordEncryption(string password)
         {
-            RijndaelManaged RijndaelCipher = new RijndaelManaged();
+            byte[] password_Data = UTF8Encoding.UTF8.GetBytes(password);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                byte[] keyss = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider()
+                {
+                    Key = keyss,
+                    Mode = CipherMode.ECB,
+                    Padding = PaddingMode.PKCS7
+                })
+                {
+                    ICryptoTransform transform = tripDes.CreateEncryptor();
+                    byte[] password_Enrypt = transform.TransformFinalBlock(password_Data, 0, password_Data.Length);
 
-            byte[] PlainText = System.Text.Encoding.Unicode.GetBytes(password);
-            byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
+                    return Convert.ToBase64String(password_Enrypt, 0, password_Enrypt.Length);
+                }
+            }
 
-            PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
-            ICryptoTransform Encryptor = RijndaelCipher.CreateEncryptor(SecretKey.GetBytes(32), SecretKey.GetBytes(16));
-            MemoryStream memoryStream = new MemoryStream();
-
-            CryptoStream cryptoStream = new CryptoStream(memoryStream, Encryptor, CryptoStreamMode.Write);
-
-            cryptoStream.Write(PlainText, 0, PlainText.Length);
-
-            cryptoStream.FlushFinalBlock();
-
-            byte[] CipherBytes = memoryStream.ToArray();
-
-            memoryStream.Close();
-            cryptoStream.Close();
-
-
-            string EncryptedData = Convert.ToBase64String(CipherBytes);
-
-            return EncryptedData;
         }
 
-    
+        //password Decrypt
+        public static string PasswordDecryption(string password)
+        {
+            byte[] password_Data = Convert.FromBase64String(password);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                byte[] password_Keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider()
+                {
+                    Key = password_Keys,
+                    Mode = CipherMode.ECB,
+                    Padding = PaddingMode.PKCS7
+                })
+                {
+                    ICryptoTransform transform = tripDes.CreateDecryptor();
+                    byte[] password_Decrypt = transform.TransformFinalBlock(password_Data, 0, password_Data.Length);
+
+                    return UTF8Encoding.UTF8.GetString(password_Decrypt);
+                }
+            }
+        }
+
 
         //-----Regular Expresion-----//
 
