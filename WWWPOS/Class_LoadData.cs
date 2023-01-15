@@ -541,28 +541,8 @@ namespace WWWPOS
                 connection.Close();
             }
         }
-        public static string PasswordDecryption(string password)
-        {
-            RijndaelManaged RijndaelCipher = new RijndaelManaged();
-            byte[] EncryptedData = Convert.FromBase64String(password);
-            byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
-            PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
-            ICryptoTransform Decryptor = RijndaelCipher.CreateDecryptor(SecretKey.GetBytes(32), SecretKey.GetBytes(16));
 
-            MemoryStream memoryStream = new MemoryStream(EncryptedData);
-
-            CryptoStream cryptoStream = new CryptoStream(memoryStream, Decryptor, CryptoStreamMode.Read);
-            byte[] PlainText = new byte[EncryptedData.Length];
-
-            int DecryptedCount = cryptoStream.Read(PlainText, 0, PlainText.Length);
-
-            memoryStream.Close();
-            cryptoStream.Close();
-
-            string DecryptedData = Encoding.Unicode.GetString(PlainText, 0, DecryptedCount);
-
-            return DecryptedData;
-        }
+   
         //Account
         public void GetAccount()
         {
@@ -578,13 +558,13 @@ namespace WWWPOS
                     string userID = "" + dataReader[0];
                     string name = "" + dataReader[1];
                     string email = "" + dataReader[2];
-                    string password = "" + PasswordDecryption(dataReader[3].ToString());
+                    string password = "" + dataReader[3];
                     int number = Convert.ToInt32(dataReader[4] + "");
                     string address = "" + dataReader[5];
                     string userType = "" + dataReader[6];
 
 
-                    Form_Account form_Account = new Form_Account(userType, name, email, password, number, address);
+                    Form_Account form_Account = new Form_Account(userType, name, email, PasswordDecryption(password), number, address);
                     form_Account.Show();
                 }
             }
@@ -602,7 +582,7 @@ namespace WWWPOS
             try
             {
                 connection.Open();
-                string selectQuery = "UPDATE Account SET Full_Name = '" + name + "', Password = '" + password + "', Phone = '" + phone + "', Address = '" + address + "' WHERE Account_Id = '"+DataBase.user_ID+"' ";
+                string selectQuery = "UPDATE Account SET Full_Name = '" + name + "', Password = '" + PasswordEncryption(password) + "', Phone = '" + phone + "', Address = '" + address + "' WHERE Account_Id = '"+DataBase.user_ID+"' ";
                 command = new SqlCommand(selectQuery, connection);
                 mdr = command.ExecuteReader();
 
