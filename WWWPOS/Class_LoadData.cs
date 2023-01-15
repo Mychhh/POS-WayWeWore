@@ -26,6 +26,7 @@ using Google.Protobuf.WellKnownTypes;
 using System.Data.Common;
 using WWWPOS.SideBarControl.Sales;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.IO;
 
 namespace WWWPOS
 {
@@ -540,8 +541,29 @@ namespace WWWPOS
                 connection.Close();
             }
         }
+        public static string PasswordDecryption(string password)
+        {
+            RijndaelManaged RijndaelCipher = new RijndaelManaged();
+            byte[] EncryptedData = Convert.FromBase64String(password);
+            byte[] Salt = Encoding.ASCII.GetBytes(password.Length.ToString());
+            PasswordDeriveBytes SecretKey = new PasswordDeriveBytes(password, Salt);
+            ICryptoTransform Decryptor = RijndaelCipher.CreateDecryptor(SecretKey.GetBytes(32), SecretKey.GetBytes(16));
 
-    //Account
+            MemoryStream memoryStream = new MemoryStream(EncryptedData);
+
+            CryptoStream cryptoStream = new CryptoStream(memoryStream, Decryptor, CryptoStreamMode.Read);
+            byte[] PlainText = new byte[EncryptedData.Length];
+
+            int DecryptedCount = cryptoStream.Read(PlainText, 0, PlainText.Length);
+
+            memoryStream.Close();
+            cryptoStream.Close();
+
+            string DecryptedData = Encoding.Unicode.GetString(PlainText, 0, DecryptedCount);
+
+            return DecryptedData;
+        }
+        //Account
         public void GetAccount()
         {
             try
@@ -556,7 +578,7 @@ namespace WWWPOS
                     string userID = "" + dataReader[0];
                     string name = "" + dataReader[1];
                     string email = "" + dataReader[2];
-                    string password = "" + dataReader[3];
+                    string password = "" + dataReader[4];
                     int number = Convert.ToInt32(dataReader[4] + "");
                     string address = "" + dataReader[5];
                     string userType = "" + dataReader[6];
