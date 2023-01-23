@@ -37,7 +37,7 @@ namespace WWWPOS.SideBarControl.Inventory
             DB.UpdateProducts(Convert.ToInt32(txtBox_productID.Text), comboBox_ProductType.Text, txtBox_ProductName.Text,
                               txtBox_Color.Text, Convert.ToDouble(txtBox_Price.Text), Convert.ToInt32(txtBox_Stocks.Text),
                               comboBox_Size.Text, rtb_Description.Text);
-
+            DB.ActivityLog("UpdatedProduct", txtBox_ProductName.Text);
             DataBase.message = "";
 
             //This close and add new form

@@ -329,6 +329,7 @@ namespace WWWPOS
             else
             {
                 SuccessMessage("Product Restored");
+                ActivityLog("RestoredProduct", product_ID.ToString());
             }
 
         }
@@ -1021,7 +1022,7 @@ namespace WWWPOS
                     ExecuteActivityLog(theActivity);
                     break;
                 case "RestoredProduct":
-                    theActivity = userType + " " + user_Name + " Restored " + name + " Product";
+                    theActivity = userType + " " + user_Name + " Restored Product Number " + name;
                     ExecuteActivityLog(theActivity);
                     break;
             }

@@ -142,6 +142,7 @@ namespace WWWPOS.SideBarControl.Products
                 DB.SetStatusProducts("Inactive", ID);
                 DataBase.message = "";
 
+                DB.ActivityLog("DeletedProduct", Productname);
 
                 //This close and add new form
                 Form_AdminHome form_AdminHome = new Form_AdminHome();

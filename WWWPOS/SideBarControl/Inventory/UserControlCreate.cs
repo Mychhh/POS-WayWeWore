@@ -88,7 +88,7 @@ namespace WWWPOS.SideBarControl.Inventory
             if (DataBase.message == "Success")
             {
                 UserControlRead UC_Read = new UserControlRead();
-
+                DB.ActivityLog("AddedNewProduct", txtBox_ProductName.Text);
                 Controls.Clear();
                 UC_Read.BackColor = Color.Transparent;
                 Controls.Add(UC_Read);
