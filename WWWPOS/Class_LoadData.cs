@@ -113,6 +113,22 @@ namespace WWWPOS
             }
         }
         //Get a particular product
+
+        public void ColorOfStock(int color, UserControl userControl)
+        {
+            if (color <= 0)
+            {
+                userControl.BackColor = System.Drawing.Color.IndianRed;
+            }
+            else if (color <= 5)
+            {
+                userControl.BackColor = System.Drawing.Color.PaleVioletRed;
+            }
+            else
+            {
+                userControl.BackColor = System.Drawing.Color.WhiteSmoke;
+            }
+        }
         public string[] GetParticularProduct(string productcategory, string productname, string productcolor, string productsize)
         {
             string ProductID = "";
@@ -186,14 +202,6 @@ namespace WWWPOS
                                                       objClassProducts.Product_Size, objClassProducts.Product_Descripiton,
                                                       Image.FromFile(objClassProducts.Product_Images));
 
-                    if (objClassProducts.Product_Stock <= 0)
-                    {
-                        adminViewProducts.BackColor = Color.FromArgb(186, 28, 70);
-                    }
-                    else if(objClassProducts.Product_Stock <= 5)
-                    {
-                        adminViewProducts.BackColor = Color.FromArgb(211, 96, 56);
-                    }
 
                     flowLayoutPanel.Controls.Add(adminViewProducts);
                 }
@@ -211,14 +219,7 @@ namespace WWWPOS
                                                       objClassProducts.Product_Stock, objClassProducts.Product_Color,
                                                       objClassProducts.Product_Size, objClassProducts.Product_Descripiton,
                                                       Image.FromFile(objClassProducts.Product_Images));
-                    if (objClassProducts.Product_Stock <= 0)
-                    {
-                        adminViewUpdateProducts.BackColor = Color.FromArgb(186, 28, 70);
-                    }
-                    else if (objClassProducts.Product_Stock <= 5)
-                    {
-                        adminViewUpdateProducts.BackColor = Color.FromArgb(211, 96, 56);
-                    }
+
 
                     flowLayoutPanel.Controls.Add(adminViewUpdateProducts);
                 }
@@ -236,14 +237,7 @@ namespace WWWPOS
                                                       objClassProducts.Product_Stock, objClassProducts.Product_Color,
                                                       objClassProducts.Product_Size, objClassProducts.Product_Descripiton,
                                                       Image.FromFile(objClassProducts.Product_Images));
-                    if (objClassProducts.Product_Stock <= 0)
-                    {
-                        adminDeleteProducts.BackColor = Color.FromArgb(186, 28, 70);
-                    }
-                    else if (objClassProducts.Product_Stock <= 5)
-                    {
-                        adminDeleteProducts.BackColor = Color.FromArgb(211, 96, 56);
-                    }
+
 
                     flowLayoutPanel.Controls.Add(adminDeleteProducts);
                 }
