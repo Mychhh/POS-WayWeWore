@@ -406,3 +406,6 @@ D:\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.csproj.CoreCompileInputs.cache
 D:\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.csproj.CopyComplete
 D:\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.exe
 D:\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.pdb
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.UserControlActivityLog.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.ActivityLog.UserControl_UserActivity.resources
+C:\Users\Hotdog\source\MiniCapstone\POS-WayWeWore\WWWPOS\obj\Debug\WWWPOS.SideBarControl.ActivityLog.UserControl_ParticularActivity.resources

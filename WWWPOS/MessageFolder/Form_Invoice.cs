@@ -22,5 +22,24 @@ namespace WWWPOS.MessageFolder
         {
             this.Close();
         }
+        //Printing
+        Bitmap BitmapToPrint;
+        private void CaptureFormShot()
+        {
+            BitmapToPrint = new Bitmap(flowLayoutPanel.Width, flowLayoutPanel.Height);
+            this.DrawToBitmap(BitmapToPrint, new Rectangle(0, 0, flowLayoutPanel.Width, flowLayoutPanel.Height));
+        }
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Rectangle m = new Rectangle(0, 0, flowLayoutPanel.Width, flowLayoutPanel.Height);
+            e.Graphics.DrawImage(BitmapToPrint, m);
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            CaptureFormShot();
+            printPreviewDialog1.ShowDialog();
+        }
+
     }
 }

@@ -202,21 +202,6 @@ namespace WWWPOS
             UC_UserList.panel_UserList.Controls.Add(UC_AllUser);
             UC_AllUser.Dock = DockStyle.Fill;
         }
-        private void btn_Archive_Click(object sender, EventArgs e)
-        {
-            SideBarControl.UserControlArchive UC_Archive = new SideBarControl.UserControlArchive();
-            SideBarControl.Archive.UserControlArchiveAll UC_AllArchive = new SideBarControl.Archive.UserControlArchiveAll();
-
-            //Main Panel
-            panel_Main.Controls.Clear();
-            panel_Main.Controls.Add(UC_Archive);
-            UC_Archive.Dock = DockStyle.Fill;
-
-            //ArchivePanel
-            UC_Archive.panel_Archive.Controls.Clear();
-            UC_Archive.panel_Archive.Controls.Add(UC_AllArchive);
-            UC_AllArchive.Dock = DockStyle.Fill;
-        }
         private void btn_Inventory_Click(object sender, EventArgs e)
         {
             UserControlInventory UC_Inventory = new UserControlInventory();
@@ -275,6 +260,28 @@ namespace WWWPOS
         {
             Class_LoadData C_LoadData = new Class_LoadData();
             C_LoadData.GetAccount();
+        }
+        private void btn_ActivityLog_Click(object sender, EventArgs e)
+        {
+            //Main Panel
+            panel_Main.Controls.Clear();
+            panel_Main.Controls.Add(Class_LoadData.UC_ActivityLog);
+            Class_LoadData.UC_ActivityLog.Dock = DockStyle.Fill;
+        }
+        private void btn_Archive_Click(object sender, EventArgs e)
+        {
+            SideBarControl.UserControlArchive UC_Archive = new SideBarControl.UserControlArchive();
+            SideBarControl.Archive.UserControlArchiveAll UC_AllArchive = new SideBarControl.Archive.UserControlArchiveAll();
+
+            //Main Panel
+            panel_Main.Controls.Clear();
+            panel_Main.Controls.Add(UC_Archive);
+            UC_Archive.Dock = DockStyle.Fill;
+
+            //ArchivePanel
+            UC_Archive.panel_Archive.Controls.Clear();
+            UC_Archive.panel_Archive.Controls.Add(UC_AllArchive);
+            UC_AllArchive.Dock = DockStyle.Fill;
         }
 
         //Hover Effects
@@ -357,6 +364,20 @@ namespace WWWPOS
             btn_UserList.BackColor = Color.FromArgb(231, 198, 116);
             btn_UserList.Width = 252;
             btn_UserList.Height = 45;
+        }
+
+        private void btn_ActivityLog_MouseHover(object sender, EventArgs e)
+        {
+            btn_ActivityLog.BackColor = Color.FromArgb(234, 223, 91);
+            btn_ActivityLog.Width = 255;
+            btn_ActivityLog.Height = 48;
+        }
+
+        private void btn_ActivityLog_MouseLeave(object sender, EventArgs e)
+        {
+            btn_ActivityLog.BackColor = Color.FromArgb(231, 198, 116);
+            btn_ActivityLog.Width = 252;
+            btn_ActivityLog.Height = 45;
         }
 
         private void btn_Archive_MouseHover(object sender, EventArgs e)

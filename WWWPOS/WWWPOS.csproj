@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassOrdersFolder\Class_InvoiceCashier.cs" />
     <Compile Include="ClassOrdersFolder\Class_OrderIDQTY.cs" />
     <Compile Include="ClassOrdersFolder\Class_Orders.cs" />
     <Compile Include="ClassOrdersFolder\Class_OrdersStatus.cs" />
@@ -210,6 +211,18 @@
     </Compile>
     <Compile Include="Form_RegisterPage.Designer.cs">
       <DependentUpon>Form_RegisterPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\ActivityLog\UserControl_ParticularActivity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\ActivityLog\UserControl_ParticularActivity.Designer.cs">
+      <DependentUpon>UserControl_ParticularActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarControl\ActivityLog\UserControl_UserActivity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\ActivityLog\UserControl_UserActivity.Designer.cs">
+      <DependentUpon>UserControl_UserActivity.cs</DependentUpon>
     </Compile>
     <Compile Include="SideBarControl\Archive\UserControlArchiveAll.cs">
       <SubType>UserControl</SubType>
@@ -333,6 +346,12 @@
       <DependentUpon>UserControlPurchaseTshirt.cs</DependentUpon>
     </Compile>
     <Compile Include="SideBarControl\Sales\ClassSalesChartData.cs" />
+    <Compile Include="SideBarControl\UserControlActivityLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarControl\UserControlActivityLog.Designer.cs">
+      <DependentUpon>UserControlActivityLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="SideBarControl\UserControlArchive.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -477,6 +496,12 @@
     <EmbeddedResource Include="Form_RegisterPage.resx">
       <DependentUpon>Form_RegisterPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\ActivityLog\UserControl_ParticularActivity.resx">
+      <DependentUpon>UserControl_ParticularActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\ActivityLog\UserControl_UserActivity.resx">
+      <DependentUpon>UserControl_UserActivity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Archive\UserControlArchiveAll.resx">
       <DependentUpon>UserControlArchiveAll.cs</DependentUpon>
     </EmbeddedResource>
@@ -536,6 +561,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\Purchase\UserControlPurchaseTshirt.resx">
       <DependentUpon>UserControlPurchaseTshirt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarControl\UserControlActivityLog.resx">
+      <DependentUpon>UserControlActivityLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarControl\UserControlArchive.resx">
       <DependentUpon>UserControlArchive.cs</DependentUpon>
