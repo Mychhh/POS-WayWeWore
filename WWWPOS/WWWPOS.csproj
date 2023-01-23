@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassOrdersFolder\Class_InvoiceCashier.cs" />
     <Compile Include="ClassOrdersFolder\Class_OrderIDQTY.cs" />
     <Compile Include="ClassOrdersFolder\Class_Orders.cs" />
     <Compile Include="ClassOrdersFolder\Class_OrdersStatus.cs" />

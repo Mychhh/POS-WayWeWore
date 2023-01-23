@@ -62,12 +62,14 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
             {
                 DataBase.message = "";
 
-                SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order marked as Success");
-                successMessageDialogue.ShowDialog();
+                //SuccessMessageDialogue successMessageDialogue = new SuccessMessageDialogue("Order marked as Success");
+                //successMessageDialogue.ShowDialog();
 
                 //Updates the order status
                 DataBase DB = new DataBase();
                 DB.OrderSuccess(OrderNumberWithoutSign);
+                
+                DB.InvoiceCashier(OrderNumberWithoutSign);
 
                 //Deduct Product stocks
                 DB.DeductProductStock(OrderNumberWithoutSign);
