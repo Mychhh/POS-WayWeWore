@@ -87,6 +87,12 @@ namespace WWWPOS
             }
             else
             {
+                if(DataBase.userType == "Admin")
+                {
+                    DataBase DB = new DataBase();
+                    DB.ActivityLog("MyAccountUpdated");
+                }
+
                 MessageFolder.SuccessMessageDialogue successMessageDialogue = new MessageFolder.SuccessMessageDialogue("Updated Succesfully");
                 successMessageDialogue.ShowDialog();
 

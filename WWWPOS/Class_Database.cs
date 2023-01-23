@@ -32,6 +32,7 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Windows.Input;
 using System.Windows.Markup;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WWWPOS
 {
@@ -39,7 +40,7 @@ namespace WWWPOS
     internal class DataBase
     {
     //SQl Declaration
-        public static string user_ID, message, user_Name;
+        public static string user_ID, message, user_Name, userType;
         public static bool isLogin = false;
         public static string fromWhat = "";
         public const string SQLServerLink = "Data Source=DESKTOP-83HB1MK\\SQLEXPRESS; Initial Catalog=waywewore; Integrated Security=True";
@@ -196,7 +197,7 @@ namespace WWWPOS
                 {
                     user_ID = "" + mdr[0];
                     user_Name = "" + mdr[1];
-                    string userType = "" + mdr[6];
+                    userType = "" + mdr[6];
 
                     if (userType == "Client")
                     {
@@ -206,6 +207,8 @@ namespace WWWPOS
                     }
                     else if (userType == "Admin")
                     {
+                        connection.Close();
+                        ActivityLog("Login");
                         WWWPOS.LoginPage.ActiveForm.Hide();
                         Form_AdminHome f2 = new Form_AdminHome();
                         f2.ShowDialog();
@@ -946,6 +949,104 @@ namespace WWWPOS
 
         }
 
+        //-----Activity Log-----//
+        public void ActivityLog(string whatActivity)
+        {
+            string theActivity = "";
+
+            switch (whatActivity)
+            {
+                case "Login":
+                    theActivity = userType + " " + user_Name + " Logged In";
+                    ExecuteActivityLog(theActivity);
+                    break;
+                case "Logout":
+                    theActivity = userType + " " + user_Name + " Logged Out";
+                    ExecuteActivityLog(theActivity);
+                    break;
+                case "MyAccountUpdated":
+                    theActivity = userType + " " + user_Name + " Updated its Account";
+                    ExecuteActivityLog(theActivity);
+                    break;
+                case "MarkAsSuccess":
+                    theActivity = userType + " " + user_Name + " Orders mark as Success";
+                    ExecuteActivityLog(theActivity);
+                    break;
+                case "MarkAsFailed":
+                    theActivity = userType + " " + user_Name + " Orders mark as Failed";
+                    ExecuteActivityLog(theActivity);
+                    break;
+                case "PrintInvoice":
+                    theActivity = userType + " " + user_Name + " Print Invoice";
+                    ExecuteActivityLog(theActivity);
+                    break;
+            }
+
+        }
+        public void ActivityLog(string whatActivity, string name)
+        {
+            string theActivity = "";
+
+            switch (whatActivity)
+            {
+                //Account
+                case "OtherAccountUpdated":
+                    theActivity = userType + " " + user_Name + " Updated " + name + " Account";
+                    ExecuteActivityLog(theActivity);
+                    break;
+                case "OtherAccountDeleted":
+                    theActivity = userType + " " + user_Name + " Deleted " + name + " Account";
+                    ExecuteActivityLog(theActivity);
+                    break;
+                case "AddedNewAccount":
+                    theActivity = userType + " " + user_Name + " Created " + name + " Account";
+                    ExecuteActivityLog(theActivity);
+                    break;
+                case "RestoredAccountt":
+                    theActivity = userType + " " + user_Name + " Restored " + name + " Account";
+                    ExecuteActivityLog(theActivity);
+                    break;
+
+                //Product
+                case "AddedNewProduct":
+                    theActivity = userType + " " + user_Name + " Created new product named " + name ;
+                    ExecuteActivityLog(theActivity);
+                    break;
+                case "UpdatedProduct":
+                    theActivity = userType + " " + user_Name + " Updated " + name + " Product";
+                    ExecuteActivityLog(theActivity);
+                    break;
+                case "DeletedProduct":
+                    theActivity = userType + " " + user_Name + " Deleted " + name + " Product";
+                    ExecuteActivityLog(theActivity);
+                    break;
+                case "RestoredProduct":
+                    theActivity = userType + " " + user_Name + " Restored " + name + " Product";
+                    ExecuteActivityLog(theActivity);
+                    break;
+            }
+
+        }
+        public void ExecuteActivityLog(string TheActivity)
+        {
+            connection.Open();
+            string insertActivityLogQuery = "INSERT INTO Activities(UserType, UserName, Activity)" +
+                                            "VALUES('" + userType + "', '" + user_Name + "', '" + TheActivity + "')";
+            SqlCommand commandDatabase = new SqlCommand(insertActivityLogQuery, connection);
+            commandDatabase.CommandTimeout = 60;
+            try
+            {
+                SqlDataReader myReader = commandDatabase.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 
 }
