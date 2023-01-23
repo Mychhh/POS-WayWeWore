@@ -33,7 +33,9 @@ namespace WWWPOS
     internal class Class_LoadData : DataBase
     {
     
-    //-----Admin Side-----//    
+        public static UserControlActivityLog UC_ActivityLog = new UserControlActivityLog();
+
+        //-----Admin Side-----//    
 
         //Get All Active Product and Store it in Stack
         public void GetActiveProduct()
@@ -580,6 +582,60 @@ namespace WWWPOS
             }
             finally
             { 
+                connection.Close();
+            }
+        }
+
+        //Activity Log
+        public void GetActivityLog()
+        {
+            SideBarControl.ActivityLog.UserControl_UserActivity UC_Activity = new SideBarControl.ActivityLog.UserControl_UserActivity();
+            SideBarControl.ActivityLog.UserControl_ParticularActivity UC_ParticularActivity;
+
+            //ActivityLogPanel
+            UC_ActivityLog.flowLayoutPanel1.Controls.Clear();
+
+            string dummydate = "";
+
+            try
+            {
+                connection.Open();
+                string SelectAllActivities = "SELECT * ,\r\nFORMAT(cast(ActivityTime as time), N'hh\\:mm') as TimeOnly,\r\nFORMAT(ActivityDate, 'dddd, d MMMM yyyy') as DateOnly\r\nFROM Activities ORDER BY ActivityDate DESC";
+                command = new SqlCommand(SelectAllActivities, connection);
+                mdr = command.ExecuteReader();
+
+                while (mdr.Read())
+                {
+                    string date = "" + mdr[7];
+                    string whatHappend = "" + mdr[3];
+                    string time = "" + mdr[6];
+                        
+                    if (dummydate == date)
+                    {
+                        UC_ParticularActivity = new SideBarControl.ActivityLog.UserControl_ParticularActivity(whatHappend, time);
+
+                        UC_Activity.flowLayoutPanel1.Controls.Add(UC_ParticularActivity);
+                    }
+                    else if (dummydate != date)
+                    {
+                        dummydate = date;
+
+                        UC_Activity = new SideBarControl.ActivityLog.UserControl_UserActivity();
+                        UC_Activity.lbl_Date.Text = date;
+                        UC_ActivityLog.flowLayoutPanel1.Controls.Add(UC_Activity);
+
+                        UC_ParticularActivity = new SideBarControl.ActivityLog.UserControl_ParticularActivity(whatHappend, time);
+                        UC_Activity.flowLayoutPanel1.Controls.Add(UC_ParticularActivity);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            finally
+            {
                 connection.Close();
             }
         }

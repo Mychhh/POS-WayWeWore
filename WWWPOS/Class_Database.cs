@@ -138,7 +138,6 @@ namespace WWWPOS
 
 
         //-----Regular Expresion-----//
-
         public static Regex validEmail = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
         public static Regex hasNumber = new Regex(@"[0-9]+");
         public static Regex hasUpper = new Regex(@"[A-Z]+");
