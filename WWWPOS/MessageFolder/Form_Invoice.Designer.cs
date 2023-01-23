@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Invoice));
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -35,6 +36,9 @@
             this.btn_Okay = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_Print = new System.Windows.Forms.Button();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,16 +75,16 @@
             // 
             // btn_Okay
             // 
-            this.btn_Okay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Okay.BackColor = System.Drawing.Color.White;
             this.btn_Okay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Okay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Okay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Okay.ForeColor = System.Drawing.Color.White;
-            this.btn_Okay.Location = new System.Drawing.Point(32, 453);
+            this.btn_Okay.ForeColor = System.Drawing.Color.Black;
+            this.btn_Okay.Location = new System.Drawing.Point(45, 453);
             this.btn_Okay.Name = "btn_Okay";
-            this.btn_Okay.Size = new System.Drawing.Size(354, 38);
+            this.btn_Okay.Size = new System.Drawing.Size(162, 38);
             this.btn_Okay.TabIndex = 3;
-            this.btn_Okay.Text = "Okay po";
+            this.btn_Okay.Text = "Close";
             this.btn_Okay.UseVisualStyleBackColor = false;
             this.btn_Okay.Click += new System.EventHandler(this.btn_Okay_Click);
             // 
@@ -103,12 +107,43 @@
             this.flowLayoutPanel.Size = new System.Drawing.Size(405, 330);
             this.flowLayoutPanel.TabIndex = 5;
             // 
+            // btn_Print
+            // 
+            this.btn_Print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(53)))), ((int)(((byte)(133)))));
+            this.btn_Print.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Print.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Print.ForeColor = System.Drawing.Color.White;
+            this.btn_Print.Location = new System.Drawing.Point(221, 453);
+            this.btn_Print.Name = "btn_Print";
+            this.btn_Print.Size = new System.Drawing.Size(162, 38);
+            this.btn_Print.TabIndex = 6;
+            this.btn_Print.Text = "Print";
+            this.btn_Print.UseVisualStyleBackColor = false;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // Form_Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(19)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(421, 517);
+            this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Okay);
@@ -134,5 +169,8 @@
         private System.Windows.Forms.Button btn_Okay;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
+        private System.Windows.Forms.Button btn_Print;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

@@ -558,7 +558,6 @@ namespace WWWPOS
 
                 sqlCommand = new SqlCommand(placeOrderQuery, connection);
                 dataReader = sqlCommand.ExecuteReader();
-                connection.Close();
 
             }
             catch (Exception ex)
@@ -566,7 +565,10 @@ namespace WWWPOS
                 // Show any error message.
                 ErrorMessage(ex.Message);
             }
-
+            finally
+            {
+                connection.Close();
+            }
         }
         //Add data to Orders table
 
