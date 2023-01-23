@@ -80,6 +80,8 @@ namespace WWWPOS
         //Order Stack & List
         protected List<Class_Orders> ordersList = new List<Class_Orders>();
 
+        protected List<Class_InvoiceCashier> invoiceList = new List<Class_InvoiceCashier>();
+
         //Order Stack & List
         protected List<Class_OrdersStatus> classOrderStatus = new List<Class_OrdersStatus>();
 
@@ -136,7 +138,6 @@ namespace WWWPOS
 
 
         //-----Regular Expresion-----//
-
         public static Regex validEmail = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
         public static Regex hasNumber = new Regex(@"[0-9]+");
         public static Regex hasUpper = new Regex(@"[A-Z]+");
@@ -558,7 +559,6 @@ namespace WWWPOS
 
                 sqlCommand = new SqlCommand(placeOrderQuery, connection);
                 dataReader = sqlCommand.ExecuteReader();
-                connection.Close();
 
             }
             catch (Exception ex)
@@ -566,14 +566,41 @@ namespace WWWPOS
                 // Show any error message.
                 ErrorMessage(ex.Message);
             }
-
+            finally
+            {
+                connection.Close();
+            }
         }
         //Add data to Orders table
 
+        //Invoice
         public Form_Invoice form_Invoice = new Form_Invoice();
         public UserControl_ProductInfo UC_ProductInfo = new UserControl_ProductInfo();
         public UserControl_ProductItem UC_ProductItem;
         public UserControl_ProducOrderInfo UC_ProductOrderInfo;
+
+        public void GenerateInvoice()
+        {
+            form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductInfo);
+
+            for (int i = 0; i < ordersList.Count; i++)
+            {
+                Class_Orders orders = ordersList[i];
+
+                GetOrders(orders.ProductID, orders.OrderNumber, orders.Name, orders.Category,
+                          orders.Color, orders.Size, orders.Price,
+                          orders.Quantity, orders.ImagePath, orders.Status,
+                          orders.OrderStatus, orders.AddedToCartAt);
+
+                UC_ProductItem = new UserControl_ProductItem(orders.Name, orders.Quantity, (int)orders.Price);
+                form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductItem);//multiple
+            }
+            Class_LoadData C_LoadData = new Class_LoadData();
+            UC_ProductOrderInfo = new UserControl_ProducOrderInfo(C_LoadData.GetsLastOrderID(), C_LoadData.GetsLastOrderDate());
+
+            form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductOrderInfo);
+            form_Invoice.ShowDialog();
+        }
         public void OrdersTableInsertData()
         {
             int user_ID = Int32.Parse(DataBase.user_ID);
@@ -615,29 +642,8 @@ namespace WWWPOS
                     ordersList.Add(orders);
                 }
 
-                connection.Close();
-                
-                //
+                GenerateInvoice();
 
-                form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductInfo);
-
-                for (int i = 0; i < ordersList.Count; i++)
-                {
-                    Class_Orders orders = ordersList[i];
-
-                    GetOrders(orders.ProductID, orders.OrderNumber, orders.Name, orders.Category,
-                              orders.Color, orders.Size, orders.Price, 
-                              orders.Quantity, orders.ImagePath, orders.Status,
-                              orders.OrderStatus, orders.AddedToCartAt);
-
-                    UC_ProductItem = new UserControl_ProductItem(orders.Name, orders.Quantity, (int)orders.Price);
-                    form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductItem);//multiple
-                }
-                Class_LoadData C_LoadData = new Class_LoadData();
-                UC_ProductOrderInfo = new UserControl_ProducOrderInfo(C_LoadData.GetsLastOrderID(), C_LoadData.GetsLastOrderDate());
-
-                form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductOrderInfo);
-                form_Invoice.ShowDialog();
                 //clears the value of orderList
                 ordersList.Clear();
 
@@ -647,7 +653,12 @@ namespace WWWPOS
                 // Show any error message.
                 ErrorMessage(ex.Message);
             }
+            finally
+            {
+                connection.Close();
+            }
         }
+
         //OrdersInsertBuyData
         public void OrdersInsertBuyData(int productid, string productimg, string productname, double productprice, string productcategory, int productquantity, string productsize, string productcolor, string productdescription)
         {
@@ -795,12 +806,67 @@ namespace WWWPOS
 
                 sqlCommand = new SqlCommand(updateOrdersToSuccessQuery, connection);
                 dataReader = sqlCommand.ExecuteReader();
-                connection.Close();
             }
             catch (Exception ex)
             {
                 // Show any error message.
                 ErrorMessage(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        //Invoice 
+        public void InvoiceCashier(int orderNumber)
+        {
+            string date = "";
+
+            try
+            {
+                connection.Open();
+                string updateOrdersToSuccessQuery = "SELECT  * FROM Orders WHERE OrderNumber = '" + orderNumber + "' ";
+                sqlCommand = new SqlCommand(updateOrdersToSuccessQuery, connection);
+                dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    string ProductName = "" + dataReader[4];
+                    int ProductQuantity = Int32.Parse(dataReader[9] + "");
+                    double ProductPrice = Double.Parse(dataReader[8] + "");
+                    date = "" + dataReader[14];
+
+                    Class_InvoiceCashier C_InvoiceCashier = new Class_InvoiceCashier(ProductName, ProductQuantity, (ProductQuantity * Convert.ToInt32(ProductPrice)));
+
+                    invoiceList.Add(C_InvoiceCashier);
+                }
+
+                form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductInfo);
+
+                for (int i = 0; i < invoiceList.Count; i++)
+                {
+                    Class_InvoiceCashier invoice = invoiceList[i];
+
+                    UC_ProductItem = new UserControl_ProductItem(invoice.ProductName, invoice.Quantity, invoice.Subtotal);
+                    form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductItem);//multiple
+                }
+                Class_LoadData C_LoadData = new Class_LoadData();
+                UC_ProductOrderInfo = new UserControl_ProducOrderInfo(orderNumber.ToString(), date);
+
+                form_Invoice.flowLayoutPanel.Controls.Add(UC_ProductOrderInfo);
+                form_Invoice.ShowDialog();
+
+                invoiceList.Clear();
+            }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                ErrorMessage("I am here " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
