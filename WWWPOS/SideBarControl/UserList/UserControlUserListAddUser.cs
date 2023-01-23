@@ -70,7 +70,7 @@ namespace WWWPOS.SideBarControl.UserList
             if (DataBase.message == "Success")
             {
                 UserList.UserControlUserListAllUser UC_AllUser = new UserControlUserListAllUser();
-
+                DB.ActivityLog("AddedNewAccount", txt_Name.Text);
                 //Main Panel
                 Controls.Clear();
                 Controls.Add(UC_AllUser);

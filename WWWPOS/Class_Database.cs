@@ -255,12 +255,12 @@ namespace WWWPOS
             if(user_Status == "Inactive")
             {
                 SuccessMessage("User Deleted");
-
+                ActivityLog("OtherAccountDeleted", account_ID.ToString());
             }
             else
             {
                 SuccessMessage("User Restored");
-
+                ActivityLog("RestoredAccountt", account_ID.ToString());
             }
         }
 
@@ -995,7 +995,7 @@ namespace WWWPOS
                     ExecuteActivityLog(theActivity);
                     break;
                 case "OtherAccountDeleted":
-                    theActivity = userType + " " + user_Name + " Deleted " + name + " Account";
+                    theActivity = userType + " " + user_Name + " Deleted ID number " + name + " Account";
                     ExecuteActivityLog(theActivity);
                     break;
                 case "AddedNewAccount":
