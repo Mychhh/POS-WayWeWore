@@ -163,6 +163,8 @@ namespace WWWPOS.SideBarControl.Products
             Price = Double.Parse(returnValue[5]);
             Stock = Int32.Parse(returnValue[6]);
             Descriptions = returnValue[9];
+
+            C_LoadData.ColorOfStock(Stock, this);
         }
 
         private void clickMe()
@@ -174,6 +176,8 @@ namespace WWWPOS.SideBarControl.Products
             Price = Double.Parse(returnValue[5]);
             Stock = Int32.Parse(returnValue[6]);
             Descriptions = returnValue[9];
+
+            C_LoadData.ColorOfStock(Stock, this);
         }
 
     }
