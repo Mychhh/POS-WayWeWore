@@ -39,6 +39,9 @@ namespace WWWPOS.MessageFolder
         {
             CaptureFormShot();
             printPreviewDialog1.ShowDialog();
+
+            DataBase DB = new DataBase();
+            DB.ActivityLog("PrintInvoice");
         }
 
     }

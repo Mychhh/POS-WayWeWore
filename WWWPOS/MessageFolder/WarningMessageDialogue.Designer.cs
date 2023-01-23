@@ -35,6 +35,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Close
@@ -59,7 +60,7 @@
             this.btn_Alright.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Alright.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Alright.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Alright.Location = new System.Drawing.Point(91, 216);
+            this.btn_Alright.Location = new System.Drawing.Point(17, 216);
             this.btn_Alright.Name = "btn_Alright";
             this.btn_Alright.Size = new System.Drawing.Size(131, 36);
             this.btn_Alright.TabIndex = 4;
@@ -110,12 +111,28 @@
             this.panel1.Size = new System.Drawing.Size(314, 3);
             this.panel1.TabIndex = 7;
             // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.BackColor = System.Drawing.Color.White;
+            this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.Black;
+            this.btn_Cancel.Location = new System.Drawing.Point(154, 216);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(131, 36);
+            this.btn_Cancel.TabIndex = 11;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
             // WarningMessageDialogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(198)))), ((int)(((byte)(116)))));
             this.ClientSize = new System.Drawing.Size(312, 282);
+            this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -141,5 +158,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_Cancel;
     }
 }

@@ -68,6 +68,8 @@ namespace WWWPOS.SideBarControl.UserList
 
                 DB.UpdateUser(accountID, txt_Name.Text, txt_Email.Text, txt_Password.Text, phoneNumber, txt_UserType.Text, txt_Address.Text);
 
+                DB.ActivityLog("OtherAccountUpdated", txt_Name.Text);
+
                 UserControUserList UC_UserList = new UserControUserList();
                 UserControlUserListAllUser UC_AllUser = new UserControlUserListAllUser();
 

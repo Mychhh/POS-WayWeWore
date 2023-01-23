@@ -142,6 +142,7 @@ namespace WWWPOS.SideBarControl.Products
                 DB.SetStatusProducts("Inactive", ID);
                 DataBase.message = "";
 
+                DB.ActivityLog("DeletedProduct", Productname);
 
                 //This close and add new form
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
@@ -162,6 +163,8 @@ namespace WWWPOS.SideBarControl.Products
             Price = Double.Parse(returnValue[5]);
             Stock = Int32.Parse(returnValue[6]);
             Descriptions = returnValue[9];
+
+            C_LoadData.ColorOfStock(Stock, this);
         }
 
         private void clickMe()
@@ -173,6 +176,8 @@ namespace WWWPOS.SideBarControl.Products
             Price = Double.Parse(returnValue[5]);
             Stock = Int32.Parse(returnValue[6]);
             Descriptions = returnValue[9];
+
+            C_LoadData.ColorOfStock(Stock, this);
         }
 
     }

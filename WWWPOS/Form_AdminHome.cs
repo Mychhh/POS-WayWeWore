@@ -250,6 +250,9 @@ namespace WWWPOS
         }
         private void btn_Logout_Click(object sender, EventArgs e)
         {
+            DataBase DB = new DataBase();
+            DB.ActivityLog("Logout");
+
             DataBase.isLogin = false;
             WWWPOS.Form_AdminHome.ActiveForm.Hide();
             DataBase.login.Show();

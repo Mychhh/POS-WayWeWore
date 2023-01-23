@@ -39,5 +39,9 @@ namespace WWWPOS.MessageFolder
             this.Hide();
         }
 
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

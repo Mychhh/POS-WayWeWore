@@ -74,6 +74,8 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
                 //Deduct Product stocks
                 DB.DeductProductStock(OrderNumberWithoutSign);
 
+                DB.ActivityLog("MarkAsSuccess");
+
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
                 Form_AdminHome.ActiveForm.Dispose();
                 DataBase.fromWhat = "OrdersDelete";
@@ -96,6 +98,8 @@ namespace WWWPOS.SideBarControl.Orders.PendingOrders
 
                 DataBase DB = new DataBase();
                 DB.RemoveOrders(OrderNumberWithoutSign);
+
+                DB.ActivityLog("MarkAsFailed");
 
                 Form_AdminHome form_AdminHome = new Form_AdminHome();
                 Form_AdminHome.ActiveForm.Dispose();
